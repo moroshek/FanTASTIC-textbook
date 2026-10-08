@@ -1,5 +1,5 @@
 /* fanpedia-sim.css — FanPedia MicroSim kit, base styles and design tokens.
- * Version 1.0.0 (2026-10-08). Load first in <head>, before any library.
+ * Version 1.1.0 (2026-10-08). Load first in <head>, before any library.
  * Tokens: review §4.1 (contrast measured on white). Class prefix: fp-.
  * Element rules use :where() (zero specificity) so a sim's own CSS always wins.
  * API reference: templates/microsim/kit-docs/core.md (not published).
@@ -54,6 +54,8 @@
   background: var(--fp-ctrl-bg);
 }
 :where(main) { display: block; margin: 0; padding: 0; }
+/* A p5 canvas is inline by default and leaves a 3-5 px descender gap below it. */
+main > canvas { display: block; }
 [class^="fp-"], [class*=" fp-"] { box-sizing: border-box; }
 :where(a) { color: var(--fp-primary); }
 :where(a:hover) { color: var(--fp-primary-dark); }
@@ -106,6 +108,10 @@
   border: 2px solid var(--fp-primary); font-weight: bold;
 }
 :where(.fp-btn.choice.selected, button.choice.selected, .fp-btn[aria-pressed="true"], button[aria-pressed="true"])::before { content: "✓ "; content: "✓ " / ""; }
+/* Hover on a toggle: the generic :hover above (dark fill) would put dark text on
+   a dark fill. Toggles keep their light fill and dark text; the border darkens. */
+:where(.fp-btn[aria-pressed="false"], button[aria-pressed="false"]):hover { background: var(--fp-primary-bg); color: var(--fp-primary-dark); border-color: var(--fp-primary-dark); }
+:where(.fp-btn[aria-pressed="true"], button[aria-pressed="true"]):hover { background: var(--fp-primary-bg); color: var(--fp-primary-dark); border-color: var(--fp-primary-dark); }
 :where(button, .fp-btn):disabled,
 :where(button, .fp-btn)[aria-disabled="true"] {
   background: #eceff1; color: #546e7a; border-color: #cfd8dc; cursor: default;
@@ -121,9 +127,13 @@
   padding: 4px 6px;
   min-height: 28px;
 }
+/* Text and number boxes match the select height (selects are border-box natively). */
+:where(input[type="text"], input[type="number"], input:not([type]), textarea) { box-sizing: border-box; }
 :where(select, input, textarea):disabled { background: #eceff1; color: #546e7a; }
 :where(input[type="range"], input[type="checkbox"], input[type="radio"]) { accent-color: var(--fp-primary); }
 :where(label) { color: var(--fp-text); }
+/* FP.p5.radio(): p5 createRadio options side by side */
+.fp-radio label { margin-right: 12px; cursor: pointer; white-space: nowrap; }
 
 /* ---------- focus ---------- */
 :focus-visible { outline: 2px solid var(--fp-primary); outline-offset: 2px; }

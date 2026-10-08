@@ -25,11 +25,22 @@
 
   // ---------------------------------------------------------------- helpers
 
-  /** Round x to d decimals (half away from zero, robust to 1.005-style float error). */
+  /** Round x to d decimals (half away from zero, robust to 1.005-style float error).
+   *  Negative d rounds to tens, hundreds, ...: round(1799.9999, -1) -> 1800 exactly. */
   function round(x, d) {
-    var m = Math.pow(10, d || 0);
-    var y = Math.abs(x) * m;
-    var r = Math.round(y + 1e-9 * Math.max(1, y)) / m;
+    d = d || 0;
+    var y, r;
+    if (d < 0) {
+      // Multiply back by an integer power of ten so the result is exact
+      // (dividing by 0.1 leaves 1799.9999999999998).
+      var p = Math.pow(10, -d);
+      y = Math.abs(x) / p;
+      r = Math.round(y + 1e-9 * Math.max(1, y)) * p;
+    } else {
+      var m = Math.pow(10, d);
+      y = Math.abs(x) * m;
+      r = Math.round(y + 1e-9 * Math.max(1, y)) / m;
+    }
     return x < 0 ? -r : r;
   }
 

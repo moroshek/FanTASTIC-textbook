@@ -1,8 +1,8 @@
 /* fanpedia-core.js — FanPedia MicroSim kit, core (library-agnostic).
- * Version 1.0.0 (2026-10-08). Namespace: window.FP. No modules, no build step.
+ * Version 1.1.0 (2026-10-08). Namespace: window.FP. No modules, no build step.
  *
  * Provides: FP.tok, FP.fmt, FP.check, FP.msg, FP.Score, FP.rng, FP.announce,
- * FP.events, FP.embedded, FP.ui (small DOM helpers), FP.ChallengeRunner,
+ * FP.events, FP.embedded, FP.ui (small DOM helpers), FP.svg (✓/✗ paths), FP.ChallengeRunner,
  * FP.CardDeck.
  *
  * Rules: defines nothing outside FP; safe in any load order and when loaded
@@ -14,7 +14,7 @@
 (function (root) {
   'use strict';
   var FP = root.FP = root.FP || {};
-  FP.version = '1.0.0';
+  FP.version = '1.1.0';
 
   var hasDoc = typeof document !== 'undefined' && !!document.documentElement;
 
@@ -68,24 +68,29 @@
   };
 
   // ---------------------------------------------------------------- format
-  function num(x, decimals) {
+  /** num(x, d=0[, {upTo: true}]). upTo: at most d decimals, trailing zeros
+   *  trimmed (echoing learner input: num(2.5, 3, {upTo: true}) -> "2.5"). */
+  function num(x, decimals, opts) {
     var d = decimals == null ? 0 : decimals;
     x = Number(x);
     if (!isFinite(x)) return '—';
     var s = Math.abs(x).toFixed(d);
+    if (opts && opts.upTo && s.indexOf('.') >= 0) s = s.replace(/0+$/, '').replace(/\.$/, '');
     var neg = x < 0 && Number(s) !== 0;
     var parts = s.split('.');
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     return (neg ? '-' : '') + parts.join('.');
   }
   function unit(u, defDec) {
-    return function (x, decimals) {
-      return num(x, decimals == null ? defDec : decimals) + u;
+    return function (x, decimals, opts) {
+      return num(x, decimals == null ? defDec : decimals, opts) + u;
     };
   }
   FP.fmt = {
     /** num(1234.5, 1) -> "1,234.5"; non-finite -> "—". */
     num: num,
+    /** numUpTo(2.50, 3) -> "2.5"; numUpTo(1200, 2) -> "1,200" (num with {upTo: true}). */
+    numUpTo: function (x, decimals) { return num(x, decimals, { upTo: true }); },
     cfm: unit(' CFM', 0),        // "2,400 CFM"
     inwg: unit(' in. wg', 2),    // "1.50 in. wg"
     bhp: unit(' BHP', 1),        // "9.5 BHP"
@@ -120,10 +125,12 @@
 
   // ---------------------------------------------------------------- messages
   // Exact wording from review §4.2.
+  // A closing ")" ends a sentence only after . ! or ? inside it:
+  // "CW UBD (CW 360)" -> "CW UBD (CW 360)."; "(see p. 4.)" is kept.
   function sentence(s) {
     s = s == null ? '' : String(s).trim();
     if (!s) return '';
-    return /[.!?)]$/.test(s) ? s : s + '.';
+    return /[.!?]\)?$/.test(s) ? s : s + '.';
   }
   function joinParts() {
     var out = [];
@@ -169,9 +176,13 @@
     firstAttempt: function (n, total) { return 'First-attempt score: ' + n + ' of ' + total; },
     /** "Mastery reached (M of N needed)." */
     masteryReached: function (m, total) { return 'Mastery reached (' + m + ' of ' + total + ' needed).'; },
-    /** "Mastery needs M of N on the first attempt. <review pointer>" */
-    masteryNeeds: function (m, total, pointer) {
-      return joinParts('Mastery needs ' + m + ' of ' + total + ' on the first attempt.', sentence(pointer));
+    /** "Mastery needs M of N on the first attempt. <review pointer>"; with
+     *  on = 'any': "Mastery needs M of N correct. <review pointer>". A pointer
+     *  ending in ":" keeps its colon (no ":."). */
+    masteryNeeds: function (m, total, pointer, on) {
+      var p = pointer == null ? '' : String(pointer).trim();
+      return joinParts('Mastery needs ' + m + ' of ' + total +
+        (on === 'any' ? ' correct.' : ' on the first attempt.'), /:$/.test(p) ? p : sentence(p));
     },
     /** "Explore mode unlocks after <last item>." */
     exploreLocked: function (last) { return 'Explore mode unlocks after ' + last + '.'; },
@@ -186,14 +197,17 @@
   };
 
   // ---------------------------------------------------------------- score
-  /** new FP.Score({total | items, mastery, noun}). Tracks resolved-correct
-   *  (any attempt) for the running line and first-attempt correct for the
-   *  summary and mastery. mastery defaults to total. */
+  /** new FP.Score({total | items, mastery, noun, masteryOn}). Tracks
+   *  resolved-correct (any attempt) for the running line and first-attempt
+   *  correct for the summary and mastery. mastery defaults to total.
+   *  masteryOn: 'first' (default, first-attempt correct counts) or 'any'
+   *  (correct on any attempt counts). */
   function Score(opts) {
     opts = opts || {};
     this.total = opts.items ? opts.items.length : (opts.total || 0);
     this.mastery = opts.mastery == null ? this.total : opts.mastery;
     this.noun = opts.noun || 'Items';
+    this.masteryOn = opts.masteryOn === 'any' ? 'any' : 'first';
     this.reset();
   }
   Score.prototype.reset = function () {
@@ -219,16 +233,21 @@
     return this.results.filter(function (r) { return !!r; }).length;
   };
   Score.prototype.done = function () { return this.answered() === this.total; };
-  Score.prototype.mastered = function () { return this.firstAttempt() >= this.mastery; };
+  /** The count mastery is judged on: firstAttempt() or, with masteryOn 'any', correct(). */
+  Score.prototype.masteryCount = function () {
+    return this.masteryOn === 'any' ? this.correct() : this.firstAttempt();
+  };
+  Score.prototype.mastered = function () { return this.masteryCount() >= this.mastery; };
   /** "<Noun> correct: n of N" */
   Score.prototype.label = function () { return FP.msg.score(this.noun, this.correct(), this.total); };
-  /** [first-attempt line, mastery line] */
+  /** [first-attempt line, mastery line]; with masteryOn 'any' the first line
+   *  is the score line ("<Noun> correct: n of N"). */
   Score.prototype.summaryLines = function (pointer) {
-    var f = this.firstAttempt();
+    var any = this.masteryOn === 'any';
     return [
-      FP.msg.firstAttempt(f, this.total),
+      any ? this.label() : FP.msg.firstAttempt(this.firstAttempt(), this.total),
       this.mastered() ? FP.msg.masteryReached(this.mastery, this.total)
-        : FP.msg.masteryNeeds(this.mastery, this.total, pointer)
+        : FP.msg.masteryNeeds(this.mastery, this.total, pointer, any ? 'any' : undefined)
     ];
   };
   FP.Score = Score;
@@ -369,6 +388,50 @@
     }
   };
 
+  // ---------------------------------------------------------------- SVG marks
+  // ✓ / ✗ typed into SVG <text> may render in a colour-emoji font (it ignores
+  // fill). Draw them as stroked paths instead.
+  function r2(v) { return Math.round(v * 100) / 100; }
+  FP.svg = {
+    /** Path data for a ✓ ('ok' | 'check') or ✗ ('bad' | 'cross') centred on
+     *  (cx, cy) inside a size × size box. Stroke it; do not fill it. */
+    markPath: function (kind, cx, cy, size) {
+      var h = (size == null ? 12 : size) / 2;
+      cx = cx || 0; cy = cy || 0;
+      if (kind === 'ok' || kind === 'check' || kind === 'correct') {
+        return 'M' + r2(cx - h) + ' ' + r2(cy + 0.05 * h) + ' L' + r2(cx - 0.3 * h) + ' ' + r2(cy + 0.7 * h) +
+          ' L' + r2(cx + h) + ' ' + r2(cy - 0.75 * h);
+      }
+      if (kind === 'bad' || kind === 'cross' || kind === 'incorrect') {
+        var k = 0.8 * h;
+        return 'M' + r2(cx - k) + ' ' + r2(cy - k) + ' L' + r2(cx + k) + ' ' + r2(cy + k) +
+          ' M' + r2(cx + k) + ' ' + r2(cy - k) + ' L' + r2(cx - k) + ' ' + r2(cy + k);
+      }
+      throw new Error('FP.svg.markPath: kind must be "ok" or "bad"');
+    },
+    /** An SVG <path> element for the mark: {x, y, size=12, color (token name or
+     *  CSS colour; default correct/incorrect), width (stroke, default size/6),
+     *  label (aria-label; default none, aria-hidden)}. */
+    mark: function (kind, o) {
+      o = o || {};
+      if (!hasDoc) return null;
+      var size = o.size == null ? 12 : o.size;
+      var ok = kind === 'ok' || kind === 'check' || kind === 'correct';
+      var col = o.color || (ok ? 'correct' : 'incorrect');
+      if (FP.TOKENS[String(col).replace(/^--fp-/, '')] !== undefined) col = FP.tok(col);
+      var e = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      e.setAttribute('d', FP.svg.markPath(kind, o.x || 0, o.y || 0, size));
+      e.setAttribute('fill', 'none');
+      e.setAttribute('stroke', col);
+      e.setAttribute('stroke-width', String(o.width || Math.max(1.5, size / 6)));
+      e.setAttribute('stroke-linecap', 'round');
+      e.setAttribute('stroke-linejoin', 'round');
+      if (o.label) { e.setAttribute('role', 'img'); e.setAttribute('aria-label', o.label); }
+      else e.setAttribute('aria-hidden', 'true');
+      return e;
+    }
+  };
+
   // ---------------------------------------------------------------- helpers
   function itemAnswerText(item) {
     if (item.answerText != null) return item.answerText;
@@ -378,12 +441,21 @@
     return item.answer != null ? String(item.answer) : '';
   }
   function resolveText(v, a, b) { return typeof v === 'function' ? v(a, b) : v; }
+  // opts.messages = {correct, retry, missed}: a string or fn(res) replacing the
+  // default FP.msg text (res.message holds the default when fn is called).
+  function customMessage(messages, res) {
+    if (!messages || messages[res.status] == null) return res.message;
+    var m = messages[res.status];
+    m = typeof m === 'function' ? m(res) : m;
+    return m == null ? res.message : String(m);
+  }
   function call(fn, arg) { if (typeof fn === 'function') fn(arg); }
 
   // ---------------------------------------------------------------- ChallengeRunner
   /** Pattern A/E state machine (no UI).
    *  new FP.ChallengeRunner({items, attempts: 2, tolerance: {rel: 0.02}, noun,
-   *    mastery, explore: true, check, id, onChange, onUnlockExplore, onComplete})
+   *    mastery, masteryOn: 'first', messages, explore: true, check, id,
+   *    onChange, onUnlockExplore, onComplete})
    *  item: {id, prompt, model (number) | answer (any), tolerance, unit, decimals,
    *         answerText, why, hint (string | fn(value, item))}. */
   function ChallengeRunner(opts) {
@@ -391,7 +463,8 @@
     this.items = this.opts.items || [];
     this.attempts = this.opts.attempts || 2;
     this.tolerance = this.opts.tolerance || { rel: 0.02 };
-    this.score = new Score({ total: this.items.length, mastery: this.opts.mastery, noun: this.opts.noun || 'Challenges' });
+    this.score = new Score({ total: this.items.length, mastery: this.opts.mastery, masteryOn: this.opts.masteryOn,
+      noun: this.opts.noun || 'Challenges' });
     this.restart(true);
   }
   ChallengeRunner.prototype.restart = function (silent) {
@@ -443,6 +516,7 @@
       res.message = FP.msg.missed(answer, resolveText(item.why, value, item));
     }
     res.attemptsLeft = res.status === 'retry' ? this.attempts - this.used : 0;
+    res.message = customMessage(this.opts.messages, res);
     if (res.status !== 'retry') {
       this.results[this.index] = ok ? 'correct' : 'missed';
       this.score.record(this.index, ok, this.used);
@@ -488,6 +562,7 @@
       firstAttempt: this.score.firstAttempt(),
       total: this.items.length,
       mastery: this.score.mastery,
+      masteryOn: this.score.masteryOn,
       mastered: this.score.mastered(),
       lines: this.score.summaryLines(pointer != null ? pointer : this.opts.reviewPointer),
       misses: this.items.map(function (it, i) { return { item: it, index: i, result: self.results[i] }; })
@@ -513,14 +588,18 @@
   // ---------------------------------------------------------------- CardDeck
   /** Pattern B/C/D/F/G state machine (no UI).
    *  new FP.CardDeck({cards, shuffle: true, seed, attempts: 1, retryMissed: true,
-   *    noun: 'Cards', mastery, check, label, id, onChange, onComplete})
+   *    noun: 'Cards', mastery, masteryOn: 'first', messages, practiceTry: false,
+   *    check, label, id, onChange, onComplete})
+   *  practiceTry: true allows one unscored try after a card locks as missed;
+   *  'always' also after a correct lock; a number sets the tries per card.
    *  card: {id, answer, answerText, why, hint, ...anything the sim draws}. */
   function CardDeck(opts) {
     this.opts = opts || {};
     this.cards = this.opts.cards || [];
     this.attempts = this.opts.attempts || 1;
     this.rng = this.opts.seed != null ? FP.rng.seeded(this.opts.seed) : Math.random;
-    this.score = new Score({ total: this.cards.length, mastery: this.opts.mastery, noun: this.opts.noun || 'Cards' });
+    this.score = new Score({ total: this.cards.length, mastery: this.opts.mastery, masteryOn: this.opts.masteryOn,
+      noun: this.opts.noun || 'Cards' });
     this.round = 0;
     this._start(this.cards.slice(), false);
     this.round = 1;
@@ -533,6 +612,7 @@
     this.practice = practice;          // a retry-missed round: not scored
     this.index = 0;
     this.used = 0;
+    this.practiceUsed = 0;             // unscored practice tries on the locked card
     this.phase = this.order.length ? 'choose' : 'summary';   // choose | feedback | summary
     this.placements = [];              // {card, chosen, correct, attempts}
     this.last = null;
@@ -547,6 +627,7 @@
   /** Place the face-up card. Returns {status: 'correct'|'retry'|'missed'|'ignored',
    *  kind, message, card, chosen, attempt, locked, practice}. */
   CardDeck.prototype.place = function (choice) {
+    if (this.phase === 'feedback' && this.canPractice()) return this._practiceTry(choice);
     if (this.phase !== 'choose') return { status: 'ignored', kind: 'info', message: '' };
     var card = this.card();
     this.used++;
@@ -562,6 +643,8 @@
     } else {
       res.status = 'missed'; res.kind = 'bad'; res.message = FP.msg.missed(this.answerText(card), why);
     }
+    res.attemptsLeft = res.status === 'retry' ? this.attempts - this.used : 0;
+    res.message = customMessage(this.opts.messages, res);
     if (this.practice) res.message = FP.msg.practice(res.message);
     res.locked = res.status !== 'retry';
     if (res.locked) {
@@ -578,10 +661,45 @@
     call(this.opts.onChange, this.state());
     return res;
   };
+  /** Practice tries allowed per locked card (0 when opts.practiceTry is off). */
+  CardDeck.prototype._practiceLimit = function () {
+    var p = this.opts.practiceTry;
+    if (!p) return 0;
+    return typeof p === 'number' ? Math.max(0, Math.floor(p)) : 1;
+  };
+  /** True while the locked card takes an unscored practice try (opts.practiceTry). */
+  CardDeck.prototype.canPractice = function () {
+    if (this.phase !== 'feedback' || this.practiceUsed >= this._practiceLimit()) return false;
+    var p = this.placements[this.placements.length - 1];
+    return !!p && (this.opts.practiceTry === 'always' || !p.correct);
+  };
+  // An unscored try on the locked card: emits answered with scored:false and
+  // never touches the score, the placements or the phase.
+  CardDeck.prototype._practiceTry = function (choice) {
+    var card = this.card();
+    this.practiceUsed++;
+    var ok = this.opts.check ? !!this.opts.check(card, choice) : choice === card.answer;
+    var why = resolveText(card.why, choice, card);
+    var res = { card: card, chosen: choice, attempt: this.used + this.practiceUsed, practice: this.practice,
+      practiceTry: true, scored: false, locked: true, attemptsLeft: 0 };
+    if (ok) { res.status = 'correct'; res.kind = 'ok'; res.message = FP.msg.correct(this.answerText(card), why); }
+    else { res.status = 'missed'; res.kind = 'bad'; res.message = FP.msg.missed(this.answerText(card), why); }
+    res.message = FP.msg.practice(customMessage(this.opts.messages, res));
+    var p = this.placements[this.placements.length - 1];
+    (p.practiceTries = p.practiceTries || []).push({ chosen: choice, correct: ok });
+    this.last = res;
+    FP.events.emit('answered', {
+      source: this.opts.id || 'deck', itemId: card.id != null ? card.id : this.cards.indexOf(card),
+      index: this.index, value: choice, correct: ok, attempt: res.attempt, final: true, scored: false
+    });
+    call(this.opts.onChange, this.state());
+    return res;
+  };
   /** Turn up the next card, or go to the summary after the last one. */
   CardDeck.prototype.next = function () {
     if (this.phase !== 'feedback') return false;
     this.used = 0;
+    this.practiceUsed = 0;
     this.last = null;
     if (this.index < this.order.length - 1) {
       this.index++;
@@ -612,6 +730,7 @@
       firstAttempt: this.score.firstAttempt(),
       total: this.cards.length,
       mastery: this.score.mastery,
+      masteryOn: this.score.masteryOn,
       mastered: this.score.mastered(),
       practice: this.practice,
       lines: this.score.summaryLines(pointer != null ? pointer : this.opts.reviewPointer),
@@ -644,7 +763,7 @@
       attempt: Math.min(this.used + 1, this.attempts), attempts: this.attempts,
       attemptLabel: FP.msg.attempt(Math.min(this.used + 1, this.attempts), this.attempts),
       isLast: this.index === this.order.length - 1, last: this.last,
-      scoreLabel: this.score.label(),
+      scoreLabel: this.score.label(), canPractice: this.canPractice(),
       results: this.order.map(function (c, i) {
         var p = this.placements[i];
         return p ? (p.correct ? 'correct' : 'missed') : null;

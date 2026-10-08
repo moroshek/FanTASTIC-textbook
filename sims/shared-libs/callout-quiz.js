@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: callout-quiz.js  (FP.CalloutQuiz)  version 1
+/* FanPedia MicroSim kit: callout-quiz.js  (FP.CalloutQuiz)  version 2
  *
  * Explore-then-quiz engine for labeled diagrams (review pattern D), extracted from
  * ch03-exploded-centrifugal-fan (build/choose/answer/showSummary).
@@ -23,7 +23,7 @@
 (function (G) {
   'use strict';
   var FP = G.FP = G.FP || {};
-  var VERSION = 1;
+  var VERSION = 2;
   if (FP.CalloutQuiz && FP.CalloutQuiz.version >= VERSION) {
     if (typeof module !== 'undefined' && module.exports) module.exports = FP.CalloutQuiz;
     return;
@@ -237,6 +237,12 @@
     return this.byId[id];
   };
   State.prototype.visitedCount = function () { return Object.keys(this.visited).length; };
+  // Clear the explore visits (and the open infobox). Never touches quiz results.
+  State.prototype.resetVisited = function () {
+    this.visited = {};
+    if (this.mode === 'explore' || this.mode === 'summary') this.selected = null;
+    return this;
+  };
 
   State.prototype.startQuiz = function () {
     if (!this.quizEnabled) return null;
@@ -391,6 +397,18 @@
     return !!this.revealed[id];
   };
 
+  // ---------- Keyboard Tab order (pure) ----------
+  // Elements in Tab order: the ids in tabOrder first (each id's elements in DOM
+  // order), then every other part element in DOM order. domEls: [{id, el}].
+  function tabSequence(domEls, tabOrder) {
+    var out = [], used = [];
+    (tabOrder || []).forEach(function (id) {
+      domEls.forEach(function (d) { if (d.id === id && used.indexOf(d.el) < 0) { out.push(d.el); used.push(d.el); } });
+    });
+    domEls.forEach(function (d) { if (used.indexOf(d.el) < 0) { out.push(d.el); used.push(d.el); } });
+    return out;
+  }
+
   // ---------- Message builder (pure) ----------
   function messageFor(res, state, msg) {
     msg = msg || MSG;
@@ -464,7 +482,7 @@
       '!.fp-cq-badge.wrong{color:' + v('--fp-incorrect') + ';border-color:' + v('--fp-incorrect') + ';border-style:dashed;}',
       '!.fp-cq-badge.answer{color:' + v('--fp-accent-text') + ';border-color:' + v('--fp-accent') + ';border-style:solid;}',
       '!.fp-cq-badge.target{color:' + v('--fp-primary') + ';border-color:' + v('--fp-primary') + ';}',
-      '!.fp-cq-badge.visited{min-width:16px;height:16px;font-size:11px;line-height:12px;color:' + v('--fp-text-muted') + ';border-color:' + v('--fp-border') + ';}',
+      '!.fp-cq-badge.visited{min-width:18px;height:18px;font-size:12px;line-height:14px;color:' + v('--fp-text-muted') + ';border-color:' + v('--fp-border') + ';}',
       '!.fp-cq-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}'
     ].map(function (rule) {
       // Zero specificity, so fanpedia-sim.css and the sim's own rules win. Rules marked
@@ -508,11 +526,15 @@
     injectStyle(doc);
 
     // Part and label elements
-    var partEls = {}, labelEls = {}, hover = null;
+    var partEls = {}, labelEls = {}, hover = null, domEls = [];
     Array.prototype.forEach.call(root.querySelectorAll('[data-part]'), function (e) {
       var id = e.getAttribute('data-part');
       if (!state.byId[id]) { console.warn('CalloutQuiz: element data-part="' + id + '" is not in the parts table; it is not clickable.'); return; }
       (partEls[id] = partEls[id] || []).push(e);
+      domEls.push({ id: id, el: e });
+    });
+    if (opts.tabOrder) opts.tabOrder.forEach(function (id) {
+      if (!state.byId[id]) console.warn('CalloutQuiz: tabOrder id "' + id + '" is not in the parts table; it is ignored.');
     });
     Array.prototype.forEach.call(root.querySelectorAll('[data-label-for]'), function (e) {
       var id = e.getAttribute('data-label-for');
@@ -571,7 +593,41 @@
         e._fpIndex = i + 1;
       });
     });
+    if (opts.tabOrder) wireTabOrder(tabSequence(domEls, opts.tabOrder));
     ui.btnExplore.addEventListener('click', function () { setMode('explore'); });
+
+    // opts.tabOrder: Tab / Shift+Tab walk the parts in this order instead of the
+    // SVG paint (DOM) order, without positive tabindex values. Entering the
+    // diagram from before it lands on the first part, from after it on the last.
+    function wireTabOrder(seq) {
+      var pointer = false;
+      var shown = function (e) { return !e.getClientRects || e.getClientRects().length > 0; };
+      var step = function (from, dir) {
+        for (var i = seq.indexOf(from) + dir; i >= 0 && i < seq.length; i += dir) if (shown(seq[i])) return seq[i];
+        return null;
+      };
+      seq.forEach(function (e) {
+        e.addEventListener('keydown', function (ev) {
+          if (ev.key !== 'Tab' || ev.altKey || ev.ctrlKey || ev.metaKey) return;
+          var t = step(e, ev.shiftKey ? -1 : 1);
+          if (t) { ev.preventDefault(); t.focus(); return; }
+          // Leaving the diagram: let the browser move on, skipping the other parts.
+          seq.forEach(function (o) { if (o !== e) o.setAttribute('tabindex', '-1'); });
+          setTimeout(function () { seq.forEach(function (o) { o.setAttribute('tabindex', '0'); }); }, 0);
+        });
+        e.addEventListener('mousedown', function () { pointer = true; setTimeout(function () { pointer = false; }, 0); });
+      });
+      root.addEventListener('focusin', function (ev) {
+        var t = ev.target, from = ev.relatedTarget;
+        if (pointer || seq.indexOf(t) < 0 || (from && root.contains(from))) return;
+        // Forward entry when the previous focus was before the root (or nowhere).
+        var forward = !from || !!(from.compareDocumentPosition(root) & 4);
+        var want = null, i;
+        if (forward) { for (i = 0; i < seq.length && !want; i++) if (shown(seq[i])) want = seq[i]; }
+        else { for (i = seq.length - 1; i >= 0 && !want; i--) if (shown(seq[i])) want = seq[i]; }
+        if (want && want !== t) want.focus();
+      });
+    }
     ui.btnQuiz.addEventListener('click', function () { setMode('quiz'); });
 
     function onKey(ev) {
@@ -861,7 +917,14 @@
       root.removeEventListener('transitionend', onResize);
     }
 
-    var api = { state: state, ui: ui, setMode: setMode, choose: choose, next: next, render: render, destroy: destroy, version: VERSION };
+    // Clear the explore visits ("Visited 0 of N", no ✓ badges) and re-render.
+    function resetVisited() {
+      state.resetVisited();
+      render();
+    }
+
+    var api = { state: state, ui: ui, setMode: setMode, choose: choose, next: next, render: render, destroy: destroy,
+      resetVisited: resetVisited, version: VERSION };
     render();
     return api;
   }
@@ -874,6 +937,7 @@
     message: messageFor,
     promptsFromParts: promptsFromParts,
     namePrompts: namePrompts,
+    tabSequence: tabSequence,
     seededShuffle: seededShuffle,
     css: css
   };

@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: fanpedia-p5.js (FP.p5)  v1.0.0
+/* FanPedia MicroSim kit: fanpedia-p5.js (FP.p5)  v1.1.0
  *
  * Layout, text and control helpers for p5.js 1.11.10 MicroSims. Extracted from
  * the six copies in ch01, ch04, ch11, ch13, ch20 and ch25 (see
@@ -114,8 +114,12 @@
 
   // Splits str into lines no wider than maxW. Honours '\n'. A single word wider
   // than maxW gets its own line (never split mid-word). `measure(s)` defaults to
-  // p5 textWidth at the current text size and style.
-  function wrapLines(str, maxW, measure) {
+  // p5 textWidth at the current text size and style. Runs of spaces collapse to
+  // one unless opts.keepSpaces (then they are kept inside a line; the run at a
+  // line break is dropped). opts may also be passed as the third argument.
+  function wrapLines(str, maxW, measure, opts) {
+    if (measure && typeof measure === 'object') { opts = measure; measure = opts.measure; }
+    if (opts && opts.keepSpaces) return wrapKeep(str, maxW, measureWith(measure));
     var m = measureWith(measure);
     var out = [];
     var paras = String(str == null ? '' : str).split('\n');
@@ -131,15 +135,37 @@
     return out;
   }
 
-  function countLines(str, maxW, measure) { return wrapLines(str, maxW, measure).length; }
+  function wrapKeep(str, maxW, m) {
+    var out = [];
+    var paras = String(str == null ? '' : str).split('\n');
+    for (var pi = 0; pi < paras.length; pi++) {
+      var parts = paras[pi].split(/( +)/);   // word, spaces, word, ...
+      var line = null;
+      for (var i = 0; i < parts.length; i += 2) {
+        var w = parts[i], sep = i > 0 ? parts[i - 1] : '';
+        if (line === null) { line = w; continue; }
+        var test = line + sep + w;
+        if (w === '' && i === parts.length - 1) {    // trailing spaces: keep only if they fit
+          if (m(test) <= maxW) line = test;
+          continue;
+        }
+        if (line.trim() !== '' && m(test) > maxW) { out.push(line); line = w; } else { line = test; }
+      }
+      out.push(line === null ? '' : line);
+    }
+    return out;
+  }
+
+  function countLines(str, maxW, measure, opts) { return wrapLines(str, maxW, measure, opts).length; }
 
   // Draws wrapped text with its first line's TOP at y (uses current textAlign
   // horizontally) and returns the y below the last line. opts.dryRun measures
-  // without drawing; opts.maxLines truncates with an ellipsis.
+  // without drawing; opts.maxLines truncates with an ellipsis; opts.keepSpaces
+  // keeps runs of spaces (default: collapsed to one).
   function wrapText(str, x, y, maxW, lineH, opts) {
     opts = opts || {};
     var p = P();
-    var lines = wrapLines(str, maxW, opts.measure);
+    var lines = wrapLines(str, maxW, opts.measure, { keepSpaces: !!opts.keepSpaces });
     if (opts.maxLines && lines.length > opts.maxLines) {
       lines = lines.slice(0, opts.maxLines);
       lines[lines.length - 1] = lines[lines.length - 1].replace(/\s*\S*$/, '') + '…';
@@ -246,23 +272,43 @@
   // Data label (.fp-note equivalent): 13px muted, bottom-left of the drawing
   // region (§4.2). Parts may be an array; they are joined with " · ".
   // Truncates with an ellipsis rather than overflowing the canvas.
+  // opts: {y (baseline of the LAST line), size=13, x=margin, maxW=width-2·margin,
+  // lines=1 (2 wraps onto a second line above y before truncating), lineH}.
+  // Returns the number of lines drawn.
   function note(text, opts) {
     opts = opts || {};
     var p = P();
     var s = Array.isArray(text) ? text.filter(Boolean).join(' · ') : String(text);
-    var maxW = p.width - 2 * L.margin;
+    var x = opts.x != null ? opts.x : L.margin;
+    var maxW = opts.maxW != null ? opts.maxW : p.width - 2 * L.margin;
+    var size = opts.size || L.noteSize;
+    var maxLines = Math.max(1, opts.lines || 1);
     p.push();
     p.noStroke();
     p.fill(tok('--fp-text-muted'));
     p.textStyle(p.NORMAL);
-    p.textSize(opts.size || L.noteSize);
-    if (p.textWidth(s) > maxW) {
-      while (s.length > 1 && p.textWidth(s + '…') > maxW) s = s.slice(0, -1);
-      s = s.replace(/\s+$/, '') + '…';
+    p.textSize(size);
+    var lines;
+    if (maxLines > 1 && p.textWidth(s) > maxW) {
+      var all = wrapLines(s, maxW);
+      lines = all.slice(0, maxLines);
+      if (all.length > maxLines) lines[maxLines - 1] = lines[maxLines - 1] + ' ' + all.slice(maxLines).join(' ');
+    } else {
+      lines = [s];
     }
+    for (var i = 0; i < lines.length; i++) lines[i] = ellipsize(lines[i], maxW);
+    var lineH = opts.lineH || Math.round(size * 1.3);
+    var y = opts.y != null ? opts.y : L.drawHeight - 6;
     p.textAlign(p.LEFT, p.BOTTOM);
-    p.text(s, L.margin, opts.y != null ? opts.y : L.drawHeight - 6);
+    for (var j = 0; j < lines.length; j++) p.text(lines[j], x, y - (lines.length - 1 - j) * lineH);
     p.pop();
+    return lines.length;
+  }
+  function ellipsize(s, maxW) {
+    var p = P();
+    if (p.textWidth(s) <= maxW) return s;
+    while (s.length > 1 && p.textWidth(s + '…') > maxW) s = s.slice(0, -1);
+    return s.replace(/\s+$/, '') + '…';
   }
 
   // ---- controls ----
@@ -319,11 +365,82 @@
   }
 
   // Enables or disables a p5 element or DOM control (disabled + aria-disabled).
-  function setEnabled(c, on) {
+  // opts.keepFocus: when the control being disabled has keyboard focus, move
+  // focus to the next enabled control (see keepFocus); true uses document order,
+  // an array of controls gives the order to search.
+  function setEnabled(c, on, opts) {
     var e = elt(c);
     if (!e) return;
+    var hadFocus = !on && opts && opts.keepFocus && typeof document !== 'undefined' && document.activeElement === e;
     e.disabled = !on;
     if (e.setAttribute) e.setAttribute('aria-disabled', on ? 'false' : 'true');
+    if (hadFocus) keepFocus(e, Array.isArray(opts.keepFocus) ? opts.keepFocus : null);
+  }
+
+  // ---- focus ----
+  var FOCUSABLE = 'button, input, select, textarea, a[href], [tabindex]';
+  // A control that can take keyboard focus now: not disabled, not hidden,
+  // not tabindex=-1, and rendered (has a layout box).
+  function canFocus(c) {
+    var e = elt(c);
+    if (!e || typeof e.focus !== 'function') return false;
+    if (e.disabled || e.hidden) return false;
+    if (e.getAttribute && (e.getAttribute('tabindex') === '-1' || e.getAttribute('aria-disabled') === 'true')) return false;
+    if (e.style && e.style.display === 'none') return false;
+    if (typeof e.getClientRects === 'function' && e.getClientRects().length === 0) return false;
+    return true;
+  }
+  // The first focusable control after `from` in `order` (wrapping), or null.
+  // order: array of p5 elements / DOM nodes; default: every focusable element
+  // in document order. Pure apart from the default order (tested).
+  function nextFocusable(from, order) {
+    var f = elt(from);
+    var list = order ? order.map(elt) : (typeof document !== 'undefined'
+      ? Array.prototype.slice.call(document.querySelectorAll(FOCUSABLE)) : []);
+    var n = list.length;
+    if (!n) return null;
+    var i0 = list.indexOf(f);
+    for (var k = 1; k <= n; k++) {
+      var cand = list[((i0 < 0 ? -1 : i0) + k + n) % n];
+      if (cand !== f && canFocus(cand)) return cand;
+    }
+    return null;
+  }
+  // Call after updating controls: if `had` (the element that had focus before
+  // the update, e.g. document.activeElement) can no longer take focus (it was
+  // just disabled or hidden), focus the next usable control. Returns the
+  // element focused, or null when nothing needed to move.
+  //   const had = document.activeElement; updateButtons(); FP.p5.keepFocus(had, [next, ...bins, restart]);
+  function keepFocus(had, order) {
+    var e = elt(had);
+    if (!e || canFocus(e)) return null;
+    if (typeof document !== 'undefined' && e !== document.activeElement &&
+        document.activeElement && document.activeElement !== document.body) return null;   // focus already moved on
+    var t = nextFocusable(e, order);
+    if (t) t.focus({ preventScroll: true });
+    return t;
+  }
+
+  // p5 createRadio parented to <main> with role=radiogroup and an aria-label.
+  // options: ['A', 'B'] or [[value, label], ...]. opts: {name, label, className,
+  // onChange(value), selected}. Arrow keys move within the group natively.
+  function radio(options, opts) {
+    opts = opts || {};
+    var p = P();
+    var r = p.createRadio(opts.name);
+    var main = typeof document !== 'undefined' ? document.querySelector('main') : null;
+    if (main) r.parent(main);
+    for (var i = 0; i < options.length; i++) {
+      var o = options[i];
+      if (Array.isArray(o)) r.option(o[0], o[1]); else r.option(o, o);
+    }
+    r.addClass('fp-radio');
+    if (opts.className) r.addClass(opts.className);
+    r.attribute('role', 'radiogroup');
+    if (opts.label) r.attribute('aria-label', opts.label);
+    if (opts.selected != null) r.selected(opts.selected);
+    if (opts.onChange) r.changed(function () { opts.onChange(r.value()); });
+    return r;
   }
 
   // ---- keyboard ----
@@ -408,7 +525,7 @@
   }
 
   var api = {
-    __version: '1.0.0',
+    __version: '1.1.0',
     use: use,
     tok: tok,
     layout: L,
@@ -429,6 +546,10 @@
     button: button,
     flowButtons: flowButtons,
     setEnabled: setEnabled,
+    canFocus: canFocus,
+    nextFocusable: nextFocusable,
+    keepFocus: keepFocus,
+    radio: radio,
     keys: { bind: bind, match: match, normKey: normKey },
     updateCanvasSize: updateCanvasSize,
     canvas: canvas
