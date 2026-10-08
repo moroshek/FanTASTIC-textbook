@@ -893,10 +893,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
+  <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audience
+        Learning Objective
       
     </span>
   </a>
@@ -904,10 +904,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
+  <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Learning Objective
+        Audience
       
     </span>
   </a>
@@ -948,10 +948,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-misconceptions-targeted" class="md-nav__link">
+  <a href="#common-misconceptions-addressed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Misconceptions Targeted
+        Common Misconceptions Addressed
       
     </span>
   </a>
@@ -1307,10 +1307,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
+  <a href="#learning-objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audience
+        Learning Objective
       
     </span>
   </a>
@@ -1318,10 +1318,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
+  <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Learning Objective
+        Audience
       
     </span>
   </a>
@@ -1362,10 +1362,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-misconceptions-targeted" class="md-nav__link">
+  <a href="#common-misconceptions-addressed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Misconceptions Targeted
+        Common Misconceptions Addressed
       
     </span>
   </a>
@@ -1470,9 +1470,11 @@
 <h1 id="fan-family-sorter">Fan Family Sorter<a class="headerlink" href="#fan-family-sorter" title="Permanent link">&para;</a></h1>
 <iframe src="main.html" height="612px" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Fan Family Sorter MicroSim Fullscreen</a>
-<br/>
-<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<p><a class="md-button md-button--primary" href="main.html">Run the Fan Family Sorter MicroSim Fullscreen</a></p>
+<p>This sketch is built on the FanPedia MicroSim kit. To run it in the
+<a href="https://editor.p5js.org/">p5.js editor</a>, add the <code>../shared-libs/</code> files it loads
+(<code>fanpedia-sim.css</code>, <code>fanpedia-core.js</code>, <code>fanpedia-p5.js</code>), or their published URLs, to the
+editor's <code>index.html</code> before pasting <code>ch04-fan-family-sorter.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>The sorter deals fifteen current Twin City Fan product lines, one card at a time, in a shuffled
 order. Each card shows a model designation and a short description of the fan: the wheel or
@@ -1491,15 +1493,21 @@ and the reason appears beneath it. Only first placements count toward the score.
 <ol>
 <li>Read the face-up card and press <strong>Centrifugal</strong>, <strong>Axial</strong> or <strong>Mixed flow</strong> (or the keys
    1, 2 or 3).</li>
-<li>Read the feedback under the card. A correct placement reads "Correct: <em>family</em>." and an
-   incorrect one reads "This one is <em>family</em>.", each followed by the reason.</li>
+<li>Read the feedback under the card. A correct placement reads "✓ Correct: <em>family</em>." and an
+   incorrect one reads "✗ This one is <em>family</em>.", each followed by the reason. Correct cards get
+   a solid green border and incorrect ones a dashed red border, so the verdict never depends on
+   color alone; screen readers hear the verdict too.</li>
 <li>Press <strong>Next card</strong> (or Enter) to turn up the next card. The placed card stays in its bin as a
    chip marked with a check or a cross.</li>
 <li>After the fifteenth card, press <strong>Show summary</strong>. The summary shows the score as
-   "Correct: <em>n</em> of 15", a per-family tally and every misplaced card with its correct family and
-   reason. Use <strong>More misses</strong> to page through a long list.</li>
+   "Correct: <em>n</em> of 15", the mastery line, a per-family tally and every misplaced card with its
+   correct family and reason. Use <strong>More misses</strong> to page through a long list.</li>
 <li>Press <strong>Sort again</strong> to reshuffle all fifteen cards and reset the score.</li>
 </ol>
+<p><strong>Keyboard:</strong> keys 1, 2 and 3 place the card in Centrifugal, Axial or Mixed flow; Enter (or N)
+turns up the next card. Tab reaches every button, and Enter or Space presses the focused one.</p>
+<p><strong>Data label:</strong> "Source: Twin City Fan product catalog, tcf.com, retrieved 2026-10-08", at the
+bottom left of the drawing, with the keyboard hint when it fits.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://moroshek.github.io/FanTASTIC-textbook/sims/ch04-fan-family-sorter/main.html"</span>
@@ -1508,14 +1516,14 @@ and the reason appears beneath it. Only first placements count toward the score.
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>The learner will differentiate fifteen Twin City Fan product lines into the centrifugal, axial
+and mixed flow families from a short description of each, correctly placing at least 13 of 15 on
+the first placement (Bloom: Analyze, verb: differentiate).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>New application engineers, inside and outside sales staff, manufacturer's representatives,
 distributors and plant staff who need to identify fans by family. This is an adult
 professional-development activity.</p>
-<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>Differentiate fifteen Twin City Fan product lines into the centrifugal, axial and mixed flow
-families from a short description of each, correctly placing at least 13 of 15 on the first
-placement (Bloom's Taxonomy: Analyze).</p>
 <h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
 <p>10 to 15 minutes for one sort, plus 5 minutes of discussion.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
@@ -1536,7 +1544,7 @@ exhaust fan.</p>
 <li><strong>Second sort</strong> (optional): Learners who scored below 13 review the chapter sections on
    tubular housings and power roof ventilators, then press <strong>Sort again</strong>.</li>
 </ol>
-<h3 id="common-misconceptions-targeted">Common Misconceptions Targeted<a class="headerlink" href="#common-misconceptions-targeted" title="Permanent link">&para;</a></h3>
+<h3 id="common-misconceptions-addressed">Common Misconceptions Addressed<a class="headerlink" href="#common-misconceptions-addressed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Any fan in a tubular housing is axial (TSL, QSL and QCLB are not).</li>
 <li>Any roof fan, or any power roof ventilator, is centrifugal (TUD is axial).</li>
@@ -1557,12 +1565,11 @@ exhaust fan.</p>
 <li>Twin City Fan, current product catalog pages on <a href="https://www.tcf.com/">tcf.com</a> (products:
    centrifugal fans, plenum fans, plug fans, inline centrifugal fans, axial fans, wall mounted
    fans, roof ventilators, centrifugal roof and wall exhausters, mixed flow fans, laboratory and
-   fume exhaust fans), retrieved 2026-10-08. Source of the model designations and their family
+   fume exhaust fans), retrieved 2026-10-08 - source of the model designations and their family
    groupings.</li>
 <li>Twin City Fan, <a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf"><em>FanPedia: The Fan &amp; Blower Encyclopedia</em></a>
-   (2021), pp. 4-8, 17 and 32. Source of the housing and impeller descriptions.</li>
-<li><a href="../../chapters/04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4: Centrifugal, Axial and Mixed Flow Fans</a>
-   in this book.</li>
+   (2021), pp. 4-8, 17 and 32 - source of the housing and impeller descriptions.</li>
+<li><a href="../../chapters/04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4: Centrifugal, Axial and Mixed Flow Fans</a> - the chapter this sorter closes.</li>
 </ol>
 
 

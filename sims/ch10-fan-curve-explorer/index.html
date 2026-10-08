@@ -857,6 +857,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -872,17 +883,6 @@
     <span class="md-ellipsis">
       
         Duration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Objective
       
     </span>
   </a>
@@ -1307,6 +1307,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1322,17 +1333,6 @@
     <span class="md-ellipsis">
       
         Duration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Objective
       
     </span>
   </a>
@@ -1468,20 +1468,22 @@
 
 
 <h1 id="fan-curve-explorer">Fan Curve Explorer<a class="headerlink" href="#fan-curve-explorer" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" height="664px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="802px" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Fan Curve Explorer MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>Two illustrative centrifugal fans, labeled Curve A and Curve B, are drawn at one fixed speed each
-and at standard air. The top plot shows fan static pressure (FSP, in. wg) against airflow (CFM);
-the bottom plot shows brake horsepower (BHP) against the same airflow axis. Hovering any data
-point shows its airflow, fan static pressure and BHP.</p>
+and at standard air. The top plot shows fan static pressure (in. wg) against airflow (CFM); the
+bottom plot shows brake horsepower (BHP) against the same airflow axis. Hovering any data point
+shows its airflow, fan static pressure and BHP.</p>
 <p>Six questions, asked in a fixed order, ask the learner to decide whether four duty points sit in
 the stall region, which fan has a non-overloading power curve, and how large a motor Curve A
-needs so that it cannot be overloaded at this speed. Each answer marks the point or curve it is
-about (green ring for a correct answer, red ring for an incorrect one) and shows the reason. After
-the last question the stall region of each fan is shaded so the two can be compared, and the
-score is shown.</p>
+needs so that it cannot be overloaded at this speed. Each question has one scored attempt. Each
+answer marks the point or curve it is about on the chart: a round marker with a solid green ring
+and ✓ for a correct answer, a square marker with a red ring and ✗ for an incorrect one. The
+feedback shows the reason, and after a miss it also shows the correct answer. After the last
+question the stall region of each fan is shaded so the two can be compared, and the score is
+shown as "n of 6 correct". Mastery is 5 of 6 on the first attempt.</p>
 <p>Both curves are <strong>illustrative</strong>. They are shaped after typical backward inclined (Curve A) and
 forward curved (Curve B) fan behavior described in standard fan engineering texts and are not
 Twin City Fan published ratings. Curve A is the same illustrative fan curve tabulated in
@@ -1493,25 +1495,32 @@ Twin City Fan published ratings. Curve A is the same illustrative fan curve tabu
 <li>Answer each question by pressing <strong>Yes</strong> / <strong>No</strong> or <strong>Curve A</strong> / <strong>Curve B</strong>. Question 6 needs
    a typed number of BHP; press <strong>Submit</strong> or Enter. Each question has one attempt.</li>
 <li>Read the feedback, look at the point the sim just marked, then press <strong>Next question</strong>.</li>
-<li>After question 6, press <strong>See score</strong>. The score reads "n of 6 correct", with "Mastery reached"
-   at 5 or more. <strong>Start over</strong> clears the marks and starts again at question 1.</li>
+<li>After question 6, press <strong>See score</strong>. The score reads "n of 6 correct", followed by
+   "Mastery reached" at 5 or more, or by what to review. <strong>Start over</strong> clears the marks and
+   starts again at question 1; it is available at any time.</li>
 </ol>
+<p><strong>Keyboard:</strong> keys 1 and 2 choose the first or second answer; Enter submits a typed value, goes
+to the next question, and starts over from the score screen. Tab and Space or Enter work on every
+button.</p>
+<p><strong>Data label:</strong> "Illustrative data, standard air, one fixed speed per fan", shown at the bottom
+left of the chart.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://moroshek.github.io/FanTASTIC-textbook/sims/ch10-fan-curve-explorer/main.html"</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"664px"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"802px"</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>The learner will differentiate stable from stall-region operating points, and overloading from
+non-overloading power curves, by reading the pressure and BHP curves of two illustrative fans
+(Bloom: Analyze, verb: differentiate).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>New application engineers, inside and outside sales staff, manufacturer's representatives and
 specifying engineers who read fan curves to judge a selection.</p>
 <h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
 <p>10-15 minutes</p>
-<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>Differentiate stable from stall-region operating points, and overloading from non-overloading
-power curves, by reading the pressure and BHP curves of two illustrative fans (Bloom: Analyze).</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <p>Fan curve, fan static pressure, brake horsepower, stall region, overloading power curve and
 non-overloading power curve, as defined in the section "The Fan Curve" of Chapter 10.</p>
@@ -1535,8 +1544,12 @@ non-overloading power curve, as defined in the section "The Fan Curve" of Chapte
 <li>The highest-pressure point is the best place to select a fan (debrief and final summary).</li>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
-<p>Mastery is 5 of 6 correct on the first attempt. Hovering to read values is exploration and does
-not count as evidence. Question 6 accepts any value within 0.1 of 9.5 BHP.</p>
+<ul>
+<li>The running score reads "Questions correct: n of 6"; the final score reads "n of 6 correct".
+  Mastery is 5 of 6 correct on the first attempt (one scored attempt per question).</li>
+<li>Hovering to read values is exploration and does not count as evidence. Question 6 accepts any
+  value within 0.1 of 9.5 BHP.</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="../../chapters/10-fan-performance-curves-and-ratings/">Chapter 10: Fan Performance, Curves and Ratings</a> -

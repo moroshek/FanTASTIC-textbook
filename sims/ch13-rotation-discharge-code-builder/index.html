@@ -1524,9 +1524,14 @@
 
 
 <h1 id="rotation-and-discharge-code-builder">Rotation and Discharge Code Builder<a class="headerlink" href="#rotation-and-discharge-code-builder" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" height="559px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="632px" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Rotation and Discharge Code Builder MicroSim Fullscreen</a></p>
+<p>This p5.js sketch is built on the shared FanPedia MicroSim kit. To run it in the
+p5.js editor, add the kit files (<code>fanpedia-sim.css</code>, <code>fanpedia-core.js</code>,
+<code>fanpedia-p5.js</code>, <code>fan-codes.js</code> and <code>fan-drawings.js</code> from
+<a href="https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/fanpedia-core.js"><code>../shared-libs/</code></a>,
+or their published URLs) to the editor's <code>index.html</code> before pasting the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>A centrifugal fan's rotation and discharge code tells the factory which way the
 wheel turns and where the outlet points, both as seen by an observer on the
@@ -1538,9 +1543,12 @@ and one of the eight discharge letter codes, or "Not offered", and submit.</p>
 the outlet in the answer's direction, a rotation arrow, a small dial showing
 the angle measured from straight up in the direction of rotation, and both code
 forms. The first submission on each card is scored; one unscored retry follows.
-The running score reads "Codes correct: n of 8", and mastery is 7 of 8 on the
-first attempt.</p>
-<p>After card 8, free practice unlocks. Choose SWSI or DWDI, a rotation, and a
+A correct submission reads "✓ Correct: <answer>."; an incorrect one shows the
+card's reason followed by the correct answer. The running score reads "Codes
+correct: n of 8", and mastery is 7 of 8 on the first attempt.</p>
+<p>After card 8, free practice (the sim's Explore mode, never scored) unlocks
+and the summary shows your first-attempt score, the mastery line and any
+missed cards. Choose SWSI or DWDI, a rotation, and a
 discharge angle from 45° to 360° in 45° steps, and the outline and code update
 at once. On a DWDI fan, 225° (Bottom Angular Down) shows "Not offered on DWDI".</p>
 <p>The job cards are illustrative scenarios. Discharge names, letter codes, angle
@@ -1613,22 +1621,25 @@ counterclockwise for CCW.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Read the job card: fan type, rotation and outlet direction, all from the drive side.</li>
-<li>Choose a rotation and a discharge (or "Not offered") under <strong>Your code</strong>, then press <strong>Submit Code</strong>.</li>
-<li>Read the feedback and study the drawn housing. Use <strong>Retry (unscored)</strong> if you want another try.</li>
-<li>Press <strong>Next Card</strong>. After card 8, press <strong>Start Free Practice</strong> and use the <strong>Free practice</strong> controls.</li>
+<li>Choose a rotation and a discharge (or "Not offered") under <strong>Your code</strong>, then press <strong>Submit code</strong>.</li>
+<li>Read the feedback and study the drawn housing. Use <strong>Retry (unscored)</strong> if you want another try; it never changes the score.</li>
+<li>Press <strong>Next card</strong>. After card 8, press <strong>Start free practice</strong> (or change any <strong>Free practice</strong> control), read the summary, and explore fan type, rotation and angle.</li>
+<li>Press <strong>Start over</strong> at any time to clear the score and return to card 1.</li>
 </ol>
+<p><strong>Keyboard:</strong> Tab moves between the controls and the arrow keys change a selection. Enter submits your code, or goes to the next card once the feedback is shown. Enter or Space also presses a focused button.</p>
+<p><strong>Data label:</strong> "Job cards are illustrative · Source: FanPedia PDF pp. 46–49", shown at the bottom left of the drawing.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://moroshek.github.io/FanTASTIC-textbook/sims/ch13-rotation-discharge-code-builder/main.html"</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"559px"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"632px"</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>Learners will apply the drive-side rotation and discharge-angle conventions to
-write the correct rotation and discharge code, in letter form and angle form,
-for a described centrifugal fan (Bloom's level: Apply).</p>
+<p>The learner will apply the drive-side rotation and discharge-angle conventions
+to write the correct rotation and discharge code, in letter form and angle
+form, for a described centrifugal fan (Bloom: Apply, verb: apply).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Fan sales, application and order-entry staff, and engineering students who
 specify or order centrifugal fans.</p>
@@ -1658,8 +1669,11 @@ and DWDI discharge limits, all covered in
 <li>Every discharge is available on every centrifugal fan, including DWDI.</li>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
-<p>Mastery is 7 of 8 job cards correct on the first (scored) attempt. Free
-practice is exploration and is not scored.</p>
+<ul>
+<li>First-attempt score shown as "Codes correct: n of 8"; mastery is 7 of 8 on the first attempt.</li>
+<li>Free practice is exploration and is not scored.</li>
+<li>Ask learners to explain card 6: why is "Not offered" the right code?</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Twin City Fan &amp; Blower. <em>FanPedia: The Fan &amp; Blower Encyclopedia</em>, pp. 46–49 (discharge positions, rotation and DWDI discharges). <a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">PDF</a></li>

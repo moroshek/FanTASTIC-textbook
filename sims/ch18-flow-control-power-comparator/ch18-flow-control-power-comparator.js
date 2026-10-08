@@ -1,189 +1,82 @@
-// Flow Control Power Comparator - Chart.js
+// Flow Control Power Comparator - Chart.js on the FanPedia kit
 // Three prediction challenges: rank outlet damper, variable inlet vanes and speed
 // control by shaft power at a stated airflow, then estimate the best method's saving.
-// All three series are illustrative (speed control = ideal cube law).
-// CANVAS_HEIGHT: 710
-document.addEventListener('DOMContentLoaded', function () {
+// All three series are illustrative (speed control = ideal cube law, FP.models).
+// CANVAS_HEIGHT: 940
+(function () {
   'use strict';
 
   // ---------- Content (from the chapter specification) ----------
-  const TABLE = [
-    // airflow, damper, vanes
-    [50, 74, 52],
-    [60, 80, 59],
-    [70, 86, 67],
-    [80, 91, 77],
-    [90, 96, 88],
-    [100, 100, 100]
-  ];
+  const AIR = [50, 60, 70, 80, 90, 100];          // airflow, % of design
+  const DAMPER = [74, 80, 86, 91, 96, 100];       // outlet damper, % power
+  const VANES = [52, 59, 67, 77, 88, 100];        // variable inlet vanes, % power
 
+  // Series order fixes the kit series style (colour, dash, point shape).
   const METHODS = [
-    { key: 'damper', name: 'Outlet damper', color: '#c0392b', dash: [] },
-    { key: 'vanes', name: 'Variable inlet vanes', color: '#d68910', dash: [7, 4] },
-    { key: 'speed', name: 'Speed control', color: '#1f6fb2', dash: [2, 3] }
+    { key: 'damper', name: 'Outlet damper', short: 'Damper' },
+    { key: 'vanes', name: 'Variable inlet vanes', short: 'Vanes' },
+    { key: 'speed', name: 'Speed control', short: 'Speed' }
   ];
-
-  const CORRECT_ORDER = ['speed', 'vanes', 'damper']; // lowest to highest power
+  const CORRECT_ORDER = ['speed', 'vanes', 'damper'];   // lowest to highest power
   const CORRECT_RANK_TEXT = 'Speed control, inlet vanes, outlet damper';
+  const TOLERANCE = { abs: 3 };                         // percentage points
 
-  const CHALLENGES = [
-    {
-      airflow: 80,
-      saving: 39.8,
-      wrong: 'The damper still drives the fan at full speed and burns most of the power; ' +
-        'speed control at 80% flow needs about 0.8³ = 51% power.'
-    },
-    {
-      airflow: 70,
-      saving: 51.7,
-      wrong: 'At 70% flow the damper saves only 14% of power; speed control needs about 0.7³ = 34%.'
-    },
-    {
-      airflow: 50,
-      saving: 61.5,
-      wrong: 'Halving the flow with a damper still leaves about three-quarters of the power; ' +
-        'halving the speed cuts power to one-eighth.'
-    }
-  ];
-  const TOLERANCE = 3;      // percentage points
-  const MAX_ATTEMPTS = 2;
-
-  // ---------- Rules ----------
-  function round1(v) { return Math.round(v * 10) / 10; }
-
-  function speedPower(q) { return round1(100 * Math.pow(q / 100, 3)); }
-
-  function interp(q, col) {
-    for (let i = 0; i < TABLE.length - 1; i++) {
-      const a = TABLE[i], b = TABLE[i + 1];
-      if (q >= a[0] && q <= b[0]) {
-        const t = (q - a[0]) / (b[0] - a[0]);
-        return round1(a[col] + t * (b[col] - a[col]));
-      }
-    }
-    return TABLE[TABLE.length - 1][col];
-  }
-
-  function powerOf(key, q) {
-    if (key === 'damper') return interp(q, 1);
-    if (key === 'vanes') return interp(q, 2);
-    return speedPower(q);
-  }
-
-  function methodName(key) {
-    return METHODS.find(function (m) { return m.key === key; }).name;
-  }
-
-  // ---------- State ----------
-  const state = {
-    index: 0,          // current challenge
-    attempts: 0,
-    resolved: false,   // current challenge finished (correct or missed)
-    correct: 0,
-    finished: false,   // all three done; selector unlocked
-    selected: 70       // airflow selector default
-  };
-
-  // ---------- DOM ----------
-  const main = document.querySelector('main');
-  const style = document.createElement('style');
-  style.textContent = `
-    .fc-wrap { box-sizing: border-box; width: 100%; padding: 8px 12px; background: aliceblue;
-      border: 1px solid silver; font-size: 14px; color: #222; }
-    .fc-title { font-size: 17px; font-weight: bold; margin: 0 0 6px 0; }
-    .fc-panel { background: white; border: 1px solid #ccd; border-radius: 6px; padding: 8px 10px; }
-    .fc-q { font-weight: bold; margin-bottom: 6px; }
-    .fc-row { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; margin-bottom: 6px; }
-    .fc-row label { white-space: nowrap; }
-    .fc-row select, .fc-row input[type=number] { font-size: 13px; padding: 2px 4px; }
-    .fc-row select { max-width: 160px; }
-    .fc-row input[type=number] { width: 70px; }
-    .fc-row button { font-size: 13px; padding: 4px 12px; cursor: pointer; }
-    .fc-feedback { min-height: 38px; padding: 4px 6px; border-radius: 4px; }
-    .fc-ok { background: #e3f4e5; color: #1b5e20; }
-    .fc-bad { background: #fdecea; color: #8e1b10; }
-    .fc-info { background: #eef2f7; color: #333; }
-    .fc-status { display: flex; justify-content: space-between; font-size: 13px; color: #444; margin-top: 4px; }
-    .fc-chart { position: relative; height: 300px; margin-top: 8px; background: white;
-      border: 1px solid #ccd; border-radius: 6px; }
-    .fc-selector { margin-top: 8px; }
-    .fc-selector input[type=range] { width: 220px; vertical-align: middle; }
-    .fc-readout { font-size: 13px; min-height: 36px; }
-    .fc-locked { color: #888; }
-    .fc-foot { font-size: 12px; color: #555; margin-top: 4px; }
-  `;
-  document.head.appendChild(style);
-
-  const wrap = document.createElement('div');
-  wrap.className = 'fc-wrap';
-  wrap.innerHTML = `
-    <div class="fc-title">Flow Control Power Comparator</div>
-    <div class="fc-panel">
-      <div class="fc-q" id="fc-question"></div>
-      <div class="fc-row">
-        <span>Rank by power:</span>
-        <label>Lowest <select id="fc-r0"></select></label>
-        <label>Middle <select id="fc-r1"></select></label>
-        <label>Highest <select id="fc-r2"></select></label>
-      </div>
-      <div class="fc-row">
-        <label>Best method's saving vs. damper:
-          <input type="number" id="fc-saving" step="0.1" min="0" max="100"> percentage points</label>
-        <button id="fc-check">Check</button>
-        <button id="fc-next" disabled>Next challenge</button>
-      </div>
-      <div class="fc-feedback fc-info" id="fc-feedback" aria-live="polite"></div>
-      <div class="fc-status"><span id="fc-progress"></span><span id="fc-score"></span></div>
-    </div>
-    <div class="fc-chart"><canvas id="fc-canvas" aria-label="Shaft power versus airflow for three flow-control methods"></canvas></div>
-    <div class="fc-selector">
-      <div class="fc-row">
-        <label id="fc-sel-label" class="fc-locked">Airflow selector:
-          <input type="range" id="fc-airflow" min="50" max="100" step="5" value="70" disabled>
-          <b id="fc-airflow-val">70%</b></label>
-      </div>
-      <div class="fc-readout" id="fc-readout"></div>
-      <div class="fc-foot">All three curves are illustrative. Speed control is the ideal fan-law cube
-        relation; real speed control has small drive losses, and a system with fixed static pressure
-        saves less than the ideal cube value.</div>
-    </div>
-  `;
-  main.appendChild(wrap);
-
-  const $ = function (id) { return document.getElementById(id); };
-  const rankSelects = [$('fc-r0'), $('fc-r1'), $('fc-r2')];
-  rankSelects.forEach(function (sel) {
-    const blank = document.createElement('option');
-    blank.value = '';
-    blank.textContent = '-- choose --';
-    sel.appendChild(blank);
-    METHODS.forEach(function (m) {
-      const o = document.createElement('option');
-      o.value = m.key;
-      o.textContent = m.name;
-      sel.appendChild(o);
+  const ITEMS = [
+    { airflow: 80, saving: 39.8,
+      wrongText: 'The damper still drives the fan at full speed and burns most of the power; ' +
+        'speed control at 80% flow needs about 0.8³ = 51% power.' },
+    { airflow: 70, saving: 51.7,
+      wrongText: 'At 70% flow the damper saves only 14% of power; speed control needs about 0.7³ = 34%.' },
+    { airflow: 50, saving: 61.5,
+      wrongText: 'Halving the flow with a damper still leaves about three-quarters of the power; ' +
+        'halving the speed cuts power to one-eighth.' }
+  ].map(function (c, i) {
+    return Object.assign(c, {
+      id: 'challenge-' + (i + 1) + '-' + c.airflow,
+      prompt: 'Challenge ' + (i + 1) + ': At ' + c.airflow + '% airflow, which method uses the least power, ' +
+        'and how much does it save compared with an outlet damper?',
+      answerText: CORRECT_RANK_TEXT + '; saving ' + FP.fmt.num(c.saving, 1) + ' percentage points',
+      check: isRight,
+      // Spec feedback: correct shows only the answer; wrong shows the challenge's text.
+      why: function (v, item) { return isRight(v, item) ? '' : item.wrongText; }
     });
   });
 
+  // ---------- Rules ----------
+  const r1 = function (v) { return FP.models.round(v, 1); };
+  function powerOf(key, q) {
+    if (key === 'damper') return r1(FP.curves.interp(AIR, DAMPER, q));
+    if (key === 'vanes') return r1(FP.curves.interp(AIR, VANES, q));
+    // Fan laws on a system curve through zero: speed ratio = airflow ratio.
+    return r1(100 * FP.models.fanLawRatios(q / 100).bhp);
+  }
+  function isRight(v, item) {
+    return v.order.every(function (k, i) { return k === CORRECT_ORDER[i]; }) &&
+      FP.check.numeric(v.saving, item.saving, TOLERANCE);
+  }
+  function methodName(key) { return METHODS.find(function (m) { return m.key === key; }).name; }
+  const pct = function (v) { return FP.fmt.num(v, 1) + '%'; };
+
+  // ---------- DOM ----------
+  const $ = function (id) { return document.getElementById(id); };
+  const rankSelects = [$('r0'), $('r1'), $('r2')];
+  rankSelects.forEach(function (sel) {
+    sel.add(new Option('-- choose --', ''));
+    METHODS.forEach(function (m) { sel.add(new Option(m.name, m.key)); });
+  });
+
   // ---------- Chart ----------
+  FP.chart.chartjs(Chart);
   const AIRFLOWS = [];
   for (let q = 50; q <= 100; q += 5) AIRFLOWS.push(q);
 
-  const curveSets = METHODS.map(function (m) {
-    return {
+  const curveSets = METHODS.map(function (m, i) {
+    return FP.chart.chartjsDataset(i, {
       label: m.name + ' (illustrative)',
       methodKey: m.key,
       data: AIRFLOWS.map(function (q) { return { x: q, y: powerOf(m.key, q) }; }),
-      borderColor: m.color,
-      backgroundColor: m.color,
-      borderDash: m.dash,
-      borderWidth: 2.5,
-      pointRadius: 3,
-      pointHoverRadius: 6,
-      tension: 0,
-      cubicInterpolationMode: m.key === 'speed' ? 'monotone' : 'default',
       hidden: true
-    };
+    });
   });
 
   const markerSet = {
@@ -191,58 +84,55 @@ document.addEventListener('DOMContentLoaded', function () {
     isMarker: true,
     data: [],
     showLine: false,
-    pointStyle: 'circle',
     pointRadius: 7,
     pointHoverRadius: 8,
-    pointBackgroundColor: [],
-    pointBorderColor: '#222',
+    pointStyle: METHODS.map(function (m, i) { return FP.chart.series(i).pointStyle; }),
+    pointBackgroundColor: METHODS.map(function (m, i) { return FP.chart.series(i).color; }),
+    pointBorderColor: FP.tok('text'),
     pointBorderWidth: 2,
     hidden: true
   };
 
-  // Draws a vertical guide at the marked airflow and value labels beside marker points.
+  // Vertical guide at the marked airflow, plus a named value label beside each
+  // marker (dark text, so the method name, not the colour, carries the meaning).
   const markerLabels = {
-    id: 'markerLabels',
+    id: 'fcpcMarkerLabels',
     afterDatasetsDraw: function (chart) {
       const mIdx = chart.data.datasets.length - 1;
       const meta = chart.getDatasetMeta(mIdx);
       if (!chart.isDatasetVisible(mIdx) || !meta.data.length) return;
-      const ctx = chart.ctx;
-      const xs = chart.scales.x;
-      const area = chart.chartArea;
-      const px = xs.getPixelForValue(chart.data.datasets[mIdx].data[0].x);
+      const ctx = chart.ctx, area = chart.chartArea, ds = chart.data.datasets[mIdx];
+      const px = chart.scales.x.getPixelForValue(ds.data[0].x);
       ctx.save();
-      ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+      ctx.strokeStyle = FP.tok('text-muted');
       ctx.setLineDash([4, 4]);
-      ctx.beginPath();
-      ctx.moveTo(px, area.top);
-      ctx.lineTo(px, area.bottom);
-      ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(px, area.top); ctx.lineTo(px, area.bottom); ctx.stroke();
       ctx.setLineDash([]);
-      ctx.font = 'bold 12px Arial';
+      ctx.font = 'bold 12px ' + FP.FONT;
       ctx.textBaseline = 'middle';
-      // Place labels on the side with more room and avoid overlap.
-      const leftSide = px > area.left + (area.right - area.left) * 0.75;
-      const pts = meta.data.map(function (el, i) {
-        return { y: el.y, x: el.x, d: chart.data.datasets[mIdx].data[i] };
-      }).sort(function (a, b) { return a.y - b.y; });
+      const leftSide = px > area.left + (area.right - area.left) * 0.6;
+      const pts = meta.data.map(function (el, i) { return { x: el.x, y: el.y, d: ds.data[i] }; })
+        .sort(function (a, b) { return a.y - b.y; });
       let lastY = -Infinity;
       pts.forEach(function (p) {
-        let ly = Math.max(p.y, lastY + 15);
+        const ly = Math.max(p.y, lastY + 17);
         lastY = ly;
-        const txt = p.d.y.toFixed(1) + '%';
+        const txt = p.d.short + ' ' + pct(p.d.y);
         const w = ctx.measureText(txt).width;
-        const lx = leftSide ? p.x - 12 - w : p.x + 12;
-        ctx.fillStyle = 'rgba(255,255,255,0.85)';
-        ctx.fillRect(lx - 2, ly - 8, w + 4, 16);
-        ctx.fillStyle = p.d.color;
+        const lx = leftSide ? p.x - 14 - w : p.x + 14;
+        ctx.fillStyle = 'rgba(255,255,255,0.92)';
+        ctx.fillRect(lx - 3, ly - 8, w + 6, 16);
+        ctx.strokeStyle = p.d.color;
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(lx - 3, ly - 8, w + 6, 16);
+        ctx.fillStyle = FP.tok('text');
         ctx.fillText(txt, lx, ly);
       });
       ctx.restore();
     }
   };
 
-  const chart = new Chart($('fc-canvas'), {
+  const chart = new Chart($('chart'), {
     type: 'line',
     data: { datasets: curveSets.concat([markerSet]) },
     options: {
@@ -251,32 +141,29 @@ document.addEventListener('DOMContentLoaded', function () {
       animation: { duration: 400 },
       interaction: { mode: 'nearest', intersect: true },
       scales: {
-        x: {
-          type: 'linear', min: 50, max: 100,
-          ticks: { stepSize: 10, callback: function (v) { return v + '%'; } },
-          title: { display: true, text: 'Airflow (% of design)' }
-        },
-        y: {
-          min: 0, max: 100,
-          ticks: { stepSize: 20, callback: function (v) { return v + '%'; } },
-          title: { display: true, text: 'Shaft power (% of design)' }
-        }
+        x: FP.chart.chartjsScale('Airflow (% of design)', {
+          min: 50, max: 100, ticks: { stepSize: 10, callback: function (v) { return v + '%'; } }
+        }),
+        y: FP.chart.chartjsScale('Shaft power (% of design)', {
+          min: 0, max: 100, ticks: { stepSize: 20, callback: function (v) { return v + '%'; } }
+        })
       },
       plugins: {
         legend: {
-          position: 'top',
           labels: {
-            boxWidth: 30, boxHeight: 0, font: { size: 12 },
-            filter: function (item, data) { const ds = data.datasets[item.datasetIndex]; return !ds.isMarker && !ds.hidden; }
+            filter: function (item, data) {
+              const ds = data.datasets[item.datasetIndex];
+              return !ds.isMarker && !ds.hidden;
+            }
           },
-          onClick: function () { /* legend toggling disabled so curves stay hidden until reveal */ }
+          onClick: function () { /* no toggling: curves stay hidden until the reveal */ }
         },
         tooltip: {
           filter: function (item) { return !item.dataset.isMarker; },
           callbacks: {
             title: function (items) { return 'Airflow: ' + items[0].parsed.x + '% of design'; },
             label: function (item) {
-              return methodName(item.dataset.methodKey) + ': ' + item.parsed.y.toFixed(1) + '% power (illustrative)';
+              return methodName(item.dataset.methodKey) + ': ' + pct(item.parsed.y) + ' power (illustrative)';
             }
           }
         }
@@ -289,136 +176,160 @@ document.addEventListener('DOMContentLoaded', function () {
     chart.data.datasets.forEach(function (ds) { ds.hidden = !visible; });
     chart.update();
   }
-
   function markAirflow(q) {
-    markerSet.data = METHODS.map(function (m) {
-      return { x: q, y: powerOf(m.key, q), color: m.color };
+    markerSet.data = METHODS.map(function (m, i) {
+      return { x: q, y: powerOf(m.key, q), short: m.short, color: FP.chart.series(i).color };
     });
-    markerSet.pointBackgroundColor = METHODS.map(function (m) { return m.color; });
     chart.update();
   }
 
-  // ---------- Challenge flow ----------
-  function setFeedback(text, kind) {
-    const fb = $('fc-feedback');
-    fb.textContent = text;
-    fb.className = 'fc-feedback fc-' + kind;
-  }
+  // ---------- Challenge flow (FP.ChallengeRunner) ----------
+  const runner = new FP.ChallengeRunner({
+    items: ITEMS,
+    attempts: 2,
+    noun: 'Challenges',
+    mastery: ITEMS.length,
+    reviewPointer: 'Review the worked example "The Same 70% Flow Three Ways" and the Speed Control section',
+    id: 'ch18-flow-control-power-comparator',
+    onChange: render,
+    onComplete: showSummary,
+    onUnlockExplore: unlockExplore
+  });
 
-  function updateStatus() {
-    if (state.finished) {
-      $('fc-progress').textContent = 'All challenges complete. Explore with the airflow selector.';
-    } else {
-      const left = MAX_ATTEMPTS - state.attempts;
-      $('fc-progress').textContent = 'Challenge ' + (state.index + 1) + ' of 3' +
-        (state.resolved ? '' : ' — attempts left: ' + left);
-    }
-    $('fc-score').textContent = 'Challenges correct: ' + state.correct + ' of 3';
-  }
+  let selected = 70;
 
   function setInputsEnabled(on) {
     rankSelects.forEach(function (s) { s.disabled = !on; });
-    $('fc-saving').disabled = !on;
-    $('fc-check').disabled = !on;
+    $('saving').disabled = !on;
+    $('check').disabled = !on;
   }
 
-  function startChallenge(i) {
-    state.index = i;
-    state.attempts = 0;
-    state.resolved = false;
-    const c = CHALLENGES[i];
-    $('fc-question').textContent = 'Challenge ' + (i + 1) + ': At ' + c.airflow +
-      '% airflow, which method uses the least power, and how much does it save compared with an outlet damper?';
+  function render(st) {
+    $('score').textContent = st.scoreLabel;
+    $('attempt').textContent = st.phase === 'question' ? st.attemptLabel : '';
+    FP.ui.progress($('progress'), st.results, st.phase === 'done' ? -1 : st.index, 'Challenge');
+    $('exploreState').textContent = st.exploreLabel;
+    $('next').hidden = st.phase !== 'resolved';
+    $('check').hidden = st.phase === 'done';
+    // After the last challenge the answer rows give way to Explore mode.
+    document.querySelectorAll('.fcpc-answer').forEach(function (el) { el.hidden = st.phase === 'done'; });
+    setInputsEnabled(st.phase === 'question');
+  }
+
+  function startChallenge() {
+    const st = runner.state();
+    const c = st.item;
+    $('prompt').textContent = c.prompt;
     rankSelects.forEach(function (s) { s.value = ''; });
-    $('fc-saving').value = '';
-    setInputsEnabled(true);
-    $('fc-next').disabled = true;
+    $('saving').value = '';
     setCurvesVisible(false);
-    setFeedback('Rank the three methods from lowest to highest shaft power at ' + c.airflow +
-      '% airflow, type the saving, then press Check. The curves stay hidden until you commit.', 'info');
-    updateStatus();
-  }
-
-  function reveal(q) {
-    markAirflow(q);
-    setCurvesVisible(true);
-  }
-
-  function resolve(wasCorrect) {
-    state.resolved = true;
-    if (wasCorrect) state.correct++;
-    setInputsEnabled(false);
-    reveal(CHALLENGES[state.index].airflow);
-    if (state.index < CHALLENGES.length - 1) {
-      $('fc-next').disabled = false;
-    } else {
-      finishAll();
-    }
-    updateStatus();
+    FP.ui.feedback($('feedback'), 'info', 'Rank the three methods from lowest to highest shaft power at ' +
+      c.airflow + '% airflow, type the saving, then press Check. The curves stay hidden until you commit.',
+      { announce: false });
+    render(st);
   }
 
   function onCheck() {
-    if (state.resolved) return;
-    const c = CHALLENGES[state.index];
+    const st = runner.state();
+    if (st.phase !== 'question') return;
     const order = rankSelects.map(function (s) { return s.value; });
     if (order.some(function (v) { return v === ''; }) || new Set(order).size !== 3) {
-      setFeedback('Choose each of the three methods exactly once before checking.', 'info');
+      FP.ui.feedback($('feedback'), 'info', 'Choose each of the three methods exactly once before checking.');
       return;
     }
-    const raw = $('fc-saving').value.trim();
-    const saving = parseFloat(raw);
-    if (raw === '' || !isFinite(saving)) {
-      setFeedback('Type the saving as a number of percentage points before checking.', 'info');
+    const saving = FP.fmt.parseNumber($('saving').value);
+    if (isNaN(saving)) {
+      FP.ui.feedback($('feedback'), 'info', FP.msg.ENTER_NUMBER + ' for the saving, in percentage points.');
+      $('saving').focus();
       return;
     }
-    state.attempts++;
-    const rankOk = order.every(function (k, i) { return k === CORRECT_ORDER[i]; });
-    const savingOk = Math.abs(saving - c.saving) <= TOLERANCE;
-    if (rankOk && savingOk) {
-      setFeedback('Correct: ' + CORRECT_RANK_TEXT + '; saving ' + c.saving.toFixed(1) + ' percentage points.', 'ok');
-      resolve(true);
-    } else if (state.attempts < MAX_ATTEMPTS) {
-      setFeedback(c.wrong, 'bad');
-      updateStatus();
-    } else {
-      setFeedback(c.wrong + ' Correct answer: ' + CORRECT_RANK_TEXT + '; saving ' +
-        c.saving.toFixed(1) + ' percentage points. This challenge counts as missed.', 'bad');
-      resolve(false);
+    const res = runner.submit({ order: order, saving: saving });
+    FP.ui.feedback($('feedback'), res.kind, res.message);
+    if (res.status === 'correct' || res.status === 'missed') {
+      markAirflow(st.item.airflow);
+      setCurvesVisible(true);
+      if (st.isLast) runner.next();          // after challenge 3 the chart stays and Explore unlocks
+      else $('next').focus();
     }
+  }
+
+  function showSummary(summary) {
+    const box = $('summary');
+    box.innerHTML = '';
+    summary.lines.forEach(function (line) {
+      const p = document.createElement('div');
+      p.textContent = line;
+      box.appendChild(p);
+    });
+    if (summary.misses.length) {
+      const ul = document.createElement('ul');
+      summary.misses.forEach(function (m) {
+        const li = document.createElement('li');
+        // Compact: the full Why text was shown in that challenge's verdict.
+        li.textContent = 'Missed challenge ' + (m.index + 1) + ' (' + m.item.airflow + '% airflow): saving ' +
+          FP.fmt.num(m.item.saving, 1) + ' percentage points.';
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+    FP.announce(summary.lines.join(' '));
   }
 
   function updateReadout() {
-    const q = state.selected;
+    const q = selected;
     const d = powerOf('damper', q), v = powerOf('vanes', q), s = powerOf('speed', q);
-    $('fc-airflow-val').textContent = q + '%';
-    $('fc-readout').innerHTML =
-      'At <b>' + q + '%</b> airflow: outlet damper <b>' + d.toFixed(1) + '%</b>, inlet vanes <b>' +
-      v.toFixed(1) + '%</b>, speed control <b>' + s.toFixed(1) + '%</b> power. ' +
-      'Saving vs. damper: inlet vanes <b>' + round1(d - v).toFixed(1) + '</b> points, speed control <b>' +
-      round1(d - s).toFixed(1) + '</b> points.';
+    $('airflowVal').textContent = q + '%';
+    $('readout').innerHTML =
+      'At <b>' + q + '%</b> airflow: outlet damper <b>' + pct(d) + '</b>, inlet vanes <b>' + pct(v) +
+      '</b>, speed control <b>' + pct(s) + '</b> power. Saving vs. damper: inlet vanes <b>' +
+      FP.fmt.num(r1(d - v), 1) + '</b> points, speed control <b>' + FP.fmt.num(r1(d - s), 1) + '</b> points.';
   }
 
-  function finishAll() {
-    state.finished = true;
-    const slider = $('fc-airflow');
+  function unlockExplore() {
+    const slider = $('airflow');
     slider.disabled = false;
-    $('fc-sel-label').classList.remove('fc-locked');
-    state.selected = parseInt(slider.value, 10);
+    selected = parseInt(slider.value, 10);
+    $('prompt').textContent = FP.msg.EXPLORE + ': move the airflow selector from 100% down to 50% and watch the gap between the damper and speed-control curves.';
     updateReadout();
-    markAirflow(state.selected);
+    markAirflow(selected);
+    slider.focus();
   }
 
-  $('fc-check').addEventListener('click', onCheck);
-  $('fc-next').addEventListener('click', function () {
-    if (state.resolved && state.index < CHALLENGES.length - 1) startChallenge(state.index + 1);
+  function startOver() {
+    runner.restart();
+    const slider = $('airflow');
+    slider.value = 70;
+    slider.disabled = true;
+    selected = 70;
+    $('airflowVal').textContent = '70%';
+    $('readout').textContent = '';
+    $('summary').textContent = '';
+    startChallenge();
+    rankSelects[0].focus();
+  }
+
+  // ---------- Events ----------
+  $('check').addEventListener('click', onCheck);
+  $('next').addEventListener('click', function () {
+    if (runner.next()) { startChallenge(); rankSelects[0].focus(); }
   });
-  $('fc-airflow').addEventListener('input', function (e) {
-    if (!state.finished) return;
-    state.selected = parseInt(e.target.value, 10);
+  $('startOver').addEventListener('click', startOver);
+  $('airflow').addEventListener('input', function (e) {
+    if (!runner.state().explore) return;
+    selected = parseInt(e.target.value, 10);
     updateReadout();
-    markAirflow(state.selected);
+    markAirflow(selected);
+  });
+  // Enter in a select or the saving box checks; Enter elsewhere (not on a button) goes to the next challenge.
+  document.querySelector('main').addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' || e.target.tagName === 'BUTTON') return;
+    const phase = runner.state().phase;
+    if (phase === 'question' && (e.target.tagName === 'SELECT' || e.target.id === 'saving')) {
+      e.preventDefault(); onCheck();
+    } else if (phase === 'resolved') {
+      e.preventDefault(); $('next').click();
+    }
   });
 
-  $('fc-readout').innerHTML = '<span class="fc-locked">The airflow selector unlocks after all three challenges.</span>';
-  startChallenge(0);
-});
+  startChallenge();
+})();

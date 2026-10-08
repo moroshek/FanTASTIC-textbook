@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
     <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
     <title>Exploded View of a Belt-Driven Centrifugal Fan using html</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
     <style>
-        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #1d2a36; }
-        main { max-width: 900px; margin: 0 auto; padding: 6px 8px 4px; box-sizing: border-box; }
-        #toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
-        #toolbar .title { font-weight: bold; font-size: 15px; margin-right: auto; }
-        #toolbar button { font-size: 14px; padding: 5px 11px; border: 1px solid #6b7c8c; background: #f4f7fa; color: #1d2a36; border-radius: 4px; cursor: pointer; }
-        #toolbar button.active { background: #1f5f8b; color: #ffffff; border-color: #1f5f8b; }
-        #toolbar button:disabled { opacity: 0.45; cursor: not-allowed; }
-        #btnToggle { min-width: 92px; }
-        #toolbar .count { font-size: 13px; color: #44515d; min-width: 120px; text-align: right; }
-        #prompt { font-size: 15px; background: #eaf2f8; border-left: 4px solid #1f5f8b; padding: 7px 10px; min-height: 20px; margin-bottom: 4px; }
-        #drawing { width: 100%; height: auto; display: block; background: #ffffff; touch-action: manipulation; }
-        #info { font-size: 14px; line-height: 1.4; border: 1px solid #c6d0d9; border-radius: 4px; padding: 8px 10px; height: 124px; overflow-y: auto; box-sizing: border-box; background: #fbfcfd; }
-        #info h3 { margin: 0 0 3px 0; font-size: 15px; }
-        #info p { margin: 0 0 4px 0; }
-        #info .ok { color: #1b6e3a; font-weight: bold; }
-        #info .bad { color: #a3361f; font-weight: bold; }
-        #info button { font-size: 14px; padding: 4px 12px; margin-right: 6px; border: 1px solid #1f5f8b; background: #1f5f8b; color: #fff; border-radius: 4px; cursor: pointer; }
-        #info ul { margin: 2px 0 4px 0; padding-left: 20px; }
-        .part { cursor: pointer; transition: transform 0.9s ease-in-out; }
-        .part:focus { outline: none; }
-        .part:hover .shape, .part:focus .shape { filter: brightness(1.08) drop-shadow(0 0 3px #1f5f8b); }
-        .part.selected .shape { filter: drop-shadow(0 0 4px #e07b00) drop-shadow(0 0 2px #e07b00); }
-        .part.reveal .shape { filter: drop-shadow(0 0 5px #d42a2a) drop-shadow(0 0 3px #d42a2a); }
-        .lbl { pointer-events: none; transition: opacity 0.4s; }
-        .lbl rect { fill: #ffffff; stroke: #6b7c8c; stroke-width: 1; }
-        .lbl text { font-size: 16.5px; fill: #1d2a36; font-family: Arial, Helvetica, sans-serif; }
-        .lbl line { stroke: #6b7c8c; stroke-width: 1.2; }
-        .lbl.visited rect { fill: #e5f4ea; stroke: #2b8a4b; }
-        .lbl.sel rect { fill: #fff1de; stroke: #e07b00; stroke-width: 2; }
-        .hidden { opacity: 0; }
+        /* Sim-specific styles (prefix xcf-). Colours come from the kit's --fp-* tokens. */
+        main.xcf-app { max-width: 800px; margin: 0 auto; padding: 6px 8px 4px; }
+        .xcf-draw { position: relative; border-radius: var(--fp-radius); }
+        .xcf-draw svg { width: 100%; height: auto; display: block; touch-action: manipulation; }
+        .xcf-draw .fp-note { margin: 0; padding: 0 8px 3px; }
+        .xcf-part { transition: transform 0.9s ease-in-out; }
+        .xcf-lbl { pointer-events: none; }
+        .xcf-lbl rect { fill: #ffffff; stroke: var(--fp-text-muted); stroke-width: 1; }
+        .xcf-lbl text { font-size: 16.5px; fill: var(--fp-text); font-family: var(--fp-font); }
+        .xcf-lbl line { stroke: var(--fp-text-muted); stroke-width: 1.2; }
+        .xcf-lbl circle { fill: var(--fp-text-muted); }
+        .xcf-lbl.fp-cq-label-visited rect { fill: var(--fp-primary-bg); stroke: var(--fp-primary); }
+        .xcf-lbl.fp-cq-label-selected rect { fill: var(--fp-primary-bg); stroke: var(--fp-primary); stroke-width: 2.5; }
+        .xcf-lbl.fp-cq-label-selected text { font-weight: bold; }
+        .xcf-inset rect { fill: #ffffff; stroke: var(--fp-text-muted); stroke-dasharray: 5 4; }
+        .xcf-inset text { font-size: 16px; fill: var(--fp-text-muted); font-family: var(--fp-font); }
+        /* Assembled view: labels and visited marks are hidden (labels show only exploded). */
+        .xcf-assembled .xcf-lbl { opacity: 0; }
+        .xcf-assembled .fp-cq-marks { display: none; }
+        .xcf-keys { margin: 4px 0 0 0; }
+        /* Work-around for a kit cascade gap: the kit's button :hover rule outranks its
+           aria-pressed rules, so a hovered toggle went dark-on-dark. Keep the toggle readable. */
+        .xcf-app button[aria-pressed]:hover:not(:disabled) { background: var(--fp-primary-bg); color: var(--fp-primary-dark); }
     </style>
-    <link rel="icon" href="data:,">
-    <script src="ch03-exploded-centrifugal-fan.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/callout-quiz.js"></script>
+    <script src="ch03-exploded-centrifugal-fan.js" defer></script>
 </head>
 <body>
-    <main></main>
-    <br/>
-    <a href=".">Back to Lesson Plan</a>
+    <main class="fp-app xcf-app">
+        <h1 class="fp-title">Belt-driven SWSI centrifugal fan, Arrangement 9</h1>
+        <section class="fp-draw xcf-draw" id="drawing" aria-label="Exploded view of a belt-driven centrifugal fan. Select a part.">
+            <!-- the SVG drawing is built by the sim -->
+            <p class="fp-note illustrative" id="dataNote">Simplified schematic, not to scale · Source: <i>FanPedia</i>, page 10 (exploded view, Arrangement 9)</p>
+        </section>
+        <p class="fp-note xcf-keys">Keyboard: Tab moves between parts and buttons; Enter or Space selects a part; after an answer, Enter goes to the next prompt.</p>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
 </body>
 </html>

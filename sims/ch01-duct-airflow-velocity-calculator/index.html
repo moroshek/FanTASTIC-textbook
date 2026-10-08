@@ -785,6 +785,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -800,17 +811,6 @@
     <span class="md-ellipsis">
       
         Duration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Objective
       
     </span>
   </a>
@@ -1307,6 +1307,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1322,17 +1333,6 @@
     <span class="md-ellipsis">
       
         Duration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Objective
       
     </span>
   </a>
@@ -1470,9 +1470,8 @@
 <h1 id="duct-airflow-and-velocity-calculator">Duct Airflow and Velocity Calculator<a class="headerlink" href="#duct-airflow-and-velocity-calculator" title="Permanent link">&para;</a></h1>
 <iframe src="main.html" height="672px" width="100%" scrolling="no"></iframe>
 
-<p><a class="md-button md-button--primary" href="main.html">Run the Duct Airflow and Velocity Calculator MicroSim Fullscreen</a>
-<br/>
-<a href="https://editor.p5js.org/">Edit in the p5.js Editor</a></p>
+<p><a class="md-button md-button--primary" href="main.html">Run the Duct Airflow and Velocity Calculator MicroSim Fullscreen</a></p>
+<p>To run this sketch in the <a href="https://editor.p5js.org/">p5.js editor</a>, first add the kit files it uses (<code>fanpedia-sim.css</code>, <code>fanpedia-core.js</code>, <code>fanpedia-p5.js</code>, <code>fan-models.js</code> and <code>fan-drawings.js</code> from <code>../shared-libs/</code>, or their published URLs under <code>https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/</code>) to the editor's <code>index.html</code>, then paste <code>ch01-duct-airflow-velocity-calculator.js</code> as the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>This calculator gives practice with the airflow equation <span class="arithmatex">\( Q = V \times A \)</span> on the kinds of ducts that appear on drawings. Duct sizes come in inches, but the equation needs the flow area in square feet. A rectangular duct's area is <span class="arithmatex">\( (W \times H) \div 144 \)</span> ft², and a round duct's area is <span class="arithmatex">\( \pi D^2 \div 576 \)</span> ft².</p>
 <p>The sim opens with four fixed challenges. Each one asks for a single number:</p>
@@ -1513,16 +1512,19 @@
 </tbody>
 </table>
 <p>Challenge 1 uses the machine-shop worked example from Chapter 1. Challenges 2 to 4 are illustrative values, and the sim labels them that way.</p>
-<p>An answer within ±2% of the model value is correct. Each challenge allows two attempts. A non-numeric or empty entry gets "Enter a number" and does not use an attempt. After every check the sim shows your number beside the model value, lays out the worked calculation, and highlights the step where your number departs from it. It recognizes common slips: forgetting to divide by 144, treating a round duct as a square of side D, using π D² ÷ 144, multiplying where you should divide, and giving the area in square inches. A running count "Challenges correct: n of 4" stays on screen.</p>
-<p>Free mode unlocks after challenge 4. You can change the duct shape, width, height or diameter, and the airflow. The flow area (3 decimals), the velocity (to the nearest 10 ft/min) and the substituted equation update immediately. The first time you enlarge the duct while the airflow stays fixed, the sim points out that the CFM did not change and only the velocity fell.</p>
+<p>An answer within ±2% of the model value is correct. Each challenge allows two attempts. A non-numeric or empty entry gets "Enter a number" and does not use an attempt. A correct answer shows "✓ Correct: model value is …"; a wrong one shows ✗ with the challenge's worked feedback, and a second wrong answer reveals the model value and counts as missed. After every check the sim shows your number beside the model value, lays out the worked calculation, and highlights the step where your number departs from it. It recognizes common slips: forgetting to divide by 144, treating a round duct as a square of side D, using π D² ÷ 144, multiplying where you should divide, and giving the area in square inches. A running count "Challenges correct: n of 4" stays on screen. Mastery is 4 of 4 correct, with at most two attempts each.</p>
+<p>Explore mode (the free mode) unlocks after challenge 4 and is never scored. You can change the duct shape, width, height or diameter, and the airflow. The flow area (3 decimals), the velocity (to the nearest 10 ft/min) and the substituted equation update immediately. The first time you enlarge the duct while the airflow stays fixed, the sim points out that the CFM did not change and only the velocity fell. Explore mode also shows your challenge results and the mastery line, and <strong>Start over</strong> runs the four challenges again.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Read challenge 1 and calculate the velocity on paper or a calculator.</li>
 <li>Type the number in the <strong>Your answer</strong> box and press <strong>Check</strong> (or Enter).</li>
 <li>Read the feedback and the highlighted step. If you have an attempt left, correct your work and try again.</li>
-<li>Press <strong>Next challenge</strong> to continue. After challenge 4, press <strong>Start free mode</strong>.</li>
-<li>In free mode, set 2,400 CFM in a 16 in × 12 in duct, then change it to 24 in × 16 in. Velocity falls from 1,800 to 900 ft/min while the airflow stays at 2,400 CFM.</li>
+<li>Press <strong>Next challenge</strong> to continue. After challenge 4, press <strong>Start explore mode</strong> and read the mastery line.</li>
+<li>In Explore mode, set 2,400 CFM in a 16 in × 12 in duct, then change it to 24 in × 16 in. Velocity falls from 1,800 to 900 ft/min while the airflow stays at 2,400 CFM. Explore mode is never scored.</li>
+<li>Press <strong>Start over</strong> to work the four challenges again.</li>
 </ol>
+<p><strong>Keyboard:</strong> Enter checks the answer; after a challenge is answered, Enter goes to the next one. Tab reaches every control, and the arrow keys move a focused slider.</p>
+<p><strong>Data label:</strong> "Values from the chapter's machine-shop worked example" (challenge 1) or "Illustrative values" (challenges 2 to 4), shown at the bottom left of the drawing.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://moroshek.github.io/FanTASTIC-textbook/sims/ch01-duct-airflow-velocity-calculator/main.html"</span>
@@ -1531,12 +1533,12 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>The learner will calculate air velocity, airflow volume or required flow area from the other two quantities for rectangular and round ducts, to within 2 percent of the model value (Bloom: Apply, verb: calculate).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Adult professional development: new application engineers, sales staff, representatives and facilities staff.</p>
 <h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
 <p>10-15 minutes</p>
-<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>The learner will calculate air velocity, airflow volume or required flow area from the other two quantities for rectangular and round ducts, to within 2 percent of the model value (Bloom: Apply, verb: calculate).</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Airflow volume in cubic feet per minute (CFM)</li>
@@ -1548,23 +1550,26 @@
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Challenges</strong> (8 min): Work the four challenges in order. Commit to a number before checking. Two attempts each.</li>
-<li><strong>Free exploration</strong> (5 min): Hold the airflow at 2,400 CFM and enlarge the duct. Then switch to a round duct and find the diameter whose area is closest to a 16 in square. It is not 16 in.</li>
+<li><strong>Explore mode</strong> (5 min): Hold the airflow at 2,400 CFM and enlarge the duct. Then switch to a round duct and find the diameter whose area is closest to a 16 in square. It is not 16 in.</li>
 <li><strong>Discussion</strong> (2 min): Why does a bigger duct not move more air when the fan delivers the same CFM?</li>
 </ol>
 <h3 id="common-misconceptions-addressed">Common Misconceptions Addressed<a class="headerlink" href="#common-misconceptions-addressed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Dividing CFM by the duct dimensions in inches without converting to square feet (challenge 1).</li>
-<li>Believing a bigger duct moves more air at the same fan airflow. In fact the CFM is the same and only the velocity drops (free mode note).</li>
+<li>Believing a bigger duct moves more air at the same fan airflow. In fact the CFM is the same and only the velocity drops (Explore mode note).</li>
 <li>Believing a round duct of diameter D has the same area as a square duct of side D (challenge 2).</li>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
-<p>Mastery is 4 of 4 challenges correct within ±2%, with at most two attempts each. Free exploration is not evidence of mastery.</p>
+<ul>
+<li>Running score shown as "Challenges correct: n of 4"; mastery is 4 of 4 challenges correct within ±2%, with at most two attempts each. The sim shows "Mastery reached (4 of 4 needed)." or what is still needed.</li>
+<li>Explore mode is not evidence of mastery. Follow up: why does a bigger duct not move more air at the same fan CFM?</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="../../chapters/01-air-pressure-and-the-fan/">Chapter 1: Air, Pressure and the Fan</a>. The "Air Velocity" section and its worked example "Velocity in a Rectangular Duct".</li>
-<li><a href="https://tcf.com/fanpedia/">FanPedia online, Twin City Fan</a>. The fan and blower encyclopedia this textbook is built from.</li>
-<li><a href="https://en.wikipedia.org/wiki/Volumetric_flow_rate">Volumetric flow rate, Wikipedia</a>. Defines Q = V × A for flow through a cross-section.</li>
-<li><a href="https://en.wikipedia.org/wiki/Duct_(flow)">Duct (flow), Wikipedia</a>. Background on rectangular and round ductwork.</li>
+<li><a href="../../chapters/01-air-pressure-and-the-fan/">Chapter 1: Air, Pressure and the Fan</a> - The "Air Velocity" section and its worked example "Velocity in a Rectangular Duct".</li>
+<li><a href="https://tcf.com/fanpedia/">FanPedia online, Twin City Fan</a> - The fan and blower encyclopedia this textbook is built from.</li>
+<li><a href="https://en.wikipedia.org/wiki/Volumetric_flow_rate">Volumetric flow rate, Wikipedia</a> - Defines Q = V × A for flow through a cross-section.</li>
+<li><a href="https://en.wikipedia.org/wiki/Duct_(flow)">Duct (flow), Wikipedia</a> - Background on rectangular and round ductwork.</li>
 </ol>
 
 

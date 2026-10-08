@@ -1,23 +1,27 @@
 {
   "title": "Fan Family Sorter",
-  "creator": "Twin City Fan",
-  "subject": "Industrial and Commercial Fans",
   "description": "A p5.js sorting activity in which learners place fifteen current Twin City Fan product lines into the centrifugal, axial and mixed flow families from short descriptions that never name the family. Each placement locks and shows the correct family and the reason; a summary lists every miss and reports mastery at 13 of 15.",
+  "creator": "Twin City Fan",
   "date": "2026-10-08",
+  "subject": [
+    "fan family",
+    "centrifugal fan",
+    "axial fan",
+    "mixed flow fan",
+    "tubular housing",
+    "power roof ventilator",
+    "laboratory fume exhaust fan"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
-  "source": "Twin City Fan product catalog pages on tcf.com (retrieved 2026-10-08); FanPedia: The Fan & Blower Encyclopedia (Twin City Fan, 2021), pp. 4-8, 17 and 32",
   "educational": {
-    "gradeLevel": [
-      "Adult professional development"
-    ],
     "audience": "New application engineers, sales staff, manufacturer's representatives, distributors and plant staff",
     "subjectArea": "Fans and blowers",
     "topic": "Fan families: centrifugal, axial and mixed flow",
     "learningObjectives": [
-      "Differentiate fifteen Twin City Fan product lines into the centrifugal, axial and mixed flow families from a short description of each, correctly placing at least 13 of 15 on the first placement."
+      "The learner will differentiate fifteen Twin City Fan product lines into the centrifugal, axial and mixed flow families from a short description of each, correctly placing at least 13 of 15 on the first placement."
     ],
     "bloomsTaxonomy": "Analyze",
     "bloomVerb": "differentiate",
@@ -45,31 +49,86 @@
     "framework": "p5.js",
     "frameworkVersion": "1.11.10",
     "version": "1.0",
+    "canvasHeight": 610,
     "canvasDimensions": {
       "width": "responsive",
       "height": 610
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
     ],
     "accessibility": {
       "hasAltText": true,
       "keyboardNavigable": true,
-      "notes": "describe() text for screen readers; keys 1, 2, 3 place a card and Enter turns up the next; correct and incorrect are marked with check and cross symbols as well as color."
+      "notes": "describe() text (fallback mode); verdicts, new cards and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; keys 1, 2, 3 place a card and Enter or N turns up the next; every button is reachable with Tab and pressed with Enter or Space; buttons wrap to a second row at 320 px."
     }
   },
-  "controls": [
-    { "type": "button", "label": "Centrifugal", "purpose": "Place the face-up card in the Centrifugal bin (key 1)" },
-    { "type": "button", "label": "Axial", "purpose": "Place the face-up card in the Axial bin (key 2)" },
-    { "type": "button", "label": "Mixed flow", "purpose": "Place the face-up card in the Mixed flow bin (key 3)" },
-    { "type": "button", "label": "Next card / Show summary", "purpose": "Turn up the next card after reading the feedback; after the fifteenth card, show the summary (Enter)" },
-    { "type": "button", "label": "More misses", "purpose": "Page through the misplaced cards on the summary when they do not fit on one page" },
-    { "type": "button", "label": "Sort again", "purpose": "On the summary, reshuffle all fifteen cards and reset the score" }
-  ],
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Centrifugal",
+        "purpose": "Place the face-up card in the Centrifugal bin (key 1)"
+      },
+      {
+        "type": "button",
+        "label": "Axial",
+        "purpose": "Place the face-up card in the Axial bin (key 2)"
+      },
+      {
+        "type": "button",
+        "label": "Mixed flow",
+        "purpose": "Place the face-up card in the Mixed flow bin (key 3)"
+      },
+      {
+        "type": "button",
+        "label": "Next card / Show summary",
+        "purpose": "Turn up the next card after reading the feedback; after the fifteenth card, show the summary (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "More misses",
+        "purpose": "Page through the misplaced cards on the summary when they do not fit on one page"
+      },
+      {
+        "type": "button",
+        "label": "Sort again",
+        "purpose": "On the summary, reshuffle all fifteen cards and reset the score"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "The 15 cards are presented in a shuffled order (FP.CardDeck, one attempt, no practice round).",
+      "Each card can be placed once; after placement it is locked and marked correct or incorrect.",
+      "A placement is correct when it matches the card's correct bin from the chapter specification.",
+      "The score counts first placements only and is shown as 'Correct: n of 15'.",
+      "Mastery is 13 of 15; the summary reads 'Mastery reached.' or 'Review the sections on tubular housings and power roof ventilators, then sort again.'",
+      "After all 15 cards are placed, 'Sort again' reshuffles all cards and resets the score."
+    ],
+    "assumptions": [
+      "Card text never contains the words centrifugal, axial, mixed flow or mixed-flow; those words appear only in the feedback."
+    ],
+    "limitations": [
+      "Fifteen fixed product lines; the sorter does not cover every Twin City Fan product line named in the chapter."
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Source: Twin City Fan product catalog pages on tcf.com (centrifugal fans, plenum fans, plug fans, inline centrifugal fans, axial fans, wall mounted fans, roof ventilators, centrifugal roof and wall exhausters, mixed flow fans, laboratory and fume exhaust fans), retrieved 2026-10-08",
+      "Source: FanPedia: The Fan & Blower Encyclopedia (Twin City Fan, 2021), pp. 4-8, 17 and 32"
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Card sorter",
     "teachingStrategy": "Committed-placement sorting with immediate per-item feedback and an end-of-sort error review",
-    "interactionPattern": "Classify items into categories; one attempt per item",
     "keyQuestions": [
       "What does the description say about the path air takes through the impeller?",
       "Which clue on this card is about the housing, the mounting location or the application rather than the impeller?",
@@ -82,7 +141,7 @@
       "Fans without a housing cannot be centrifugal."
     ],
     "assessmentOpportunities": [
-      "Score on first placements, shown as 'Correct: n of 15'; mastery is 13 or more.",
+      "First-placement score shown as 'Correct: n of 15'; mastery is 13 of 15 on the first placement.",
       "Summary list of misplaced cards, each with its correct family and reason, for the learner to name the clue that misled them."
     ]
   },

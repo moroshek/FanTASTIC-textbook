@@ -2,22 +2,25 @@
 // CANVAS_HEIGHT: 660
 // Six illustrative airstream inquiries. For each one the learner picks one of four
 // construction recommendations (A-D), commits it with Recommend, and only then sees
-// the reason. The first attempt is scored; one extra practice attempt is allowed.
+// the reason. The first attempt is scored (FP.CardDeck, 1 attempt); one extra
+// practice attempt is allowed and is never scored.
 // Source rules: FanPedia (https://tcf.com/fanpedia/) pp. 85, 107, 110, 116, 119, 122, 145.
-// Width responsive; all controls are native p5.js buttons in the control region.
+// Needs the FanPedia kit: fanpedia-sim.css, fanpedia-core.js, fanpedia-p5.js (../shared-libs/).
 
-// ---------- canvas layout (standard MicroSim variable names) ----------
-let canvasWidth = 400;          // replaced by the container width in updateCanvasSize()
-let drawHeight = 580;           // drawing region (no controls here)
-let controlHeight = 80;         // 2 rows of controls: (2 x 35) + 10
-let canvasHeight = drawHeight + controlHeight;
-let margin = 15;
-let sliderLeftMargin = 140;     // kept for template consistency (this sim has no sliders)
-let defaultTextSize = 16;
+const K = FP.p5;
+const SIM_ID = 'ch20-construction-class-advisor';
+
+// ---------- canvas layout ----------
+let canvasWidth = 800;                       // replaced by the container width
+const drawHeight = 580;                      // drawing region (no controls here)
+const controlHeight = K.controlHeightFor(2); // 2 control rows: 80
+const canvasHeight = drawHeight + controlHeight;
+const margin = 15;
 
 // ---------- content (from the chapter specification; option order is fixed) ----------
 const inquiries = [
   {
+    id: 'q1-steam',
     short: 'Arr. 9 axial fan, steam, near-ambient',
     text: 'Arrangement 9 axial fan exhausting steam from a washdown area at near-ambient temperature.',
     tags: ['wet'],
@@ -27,10 +30,11 @@ const inquiries = [
       'Spark resistant Type C.',
       'Standard construction; steam is just air.'
     ],
-    correct: 0,
-    reason: 'High moisture construction is for steam or condensation in the housing and is offered on Arrangement 9 axial fans; a drain removes the water.'
+    answer: 0,
+    why: 'High moisture construction is for steam or condensation in the housing and is offered on Arrangement 9 axial fans; a drain removes the water.'
   },
   {
+    id: 'q2-steam-220F',
     short: 'Same Arr. 9 axial fan, steam at 220°F',
     text: 'The same Arrangement 9 axial fan, but the steam exhaust reaches 220°F.',
     tags: ['hot', 'wet'],
@@ -40,10 +44,11 @@ const inquiries = [
       'High moisture construction only; 220°F is not hot.',
       'Insulated jacket only.'
     ],
-    correct: 1,
-    reason: 'FanPedia states that high moisture construction cannot be used with high temperature construction, and 220°F falls in an axial high temperature package.'
+    answer: 1,
+    why: 'FanPedia states that high moisture construction cannot be used with high temperature construction, and 220°F falls in an axial high temperature package.'
   },
   {
+    id: 'q3-type-c-nonferrous',
     short: 'Radial bladed fan, Type C specified, non-ferrous impeller',
     text: 'Radial bladed fan; specification calls for spark-resistant Type C; this fan\'s standard impeller is non-ferrous.',
     tags: ['explosive'],
@@ -53,10 +58,11 @@ const inquiries = [
       'Type A.',
       'No spark resistance needed.'
     ],
-    correct: 1,
-    reason: 'FanPedia notes that a fan with a non-ferrous impeller as standard should use Type B.'
+    answer: 1,
+    why: 'FanPedia notes that a fan with a non-ferrous impeller as standard should use Type B.'
   },
   {
+    id: 'q4-kiln-700F',
     short: 'Arr. 1 centrifugal, kiln air at 700°F, walkway',
     text: 'Arrangement 1 centrifugal fan recirculating kiln air at 700°F; a walkway passes beside the fan and workers can touch the housing.',
     tags: ['hot', 'personnel exposure'],
@@ -66,10 +72,11 @@ const inquiries = [
       '601°F-800°F package with insulated construction (for example an insulated jacket).',
       '801°F-1,000°F package.'
     ],
-    correct: 2,
-    reason: '700°F lies in the 601°F-800°F band, and a touchable hot housing calls for insulation; jackets are also named as personnel protection.'
+    answer: 2,
+    why: '700°F lies in the 601°F-800°F band, and a touchable hot housing calls for insulation; jackets are also named as personnel protection.'
   },
   {
+    id: 'q5-fgr',
     short: 'Forced draft fan, inlet box, exhaust returned to inlet',
     text: 'Forced draft fan with an inlet box; the boiler system returns part of its hot exhaust to the fan inlet.',
     tags: ['hot', 'recirculated gas'],
@@ -79,10 +86,11 @@ const inquiries = [
       'Spark resistant Type C.',
       'Weep hole only.'
     ],
-    correct: 0,
-    reason: 'Recirculated flue gas enters through an FGR connection on the front of the inlet box, and the hot gas makes an insulated inlet box appropriate.'
+    answer: 0,
+    why: 'Recirculated flue gas enters through an FGR connection on the front of the inlet box, and the hot gas makes an insulated inlet box appropriate.'
   },
   {
+    id: 'q6-stainless-pedestal',
     short: 'Stainless housing on a mild steel pedestal',
     text: 'Stainless steel housing on a mild steel pedestal; the specification forbids welding stainless steel to mild steel.',
     tags: ['corrosive'],
@@ -92,88 +100,93 @@ const inquiries = [
       'Coat the pedestal.',
       'Aluminum pedestal welded to the housing.'
     ],
-    correct: 1,
-    reason: 'FanPedia uses buffer strips when stainless must not be welded to mild steel, and a bolt-on pedestal for dissimilar metals.'
+    answer: 1,
+    why: 'FanPedia uses buffer strips when stainless must not be welded to mild steel, and a bolt-on pedestal for dissimilar metals.'
   }
 ];
 
 const letters = ['A', 'B', 'C', 'D'];
+const MASTERY = 5;
 const exampleLine = '601°F-800°F package; mild steel and Corten or stainless steel; insulated jacket.';
-const MSG_CORRECT = 'Recommended construction is sound.';
-const MSG_WRONG = 'That breaks a rule.';
+// Spec feedback wording (overrides the §4.2 defaults); ✓/✗ added so colour is not the only cue
+const MSG_CORRECT = FP.msg.OK + ' Recommended construction is sound.';
+const MSG_WRONG = FP.msg.BAD + ' That breaks a rule.';
 const MSG_MASTERY = 'You can turn an airstream into a construction line.';
+const REVIEW_POINTER = 'Review the reasons above, then press Start over';
+const NOTE = ['Illustrative inquiries', 'Rules: FanPedia pp. 85-145', 'Keys: A-D choose, Enter recommends or goes on'];
 
-// ---------- state ----------
-let current = 0;          // index of the inquiry on screen
-let selected = -1;        // option currently selected (not yet committed)
-let records = [];         // per inquiry: { first, practice, revealed }
-let showSummary = false;
+// ---------- engine: first attempt scored, fixed order ----------
+const deck = new FP.CardDeck({
+  cards: inquiries, shuffle: false, attempts: 1, retryMissed: false,
+  noun: 'Inquiries', mastery: MASTERY, reviewPointer: REVIEW_POINTER,
+  label: (answer) => letters[answer], id: SIM_ID
+});
+
+// ---------- per-inquiry display state ----------
+let selected = -1;   // option currently selected (not yet committed)
+let records = [];    // per inquiry: { first, practice, revealed }
+let summaryPage = 0; // narrow screens: the summary rows are split into 1-3 and 4-6
+let contentTop = 59; // y below the status line (set in draw)
+const PAGE_ROWS = [[0, 1, 2], [3, 4, 5]];
 
 // ---------- controls ----------
 let letterButtons = [];
 let recommendButton, nextButton, restartButton;
+const keys = K.keys.bind({
+  a: () => selectOption(0), b: () => selectOption(1), c: () => selectOption(2), d: () => selectOption(3),
+  Enter: enterKey
+});
 
 function setup() {
   updateCanvasSize();
+  K.config({ drawHeight, controlHeight });
   const canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(document.querySelector('main'));
-  textFont('Arial');
 
   // Create every control before positioning any of them
   for (let i = 0; i < 4; i++) {
-    const b = createButton(letters[i]);
-    b.parent(document.querySelector('main'));
-    b.size(40, 30);
-    b.mousePressed(() => selectOption(i));
+    const b = K.button(letters[i], () => selectOption(i));
+    b.addClass('choice');
+    b.attribute('aria-label', 'Option ' + letters[i]);
     letterButtons.push(b);
   }
-  recommendButton = createButton('Recommend');
-  recommendButton.parent(document.querySelector('main'));
-  recommendButton.size(110, 30);
-  recommendButton.mousePressed(commitRecommendation);
-
-  nextButton = createButton('Next inquiry');
-  nextButton.parent(document.querySelector('main'));
-  nextButton.size(130, 30);
-  nextButton.mousePressed(nextInquiry);
-
-  restartButton = createButton('Start over');
-  restartButton.parent(document.querySelector('main'));
-  restartButton.size(100, 30);
-  restartButton.mousePressed(resetAll);
+  recommendButton = K.button('Recommend', commitRecommendation);
+  nextButton = K.button('Next inquiry', nextInquiry);
+  restartButton = K.button(FP.msg.START_OVER, resetAll, { variant: 'secondary' });
 
   positionControls();
   resetAll();
 
   describe('Construction Class Advisor: six illustrative fan inquiries with airstream condition tags. ' +
     'Choose option A, B, C or D, press Recommend to commit, then read whether the construction is sound and why. ' +
-    'The first answer to each inquiry is scored; a summary lists every answer and the final score out of 6.');
+    'The first answer to each inquiry is scored; a summary lists every answer and the first-attempt score out of 6.');
   noLoop();
 }
 
+function optionX() { return canvasWidth >= 420 ? 80 : K.layout.margin; }
+
 function positionControls() {
-  // Row 1: option letters + Recommend; Row 2: Next inquiry + Start over
-  const row1 = drawHeight + 8;
-  const row2 = drawHeight + 43;
-  const x0 = 85;  // room for the "Option:" label
-  for (let i = 0; i < 4; i++) letterButtons[i].position(x0 + i * 46, row1);
-  recommendButton.position(x0 + 4 * 46 + 10, row1);
-  nextButton.position(10, row2);
-  restartButton.position(150, row2);
+  // Row 0: option letters | Recommend; row 1: Next inquiry, Start over (+ hint)
+  K.flowButtons(0, letterButtons.concat(['|', recommendButton]), { x: optionX() });
+  K.flowButtons(1, [nextButton, restartButton]);
 }
 
 function resetAll() {
-  current = 0;
+  deck.newRound();
   selected = -1;
-  showSummary = false;
+  summaryPage = 0;
   records = inquiries.map(() => ({ first: -1, practice: -1, revealed: false }));
   updateButtons();
   redraw();
 }
 
+function inSummary() { return deck.state().phase === 'summary'; }
+function cur() { return deck.state().index; }
+
 function selectOption(i) {
-  const r = records[current];
-  if (showSummary || r.revealed || r.practice >= 0) return;
+  if (inSummary()) return;
+  const r = records[cur()];
+  if (r.revealed || r.practice >= 0) return;
   if (r.first === i) return;  // the practice attempt must be a different option
   selected = i;
   updateButtons();
@@ -181,122 +194,151 @@ function selectOption(i) {
 }
 
 function commitRecommendation() {
-  if (showSummary || selected < 0) return;
-  const r = records[current];
-  const q = inquiries[current];
+  if (inSummary() || selected < 0) return;
+  const idx = cur();
+  const r = records[idx];
+  const q = inquiries[idx];
   if (r.first < 0) {
-    r.first = selected;                       // scored attempt
-    if (selected === q.correct) r.revealed = true;
+    r.first = selected;                        // scored attempt (locks the deck card)
+    deck.place(selected);
+    if (selected === q.answer) r.revealed = true;
   } else if (r.practice < 0 && !r.revealed) {
-    r.practice = selected;                    // practice attempt (not scored)
-    r.revealed = true;                        // correct option shown after practice
+    r.practice = selected;                     // practice attempt (not scored)
+    r.revealed = true;                         // correct option shown after practice
+    FP.events.emit('answered', {
+      source: SIM_ID, itemId: q.id, index: idx, value: selected, correct: selected === q.answer,
+      attempt: 2, final: true, scored: false
+    });
   }
   selected = -1;
+  FP.announce(feedbackText(idx).join(' '));
+  const had = document.activeElement;
   updateButtons();
+  keepFocus(had);
   redraw();
 }
 
 function nextInquiry() {
-  if (showSummary || records[current].first < 0) return;
-  records[current].revealed = true;  // moving on reveals the correct option for the summary
-  if (current < inquiries.length - 1) {
-    current++;
-  } else {
-    showSummary = true;
-  }
+  if (inSummary()) { flipSummaryPage(); return; }
+  if (records[cur()].first < 0) return;
+  records[cur()].revealed = true;  // moving on reveals the correct option for the summary
   selected = -1;
+  deck.next();
+  if (inSummary()) {
+    const s = deck.summary();
+    FP.announce(finalLines(s).join('. '));
+  } else {
+    FP.announce('Inquiry ' + (cur() + 1) + ' of ' + inquiries.length + ': ' + inquiries[cur()].text);
+  }
+  const had = document.activeElement;
+  updateButtons();
+  keepFocus(had);
+  redraw();
+}
+
+// A button that just became disabled drops keyboard focus; move it to the next useful control
+function keepFocus(a) {
+  if (!a || a.tagName !== 'BUTTON' || !a.disabled) return;
+  const order = [nextButton].concat(letterButtons, [restartButton]);
+  const target = inSummary() ? (nextButton.elt.disabled ? restartButton : nextButton)
+    : order.find(b => !b.elt.disabled);
+  if (target) target.elt.focus();
+}
+
+function enterKey() {
+  if (selected >= 0) commitRecommendation();
+  else if (inSummary() ? summaryPaged() : records[cur()].first >= 0) nextInquiry();
+}
+
+// Summary paging (only when all six rows do not fit at 12 px)
+function allRows() { return [0, 1, 2, 3, 4, 5]; }
+function summaryPaged() {
+  if (!inSummary()) return false;
+  return layoutSummary(contentTop, 12, false, allRows()) > drawHeight - 24;
+}
+function flipSummaryPage() {
+  if (!summaryPaged()) return;
+  summaryPage = 1 - summaryPage;
+  const rows = PAGE_ROWS[summaryPage];
+  FP.announce('Summary, inquiries ' + (rows[0] + 1) + ' to ' + (rows[rows.length - 1] + 1) + '.');
   updateButtons();
   redraw();
 }
 
-function setEnabled(btn, on) {
-  if (on) btn.removeAttribute('disabled'); else btn.attribute('disabled', '');
-}
-
 function updateButtons() {
-  const r = records[current];
-  const choosing = !showSummary && !r.revealed && r.practice < 0;
+  const summary = inSummary();
+  const r = records[cur()] || records[0];
+  const choosing = !summary && !r.revealed && r.practice < 0;
   for (let i = 0; i < 4; i++) {
-    setEnabled(letterButtons[i], choosing && r.first !== i);
-    letterButtons[i].style('font-weight', i === selected ? 'bold' : 'normal');
-    letterButtons[i].style('background-color', i === selected ? 'lightskyblue' : '');
+    K.setEnabled(letterButtons[i], choosing && r.first !== i);
+    const on = i === selected;
+    if (on) letterButtons[i].addClass('selected'); else letterButtons[i].removeClass('selected');
+    letterButtons[i].attribute('aria-pressed', on ? 'true' : 'false');
   }
-  setEnabled(recommendButton, choosing && selected >= 0);
-  setEnabled(nextButton, !showSummary && r.first >= 0);
-  nextButton.html(current === inquiries.length - 1 ? 'See summary' : 'Next inquiry');
+  K.setEnabled(recommendButton, choosing && selected >= 0);
+  const paged = summaryPaged();
+  K.setEnabled(nextButton, paged || (!summary && r.first >= 0));
+  nextButton.html(paged ? (summaryPage === 0 ? 'Inquiries 4-6' : 'Inquiries 1-3')
+    : (deck.state().isLast ? 'See summary' : 'Next inquiry'));
+  positionControls();   // the Next label changes width
 }
 
-function score() {
-  let n = 0;
-  for (let i = 0; i < inquiries.length; i++) {
-    if (records[i].first === inquiries[i].correct) n++;
-  }
-  return n;
+// ---------- feedback text ----------
+function feedbackText(idx) {
+  const r = records[idx];
+  const q = inquiries[idx];
+  const last = r.practice >= 0 ? r.practice : r.first;
+  const verdict = last === q.answer ? MSG_CORRECT : MSG_WRONG;
+  const head = r.practice >= 0 ? FP.msg.practice(verdict) : 'First attempt (scored): ' + verdict;
+  const extra = r.revealed
+    ? 'Correct recommendation: ' + letters[q.answer] + '.'
+    : 'You may choose again once for practice; your first answer is the one scored.';
+  return [head, q.why, extra];
+}
+
+function finalLines(s) {
+  return [
+    s.lines[0],
+    s.mastered ? FP.msg.masteryReached(s.mastery, s.total) + ' ' + MSG_MASTERY
+      : FP.msg.masteryNeeds(s.mastery, s.total, REVIEW_POINTER)
+  ];
 }
 
 // ---------- drawing ----------
 function draw() {
-  updateCanvasSize();
+  K.regions(drawHeight, controlHeight);
+  const y = K.title('Construction Class Advisor');
+  const st = deck.state();
+  const right = inSummary() ? (summaryPaged() ? 'Summary ' + (summaryPage + 1) + ' of 2' : 'Summary') : 'Inquiry ' + (st.index + 1) + ' of ' + inquiries.length;
+  const top = K.statusLine(st.scoreLabel, right, NOTE, { y: y - 2 });
+  contentTop = top;
 
-  fill('aliceblue');
-  stroke('silver');
-  rect(0, 0, canvasWidth, drawHeight);
-  fill('white');
-  rect(0, drawHeight, canvasWidth, controlHeight);
+  if (inSummary()) drawSummary(top); else drawInquiry(top);
 
+  // control-region label and hint
   noStroke();
-  fill('black');
-  textSize(22);
-  textStyle(BOLD);
-  textAlign(CENTER, TOP);
-  text('Construction Class Advisor', canvasWidth / 2, 10);
   textStyle(NORMAL);
-
-  if (showSummary) drawSummary(); else drawInquiry();
-
-  // control-region label
-  noStroke();
-  fill('black');
-  textSize(defaultTextSize);
   textAlign(LEFT, CENTER);
-  text('Option:', 12, drawHeight + 23);
-  textAlign(LEFT, CENTER);
-  fill('dimgray');
+  if (optionX() > K.layout.margin) {
+    fill(K.tok('--fp-text'));
+    textSize(16);
+    text('Option:', 12, K.controlLabel(0));
+  }
+  const hx = parseFloat(restartButton.elt.style.left || '0') + restartButton.elt.offsetWidth + 16;
+  const hint = hintText();
   textSize(14);
-  if (canvasWidth > 430) {
-    const r = records[current];
-    let hint = '';
-    if (showSummary) hint = 'Press Start over to try again.';
-    else if (r.first < 0) hint = selected < 0 ? 'Pick A-D, then Recommend.' : 'Press Recommend to commit.';
-    else if (!r.revealed && r.practice < 0) hint = 'Optional: one practice attempt.';
-    else hint = 'Press ' + (current === inquiries.length - 1 ? 'See summary.' : 'Next inquiry.');
-    text(hint, 265, drawHeight + 58);
+  if (hx + textWidth(hint) < canvasWidth - 8) {
+    fill(K.tok('--fp-text-muted'));
+    text(hint, hx, K.controlLabel(1));
   }
 }
 
-// Break a string into lines no wider than maxW at the current text size
-function wrapLines(str, maxW) {
-  const words = str.split(' ');
-  const lines = [];
-  let line = '';
-  for (const w of words) {
-    const test = line ? line + ' ' + w : w;
-    if (textWidth(test) > maxW && line) {
-      lines.push(line);
-      line = w;
-    } else {
-      line = test;
-    }
-  }
-  if (line) lines.push(line);
-  return lines;
-}
-
-function boldWrap(str, maxW) {
-  textStyle(BOLD);
-  const lines = wrapLines(str, maxW);
-  textStyle(NORMAL);
-  return lines;
+function hintText() {
+  if (inSummary()) return summaryPaged() ? 'Two summary pages.' : 'Press Start over to try again.';
+  const r = records[cur()];
+  if (r.first < 0) return selected < 0 ? 'Pick A-D, then Recommend.' : 'Press Recommend to commit.';
+  if (!r.revealed && r.practice < 0) return 'Optional: one practice attempt.';
+  return 'Press ' + (deck.state().isLast ? 'See summary.' : 'Next inquiry.');
 }
 
 function drawLines(lines, x, y, lh) {
@@ -304,70 +346,43 @@ function drawLines(lines, x, y, lh) {
   return lines.length * lh;
 }
 
-// Build the inquiry layout at text size ts and return its total height (no drawing)
-function measureInquiry(ts) {
-  textSize(ts);
-  const q = inquiries[current];
-  const lh = ts * 1.3;
-  const innerW = canvasWidth - 2 * margin;
-  let h = 70;                                             // title + header line
-  h += wrapLines(q.text, innerW - 20).length * lh + 20;   // inquiry box
-  h += 34;                                                // tag chips
-  h += lh + 8;                                            // prompt
-  for (let i = 0; i < 4; i++) h += cardInfo(i, innerW, ts).h + 8;
-  textSize(ts);
-  h += feedbackHeight(ts, innerW);
-  return h;
+function boldWrap(str, maxW) {
+  textStyle(BOLD);
+  const lines = K.wrapLines(str, maxW);
+  textStyle(NORMAL);
+  return lines;
 }
 
-function feedbackLines(innerW) {
-  const r = records[current];
-  const q = inquiries[current];
-  if (r.first < 0) return null;
-  const last = r.practice >= 0 ? r.practice : r.first;
-  const verdict = last === q.correct ? MSG_CORRECT : MSG_WRONG;
-  const label = r.practice >= 0 ? 'Practice attempt (not scored): ' : 'First attempt (scored): ';
-  let extra = '';
-  if (!r.revealed) extra = 'You may choose again once for practice; your first answer is the one scored.';
-  else extra = 'Correct recommendation: ' + letters[q.correct] + '.';
-  return {
-    head: boldWrap(label + verdict, innerW - 20),
-    body: wrapLines(q.reason, innerW - 20),
-    extra: wrapLines(extra, innerW - 20),
-    good: last === q.correct
-  };
-}
-
-function feedbackHeight(ts, innerW) {
-  const fb = feedbackLines(innerW);
-  const lh = ts * 1.3;
-  if (!fb) return lh + 24;
-  return (fb.head.length + fb.body.length + fb.extra.length) * lh + 24;
-}
-
-// Text, status label and colors for option card i (used to measure and to draw)
+// Text, status label and colours for option card i (used to measure and to draw)
 function cardInfo(i, innerW, ts) {
-  const q = inquiries[current];
-  const r = records[current];
+  const idx = cur();
+  const q = inquiries[idx];
+  const r = records[idx];
   textSize(ts);
   const lh = ts * 1.3;
-  const lines = wrapLines(q.options[i], innerW - 60);
+  const lines = K.wrapLines(q.options[i], innerW - 60);
   const isFirst = r.first === i;
   const isPractice = r.practice === i;
-  let bg = 'white', border = 'silver', weight = 1, tag = '';
-  if (i === selected) { bg = 'lightcyan'; border = 'steelblue'; weight = 3; tag = 'selected'; }
-  if ((isFirst || isPractice) && i !== q.correct) {
-    bg = 'mistyrose'; border = 'firebrick'; weight = 2;
-    tag = isFirst ? 'your first answer: breaks a rule' : 'practice answer: breaks a rule';
+  let bg = K.tok('--fp-ctrl-bg'), border = K.tok('--fp-border'), badge = K.tok('--fp-text-muted'), ink = K.tok('--fp-text');
+  let weight = 1, dashed = false, tag = '';
+  if (i === selected) {
+    bg = K.tok('--fp-primary-bg'); border = K.tok('--fp-primary'); badge = border; ink = K.tok('--fp-primary-dark');
+    weight = 3; tag = FP.msg.OK + ' selected';
   }
-  if (r.revealed && i === q.correct) {
-    bg = 'honeydew'; border = 'forestgreen'; weight = 3;
-    tag = isFirst ? 'your first answer: correct' : (isPractice ? 'practice answer: correct' : 'correct recommendation');
+  if ((isFirst || isPractice) && i !== q.answer) {
+    bg = K.tok('--fp-incorrect-bg'); border = K.tok('--fp-incorrect'); badge = border; ink = border;
+    weight = 2; dashed = true;
+    tag = FP.msg.BAD + (isFirst ? ' your first answer: breaks a rule' : ' practice answer: breaks a rule');
+  }
+  if (r.revealed && i === q.answer) {
+    bg = K.tok('--fp-correct-bg'); border = K.tok('--fp-correct'); badge = border; ink = border;
+    weight = 3; dashed = false;
+    tag = FP.msg.OK + (isFirst ? ' your first answer: correct' : (isPractice ? ' practice answer: correct' : ' correct recommendation'));
   }
   let h = lines.length * lh + 18;
   if (tag) {
     // give the status label its own line when it would collide with the last text line
-    textSize(ts - 2);
+    textSize(Math.max(ts - 2, 12));
     textStyle(BOLD);
     const tagW = textWidth(tag);
     textStyle(NORMAL);
@@ -375,187 +390,172 @@ function cardInfo(i, innerW, ts) {
     const lastW = textWidth(lines[lines.length - 1]);
     if (44 + lastW + 16 + tagW > innerW - 8) h += ts;
   }
-  return { lines, h, bg, border, weight, tag };
+  return { lines, h, bg, border, badge, ink, weight, dashed, tag };
 }
 
-function drawInquiry() {
-  const q = inquiries[current];
-  const r = records[current];
+// Lay out the inquiry screen at text size ts; draws when doDraw, returns the bottom y
+function layoutInquiry(top, ts, doDraw) {
+  const idx = cur();
+  const q = inquiries[idx];
+  const r = records[idx];
   const innerW = canvasWidth - 2 * margin;
-
-  // shrink text only if the content would not fit the drawing region
-  let ts = 16;
-  while (ts > 12 && measureInquiry(ts) > drawHeight - 6) ts--;
-  textSize(ts);
   const lh = ts * 1.3;
-
-  // header line
-  let y = 42;
+  let y = top + 4;
+  textSize(ts);
+  textAlign(LEFT, TOP);
   noStroke();
-  textAlign(LEFT, TOP);
-  fill('black');
-  textStyle(BOLD);
-  text('Inquiry ' + (current + 1) + ' of ' + inquiries.length, margin, y);
-  textStyle(ITALIC);
-  fill('dimgray');
-  textAlign(RIGHT, TOP);
-  text('Illustrative inquiries', canvasWidth - margin, y);
-  textStyle(NORMAL);
-  textAlign(LEFT, TOP);
-  y += lh + 6;
 
-  // inquiry box
-  const qLines = wrapLines(q.text, innerW - 20);
+  // inquiry box (prompt panel)
+  const qLines = K.wrapLines(q.text, innerW - 20);
   const boxH = qLines.length * lh + 14;
-  fill('white');
-  stroke('steelblue');
-  strokeWeight(1.5);
-  rect(margin, y, innerW, boxH, 8);
-  strokeWeight(1);
-  noStroke();
-  fill('black');
-  drawLines(qLines, margin + 10, y + 7, lh);
+  if (doDraw) {
+    K.panel(margin, y, innerW, boxH, { fill: '--fp-primary-bg', stroke: '--fp-primary', weight: 1.5 });
+    fill(K.tok('--fp-text'));
+    drawLines(qLines, margin + 10, y + 7, lh);
+  }
   y += boxH + 8;
 
-  // airstream condition tags
-  fill('black');
-  textAlign(LEFT, CENTER);
-  text('Airstream:', margin, y + (lh + 8) / 2);
-  textAlign(LEFT, TOP);
-  let tx = margin + textWidth('Airstream:') + 10;
-  for (const t of q.tags) {
-    const w = textWidth(t) + 18;
-    fill('lemonchiffon');
-    stroke('darkgoldenrod');
-    rect(tx, y, w, lh + 8, 12);
-    noStroke();
-    fill('saddlebrown');
+  // airstream condition tags (text chips)
+  if (doDraw) {
+    fill(K.tok('--fp-text'));
     textAlign(LEFT, CENTER);
-    text(t, tx + 9, y + (lh + 8) / 2);
+    text('Airstream:', margin, y + (lh + 8) / 2);
+    let tx = margin + textWidth('Airstream:') + 10;
+    for (const t of q.tags) {
+      const w = textWidth(t) + 18;
+      K.panel(tx, y, w, lh + 8, { fill: '--fp-ctrl-bg', stroke: '--fp-text-muted', radius: 12 });
+      noStroke();
+      fill(K.tok('--fp-text'));
+      text(t, tx + 9, y + (lh + 8) / 2);
+      tx += w + 8;
+    }
     textAlign(LEFT, TOP);
-    tx += w + 8;
   }
   y += lh + 18;
 
   // prompt
-  fill('black');
-  textStyle(BOLD);
-  text('What should the construction line say?', margin, y);
-  textStyle(NORMAL);
+  if (doDraw) {
+    fill(K.tok('--fp-text'));
+    textStyle(BOLD);
+    text('What should the construction line say?', margin, y);
+    textStyle(NORMAL);
+  }
   y += lh + 8;
 
   // option cards
   for (let i = 0; i < 4; i++) {
     const c = cardInfo(i, innerW, ts);
-    fill(c.bg);
-    stroke(c.border);
-    strokeWeight(c.weight);
-    rect(margin, y, innerW, c.h, 8);
-    strokeWeight(1);
-    // letter badge
-    fill(c.border === 'silver' ? 'slategray' : c.border);
-    noStroke();
-    circle(margin + 20, y + c.h / 2, 26);
-    fill('white');
-    textStyle(BOLD);
-    textAlign(CENTER, CENTER);
-    text(letters[i], margin + 20, y + c.h / 2);
-    textAlign(LEFT, TOP);
-    textStyle(NORMAL);
-    fill('black');
-    drawLines(c.lines, margin + 44, y + 9, lh);
-    if (c.tag) {
-      textSize(ts - 2);
+    if (doDraw) {
+      K.panel(margin, y, innerW, c.h, { fill: c.bg, stroke: c.border, weight: c.weight, dashed: c.dashed });
+      noStroke();
+      fill(c.badge);
+      circle(margin + 20, y + c.h / 2, 26);
+      fill(K.tok('--fp-ctrl-bg'));
       textStyle(BOLD);
-      fill(c.border);
-      textAlign(RIGHT, TOP);
-      text(c.tag, margin + innerW - 8, y + c.h - (ts - 2) - 5);
+      textAlign(CENTER, CENTER);
+      text(letters[i], margin + 20, y + c.h / 2);
       textAlign(LEFT, TOP);
       textStyle(NORMAL);
-      textSize(ts);
+      fill(K.tok('--fp-text'));
+      drawLines(c.lines, margin + 44, y + 9, lh);
+      if (c.tag) {
+        textSize(Math.max(ts - 2, 12));
+        textStyle(BOLD);
+        fill(c.ink);
+        textAlign(RIGHT, TOP);
+        text(c.tag, margin + innerW - 8, y + c.h - Math.max(ts - 2, 12) - 5);
+        textAlign(LEFT, TOP);
+        textStyle(NORMAL);
+        textSize(ts);
+      }
     }
     y += c.h + 8;
   }
 
   // feedback panel
-  const fb = feedbackLines(innerW);
   y += 2;
-  if (!fb) {
-    fill('dimgray');
-    textStyle(ITALIC);
-    text('Choose one option, then press Recommend. The reason appears after you commit.', margin, y, innerW);
-    textStyle(NORMAL);
-    return;
+  textSize(ts);
+  if (r.first < 0) {
+    const msg = 'Choose one option, then press Recommend. The reason appears after you commit.';
+    const lines = K.wrapLines(msg, innerW);
+    if (doDraw) {
+      fill(K.tok('--fp-text-muted'));
+      textStyle(ITALIC);
+      drawLines(lines, margin, y, lh);
+      textStyle(NORMAL);
+    }
+    return y + lines.length * lh;
   }
-  const fh = (fb.head.length + fb.body.length + fb.extra.length) * lh + 16;
-  fill(255, 255, 255, 235);
-  stroke(fb.good ? 'forestgreen' : 'firebrick');
-  strokeWeight(2);
-  rect(margin, y, innerW, fh, 10);
-  strokeWeight(1);
-  noStroke();
-  let fy = y + 8;
-  fill(fb.good ? 'darkgreen' : 'darkred');
-  textStyle(BOLD);
-  fy += drawLines(fb.head, margin + 10, fy, lh);
-  textStyle(NORMAL);
-  fill('black');
-  fy += drawLines(fb.body, margin + 10, fy, lh);
-  fill('midnightblue');
-  textStyle(ITALIC);
-  drawLines(fb.extra, margin + 10, fy, lh);
-  textStyle(NORMAL);
+  const [headT, whyT, extraT] = feedbackText(idx);
+  const good = (r.practice >= 0 ? r.practice : r.first) === q.answer;
+  const head = boldWrap(headT, innerW - 20);
+  const body = K.wrapLines(whyT, innerW - 20);
+  const extra = K.wrapLines(extraT, innerW - 20);
+  const fh = (head.length + body.length + extra.length) * lh + 16;
+  if (doDraw) {
+    K.panel(margin, y, innerW, fh, {
+      fill: good ? '--fp-correct-bg' : '--fp-incorrect-bg',
+      stroke: good ? '--fp-correct' : '--fp-incorrect', weight: 2, dashed: !good, radius: 10
+    });
+    noStroke();
+    let fy = y + 8;
+    fill(K.tok(good ? '--fp-correct' : '--fp-incorrect'));
+    textStyle(BOLD);
+    fy += drawLines(head, margin + 10, fy, lh);
+    textStyle(NORMAL);
+    fill(K.tok('--fp-text'));
+    fy += drawLines(body, margin + 10, fy, lh);
+    fill(K.tok('--fp-primary-dark'));
+    textStyle(ITALIC);
+    drawLines(extra, margin + 10, fy, lh);
+    textStyle(NORMAL);
+  }
+  return y + fh;
+}
+
+function drawInquiry(top) {
+  const maxY = drawHeight - 24;   // keep the data label clear
+  const ts = K.fitTextSize(s => layoutInquiry(top, s, false), maxY, 16, 12);
+  layoutInquiry(top, ts, true);
 }
 
 // Summary rows, measured or drawn at text size ts; returns the bottom y
-function layoutSummary(ts, doDraw) {
+function layoutSummary(top, ts, doDraw, rows) {
   const innerW = canvasWidth - 2 * margin;
   const lh = ts * 1.3;
-  const small = Math.max(ts - 2, 11);
+  const small = Math.max(ts - 2, 12);
   const slh = small * 1.3;
-  const n = score();
-  let y = 42;
-  textSize(ts);
+  const s = deck.summary();
+  let y = top + 2;
   textAlign(LEFT, TOP);
-  if (doDraw) {
-    noStroke();
-    fill('black');
-    textStyle(BOLD);
-    text('Summary: ' + n + ' of 6', margin, y);
-    textStyle(ITALIC);
-    fill('dimgray');
-    textAlign(RIGHT, TOP);
-    text('Illustrative inquiries', canvasWidth - margin, y);
-    textAlign(LEFT, TOP);
-    textStyle(NORMAL);
-  }
-  y += lh + 6;
+  noStroke();
 
-  for (let i = 0; i < inquiries.length; i++) {
+  for (const i of rows) {
     const q = inquiries[i];
     const r = records[i];
-    const ok = r.first === q.correct;
+    const ok = r.first === q.answer;
     textSize(ts);
     // narrow screens drop the short description so the reasons stay readable
     const label = canvasWidth < 560 ? 'Inquiry ' + (i + 1) : (i + 1) + '. ' + q.short;
-    const head = boldWrap(label + ' — first answer ' +
+    const head = boldWrap((ok ? FP.msg.OK : FP.msg.BAD) + ' ' + label + ' — first answer ' +
       (r.first >= 0 ? letters[r.first] : '-') + (ok ? ' (correct)' : ' (incorrect)') +
-      '; correct ' + letters[q.correct], innerW - 16);
+      '; correct ' + letters[q.answer], innerW - 16);
     textSize(small);
-    const body = wrapLines(q.reason, innerW - 16);
+    const body = K.wrapLines(q.why, innerW - 16);
     const h = head.length * lh + body.length * slh + 12;
     if (doDraw) {
-      fill(ok ? 'honeydew' : 'mistyrose');
-      stroke(ok ? 'forestgreen' : 'firebrick');
-      rect(margin, y, innerW, h, 6);
+      K.panel(margin, y, innerW, h, {
+        fill: ok ? '--fp-correct-bg' : '--fp-incorrect-bg',
+        stroke: ok ? '--fp-correct' : '--fp-incorrect', dashed: !ok, radius: 6
+      });
       noStroke();
       textSize(ts);
       textStyle(BOLD);
-      fill(ok ? 'darkgreen' : 'darkred');
+      fill(K.tok(ok ? '--fp-correct' : '--fp-incorrect'));
       drawLines(head, margin + 8, y + 5, lh);
       textStyle(NORMAL);
       textSize(small);
-      fill('black');
+      fill(K.tok('--fp-text'));
       drawLines(body, margin + 8, y + 5 + head.length * lh, slh);
     }
     y += h + 5;
@@ -563,23 +563,22 @@ function layoutSummary(ts, doDraw) {
 
   // worked example: inquiry 4 as a construction line
   textSize(ts);
-  const exLines = wrapLines('Construction line for inquiry 4: ' + exampleLine, innerW - 16);
+  const exLines = K.wrapLines('Construction line for inquiry 4: ' + exampleLine, innerW - 16);
   const exH = exLines.length * lh + 12;
   if (doDraw) {
-    fill('white');
-    stroke('steelblue');
-    rect(margin, y, innerW, exH, 6);
+    K.panel(margin, y, innerW, exH, { fill: '--fp-primary-bg', stroke: '--fp-primary', radius: 6 });
     noStroke();
-    fill('midnightblue');
+    fill(K.tok('--fp-primary-dark'));
     drawLines(exLines, margin + 8, y + 6, lh);
   }
   y += exH + 8;
 
-  const verdict = n >= 5 ? MSG_MASTERY : 'Mastery is 5 of 6 on the first attempt. Review the reasons above, then press Start over.';
-  const vLines = boldWrap('Final score: ' + n + ' of 6. ' + verdict, innerW);
+  // first-attempt score and mastery line
+  const fl = finalLines(s);
+  const vLines = boldWrap(fl[0], innerW).concat(boldWrap(fl[1], innerW));
   if (doDraw) {
     textStyle(BOLD);
-    fill(n >= 5 ? 'darkgreen' : 'darkred');
+    fill(K.tok(s.mastered ? '--fp-correct' : '--fp-text'));
     drawLines(vLines, margin, y, lh);
     textStyle(NORMAL);
   }
@@ -587,35 +586,22 @@ function layoutSummary(ts, doDraw) {
   return y;
 }
 
-function drawSummary() {
-  let ts = 16;
-  while (ts > 11 && layoutSummary(ts, false) > drawHeight - 6) ts--;
-  layoutSummary(ts, true);
+function drawSummary(top) {
+  const maxY = drawHeight - 24;
+  const rows = summaryPaged() ? PAGE_ROWS[summaryPage] : allRows();
+  const ts = K.fitTextSize(s => layoutSummary(top, s, false, rows), maxY, 16, 12);
+  layoutSummary(top, ts, true, rows);
 }
 
 // ---------- keyboard: A-D select, Enter commits (or moves on once committed) ----------
-function keyPressed() {
-  const k = key.toUpperCase();
-  const idx = letters.indexOf(k);
-  if (idx >= 0) {
-    selectOption(idx);
-  } else if (keyCode === ENTER) {
-    const r = records[current];
-    if (selected >= 0) commitRecommendation();
-    else if (!showSummary && r.first >= 0) nextInquiry();
-  }
-}
+function keyPressed() { return keys(); }
 
 // ---------- responsive sizing ----------
 function windowResized() {
   updateCanvasSize();
   resizeCanvas(canvasWidth, canvasHeight);
+  updateButtons();
   redraw();
 }
 
-function updateCanvasSize() {
-  const container = document.querySelector('main');
-  if (container) {
-    canvasWidth = container.offsetWidth;
-  }
-}
+function updateCanvasSize() { canvasWidth = K.updateCanvasSize(320); }

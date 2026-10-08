@@ -1,23 +1,27 @@
 {
   "title": "Construction Class Advisor",
-  "creator": "Twin City Fan",
-  "subject": "Industrial and Commercial Fans",
   "description": "A p5.js recommendation activity in which learners choose the construction for six illustrative airstream inquiries (steam, steam at 220°F, a Type C specification on a non-ferrous radial bladed fan, a touchable 700°F kiln fan, flue gas recirculation and a stainless housing on a mild steel pedestal). Each recommendation is committed before the reason is shown; the first attempt is scored, one practice attempt is allowed, and a summary reports the score out of 6 with mastery at 5.",
+  "creator": "Twin City Fan",
   "date": "2026-10-08",
+  "subject": [
+    "construction class",
+    "high moisture construction",
+    "high temperature construction",
+    "spark resistant construction",
+    "insulated jacket",
+    "flue gas recirculation",
+    "buffer strips"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
-  "source": "FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), https://tcf.com/fanpedia/, pp. 85, 107, 110, 116, 119, 122 and 145. Inquiries are illustrative.",
   "educational": {
-    "gradeLevel": [
-      "Adult professional development"
-    ],
-    "audience": "New application engineers, sales staff, manufacturer's representatives, distributors and plant staff",
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
     "subjectArea": "Fans and blowers",
     "topic": "Construction classes: moisture, high temperature, spark resistance, insulation, FGR and dissimilar metals",
     "learningObjectives": [
-      "Recommend the construction choice for six stated airstream inquiries, consistent with the FanPedia rules in Chapter 20, with at least 5 of 6 correct on the first attempt."
+      "The learner will recommend the construction choice for six stated airstream inquiries, consistent with the FanPedia rules in Chapter 20, with at least 5 of 6 correct on the first attempt."
     ],
     "bloomsTaxonomy": "Evaluate",
     "bloomVerb": "recommend",
@@ -44,29 +48,74 @@
     "framework": "p5.js",
     "frameworkVersion": "1.11.10",
     "version": "1.0",
+    "canvasHeight": 660,
     "canvasDimensions": {
       "width": "responsive",
       "height": 660
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
     ],
     "accessibility": {
       "hasAltText": true,
       "keyboardNavigable": true,
-      "notes": "describe() text for screen readers; keys A-D select an option and Enter commits it (or moves to the next inquiry once committed); option status is written as text labels ('your first answer: breaks a rule', 'correct recommendation') as well as shown by color."
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs, written status labels and solid/dashed borders pair with colour; keys A-D select an option and Enter recommends it (or moves on once committed); every control is a native button reachable with Tab; text never below 12 px; on narrow screens the summary splits into two pages."
     }
   },
-  "controls": [
-    { "type": "button", "label": "A / B / C / D", "purpose": "Select one of the four construction recommendations (keys A-D)" },
-    { "type": "button", "label": "Recommend", "purpose": "Commit the selected recommendation and show the verdict and reason (Enter)" },
-    { "type": "button", "label": "Next inquiry / See summary", "purpose": "Move to the next inquiry once the first answer is committed; after inquiry 6, show the summary" },
-    { "type": "button", "label": "Start over", "purpose": "Reset all six inquiries and the score" }
-  ],
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "A / B / C / D",
+        "purpose": "Select one of the four construction recommendations (keys A-D)"
+      },
+      {
+        "type": "button",
+        "label": "Recommend",
+        "purpose": "Commit the selected recommendation and show the verdict and reason (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Next inquiry / See summary",
+        "purpose": "Move to the next inquiry once the first answer is committed; after inquiry 6, show the summary (on narrow screens it switches the summary pages: Inquiries 4-6 / Inquiries 1-3)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reset all six inquiries and the score"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "One correct option per inquiry (A, B, B, C, A, B); option order fixed A-D.",
+      "Score = number correct on the first attempt; one extra practice attempt per inquiry is never scored.",
+      "Correct: 'Recommended construction is sound.' plus the reason; incorrect: 'That breaks a rule.' plus the reason.",
+      "The correct option is revealed after a correct first attempt, after the practice attempt, or on moving on.",
+      "Mastery is 5 of 6 on the first attempt."
+    ],
+    "assumptions": [
+      "The inquiries are illustrative, not customer orders."
+    ],
+    "limitations": [
+      "Covers six construction decisions; it does not build a complete construction line except the inquiry 4 example."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), https://tcf.com/fanpedia/, pp. 85, 107, 110, 116, 119, 122 and 145. Inquiries are illustrative."
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Scenario recommender",
     "teachingStrategy": "Committed recommendation with delayed reason, first-attempt scoring and one practice retry, followed by a summary review",
-    "interactionPattern": "Choose one of four options per scenario; commit before feedback",
     "keyQuestions": [
       "Which airstream condition in the tags decides the construction, and which tags are distractors?",
       "Which chapter rule does each rejected option break?",
@@ -80,7 +129,7 @@
       "An FGR job is just a normal inlet box."
     ],
     "assessmentOpportunities": [
-      "First-attempt score shown as 'n of 6'; mastery is 5 or more, reported as 'You can turn an airstream into a construction line.'",
+      "First-attempt score shown as 'Inquiries correct: n of 6'; mastery is 5 of 6 on the first attempt, reported as 'Mastery reached (5 of 6 needed). You can turn an airstream into a construction line.'",
       "Summary list of each inquiry's first answer, correct answer and reason, for the learner to name the rule each wrong answer breaks."
     ]
   },

@@ -1,66 +1,83 @@
 {
   "title": "Arrangement Identifier",
-  "creator": "Twin City Fan",
-  "subject": "Fans and blowers: drives and standard fan arrangements",
   "description": "Interactive p5.js MicroSim in which learners read ten schematic side views of centrifugal fans, identify the drive, the impeller position and what carries the bearings, and then name the arrangement (1, 2, 3, 3SI, 3DI, 4, 7, 8, 9 or 10). Feature and arrangement answers are scored separately.",
+  "creator": "Twin City Fan",
   "date": "2026-10-08",
-  "language": "en",
+  "subject": ["Fan arrangement", "Direct drive", "Belt drive", "Shaft coupling", "Overhung impeller", "Center hung impeller", "Bearing pedestal", "Inlet box"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
   "educational": {
-    "gradeLevel": [
-      "Professional development"
-    ],
-    "subjectArea": "Engineering",
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
     "topic": "Centrifugal fan arrangements",
     "learningObjectives": [
-      "Distinguish centrifugal fan Arrangements 1, 2, 3, 3SI, 3DI, 4, 7, 8, 9 and 10 from schematic side-view drawings by identifying the drive type, the impeller position relative to the bearings, and what carries the bearings and the motor."
+      "The learner will distinguish centrifugal fan Arrangements 1, 2, 3, 3SI, 3DI, 4, 7, 8, 9 and 10 from schematic side-view drawings by identifying the drive type, the impeller position relative to the bearings, and what carries the bearings and the motor."
     ],
     "bloomsTaxonomy": "Analyze",
     "bloomVerb": "distinguish",
     "duration": "10-15 minutes",
-    "prerequisites": [
-      "Direct drive",
-      "Belt drive",
-      "Shaft coupling",
-      "Sheave",
-      "Overhung impeller",
-      "Center hung impeller",
-      "Bearing pedestal",
-      "Inlet box",
-      "SWSI",
-      "DWDI",
-      "Fan arrangement"
-    ],
-    "standards": [
-      "AMCA arrangement standard (drive arrangements for centrifugal fans)"
-    ]
+    "prerequisites": ["Direct drive", "Belt drive", "Shaft coupling", "Sheave", "Overhung impeller", "Center hung impeller", "Bearing pedestal", "Inlet box", "SWSI", "DWDI", "Fan arrangement"],
+    "standards": ["AMCA arrangement standard (drive arrangements for centrifugal fans)"]
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.11.10",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 740,
     "canvasDimensions": {
       "width": "responsive",
-      "height": 710
+      "height": 740
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
-    ],
-    "controls": [
-      {"type": "select", "label": "Drive", "options": ["Belt", "Direct with coupling", "Direct on motor shaft"]},
-      {"type": "select", "label": "Impeller", "options": ["Overhung", "Center hung"]},
-      {"type": "select", "label": "Bearings carried by", "options": ["Pedestal", "Fan housing (at least one bearing)", "Independent pedestals outside inlet boxes", "Motor only"]},
-      {"type": "button", "label": "Check Features"},
-      {"type": "radio", "label": "Arrangement", "options": ["1", "2", "3", "3SI", "3DI", "4", "7", "8", "9", "10"]},
-      {"type": "button", "label": "Check Arrangement"},
-      {"type": "button", "label": "Next Drawing / See Results / New Round"}
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-codes.js",
+      "../shared-libs/fan-drawings.js"
     ],
     "accessibility": {
       "hasAltText": true,
-      "keyboardNavigable": true
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs, solid/dashed outlines and bold outlined highlights pair with colour; Tab and arrow keys reach every control, Enter checks or goes to the next drawing. Below 610 px wide the controls wrap and the canvas grows taller than 740 px."
     }
   },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Drive", "options": ["Belt", "Direct with coupling", "Direct on motor shaft"] },
+      { "type": "select", "label": "Impeller", "options": ["Overhung", "Center hung"] },
+      { "type": "select", "label": "Bearings carried by", "options": ["Pedestal", "Fan housing (at least one bearing)", "Independent pedestals outside inlet boxes", "Motor only"] },
+      { "type": "button", "label": "Check features", "purpose": "Commit and check the three feature answers (Enter)" },
+      { "type": "radio", "label": "Arrangement", "options": ["1", "2", "3", "3SI", "3DI", "4", "7", "8", "9", "10"] },
+      { "type": "button", "label": "Check arrangement", "purpose": "Check the arrangement answer (Enter)" },
+      { "type": "button", "label": "Next drawing / See results", "purpose": "Go to the next drawing or the results (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "New shuffled round; resets both scores" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Ten drawings in shuffled order, one attempt per question per drawing.",
+      "The arrangement question unlocks after the three features are checked; feature answers are scored but do not block it.",
+      "When all three committed features are correct, the arrangements consistent with them are highlighted; otherwise none are.",
+      "Mastery is 8 of 10 arrangements correct on the first attempt; features are scored separately out of 30."
+    ],
+    "assumptions": ["Schematics are simplified teaching drawings, viewed from the side of the shaft."],
+    "limitations": ["Not manufacturer outline drawings; Arrangement 2 is not shown in FanPedia."]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "FanPedia pp. 20-23 (arrangement drawings and captions), p. 30 (impeller orientation), pp. 162-168 (technical descriptions)",
+      "Arrangement 2: AMCA arrangement standard definition as stated in Chapter 11"
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Designation decoder",
     "teachingStrategy": "Feature decomposition before classification: learners commit three feature answers, then name the arrangement, with immediate corrective feedback.",
     "keyQuestions": [
       "How is this fan driven: belts, a coupling, or the impeller on the motor shaft?",
@@ -74,11 +91,10 @@
       "Arrangements 2 and 1 are the same (Arrangement 2's bearings are on a bracket carried by the housing)."
     ],
     "assessmentOpportunities": [
-      "Mastery: 8 of 10 arrangements correct on the first attempt.",
-      "Features correct out of 30, scored separately as scaffolding.",
+      "First-attempt score shown as 'Arrangements correct: n of 10'; mastery is 8 of 10 on the first attempt.",
+      "'Features correct: n of 30', scored separately as scaffolding.",
       "Results screen lists each drawing's arrangement, the learner's choice and features correct."
     ]
   },
-  "provenance": "FanPedia pp. 20-23 (arrangement drawings and captions), p. 30 (impeller orientation), pp. 162-168 (technical descriptions). Arrangement 2: AMCA arrangement standard definition as stated in Chapter 11. Schematics are simplified teaching drawings.",
   "chapter": "11-drives-and-standard-fan-arrangements"
 }

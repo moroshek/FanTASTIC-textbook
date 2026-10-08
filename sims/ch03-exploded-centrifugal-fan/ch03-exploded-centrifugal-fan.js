@@ -1,29 +1,30 @@
-// Exploded View of a Belt-Driven Centrifugal Fan (Arrangement 9) - custom HTML + inline SVG
-// CANVAS_HEIGHT: 620
+// Exploded View of a Belt-Driven Centrifugal Fan (Arrangement 9) - HTML + inline SVG on the FanPedia kit
+// CANVAS_HEIGHT: 696
 // Explore mode: select a part to open its infobox (one at a time); visited parts are marked.
-// Quiz mode: labels hidden, 10 fixed prompts, two attempts each, score on first attempt.
-// The drawing is a simplified oblique schematic drawn in code, modeled on the FanPedia
-// page 10 exploded view; it is not to scale.
+// Quiz mode: labels hidden, 10 fixed prompts, two attempts each, score on first attempt, mastery 9 of 10.
+// The explore/quiz engine is FP.CalloutQuiz (../shared-libs/callout-quiz.js); this file draws the
+// oblique SVG schematic (modeled on the FanPedia page 10 exploded view, not to scale) and adds the
+// Assemble/Explode toggle.
 
 (function () {
   'use strict';
 
   // ---------- Content (from the chapter specification) ----------
   var PARTS = [
-    { id: 'collar', name: 'Inlet collar', text: 'Short sleeve at the inlet for a slip-fit duct connection, clamped, with no bolt holes.' },
-    { id: 'flangedInlet', name: 'Flanged inlet (inlet flange)', text: 'Flat ring with a bolt-hole pattern for a bolted duct connection; mates with a companion flange shipped loose.' },
-    { id: 'funnel', name: 'Inlet funnel', text: 'Aerodynamically shaped ring that funnels air smoothly into the impeller; also called inlet cone or inlet bell.' },
-    { id: 'impeller', name: 'Impeller', text: 'The rotating part that adds energy to the air; air enters at its center and leaves at the blade tips.' },
-    { id: 'housing', name: 'Housing', text: 'The scroll-shaped shell that encloses the impeller and guides air to the outlet; also called side, scroll or casing.' },
-    { id: 'accessHole', name: 'Access hole for mounting bolts', text: 'Opening in the housing used to reach the bolts that mount the housing.' },
-    { id: 'outletFlange', name: 'Outlet flange', text: 'Flat frame around the outlet with a bolt-hole pattern for the downstream duct or accessory.' },
-    { id: 'shaft', name: 'Shaft', text: 'Steel bar that carries the impeller and transmits torque from the drive; with the impeller it forms the rotor assembly.' },
-    { id: 'bearings', name: 'Bearings', text: 'Two bearings on the pedestal that support and locate the shaft, outside the airstream in Arrangement 9.' },
-    { id: 'sheave', name: 'Sheave (pulley)', text: 'Grooved wheel on the fan shaft; with the motor sheave and belts it sets the fan speed.' },
-    { id: 'belt', name: 'Belt', text: 'V-belts that carry power from the motor sheave to the fan sheave.' },
-    { id: 'motor', name: 'Motor', text: 'Converts electrical energy into rotation; here it sits beside the fan and drives through belts.' },
-    { id: 'slideBase', name: 'Motor slide base', text: 'Adjustable base that slides the motor to tension the belts.' },
-    { id: 'pedestal', name: 'Pedestal', text: 'Support structure that carries the bearings and shaft, and in Arrangement 9 the motor slide base on its side.' }
+    { id: 'collar', label: 'Inlet collar', text: 'Short sleeve at the inlet for a slip-fit duct connection, clamped, with no bolt holes.' },
+    { id: 'flangedInlet', label: 'Flanged inlet (inlet flange)', text: 'Flat ring with a bolt-hole pattern for a bolted duct connection; mates with a companion flange shipped loose.' },
+    { id: 'funnel', label: 'Inlet funnel', text: 'Aerodynamically shaped ring that funnels air smoothly into the impeller; also called inlet cone or inlet bell.' },
+    { id: 'impeller', label: 'Impeller', text: 'The rotating part that adds energy to the air; air enters at its center and leaves at the blade tips.' },
+    { id: 'housing', label: 'Housing', text: 'The scroll-shaped shell that encloses the impeller and guides air to the outlet; also called side, scroll or casing.' },
+    { id: 'accessHole', label: 'Access hole for mounting bolts', text: 'Opening in the housing used to reach the bolts that mount the housing.' },
+    { id: 'outletFlange', label: 'Outlet flange', text: 'Flat frame around the outlet with a bolt-hole pattern for the downstream duct or accessory.' },
+    { id: 'shaft', label: 'Shaft', text: 'Steel bar that carries the impeller and transmits torque from the drive; with the impeller it forms the rotor assembly.' },
+    { id: 'bearings', label: 'Bearings', text: 'Two bearings on the pedestal that support and locate the shaft, outside the airstream in Arrangement 9.' },
+    { id: 'sheave', label: 'Sheave (pulley)', text: 'Grooved wheel on the fan shaft; with the motor sheave and belts it sets the fan speed.' },
+    { id: 'belt', label: 'Belt', text: 'V-belts that carry power from the motor sheave to the fan sheave.' },
+    { id: 'motor', label: 'Motor', text: 'Converts electrical energy into rotation; here it sits beside the fan and drives through belts.' },
+    { id: 'slideBase', label: 'Motor slide base', text: 'Adjustable base that slides the motor to tension the belts.' },
+    { id: 'pedestal', label: 'Pedestal', text: 'Support structure that carries the bearings and shaft, and in Arrangement 9 the motor slide base on its side.' }
   ];
 
   var QUIZ = [
@@ -40,10 +41,27 @@
   ];
 
   var START_PROMPT = 'Select any part to see what it does. When you are ready, switch to quiz mode.';
+  var ASSEMBLED_PROMPT = 'Assembled view: the funnel and impeller are now inside the housing. Select Explode to pull the parts apart again.';
   var MASTERY = 9;
 
-  var byId = {};
-  PARTS.forEach(function (p) { byId[p.id] = p; });
+  function lower1(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
+
+  // Spec feedback wording (chapter "Feedback" rule), passed to the engine as overrides:
+  // Correct: "Correct:" + Why. Incorrect: "That is the <part selected>." + the Why of the correct
+  // answer; on the second miss the correct part is highlighted and the prompt counts as missed.
+  var MSG = {
+    correct: function (c) { return '✓ Correct: ' + c.why; },
+    retry: function (c) {
+      return '✗ That is the ' + lower1(c.clickedLabel) + '. ' + c.why +
+        ' Try again (' + c.attemptsLeft + ' attempt' + (c.attemptsLeft === 1 ? '' : 's') + ' left).';
+    },
+    missed: function (c) {
+      return '✗ That is the ' + lower1(c.clickedLabel) + '. ' + c.why + ' The correct part, the ' +
+        lower1(c.answerLabel) + ', is highlighted and marked "Answer". This one counts as missed.';
+    },
+    firstAttempt: function (n, N) { return 'Correct on first attempt: ' + n + ' of ' + N; },
+    laterHeading: 'Correct on the second attempt:'
+  };
 
   // ---------- Geometry: oblique projection of (axial a, height y, depth z) ----------
   var VBW = 1000, VBH = 470, CY = 250, KX = -0.38, KY = 0.2;
@@ -99,8 +117,37 @@
     return el(path(near), cSide, stroke, 1.1) + el(path(top), cTop, stroke, 1.1) + el(path(front), cFront, stroke, 1.1);
   }
 
-  var C = { metal: '#d3dbe2', metalSide: '#b4c0cb', metalDark: '#8e9daa', edge: '#4f5e6b', hole: '#5d6b78',
-            teal: '#2a8c9a', tealSide: '#1f6c77', motor: '#3a86c8', motorSide: '#2a679d', belt: '#2b2b2b' };
+  // Part palette: the kit's part tokens (--fp-metal, --fp-metal-side, --fp-edge, --fp-motor,
+  // --fp-bearing, --fp-belt); the extra shading tones are derived from them, not hard-coded.
+  function hex(name) {
+    var v = String(FP.tok(name) || '').trim();
+    return /^#[0-9a-f]{6}$/i.test(v) ? v : FP.TOKENS[name];
+  }
+  // f < 0 darkens toward black, f > 0 lightens toward white.
+  function shade(h, f) {
+    var out = '#';
+    for (var i = 1; i < 7; i += 2) {
+      var c = parseInt(h.substr(i, 2), 16);
+      c = f < 0 ? c * (1 + f) : c + (255 - c) * f;
+      out += ('0' + Math.round(c).toString(16)).slice(-2);
+    }
+    return out;
+  }
+  var C = (function () {
+    var metal = hex('metal'), side = hex('metal-side'), edge = hex('edge'),
+        bearing = hex('bearing'), motor = hex('motor');
+    return {
+      metal: metal, metalSide: side, metalDark: shade(side, -0.18), metalFront: shade(metal, -0.07),
+      edge: edge, hole: shade(edge, 0.07), holeDark: shade(edge, -0.25),
+      steelSide: shade(side, -0.14), steelCap: shade(metal, -0.07),
+      baseTop: shade(side, -0.1), baseFront: shade(side, -0.24), baseDark: shade(side, -0.33),
+      teal: bearing, tealSide: shade(bearing, -0.24), tealEdge: shade(bearing, -0.53),
+      motor: motor, motorSide: shade(motor, -0.24), motorFeet: shade(motor, -0.38),
+      motorFin: shade(motor, -0.32), motorEdge: shade(motor, -0.58),
+      sheaveSide: shade(edge, 0.19), sheaveRing: shade(edge, 0.28), sheaveEdge: shade(edge, -0.38),
+      belt: hex('belt')
+    };
+  })();
 
   // Housing scroll profile in the (z, y) plane, from the cutoff around to the outlet.
   var HA1 = 430, HA2 = 580, OUT_TOP = 125;
@@ -141,7 +188,7 @@
     // small opening on the near wall of the scroll, low on the drive side
     var a1 = 520, a2 = 556, y1 = -62, y2 = -36, z = 130;
     var pts = [P(a1, y1, z), P(a1, y2, z), P(a2, y2, z), P(a2, y1, z)];
-    return el(path(pts), '#3b4651', C.edge, 1.2) +
+    return el(path(pts), C.holeDark, C.edge, 1.2) +
       '<path d="' + path(pts) + '" fill="transparent" stroke="transparent" stroke-width="14"/>';
   };
   DRAW.outletFlange = function () {
@@ -186,8 +233,8 @@
   DRAW.flangedInlet = function () {
     // inset: flat ring with bolt holes (shown as the alternative inlet connection)
     var cx = 110, cy = 395, s = '';
-    s += '<rect x="22" y="322" width="176" height="140" rx="6" fill="#f4f7fa" stroke="#9aa8b5" stroke-dasharray="5 4"/>';
-    s += '<text x="32" y="341" font-size="14" fill="#44515d" font-family="Arial, Helvetica, sans-serif">Inlet option</text>';
+    s += '<g class="xcf-inset"><rect x="22" y="312" width="176" height="150" rx="6"/>' +
+      '<text x="32" y="331">Inlet option</text></g>';
     s += '<ellipse cx="' + cx + '" cy="' + (cy + 4) + '" rx="34" ry="56" fill="' + C.metalSide + '" stroke="' + C.edge + '"/>';
     s += '<ellipse cx="' + (cx - 6) + '" cy="' + cy + '" rx="34" ry="56" fill="' + C.metal + '" stroke="' + C.edge + '" stroke-width="1.2"/>';
     s += '<ellipse cx="' + (cx - 6) + '" cy="' + cy + '" rx="22" ry="38" fill="#ffffff" stroke="' + C.edge + '"/>';
@@ -198,33 +245,33 @@
     return s;
   };
   DRAW.shaft = function () {
-    return cylinder(498, 842, 0, 0, 7, '#9aa6b1', '#c3ccd4', C.edge);
+    return cylinder(498, 842, 0, 0, 7, C.steelSide, C.steelCap, C.edge);
   };
   DRAW.bearings = function () {
     var s = '';
     [626, 700].forEach(function (a) {
-      s += box(a - 9, a + 9, -30, -18, -34, 34, C.teal, C.tealSide, C.tealSide, '#163f45');
-      s += cylinder(a - 9, a + 9, 0, 0, 17, C.tealSide, C.teal, '#163f45');
-      s += el(path(circ(a - 9, 0, 0, 7)), '#c3ccd4', C.edge, 1);
+      s += box(a - 9, a + 9, -30, -18, -34, 34, C.teal, C.tealSide, C.tealSide, C.tealEdge);
+      s += cylinder(a - 9, a + 9, 0, 0, 17, C.tealSide, C.teal, C.tealEdge);
+      s += el(path(circ(a - 9, 0, 0, 7)), C.steelCap, C.edge, 1);
     });
     return s;
   };
   DRAW.pedestal = function () {
-    var s = box(600, 726, -170, -30, -60, 60, C.metal, '#c4ced7', C.metalSide, C.edge);
+    var s = box(600, 726, -170, -30, -60, 60, C.metal, C.metalFront, C.metalSide, C.edge);
     s += box(596, 730, -30, -24, -64, 64, C.metal, C.metalSide, C.metalDark, C.edge);
     return s;
   };
   DRAW.slideBase = function () {
-    var s = box(668, 812, -176, -164, 66, 156, '#9fb0bf', '#7f93a5', '#7f93a5', C.edge);
+    var s = box(668, 812, -176, -164, 66, 156, C.baseTop, C.baseFront, C.baseFront, C.edge);
     [690, 790].forEach(function (a) {
-      s += box(a - 6, a + 6, -164, -156, 70, 152, '#7f93a5', '#6a7f92', '#6a7f92', C.edge);
+      s += box(a - 6, a + 6, -164, -156, 70, 152, C.baseFront, C.baseDark, C.baseDark, C.edge);
     });
     return s;
   };
   DRAW.motor = function () {
     var yc = -120, zc = 111, s = '';
-    s += box(684, 792, -156, -146, 80, 142, C.motorSide, C.motorSide, '#22557f', '#183a57'); // feet
-    s += cylinder(690, 790, yc, zc, 34, C.motorSide, C.motor, '#183a57');
+    s += box(684, 792, -156, -146, 80, 142, C.motorSide, C.motorSide, C.motorFeet, C.motorEdge); // feet
+    s += cylinder(690, 790, yc, zc, 34, C.motorSide, C.motor, C.motorEdge);
     var fins = '';
     for (var i = -3; i <= 3; i++) {
       var y = yc + i * 9;
@@ -232,22 +279,22 @@
       var p2 = P(785, y, zc + Math.sqrt(34 * 34 - (i * 9) * (i * 9)));
       fins += 'M' + f(p1[0]) + ' ' + f(p1[1]) + 'L' + f(p2[0]) + ' ' + f(p2[1]);
     }
-    s += '<path d="' + fins + '" stroke="#245c8a" stroke-width="1.2" fill="none"/>';
-    s += box(722, 752, yc + 30, yc + 44, zc - 14, zc + 14, C.motor, C.motorSide, C.motorSide, '#183a57'); // terminal box
-    s += cylinder(790, 832, yc, zc, 5, '#9aa6b1', '#c3ccd4', C.edge); // motor shaft stub
-    s += cylinder(816, 830, yc, zc, 20, '#6d7c89', '#9aa6b1', '#2f3a44'); // motor sheave
+    s += '<path d="' + fins + '" stroke="' + C.motorFin + '" stroke-width="1.2" fill="none"/>';
+    s += box(722, 752, yc + 30, yc + 44, zc - 14, zc + 14, C.motor, C.motorSide, C.motorSide, C.motorEdge); // terminal box
+    s += cylinder(790, 832, yc, zc, 5, C.steelSide, C.steelCap, C.edge); // motor shaft stub
+    s += cylinder(816, 830, yc, zc, 20, C.sheaveSide, C.steelSide, C.sheaveEdge); // motor sheave
     return s;
   };
   DRAW.sheave = function () {
-    var a = 822, s = cylinder(a, a + 18, 0, 0, 44, '#6d7c89', '#9aa6b1', '#2f3a44');
-    s += ring(a, 0, 0, 44, 34, '#7f8d99', '#2f3a44');
+    var a = 822, s = cylinder(a, a + 18, 0, 0, 44, C.sheaveSide, C.steelSide, C.sheaveEdge);
+    s += ring(a, 0, 0, 44, 34, C.sheaveRing, C.sheaveEdge);
     var spokes = '';
     for (var i = 0; i < 5; i++) {
       var t = 2 * Math.PI * i / 5 + 0.3, p1 = P(a, 9 * Math.sin(t), 9 * Math.cos(t)), p2 = P(a, 34 * Math.sin(t), 34 * Math.cos(t));
       spokes += 'M' + f(p1[0]) + ' ' + f(p1[1]) + 'L' + f(p2[0]) + ' ' + f(p2[1]);
     }
-    s += '<path d="' + spokes + '" stroke="#2f3a44" stroke-width="5" fill="none"/>';
-    s += el(path(circ(a, 0, 0, 10)), '#9aa6b1', '#2f3a44', 1.2);
+    s += '<path d="' + spokes + '" stroke="' + C.sheaveEdge + '" stroke-width="5" fill="none"/>';
+    s += el(path(circ(a, 0, 0, 10)), C.steelSide, C.sheaveEdge, 1.2);
     return s;
   };
   DRAW.belt = function () {
@@ -287,84 +334,87 @@
     flangedInlet: [212, 440, 0.6, 0.8]
   };
 
-  // ---------- State ----------
-  var state = {
-    mode: 'explore', exploded: true, selected: null, visited: {},
-    q: 0, attempt: 0, locked: false, firstCorrect: 0, results: [], revealed: {}
-  };
-
-  var svg, labelsLayer, partsLayer, promptEl, infoEl, countEl, btnExplore, btnQuiz, btnToggle, btnReset;
-  var groups = {}, labelEls = {};
+  // ---------- Build the SVG, then hand the parts to FP.CalloutQuiz ----------
+  var NS = 'http://www.w3.org/2000/svg';
+  var exploded = true, orderTimer = null;
+  var root, svg, partsLayer, groups = {}, quiz, btnToggle, btnStart;
+  var quizOpts;
 
   function build() {
-    var main = document.querySelector('main');
-    main.innerHTML =
-      '<div id="toolbar">' +
-        '<span class="title">Belt-driven SWSI centrifugal fan, Arrangement 9</span>' +
-        '<button id="btnExplore" class="active">Explore</button>' +
-        '<button id="btnQuiz">Quiz</button>' +
-        '<button id="btnToggle">Assemble</button>' +
-        '<button id="btnReset">Reset</button>' +
-        '<span class="count" id="count"></span>' +
-      '</div>' +
-      '<div id="prompt" aria-live="polite"></div>' +
-      '<svg id="drawing" viewBox="0 0 ' + VBW + ' ' + VBH + '" role="group" aria-label="Exploded view of a belt-driven centrifugal fan. Select a part.">' +
-        '<g id="partsLayer"></g><g id="labelsLayer"></g>' +
-        '<text x="' + (VBW - 8) + '" y="' + (VBH - 6) + '" text-anchor="end" font-size="13" fill="#7a8794" font-family="Arial, Helvetica, sans-serif">Simplified schematic, not to scale</text>' +
-      '</svg>' +
-      '<div id="info" aria-live="polite"></div>';
+    root = document.getElementById('drawing');
+    svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + VBW + ' ' + VBH);
+    svg.setAttribute('role', 'group');
+    svg.setAttribute('aria-label', 'Exploded view of a belt-driven centrifugal fan, Arrangement 9');
+    partsLayer = document.createElementNS(NS, 'g');
+    var labelsLayer = document.createElementNS(NS, 'g');
+    svg.appendChild(partsLayer);
+    svg.appendChild(labelsLayer);
+    root.insertBefore(svg, root.firstChild);
 
-    svg = document.getElementById('drawing');
-    partsLayer = document.getElementById('partsLayer');
-    labelsLayer = document.getElementById('labelsLayer');
-    promptEl = document.getElementById('prompt');
-    infoEl = document.getElementById('info');
-    countEl = document.getElementById('count');
-    btnExplore = document.getElementById('btnExplore');
-    btnQuiz = document.getElementById('btnQuiz');
-    btnToggle = document.getElementById('btnToggle');
-    btnReset = document.getElementById('btnReset');
-
-    var NS = 'http://www.w3.org/2000/svg';
     PARTS.forEach(function (p) {
       var g = document.createElementNS(NS, 'g');
-      g.setAttribute('class', 'part');
-      g.setAttribute('tabindex', '0');
-      g.setAttribute('role', 'button');
-      g.setAttribute('data-id', p.id);
-      g.innerHTML = '<g class="shape">' + DRAW[p.id]() + '</g>';
-      g.addEventListener('click', function (e) { e.stopPropagation(); choose(p.id); });
-      g.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(p.id); }
-      });
+      g.setAttribute('class', 'xcf-part');
+      g.setAttribute('data-part', p.id);
+      g.innerHTML = '<g class="xcf-shape">' + DRAW[p.id]() + '</g>';
       groups[p.id] = g;
-
       var lg = document.createElementNS(NS, 'g');
-      lg.setAttribute('class', 'lbl');
-      lg.innerHTML = '<line/><rect rx="3"/><text>' + p.name + '</text>';
+      lg.setAttribute('class', 'xcf-lbl');
+      lg.setAttribute('data-label-for', p.id);
+      lg.setAttribute('aria-hidden', 'true');
+      lg.innerHTML = '<line/><rect rx="3"/><text></text>';
+      lg.querySelector('text').textContent = p.label;
       labelsLayer.appendChild(lg);
-      labelEls[p.id] = lg;
     });
     applyOrder();
     applyPositions();
-    sizeLabels();
+    sizeLabels(labelsLayer);
 
-    btnExplore.addEventListener('click', function () { setMode('explore'); });
-    btnQuiz.addEventListener('click', function () { setMode('quiz'); });
+    quizOpts = {
+      root: root,
+      id: 'ch03-exploded-centrifugal-fan',
+      parts: PARTS,
+      prompts: QUIZ,
+      attempts: 2,
+      mastery: MASTERY,
+      order: 'fixed',
+      scoreNoun: 'Prompts',
+      explorePrompt: START_PROMPT,
+      exploreEmpty: 'No part selected. Parts you have opened get a ✓ mark and a shaded label. Use Assemble to see how the parts fit together.',
+      infoHeight: 132,
+      msg: MSG,
+      onModeChange: function (mode) {
+        // Quiz mode always works on the exploded drawing; Assemble is available in explore mode only.
+        if (mode !== 'explore') setExploded(true);
+        btnToggle.disabled = mode !== 'explore';
+      }
+    };
+    quiz = FP.CalloutQuiz.mount(quizOpts);
+
+    btnToggle = document.createElement('button');
+    btnToggle.type = 'button';
+    btnToggle.className = 'fp-btn secondary';
+    btnToggle.textContent = 'Assemble';
     btnToggle.addEventListener('click', toggleAssembly);
-    btnReset.addEventListener('click', resetAll);
-    setMode('explore');
+    btnStart = document.createElement('button');
+    btnStart.type = 'button';
+    btnStart.className = 'fp-btn secondary';
+    btnStart.textContent = 'Start over';
+    btnStart.title = 'Clear visited parts and the quiz, and return to the exploded view in explore mode';
+    btnStart.addEventListener('click', startOver);
+    quiz.ui.toolbar.insertBefore(btnToggle, quiz.ui.status);
+    quiz.ui.toolbar.insertBefore(btnStart, quiz.ui.status);
   }
 
-  // Size label backgrounds to their text and keep them inside the drawing.
-  function sizeLabels() {
+  // Size label boxes to their text, keep them inside the drawing, draw the leader lines.
+  function sizeLabels(layer) {
     PARTS.forEach(function (p) {
-      var lg = labelEls[p.id], L = LABELS[p.id];
-      var bb = groups[p.id].querySelector('.shape').getBBox(), o = EXPLODE[p.id];
+      var lg = layer.querySelector('[data-label-for="' + p.id + '"]'), L = LABELS[p.id];
+      var bb = groups[p.id].querySelector('.xcf-shape').getBBox(), o = EXPLODE[p.id];
       var ax = bb.x + L[2] * bb.width + o[0], ay = bb.y + L[3] * bb.height + o[1];
       var t = lg.querySelector('text'), r = lg.querySelector('rect'), ln = lg.querySelector('line');
-      var w = t.getComputedTextLength ? t.getComputedTextLength() : p.name.length * 8;
-      if (!w) w = p.name.length * 8;
+      var w = t.getComputedTextLength ? t.getComputedTextLength() : 0;
+      if (!w) w = p.label.length * 8;
       var x = Math.max(4, Math.min(L[0], VBW - w - 18));
       t.setAttribute('x', x + 7);
       t.setAttribute('y', L[1] + 5);
@@ -378,205 +428,50 @@
       ln.setAttribute('y1', f(ay));
       ln.setAttribute('x2', cx);
       ln.setAttribute('y2', cyy);
-      lg.insertAdjacentHTML('afterbegin', '<circle cx="' + f(ax) + '" cy="' + f(ay) + '" r="2.6" fill="#44515d"/>');
+      lg.insertAdjacentHTML('afterbegin', '<circle cx="' + f(ax) + '" cy="' + f(ay) + '" r="2.6"/>');
     });
   }
 
   function applyOrder() {
-    var order = state.exploded ? ORDER_EXPLODED : ORDER_ASSEMBLED;
-    order.forEach(function (id) { partsLayer.appendChild(groups[id]); });
+    (exploded ? ORDER_EXPLODED : ORDER_ASSEMBLED).forEach(function (id) { partsLayer.appendChild(groups[id]); });
   }
   function applyPositions() {
     PARTS.forEach(function (p) {
-      var o = state.exploded ? EXPLODE[p.id] : [0, 0];
+      var o = exploded ? EXPLODE[p.id] : [0, 0];
       groups[p.id].style.transform = 'translate(' + o[0] + 'px,' + o[1] + 'px)';
     });
   }
 
-  var orderTimer = null;
-  function toggleAssembly() {
-    if (state.mode === 'quiz') return;
-    state.exploded = !state.exploded;
-    btnToggle.textContent = state.exploded ? 'Assemble' : 'Explode';
+  // Assembled view: inner parts slide into the housing; labels show only when exploded.
+  function setExploded(on, animate) {
+    if (on === exploded && !animate) return;
+    exploded = on;
+    btnToggle.textContent = exploded ? 'Assemble' : 'Explode';
+    root.classList.toggle('xcf-assembled', !exploded);
     clearTimeout(orderTimer);
-    if (state.exploded) {
+    if (exploded || !animate) {
       applyOrder();          // bring inner parts forward as they slide out
       applyPositions();
     } else {
       applyPositions();
       orderTimer = setTimeout(applyOrder, 900); // hide inner parts once they are inside the housing
     }
-    renderLabels();
-    renderPrompt();
+    quizOpts.explorePrompt = exploded ? START_PROMPT : ASSEMBLED_PROMPT;
+    quiz.render();
+  }
+  function toggleAssembly() {
+    if (quiz.state.mode !== 'explore') return;
+    setExploded(!exploded, true);
+    FP.announce(exploded ? 'Exploded view.' : ASSEMBLED_PROMPT);
   }
 
-  function setMode(m) {
-    state.mode = m;
-    btnExplore.classList.toggle('active', m === 'explore');
-    btnQuiz.classList.toggle('active', m === 'quiz');
-    state.selected = null;
-    clearHighlights();
-    if (m === 'quiz') {
-      if (!state.exploded) toggleAssemblyForce(true);
-      btnToggle.disabled = true;
-      startQuiz();
-    } else {
-      btnToggle.disabled = false;
-      renderPrompt();
-      renderInfoExplore();
-    }
-    renderLabels();
-    renderCount();
-  }
-  function toggleAssemblyForce(exploded) {
-    state.exploded = exploded;
-    btnToggle.textContent = exploded ? 'Assemble' : 'Explode';
-    clearTimeout(orderTimer);
-    applyOrder();
-    applyPositions();
-  }
-
-  function resetAll() {
-    state.visited = {};
-    state.selected = null;
-    toggleAssemblyForce(true);
-    setMode('explore');
-  }
-
-  function clearHighlights() {
-    PARTS.forEach(function (p) { groups[p.id].classList.remove('selected', 'reveal'); });
-  }
-
-  function renderLabels() {
-    PARTS.forEach(function (p) {
-      var lg = labelEls[p.id];
-      var show;
-      if (!state.exploded) show = false;
-      else if (state.mode === 'explore') show = true;
-      else show = !!state.revealed[p.id];
-      lg.classList.toggle('hidden', !show);
-      lg.classList.toggle('visited', state.mode === 'explore' && !!state.visited[p.id]);
-      lg.classList.toggle('sel', state.mode === 'explore' && state.selected === p.id);
-    });
-  }
-
-  function renderCount() {
-    if (state.mode === 'explore') {
-      var n = Object.keys(state.visited).length;
-      countEl.textContent = 'Visited ' + n + ' of ' + PARTS.length;
-    } else {
-      var shown = Math.min(state.q + 1, QUIZ.length);
-      countEl.textContent = state.q >= QUIZ.length ? 'Quiz complete' : 'Prompt ' + shown + ' of ' + QUIZ.length;
-    }
-  }
-
-  function renderPrompt() {
-    if (state.mode === 'explore') {
-      promptEl.textContent = state.exploded ? START_PROMPT :
-        'Assembled view: the funnel and impeller are now inside the housing. Select Explode to pull the parts apart again.';
-    } else if (state.q < QUIZ.length) {
-      promptEl.textContent = (state.q + 1) + '. ' + QUIZ[state.q].prompt;
-    } else {
-      promptEl.textContent = 'Quiz complete. Review the summary below.';
-    }
-  }
-
-  function renderInfoExplore() {
-    if (!state.selected) {
-      infoEl.innerHTML = '<p>No part selected. Visited parts turn green in their labels. Use <b>Assemble</b> to see how the parts fit together.</p>';
-      return;
-    }
-    var p = byId[state.selected];
-    infoEl.innerHTML = '<h3>' + p.name + '</h3><p>' + p.text + '</p>';
-  }
-
-  function choose(id) {
-    if (state.mode === 'explore') {
-      state.selected = id;
-      state.visited[id] = true;
-      clearHighlights();
-      groups[id].classList.add('selected');
-      renderInfoExplore();
-      renderLabels();
-      renderCount();
-    } else {
-      answer(id);
-    }
-  }
-
-  // ---------- Quiz ----------
-  function lower1(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
-
-  function startQuiz() {
-    state.q = 0; state.attempt = 0; state.locked = false; state.firstCorrect = 0;
-    state.results = []; state.revealed = {};
-    clearHighlights();
-    renderPrompt();
-    infoEl.innerHTML = '<p>Labels are hidden. Select the part on the drawing that matches each prompt. You have two attempts per prompt.</p>';
-    renderLabels();
-    renderCount();
-  }
-
-  function answer(id) {
-    if (state.locked || state.q >= QUIZ.length) return;
-    var item = QUIZ[state.q];
-    clearHighlights();
-    groups[id].classList.add('selected');
-    state.attempt += 1;
-    if (id === item.answer) {
-      state.locked = true;
-      if (state.attempt === 1) state.firstCorrect += 1;
-      state.results[state.q] = state.attempt === 1 ? 'first' : 'second';
-      state.revealed[id] = true;
-      renderLabels();
-      infoEl.innerHTML = '<p><span class="ok">Correct:</span> ' + item.why + '</p>' + nextButton();
-    } else if (state.attempt === 1) {
-      infoEl.innerHTML = '<p><span class="bad">That is the ' + lower1(byId[id].name) + '.</span> ' + item.why + '</p><p>Try once more.</p>';
-    } else {
-      state.locked = true;
-      state.results[state.q] = 'missed';
-      groups[item.answer].classList.add('reveal');
-      infoEl.innerHTML = '<p><span class="bad">That is the ' + lower1(byId[id].name) + '.</span> ' + item.why + '</p>' +
-        '<p>The correct part, the ' + lower1(byId[item.answer].name) + ', is highlighted in red. This prompt counts as missed.</p>' + nextButton();
-    }
-    bindNext();
-  }
-
-  function nextButton() {
-    return '<button id="btnNext">' + (state.q === QUIZ.length - 1 ? 'See summary' : 'Next prompt') + '</button>';
-  }
-  function bindNext() {
-    var b = document.getElementById('btnNext');
-    if (b) { b.addEventListener('click', nextPrompt); b.focus({ preventScroll: true }); }
-  }
-
-  function nextPrompt() {
-    state.q += 1; state.attempt = 0; state.locked = false;
-    clearHighlights();
-    renderPrompt();
-    renderCount();
-    if (state.q >= QUIZ.length) { showSummary(); return; }
-    infoEl.innerHTML = '<p>Select the matching part on the drawing.</p>';
-  }
-
-  function showSummary() {
-    var n = state.firstCorrect;
-    var html = '<p><b>Correct on first attempt: ' + n + ' of ' + QUIZ.length + '</b>. ' +
-      (n >= MASTERY ? '<span class="ok">Mastery reached (' + MASTERY + ' of 10 needed).</span>' :
-        'Mastery needs ' + MASTERY + ' of 10 on the first attempt.') + '</p>';
-    var missed = [], second = [];
-    QUIZ.forEach(function (item, i) {
-      var line = '<li>' + (i + 1) + '. ' + item.prompt + ' <i>' + byId[item.answer].name + '</i>: ' + item.why + '</li>';
-      if (state.results[i] === 'missed') missed.push(line);
-      else if (state.results[i] === 'second') second.push(line);
-    });
-    if (missed.length) html += '<p class="bad">Missed:</p><ul>' + missed.join('') + '</ul>';
-    if (second.length) html += '<p>Correct on the second attempt:</p><ul>' + second.join('') + '</ul>';
-    if (!missed.length && !second.length) html += '<p>No prompts missed.</p>';
-    html += '<button id="btnRetry">Retake quiz</button><button id="btnBack">Back to explore</button>';
-    infoEl.innerHTML = html;
-    document.getElementById('btnRetry').addEventListener('click', startQuiz);
-    document.getElementById('btnBack').addEventListener('click', function () { setMode('explore'); });
+  // Start over: clear visited parts and the quiz, return to the exploded view in explore mode.
+  function startOver() {
+    quiz.state.visited = {};
+    quiz.state.selected = null;
+    quiz.setMode('explore');   // onModeChange re-enables Assemble
+    setExploded(true);
+    quiz.render();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);

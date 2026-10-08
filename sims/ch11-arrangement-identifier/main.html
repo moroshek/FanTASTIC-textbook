@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
     <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
     <title>Arrangement Identifier using p5.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
     <style>
-        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
+        /* Sim-specific (ai-): arrangement radio group, highlight and feature outlines. */
+        .ai-arr { display: flex; flex-wrap: wrap; gap: 0 1px; font-size: 16px; box-sizing: border-box; }
+        .ai-arr label { display: inline-flex; align-items: center; gap: 1px; padding: 1px 3px;
+            border: 2px solid transparent; border-radius: 5px; cursor: pointer; }
+        .ai-arr label.ai-hl { background: var(--fp-primary-bg); border-color: var(--fp-primary); font-weight: bold; }
+        .ai-arr.ai-locked label { color: var(--fp-text-muted); cursor: default; }
+        select.ai-ok { outline: 3px solid var(--fp-correct); outline-offset: 1px; }
+        select.ai-bad { outline: 3px dashed var(--fp-incorrect); outline-offset: 1px; }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/fanpedia-p5.js"></script>
+    <script src="../shared-libs/fan-codes.js"></script>
+    <script src="../shared-libs/fan-drawings.js"></script>
     <script src="ch11-arrangement-identifier.js"></script>
 </head>
 <body>
     <main></main>
-    <br/>
-    <a href=".">Back to Lesson Plan</a>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
 </body>
 </html>

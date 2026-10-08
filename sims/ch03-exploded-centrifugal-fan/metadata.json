@@ -1,19 +1,34 @@
 {
   "title": "Exploded View of a Belt-Driven Centrifugal Fan",
+  "description": "Interactive exploded view of a belt-driven SWSI centrifugal fan, Arrangement 9. Explore mode opens an infobox for each of 14 parts and can assemble and explode the drawing; quiz mode hides the labels and asks 10 identification prompts with two attempts each, then reports the first-attempt score against a mastery level of 9 of 10. The drawing is a simplified schematic modeled on FanPedia page 10, not to scale.",
   "creator": "Twin City Fan",
-  "subject": "Fans and blowers: basic fan anatomy",
-  "description": "Interactive exploded view of a belt-driven SWSI centrifugal fan, Arrangement 9. Explore mode opens an infobox for each of 14 parts and can assemble and explode the drawing; quiz mode hides the labels and asks 10 identification prompts with two attempts each. The drawing is a simplified schematic modeled on FanPedia page 10, not to scale.",
   "date": "2026-10-08",
-  "language": "en",
+  "subject": [
+    "exploded view",
+    "fan housing",
+    "impeller",
+    "inlet funnel",
+    "inlet collar",
+    "inlet flange",
+    "outlet flange",
+    "shaft",
+    "bearing",
+    "sheave",
+    "V-belt",
+    "motor",
+    "slide base",
+    "pedestal"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
   "educational": {
-    "gradeLevel": [
-      "Adult professional development"
-    ],
-    "subjectArea": "Mechanical equipment: industrial and commercial fans",
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
     "topic": "Parts of a belt-driven centrifugal fan (Arrangement 9)",
     "learningObjectives": [
-      "Identify each of the 14 labeled parts in an exploded view of a belt-driven Arrangement 9 centrifugal fan when given the part's name or function."
+      "The learner will identify each of the 14 labeled parts in an exploded view of a belt-driven Arrangement 9 centrifugal fan when given the part's name or function."
     ],
     "bloomsTaxonomy": "Remember",
     "bloomVerb": "identify",
@@ -26,22 +41,62 @@
   },
   "technical": {
     "framework": "html",
+    "frameworkVersion": "n/a",
     "version": "1.0",
+    "canvasHeight": 696,
     "canvasDimensions": {
       "width": "responsive",
-      "height": 620
+      "height": 696
     },
-    "canvasHeight": 620,
     "responsive": true,
-    "dependencies": [],
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js"
+    ],
     "accessibility": {
       "hasAltText": true,
-      "keyboardNavigable": true
+      "keyboardNavigable": true,
+      "notes": "Every part is a focusable role=button (Tab, then Enter or Space); after an answer focus moves to Next, so Enter goes on. Verdicts, prompts and the summary are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an \"Answer\" badge pair with colour. During the quiz part names are hidden from screen readers too (\"Part k\") until revealed. SVG label text scales with the drawing and is about 13 px at an 800 px wide frame."
     }
   },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Explore", "purpose": "Explore mode: select a part to open its infobox (never scored)" },
+      { "type": "button", "label": "Quiz", "purpose": "Start the 10-prompt quiz with labels hidden" },
+      { "type": "button", "label": "Assemble / Explode", "purpose": "Slide the parts into place and back (explore mode only)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear visited parts and the quiz, and return to the exploded view in explore mode" },
+      { "type": "button", "label": "Next prompt / See summary", "purpose": "Go to the next prompt after an answer (Enter)" },
+      { "type": "button", "label": "Start over (summary)", "purpose": "Retake the quiz from prompt 1" },
+      { "type": "button", "label": "Back to explore", "purpose": "Return to explore mode from the summary" }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with identification quiz",
+    "equations": [],
+    "rules": [
+      "Explore mode: selecting any part opens its infobox; one infobox is open at a time; opened parts are marked visited.",
+      "Quiz mode: 10 prompts in a fixed order, one selection per prompt per attempt, two attempts each; a prompt is correct only when the exact part in the spec's Correct part column is selected.",
+      "A second miss highlights the correct part and the prompt counts as missed.",
+      "Score: correct on first attempt, n of 10; mastery is 9 of 10."
+    ],
+    "assumptions": [
+      "The flanged inlet is drawn in a separate Inlet option box because a fan ships with either an inlet collar or a flanged inlet, not both."
+    ],
+    "limitations": [
+      "Simplified oblique schematic drawn in code; not to scale and not a specific Twin City Fan model."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia, page 10 (exploded view, belt-driven centrifugal fans, Arrangement 9)",
+      "Chapter 3 infobox definitions citing FanPedia pages 59, 79, 90 and 188"
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
     "teachingStrategy": "Labeled-diagram exploration followed by retrieval practice (identify the part from a name or function)",
-    "interactionPattern": "Explore mode with infoboxes and an assemble/explode toggle; quiz mode with 10 fixed prompts, two attempts each",
     "keyQuestions": [
       "Which part adds energy to the air?",
       "Which inlet part shapes the air, and which ones only connect the duct?",
@@ -54,13 +109,9 @@
       "The sheave on the fan shaft is the same size as the motor sheave (their ratio sets fan speed)."
     ],
     "assessmentOpportunities": [
-      "Quiz mode score: correct on first attempt, n of 10; mastery is 9 of 10.",
-      "Summary list of missed prompts with the reason for each correct answer."
+      "First-attempt score shown as 'Correct on first attempt: n of 10'; mastery is 9 of 10 on the first attempt.",
+      "Summary list of missed prompts and prompts correct on the second attempt, each with the reason for the correct answer."
     ]
   },
-  "sources": [
-    "FanPedia: The Fan & Blower Encyclopedia, page 10 (exploded view, belt-driven centrifugal fans, Arrangement 9)",
-    "Chapter 3 infobox definitions citing FanPedia pages 59, 79, 90 and 188"
-  ],
   "chapter": "03-basic-fan-anatomy"
 }

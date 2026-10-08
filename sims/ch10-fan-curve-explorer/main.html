@@ -3,17 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
     <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
     <title>Fan Curve Explorer using Plotly</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
     <style>
-        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
+        .fce-lead { font-size: var(--fp-size-secondary); margin: 0 0 6px 0; }
+        .fce-draw { padding: 4px 6px 0 6px; }
+        .fce-plot { width: 100%; height: 410px; background: var(--fp-ctrl-bg); }
+        .fce-plot.narrow { height: 320px; }
+        .fce-draw .fp-note { margin: 2px 0 4px 0; }
+        .fce-ctrl .fp-progress { margin: 0; }
+        .fce-qnum { font-size: var(--fp-size-secondary); color: var(--fp-text-muted); }
+        .fce-ctrl .fp-row { margin: 6px 0; }
+        .fce-ctrl .fp-prompt { margin: 4px 0; }
+        .fce-ctrl .fp-feedback { margin: 6px 0; }
+        .fce-answer { width: 90px; }
+        button.fce-chosen:disabled { border: 2px solid var(--fp-primary-dark); color: var(--fp-text); font-weight: bold; }
+        .fce-misses { margin: 4px 0 0 0; }
     </style>
     <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
-    <script src="ch10-fan-curve-explorer.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-curves.js"></script>
+    <script src="ch10-fan-curve-explorer.js" defer></script>
 </head>
 <body>
-    <main></main>
-    <br/>
-    <a href=".">Back to Lesson Plan</a>
+    <main class="fp-app">
+        <h1 class="fp-title">Fan Curve Explorer</h1>
+        <p class="fce-lead" id="lead"></p>
+
+        <section class="fp-draw fce-draw" id="drawing" aria-label="Pressure and BHP curves of two illustrative fans">
+            <div class="fce-plot" id="plot"></div>
+            <p class="fp-note illustrative" id="dataNote"></p>
+        </section>
+
+        <section class="fp-ctrl fce-ctrl" aria-label="Questions">
+            <div class="fp-row">
+                <span class="fp-score" id="score"></span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="fce-qnum" id="qnum"></span>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="fp-row" id="answers"></div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <p class="fp-note" id="keys"></p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
 </body>
 </html>

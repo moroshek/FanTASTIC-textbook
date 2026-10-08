@@ -1,18 +1,19 @@
 {
   "title": "Flow Control Power Comparator",
+  "description": "Prediction-challenge line chart: the learner ranks an outlet damper, variable inlet vanes and speed control by illustrative shaft power at 80%, 70% and 50% airflow and types the best method's saving, then sees the curves, a first-attempt score and mastery line, and an airflow selector that reports the powers and savings at any 5% step.",
   "creator": "Twin City Fan",
-  "subject": "Industrial and Commercial Fans: Flow Control",
-  "description": "Prediction-challenge line chart comparing the illustrative shaft power of an outlet damper, variable inlet vanes and speed control from 50% to 100% airflow, with an airflow selector that reports the powers and savings at any 5% step.",
   "date": "2026-10-08",
-  "language": "en",
+  "subject": ["flow control", "outlet damper", "variable inlet vanes", "speed control", "fan laws", "brake horsepower"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
   "educational": {
-    "gradeLevel": [
-      "Adult professional development"
-    ],
-    "subjectArea": "Engineering",
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
     "topic": "Flow control methods and fan shaft power",
     "learningObjectives": [
-      "Differentiate outlet dampers, variable inlet vanes and speed control by the shaft power each needs at reduced airflow, correctly ranking the three methods and estimating the savings gap at a stated airflow between 50% and 100% of design."
+      "The learner will differentiate outlet dampers, variable inlet vanes and speed control by the shaft power each needs at reduced airflow, correctly ranking the three methods and estimating the savings gap at a stated airflow between 50% and 100% of design."
     ],
     "bloomsTaxonomy": "Analyze",
     "bloomVerb": "differentiate",
@@ -33,20 +34,65 @@
     "framework": "Chart.js",
     "frameworkVersion": "4.4.4",
     "version": "1.0",
+    "canvasHeight": 940,
     "canvasDimensions": {
       "width": "responsive",
-      "height": 710
+      "height": 940
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"
+      "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-curves.js",
+      "../shared-libs/fan-models.js"
     ],
     "accessibility": {
       "hasAltText": true,
-      "keyboardNavigable": true
+      "keyboardNavigable": true,
+      "notes": "Chart canvas has role=img and an aria-label; verdicts and the summary are announced through FP.announce (aria-live); feedback uses ✓/✗ glyphs with solid/dashed borders; series differ by colour, dash pattern and point shape, and marker value labels name the method in dark text; native selects, text input, buttons and range slider; Enter checks, Enter again goes to the next challenge, arrow keys move the airflow selector."
     }
   },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Lowest / Middle / Highest", "purpose": "Rank the three methods from lowest to highest shaft power" },
+      { "type": "input", "label": "Best method's saving vs. damper", "purpose": "Type the saving in percentage points" },
+      { "type": "button", "label": "Check", "purpose": "Check the ranking and saving (Enter)" },
+      { "type": "button", "label": "Next challenge", "purpose": "Go to the next challenge (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset every challenge and the score" },
+      { "type": "slider", "label": "Airflow selector", "purpose": "Explore mode: 50-100% airflow in 5% steps, default 70%; shows the three powers and two savings" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [
+      "Speed control power % = 100 × (airflow % / 100)³, rounded to 0.1",
+      "Saving = damper power − method power (percentage points)"
+    ],
+    "rules": [
+      "Damper and inlet-vane values between table rows by straight-line interpolation",
+      "A challenge is correct when the ranking is speed control, inlet vanes, outlet damper and the saving is within ±3 percentage points",
+      "Two attempts per challenge; after the second wrong attempt the answer is shown and the challenge counts as missed"
+    ],
+    "assumptions": [
+      "System curve through zero, so the speed ratio equals the airflow ratio"
+    ],
+    "limitations": [
+      "Real speed control has small drive losses",
+      "A system with fixed static pressure saves less than the ideal cube value"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Speed-control values: ideal fan-law cube relation (FP.models.fanLawRatios)",
+      "Outlet damper and inlet vane values: illustrative values written for Chapter 18, not Twin City Fan test data",
+      "Ordering supported by FanPedia: The Fan & Blower Encyclopedia, pp. 145, 182, 183, 188"
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Predict then reveal",
     "teachingStrategy": "Predict-then-reveal challenges followed by guided exploration",
     "keyQuestions": [
       "At 80% airflow, which method uses the least power, and how much does it save compared with an outlet damper?",
@@ -60,10 +106,8 @@
       "Power falls in proportion to airflow when speed is reduced, rather than with roughly the cube of the airflow."
     ],
     "assessmentOpportunities": [
-      "Three prediction challenges (80%, 70%, 50% airflow), two attempts each; correct when the ranking matches and the saving is within 3 percentage points. Mastery is 3 of 3."
+      "Running score 'Challenges correct: n of 3'; mastery is 3 of 3 on the first attempt (80%, 70%, 50% airflow; ranking plus saving within ±3 percentage points; two attempts each)."
     ]
   },
-  "dataProvenance": "Speed-control values follow the ideal fan-law cube relation. Outlet damper and inlet vane values are illustrative values written for this chapter, not Twin City Fan test data; the ordering is supported by FanPedia pp. 145, 182, 183, 188.",
-  "chapter": "18-inlets-outlets-and-flow-control",
-  "rights": "Copyright 2026 Twin City Fan. All rights reserved."
+  "chapter": "18-inlets-outlets-and-flow-control"
 }

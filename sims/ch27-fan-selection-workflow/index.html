@@ -965,6 +965,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -987,17 +998,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Objective
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1013,6 +1013,17 @@
     <span class="md-ellipsis">
       
         Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-misconceptions-addressed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misconceptions Addressed
       
     </span>
   </a>
@@ -1296,6 +1307,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#learning-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#audience" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1318,17 +1340,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#learning-objective" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Objective
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1344,6 +1355,17 @@
     <span class="md-ellipsis">
       
         Activities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-misconceptions-addressed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misconceptions Addressed
       
     </span>
   </a>
@@ -1446,45 +1468,63 @@
 
 
 <h1 id="fan-selection-workflow">Fan Selection Workflow<a class="headerlink" href="#fan-selection-workflow" title="Permanent link">&para;</a></h1>
-<iframe src="main.html" height="1042px" width="100%" scrolling="no"></iframe>
+<iframe src="main.html" height="1098px" width="100%" scrolling="no"></iframe>
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Fan Selection Workflow MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>Fan selection runs through twelve steps in a fixed order, from collecting the application requirements to writing the specification. Each step consumes particular information about the job, and knowing which step uses which fact is what tells an engineer where to loop back when a requirement changes. The flowchart shows the twelve steps, the information that passes from each step to the next, and the dashed loop from the sound and dimension check back to the arrangement when a candidate fails a space or noise limit.</p>
-<p>Every step in the flowchart is clickable. Clicking a step opens a short explanation of what that step decides. The panel on the right holds eight information cards from one worked job. For each card you choose the step that uses it. The sim checks the answer immediately, highlights the correct step in green (and your choice in red if it was wrong) and explains why.</p>
-<p>The job values on the cards (1,450 RPM table speed, 1,180 and 1,780 RPM motor speeds, 500°F design and 70°F cold start, a 95 dB A-weighted outlet limit and a 10 ft by 8 ft pad) are the chapter's illustrative worked example, not data for a specific catalog fan.</p>
+<p>Fan selection runs through twelve steps in a fixed order, from collecting the application requirements to writing the specification. Each step consumes particular information about the job, and knowing which step uses which fact is what tells an engineer where to loop back when a requirement changes. The flowchart shows the twelve steps, the information that passes from each step to the next, and the dashed loop from the sound and dimension check back to the arrangement when a candidate fails a space or noise limit. The key above the flowchart groups the steps into five phases by step number as well as by color.</p>
+<p>Every step in the flowchart is clickable. Clicking a step opens a short explanation of what that step decides; this is exploration and is never scored. The panel on the right holds eight information cards from one worked job, always in the same order. For each card you choose the step that uses it. Each card allows one attempt and locks once submitted. The sim checks the answer immediately, outlines the correct step with a solid green border and a ✓ (and your choice with a dashed red border and a ✗ if it was wrong) and explains why. The running score reads "Cards correct: n of 8". Mastery is 7 of 8 correct on the first attempt; below that, the summary links to the chapter sections behind the cards you missed.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Click any step in the flowchart to read what it does. You can also press Tab to move between steps and Enter to open one.</li>
+<li>Click any step in the flowchart to read what it does.</li>
 <li>Read the card in the right panel, choose a step from the list and press <strong>Submit</strong>.</li>
 <li>Read the feedback. Each card allows one attempt and locks once submitted.</li>
-<li>Press <strong>Next card</strong> to continue. After card 8 the panel shows your score out of 8. Below 7, it lists the chapter sections to reread, with links.</li>
-<li>Press <strong>Restart</strong> to sort the same eight cards again.</li>
+<li>Press <strong>Next card</strong> to continue. After card 8 the panel shows your score out of 8 and whether you reached mastery. Below 7, it lists the chapter sections to reread, with links.</li>
+<li>Press <strong>Start over</strong> at any time to sort the same eight cards again in the same order.</li>
 </ol>
+<p><strong>Keyboard:</strong> Tab to a flowchart step and press Enter or Space to read it. In the step list, Enter submits the chosen step; Enter again goes to the next card.</p>
+<p><strong>Data label:</strong> "Illustrative values · job values on the cards are the chapter's worked example", shown at the bottom left of the flowchart. The 1,450 RPM table speed, the 1,180 and 1,780 RPM motor speeds, the 500°F design and 70°F cold start temperatures, the 95 dB A-weighted outlet limit and the 10 ft by 8 ft pad are not data for a specific catalog fan.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://moroshek.github.io/FanTASTIC-textbook/sims/ch27-fan-selection-workflow/main.html"</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"1042px"</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="na">height</span><span class="o">=</span><span class="s">"1098px"</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="na">scrolling</span><span class="o">=</span><span class="s">"no"</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
+<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
+<p>The learner will classify eight pieces of application information by the selection step that uses them, with at least 7 of 8 correct on the first attempt (Bloom: Understand, verb: classify).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Adult professional development: new application engineers, inside and outside sales staff, manufacturer's representatives, distributors and specifying engineers.</p>
 <h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
 <p>10-15 minutes</p>
-<h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>The learner will classify eight pieces of application information by the selection step that uses them, with at least 7 of 8 correct on the first attempt (Bloom: Understand, verb: classify).</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<p>Fan selection, duty point, standard air, arrangement, drive, construction, cold start, accessories, sound data and dimensional data, covered in this chapter and in Chapters 2, 10 and 11.</p>
+<ul>
+<li>Fan selection and duty point</li>
+<li>Standard air</li>
+<li>Arrangement, drive and construction</li>
+<li>Cold start motor sizing</li>
+<li>Accessories</li>
+<li>Sound data and dimensional data</li>
+</ul>
+<p>These are covered in this chapter and in Chapters 2, 10 and 11.</p>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Exploration</strong> (4 min): Click all twelve steps and read each explanation. Trace the information labels on the arrows and find the one loop in the workflow. Ask what would send a selection back along it.</li>
 <li><strong>Sorting</strong> (6 min): Sort the eight cards. Before submitting each one, say which step uses the fact and why.</li>
-<li><strong>Discussion</strong> (5 min): Look at the cards you missed and reread the linked sections. Then discuss three common mistakes: thinking selection ends once a size is read from the table; sizing the motor for the hot design temperature instead of the cold start; checking dimensions only after the order is placed.</li>
+<li><strong>Discussion</strong> (5 min): Look at the cards you missed and reread the linked sections. Then discuss the misconceptions below.</li>
 </ol>
+<h3 id="common-misconceptions-addressed">Common Misconceptions Addressed<a class="headerlink" href="#common-misconceptions-addressed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Selection is finished once a size is read from the performance table: eight of the twelve steps come after the catalog size, and two cards belong to the sound and dimension check.</li>
+<li>The motor is sized from the operating brake horsepower at the hot design temperature: the 70°F winter startup card belongs to motor and cold start sizing.</li>
+<li>Dimensions are checked only after the order is placed: the 10 ft by 8 ft pad card belongs to the sound and dimension check, before candidates are compared.</li>
+</ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
-<p>Mastery is 7 of 8 cards correct on the first attempt. Clicking steps to read their explanations is exploration and does not count toward the score. As a follow-up, give the learner a requirement change, such as a lower noise limit, and ask which step the selection loops back to.</p>
+<ul>
+<li>First-attempt score shown as "Cards correct: n of 8"; mastery is 7 of 8 on the first attempt. Clicking steps to read their explanations is exploration and does not count toward the score.</li>
+<li>Follow-up: give the learner a requirement change, such as a lower noise limit, and ask which step the selection loops back to.</li>
+</ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://tcf.com/fanpedia/">FanPedia: The Fan &amp; Blower Encyclopedia</a> - Twin City Fan's reference covering fan types, arrangements, drives, construction, accessories, sound and selection.</li>

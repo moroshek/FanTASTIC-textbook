@@ -1,22 +1,19 @@
 {
   "title": "Fan Selection Workflow",
+  "description": "Clickable twelve-step Mermaid flowchart of the fan selection workflow, from application requirements to the specification, with an eight-card sorting check in which learners assign job information to the step that uses it and get the reason after each card.",
   "creator": "Twin City Fan",
-  "subject": "Industrial and Commercial Fans: Fan Selection",
-  "description": "Clickable twelve-step Mermaid flowchart of the fan selection workflow, from application requirements to the specification, with an eight-card sorting check in which learners assign job information to the step that uses it.",
   "date": "2026-10-08",
+  "subject": ["Fan selection", "Duty point", "Standard air", "Arrangement", "Drive", "Construction", "Cold start", "Accessories", "Sound data", "Dimensional data"],
   "type": "Interactive Workflow Diagram",
   "format": "text/html",
   "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
-  "audience": "Adult professional development: application engineers, sales staff, representatives, distributors and specifying engineers",
   "educational": {
-    "gradeLevel": [
-      "Adult professional development"
-    ],
-    "subjectArea": "Mechanical Engineering / HVAC and Industrial Air Movement",
+    "audience": "Adult professional development: application engineers, sales staff, representatives, distributors and specifying engineers",
+    "subjectArea": "Fans and blowers",
     "topic": "Fan selection workflow",
     "learningObjectives": [
-      "Classify eight pieces of application information by the selection step that uses them, with at least 7 of 8 correct on the first attempt."
+      "The learner will classify eight pieces of application information by the selection step that uses them, with at least 7 of 8 correct on the first attempt."
     ],
     "bloomsTaxonomy": "Understand",
     "bloomVerb": "classify",
@@ -38,14 +35,17 @@
   "technical": {
     "framework": "Mermaid",
     "frameworkVersion": "11.4.1",
-    "version": "1.0",
+    "version": "1.1",
+    "canvasHeight": 1096,
     "canvasDimensions": {
       "width": "responsive",
-      "height": 1040
+      "height": 1096
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"
+      "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js"
     ],
     "diagram": {
       "diagramType": "flowchart",
@@ -56,10 +56,40 @@
     },
     "accessibility": {
       "hasAltText": true,
-      "keyboardNavigable": true
+      "keyboardNavigable": true,
+      "notes": "Flowchart nodes are focusable buttons (Tab, then Enter or Space reads a step); Enter submits the chosen step and goes to the next card; verdicts and step explanations announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour on nodes, feedback and progress chips; the phase key gives step ranges as well as colours."
     }
   },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Workflow step", "purpose": "Choose the step that uses the card's information" },
+      { "type": "button", "label": "Submit", "purpose": "Assign the card to the chosen step; one attempt, then the card locks (Enter)" },
+      { "type": "button", "label": "Next card", "purpose": "Go to the next card (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Sort the same eight cards again in the same order, score cleared" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct step.",
+      "A card can be assigned once; it locks after submission.",
+      "Score is the count of correct first assignments out of 8; mastery is a score of 7 or more.",
+      "Clicking flowchart steps is exploration and is never scored."
+    ],
+    "assumptions": [],
+    "limitations": [
+      "The job values on the cards are one illustrative worked example."
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Step order and content from Chapter 27's sections. The 1,450, 1,180 and 1,780 RPM values, the 500°F and 70°F temperatures, the 95 dB limit and the 10 ft by 8 ft pad are the chapter's illustrative worked example."
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Workflow placement",
     "teachingStrategy": "Explore a clickable workflow, then classify job information into workflow steps with immediate explanatory feedback",
     "keyQuestions": [
       "Which selection step consumes this piece of job information?",
@@ -72,10 +102,9 @@
       "Dimensions are checked only after the order is placed."
     ],
     "assessmentOpportunities": [
-      "Score of correct first assignments out of 8; mastery is 7 or more.",
+      "First-attempt score shown as 'Cards correct: n of 8'; mastery is 7 of 8 on the first attempt.",
       "Follow-up: given a requirement change, name the step the selection loops back to."
     ]
   },
-  "dataProvenance": "Step order and content from Chapter 27's sections. The 1,450, 1,180 and 1,780 RPM values, the 500°F and 70°F temperatures, the 95 dB limit and the 10 ft by 8 ft pad are the chapter's illustrative worked example.",
   "chapter": "27-fan-selection-and-writing-the-specification"
 }

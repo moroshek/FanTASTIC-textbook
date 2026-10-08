@@ -1,16 +1,22 @@
 {
   "title": "Fan Curve Explorer",
-  "creator": "Twin City Fan",
-  "subject": ["fan curve", "stall region", "brake horsepower", "non-overloading power curve", "overloading power curve"],
   "description": "Plotly chart of two illustrative fans' pressure and BHP curves with a six-question check that asks the learner to differentiate stall-region from stable operating points and overloading from non-overloading power curves.",
+  "creator": "Twin City Fan",
   "date": "2026-10-08",
+  "subject": [
+    "fan curve",
+    "stall region",
+    "brake horsepower",
+    "non-overloading power curve",
+    "overloading power curve"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
   "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
   "educational": {
     "audience": "Adult professional development: application engineers, sales staff, representatives and specifying engineers",
-    "subjectArea": "Fan engineering",
+    "subjectArea": "Fans and blowers",
     "topic": "Fan curves, stall region and power curves",
     "learningObjectives": [
       "Differentiate stable from stall-region operating points by locating each point relative to the pressure-curve peak",
@@ -20,25 +26,93 @@
     "bloomsTaxonomy": "Analyze",
     "bloomVerb": "differentiate",
     "duration": "10-15 minutes",
-    "prerequisites": ["fan curve", "fan static pressure", "brake horsepower", "stall region", "overloading power curve", "non-overloading power curve"],
+    "prerequisites": [
+      "fan curve",
+      "fan static pressure",
+      "brake horsepower",
+      "stall region",
+      "overloading power curve",
+      "non-overloading power curve"
+    ],
     "standards": []
   },
   "technical": {
     "framework": "Plotly",
+    "frameworkVersion": "2.35.0",
     "version": "1.0",
-    "libraryVersion": "plotly.js 2.35.0",
+    "canvasHeight": 800,
     "canvasDimensions": {
       "width": "responsive",
-      "height": 662
+      "height": 800
     },
     "responsive": true,
-    "dependencies": ["https://cdn.plot.ly/plotly-2.35.0.min.js"],
+    "dependencies": [
+      "https://cdn.plot.ly/plotly-2.35.0.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-curves.js"
+    ],
     "accessibility": {
-      "hasAltText": false,
-      "keyboardNavigable": true
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Chart region has an aria-label; verdicts announced through FP.announce (aria-live) and shown in a role=status feedback box; ✓/✗ glyphs, solid/dashed borders and round/square chart markers pair with colour; keys 1 and 2 choose an answer, Enter submits, goes to the next question and starts over."
     }
   },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Yes / No, Curve A / Curve B",
+        "purpose": "Choose an answer (keys 1 and 2)"
+      },
+      {
+        "type": "text input",
+        "label": "Highest BHP",
+        "purpose": "Type the question 6 answer in BHP"
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "purpose": "Submit the typed value (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Next question / See score",
+        "purpose": "Go to the next question or the score (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Clear the marks and the score and return to question 1"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Stall region for Curve A: airflow < 4,000 CFM",
+      "Stall region for Curve B: airflow < 8,000 CFM",
+      "A curve is non-overloading when its BHP has a maximum inside the plotted range and decreases after it; it is overloading when BHP increases at every listed step",
+      "Question 6 is correct when the typed value is within ±0.1 of 9.5 BHP"
+    ],
+    "assumptions": [
+      "One fixed speed per fan, standard air",
+      "Points are joined by straight lines between the listed values"
+    ],
+    "limitations": [
+      "Curves are illustrative, not catalog ratings"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Illustrative curves shaped after typical backward inclined (Curve A) and forward curved (Curve B) centrifugal fan behavior; not Twin City Fan published ratings. Data served by the kit's fan-curves.js (FP.curves.A, FP.curves.B)."
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Predict then reveal",
     "teachingStrategy": "Hover-to-read exploration followed by committed answers with immediate feedback",
     "keyQuestions": [
       "Is 3,000 CFM on Curve A in the stall region?",
@@ -54,9 +128,8 @@
       "The highest-pressure point is the best place to select a fan"
     ],
     "assessmentOpportunities": [
-      "Mastery is 5 of 6 correct on the first attempt; question 6 is correct within 0.1 of 9.5 BHP"
+      "Score shown as 'n of 6 correct' (running line 'Questions correct: n of 6'); mastery is 5 of 6 on the first attempt; question 6 is correct within 0.1 of 9.5 BHP."
     ]
   },
-  "dataProvenance": "Illustrative curves shaped after typical backward inclined (Curve A) and forward curved (Curve B) centrifugal fan behavior; not Twin City Fan published ratings.",
   "chapter": "10-fan-performance-curves-and-ratings"
 }

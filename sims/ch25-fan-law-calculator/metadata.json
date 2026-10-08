@@ -1,22 +1,27 @@
 {
   "title": "Fan Law Calculator",
-  "creator": "Twin City Fan (FanPedia intelligent textbook)",
-  "subject": "Fan engineering: fan laws",
   "description": "Four fan-law challenges for new speed, BHP and static pressure, followed by free exploration of speed, diameter and density ratios applied to illustrative Curve A, with base and new fan curves, system curve, operating points and readouts.",
+  "creator": "Twin City Fan",
   "date": "2026-10-08",
+  "subject": [
+    "fan laws",
+    "speed change calculation",
+    "size change calculation",
+    "density correction factor",
+    "fan curve",
+    "system curve",
+    "static efficiency"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
-  "language": "en",
+  "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
   "educational": {
-    "gradeLevel": [
-      "Undergraduate",
-      "Professional Development"
-    ],
-    "subjectArea": "Engineering",
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
     "topic": "Fan laws: speed, size and density changes",
     "learningObjectives": [
-      "Solve fan-law problems for a new speed, pressure or brake horsepower after a change in speed, impeller diameter or air density, to within 2% of the model value."
+      "The learner will solve fan-law problems for a new speed, pressure or brake horsepower after a change in speed, impeller diameter or air density, to within 2% of the model value."
     ],
     "bloomsTaxonomy": "Apply",
     "bloomVerb": "solve",
@@ -34,37 +39,90 @@
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.11.10",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
     "canvasDimensions": {
       "width": "responsive",
-      "height": 590
+      "height": 640
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-curves.js"
     ],
     "accessibility": {
       "hasAltText": true,
-      "keyboardNavigable": true
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new challenge and the end-of-challenge summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; curves differ by line weight and dash as well as colour; Enter checks and goes to the next challenge; every button, the answer box and the sliders are reachable with Tab; controls stay inside the canvas at 320 px."
     }
   },
   "userInterface": {
     "controls": [
-      {"type": "input", "label": "Your answer", "purpose": "Type one number for the current challenge"},
-      {"type": "button", "label": "Check", "purpose": "Check the answer (2% tolerance, two attempts)"},
-      {"type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved"},
-      {"type": "button", "label": "Reset ratios to 1.00", "purpose": "Return to Curve A during exploration"},
-      {"type": "slider", "label": "Speed ratio N2/N1", "range": "0.50-1.50", "step": 0.01, "default": 1.0},
-      {"type": "slider", "label": "Diameter ratio D2/D1", "range": "0.80-1.25", "step": 0.01, "default": 1.0},
-      {"type": "slider", "label": "Density ratio rho2/rho1", "range": "0.40-1.30", "step": 0.01, "default": 1.0}
+      {
+        "type": "input",
+        "label": "Your answer",
+        "purpose": "Type one number for the current challenge"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Check the answer (Enter); 2% tolerance, two attempts"
+      },
+      {
+        "type": "button",
+        "label": "Next challenge / Start exploring",
+        "purpose": "Advance after a challenge is resolved (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Reset ratios to 1.00",
+        "purpose": "Return to Curve A in Explore mode"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reset all four challenges and the score"
+      },
+      {
+        "type": "slider",
+        "label": "Speed ratio N2/N1",
+        "range": "0.50-1.50",
+        "step": 0.01,
+        "default": 1.0
+      },
+      {
+        "type": "slider",
+        "label": "Diameter ratio D2/D1",
+        "range": "0.80-1.25",
+        "step": 0.01,
+        "default": 1.0
+      },
+      {
+        "type": "slider",
+        "label": "Density ratio rho2/rho1",
+        "range": "0.40-1.30",
+        "step": 0.01,
+        "default": 1.0
+      }
     ]
   },
   "simulation": {
-    "modelType": "Mathematical (fan laws applied point by point to a fan curve)",
+    "modelType": "numeric model (fan laws applied point by point to a fan curve)",
     "equations": [
       "Q2 = Q1 x (N2/N1) x (D2/D1)^3",
       "P2 = P1 x (N2/N1)^2 x (D2/D1)^2 x (rho2/rho1)",
       "BHP2 = BHP1 x (N2/N1)^3 x (D2/D1)^5 x (rho2/rho1)"
+    ],
+    "rules": [
+      "New speed = 1,380 x speed ratio",
+      "Model answers rounded to whole RPM and two decimals for in. wg and BHP",
+      "An answer is correct when |answer - model| / model <= 0.02; two attempts per challenge",
+      "A density ratio changes pressure and BHP but never CFM; the sim says so the first time the density ratio is changed"
     ],
     "assumptions": [
       "Curve A is illustrative (Chapter 10), standard air, 1,380 RPM",
@@ -76,7 +134,15 @@
       "With a diameter change the corresponding point is shown, not the intersection with the system curve"
     ]
   },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Curve A: illustrative curve from Chapter 10, 'The Fan Curve' section (not a Twin City Fan published rating)",
+      "Fan laws: standard fan engineering relations (Chapter 25)"
+    ]
+  },
   "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
     "teachingStrategy": "Practice with check (commit a number before the result is revealed), then guided exploration",
     "keyQuestions": [
       "Why does a 15% airflow increase need 52% more power?",
@@ -90,7 +156,7 @@
       "Hotter, lighter air changes the CFM a fan moves"
     ],
     "assessmentOpportunities": [
-      "Four challenges answered within 2% of the model value; mastery is 4 of 4"
+      "Running score shown as 'Challenges correct: n of 4'; mastery is 4 of 4 within 2% of the model value on the first attempt."
     ]
   },
   "chapter": "25-fan-laws-system-effect-and-sound"

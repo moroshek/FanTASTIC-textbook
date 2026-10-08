@@ -1,21 +1,25 @@
 {
   "title": "Duct Airflow and Velocity Calculator",
+  "description": "Four fixed challenges ask the learner to calculate air velocity, airflow or minimum flow area for rectangular and round ducts using Q = V x A, checked within 2 percent with step-by-step feedback; Explore mode then shows how velocity changes with duct size at fixed CFM.",
   "creator": "Twin City Fan",
-  "subject": "Fans and air movement",
-  "description": "Four fixed challenges ask the learner to calculate air velocity, airflow or minimum flow area for rectangular and round ducts using Q = V x A, checked within 2 percent with step-by-step feedback; a free mode then shows how velocity changes with duct size at fixed CFM.",
   "date": "2026-10-08",
+  "subject": [
+    "Airflow volume (CFM)",
+    "Air velocity",
+    "Flow area",
+    "Q = V x A",
+    "Duct area conversion"
+  ],
   "type": "Interactive Simulation",
   "format": "text/html",
-  "language": "en",
+  "language": "en-US",
   "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
   "educational": {
-    "gradeLevel": [
-      "Adult professional development"
-    ],
-    "subjectArea": "Engineering",
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
     "topic": "Airflow, velocity and flow area in ducts (Q = V x A)",
     "learningObjectives": [
-      "Calculate air velocity, airflow volume or required flow area from the other two quantities for rectangular and round ducts, to within 2 percent of the model value."
+      "The learner will calculate air velocity, airflow volume or required flow area from the other two quantities for rectangular and round ducts, to within 2 percent of the model value."
     ],
     "bloomsTaxonomy": "Apply",
     "bloomVerb": "calculate",
@@ -31,49 +35,110 @@
   },
   "technical": {
     "framework": "p5.js",
-    "version": "1.11.10",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 670,
     "canvasDimensions": {
       "width": "responsive",
       "height": 670
     },
     "responsive": true,
     "dependencies": [
-      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
     ],
     "accessibility": {
       "hasAltText": true,
-      "keyboardNavigable": true
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, the Explore-mode note and the mastery line announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed feedback borders pair with colour; the departure step is marked with ▶ and an outline; Enter checks and goes to the next challenge; every control is a native, focusable p5 control."
     }
   },
   "userInterface": {
     "controls": [
-      { "type": "input", "name": "Your answer", "description": "Learner types a number for the current challenge; Enter also checks" },
-      { "type": "button", "name": "Check", "description": "Checks the answer within 2 percent; empty or non-numeric input shows 'Enter a number' without using an attempt" },
-      { "type": "button", "name": "Next challenge / Start free mode", "description": "Advances after a challenge is answered correctly or missed" },
-      { "type": "select", "name": "Duct shape", "description": "Rectangular or round (free mode)" },
-      { "type": "slider", "name": "Airflow Q", "description": "200 to 20,000 CFM, step 100, default 2,400 (free mode)" },
-      { "type": "slider", "name": "Width", "description": "6 to 48 in, step 2, default 16 (free mode, rectangular)" },
-      { "type": "slider", "name": "Height", "description": "6 to 48 in, step 2, default 12 (free mode, rectangular)" },
-      { "type": "slider", "name": "Diameter", "description": "6 to 60 in, step 2, default 18 (free mode, round)" }
+      {
+        "type": "input",
+        "label": "Your answer",
+        "purpose": "Type a number for the current challenge; Enter checks"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Check the answer within 2 percent; empty or non-numeric input shows 'Enter a number' without using an attempt"
+      },
+      {
+        "type": "button",
+        "label": "Next challenge / Start explore mode",
+        "purpose": "Advance after a challenge is answered correctly or missed (Enter)"
+      },
+      {
+        "type": "select",
+        "label": "Duct shape",
+        "purpose": "Rectangular or round (Explore mode)"
+      },
+      {
+        "type": "slider",
+        "label": "Airflow Q",
+        "purpose": "200 to 20,000 CFM, step 100, default 2,400 (Explore mode)"
+      },
+      {
+        "type": "slider",
+        "label": "Width",
+        "purpose": "6 to 48 in, step 2, default 16 (Explore mode, rectangular)"
+      },
+      {
+        "type": "slider",
+        "label": "Height",
+        "purpose": "6 to 48 in, step 2, default 12 (Explore mode, rectangular)"
+      },
+      {
+        "type": "slider",
+        "label": "Diameter",
+        "purpose": "6 to 60 in, step 2, default 18 (Explore mode, round)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reset all four challenges and the score (Explore mode)"
+      }
     ]
   },
-  "simulationModel": {
+  "simulation": {
     "modelType": "Algebraic calculator",
     "equations": [
       "Rectangular A = (W x H) / 144 ft^2",
       "Round A = pi x D^2 / 576 ft^2",
       "V = Q / A",
-      "Q = V x A",
-      "Correct when |x - model| <= 0.02 x model"
+      "Q = V x A"
+    ],
+    "rules": [
+      "Correct when |x - model| <= 0.02 x model",
+      "Two attempts per challenge; non-numeric or empty input does not use an attempt",
+      "Challenge model values rounded to 1 ft/min, 1 CFM and 0.01 ft^2; Explore-mode velocity shown to the nearest 10 ft/min",
+      "Mastery: 4 of 4 correct, at most two attempts each"
     ],
     "assumptions": [
       "Velocity is the average velocity over the full duct cross-section",
       "Duct dimensions are inside dimensions in inches"
     ],
-    "dataProvenance": "Challenge 1 is the chapter's machine-shop worked example; challenges 2-4 are illustrative values and are labeled as such in the sim."
+    "limitations": [
+      "Every dimension is at least 6 in, so area is never zero"
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Challenge 1: the chapter's machine-shop worked example (Chapter 1, Air Velocity)",
+      "Challenges 2-4: illustrative values, labeled 'Illustrative values' in the sim",
+      "Equations and conversions: Chapter 1 section 'Air Velocity'"
+    ]
   },
   "pedagogical": {
-    "teachingStrategy": "Committed-answer practice problems with immediate diagnostic feedback, followed by free exploration",
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Committed-answer practice problems with immediate diagnostic feedback, followed by Explore mode",
     "keyQuestions": [
       "Why must duct dimensions in inches be divided by 144 before dividing CFM by area?",
       "Does a bigger duct move more air when the fan airflow is unchanged?",
@@ -85,8 +150,8 @@
       "A round duct of diameter D has the same area as a square duct of side D."
     ],
     "assessmentOpportunities": [
-      "Mastery: 4 of 4 challenges correct within 2 percent, at most two attempts each",
-      "Free exploration is not evidence of mastery"
+      "Running score shown as 'Challenges correct: n of 4'; mastery is 4 of 4 correct within 2 percent, at most two attempts each.",
+      "Explore mode is not evidence of mastery"
     ]
   },
   "chapter": "01-air-pressure-and-the-fan"

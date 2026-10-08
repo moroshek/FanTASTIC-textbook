@@ -3,17 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
     <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
     <title>Flow Control Power Comparator using Chart.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
     <style>
-        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
+        .fcpc-chart { position: relative; height: 300px; background: #ffffff; }
+        .fcpc-rank label, .fcpc-saving label { white-space: nowrap; }
+        .fcpc-rank select { max-width: 170px; }
+        .fcpc-saving input { width: 80px; box-sizing: border-box; } /* kit input min-height is content-box */
+        .fcpc-explore { border-top: 1px solid var(--fp-border); margin-top: 6px; padding-top: 4px; }
+        .fcpc-explore input[type=range] { width: 220px; max-width: 60vw; vertical-align: middle; }
+        .fcpc-readout { font-size: var(--fp-size-secondary); min-height: 40px; margin: 4px 0; }
+        .fcpc-status .fp-progress { margin: 0; }
+        .fcpc-summary ul { margin: 4px 0 0 0; padding-left: 20px; }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-    <script src="ch18-flow-control-power-comparator.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-curves.js"></script>
+    <script src="../shared-libs/fan-models.js"></script>
+    <script src="ch18-flow-control-power-comparator.js" defer></script>
 </head>
 <body>
-    <main></main>
-    <br/>
-    <a href=".">Back to Lesson Plan</a>
+    <main class="fp-app">
+        <h1 class="fp-title">Flow Control Power Comparator</h1>
+
+        <section class="fp-draw" id="drawing" aria-label="Shaft power versus airflow chart">
+            <div class="fcpc-chart">
+                <canvas id="chart" role="img" aria-label="Shaft power (% of design) versus airflow (% of design) for outlet damper, variable inlet vanes and speed control. Curves are hidden until you check a challenge."></canvas>
+            </div>
+        </section>
+        <p class="fp-note illustrative" id="dataNote">Illustrative values · Speed control is the ideal fan-law cube relation; real speed control has small drive losses, and a system with fixed static pressure saves less than the ideal cube value.</p>
+
+        <section class="fp-ctrl" aria-label="Activity">
+            <div class="fp-row fcpc-status">
+                <span class="fp-score" id="score">Challenges correct: 0 of 3</span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="fp-attempt" id="attempt">Attempt 1 of 2</span>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="fp-row fcpc-rank fcpc-answer" role="group" aria-label="Rank the methods from lowest to highest shaft power">
+                <span>Rank by power:</span>
+                <label>Lowest <select id="r0"></select></label>
+                <label>Middle <select id="r1"></select></label>
+                <label>Highest <select id="r2"></select></label>
+            </div>
+            <div class="fp-row fcpc-saving">
+                <label for="saving" class="fcpc-answer">Best method's saving vs. damper</label>
+                <input id="saving" class="fcpc-answer" type="text" inputmode="decimal" autocomplete="off">
+                <span class="fcpc-answer">percentage points</span>
+                <button id="check" type="button">Check</button>
+                <button id="next" type="button" hidden>Next challenge</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <div id="summary" class="fp-feedback final fcpc-summary" role="status"></div>
+            <div class="fcpc-explore">
+                <div class="fp-row">
+                    <label for="airflow" id="selLabel">Airflow selector</label>
+                    <input type="range" id="airflow" min="50" max="100" step="5" value="70" disabled>
+                    <b id="airflowVal">70%</b>
+                    <span class="fp-attempt" id="exploreState"></span>
+                </div>
+                <div class="fcpc-readout" id="readout" aria-live="polite"></div>
+            </div>
+            <p class="fp-note">Keyboard: Tab between controls; Enter checks your answer, then goes to the next challenge; arrow keys move the airflow selector.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
 </body>
 </html>

@@ -6,81 +6,77 @@
     <link rel="icon" href="data:,">
     <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
     <title>Fan Selection Workflow using Mermaid</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
     <style>
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; overflow: hidden; }
-        body { font-family: Arial, Helvetica, sans-serif; color: #1e293b; background: #ffffff; }
-        main { display: flex; width: 100%; align-items: stretch; }
-        .diagram-panel { flex: 0 0 62%; background: aliceblue; padding: 6px 4px 8px 4px; overflow: visible; }
-        .info-panel { flex: 1 1 38%; background: #f8fafc; border-left: 1px solid #cbd5e1; padding: 8px 10px; position: relative; overflow: visible; }
-        h1 { font-size: 18px; margin: 2px 4px 4px 4px; }
-        .legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; margin: 0 4px 2px 4px; }
-        .legend span { display: inline-flex; align-items: center; gap: 4px; }
-        .legend i { display: inline-block; width: 13px; height: 13px; border: 1px solid #475569; border-radius: 2px; }
+        /* Sim-specific layout (prefix fsw-): flowchart left, card sorter right. */
+        @media (min-width: 601px) { html, body { overflow: hidden; } }
+        .fsw-app { padding: 6px var(--fp-margin) 0 var(--fp-margin); }
+        .fsw-app .fp-title { margin-bottom: 4px; }
+        .fsw-layout { display: flex; align-items: stretch; width: 100%; }
+        .fsw-layout > .fp-draw { flex: 0 0 62%; min-width: 0; padding: 6px 4px 6px 4px; }
+        .fsw-layout > .fp-ctrl { flex: 1 1 38%; min-width: 0; border-top: 1px solid var(--fp-border); border-left: 0; position: relative; }
+        .fsw-legend { display: flex; flex-wrap: wrap; gap: 2px 10px; font-size: var(--fp-size-note); margin: 0 4px 2px 4px; padding: 0; list-style: none; }
+        .fsw-legend li { display: inline-flex; align-items: center; gap: 4px; }
+        .fsw-legend i { display: inline-block; width: 13px; height: 13px; border: 2px solid; border-radius: 2px; }
         #diagram { text-align: center; }
         #diagram svg { max-width: 100%; height: auto; }
         #diagram .node { cursor: pointer; }
-        h2 { font-size: 16px; margin: 2px 0 6px 0; }
-        .progress { display: flex; gap: 4px; margin-bottom: 6px; }
-        .progress b { flex: 1; height: 8px; border-radius: 4px; background: #e2e8f0; }
-        .progress b.cur { background: #94a3b8; }
-        .progress b.ok { background: #16a34a; }
-        .progress b.no { background: #dc2626; }
-        .card { background: #fffbeb; border: 1px solid #f59e0b; border-radius: 6px; padding: 8px; font-size: 15px; line-height: 1.35; min-height: 62px; }
-        .card-num { font-size: 12px; color: #92400e; font-weight: bold; margin-bottom: 3px; }
-        .prompt { font-size: 14px; font-weight: bold; margin: 8px 0 4px 0; }
-        select { width: 100%; font-size: 14px; padding: 4px; }
-        .row { display: flex; gap: 6px; margin-top: 6px; }
-        button { font-size: 14px; padding: 5px 10px; cursor: pointer; border: 1px solid #334155; border-radius: 4px; background: #1e40af; color: #ffffff; }
-        button:disabled { background: #cbd5e1; color: #64748b; border-color: #cbd5e1; cursor: default; }
-        button.secondary { background: #ffffff; color: #1e293b; }
-        .feedback { font-size: 14px; line-height: 1.4; margin-top: 8px; padding: 7px; border-radius: 5px; display: none; }
-        .feedback.ok { display: block; background: #dcfce7; border: 1px solid #16a34a; }
-        .feedback.no { display: block; background: #fee2e2; border: 1px solid #dc2626; }
-        .feedback.final { display: block; background: #e0f2fe; border: 1px solid #0284c7; }
-        .feedback a { color: #1d4ed8; }
-        #stepInfoWrap { position: static; }
-        #stepInfo { position: absolute; left: 10px; right: 10px; top: 250px; background: #ffffff; border: 1px solid #1d4ed8; border-radius: 6px; padding: 8px; font-size: 14px; line-height: 1.4; }
-        #stepInfo .si-title { font-weight: bold; color: #1d4ed8; margin-bottom: 3px; }
-        .hint { color: #475569; font-size: 13px; }
-        .back { font-size: 13px; margin: 0 8px; }
+        #diagram .node:focus { outline: none; }
+        .fsw-ctrl-head { margin: 0 0 4px 0; }
+        .fsw-card { margin: 6px 0 0 0; min-height: 62px; }
+        .fsw-card-num { font-size: var(--fp-size-note); color: var(--fp-primary-dark); font-weight: bold; margin-bottom: 3px; }
+        .fsw-card-text { font-size: var(--fp-size-body); }
+        .fsw-ctrl select { width: 100%; }
+        .fsw-ctrl .fp-prompt { margin: 8px 0 4px 0; }
+        .fsw-ctrl .fp-row { margin: 6px 0; }
+        .fsw-final-line + .fsw-final-line { margin-top: 4px; }
+        .fsw-final-score { font-weight: bold; }
+        #stepInfo { position: absolute; left: var(--fp-pad); right: var(--fp-pad); top: 300px; margin: 0; font-size: var(--fp-size-secondary); }
+        #stepInfo .fsw-si-title { font-weight: bold; color: var(--fp-primary-dark); margin-bottom: 3px; }
+        #stepInfo .fsw-hint { color: var(--fp-text-muted); }
+        .fsw-app .fp-note { margin: 4px 4px 0 4px; }
+        /* Narrow screens: activity on top, flowchart full width below. */
+        @media (max-width: 600px) {
+            .fsw-layout { flex-direction: column-reverse; }
+            .fsw-layout > .fp-draw, .fsw-layout > .fp-ctrl { flex: 1 1 auto; }
+            .fsw-layout > .fp-ctrl { border-bottom: 0; }
+            #stepInfo { position: static; margin-top: 6px; }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
-    <script src="ch27-fan-selection-workflow.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="ch27-fan-selection-workflow.js" defer></script>
 </head>
 <body>
-    <main>
-        <section class="diagram-panel">
-            <h1>Fan Selection Workflow</h1>
-            <div class="legend" aria-label="Color key">
-                <span><i style="background:#dbeafe"></i>Define the duty</span>
-                <span><i style="background:#ede9fe"></i>Choose the fan</span>
-                <span><i style="background:#fef3c7"></i>Configure it</span>
-                <span><i style="background:#ccfbf1"></i>Prove and compare</span>
-                <span><i style="background:#fce7f3"></i>Document</span>
-            </div>
-            <div id="diagram" aria-label="Twelve-step fan selection flowchart. Click a step to read what it does."></div>
-        </section>
-        <section class="info-panel">
-            <h2>Which step uses it?</h2>
-            <div class="progress" id="progress"></div>
-            <div class="card">
-                <div class="card-num" id="cardNum">Card 1 of 8</div>
-                <div id="cardText"></div>
-            </div>
-            <div class="prompt" id="prompt">Which step uses this information?</div>
-            <select id="stepSelect" aria-label="Workflow step"></select>
-            <div class="row">
-                <button id="submitBtn" disabled>Submit</button>
-                <button id="nextBtn" class="secondary" style="display:none">Next card</button>
-                <button id="restartBtn" class="secondary" style="display:none">Restart</button>
-            </div>
-            <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
-            <div id="stepInfoWrap">
-                <div id="stepInfo"><span class="hint">Click any step in the flowchart to read what it does.</span></div>
-            </div>
-        </section>
+    <main class="fp-app fsw-app">
+        <h1 class="fp-title">Fan Selection Workflow</h1>
+        <div class="fsw-layout">
+            <section class="fp-draw" id="drawing" aria-label="Twelve-step fan selection flowchart. Click a step to read what it does.">
+                <ul class="fsw-legend" id="legend" aria-label="Phase key"></ul>
+                <div id="diagram"></div>
+                <p class="fp-note illustrative" id="dataNote">Illustrative values · job values on the cards are the chapter's worked example</p>
+            </section>
+            <section class="fp-ctrl fsw-ctrl" aria-label="Activity">
+                <h2 class="fp-heading fsw-ctrl-head">Which step uses it?</h2>
+                <div class="fp-row"><span class="fp-score" id="score">Cards correct: 0 of 8</span></div>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <div class="fp-panel info fsw-card">
+                    <div class="fsw-card-num" id="cardNum">Card 1 of 8</div>
+                    <div class="fsw-card-text" id="cardText"></div>
+                </div>
+                <p class="fp-prompt" id="prompt">Which step uses this information?</p>
+                <select id="stepSelect" aria-label="Workflow step"></select>
+                <div class="fp-row">
+                    <button id="submitBtn" type="button" disabled>Submit</button>
+                    <button id="nextBtn" type="button" hidden>Next card</button>
+                    <button id="startOver" type="button" class="secondary">Start over</button>
+                </div>
+                <div id="feedback" class="fp-feedback" role="status"></div>
+                <p class="fp-note" id="keyNote">Keyboard: <kbd>Tab</kbd> to a step, <kbd>Enter</kbd> reads it. <kbd>Enter</kbd> submits the chosen step, then goes to the next card.</p>
+                <div id="stepInfo" class="fp-panel"><span class="fsw-hint">Click any step in the flowchart to read what it does.</span></div>
+            </section>
+        </div>
     </main>
-    <div class="back"><a href=".">Back to Lesson Plan</a></div>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
 </body>
 </html>

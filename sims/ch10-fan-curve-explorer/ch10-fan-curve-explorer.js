@@ -1,194 +1,148 @@
-// Fan Curve Explorer - Plotly.js
-// Two illustrative fans (Curve A, Curve B): pressure and BHP curves plus a six-question
-// differentiation quiz (stall region vs. stable; overloading vs. non-overloading power).
-// CANVAS_HEIGHT: 662
-// Data are ILLUSTRATIVE, not Twin City Fan published ratings.
+// Fan Curve Explorer - Plotly.js on the FanPedia MicroSim kit
+// CANVAS_HEIGHT: 800
+// Two illustrative fans (Curve A, Curve B) from FP.curves: pressure and BHP curves plus a
+// six-question differentiation quiz (stall region vs. stable; overloading vs. non-overloading
+// power) run by FP.CardDeck (fixed order, one attempt each). Data are ILLUSTRATIVE, not Twin
+// City Fan published ratings.
 
 (function () {
   'use strict';
 
-  var NARROW = (window.innerWidth || 800) < 600;
-  var PLOT_HEIGHT = NARROW ? 390 : 430;
-  var TICKS = NARROW ? [0, 4000, 8000, 12000, 16000] : [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000];
+  var C = FP.curves;
+  var CH = FP.chart;
+  var CURVES = { A: C.A, B: C.B };
+  var SERIES = { A: CH.series(0), B: CH.series(1) };
+  var MASTERY = 5;
 
-  // ---- Illustrative data (from the chapter specification) ----
-  var CFM = [0, 2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000];
-  var CURVES = {
-    A: {
-      name: 'Curve A (Illustrative)',
-      color: '#1f5fa8',
-      fsp: [4.6, 4.8, 4.9, 4.8, 4.5, 4.0, 3.2, 2.0, 0.4],
-      bhp: [4.0, 5.0, 6.0, 7.0, 8.1, 9.0, 9.5, 9.4, 8.8],
-      stallBelow: 4000
-    },
-    B: {
-      name: 'Curve B (Illustrative)',
-      color: '#c25a00',
-      fsp: [2.2, 2.0, 1.9, 2.0, 2.05, 1.8, 1.5, 1.0, 0.4],
-      bhp: [1.6, 2.0, 2.5, 3.1, 3.8, 4.5, 5.2, 5.8, 6.3],
-      stallBelow: 8000
-    }
-  };
-
-  // Straight-line interpolation between listed points
-  function interp(xs, ys, x) {
-    for (var i = 0; i < xs.length - 1; i++) {
-      if (x >= xs[i] && x <= xs[i + 1]) {
-        var t = (x - xs[i]) / (xs[i + 1] - xs[i]);
-        return ys[i] + t * (ys[i + 1] - ys[i]);
-      }
-    }
-    return ys[ys.length - 1];
-  }
-
-  function fmt(v) {
-    // up to two decimals, trailing zeros trimmed (2.05, 4.9, 4.0 -> "4.0")
-    var s = (Math.round(v * 100) / 100).toFixed(2);
-    s = s.replace(/0$/, '');
-    return s;
-  }
-
-  function commas(n) {
-    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  }
-
-  // ---- Questions (fixed order) ----
+  // ---- Questions (fixed order; spec wording) ----
   var QUESTIONS = [
     {
-      text: 'Is 3,000 CFM on Curve A in the stall region?',
+      id: 'q1', text: 'Is 3,000 CFM on Curve A in the stall region?',
       choices: ['Yes', 'No'], answer: 'Yes',
       why: "Curve A's pressure peaks at 4,000 CFM; 3,000 CFM is to the left of the peak.",
       mark: { type: 'point', curve: 'A', cfm: 3000 }
     },
     {
-      text: 'Is 9,000 CFM on Curve A in the stall region?',
+      id: 'q2', text: 'Is 9,000 CFM on Curve A in the stall region?',
       choices: ['Yes', 'No'], answer: 'No',
       why: "9,000 CFM is to the right of Curve A's 4,000 CFM peak, where pressure falls steadily as airflow rises.",
       mark: { type: 'point', curve: 'A', cfm: 9000 }
     },
     {
-      text: 'Is 6,000 CFM on Curve B in the stall region?',
+      id: 'q3', text: 'Is 6,000 CFM on Curve B in the stall region?',
       choices: ['Yes', 'No'], answer: 'Yes',
       why: "Curve B's right-hand pressure peak is at 8,000 CFM; 6,000 CFM is to its left, in the unstable dip region.",
       mark: { type: 'point', curve: 'B', cfm: 6000 }
     },
     {
-      text: 'Is 11,000 CFM on Curve B in the stall region?',
+      id: 'q4', text: 'Is 11,000 CFM on Curve B in the stall region?',
       choices: ['Yes', 'No'], answer: 'No',
       why: "11,000 CFM is to the right of Curve B's 8,000 CFM peak.",
       mark: { type: 'point', curve: 'B', cfm: 11000 }
     },
     {
-      text: 'Which curve has a non-overloading power curve?',
+      id: 'q5', text: 'Which curve has a non-overloading power curve?',
       choices: ['Curve A', 'Curve B'], answer: 'Curve A',
       why: "Curve A's BHP peaks at 9.5 at 12,000 CFM and then falls; Curve B's BHP rises at every step to 16,000 CFM.",
       mark: { type: 'power' }
     },
     {
-      text: 'What is the highest BHP anywhere on Curve A (the motor size that cannot be overloaded at this speed, before drive losses)?',
-      numeric: true, answer: 9.5, tolerance: 0.1, unit: 'BHP',
+      id: 'q6', text: 'What is the highest BHP anywhere on Curve A (the motor size that cannot be overloaded at this speed, before drive losses)?',
+      numeric: true, answer: 9.5, tolerance: 0.1, answerText: FP.fmt.bhp(9.5),
       why: 'The BHP column of Curve A reaches its maximum, 9.5, at 12,000 CFM.',
       mark: { type: 'maxbhp' }
     }
   ];
 
   var PROMPT = 'Two fans, one speed each. Where is it safe to run them, and which one can overload its motor?';
+  var REVIEW = 'Review the stall region and power curve sections, then start over.';
+  var STALL_SUMMARY = 'The shaded segments mark each stall region: Curve A below 4,000 CFM, Curve B below 8,000 CFM. ' +
+    'Curve B’s stall region covers half its airflow range. The pressure peak is the edge of the stall region, ' +
+    'not the best selection point; select well to the right of it.';
 
-  // ---- State ----
-  var state;
-  function resetState() {
-    state = { index: 0, answered: false, results: [], marks: [], showStall: false };
+  // ---- Engine: FP.CardDeck, fixed order, one scored attempt per question ----
+  var deck = new FP.CardDeck({
+    cards: QUESTIONS, shuffle: false, attempts: 1, retryMissed: false,
+    noun: 'Questions', mastery: MASTERY, reviewPointer: REVIEW, id: 'ch10-fan-curve-explorer',
+    check: function (q, choice) {
+      return q.numeric ? FP.check.numeric(FP.fmt.parseNumber(choice), q.answer, { abs: q.tolerance })
+        : choice === q.answer;
+    }
+  });
+
+  var view = { marks: [], showStall: false, chosen: null, message: null };
+  var el = {};
+
+  // "4.9", "2.05", "4.0": one decimal unless the value needs two
+  function val(v) {
+    return FP.fmt.num(v, Math.round(v * 100) % 10 === 0 ? 1 : 2);
   }
-
-  // ---- Styles ----
-  var css = [
-    'body { background: aliceblue; }',
-    '.fce { font-family: Arial, Helvetica, sans-serif; color: #1b2733; padding: 6px 10px 4px 10px; box-sizing: border-box; }',
-    '.fce h1 { font-size: 19px; margin: 2px 0 2px 0; }',
-    '.fce .prompt { font-size: 14px; margin: 0 0 2px 0; color: #34475a; }',
-    '.fce .plot { width: 100%; height: ' + PLOT_HEIGHT + 'px; background: white; border: 1px solid #c9d6e3; border-radius: 4px; }',
-    '.fce .quiz { margin-top: 6px; background: white; border: 1px solid #c9d6e3; border-radius: 4px; padding: 7px 10px; min-height: 124px; box-sizing: border-box; }',
-    '.fce .qnum { font-size: 12px; color: #5b6b7b; margin-bottom: 2px; }',
-    '.fce .qtext { font-size: 15px; font-weight: bold; margin-bottom: 6px; }',
-    '.fce .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }',
-    '.fce button { font-size: 14px; padding: 5px 14px; border: 1px solid #1f5fa8; border-radius: 4px; background: #e8f0fa; color: #133c6b; cursor: pointer; }',
-    '.fce button:hover:not(:disabled) { background: #d2e2f5; }',
-    '.fce button:disabled { opacity: 0.55; cursor: default; }',
-    '.fce button.chosen { background: #1f5fa8; color: white; opacity: 1; }',
-    '.fce button.next { border-color: #2d7a3a; background: #e6f4e8; color: #1d5426; }',
-    '.fce input[type=number] { font-size: 14px; width: 90px; padding: 4px 6px; border: 1px solid #8aa0b5; border-radius: 4px; }',
-    '.fce .feedback { font-size: 14px; margin-top: 6px; line-height: 1.35; }',
-    '.fce .feedback.ok { color: #1d6b2a; }',
-    '.fce .feedback.bad { color: #a3281b; }',
-    '.fce .feedback.note { color: #5b6b7b; }',
-    '.fce .score { font-size: 15px; font-weight: bold; margin: 2px 0 4px 0; }',
-    '.fce .summary { font-size: 13px; color: #34475a; margin-bottom: 6px; line-height: 1.35; }'
-  ].join('\n');
+  function isNarrow() { return (el.plot.clientWidth || window.innerWidth || 800) < 600; }
 
   // ---- Plot construction ----
-  function hoverData(c) {
-    return CFM.map(function (_, i) { return [fmt(c.fsp[i]), fmt(c.bhp[i])]; });
-  }
-
-  function baseTraces() {
+  function curveTraces() {
     var traces = [];
-    ['A', 'B'].forEach(function (key) {
+    ['A', 'B'].forEach(function (key, i) {
       var c = CURVES[key];
+      var custom = c.q.map(function (_, j) { return [val(c.p[j]), val(c.bhp[j])]; });
       var tmpl = '<b>' + c.name + '</b><br>Airflow: %{x:,} CFM<br>' +
         'Fan static pressure: %{customdata[0]} in. wg<br>BHP: %{customdata[1]}<extra></extra>';
-      traces.push({
-        x: CFM, y: c.fsp, customdata: hoverData(c), type: 'scatter', mode: 'lines+markers',
-        name: c.name, legendgroup: key, line: { color: c.color, width: 2.5 },
-        marker: { size: 6, color: c.color }, xaxis: 'x', yaxis: 'y', hovertemplate: tmpl
-      });
-      traces.push({
-        x: CFM, y: c.bhp, customdata: hoverData(c), type: 'scatter', mode: 'lines+markers',
-        name: c.name + ' BHP', legendgroup: key, showlegend: false,
-        line: { color: c.color, width: 2.5, dash: 'dot' },
-        marker: { size: 6, color: c.color, symbol: 'square' }, xaxis: 'x2', yaxis: 'y2', hovertemplate: tmpl
-      });
+      traces.push(CH.plotlyTrace(i, {
+        x: c.q, y: c.p, customdata: custom, name: c.name, legendgroup: key,
+        xaxis: 'x', yaxis: 'y', hovertemplate: tmpl
+      }));
+      traces.push(CH.plotlyTrace(i, {
+        x: c.q, y: c.bhp, customdata: custom, name: c.name + ' BHP', legendgroup: key, showlegend: false,
+        xaxis: 'x2', yaxis: 'y2', hovertemplate: tmpl
+      }));
     });
     return traces;
   }
 
   function stallTraces() {
-    var traces = [];
-    ['A', 'B'].forEach(function (key) {
+    return ['A', 'B'].map(function (key) {
       var c = CURVES[key];
       var xs = [], ys = [];
-      for (var i = 0; i < CFM.length; i++) {
-        if (CFM[i] <= c.stallBelow) { xs.push(CFM[i]); ys.push(c.fsp[i]); }
-      }
-      traces.push({
-        x: xs, y: ys, type: 'scatter', mode: 'lines', hoverinfo: 'skip',
-        name: key + ' stall region', showlegend: false,
-        line: { color: c.color, width: 14 }, opacity: 0.22, xaxis: 'x', yaxis: 'y'
-      });
+      c.q.forEach(function (q, j) { if (q <= c.stallBelow) { xs.push(q); ys.push(c.p[j]); } });
+      return {
+        x: xs, y: ys, type: 'scatter', mode: 'lines', hoverinfo: 'skip', showlegend: false,
+        name: key + ' stall region', line: { color: SERIES[key].color, width: 14 }, opacity: 0.22,
+        xaxis: 'x', yaxis: 'y'
+      };
     });
-    return traces;
   }
 
-  function markTraces() {
+  // Correct: ✓ in the label, round marker, solid green ring. Incorrect: ✗, square marker, red ring.
+  function markStyle(m, size) {
+    return {
+      size: size, symbol: m.correct ? 'circle' : 'square', color: 'rgba(255,255,255,0.9)',
+      line: { color: FP.tok(m.correct ? 'correct' : 'incorrect'), width: 3 }
+    };
+  }
+  function glyph(m) { return m.correct ? FP.msg.OK : FP.msg.BAD; }
+
+  function markTraces(narrow) {
     var traces = [];
-    state.marks.forEach(function (m) {
+    view.marks.forEach(function (m) {
       if (m.type === 'point') {
         var c = CURVES[m.curve];
-        var y = interp(CFM, c.fsp, m.cfm);
+        var y = C.pressureAt(c, m.cfm);
         traces.push({
-          x: [m.cfm], y: [y], type: 'scatter', mode: 'markers+text', showlegend: false,
-          text: ['Q' + m.q + ': ' + commas(m.cfm)], textposition: m.curve === 'A' ? 'top center' : 'bottom center',
-          textfont: { size: 12, color: '#1b2733' },
-          marker: { size: 13, color: 'rgba(255,255,255,0.9)', line: { color: m.correct ? '#1d8a2e' : '#c0392b', width: 3 } },
-          hovertemplate: '<b>Q' + m.q + ': Curve ' + m.curve + ' at ' + commas(m.cfm) + ' CFM</b><br>' +
-            'Fan static pressure: about ' + fmt(y) + ' in. wg<br>' +
-            (m.cfm < c.stallBelow ? 'In the stall region' : 'Stable (right of the peak)') + '<extra></extra>',
+          x: [m.cfm], y: [y], type: 'scatter', mode: 'markers+text', showlegend: false, cliponaxis: false,
+          text: ['Q' + m.q + ' ' + glyph(m) + ' ' + FP.fmt.num(m.cfm)],
+          textposition: m.curve === 'A' && !narrow ? 'top center' : 'bottom center',
+          textfont: { size: 12, color: FP.tok('text') }, marker: markStyle(m, 13),
+          hovertemplate: '<b>Q' + m.q + ': Curve ' + m.curve + ' at ' + FP.fmt.cfm(m.cfm) + '</b><br>' +
+            'Fan static pressure: about ' + val(y) + ' in. wg<br>' +
+            (C.isStall(c, m.cfm) ? 'In the stall region' : 'Stable (right of the peak)') + '<extra></extra>',
           xaxis: 'x', yaxis: 'y'
         });
       } else if (m.type === 'maxbhp') {
         traces.push({
-          x: [12000], y: [9.5], type: 'scatter', mode: 'markers', showlegend: false,
-          marker: { size: 15, color: 'rgba(255,255,255,0.9)', line: { color: m.correct ? '#1d8a2e' : '#c0392b', width: 3 } },
-          hovertemplate: '<b>Q6: Curve A maximum BHP</b><br>9.5 BHP at 12,000 CFM<extra></extra>',
+          x: [12000], y: [C.bhpAt(C.A, 12000)], type: 'scatter', mode: 'markers+text', showlegend: false, cliponaxis: false,
+          text: ['Q6 ' + glyph(m)], textposition: 'top center', textfont: { size: 12, color: FP.tok('text') },
+          marker: markStyle(m, 15),
+          hovertemplate: '<b>Q6: Curve A maximum BHP</b><br>' + FP.fmt.bhp(9.5) + ' at ' + FP.fmt.cfm(12000) + '<extra></extra>',
           xaxis: 'x2', yaxis: 'y2'
         });
       }
@@ -196,182 +150,237 @@
     return traces;
   }
 
-  function annotations() {
-    var ann = [
-      { text: 'Illustrative data, standard air, one fixed speed per fan', xref: 'paper', yref: 'paper', x: 0, y: 1.0, xanchor: 'left', yanchor: 'bottom', showarrow: false, font: { size: 12, color: '#5b6b7b' } }
-    ];
-    var hasPower = state.marks.some(function (m) { return m.type === 'power'; });
-    if (hasPower) {
-      ann.push({ x: 12000, y: 9.5, xref: 'x2', yref: 'y2', text: 'A: peaks, then falls (non-overloading)', showarrow: true, arrowhead: 2, ax: -30, ay: 46, font: { size: 12, color: CURVES.A.color }, bgcolor: 'rgba(255,255,255,0.85)', xanchor: 'right' });
-      ann.push({ x: 16000, y: 6.3, xref: 'x2', yref: 'y2', text: 'B: rises at every step (overloading)', showarrow: true, arrowhead: 2, ax: -24, ay: 40, font: { size: 12, color: CURVES.B.color }, bgcolor: 'rgba(255,255,255,0.85)', xanchor: 'right' });
+  function note(x, y, axes, text, key, extra) {
+    return CH.merge({
+      x: x, y: y, xref: axes[0], yref: axes[1], text: text, font: { size: 12, color: FP.tok('text') },
+      bgcolor: 'rgba(255,255,255,0.9)', bordercolor: SERIES[key].color, borderwidth: 1, borderpad: 2
+    }, extra || {});
+  }
+
+  function annotations(narrow) {
+    var ann = [];
+    var br = narrow ? '<br>' : ' ';
+    var power = view.marks.filter(function (m) { return m.type === 'power'; })[0];
+    if (power) {
+      var g = glyph(power) + ' ';
+      ann.push(note(12000, 9.5, ['x2', 'y2'], g + 'A: peaks, then falls' + br + '(non-overloading)', 'A',
+        { showarrow: true, arrowhead: 2, ax: narrow ? -70 : -30, ay: narrow ? 34 : 46, xanchor: 'right', arrowcolor: SERIES.A.color }));
+      ann.push(note(16000, 6.3, ['x2', 'y2'], 'B: rises at every step' + br + '(overloading)', 'B',
+        { showarrow: true, arrowhead: 2, ax: narrow ? -6 : -24, ay: narrow ? 56 : 40, xanchor: 'right', arrowcolor: SERIES.B.color }));
     }
-    if (state.showStall) {
-      ann.push({ x: 2000, y: 4.8, xref: 'x', yref: 'y', text: 'A stall: below 4,000 CFM', showarrow: false, yshift: -22, font: { size: 12, color: CURVES.A.color }, bgcolor: 'rgba(255,255,255,0.85)' });
-      ann.push({ x: 2400, y: 2.0, xref: 'x', yref: 'y', text: 'B stall: below 8,000 CFM', showarrow: false, yshift: -20, font: { size: 12, color: CURVES.B.color }, bgcolor: 'rgba(255,255,255,0.85)' });
+    if (view.showStall) {
+      if (narrow) {   // short labels at the top of each dashed stall line
+        ['A', 'B'].forEach(function (key) {
+          ann.push(note(CURVES[key].stallBelow, 6.2, ['x', 'y'], '← ' + key + ' stall', key,
+            { showarrow: false, xanchor: 'right', yanchor: 'top', xshift: -2 }));
+        });
+      } else {
+        ann.push(note(2000, 4.8, ['x', 'y'], 'A stall: below 4,000 CFM', 'A', { showarrow: false, yshift: -24 }));
+        ann.push(note(2400, 2.0, ['x', 'y'], 'B stall: below 8,000 CFM', 'B', { showarrow: false, yshift: -22 }));
+      }
     }
     return ann;
   }
 
   function shapes() {
-    if (!state.showStall) return [];
+    if (!view.showStall) return [];
     return ['A', 'B'].map(function (key) {
-      var c = CURVES[key];
-      return { type: 'line', xref: 'x', yref: 'y', x0: c.stallBelow, x1: c.stallBelow, y0: 0, y1: 6.2,
-        line: { color: c.color, width: 1.5, dash: 'dash' } };
+      return { type: 'line', xref: 'x', yref: 'y', x0: CURVES[key].stallBelow, x1: CURVES[key].stallBelow, y0: 0, y1: 6.2,
+        line: { color: SERIES[key].color, width: 1.5, dash: 'dash' } };
     });
   }
 
-  function layout() {
-    return {
-      height: PLOT_HEIGHT,
-      margin: { l: 58, r: 14, t: NARROW ? 44 : 26, b: 40 },
-      paper_bgcolor: 'white', plot_bgcolor: 'white',
-      hovermode: 'closest',
-      showlegend: true,
-      legend: { orientation: 'h', x: 1, xanchor: 'right', y: NARROW ? 1.07 : 1.0, yanchor: 'bottom', font: { size: 12 } },
-      xaxis: { domain: [0, 1], anchor: 'y', range: [-300, 16500], tickvals: TICKS, showticklabels: false, gridcolor: '#e6edf4', zeroline: false },
-      yaxis: { domain: [0.52, 1], range: [0, 6.2], dtick: 1, title: { text: 'FSP (in. wg)', font: { size: 12 }, standoff: 6 }, gridcolor: '#e6edf4', zeroline: false, fixedrange: true },
-      xaxis2: { domain: [0, 1], anchor: 'y2', matches: 'x', range: [-300, 16500], tickvals: TICKS, tickformat: ',', title: { text: 'Airflow (CFM)', font: { size: 12 }, standoff: 4 }, gridcolor: '#e6edf4', zeroline: false },
-      yaxis2: { domain: [0, 0.42], range: [0, 11], dtick: 2, title: { text: 'BHP', font: { size: 12 }, standoff: 6 }, gridcolor: '#e6edf4', zeroline: false, fixedrange: true },
-      annotations: annotations(),
+  function layout(narrow) {
+    var ticks = narrow ? [0, 4000, 8000, 12000, 16000] : C.CFM.slice();
+    return CH.plotlyLayout({
+      height: narrow ? 320 : 410,
+      margin: { l: narrow ? 50 : 58, r: 14, t: narrow ? 50 : 26, b: 40 },
+      legend: { y: narrow ? 1.04 : 1.0 },
+      xaxis: { domain: [0, 1], anchor: 'y', range: [-300, 16500], tickvals: ticks, showticklabels: false },
+      yaxis: { domain: [0.52, 1], range: [0, 6.2], dtick: 1, title: narrow ? 'FSP (in. wg)' : 'staticPressure', fixedrange: true },
+      xaxis2: { domain: [0, 1], anchor: 'y2', matches: 'x', range: [-300, 16500], tickvals: ticks, title: 'airflow' },
+      yaxis2: { domain: [0, 0.42], range: [0, 11], dtick: 2, title: narrow ? 'BHP' : 'bhp', fixedrange: true },
+      annotations: annotations(narrow),
       shapes: shapes()
-    };
+    });
   }
 
-  var plotEl, quizEl;
-
+  var lastNarrow = null;
   function drawPlot() {
-    var traces = baseTraces();
-    if (state.showStall) traces = stallTraces().concat(traces);
-    traces = traces.concat(markTraces());
-    Plotly.react(plotEl, traces, layout(), { displayModeBar: false, responsive: true });
+    var narrow = isNarrow();
+    lastNarrow = narrow;
+    el.plot.classList.toggle('narrow', narrow);
+    var traces = (view.showStall ? stallTraces() : []).concat(curveTraces(), markTraces(narrow));
+    Plotly.react(el.plot, traces, layout(narrow), CH.merge(CH.merge({}, CH.plotlyConfig), { displayModeBar: false }));
   }
 
   // ---- Quiz rendering ----
-  function el(tag, cls, text) {
+  function make(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
     if (text !== undefined) e.textContent = text;
     return e;
   }
 
-  function renderQuiz(feedback) {
-    quizEl.innerHTML = '';
-    if (state.index >= QUESTIONS.length) { renderSummary(); return; }
-    var q = QUESTIONS[state.index];
-    quizEl.appendChild(el('div', 'qnum', 'Question ' + (state.index + 1) + ' of ' + QUESTIONS.length));
-    quizEl.appendChild(el('div', 'qtext', q.text));
-    var row = el('div', 'row');
-    var chosen = state.results[state.index] ? state.results[state.index].given : null;
+  function render() {
+    var s = deck.state();
+    el.score.textContent = s.scoreLabel;
+    FP.ui.progress(el.progress, s.results, s.phase === 'summary' ? -1 : s.index, 'Question');
+    el.answers.innerHTML = '';
+    if (s.phase === 'summary') { renderSummary(); return; }
+
+    var q = s.card;
+    var answered = s.phase === 'feedback';
+    el.qnum.textContent = 'Question ' + (s.index + 1) + ' of ' + s.count;
+    el.prompt.textContent = q.text;
 
     if (q.numeric) {
-      var input = el('input');
-      input.type = 'number'; input.step = '0.1'; input.min = '0';
-      input.placeholder = 'BHP';
+      var input = make('input', 'fce-answer');
+      input.type = 'text'; input.inputMode = 'decimal'; input.autocomplete = 'off'; input.id = 'fce-answer';
       input.setAttribute('aria-label', 'Highest BHP on Curve A');
-      if (state.answered) { input.value = chosen; input.disabled = true; }
-      var unit = el('span', null, q.unit);
-      var submit = el('button', null, 'Submit');
-      submit.disabled = state.answered;
-      var doSubmit = function () {
-        if (state.answered) return;
-        var v = parseFloat(input.value);
-        if (isNaN(v)) { renderFeedbackOnly('Type a number of BHP, then press Submit.', 'note'); return; }
-        answer(input.value, Math.abs(v - q.answer) <= q.tolerance + 1e-9);
-      };
-      submit.addEventListener('click', doSubmit);
-      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') doSubmit(); });
-      row.appendChild(input); row.appendChild(unit); row.appendChild(submit);
-    } else {
-      q.choices.forEach(function (choice) {
-        var b = el('button', chosen === choice ? 'chosen' : null, choice);
-        b.disabled = state.answered;
-        b.addEventListener('click', function () { answer(choice, choice === q.answer); });
-        row.appendChild(b);
+      var lab = make('label', null, 'Highest BHP');
+      lab.htmlFor = 'fce-answer';
+      var submit = make('button', null, 'Submit');
+      submit.type = 'button';
+      if (answered) { input.value = view.chosen; input.disabled = true; submit.disabled = true; }
+      submit.addEventListener('click', function () { choose(input.value); });
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); choose(input.value); }
       });
+      el.answers.appendChild(lab); el.answers.appendChild(input);
+      el.answers.appendChild(make('span', null, 'BHP')); el.answers.appendChild(submit);
+      el.keys.textContent = 'Keyboard: type the value, Enter submits; then Enter goes to the next item.';
+    } else {
+      q.choices.forEach(function (choice, i) {
+        var mine = answered && view.chosen === choice;
+        var b = make('button', 'choice' + (mine ? ' fce-chosen' : ''), choice + (mine ? ' (your answer)' : ''));
+        b.type = 'button'; b.disabled = answered;
+        b.setAttribute('aria-keyshortcuts', String(i + 1));
+        b.addEventListener('click', function () { choose(choice); });
+        el.answers.appendChild(b);
+      });
+      el.keys.textContent = 'Keyboard: 1 = ' + q.choices[0] + ', 2 = ' + q.choices[1] + '; Enter goes to the next item.';
     }
 
-    if (state.answered) {
-      var next = el('button', 'next', state.index === QUESTIONS.length - 1 ? 'See score' : 'Next question');
-      next.addEventListener('click', function () {
-        state.index += 1; state.answered = false;
-        if (state.index >= QUESTIONS.length) { state.showStall = true; drawPlot(); }
-        renderQuiz();
-      });
-      row.appendChild(next);
+    if (answered) {
+      var next = make('button', null, s.isLast ? 'See score' : 'Next question');
+      next.type = 'button'; next.id = 'fce-next';
+      next.addEventListener('click', advance);
+      el.answers.appendChild(next);
     }
-    quizEl.appendChild(row);
-    var fbEl = el('div', 'feedback');
-    fbEl.id = 'fce-feedback';
-    quizEl.appendChild(fbEl);
-    if (feedback) { fbEl.textContent = feedback.text; fbEl.className = 'feedback ' + feedback.cls; }
+    el.answers.appendChild(startOverButton());
+    if (view.message) FP.ui.feedback(el.feedback, view.message.kind, view.message.text, { announce: false });
+    else el.feedback.textContent = '';
   }
 
-  function renderFeedbackOnly(text, cls) {
-    var fb = document.getElementById('fce-feedback');
-    if (fb) { fb.textContent = text; fb.className = 'feedback ' + cls; }
-  }
-
-  function answer(given, correct) {
-    if (state.answered) return;
-    var q = QUESTIONS[state.index];
-    state.answered = true;
-    state.results[state.index] = { given: given, correct: correct };
-    var m = {}; for (var k in q.mark) m[k] = q.mark[k];
-    m.q = state.index + 1; m.correct = correct;
-    state.marks.push(m);
-    drawPlot();
-    var text, cls;
-    if (correct) {
-      text = 'Correct. ' + q.why; cls = 'ok';
-    } else {
-      var ans = q.numeric ? (q.answer + ' ' + q.unit) : q.answer;
-      text = 'Not quite. The correct answer is ' + ans + '. ' + q.why; cls = 'bad';
-    }
-    renderQuiz({ text: text, cls: cls });
+  function startOverButton() {
+    var b = make('button', 'secondary', FP.msg.START_OVER);
+    b.type = 'button';
+    b.addEventListener('click', restart);
+    return b;
   }
 
   function renderSummary() {
-    var n = state.results.filter(function (r) { return r && r.correct; }).length;
-    var score = el('div', 'score', n + ' of 6 correct' + (n >= 5 ? ' — Mastery reached' : ''));
-    quizEl.appendChild(score);
-    var s = el('div', 'summary',
-      'The shaded segments mark each stall region: Curve A below 4,000 CFM, Curve B below 8,000 CFM. ' +
-      'Curve B’s stall region covers half its airflow range. The pressure peak is the edge of the stall region, ' +
-      'not the best selection point; select well to the right of it.' +
-      (n >= 5 ? '' : ' Mastery needs 5 of 6; review the stall region and power curve sections, then start over.'));
-    quizEl.appendChild(s);
-    var row = el('div', 'row');
-    var again = el('button', null, 'Start over');
-    again.addEventListener('click', function () { resetState(); drawPlot(); renderQuiz(); });
-    row.appendChild(again);
-    quizEl.appendChild(row);
+    var sum = deck.summary();
+    el.qnum.textContent = '';
+    // Spec wording: "n of 6 correct", with "Mastery reached" at 5 or more.
+    el.prompt.textContent = sum.firstAttempt + ' of ' + sum.total + ' correct';
+    var lines = [sum.lines[1], STALL_SUMMARY];
+    if (sum.misses.length) {
+      lines.push('Missed: ' + sum.misses.map(function (m) {
+        return 'Q' + (QUESTIONS.indexOf(m.card) + 1) + ' (' + m.answer + ')';
+      }).join(FP.msg.SEP) + '.');
+    }
+    var start = startOverButton();
+    el.answers.appendChild(start);
+    el.keys.textContent = 'Keyboard: Enter starts over.';
+    FP.ui.feedback(el.feedback, 'final', lines.join(' '), { announce: false });
+    FP.announce(el.prompt.textContent + '. ' + lines.join(' '));
+    start.focus();
+  }
+
+  // ---- Actions ----
+  function choose(raw) {
+    var q = deck.state().card;
+    if (deck.state().phase !== 'choose') return;
+    if (q.numeric && isNaN(FP.fmt.parseNumber(raw))) {
+      FP.ui.feedback(el.feedback, 'info', FP.msg.ENTER_NUMBER + ' of BHP, then press Submit.');
+      return;
+    }
+    var res = deck.place(q.numeric ? String(raw).trim() : raw);
+    if (res.status === 'ignored') return;
+    var correct = res.status === 'correct';
+    view.chosen = res.chosen;
+    // Spec feedback: "Correct." followed by the Why text; a miss shows the answer and the Why at once.
+    view.message = { kind: res.kind, text: correct ? FP.msg.OK + ' Correct. ' + q.why : res.message };
+    var m = CH.merge({}, q.mark);
+    m.q = deck.state().index + 1; m.correct = correct;
+    view.marks.push(m);
+    drawPlot();
+    render();
+    FP.announce(view.message.text);
+    var next = document.getElementById('fce-next');
+    if (next) next.focus();
+  }
+
+  function advance() {
+    if (deck.state().phase !== 'feedback') return;
+    view.chosen = null; view.message = null;
+    deck.next();
+    if (deck.state().phase === 'summary') { view.showStall = true; drawPlot(); }
+    render();
+    focusFirst();
+  }
+
+  function restart() {
+    deck.newRound();
+    view = { marks: [], showStall: false, chosen: null, message: null };
+    drawPlot();
+    render();
+    FP.announce('Started over. Question 1 of ' + QUESTIONS.length + '.');
+    focusFirst();
+  }
+
+  function focusFirst() {
+    if (deck.state().phase !== 'choose') return;
+    var f = el.answers.querySelector('input, button');
+    if (f) f.focus();
+  }
+
+  // Keys 1/2 choose; Enter goes on. Native Enter/Space on a focused button or input is left alone.
+  function onKey(e) {
+    var t = e.target;
+    var tag = t && t.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (tag === 'BUTTON' && (e.key === 'Enter' || e.key === ' ')) return;
+    var s = deck.state();
+    if ((e.key === '1' || e.key === '2') && s.phase === 'choose' && !s.card.numeric) {
+      e.preventDefault();
+      choose(s.card.choices[Number(e.key) - 1]);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (s.phase === 'feedback') advance();
+      else if (s.phase === 'summary') restart();
+    }
   }
 
   // ---- Build page ----
   function init() {
-    var style = document.createElement('style');
-    style.textContent = css;
-    document.head.appendChild(style);
-
-    var main = document.querySelector('main');
-    var wrap = el('div', 'fce');
-    wrap.appendChild(el('h1', null, 'Fan Curve Explorer'));
-    wrap.appendChild(el('p', 'prompt', PROMPT));
-    plotEl = el('div', 'plot');
-    wrap.appendChild(plotEl);
-    quizEl = el('div', 'quiz');
-    wrap.appendChild(quizEl);
-    main.appendChild(wrap);
-
-    resetState();
+    ['lead', 'plot', 'dataNote', 'score', 'qnum', 'progress', 'prompt', 'answers', 'feedback', 'keys'].forEach(function (id) {
+      el[id] = document.getElementById(id);
+    });
+    el.lead.textContent = PROMPT;
+    el.dataNote.textContent = C.ILLUSTRATIVE_NOTE;
+    document.addEventListener('keydown', onKey);
+    var t = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(t);
+      t = setTimeout(function () { if (isNarrow() !== lastNarrow) drawPlot(); }, 120);
+    });
     drawPlot();
-    renderQuiz();
+    render();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();

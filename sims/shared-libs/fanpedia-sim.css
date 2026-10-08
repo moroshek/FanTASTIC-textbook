@@ -1,0 +1,210 @@
+/* fanpedia-sim.css — FanPedia MicroSim kit, base styles and design tokens.
+ * Version 1.0.0 (2026-10-08). Load first in <head>, before any library.
+ * Tokens: review §4.1 (contrast measured on white). Class prefix: fp-.
+ * Element rules use :where() (zero specificity) so a sim's own CSS always wins.
+ * API reference: templates/microsim/kit-docs/core.md (not published).
+ */
+:root {
+  --fp-primary: #3f51b5;
+  --fp-primary-dark: #303f9f;
+  --fp-primary-bg: #e8eaf6;
+  --fp-accent: #f57c00;          /* non-text only */
+  --fp-accent-text: #a84300;
+  --fp-correct: #2e7d32;
+  --fp-correct-bg: #e8f5e9;
+  --fp-incorrect: #c62828;
+  --fp-incorrect-bg: #ffebee;
+  --fp-info-bg: #eef2f7;
+  --fp-text: #263238;
+  --fp-text-muted: #546e7a;
+  --fp-draw-bg: #f0f8ff;         /* aliceblue */
+  --fp-ctrl-bg: #ffffff;
+  --fp-border: #c0c0c0;          /* silver */
+  --fp-series-1: #3f51b5;
+  --fp-series-2: #e66100;
+  --fp-series-3: #00897b;
+  --fp-series-4: #8e24aa;
+  --fp-series-5: #6d4c41;
+  --fp-air: #0277bd;
+  --fp-metal: #d3dbe2;
+  --fp-metal-side: #b4c0cb;
+  --fp-edge: #4f5e6b;
+  --fp-motor: #3a86c8;
+  --fp-bearing: #2a8c9a;
+  --fp-belt: #2b2b2b;
+  --fp-font: Arial, Helvetica, sans-serif;
+  --fp-size-title: 22px;
+  --fp-size-heading: 17px;
+  --fp-size-body: 15px;          /* DOM body; p5 canvas text uses 16px */
+  --fp-size-secondary: 14px;
+  --fp-size-note: 13px;          /* minimum anywhere is 12px */
+  --fp-margin: 10px;
+  --fp-pad: 10px;
+  --fp-radius: 8px;
+  --fp-gap: 8px;
+}
+
+/* ---------- base ---------- */
+:where(html, body) { margin: 0; padding: 0; }
+:where(body) {
+  font-family: var(--fp-font);
+  font-size: var(--fp-size-body);
+  line-height: 1.4;
+  color: var(--fp-text);
+  background: var(--fp-ctrl-bg);
+}
+:where(main) { display: block; margin: 0; padding: 0; }
+[class^="fp-"], [class*=" fp-"] { box-sizing: border-box; }
+:where(a) { color: var(--fp-primary); }
+:where(a:hover) { color: var(--fp-primary-dark); }
+
+/* The hidden attribute must win over the display rules below. */
+[hidden] { display: none !important; }
+
+/* DOM sim layout helpers */
+.fp-app { padding: var(--fp-margin); }
+.fp-draw { background: var(--fp-draw-bg); border: 1px solid var(--fp-border); }
+.fp-ctrl { background: var(--fp-ctrl-bg); border: 1px solid var(--fp-border); border-top: 0; padding: var(--fp-gap) var(--fp-pad); }
+.fp-title { font-size: var(--fp-size-title); font-weight: bold; margin: 0 0 6px 0; color: var(--fp-text); }
+.fp-heading { font-size: var(--fp-size-heading); font-weight: bold; margin: 0 0 6px 0; color: var(--fp-primary-dark); }
+.fp-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--fp-gap); margin: var(--fp-gap) 0; }
+.fp-prompt { font-weight: bold; }
+
+/* ---------- native controls (p5 createButton/createSelect/createInput get these) ---------- */
+:where(button, .fp-btn) {
+  font-family: var(--fp-font);
+  font-size: var(--fp-size-secondary);
+  line-height: 1.2;
+  padding: 5px 12px;
+  min-height: 28px;
+  border: 1px solid var(--fp-primary);
+  border-radius: 4px;
+  background: var(--fp-primary);
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+:where(button, .fp-btn):hover { background: var(--fp-primary-dark); border-color: var(--fp-primary-dark); }
+/* secondary: Start over, Retry missed, Explore actions */
+:where(.fp-btn.secondary, button.secondary, .fp-btn-secondary) {
+  background: #ffffff; color: var(--fp-primary-dark); border-color: var(--fp-primary);
+}
+:where(.fp-btn.secondary, button.secondary, .fp-btn-secondary):hover { background: var(--fp-primary-bg); }
+/* choice: bins and options; .selected is marked by a thicker outline and a check, not colour alone */
+:where(.fp-btn.choice, button.choice) {
+  background: #ffffff; color: var(--fp-text); border-color: var(--fp-border);
+}
+:where(.fp-btn.choice, button.choice):hover { background: var(--fp-primary-bg); border-color: var(--fp-primary); }
+/* Toggle groups (aria-pressed): the unpressed options are quiet; the pressed one
+   gets the selected style below, so the active mode never looks secondary. */
+:where(.fp-btn[aria-pressed="false"], button[aria-pressed="false"]) {
+  background: #ffffff; color: var(--fp-primary-dark); border: 1px solid var(--fp-primary);
+}
+:where(.fp-btn.choice.selected, button.choice.selected, .fp-btn[aria-pressed="true"], button[aria-pressed="true"]) {
+  background: var(--fp-primary-bg); color: var(--fp-primary-dark);
+  border: 2px solid var(--fp-primary); font-weight: bold;
+}
+:where(.fp-btn.choice.selected, button.choice.selected, .fp-btn[aria-pressed="true"], button[aria-pressed="true"])::before { content: "✓ "; content: "✓ " / ""; }
+:where(button, .fp-btn):disabled,
+:where(button, .fp-btn)[aria-disabled="true"] {
+  background: #eceff1; color: #546e7a; border-color: #cfd8dc; cursor: default;
+}
+
+:where(select, input[type="text"], input[type="number"], input:not([type]), textarea) {
+  font-family: var(--fp-font);
+  font-size: var(--fp-size-secondary);
+  color: var(--fp-text);
+  background: #ffffff;
+  border: 1px solid #90a4ae;
+  border-radius: 4px;
+  padding: 4px 6px;
+  min-height: 28px;
+}
+:where(select, input, textarea):disabled { background: #eceff1; color: #546e7a; }
+:where(input[type="range"], input[type="checkbox"], input[type="radio"]) { accent-color: var(--fp-primary); }
+:where(label) { color: var(--fp-text); }
+
+/* ---------- focus ---------- */
+:focus-visible { outline: 2px solid var(--fp-primary); outline-offset: 2px; }
+:where(button, .fp-btn):focus-visible { outline: 2px solid var(--fp-primary); outline-offset: 2px; box-shadow: 0 0 0 4px #ffffff; }
+
+/* ---------- panels and feedback ---------- */
+.fp-panel {
+  background: #ffffff;
+  border: 1px solid var(--fp-border);
+  border-radius: var(--fp-radius);
+  padding: var(--fp-pad);
+}
+.fp-panel.info, .fp-panel.prompt { background: var(--fp-primary-bg); border-color: #c5cae9; }
+
+/* Cues beyond colour: FP.msg puts ✓/✗ in the text; the border style differs
+ * too (ok solid, bad dashed, info dotted, final double). */
+.fp-feedback {
+  font-size: var(--fp-size-body);
+  line-height: 1.4;
+  padding: 8px 10px;
+  border-radius: var(--fp-radius);
+  border: 1px dotted #90a4ae;
+  background: var(--fp-info-bg);
+  color: var(--fp-text);
+  margin: var(--fp-gap) 0;
+}
+.fp-feedback:empty { display: none; }
+.fp-feedback.ok  { background: var(--fp-correct-bg);   border: 2px solid  var(--fp-correct);   color: var(--fp-correct); }
+.fp-feedback.bad { background: var(--fp-incorrect-bg); border: 2px dashed var(--fp-incorrect); color: var(--fp-incorrect); }
+.fp-feedback.info { background: var(--fp-info-bg); border: 1px dotted #90a4ae; color: var(--fp-text); }
+.fp-feedback.info::before { content: "ℹ "; content: "ℹ " / ""; font-weight: bold; color: var(--fp-primary); }
+.fp-feedback.final { background: var(--fp-primary-bg); border: 3px double var(--fp-primary); color: var(--fp-text); }
+.fp-feedback .fp-why { color: var(--fp-text); }
+
+/* ---------- score and progress ---------- */
+.fp-score { font-size: var(--fp-size-body); font-weight: bold; color: var(--fp-text); }
+.fp-attempt { font-size: var(--fp-size-secondary); color: var(--fp-text-muted); }
+/* Segments: glyph + border style, never colour only. Built by FP.ui.progress(). */
+.fp-progress { display: flex; flex-wrap: wrap; gap: 4px; margin: 4px 0; padding: 0; list-style: none; }
+.fp-progress > * {
+  min-width: 26px; height: 24px; padding: 0 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: bold; border-radius: 4px;
+  border: 1px solid var(--fp-border); background: #ffffff; color: var(--fp-text-muted);
+}
+.fp-progress > .ok  { border: 2px solid var(--fp-correct); background: var(--fp-correct-bg); color: var(--fp-correct); }
+.fp-progress > .ok::before  { content: "✓"; content: "✓" / ""; margin-right: 2px; }
+.fp-progress > .bad { border: 2px dashed var(--fp-incorrect); background: var(--fp-incorrect-bg); color: var(--fp-incorrect); }
+.fp-progress > .bad::before { content: "✗"; content: "✗" / ""; margin-right: 2px; }
+.fp-progress > .cur { border: 2px solid var(--fp-primary); background: var(--fp-primary-bg); color: var(--fp-primary-dark); box-shadow: 0 2px 0 var(--fp-accent); }
+.fp-progress > .cur::before { content: "▸"; content: "▸" / ""; margin-right: 2px; }
+
+/* ---------- notes: illustrative and source lines ---------- */
+.fp-note { font-size: var(--fp-size-note); color: var(--fp-text-muted); line-height: 1.35; margin: 4px 0; }
+.fp-note.illustrative, .fp-note .illustrative { font-style: italic; }
+.fp-note a { color: var(--fp-primary); }
+.fp-kbd, kbd {
+  font-family: var(--fp-font); font-size: 12px; padding: 0 4px;
+  border: 1px solid #90a4ae; border-bottom-width: 2px; border-radius: 3px; background: #ffffff; color: var(--fp-text);
+}
+
+/* ---------- accessibility ---------- */
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- "Back to Lesson Plan" link ---------- */
+.fp-back { display: inline-block; font-size: var(--fp-size-note); margin: 6px var(--fp-margin); }
+/* Inside a chapter iframe (FP sets html.fp-embedded) the link is hidden.
+ * a[href="."] also covers the pre-kit sims' bare link. */
+html.fp-embedded .fp-back,
+html.fp-embedded body > a[href="."],
+html.fp-embedded body > a[href="./"],
+html.fp-embedded body > a[href="index.html"],
+html.fp-embedded body > br { display: none; }
+
+/* ---------- narrow screens (320–480px) ---------- */
+@media (max-width: 480px) {
+  :root { --fp-size-title: 19px; --fp-size-body: 14px; --fp-margin: 8px; --fp-pad: 8px; }
+  :where(button, .fp-btn) { padding: 4px 9px; }
+  .fp-row { gap: 6px; }
+  .fp-feedback { padding: 6px 8px; }
+}
