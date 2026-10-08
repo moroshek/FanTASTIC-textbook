@@ -1,0 +1,4762 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How fan performance is rated and read: static and total pressure, brake horsepower and efficiency, fan and system curves, the operating point, density corrections, AMCA 210 ratings, fan class and fan sound.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/10-fan-performance-curves-and-ratings/">
+      
+      
+        <link rel="prev" href="../09-impeller-construction-and-material-handling/">
+      
+      
+        <link rel="next" href="../11-drives-and-standard-fan-arrangements/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Fan Performance, Curves and Ratings - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fan-performance-curves-and-ratings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fan Performance, Curves and Ratings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-air-pressure-and-the-fan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-centrifugal-and-axial-impeller-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-fan-performance-rating-says" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Fan Performance Rating Says
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Fan Performance Rating Says">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-one-rating-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading One Rating Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fan-outlet-area-velocity-and-velocity-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan Outlet: Area, Velocity and Velocity Pressure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fan Outlet: Area, Velocity and Velocity Pressure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outlet-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlet Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlet-velocity-pressure-at-standard-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlet Velocity Pressure at Standard Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-outlet-velocity-for-a-ducted-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Outlet Velocity for a Ducted Fan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-total-pressure-and-fan-static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Total Pressure and Fan Static Pressure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Total Pressure and Fan Static Pressure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fan-total-and-fan-static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Total and Fan Static Pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-converting-between-the-two" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Converting Between the Two
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brake-horsepower-and-fan-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brake Horsepower and Fan Efficiency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brake Horsepower and Fan Efficiency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#air-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brake-horsepower-from-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brake Horsepower from Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-brake-horsepower-and-both-efficiencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Brake Horsepower and Both Efficiencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-power-and-efficiency-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan Power and Efficiency Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tip-speed-maximum-safe-speed-and-fan-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed, Maximum Safe Speed and Fan Class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tip Speed, Maximum Safe Speed and Fan Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tip-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tip Speed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tip-speed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-same-tip-speed-different-fans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Same Tip Speed, Different Fans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-safe-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum Safe Speed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maximum Safe Speed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-a-selection-against-maximum-safe-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking a Selection Against Maximum Safe Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-which-class-does-the-duty-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Which Class Does the Duty Need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fan-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan Curve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fan Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-the-curve-at-a-duty-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading the Curve at a Duty Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-stall-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Stall Region
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Stall Region">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-is-this-point-stable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Is This Point Stable?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overloading-and-non-overloading-power-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overloading and Non-Overloading Power Curves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overloading and Non-Overloading Power Curves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-curve-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan Curve Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-resistance-the-system-curve-and-the-operating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Resistance, the System Curve and the Operating Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Resistance, the System Curve and the Operating Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Resistance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Resistance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-resistance-at-a-new-airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Resistance at a New Airflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-resistance-at-other-airflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Resistance at Other Airflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-system-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The System Curve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The System Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-plotting-a-system-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Plotting a System Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-operating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Operating Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Operating Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-finding-the-operating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Finding the Operating Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-operating-point-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Operating Point Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Effect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Effect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-allowing-for-system-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Allowing for System Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density Corrections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density Corrections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-correction-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density Correction Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Correction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Temperature Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-correction-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Correction Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-hot-exhaust-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Hot Exhaust Fan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altitude-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altitude Correction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altitude Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#altitude-correction-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altitude Correction Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-hot-fan-at-altitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Hot Fan at Altitude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-density-correction-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Density Correction Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-ratings-are-measured-the-amca-210-rating-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Ratings Are Measured: the AMCA 210 Rating Standard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Ratings Are Measured: the AMCA 210 Rating Standard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-converting-a-test-point-to-standard-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Converting a Test Point to Standard Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-sound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Sound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Sound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decibel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decibel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound-power-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Power Level
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Power Level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sound-power-level_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Power Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-fans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Adding Fans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sone-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sone Rating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blade-pass-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blade Pass Frequency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blade Pass Frequency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blade-pass-frequency_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blade Pass Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-discharge-positions-and-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-damper-details-and-duct-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reading-catalogs-and-performance-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-fan-selection-and-writing-the-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-fan-performance-rating-says" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a Fan Performance Rating Says
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What a Fan Performance Rating Says">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-one-rating-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading One Rating Line
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fan-outlet-area-velocity-and-velocity-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan Outlet: Area, Velocity and Velocity Pressure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fan Outlet: Area, Velocity and Velocity Pressure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#outlet-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlet Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outlet-velocity-pressure-at-standard-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlet Velocity Pressure at Standard Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-outlet-velocity-for-a-ducted-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Outlet Velocity for a Ducted Fan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-total-pressure-and-fan-static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Total Pressure and Fan Static Pressure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Total Pressure and Fan Static Pressure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fan-total-and-fan-static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Total and Fan Static Pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-converting-between-the-two" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Converting Between the Two
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#brake-horsepower-and-fan-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brake Horsepower and Fan Efficiency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Brake Horsepower and Fan Efficiency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#air-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brake-horsepower-from-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brake Horsepower from Efficiency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-brake-horsepower-and-both-efficiencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Brake Horsepower and Both Efficiencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-power-and-efficiency-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan Power and Efficiency Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tip-speed-maximum-safe-speed-and-fan-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed, Maximum Safe Speed and Fan Class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tip Speed, Maximum Safe Speed and Fan Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tip-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tip Speed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tip-speed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-same-tip-speed-different-fans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Same Tip Speed, Different Fans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-safe-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maximum Safe Speed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maximum Safe Speed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-a-selection-against-maximum-safe-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking a Selection Against Maximum Safe Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Class">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-which-class-does-the-duty-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Which Class Does the Duty Need?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fan-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan Curve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fan Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-the-curve-at-a-duty-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading the Curve at a Duty Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-stall-region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Stall Region
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Stall Region">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-is-this-point-stable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Is This Point Stable?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overloading-and-non-overloading-power-curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overloading and Non-Overloading Power Curves
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overloading and Non-Overloading Power Curves">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-curve-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan Curve Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-resistance-the-system-curve-and-the-operating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Resistance, the System Curve and the Operating Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Resistance, the System Curve and the Operating Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Resistance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Resistance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-resistance-at-a-new-airflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Resistance at a New Airflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-resistance-at-other-airflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Resistance at Other Airflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-system-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The System Curve
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The System Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-plotting-a-system-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Plotting a System Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-operating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Operating Point
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Operating Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-finding-the-operating-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Finding the Operating Point
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-operating-point-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Operating Point Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Effect
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Effect">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-allowing-for-system-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Allowing for System Effect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#density-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density Corrections
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Density Corrections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-correction-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density Correction Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Correction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Temperature Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-correction-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature Correction Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-hot-exhaust-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Hot Exhaust Fan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#altitude-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altitude Correction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altitude Correction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#altitude-correction-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altitude Correction Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-hot-fan-at-altitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Hot Fan at Altitude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-density-correction-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Density Correction Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-ratings-are-measured-the-amca-210-rating-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Ratings Are Measured: the AMCA 210 Rating Standard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Ratings Are Measured: the AMCA 210 Rating Standard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-converting-a-test-point-to-standard-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Converting a Test Point to Standard Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-sound" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Sound
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Sound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#decibel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decibel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sound-power-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Power Level
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Power Level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sound-power-level_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Power Level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-fans" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Adding Fans
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sone-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sone Rating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blade-pass-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blade Pass Frequency
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blade Pass Frequency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blade-pass-frequency_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blade Pass Frequency
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="fan-performance-curves-and-ratings">Fan Performance, Curves and Ratings<a class="headerlink" href="#fan-performance-curves-and-ratings" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter explains how a fan's performance is described and rated. It covers fan static and total pressure, brake horsepower, fan efficiency, tip speed and outlet velocity; the fan curve, the system curve, and the operating point where they meet; the stall region; overloading and non-overloading power curves; density, temperature, and altitude corrections; sound power, decibels, and sones; system effect; the AMCA 210 rating standard; and fan class and maximum safe speed. After completing it, readers can read a fan curve and find where a fan will operate in a system.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 28 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fan Performance</td>
+<td>877</td>
+</tr>
+<tr>
+<td>Tip Speed</td>
+<td>49</td>
+</tr>
+<tr>
+<td>System Resistance</td>
+<td>63</td>
+</tr>
+<tr>
+<td>Brake Horsepower</td>
+<td>323</td>
+</tr>
+<tr>
+<td>Outlet Velocity</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Fan Static Pressure</td>
+<td>95</td>
+</tr>
+<tr>
+<td>System Curve</td>
+<td>61</td>
+</tr>
+<tr>
+<td>Density Correction Factor</td>
+<td>33</td>
+</tr>
+<tr>
+<td>Fan Sound</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Fan Outlet Area</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fan Total Pressure</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Fan Curve</td>
+<td>151</td>
+</tr>
+<tr>
+<td>Temperature Correction</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Altitude Correction</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Sound Power Level</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Sone Rating</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Fan Class</td>
+<td>41</td>
+</tr>
+<tr>
+<td>System Effect</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Outlet Velocity Pressure</td>
+<td>1</td>
+</tr>
+<tr>
+<td>AMCA 210 Rating Standard</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Decibel</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Blade Pass Frequency</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Fan Efficiency</td>
+<td>59</td>
+</tr>
+<tr>
+<td>Operating Point</td>
+<td>48</td>
+</tr>
+<tr>
+<td>Stall Region</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Non-Overloading Power Curve</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Overloading Power Curve</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Maximum Safe Speed</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-air-pressure-and-the-fan/">Chapter 1: Air, Pressure and the Fan</a></li>
+<li><a href="../02-airstreams-total-pressure-standard-air/">Chapter 2: Airstreams, Total Pressure and Standard Air</a></li>
+<li><a href="../03-basic-fan-anatomy/">Chapter 3: Basic Fan Anatomy</a></li>
+<li><a href="../08-centrifugal-and-axial-impeller-types/">Chapter 8: Centrifugal and Axial Impeller Types</a></li>
+</ul>
+<hr />
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Fan Performance</p>
+<p><img alt="Breeze waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Every fan order eventually comes down to one question from the customer: will it move the air I need against the resistance I have? This chapter teaches you to answer that from a fan curve and a catalog rating, instead of from a hunch. By the end you will find the point where a fan and a duct system agree, and you will know what changes that point. Let's follow the airflow.</p>
+</div>
+<h2 id="what-a-fan-performance-rating-says">What a Fan Performance Rating Says<a class="headerlink" href="#what-a-fan-performance-rating-says" title="Permanent link">&para;</a></h2>
+<p><strong>Fan performance</strong> is the complete statement of what a fan does at one set of conditions: how much air it moves, how much pressure it develops, how fast it turns, how much power it takes, and the air density all of those numbers assume. A single performance rating is therefore never just "10,000 CFM." It is 10,000 cubic feet per minute <em>at</em> a stated pressure, <em>at</em> a stated speed, <em>with</em> a stated power, <em>for</em> air of a stated density. Remove any one of those qualifiers and the number cannot be checked, compared or ordered.</p>
+<p>Chapter 1 introduced the raw quantities: airflow volume in cubic feet per minute (CFM), static pressure in inches of water gauge (in. wg), fan speed in revolutions per minute (RPM), and horsepower. Chapter 2 added velocity pressure, total pressure and standard air, the reference condition of 0.075 lb/ft³ that catalogs rate fans at. Fan performance ties those quantities together for one particular fan. The same fan, turning at the same speed, can deliver a whole family of airflow and pressure combinations, and which combination it actually delivers depends on the system it is connected to. That dependence is why this chapter needs both a fan curve and a system curve before it can say where a fan will run.</p>
+<p>The five quantities that make up a complete rating, and what each one tells you on a job, are:</p>
+<ul>
+<li><strong>Airflow volume (CFM).</strong> The volume of air passing through the fan each minute, measured at the fan inlet density. This is what the customer usually asks for first.</li>
+<li><strong>Pressure (in. wg).</strong> The pressure the fan develops to push that airflow through the system, stated as fan static pressure or fan total pressure (both defined below).</li>
+<li><strong>Speed (RPM).</strong> How fast the impeller turns to deliver that airflow and pressure. Speed decides the motor and drive, and it is checked against the fan's maximum safe speed.</li>
+<li><strong>Brake horsepower (BHP).</strong> The power the fan shaft absorbs at that point, which decides the motor size.</li>
+<li><strong>Density (lb/ft³).</strong> The air density the other four numbers assume. Catalog ratings assume standard air unless stated otherwise.</li>
+</ul>
+<h4 id="worked-example-reading-one-rating-line">Worked Example: Reading One Rating Line<a class="headerlink" href="#worked-example-reading-one-rating-line" title="Permanent link">&para;</a></h4>
+<p>A catalog performance table lists, for one fan size, a row for each airflow and a column for each static pressure. Suppose an application engineer reads the following cell for an illustrative belt-driven centrifugal fan (the numbers are illustrative, not from a specific Twin City Fan catalog):</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value in the cell</th>
+<th>What it means for the order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Airflow volume</td>
+<td>10,000 CFM</td>
+<td>The volume the customer asked for</td>
+</tr>
+<tr>
+<td>Static pressure</td>
+<td>4.0 in. wg</td>
+<td>The resistance the fan must overcome at that flow</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>1,380 RPM</td>
+<td>The fan shaft speed the drive must produce</td>
+</tr>
+<tr>
+<td>Brake horsepower</td>
+<td>9.0 BHP</td>
+<td>The shaft power, before drive losses</td>
+</tr>
+<tr>
+<td>Density</td>
+<td>0.075 lb/ft³</td>
+<td>Standard air; a hot or high-altitude job must be corrected</td>
+</tr>
+</tbody>
+</table>
+<p>Reading the cell correctly produces three action items. First, the motor must deliver at least 9.0 horsepower at the fan shaft plus any belt drive losses, so a 10 hp motor is the likely choice; motor selection is covered in <a href="../14-fan-motors-and-enclosures/">Chapter 14</a>. Second, the drive must turn the fan at 1,380 RPM, and that speed must be below the maximum safe speed for the fan's class. Third, if the job air is not at standard density, the 4.0 in. wg and 9.0 BHP do not apply as written; the section on density correction below shows how to convert them. A sales engineer who quotes "10,000 CFM" from this cell without the other four numbers has not quoted a fan.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Performance Is a Pair, Not a Number</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that a fan never "has" an airflow by itself. It has a curve of possible airflow and pressure pairs, and the duct system picks one of them. Keep asking "at what pressure?" every time you see a CFM, and the rest of this chapter will fall into place.</p>
+</div>
+<h2 id="the-fan-outlet-area-velocity-and-velocity-pressure">The Fan Outlet: Area, Velocity and Velocity Pressure<a class="headerlink" href="#the-fan-outlet-area-velocity-and-velocity-pressure" title="Permanent link">&para;</a></h2>
+<p>Before a rating can be split into static and total pressure, three outlet quantities need names, because the difference between the two pressures lives at the fan outlet.</p>
+<p><strong>Fan outlet area</strong> is the inside cross-sectional area of the fan's discharge opening, in square feet, as the fan manufacturer defines it for rating purposes. For a housed centrifugal fan it is the inside width times the inside height of the discharge collar; for an axial fan it is the open annulus or circle at the discharge. It is a fixed property of the fan size, it appears in catalog dimension and performance data, and it is the area used to compute outlet velocity. Accessories that change the outlet change this area: FanPedia describes an evasé as a section of ductwork bolted to the fan discharge whose outlet is larger than its inlet, which "ultimately expands the outlet area of the fan" in order "to reduce the outlet velocity of the fan and to increase the static pressure capability" (FanPedia p. 146). FanPedia also notes that for some fans the published ratings include the influence of an evasé, so check the catalog notes before assuming the bare-fan outlet area applies.</p>
+<p><strong>Outlet velocity</strong> is the average speed of the air leaving the fan, in feet per minute (FPM), found by dividing the airflow volume by the fan outlet area. It follows directly from the airflow continuity equation in Chapter 2:</p>
+<h4 id="outlet-velocity">Outlet Velocity<a class="headerlink" href="#outlet-velocity" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ V_o = \frac{Q}{A_o} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( V_o \)</span> is the outlet velocity in feet per minute (FPM)</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow volume in cubic feet per minute (CFM)</li>
+<li><span class="arithmatex">\( A_o \)</span> is the fan outlet area in square feet (ft²)</li>
+</ul>
+<p><strong>Outlet velocity pressure</strong> is the velocity pressure that corresponds to the outlet velocity: the kinetic energy of the leaving air, expressed in inches of water gauge. It uses the velocity pressure equation from Chapter 2, which for standard air reduces to a simple form:</p>
+<h4 id="outlet-velocity-pressure-at-standard-air">Outlet Velocity Pressure at Standard Air<a class="headerlink" href="#outlet-velocity-pressure-at-standard-air" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ P_{v,o} = \left( \frac{V_o}{4005} \right)^2 \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( P_{v,o} \)</span> is the outlet velocity pressure in in. wg</li>
+<li><span class="arithmatex">\( V_o \)</span> is the outlet velocity in FPM</li>
+<li>4005 is the constant that applies to air at the standard density of 0.075 lb/ft³</li>
+</ul>
+<p>For air at another density <span class="arithmatex">\( \rho \)</span> in lb/ft³, the general form is <span class="arithmatex">\( P_v = \rho \left( V/1096 \right)^2 \)</span>, which gives the same answer at 0.075 lb/ft³. Outlet velocity pressure is the bridge between the two pressure ratings: it is exactly the amount by which fan total pressure exceeds fan static pressure.</p>
+<h4 id="worked-example-outlet-velocity-for-a-ducted-fan">Worked Example: Outlet Velocity for a Ducted Fan<a class="headerlink" href="#worked-example-outlet-velocity-for-a-ducted-fan" title="Permanent link">&para;</a></h4>
+<p>A fan moves 10,000 CFM through an outlet with an inside area of 4.0 ft². The outlet velocity is:</p>
+<div class="arithmatex">\[ V_o = \frac{10{,}000}{4.0} = 2{,}500 \text{ FPM} \]</div>
+<p>The outlet velocity pressure at standard air is:</p>
+<div class="arithmatex">\[ P_{v,o} = \left( \frac{2{,}500}{4005} \right)^2 = (0.624)^2 = 0.39 \text{ in. wg} \]</div>
+<p>Now compare a smaller fan delivering the same 10,000 CFM through a 2.5 ft² outlet. Its outlet velocity is 4,000 FPM and its outlet velocity pressure is <span class="arithmatex">\( (4{,}000/4005)^2 = 1.00 \)</span> in. wg, more than two and a half times as much. Outlet velocity matters on the job for three reasons:</p>
+<ul>
+<li><strong>Kinetic energy that may be wasted.</strong> A high outlet velocity carries energy that a short or abrupt duct connection throws away as turbulence instead of recovering as static pressure.</li>
+<li><strong>Noise and duct design.</strong> High velocity at the discharge raises noise and makes the first duct fitting after the fan more critical.</li>
+<li><strong>Fan class.</strong> The industry fan class limits, covered later in this chapter, are stated partly in terms of outlet velocity.</li>
+</ul>
+<p>A smaller, faster fan may meet the same airflow at a lower first cost, but it pays for it with a higher outlet velocity pressure.</p>
+<h2 id="fan-total-pressure-and-fan-static-pressure">Fan Total Pressure and Fan Static Pressure<a class="headerlink" href="#fan-total-pressure-and-fan-static-pressure" title="Permanent link">&para;</a></h2>
+<p>A fan adds energy to air, and the pressure ratings measure how much. Two definitions are in common use, and a quotation that mixes them up can be off by an entire inch of water gauge.</p>
+<p><strong>Fan total pressure</strong> (FTP) is the rise in total pressure across the fan: the total pressure at the fan outlet minus the total pressure at the fan inlet. Recall from Chapter 2 that total pressure is the sum of static pressure and velocity pressure at a point. Fan total pressure therefore counts all of the energy the fan adds to the air, both the "push" (static) part and the "motion" (velocity) part.</p>
+<p><strong>Fan static pressure</strong> (FSP) is fan total pressure minus the fan outlet velocity pressure. In other words, it is the energy the fan adds <em>except</em> the kinetic energy of the air leaving the outlet. This is the AMCA definition used in North American fan catalogs, and it is the pressure most performance tables are organized around, because system designers usually calculate duct losses as static pressure.</p>
+<h4 id="fan-total-and-fan-static-pressure">Fan Total and Fan Static Pressure<a class="headerlink" href="#fan-total-and-fan-static-pressure" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ P_{tf} = P_{t,o} - P_{t,i} \]</div>
+<div class="arithmatex">\[ P_{sf} = P_{tf} - P_{v,o} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( P_{tf} \)</span> is the fan total pressure in in. wg</li>
+<li><span class="arithmatex">\( P_{t,o} \)</span> and <span class="arithmatex">\( P_{t,i} \)</span> are the total pressures at the fan outlet and the fan inlet, in in. wg</li>
+<li><span class="arithmatex">\( P_{sf} \)</span> is the fan static pressure in in. wg</li>
+<li><span class="arithmatex">\( P_{v,o} \)</span> is the outlet velocity pressure in in. wg</li>
+</ul>
+<p>A common shortcut is to read "static pressure" on a job as "the reading on a gauge across the fan." That is not the same as fan static pressure: a gauge reading at the outlet includes whatever static pressure the inlet ductwork has already removed, and the definition above is built from total pressures, not gauge readings. Measuring installed airflow in the field is covered in <a href="../23-spring-isolators-restraints-field-measurement/">Chapter 23</a>.</p>
+<h4 id="worked-example-converting-between-the-two">Worked Example: Converting Between the Two<a class="headerlink" href="#worked-example-converting-between-the-two" title="Permanent link">&para;</a></h4>
+<p>A fan delivers 10,000 CFM through the 4.0 ft² outlet from the previous example (outlet velocity pressure 0.39 in. wg). The system designer has calculated that the duct system needs 4.0 in. wg of fan static pressure. The fan total pressure is:</p>
+<div class="arithmatex">\[ P_{tf} = P_{sf} + P_{v,o} = 4.0 + 0.39 = 4.39 \text{ in. wg} \]</div>
+<p>If the same job used the smaller fan with a 2.5 ft² outlet, the fan total pressure at the same 4.0 in. wg static pressure would be 5.0 in. wg. The two fans do the same useful static work, but the smaller one must add an extra 0.61 in. wg of velocity energy to do it. The comparison is summarized below.</p>
+<table>
+<thead>
+<tr>
+<th>Fan</th>
+<th>Outlet area</th>
+<th>Outlet velocity</th>
+<th>Outlet velocity pressure</th>
+<th>Fan static pressure</th>
+<th>Fan total pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Larger fan</td>
+<td>4.0 ft²</td>
+<td>2,500 FPM</td>
+<td>0.39 in. wg</td>
+<td>4.0 in. wg</td>
+<td>4.39 in. wg</td>
+</tr>
+<tr>
+<td>Smaller fan</td>
+<td>2.5 ft²</td>
+<td>4,000 FPM</td>
+<td>1.00 in. wg</td>
+<td>4.0 in. wg</td>
+<td>5.00 in. wg</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Static or Total? Ask Before You Select</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is selecting a fan at the specification's pressure without checking whether the engineer meant static or total. On high-velocity fans the difference can be a full inch of water gauge, enough to land on the wrong fan size. Confirm the pressure type in writing, and if the spec gives total pressure, subtract the outlet velocity pressure before entering a static pressure table.</p>
+</div>
+<h2 id="brake-horsepower-and-fan-efficiency">Brake Horsepower and Fan Efficiency<a class="headerlink" href="#brake-horsepower-and-fan-efficiency" title="Permanent link">&para;</a></h2>
+<p><strong>Brake horsepower</strong> (BHP) is the power actually delivered to the fan shaft to produce a given airflow and pressure. The name comes from the brake dynamometer once used to measure shaft power. BHP is always larger than the power that ends up in the air, because the impeller and housing lose some energy to friction, turbulence, recirculation and leakage. It does not include losses in the belts, sheaves or motor; those are added separately when the motor is selected.</p>
+<p>The power that ends up in the air is the <strong>air power</strong> from Chapter 2. In US units, air power in horsepower is the airflow times the pressure divided by the constant 6,356, which converts CFM × in. wg into horsepower:</p>
+<h4 id="air-power">Air Power<a class="headerlink" href="#air-power" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ P_{air} = \frac{Q \times P}{6356} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( P_{air} \)</span> is the air power in horsepower</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow volume in CFM</li>
+<li><span class="arithmatex">\( P \)</span> is the fan pressure in in. wg (static or total, see below)</li>
+<li>6,356 is the unit conversion constant for CFM, in. wg and horsepower</li>
+</ul>
+<p><strong>Fan efficiency</strong> is the ratio of air power to brake horsepower. Because there are two fan pressures, there are two efficiencies. <strong>Static efficiency</strong> uses fan static pressure; <strong>total efficiency</strong> (sometimes called mechanical efficiency) uses fan total pressure. Total efficiency is always the larger of the two at a given point, because fan total pressure is always at least as large as fan static pressure. Efficiency changes along the fan curve: it is low near zero flow, rises to a peak somewhere in the middle of the curve, and falls again toward the right end. Rearranging the definition gives the equation application engineers use most often:</p>
+<h4 id="brake-horsepower-from-efficiency">Brake Horsepower from Efficiency<a class="headerlink" href="#brake-horsepower-from-efficiency" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ BHP = \frac{Q \times P_{sf}}{6356 \times \eta_s} = \frac{Q \times P_{tf}}{6356 \times \eta_t} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( BHP \)</span> is the brake horsepower</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow volume in CFM</li>
+<li><span class="arithmatex">\( P_{sf} \)</span> and <span class="arithmatex">\( P_{tf} \)</span> are the fan static and fan total pressures in in. wg</li>
+<li><span class="arithmatex">\( \eta_s \)</span> and <span class="arithmatex">\( \eta_t \)</span> are the static and total efficiencies, as decimals</li>
+</ul>
+<h4 id="worked-example-brake-horsepower-and-both-efficiencies">Worked Example: Brake Horsepower and Both Efficiencies<a class="headerlink" href="#worked-example-brake-horsepower-and-both-efficiencies" title="Permanent link">&para;</a></h4>
+<p>The larger fan from the previous section delivers 10,000 CFM at 4.0 in. wg fan static pressure (4.39 in. wg fan total pressure), and its static efficiency at that point is 70% (illustrative).</p>
+<p>Step 1, the static air power:</p>
+<div class="arithmatex">\[ P_{air,s} = \frac{10{,}000 \times 4.0}{6356} = 6.29 \text{ hp} \]</div>
+<p>Step 2, the brake horsepower:</p>
+<div class="arithmatex">\[ BHP = \frac{6.29}{0.70} = 8.99 \text{ hp} \]</div>
+<p>Step 3, the total efficiency at the same point, using the total air power:</p>
+<div class="arithmatex">\[ \eta_t = \frac{10{,}000 \times 4.39}{6356 \times 8.99} = \frac{43{,}900}{57{,}140} = 0.768 \]</div>
+<p>So the fan is 70% statically efficient and about 77% totally efficient at this point, and it absorbs about 9.0 BHP. If the customer's specification had required a minimum total efficiency of 75%, this point would pass; if it had required a static efficiency of 75%, it would fail. The table below shows how quickly BHP climbs as efficiency drops at the same duty.</p>
+<table>
+<thead>
+<tr>
+<th>Static efficiency</th>
+<th>BHP at 10,000 CFM and 4.0 in. wg FSP</th>
+<th>Likely motor (before drive losses)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>80%</td>
+<td>7.87</td>
+<td>10 hp</td>
+</tr>
+<tr>
+<td>70%</td>
+<td>8.99</td>
+<td>10 hp</td>
+</tr>
+<tr>
+<td>60%</td>
+<td>10.49</td>
+<td>15 hp</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>12.59</td>
+<td>15 hp</td>
+</tr>
+</tbody>
+</table>
+<p>The last two rows explain why selecting a fan well away from its peak-efficiency region costs money twice: once in a larger motor and again in the electric bill for the life of the fan. The power and efficiency terms are summarized here:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Pressure it uses</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air power</td>
+<td>Static or total</td>
+<td>The useful energy delivered to the air</td>
+</tr>
+<tr>
+<td>Brake horsepower</td>
+<td>Not applicable</td>
+<td>The power the fan shaft absorbs</td>
+</tr>
+<tr>
+<td>Static efficiency</td>
+<td>Fan static pressure</td>
+<td>Air power (static) ÷ BHP</td>
+</tr>
+<tr>
+<td>Total efficiency</td>
+<td>Fan total pressure</td>
+<td>Air power (total) ÷ BHP</td>
+</tr>
+</tbody>
+</table>
+<p>Peak efficiency, the efficiency curve and the Fan Energy Index are developed in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>.</p>
+<h4 id="diagram-fan-power-and-efficiency-calculator">Diagram: Fan Power and Efficiency Calculator<a class="headerlink" href="#diagram-fan-power-and-efficiency-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Fan Power and Efficiency Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch10-fan-power-efficiency-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate a fan's brake horsepower or static efficiency from its airflow volume, fan static pressure and one of the other two quantities, to within 2% of the model value.</p>
+<p><strong>Prerequisites:</strong> airflow volume (CFM), fan static pressure (in. wg), air power, brake horsepower, static efficiency, and the constant 6,356 (all defined in the section "Brake Horsepower and Fan Efficiency" above).</p>
+<p><strong>Evidence of Mastery:</strong> For three challenge duties, the learner types a calculated answer (BHP for challenges 1 and 2, static efficiency in percent for challenge 3) before the model value is shown. An answer is correct when it is within ±2% of the model value (relative). Mastery is 3 of 3 correct. Moving the free-exploration inputs is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) BHP equals air power (efficiency forgotten). (2) Efficiency is entered as a whole number, such as 70 instead of 0.70, giving an answer 100 times too small. (3) A less efficient fan needs less power because it "does less work."</p>
+<p><strong>Instructional Rationale:</strong> An Apply-level calculation needs repeated practice with a check, so the learner commits a number before the answer is revealed. Free exploration after the challenges shows how steeply BHP rises as efficiency falls, which confronts misconception 3 with numbers.</p>
+<p><strong>Content:</strong></p>
+<p>Challenge duties, in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Given</th>
+<th>Asked</th>
+<th>Model answer</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10,000 CFM, 4.0 in. wg FSP, static efficiency 70%</td>
+<td>BHP</td>
+<td>8.99 hp</td>
+<td>Air power is 10,000 × 4.0 ÷ 6356 = 6.29 hp; divide by 0.70 to get 8.99 BHP. BHP is larger than air power.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20,000 CFM, 6.0 in. wg FSP, static efficiency 75%</td>
+<td>BHP</td>
+<td>25.17 hp</td>
+<td>Air power is 20,000 × 6.0 ÷ 6356 = 18.88 hp; divide by 0.75 to get 25.17 BHP. Enter efficiency as a decimal.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5,000 CFM, 2.0 in. wg FSP, 2.5 BHP</td>
+<td>Static efficiency (%)</td>
+<td>62.9%</td>
+<td>Air power is 5,000 × 2.0 ÷ 6356 = 1.57 hp; 1.57 ÷ 2.5 = 0.629, or 62.9%.</td>
+</tr>
+</tbody>
+</table>
+<p>Free-exploration inputs (unlocked after the three challenges):</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Airflow volume Q</td>
+<td>1,000</td>
+<td>50,000</td>
+<td>500</td>
+<td>10,000</td>
+<td>CFM</td>
+</tr>
+<tr>
+<td>Fan static pressure</td>
+<td>0.5</td>
+<td>15.0</td>
+<td>0.1</td>
+<td>4.0</td>
+<td>in. wg</td>
+</tr>
+<tr>
+<td>Static efficiency</td>
+<td>40</td>
+<td>90</td>
+<td>1</td>
+<td>70</td>
+<td>%</td>
+</tr>
+</tbody>
+</table>
+<p>Readouts in exploration: static air power (hp) and BHP (hp), each to two decimals, with the line "Equation: BHP = Q × FSP ÷ (6356 × static efficiency)."</p>
+<p><strong>Provenance:</strong> The constant 6,356 and the equations are standard US-unit fan engineering. All three challenge duties are illustrative and must be labeled "Illustrative values." Challenge 1 matches the chapter's worked example.</p>
+<p><strong>Rules:</strong> Air power (hp) = Q × FSP ÷ 6356. BHP = air power ÷ (static efficiency ÷ 100). Static efficiency (%) = 100 × air power ÷ BHP. Model answers are rounded to two decimals for hp and one decimal for percent. Correct when |answer − model| ÷ model &lt;= 0.02. A blank or non-numeric answer is not graded and the learner is asked to enter a number.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1 and types a BHP value.</li>
+<li>The learner presses Check. The sim shows the learner's answer next to the model value and the three-line calculation (air power, division by efficiency, result).</li>
+<li>The learner repeats for challenges 2 and 3.</li>
+<li>After the third challenge, free exploration unlocks. The learner changes airflow, pressure and efficiency, and the air power and BHP readouts update at once. The learner should notice that at 10,000 CFM and 4.0 in. wg, lowering efficiency from 70% to 50% raises BHP from 8.99 to 12.59 hp.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value>." Incorrect: the "Feedback when wrong" text for that challenge. If the answer is about 100 times too small, the sim adds: "Check that efficiency was entered as a decimal (0.70, not 70)." After the second wrong attempt, the model value and worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box. The prompt reads: "A fan moves 10,000 CFM at 4.0 in. wg with 70% static efficiency. How much power does its shaft need?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter's worked example gives 6.29 hp air power and 8.99 BHP for 10,000 CFM, 4.0 in. wg and 70% static efficiency. The chapter's table gives 7.87, 8.99, 10.49 and 12.59 BHP at 80%, 70%, 60% and 50% static efficiency for the same duty.</p>
+</details>
+<h2 id="tip-speed-maximum-safe-speed-and-fan-class">Tip Speed, Maximum Safe Speed and Fan Class<a class="headerlink" href="#tip-speed-maximum-safe-speed-and-fan-class" title="Permanent link">&para;</a></h2>
+<p>The faster an impeller turns, the more pressure it can develop and the harder its material is pulled apart by centrifugal force. Three ideas govern that trade-off: tip speed, maximum safe speed and fan class.</p>
+<h3 id="tip-speed">Tip Speed<a class="headerlink" href="#tip-speed" title="Permanent link">&para;</a></h3>
+<p><strong>Tip speed</strong> is the linear speed of the outermost point of the impeller blades, in feet per minute. It depends on both the impeller diameter and the rotating speed:</p>
+<h4 id="tip-speed_1">Tip Speed<a class="headerlink" href="#tip-speed_1" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ TS = \frac{\pi \times D \times N}{12} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( TS \)</span> is the tip speed in FPM</li>
+<li><span class="arithmatex">\( D \)</span> is the impeller diameter in inches</li>
+<li><span class="arithmatex">\( N \)</span> is the fan speed in RPM</li>
+<li>12 converts inches to feet</li>
+</ul>
+<p>Tip speed matters because, for a given impeller design, the pressure a fan develops rises roughly with the square of tip speed, and so does the centrifugal stress in the blades and back plate. Two fans of very different sizes that run at the same tip speed load their impellers similarly and develop similar pressures. This is why a large fan can make high pressure at low RPM, and a small fan has to spin fast to make the same pressure.</p>
+<h4 id="worked-example-same-tip-speed-different-fans">Worked Example: Same Tip Speed, Different Fans<a class="headerlink" href="#worked-example-same-tip-speed-different-fans" title="Permanent link">&para;</a></h4>
+<p>An illustrative 30-inch impeller turns at 1,780 RPM:</p>
+<div class="arithmatex">\[ TS = \frac{\pi \times 30 \times 1{,}780}{12} = 13{,}980 \text{ FPM} \]</div>
+<p>What speed would an illustrative 40-inch impeller of the same design need for the same tip speed? Solve the equation for speed:</p>
+<div class="arithmatex">\[ N = \frac{12 \times TS}{\pi \times D} = \frac{12 \times 13{,}980}{\pi \times 40} = 1{,}335 \text{ RPM} \]</div>
+<p>The larger impeller reaches the same tip speed, and roughly the same pressure, at three-quarters of the speed. That lower speed is one reason larger, slower fans are often quieter and longer-lived, and it is why speed alone is never enough to judge how hard a fan is working.</p>
+<h3 id="maximum-safe-speed">Maximum Safe Speed<a class="headerlink" href="#maximum-safe-speed" title="Permanent link">&para;</a></h3>
+<p><strong>Maximum safe speed</strong> is the highest RPM at which the manufacturer allows a particular fan size and construction to operate. It is set by the strength of the impeller and the other rotating parts, the shaft's critical speed, and the bearing limits. Because centrifugal stress rises with the square of tip speed, a modest increase in RPM above the limit can consume the impeller's safety margin quickly. Maximum safe speed is published in the catalog for each fan size and class, and for high-temperature service it is reduced, because steel loses strength as it gets hot. High-temperature construction is covered in <a href="../21-high-temperature-leak-tight-and-rto-construction/">Chapter 21</a>.</p>
+<h4 id="worked-example-checking-a-selection-against-maximum-safe-speed">Worked Example: Checking a Selection Against Maximum Safe Speed<a class="headerlink" href="#worked-example-checking-a-selection-against-maximum-safe-speed" title="Permanent link">&para;</a></h4>
+<p>A selection calls for 1,380 RPM. The catalog lists a maximum safe speed of 1,450 RPM for this fan at room temperature, and the job air is hot enough that the catalog's temperature derate factor is 0.93. All three numbers are illustrative.</p>
+<div class="arithmatex">\[ N_{max,hot} = 1{,}450 \times 0.93 = 1{,}349 \text{ RPM} \]</div>
+<p>At room temperature the selection passes (1,380 is below 1,450). At the job temperature it fails (1,380 is above 1,349). The application engineer must choose a heavier class, a larger fan size that meets the duty at a lower speed, or a construction rated for the temperature. A selection that only works at room temperature is not a selection.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Derate Before You Compare</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is comparing the selection speed to the room-temperature maximum safe speed on a hot job. The impeller is weaker at operating temperature, so apply the catalog's temperature derate first, then compare. If the derated limit is lower than the selection speed, move to a heavier class or a larger size rather than hoping the margin holds.</p>
+</div>
+<h3 id="fan-class">Fan Class<a class="headerlink" href="#fan-class" title="Permanent link">&para;</a></h3>
+<p><strong>Fan class</strong> is an industry rating, defined by AMCA Standard 99-2408, that groups centrifugal fans by the pressure and outlet velocity range they are built to handle. Class I is the lightest construction; Class II, Class III and Class IV are progressively heavier. Each class has minimum performance limits stated as combinations of outlet velocity and static pressure that a fan of that class must be able to reach, and a manufacturer builds each class with the impeller, shaft, bearings and housing needed to reach those limits safely. In practice, the class decides the maximum safe speed: a Class II version of a fan size is allowed to run faster, and so make more pressure, than the Class I version of the same size.</p>
+<p>Twin City Fan uses the class terms in its product descriptions; for example, FanPedia notes that Arrangement 10 units of Class I and II fans in certain sizes are commonly referred to as Ventilating Sets (FanPedia p. 167). Catalog performance tables usually show class boundaries by shading, so the reader can see at a glance which class a duty point requires. Class shading is covered in <a href="../26-reading-catalogs-and-performance-tables/">Chapter 26</a>. Do not confuse fan class with <em>construction class</em>, the material and spark-resistance designation in <a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a>.</p>
+<h4 id="worked-example-which-class-does-the-duty-need">Worked Example: Which Class Does the Duty Need?<a class="headerlink" href="#worked-example-which-class-does-the-duty-need" title="Permanent link">&para;</a></h4>
+<p>An illustrative fan size has these limits in its catalog:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Maximum safe speed (illustrative)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class I</td>
+<td>1,200 RPM</td>
+</tr>
+<tr>
+<td>Class II</td>
+<td>1,550 RPM</td>
+</tr>
+<tr>
+<td>Class III</td>
+<td>1,950 RPM</td>
+</tr>
+</tbody>
+</table>
+<p>The duty of 10,000 CFM at 4.0 in. wg requires 1,380 RPM on this size. The selection speed exceeds the Class I limit (1,380 &gt; 1,200) but not the Class II limit (1,380 ≤ 1,550), so the order must specify Class II. Had the customer been offered the Class I fan to save money, it would have been a fan that could not be run at the speed the duty requires. The ordered checklist below is the habit to build:</p>
+<ol>
+<li>Find the selection speed in the catalog.</li>
+<li>Read the maximum safe speed for each class of that fan size.</li>
+<li>Apply any temperature derate.</li>
+<li>Choose the lightest class whose derated limit is at or above the selection speed.</li>
+</ol>
+<h2 id="the-fan-curve">The Fan Curve<a class="headerlink" href="#the-fan-curve" title="Permanent link">&para;</a></h2>
+<p>A performance table lists individual points. A <strong>fan curve</strong> draws all of them for one fan at one speed and one density, so the reader can see the fan's whole behavior at once. The horizontal axis is airflow volume in CFM. The vertical axis carries two or more curves on the same airflow scale:</p>
+<ul>
+<li><strong>The pressure curve.</strong> Fan static pressure (or fan total pressure) against airflow. It is the curve most people mean by "the fan curve."</li>
+<li><strong>The brake horsepower curve.</strong> BHP against airflow, usually drawn on its own vertical scale.</li>
+<li><strong>The efficiency curve.</strong> Often added as a third curve, showing static or total efficiency against airflow.</li>
+</ul>
+<p>Reading the pressure curve from left to right tells a story. At the left end, with zero airflow, the fan is blocked off and develops some pressure but moves no air. As resistance is relaxed, airflow increases; for a backward inclined or airfoil fan the pressure first rises slightly to a peak and then falls steadily. At the right end, the fan is discharging into almost no resistance, so it moves its maximum airflow at nearly zero static pressure. Every point on the curve is a possible operating point for that fan at that speed. Which point actually happens depends on the system, which is the subject of the next section.</p>
+<p>The table below gives an illustrative fan curve for a backward inclined centrifugal fan at one fixed speed and standard air. It is not a published Twin City Fan rating; it is shaped like one so the numbers can be worked with.</p>
+<table>
+<thead>
+<tr>
+<th>Airflow (CFM)</th>
+<th>Fan static pressure (in. wg)</th>
+<th>BHP</th>
+<th>Static efficiency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4.6</td>
+<td>4.0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>4.8</td>
+<td>5.0</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td>4.9</td>
+<td>6.0</td>
+<td>51%</td>
+</tr>
+<tr>
+<td>6,000</td>
+<td>4.8</td>
+<td>7.0</td>
+<td>65%</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td>4.5</td>
+<td>8.1</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>4.0</td>
+<td>9.0</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>12,000</td>
+<td>3.2</td>
+<td>9.5</td>
+<td>64%</td>
+</tr>
+<tr>
+<td>14,000</td>
+<td>2.0</td>
+<td>9.4</td>
+<td>47%</td>
+</tr>
+<tr>
+<td>16,000</td>
+<td>0.4</td>
+<td>8.8</td>
+<td>11%</td>
+</tr>
+</tbody>
+</table>
+<p>The efficiency column follows from the earlier equation: at 10,000 CFM, <span class="arithmatex">\( 10{,}000 \times 4.0 / (6356 \times 9.0) = 0.70 \)</span>.</p>
+<h4 id="worked-example-reading-the-curve-at-a-duty-point">Worked Example: Reading the Curve at a Duty Point<a class="headerlink" href="#worked-example-reading-the-curve-at-a-duty-point" title="Permanent link">&para;</a></h4>
+<p>A customer needs 10,000 CFM at 4.0 in. wg from this fan at this speed. Find 10,000 CFM on the horizontal axis and read up: the pressure curve passes through 4.0 in. wg, so the fan meets the duty at this speed. Read the BHP curve at the same airflow: 9.0 BHP. Read the efficiency: 70%, which is the top of this fan's efficiency range, so the selection sits in the most economical part of the curve.</p>
+<p>Now suppose the customer asks for 13,000 CFM at the same speed. Halfway between the 12,000 and 14,000 CFM rows, the pressure is about 2.6 in. wg and the BHP about 9.45. The fan can move 13,000 CFM, but only against 2.6 in. wg of resistance, not 4.0. To deliver 13,000 CFM at 4.0 in. wg, the fan must run faster (the fan laws in Chapter 25) or a larger size must be chosen. A fan curve answers "what happens at this speed" for every flow at once, which is why it is the most useful single picture in fan selection.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">One Speed, One Curve</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of a fan curve as a photograph of the fan at one speed and one air density. Change the speed or the density and you get a different photograph, not a different point on the same one. That is why every curve and every catalog table states both.</p>
+</div>
+<h3 id="the-stall-region">The Stall Region<a class="headerlink" href="#the-stall-region" title="Permanent link">&para;</a></h3>
+<p>To the left of the peak of the pressure curve, the fan enters the <strong>stall region</strong>. There, the airflow through the impeller is too low for the blade angles: the air separates from the blades instead of following them, pockets of air recirculate in and out of the impeller, and the pressure becomes unsteady. A fan operating in the stall region may pulse, surge, vibrate and make a characteristic rumbling noise, and its pressure and airflow wander instead of settling at one point. For a backward inclined or airfoil fan, the stall region begins at the airflow of peak pressure and extends to the left, toward zero flow. Forward curved fans have a dip in the middle of their pressure curve, and the region to the left of the right-hand pressure peak is unstable. Catalog performance tables usually stop short of the stall region so that a reader cannot pick a point inside it, which is one reason a table may have blank cells at low airflow and high pressure. Surge, the related system-level instability, is covered in Chapter 25.</p>
+<h4 id="worked-example-is-this-point-stable">Worked Example: Is This Point Stable?<a class="headerlink" href="#worked-example-is-this-point-stable" title="Permanent link">&para;</a></h4>
+<p>Using the illustrative fan curve above, the peak pressure of 4.9 in. wg occurs at 4,000 CFM.</p>
+<ul>
+<li>A duty of 10,000 CFM at 4.0 in. wg sits well to the right of 4,000 CFM, so it is stable.</li>
+<li>A duty of 3,000 CFM at about 4.85 in. wg sits to the left of 4,000 CFM, so it is in the stall region, even though the fan can technically produce that pressure.</li>
+</ul>
+<p>A customer who wants 3,000 CFM at 4.85 in. wg should be offered a smaller fan, on which that duty falls to the right of the peak. Never select to the left of the peak, even when the numbers seem to fit; a fan in stall wears faster and will generate complaints.</p>
+<h3 id="overloading-and-non-overloading-power-curves">Overloading and Non-Overloading Power Curves<a class="headerlink" href="#overloading-and-non-overloading-power-curves" title="Permanent link">&para;</a></h3>
+<p>The shape of the BHP curve decides how much risk the motor carries if the system turns out to have less resistance than designed. A <strong>non-overloading power curve</strong> is a BHP curve that rises to a maximum and then falls as airflow continues to increase. Backward inclined, backward curved and airfoil centrifugal fans have this shape. Because the BHP has a ceiling at a given speed, a motor sized for that maximum cannot be overloaded at that speed, no matter how far to the right the fan runs. In the illustrative table above, the maximum is 9.5 BHP at 12,000 CFM, so a 10 hp motor protects this fan at this speed even if the system resistance is overestimated.</p>
+<p>An <strong>overloading power curve</strong> is a BHP curve that keeps rising as airflow increases, all the way to the right end of the curve. Forward curved fans and radial bladed fans have this shape. A motor sized exactly for the design point will be overloaded if the fan runs at higher airflow than expected, for instance when the duct system has less resistance than the designer calculated, when an access door is left open, or when a downstream damper is removed. With an overloading curve, the motor must be sized for the highest airflow the fan could realistically see, or the system resistance must be confirmed. Impeller types and their characteristic curves are introduced in <a href="../08-centrifugal-and-axial-impeller-types/">Chapter 8</a>.</p>
+<h4 id="diagram-fan-curve-explorer">Diagram: Fan Curve Explorer<a class="headerlink" href="#diagram-fan-curve-explorer" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ch10-fan-curve-explorer/main.html" width="100%" height="664px" scrolling="no"></iframe>
+<p><a href="../../sims/ch10-fan-curve-explorer/main.html">Run Fan Curve Explorer Fullscreen</a></p>
+<details>
+<summary>Fan Curve Explorer</summary>
+<p>Type: chart
+<strong>sim-id:</strong> ch10-fan-curve-explorer<br/>
+<strong>Library:</strong> Plotly<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> differentiate<br/>
+<strong>Learning Objective:</strong> The learner will differentiate stable from stall-region operating points, and overloading from non-overloading power curves, by reading the pressure and BHP curves of two illustrative fans.</p>
+<p><strong>Prerequisites:</strong> fan curve, fan static pressure, brake horsepower, stall region, overloading power curve, non-overloading power curve (all defined in the section "The Fan Curve" above).</p>
+<p><strong>Evidence of Mastery:</strong> The learner answers six questions by choosing an answer (questions 1-5) or typing a number (question 6). Each question has one correct answer listed in Content. Mastery is 5 of 6 correct on the first attempt. Hovering over curve points to read values is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Any point the pressure curve passes through is a safe operating point, including points left of the peak. (2) A fan's BHP always rises with airflow. (3) The highest-pressure point is the best place to select a fan.</p>
+<p><strong>Instructional Rationale:</strong> Analyze-level differentiation needs the learner to examine real curve shapes and decide which category a point or curve belongs to, so the chart pairs hover-to-read exploration with committed answers. The two curves are labeled A and B rather than by fan type so the labels do not give away the overloading question.</p>
+<p><strong>Content:</strong></p>
+<p>Two illustrative fans at one fixed speed each, standard air. Both pressure curves share one airflow axis and one pressure axis; both BHP curves share the same airflow axis and their own BHP axis. Hovering any data point shows airflow, fan static pressure and BHP for that curve. Points are joined by straight lines between the listed values.</p>
+<p>Curve A (illustrative backward inclined fan):</p>
+<table>
+<thead>
+<tr>
+<th>Airflow (CFM)</th>
+<th>FSP (in. wg)</th>
+<th>BHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4.6</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>4.8</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td>4.9</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>6,000</td>
+<td>4.8</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td>4.5</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>4.0</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>12,000</td>
+<td>3.2</td>
+<td>9.5</td>
+</tr>
+<tr>
+<td>14,000</td>
+<td>2.0</td>
+<td>9.4</td>
+</tr>
+<tr>
+<td>16,000</td>
+<td>0.4</td>
+<td>8.8</td>
+</tr>
+</tbody>
+</table>
+<p>Curve B (illustrative forward curved fan):</p>
+<table>
+<thead>
+<tr>
+<th>Airflow (CFM)</th>
+<th>FSP (in. wg)</th>
+<th>BHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>2.2</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>2.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td>1.9</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>6,000</td>
+<td>2.0</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td>2.05</td>
+<td>3.8</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>1.8</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>12,000</td>
+<td>1.5</td>
+<td>5.2</td>
+</tr>
+<tr>
+<td>14,000</td>
+<td>1.0</td>
+<td>5.8</td>
+</tr>
+<tr>
+<td>16,000</td>
+<td>0.4</td>
+<td>6.3</td>
+</tr>
+</tbody>
+</table>
+<p>Questions, in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Choices</th>
+<th>Correct answer</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Is 3,000 CFM on Curve A in the stall region?</td>
+<td>Yes / No</td>
+<td>Yes</td>
+<td>Curve A's pressure peaks at 4,000 CFM; 3,000 CFM is to the left of the peak.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Is 9,000 CFM on Curve A in the stall region?</td>
+<td>Yes / No</td>
+<td>No</td>
+<td>9,000 CFM is to the right of Curve A's 4,000 CFM peak, where pressure falls steadily as airflow rises.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Is 6,000 CFM on Curve B in the stall region?</td>
+<td>Yes / No</td>
+<td>Yes</td>
+<td>Curve B's right-hand pressure peak is at 8,000 CFM; 6,000 CFM is to its left, in the unstable dip region.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Is 11,000 CFM on Curve B in the stall region?</td>
+<td>Yes / No</td>
+<td>No</td>
+<td>11,000 CFM is to the right of Curve B's 8,000 CFM peak.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Which curve has a non-overloading power curve?</td>
+<td>Curve A / Curve B</td>
+<td>Curve A</td>
+<td>Curve A's BHP peaks at 9.5 at 12,000 CFM and then falls; Curve B's BHP rises at every step to 16,000 CFM.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>What is the highest BHP anywhere on Curve A (the motor size that cannot be overloaded at this speed, before drive losses)?</td>
+<td>typed number, BHP</td>
+<td>9.5</td>
+<td>The BHP column of Curve A reaches its maximum, 9.5, at 12,000 CFM.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Both curves are illustrative, shaped after typical backward inclined and forward curved centrifugal fan behavior described in standard fan engineering texts; they are not Twin City Fan published ratings. The chart must label both curves "Illustrative." Curve A matches the illustrative fan curve table in this chapter.</p>
+<p><strong>Rules:</strong> Stall region for Curve A: airflow &lt; 4,000 CFM. Stall region for Curve B: airflow &lt; 8,000 CFM. A curve is non-overloading when its BHP has a maximum inside the plotted range and decreases after it; it is overloading when BHP increases at every listed step. Question 6 is correct when the typed value is within ±0.1 of 9.5.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner hovers along Curve A and Curve B and reads pressure and BHP values.</li>
+<li>The learner answers question 1 by choosing Yes or No. The sim marks the answer and shows the "Why" text, and the point at 3,000 CFM is marked on Curve A.</li>
+<li>The learner answers questions 2 through 6 in order; each answer marks the relevant point or curve once submitted.</li>
+<li>After question 6, the stall regions of both curves are marked so the learner can compare their extent.</li>
+</ol>
+<p><strong>Feedback:</strong> Six questions, fixed order, one attempt each for scoring; after an incorrect answer the correct answer and the "Why" text are shown at once. Correct: "Correct." followed by the "Why" text. A score "n of 6 correct" is shown after question 6, with "Mastery reached" when n &gt;= 5.</p>
+<p><strong>Starting State:</strong> Both curves are shown with no regions marked and question 1 visible. The prompt reads: "Two fans, one speed each. Where is it safe to run them, and which one can overload its motor?"</p>
+<p><strong>Chapter Anchors:</strong> Curve A's peak pressure is 4.9 in. wg at 4,000 CFM. Curve A is 4.0 in. wg and 9.0 BHP at 10,000 CFM, with 70% static efficiency. Curve A's maximum BHP is 9.5 at 12,000 CFM. A duty of 3,000 CFM at about 4.85 in. wg on Curve A is in the stall region. At 13,000 CFM Curve A gives about 2.6 in. wg and 9.45 BHP.</p>
+</details>
+<h2 id="system-resistance-the-system-curve-and-the-operating-point">System Resistance, the System Curve and the Operating Point<a class="headerlink" href="#system-resistance-the-system-curve-and-the-operating-point" title="Permanent link">&para;</a></h2>
+<h3 id="system-resistance">System Resistance<a class="headerlink" href="#system-resistance" title="Permanent link">&para;</a></h3>
+<p><strong>System resistance</strong> is the pressure needed to push a given airflow through everything connected to the fan: the ductwork, elbows, dampers, filters, coils, hoods, louvers and the process equipment. Every one of those items resists airflow by friction and turbulence, and nearly all of that resistance follows one rule: it rises with the square of the airflow. Double the airflow through a duct system and its resistance rises to four times its original value. The rule comes from the velocity pressure equation, since resistance in turbulent flow is proportional to velocity pressure, and velocity pressure is proportional to velocity squared.</p>
+<h4 id="system-resistance-at-a-new-airflow">System Resistance at a New Airflow<a class="headerlink" href="#system-resistance-at-a-new-airflow" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ P_2 = P_1 \left( \frac{Q_2}{Q_1} \right)^2 \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( P_1 \)</span> is the known system resistance in in. wg at airflow <span class="arithmatex">\( Q_1 \)</span> in CFM</li>
+<li><span class="arithmatex">\( P_2 \)</span> is the system resistance in in. wg at the new airflow <span class="arithmatex">\( Q_2 \)</span> in CFM</li>
+</ul>
+<h4 id="worked-example-resistance-at-other-airflows">Worked Example: Resistance at Other Airflows<a class="headerlink" href="#worked-example-resistance-at-other-airflows" title="Permanent link">&para;</a></h4>
+<p>A duct system has been calculated to need 4.0 in. wg at 10,000 CFM. At 12,000 CFM it needs:</p>
+<div class="arithmatex">\[ P_2 = 4.0 \times \left( \frac{12{,}000}{10{,}000} \right)^2 = 4.0 \times 1.44 = 5.76 \text{ in. wg} \]</div>
+<p>At 8,000 CFM it needs <span class="arithmatex">\( 4.0 \times 0.64 = 2.56 \)</span> in. wg. A 20% increase in airflow costs a 44% increase in pressure, which is why "just a little more air" is rarely a small request.</p>
+<h3 id="the-system-curve">The System Curve<a class="headerlink" href="#the-system-curve" title="Permanent link">&para;</a></h3>
+<p>A <strong>system curve</strong> is the graph of system resistance against airflow for one particular duct system, drawn on the same axes as the fan curve. Because resistance rises with airflow squared, the system curve is a parabola that starts at zero pressure at zero airflow and bends upward. Every system has its own curve; a system with more resistance has a steeper curve. The system curve does not depend on the fan at all, only on the ductwork and equipment, so a designer can draw it before the fan is chosen. It changes when the system changes: a damper that closes, a filter that loads with dust, or a coil that ices all make the curve steeper.</p>
+<h4 id="worked-example-plotting-a-system-curve">Worked Example: Plotting a System Curve<a class="headerlink" href="#worked-example-plotting-a-system-curve" title="Permanent link">&para;</a></h4>
+<p>Using the system from the previous example (4.0 in. wg at 10,000 CFM), the points of its system curve are:</p>
+<table>
+<thead>
+<tr>
+<th>Airflow (CFM)</th>
+<th>System resistance (in. wg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td>0.64</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td>2.56</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>4.00</td>
+</tr>
+<tr>
+<td>12,000</td>
+<td>5.76</td>
+</tr>
+<tr>
+<td>14,000</td>
+<td>7.84</td>
+</tr>
+</tbody>
+</table>
+<p>Each value is <span class="arithmatex">\( 4.0 \times (Q/10{,}000)^2 \)</span>. Notice that the system curve is very flat at low airflow and very steep at high airflow; that shape is the reason a fan curve crosses it at a well-defined point.</p>
+<h3 id="the-operating-point">The Operating Point<a class="headerlink" href="#the-operating-point" title="Permanent link">&para;</a></h3>
+<p>The <strong>operating point</strong> is the single airflow and pressure at which a fan actually runs in a system. It is the intersection of the fan curve (for the fan's speed) and the system curve. At that point, the pressure the fan develops exactly equals the pressure the system needs at the same airflow, so the airflow settles there and stays. A fan cannot run anywhere else on its curve unless the system curve or the fan speed changes. The operating point is what the customer actually gets; the duty point on the specification is what they asked for. Duty point and the related vocabulary are developed further in Chapter 25.</p>
+<h4 id="worked-example-finding-the-operating-point">Worked Example: Finding the Operating Point<a class="headerlink" href="#worked-example-finding-the-operating-point" title="Permanent link">&para;</a></h4>
+<p>Lay the system curve from the previous table over the illustrative fan curve. At 10,000 CFM the fan develops 4.0 in. wg and the system needs 4.0 in. wg, so the operating point is 10,000 CFM at 4.0 in. wg, and the fan absorbs 9.0 BHP.</p>
+<p>Now let the filters load with dust so the system needs 4.0 in. wg at only 8,000 CFM. The new system curve is steeper: at 8,000 CFM it needs 4.0 in. wg while the fan offers 4.5 in. wg, so the fan pushes more air; at 9,000 CFM the system needs 5.06 in. wg while the fan offers only about 4.25 in. wg. The curves cross between those flows, at about 8,390 CFM and 4.40 in. wg. The fan did not fail; the system moved the operating point to the left.</p>
+<p>Finally, suppose the designer overestimated resistance and the real system needs only 2.5 in. wg at 10,000 CFM. The curves now cross at about 11,600 CFM and 3.36 in. wg. The customer gets more air than designed, and the fan draws about 9.4 BHP. For this non-overloading fan the motor is still protected; for a forward curved fan with an overloading power curve, the extra airflow could trip the motor. The table summarizes the three cases.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>System resistance at design</th>
+<th>Operating airflow</th>
+<th>Operating pressure</th>
+<th>BHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>As designed</td>
+<td>4.0 in. wg at 10,000 CFM</td>
+<td>10,000 CFM</td>
+<td>4.00 in. wg</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>Dirty filters</td>
+<td>4.0 in. wg at 8,000 CFM</td>
+<td>about 8,390 CFM</td>
+<td>about 4.40 in. wg</td>
+<td>about 8.3</td>
+</tr>
+<tr>
+<td>Resistance overestimated</td>
+<td>2.5 in. wg at 10,000 CFM</td>
+<td>about 11,600 CFM</td>
+<td>about 3.36 in. wg</td>
+<td>about 9.4</td>
+</tr>
+</tbody>
+</table>
+<p>FanPedia describes the same mechanism for flow control: outlet dampers "add resistance to the fan by shifting the operating point to the left of the rating point" (FanPedia p. 182). A damper is a deliberate way to steepen the system curve. Flow control devices are covered in <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a>.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Sketch the Two Curves Before You Answer</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's a shortcut for any "why is my fan not delivering?" call: sketch the fan curve, sketch the system curve through the design point, then ask what has changed since start-up. A steeper system curve (a closed damper, a loaded filter) moves the point left; a slower fan (a slipping belt) moves the whole fan curve down.</p>
+</div>
+<h4 id="diagram-operating-point-finder">Diagram: Operating Point Finder<a class="headerlink" href="#diagram-operating-point-finder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Operating Point Finder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch10-operating-point-finder<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> solve<br/>
+<strong>Learning Objective:</strong> The learner will solve for the operating point of an illustrative fan in a stated duct system by predicting where the fan curve and system curve intersect, to within ±300 CFM and ±0.15 in. wg.</p>
+<p><strong>Prerequisites:</strong> fan curve, system resistance, system curve, operating point, stall region, brake horsepower (all defined in the sections above).</p>
+<p><strong>Evidence of Mastery:</strong> For three challenge systems, the learner commits a predicted operating point (airflow in CFM and pressure in in. wg) before the intersection is revealed. A prediction is correct when the airflow is within ±300 CFM and the pressure within ±0.15 in. wg of the model intersection. Mastery is 3 of 3 correct. Free changes to the system curve after the challenges are exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A fan always delivers its rated airflow, whatever the system. (2) A dirtier, more resistant system makes the fan move more air "because it works harder." (3) The system curve is a straight line, so 20% more air needs 20% more pressure.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level solving needs the learner to use the two curves to reach a number, so each challenge asks for a committed prediction before the intersection is drawn. Free exploration afterward lets the learner watch the operating point slide along the fan curve as the system curve steepens or flattens.</p>
+<p><strong>Content:</strong></p>
+<p>The fan curve is Curve A from the Fan Curve Explorer (illustrative backward inclined fan at one fixed speed, standard air), joined by straight lines between points:</p>
+<table>
+<thead>
+<tr>
+<th>Airflow (CFM)</th>
+<th>FSP (in. wg)</th>
+<th>BHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>4.6</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>4.8</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td>4.9</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>6,000</td>
+<td>4.8</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td>4.5</td>
+<td>8.1</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>4.0</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>12,000</td>
+<td>3.2</td>
+<td>9.5</td>
+</tr>
+<tr>
+<td>14,000</td>
+<td>2.0</td>
+<td>9.4</td>
+</tr>
+<tr>
+<td>16,000</td>
+<td>0.4</td>
+<td>8.8</td>
+</tr>
+</tbody>
+</table>
+<p>Challenge systems, in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>System described to the learner</th>
+<th>Model operating point</th>
+<th>BHP at that point</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"As designed: 4.0 in. wg at 10,000 CFM."</td>
+<td>10,000 CFM, 4.00 in. wg</td>
+<td>9.0</td>
+<td>The fan curve passes through 4.0 in. wg at 10,000 CFM, exactly where the system needs 4.0 in. wg, so the curves cross at the design point.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"Filters loaded: 4.0 in. wg at 8,000 CFM."</td>
+<td>8,390 CFM, 4.40 in. wg</td>
+<td>8.3</td>
+<td>A steeper system curve crosses the fan curve further left. At 8,000 CFM the fan offers 4.5 in. wg and the system needs 4.0, so the fan pushes on until about 8,390 CFM.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"Resistance overestimated: 2.5 in. wg at 10,000 CFM."</td>
+<td>11,600 CFM, 3.36 in. wg</td>
+<td>9.4</td>
+<td>A flatter system curve crosses further right. The fan moves more air than designed, and BHP rises toward its 9.5 maximum.</td>
+</tr>
+</tbody>
+</table>
+<p>Readouts shown after each reveal: operating airflow (nearest 10 CFM), operating pressure (two decimals), BHP at that airflow (one decimal, interpolated linearly from the table), and whether the point is in the stall region.</p>
+<p>Free-exploration input (unlocked after the challenges): the system's resistance at 10,000 CFM.</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System resistance at 10,000 CFM</td>
+<td>1.0</td>
+<td>35.0</td>
+<td>0.1</td>
+<td>4.0</td>
+<td>in. wg</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> The fan curve is illustrative (the chapter's illustrative fan curve table) and must be labeled "Illustrative fan curve." The three challenge systems and their model intersections are from the chapter section "The Operating Point." The square law is standard fan engineering.</p>
+<p><strong>Rules:</strong> System curve: P = R × (Q ÷ 10,000)², where R is the resistance at 10,000 CFM (challenge 2's system has R = 6.25 in. wg, equivalent to 4.0 in. wg at 8,000 CFM; challenge 3's has R = 2.5 in. wg). Fan pressure and BHP between table points are linearly interpolated. The operating point is the airflow, searched in 1 CFM steps from 0 to 16,000 CFM, where |fan pressure − system pressure| is smallest. An operating point with airflow &lt; 4,000 CFM is flagged "In the stall region: select a different fan." If R is so high that the curves cross at less than 4,000 CFM, the flag is shown; the default range always produces an intersection. Prediction correct when |predicted CFM − model CFM| &lt;= 300 and |predicted pressure − model pressure| &lt;= 0.15.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1. The fan curve and the system curve are drawn; the intersection is not marked.</li>
+<li>The learner places a predicted operating point (airflow and pressure) and presses Check. The sim marks the true intersection, shows the readouts, and compares the prediction.</li>
+<li>The learner repeats for challenges 2 and 3. Each new challenge redraws the system curve and hides the previous intersection.</li>
+<li>After the third challenge, free exploration unlocks. The learner changes the system resistance at 10,000 CFM, and the system curve, intersection and readouts update at once. The learner should notice that above about R = 30.6 in. wg the operating point falls below 4,000 CFM and enters the stall region.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: the curves cross at <CFM> CFM and <pressure> in. wg." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the intersection is revealed and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 is shown with the fan curve and the as-designed system curve and no intersection marked. The prompt reads: "Where will this fan actually run in this system?"</p>
+<p><strong>Chapter Anchors:</strong> As designed: 10,000 CFM at 4.0 in. wg and 9.0 BHP. Dirty filters (4.0 in. wg at 8,000 CFM): about 8,390 CFM at 4.40 in. wg and about 8.3 BHP. Resistance overestimated (2.5 in. wg at 10,000 CFM): about 11,600 CFM at 3.36 in. wg and about 9.4 BHP. The system curve through 4.0 in. wg at 10,000 CFM needs 5.76 in. wg at 12,000 CFM and 2.56 in. wg at 8,000 CFM. Curve A's stall region begins below 4,000 CFM, which this system family reaches only above about R = 30.6 in. wg.</p>
+</details>
+<h3 id="system-effect">System Effect<a class="headerlink" href="#system-effect" title="Permanent link">&para;</a></h3>
+<p>A catalog rating is measured with the fan connected to ideal test ductwork: long, straight, uniform runs that deliver a smooth, even airflow into the inlet and carry it away from the outlet without disturbance. Real installations seldom look like that. An elbow bolted directly to the fan inlet, a short or missing discharge duct, or an abrupt transition makes the fan perform worse than its rating. <strong>System effect</strong> is that loss of fan performance caused by the way the fan is connected to the system, expressed as an extra pressure the fan must overcome. It is not a loss in the ductwork itself; it exists only because the fan's inlet or outlet airflow is disturbed.</p>
+<p>System effect matters because neither the fan curve nor the designer's system curve contains it. If it is ignored, the actual operating point falls short of the design point, even though both the fan and the duct calculations are correct. FanPedia gives a practical example: inlet boxes are used when the installation does not allow a straight run of duct into the fan, and the inlet box "is designed to minimize the system effect of a 90 degree turn into the fan" (FanPedia p. 187). Values for system effect come from AMCA Publication 201, <em>Fans and Systems</em>, which tabulates the loss for common inlet and outlet connections. The detailed inlet and outlet cases and the system effect curve are covered in Chapter 25.</p>
+<h4 id="worked-example-allowing-for-system-effect">Worked Example: Allowing for System Effect<a class="headerlink" href="#worked-example-allowing-for-system-effect" title="Permanent link">&para;</a></h4>
+<p>A designer calculates 4.0 in. wg of duct resistance at 10,000 CFM and selects the fan at exactly that point. The fan is installed with an elbow directly on its inlet, which carries a system effect of 0.5 in. wg at 10,000 CFM (illustrative). The fan must now overcome 4.5 in. wg to move 10,000 CFM, but the illustrative fan curve offers only 4.0 in. wg there. Because the system effect also rises with airflow squared, the effective system curve passes through 4.5 in. wg at 10,000 CFM, and it crosses the fan curve at about 9,560 CFM and 4.11 in. wg. The job is about 4% short of its air, and nothing in the duct calculation or the catalog explains why. A larger system effect, or a fan selected on a steeper part of its curve, makes the shortfall larger.</p>
+<p>The correct practice is to add the system effect to the design pressure before selection, so the fan is chosen at 10,000 CFM and 4.5 in. wg (a higher speed or a larger fan), or to change the connection so the system effect disappears, for instance by adding straight duct or an inlet box. The ordered steps are:</p>
+<ol>
+<li>Calculate the duct system resistance at the design airflow.</li>
+<li>Identify each non-ideal fan connection and look up its system effect at the design airflow.</li>
+<li>Add the system effects to the duct resistance.</li>
+<li>Select the fan at the design airflow and the sum.</li>
+</ol>
+<div class="admonition mascot-warning">
+<p class="admonition-title">System Effect Is Not in the Fan Curve</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for field complaints that blame the fan for a shortfall caused by its connection. The catalog rating assumes ideal ductwork, so an elbow on the inlet costs pressure no table shows. Before you quote, ask what is bolted to the inlet and outlet, and add the system effect to the design pressure.</p>
+</div>
+<h2 id="density-corrections">Density Corrections<a class="headerlink" href="#density-corrections" title="Permanent link">&para;</a></h2>
+<p>Every catalog rating assumes <strong>standard air</strong>: 0.075 lb/ft³, which is dry air at 70°F at sea-level barometric pressure (29.92 in. Hg). Real jobs are hotter, colder, higher or wetter. A fan running at a fixed speed moves the same volume of air (the same CFM) whatever the density, because the impeller sweeps the same volume each revolution. But the pressure it develops and the power it absorbs are both proportional to density. Lighter air means less pressure and less horsepower; heavier air means more of both.</p>
+<p>The <strong>density correction factor</strong> is the ratio of the actual air density to standard density. It converts between catalog (standard-air) values and actual job values:</p>
+<h4 id="density-correction-factor">Density Correction Factor<a class="headerlink" href="#density-correction-factor" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ K_d = \frac{\rho_{actual}}{0.075} \]</div>
+<div class="arithmatex">\[ P_{actual} = P_{std} \times K_d \qquad BHP_{actual} = BHP_{std} \times K_d \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( K_d \)</span> is the density correction factor (dimensionless)</li>
+<li><span class="arithmatex">\( \rho_{actual} \)</span> is the actual air density in lb/ft³</li>
+<li><span class="arithmatex">\( P \)</span> is fan pressure in in. wg and <span class="arithmatex">\( BHP \)</span> is brake horsepower, at standard or actual conditions as subscripted</li>
+</ul>
+<p>To select a fan from a standard-air catalog for a job at non-standard density, the procedure runs in the opposite direction: divide the actual required pressure by <span class="arithmatex">\( K_d \)</span> to get the equivalent standard-air pressure, look up the fan at the actual CFM and that pressure, then multiply the catalog BHP by <span class="arithmatex">\( K_d \)</span> to get the actual BHP. The two most common causes of non-standard density are temperature and altitude, and each has its own factor.</p>
+<h3 id="temperature-correction">Temperature Correction<a class="headerlink" href="#temperature-correction" title="Permanent link">&para;</a></h3>
+<p>Air expands as it is heated, so hot air is less dense than standard air. A <strong>temperature correction</strong> is the density correction factor for a temperature other than 70°F. Since density is inversely proportional to absolute temperature, the factor uses absolute temperatures in degrees Rankine (°F + 460):</p>
+<h4 id="temperature-correction-factor">Temperature Correction Factor<a class="headerlink" href="#temperature-correction-factor" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ K_t = \frac{70 + 460}{T + 460} = \frac{530}{T + 460} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( K_t \)</span> is the temperature correction factor (dimensionless)</li>
+<li><span class="arithmatex">\( T \)</span> is the actual air temperature at the fan inlet in °F</li>
+</ul>
+<p>The table lists the factor at several temperatures. All values come from the equation and are standard engineering values.</p>
+<table>
+<thead>
+<tr>
+<th>Air temperature (°F)</th>
+<th>Temperature correction factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1.152</td>
+</tr>
+<tr>
+<td>70</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>120</td>
+<td>0.914</td>
+</tr>
+<tr>
+<td>200</td>
+<td>0.803</td>
+</tr>
+<tr>
+<td>300</td>
+<td>0.697</td>
+</tr>
+<tr>
+<td>400</td>
+<td>0.616</td>
+</tr>
+<tr>
+<td>600</td>
+<td>0.500</td>
+</tr>
+<tr>
+<td>800</td>
+<td>0.421</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-a-hot-exhaust-fan">Worked Example: A Hot Exhaust Fan<a class="headerlink" href="#worked-example-a-hot-exhaust-fan" title="Permanent link">&para;</a></h4>
+<p>An oven exhaust fan must handle 8,000 CFM of 200°F air against 2.0 in. wg of actual static pressure at sea level. The temperature factor is <span class="arithmatex">\( 530/660 = 0.803 \)</span>. The equivalent standard-air pressure is <span class="arithmatex">\( 2.0 / 0.803 = 2.49 \)</span> in. wg, so the fan is selected from the catalog at 8,000 CFM and 2.49 in. wg. If the catalog shows, illustratively, 4.6 BHP at that point, the fan absorbs <span class="arithmatex">\( 4.6 \times 0.803 = 3.7 \)</span> BHP when running hot. When the same fan starts up cold, the air is denser and the BHP is higher, which is why hot fans need a cold-start motor check (cold start horsepower is covered in Chapter 25).</p>
+<h3 id="altitude-correction">Altitude Correction<a class="headerlink" href="#altitude-correction" title="Permanent link">&para;</a></h3>
+<p>Barometric pressure falls with elevation, and air density falls with it. An <strong>altitude correction</strong> is the density correction factor for a site above sea level, equal to the ratio of the local standard barometric pressure to the sea-level value. It can be computed from the standard atmosphere:</p>
+<h4 id="altitude-correction-factor">Altitude Correction Factor<a class="headerlink" href="#altitude-correction-factor" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ K_a = \left( 1 - 6.875 \times 10^{-6} \times h \right)^{5.2559} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( K_a \)</span> is the altitude correction factor (dimensionless)</li>
+<li><span class="arithmatex">\( h \)</span> is the site elevation in feet above sea level</li>
+</ul>
+<p>The table gives the factor at 1,000-foot steps. Combined temperature and altitude effects multiply: <span class="arithmatex">\( K_d = K_t \times K_a \)</span>.</p>
+<table>
+<thead>
+<tr>
+<th>Elevation (ft)</th>
+<th>Altitude correction factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>1,000</td>
+<td>0.964</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td>0.930</td>
+</tr>
+<tr>
+<td>3,000</td>
+<td>0.896</td>
+</tr>
+<tr>
+<td>4,000</td>
+<td>0.864</td>
+</tr>
+<tr>
+<td>5,000</td>
+<td>0.832</td>
+</tr>
+<tr>
+<td>6,000</td>
+<td>0.801</td>
+</tr>
+<tr>
+<td>7,000</td>
+<td>0.772</td>
+</tr>
+<tr>
+<td>8,000</td>
+<td>0.743</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-a-hot-fan-at-altitude">Worked Example: A Hot Fan at Altitude<a class="headerlink" href="#worked-example-a-hot-fan-at-altitude" title="Permanent link">&para;</a></h4>
+<p>A dryer exhaust fan in a plant at 5,000 ft must move 10,000 CFM of 200°F air against 3.0 in. wg actual static pressure.</p>
+<ol>
+<li>Temperature factor: <span class="arithmatex">\( K_t = 530/660 = 0.803 \)</span>.</li>
+<li>Altitude factor: <span class="arithmatex">\( K_a = 0.832 \)</span> from the table.</li>
+<li>Combined factor: <span class="arithmatex">\( K_d = 0.803 \times 0.832 = 0.668 \)</span>.</li>
+<li>Equivalent standard-air pressure: <span class="arithmatex">\( 3.0 / 0.668 = 4.49 \)</span> in. wg.</li>
+<li>Select the fan from the catalog at 10,000 CFM and 4.49 in. wg. Suppose the catalog shows 11.0 BHP at that point (illustrative).</li>
+<li>Actual BHP when running hot at altitude: <span class="arithmatex">\( 11.0 \times 0.668 = 7.35 \)</span> BHP.</li>
+</ol>
+<p>A salesperson who skips steps 1 through 4 and selects at 3.0 in. wg will deliver a fan that falls about a third short on pressure at the job.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Two Directions, One Factor</p>
+<p><img alt="Breeze encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If density corrections feel slippery, that's normal; most people mix up the dividing and multiplying direction at first. You already handle the factor itself, so anchor on one sentence: pressure goes into the catalog divided by the factor, and horsepower comes out of the catalog multiplied by it. Work the dryer example once more with your own numbers and it will stick.</p>
+</div>
+<h4 id="diagram-density-correction-calculator">Diagram: Density Correction Calculator<a class="headerlink" href="#diagram-density-correction-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Density Correction Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch10-density-correction-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the combined density correction factor for a stated air temperature and site elevation, and use it to convert an actual static pressure to the standard-air pressure used for catalog selection, to within ±0.01 on the factor and ±0.05 in. wg on the pressure.</p>
+<p><strong>Prerequisites:</strong> standard air, density correction factor, temperature correction, altitude correction, degrees Rankine (all defined in the section "Density Corrections" above).</p>
+<p><strong>Evidence of Mastery:</strong> For three challenge jobs the learner types the combined factor and, for challenge 3, the standard-air pressure, before the model values are shown. A factor is correct when within ±0.01 of the model value; a pressure is correct when within ±0.05 in. wg. Mastery is 3 of 3 challenges fully correct. Moving the exploration inputs is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The fan moves less CFM in hot or thin air at the same speed. (2) The actual pressure is multiplied by the factor to get the catalog pressure, instead of divided. (3) Temperature in °F can be used directly in the ratio, without adding 460.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs practice with a check on each step, so the learner commits each factor before it is revealed. Free exploration afterward shows that a hot fan at altitude can need a catalog pressure half again as large as the job pressure.</p>
+<p><strong>Content:</strong></p>
+<p>Challenge jobs, in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Job shown to the learner</th>
+<th>Asked</th>
+<th>Model answer</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>200°F air at sea level (0 ft)</td>
+<td>Combined factor</td>
+<td>0.803</td>
+<td>Use absolute temperatures: 530 ÷ (200 + 460) = 0.803. Sea level has an altitude factor of 1.000.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>70°F air at 5,000 ft</td>
+<td>Combined factor</td>
+<td>0.832</td>
+<td>At 70°F the temperature factor is 1.000; the altitude factor at 5,000 ft is 0.832.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>200°F air at 5,000 ft, 3.0 in. wg actual static pressure, 10,000 CFM</td>
+<td>Combined factor, then standard-air pressure</td>
+<td>0.668, then 4.49 in. wg</td>
+<td>Multiply the two factors: 0.803 × 0.832 = 0.668. Divide the actual pressure by the factor: 3.0 ÷ 0.668 = 4.49 in. wg. The CFM does not change.</td>
+</tr>
+</tbody>
+</table>
+<p>Free-exploration inputs (unlocked after the challenges):</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air temperature at fan inlet</td>
+<td>0</td>
+<td>800</td>
+<td>10</td>
+<td>70</td>
+<td>°F</td>
+</tr>
+<tr>
+<td>Site elevation</td>
+<td>0</td>
+<td>10,000</td>
+<td>500</td>
+<td>0</td>
+<td>ft</td>
+</tr>
+<tr>
+<td>Actual static pressure</td>
+<td>0.5</td>
+<td>15.0</td>
+<td>0.1</td>
+<td>3.0</td>
+<td>in. wg</td>
+</tr>
+<tr>
+<td>Catalog BHP at the standard-air point</td>
+<td>1.0</td>
+<td>200.0</td>
+<td>0.5</td>
+<td>11.0</td>
+<td>BHP</td>
+</tr>
+</tbody>
+</table>
+<p>Readouts in exploration: temperature factor, altitude factor, combined factor (each to three decimals), standard-air pressure for catalog selection (two decimals), actual BHP (two decimals), and the unchanged CFM statement "Airflow volume is the same at any density for a fan at fixed speed."</p>
+<p><strong>Provenance:</strong> Equations are standard engineering: K_t = 530 ÷ (T + 460) and the standard-atmosphere altitude formula. The challenge jobs and the 11.0 BHP default are illustrative and must be labeled "Illustrative values." Challenge 3 and the 11.0 BHP default match the chapter's worked example "A Hot Fan at Altitude."</p>
+<p><strong>Rules:</strong> K_t = 530 ÷ (T + 460), T in °F. K_a = (1 − 6.875 × 10⁻⁶ × h)^5.2559, h in feet. K_d = K_t × K_a. Standard-air pressure = actual pressure ÷ K_d. Actual BHP = catalog BHP × K_d. Factors rounded to three decimals, pressures to two. A factor is correct when |answer − model| &lt;= 0.01; a pressure when |answer − model| &lt;= 0.05. All input ranges keep T + 460 &gt; 0 and K_a &gt; 0.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1 and types the combined factor.</li>
+<li>The learner presses Check. The sim shows the model factor and the one-line calculation.</li>
+<li>The learner completes challenge 2, then challenge 3 in two parts: the factor first, then the standard-air pressure. The second part appears only after the first is checked.</li>
+<li>After challenge 3, free exploration unlocks. The learner changes temperature, elevation, actual pressure and catalog BHP, and every readout updates at once. The learner should notice that at 800°F the combined factor at sea level is 0.421, so the catalog pressure is more than twice the job pressure.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts per answer. Correct: "Correct: <model value>." Incorrect: the "Feedback when wrong" text. If the learner's challenge-3 pressure is close to 3.0 × 0.668 = 2.00, the sim adds: "That multiplies by the factor; to enter a standard-air catalog, divide by it." If the learner's challenge-1 factor is close to 70 ÷ 200 = 0.35, the sim adds: "Add 460 to each temperature first." After the second wrong attempt the model value is shown and the answer counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box. The prompt reads: "This fan handles 200°F air at sea level. By what factor do its pressure and horsepower change from the catalog?"</p>
+<p><strong>Chapter Anchors:</strong> Temperature factor at 200°F is 0.803. Altitude factor at 5,000 ft is 0.832. Combined factor at 200°F and 5,000 ft is 0.668; 3.0 in. wg actual becomes 4.49 in. wg for catalog selection; 11.0 catalog BHP becomes 7.35 actual BHP. The temperature factor at 800°F is 0.421.</p>
+</details>
+<h2 id="how-ratings-are-measured-the-amca-210-rating-standard">How Ratings Are Measured: the AMCA 210 Rating Standard<a class="headerlink" href="#how-ratings-are-measured-the-amca-210-rating-standard" title="Permanent link">&para;</a></h2>
+<p>Catalog ratings are only comparable if every manufacturer measures fans the same way. The <strong>AMCA 210 rating standard</strong> is ANSI/AMCA Standard 210 (also published as ASHRAE Standard 51), <em>Laboratory Methods of Testing Fans for Certified Aerodynamic Performance Rating</em>. It defines how a fan is mounted on a test chamber or test duct, where pressures are measured, how airflow is measured (with calibrated nozzles or a Pitot traverse), how speed and power are measured, and how the results are converted to standard air density and a reference speed. A fan is tested at many points from no flow to full open flow, so the test traces the whole fan curve, not one point.</p>
+<p>AMCA 210 also defines four installation types, the combinations of a free or ducted inlet with a free or ducted outlet, because the same fan performs differently in each. A certified rating states which installation type it applies to. Manufacturers who participate in the AMCA Certified Ratings Program may place the AMCA seal on the catalog; the program checks that published ratings match independent test results. Certified sound ratings are tested under companion standards (AMCA 300 for the test and AMCA 311 for certification). Installation types are covered in Chapter 25, and how to read the certified-ratings statement in a catalog in Chapter 26.</p>
+<h4 id="worked-example-converting-a-test-point-to-standard-air">Worked Example: Converting a Test Point to Standard Air<a class="headerlink" href="#worked-example-converting-a-test-point-to-standard-air" title="Permanent link">&para;</a></h4>
+<p>In an illustrative AMCA 210 test, a fan running at the reference speed is measured at 9,800 CFM, 3.85 in. wg fan static pressure and 8.6 BHP, on a day when the test air density is 0.073 lb/ft³. To publish the point at standard air, the lab applies the density correction from the previous section in the reverse direction:</p>
+<div class="arithmatex">\[ K_d = \frac{0.075}{0.073} = 1.027 \]</div>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Measured at 0.073 lb/ft³</th>
+<th>Published at 0.075 lb/ft³</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Airflow</td>
+<td>9,800 CFM</td>
+<td>9,800 CFM</td>
+<td>Unchanged at fixed speed</td>
+</tr>
+<tr>
+<td>Fan static pressure</td>
+<td>3.85 in. wg</td>
+<td>3.96 in. wg</td>
+<td>Multiply by 1.027</td>
+</tr>
+<tr>
+<td>BHP</td>
+<td>8.6</td>
+<td>8.84</td>
+<td>Multiply by 1.027</td>
+</tr>
+</tbody>
+</table>
+<p>The published table is therefore a set of standard-air values that no customer's job may exactly match. That is the reason the density correction, system effect and installation type all exist: they translate a laboratory rating back into a real installation.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Check the Seal and the Footnote</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+What does the current catalog say? Before quoting a rating, read the certified-ratings footnote under the table: it names the installation type and whether the BHP includes drive losses. Thirty seconds there prevents most "the fan doesn't match the catalog" calls.</p>
+</div>
+<h2 id="fan-sound">Fan Sound<a class="headerlink" href="#fan-sound" title="Permanent link">&para;</a></h2>
+<p>Every fan makes noise, and many specifications limit it. <strong>Fan sound</strong> is the airborne noise a fan generates, produced mainly by the impeller blades passing the housing cutoff, by turbulence in the airflow, and to a lesser degree by bearings, belts and motors. Fan sound is described with a small set of terms, and two of them, sound power and sound pressure, are easily confused.</p>
+<h3 id="decibel">Decibel<a class="headerlink" href="#decibel" title="Permanent link">&para;</a></h3>
+<p>The ear responds to an enormous range of acoustic energy, from a whisper to a jet engine, so sound is measured on a logarithmic scale. The <strong>decibel</strong> (dB) is a unit equal to ten times the base-10 logarithm of the ratio of a quantity to a fixed reference quantity. Because it is a ratio, a decibel value always implies a reference. A 3 dB increase means the acoustic energy has doubled, and a 10 dB increase means it has risen tenfold. Decibels do not add arithmetically: two identical fans, each 90 dB, together produce 93 dB, not 180 dB.</p>
+<h3 id="sound-power-level">Sound Power Level<a class="headerlink" href="#sound-power-level" title="Permanent link">&para;</a></h3>
+<p><strong>Sound power level</strong> (Lw) is the total acoustic power a fan radiates, expressed in decibels relative to a reference of 10⁻¹² watts. It is a property of the fan at its operating point, like BHP, and it does not depend on the room or the distance from the fan. That is why fan manufacturers publish sound power, usually in eight octave bands (octave bands are covered in Chapter 25).</p>
+<h4 id="sound-power-level_1">Sound Power Level<a class="headerlink" href="#sound-power-level_1" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ L_w = 10 \log_{10} \left( \frac{W}{10^{-12}} \right) \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( L_w \)</span> is the sound power level in dB</li>
+<li><span class="arithmatex">\( W \)</span> is the acoustic power in watts</li>
+<li><span class="arithmatex">\( 10^{-12} \)</span> W is the reference power</li>
+</ul>
+<p>Sound pressure level, by contrast, is what a microphone measures at one location; it depends on distance, room size and reflections, and it is developed in Chapter 25. A specification that asks for "85 dB" without saying whether it means sound power or sound pressure, and at what distance, cannot be checked.</p>
+<h4 id="worked-example-adding-fans">Worked Example: Adding Fans<a class="headerlink" href="#worked-example-adding-fans" title="Permanent link">&para;</a></h4>
+<p>A plant installs two identical exhaust fans, each rated at a sound power level of 90 dB in one octave band. The combined level is:</p>
+<div class="arithmatex">\[ L_{w,total} = 10 \log_{10} \left( 10^{90/10} + 10^{90/10} \right) = 90 + 10 \log_{10} 2 = 93 \text{ dB} \]</div>
+<p>Ten identical fans would produce <span class="arithmatex">\( 90 + 10 \log_{10} 10 = 100 \)</span> dB. When one fan is 10 dB louder than the other, the quieter fan adds only about 0.4 dB to the total, so treating the loudest source first is almost always the right noise-control priority. The rules of thumb are:</p>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Effect on combined level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two equal sources</td>
+<td>+3 dB</td>
+</tr>
+<tr>
+<td>Ten equal sources</td>
+<td>+10 dB</td>
+</tr>
+<tr>
+<td>Add a source 10 dB quieter</td>
+<td>About +0.4 dB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sone-rating">Sone Rating<a class="headerlink" href="#sone-rating" title="Permanent link">&para;</a></h3>
+<p>A <strong>sone rating</strong> is a measure of perceived loudness on a linear scale, where 1 sone is defined as the loudness of a 1,000 Hz tone at a sound pressure level of 40 dB, and a sound of 2 sones is judged twice as loud as one of 1 sone. Because the scale is linear, sones are easier for non-specialists to compare than decibels: a 10-sone fan sounds about twice as loud as a 5-sone fan. Sone ratings are common on commercial products such as roof and wall exhausters, ceiling and cabinet ventilators, and are calculated from measured sound data under AMCA procedures for a stated listening distance.</p>
+<h3 id="blade-pass-frequency">Blade Pass Frequency<a class="headerlink" href="#blade-pass-frequency" title="Permanent link">&para;</a></h3>
+<p>The <strong>blade pass frequency</strong> (BPF) is the rate at which impeller blades pass a fixed point such as the housing cutoff, equal to the fan speed in revolutions per second times the number of blades. It often appears as a distinct tone in a fan's sound spectrum. For example, a 10-blade impeller at 1,770 RPM has a blade pass frequency of <span class="arithmatex">\( 1{,}770 \times 10 / 60 = 295 \)</span> Hz. Knowing it helps an engineer recognize whether a tonal complaint comes from the fan or from something else in the system.</p>
+<h4 id="blade-pass-frequency_1">Blade Pass Frequency<a class="headerlink" href="#blade-pass-frequency_1" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ BPF = \frac{N \times B}{60} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( BPF \)</span> is the blade pass frequency in hertz (Hz)</li>
+<li><span class="arithmatex">\( N \)</span> is the fan speed in RPM</li>
+<li><span class="arithmatex">\( B \)</span> is the number of impeller blades</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Read a Fan Curve</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You just learned to find a fan's operating point from its fan curve and a system curve, and to explain why it moves when filters load or a damper closes. Add density correction and system effect, and you can turn a catalog rating into what the fan will really do on the job.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>A performance rating is five numbers, not one:</strong> airflow volume, pressure, speed, brake horsepower and the density they assume. A CFM without a pressure cannot be checked or ordered.</li>
+<li><strong>Fan static pressure equals fan total pressure minus outlet velocity pressure.</strong> Outlet velocity pressure comes from outlet velocity, which is airflow divided by fan outlet area; confirm which pressure a specification means.</li>
+<li><strong>BHP equals air power divided by efficiency:</strong> <span class="arithmatex">\( BHP = Q \times P / (6356 \times \eta) \)</span>, using static pressure with static efficiency or total pressure with total efficiency.</li>
+<li><strong>Tip speed (<span class="arithmatex">\( \pi D N / 12 \)</span>) governs pressure and impeller stress.</strong> Every selection speed must be below the maximum safe speed for the fan's AMCA class, after any temperature derate.</li>
+<li><strong>A fan curve shows every possible operating point at one speed and density.</strong> Never select left of the pressure peak, in the stall region.</li>
+<li><strong>Non-overloading BHP curves (backward inclined, airfoil) have a ceiling; overloading curves (forward curved, radial) do not,</strong> so their motors must be sized for the highest airflow the fan may see.</li>
+<li><strong>System resistance rises with airflow squared,</strong> and the system curve is a parabola through the design point. The operating point is where the fan curve and system curve cross, and it moves when either one changes.</li>
+<li><strong>System effect is lost performance caused by poor fan connections.</strong> It is not in the fan curve; add it to the design pressure before selecting.</li>
+<li><strong>Correct for density:</strong> divide actual pressure by <span class="arithmatex">\( K_d = K_t \times K_a \)</span> to enter a standard-air catalog, and multiply the catalog BHP by <span class="arithmatex">\( K_d \)</span> to get actual BHP. CFM does not change.</li>
+<li><strong>AMCA 210 defines how fans are tested and rated,</strong> so certified catalog ratings from different manufacturers can be compared.</li>
+<li><strong>Fan sound is published as sound power level in decibels;</strong> sones express loudness on a linear scale, and the blade pass frequency (<span class="arithmatex">\( N \times B / 60 \)</span>) identifies the fan's characteristic tone.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../09-impeller-construction-and-material-handling/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Impeller Construction and Material Handling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Impeller Construction and Material Handling
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-drives-and-standard-fan-arrangements/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. Drives and Standard Fan Arrangements">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. Drives and Standard Fan Arrangements
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

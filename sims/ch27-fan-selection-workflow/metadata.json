@@ -1,0 +1,81 @@
+{
+  "title": "Fan Selection Workflow",
+  "creator": "Twin City Fan",
+  "subject": "Industrial and Commercial Fans: Fan Selection",
+  "description": "Clickable twelve-step Mermaid flowchart of the fan selection workflow, from application requirements to the specification, with an eight-card sorting check in which learners assign job information to the step that uses it.",
+  "date": "2026-10-08",
+  "type": "Interactive Workflow Diagram",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "audience": "Adult professional development: application engineers, sales staff, representatives, distributors and specifying engineers",
+  "educational": {
+    "gradeLevel": [
+      "Adult professional development"
+    ],
+    "subjectArea": "Mechanical Engineering / HVAC and Industrial Air Movement",
+    "topic": "Fan selection workflow",
+    "learningObjectives": [
+      "Classify eight pieces of application information by the selection step that uses them, with at least 7 of 8 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Fan selection",
+      "Duty point",
+      "Standard air",
+      "Arrangement",
+      "Drive",
+      "Construction",
+      "Cold start",
+      "Accessories",
+      "Sound data",
+      "Dimensional data"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Mermaid",
+    "frameworkVersion": "11.4.1",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 1040
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"
+    ],
+    "diagram": {
+      "diagramType": "flowchart",
+      "direction": "TD",
+      "nodeCount": 12,
+      "edgeCount": 12,
+      "clickDirectives": 12
+    },
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Explore a clickable workflow, then classify job information into workflow steps with immediate explanatory feedback",
+    "keyQuestions": [
+      "Which selection step consumes this piece of job information?",
+      "When a candidate fails the sound or dimension check, which step does the selection loop back to?",
+      "Why is the motor sized for the coldest start rather than the hot design temperature?"
+    ],
+    "commonMisconceptions": [
+      "Selection is finished once a size is read from the performance table.",
+      "The motor is sized from the operating brake horsepower at the hot design temperature.",
+      "Dimensions are checked only after the order is placed."
+    ],
+    "assessmentOpportunities": [
+      "Score of correct first assignments out of 8; mastery is 7 or more.",
+      "Follow-up: given a requirement change, name the step the selection loops back to."
+    ]
+  },
+  "dataProvenance": "Step order and content from Chapter 27's sections. The 1,450, 1,180 and 1,780 RPM values, the 500°F and 70°F temperatures, the 95 dB limit and the 10 ft by 8 ft pad are the chapter's illustrative worked example.",
+  "chapter": "27-fan-selection-and-writing-the-specification"
+}

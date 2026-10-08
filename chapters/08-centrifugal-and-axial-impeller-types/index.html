@@ -1,0 +1,3400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The parts of an impeller, the main centrifugal, mixed flow and axial impeller types, axial hub position and airflow codes, hub types, and why impellers are balanced.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/08-centrifugal-and-axial-impeller-types/">
+      
+      
+        <link rel="prev" href="../07-housing-construction-and-exploded-views/">
+      
+      
+        <link rel="next" href="../09-impeller-construction-and-material-handling/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Centrifugal and Axial Impeller Types - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#centrifugal-and-axial-impeller-types" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Centrifugal and Axial Impeller Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-air-pressure-and-the-fan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-part-that-does-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Part That Does the Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impeller-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Parts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Parts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impeller-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Blade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Blade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-rotation-from-the-blades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking Rotation from the Blades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blade-leading-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blade Leading Edge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-back-plate-and-impeller-shroud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Back Plate and Impeller Shroud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-plate-fins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back Plate Fins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-a-hub-callout-on-a-replacement-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading a Hub Callout on a Replacement Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centrifugal-impellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centrifugal Impellers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Centrifugal Impellers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-tip-speed-of-a-centrifugal-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Tip Speed of a Centrifugal Impeller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-width-single-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Width Single Inlet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Width Single Inlet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-can-this-be-arrangement-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Can This Be Arrangement 4?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Orientation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backward-inclined-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward Inclined Impeller
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backward Inclined Impeller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-will-the-motor-overload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Will the Motor Overload?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-curved-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward Curved Impeller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-flow-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed Flow Impeller
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axial-impellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axial Impellers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axial Impellers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-pitch-and-adjustable-pitch-impellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Pitch and Adjustable Pitch Impellers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiberglass-axial-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fiberglass Axial Impeller
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fiberglass Axial Impeller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-configuring-an-axial-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Configuring an Axial Fan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub-on-intake-side-and-hub-on-discharge-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hub on Intake Side and Hub on Discharge Side
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reversible-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reversible Impeller
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reversible Impeller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-axial-airflow-and-hub-position-configurator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Axial Airflow and Hub Position Configurator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hub-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hub Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hub Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#straight-bore-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Straight Bore Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taper-lock-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taper Lock Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Taper Lock Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-choosing-between-two-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Choosing Between Two Hubs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impeller-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Balancing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Balancing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-how-much-unbalance-is-allowed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: How Much Unbalance Is Allowed?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-impeller-balance-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Impeller Balance Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifying-an-impeller-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifying an Impeller Type
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifying an Impeller Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-impeller-type-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Impeller Type Classifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-fan-performance-curves-and-ratings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-discharge-positions-and-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-damper-details-and-duct-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reading-catalogs-and-performance-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-fan-selection-and-writing-the-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-part-that-does-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Part That Does the Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impeller-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Parts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Parts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impeller-blade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Blade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Blade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-rotation-from-the-blades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking Rotation from the Blades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blade-leading-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blade Leading Edge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-back-plate-and-impeller-shroud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Back Plate and Impeller Shroud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back-plate-fins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Back Plate Fins
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-a-hub-callout-on-a-replacement-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading a Hub Callout on a Replacement Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centrifugal-impellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Centrifugal Impellers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Centrifugal Impellers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-tip-speed-of-a-centrifugal-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Tip Speed of a Centrifugal Impeller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-width-single-inlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Width Single Inlet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Width Single Inlet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-can-this-be-arrangement-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Can This Be Arrangement 4?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Orientation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backward-inclined-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backward Inclined Impeller
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backward Inclined Impeller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-will-the-motor-overload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Will the Motor Overload?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-curved-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward Curved Impeller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixed-flow-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixed Flow Impeller
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axial-impellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axial Impellers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Axial Impellers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-pitch-and-adjustable-pitch-impellers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Pitch and Adjustable Pitch Impellers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fiberglass-axial-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fiberglass Axial Impeller
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fiberglass Axial Impeller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-configuring-an-axial-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Configuring an Axial Fan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub-on-intake-side-and-hub-on-discharge-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hub on Intake Side and Hub on Discharge Side
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reversible-impeller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reversible Impeller
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reversible Impeller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-axial-airflow-and-hub-position-configurator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Axial Airflow and Hub Position Configurator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hub-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hub Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hub Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#straight-bore-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Straight Bore Hub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taper-lock-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taper Lock Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Taper Lock Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-choosing-between-two-hubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Choosing Between Two Hubs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impeller-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Balancing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impeller Balancing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-how-much-unbalance-is-allowed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: How Much Unbalance Is Allowed?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-impeller-balance-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Impeller Balance Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifying-an-impeller-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identifying an Impeller Type
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identifying an Impeller Type">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-impeller-type-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Impeller Type Classifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="centrifugal-and-axial-impeller-types">Centrifugal and Axial Impeller Types<a class="headerlink" href="#centrifugal-and-axial-impeller-types" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces the impeller, the part that does the work of moving air. It covers blades, back plates, shrouds, and hubs; the main centrifugal types (single width single inlet, backward inclined, and forward curved); mixed flow impellers; and axial impellers with fixed or adjustable pitch, including hub position on the intake or discharge side and reversible impellers. It also covers straight bore and taper lock hubs and why impellers are balanced. After completing it, readers can identify an impeller type and explain how air flows through it.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 22 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Impeller Blade</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Impeller Back Plate</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Impeller Shroud</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Impeller Balancing</td>
+<td>47</td>
+</tr>
+<tr>
+<td>Blade Leading Edge</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Impeller Hub</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Centrifugal Impeller</td>
+<td>55</td>
+</tr>
+<tr>
+<td>Axial Impeller</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Impeller Orientation</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Back Plate Fins</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Single Width Single Inlet</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Backward Inclined Impeller</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Forward Curved Impeller</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Mixed Flow Impeller</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fixed Pitch Impeller</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Adjustable Pitch Impeller</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Fiberglass Axial Impeller</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Hub on Intake Side</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Hub on Discharge Side</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Reversible Impeller</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Straight Bore Hub</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Taper Lock Hub</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../02-airstreams-total-pressure-standard-air/">Chapter 2: Airstreams, Total Pressure and Standard Air</a></li>
+<li><a href="../03-basic-fan-anatomy/">Chapter 3: Basic Fan Anatomy</a></li>
+<li><a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4: Centrifugal, Axial and Mixed Flow Fans</a></li>
+<li><a href="../05-roof-wall-and-specialty-exhaust-fans/">Chapter 5: Roof, Wall and Specialty Exhaust Fans</a></li>
+</ul>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to the Impeller Chapter</p>
+<p><img alt="Breeze waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Every fan you will ever quote, specify, or troubleshoot has exactly one part that actually moves the air, and that part is the impeller. By the end of this chapter you will be able to look at a wheel on a shop floor or a picture in a catalog and say what type it is, which way the air goes through it, and what the order has to say about it. Let's follow the airflow.</p>
+</div>
+<h2 id="the-part-that-does-the-work">The Part That Does the Work<a class="headerlink" href="#the-part-that-does-the-work" title="Permanent link">&para;</a></h2>
+<p>In <a href="../03-basic-fan-anatomy/">Chapter 3</a> you met the impeller as one part among many: housing, shaft, bearings, motor, inlet, and outlet. Every other part of a fan exists to hold the impeller, spin it, or guide air into and out of it. The impeller is the only part that adds energy to the airstream. When it turns, its blades push on the air, raising the air's velocity and pressure, which is the total pressure rise you studied in <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a>.</p>
+<p>In <a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4</a> you sorted fans into three families by the path the air takes. That sorting is really a statement about the impeller inside. This chapter opens the fan up and looks at the impeller itself: what its parts are called, how the main centrifugal and axial types differ, how an axial impeller's hub position follows from the airflow direction, how the hub fastens to the shaft, and why every impeller is balanced before it ships. <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a> then goes further into airfoil, backward curved, radial, and material handling designs.</p>
+<h2 id="impeller-parts">Impeller Parts<a class="headerlink" href="#impeller-parts" title="Permanent link">&para;</a></h2>
+<p>Before comparing impeller types, it helps to name the parts that most of them share. FanPedia's centrifugal impeller drawing (FanPedia PDF p. 31) labels four of them: the blade, the back plate, the impeller front plate, and the hub. A fifth idea, the blade's leading edge, appears on every axial airflow page (FanPedia PDF pp. 37–41).</p>
+<h3 id="impeller-blade">Impeller Blade<a class="headerlink" href="#impeller-blade" title="Permanent link">&para;</a></h3>
+<p>An <strong>impeller blade</strong> is the surface that pushes on the air. Every impeller, centrifugal or axial, has a set of blades arranged evenly around the axis of rotation, and the shape, angle, and number of those blades decide most of what the impeller can do: how much pressure it can build, how efficiently it runs, and how well it tolerates dust. Blade shape is also the quickest way to identify an impeller type in the field. A blade that leans or curves back, away from the direction of rotation, belongs to the backward family; a blade whose tip curves toward the direction of rotation belongs to a forward curved impeller; a blade that runs straight out from the center is radial.</p>
+<p>On an axial impeller the blades are shaped like propeller blades. FanPedia describes their action in one sentence: the concave side of the blade "cups the air and pushes it away from the impeller" (FanPedia PDF p. 37). The concave side is the hollow, inside face of the curved blade.</p>
+<h4 id="worked-example-checking-rotation-from-the-blades">Worked Example: Checking Rotation from the Blades<a class="headerlink" href="#worked-example-checking-rotation-from-the-blades" title="Permanent link">&para;</a></h4>
+<p>A facilities technician calls about a new housed centrifugal fan that "runs but doesn't move much air." You ask them to lock out the motor, open the access door, and describe the blades. They report flat blades whose outer ends lean back, away from the direction the arrow on the housing shows.</p>
+<ol>
+<li>Flat, single-thickness blades that lean backward identify a <strong>backward inclined</strong> impeller (FanPedia PDF p. 31).</li>
+<li>On a backward inclined impeller, the blade tips should trail the direction of rotation. The technician's description says the tips lean away from the arrow, which is correct for the arrow.</li>
+<li>You then ask them to bump the motor and watch the shaft. If the shaft turns against the arrow, the wiring is reversed. A centrifugal impeller turning backward still moves some air, but far less than its rating, which matches the complaint.</li>
+<li>The fix is to swap two motor leads (a job for an electrician) and recheck the rotation.</li>
+</ol>
+<p>The blade shape told you what "correct" looks like before anyone measured anything. <a href="../12-discharge-positions-and-rotation/">Chapter 12</a> shows how rotation is formally designated on a drawing.</p>
+<h3 id="blade-leading-edge">Blade Leading Edge<a class="headerlink" href="#blade-leading-edge" title="Permanent link">&para;</a></h3>
+<p>The <strong>blade leading edge</strong> is the edge of the blade that meets the incoming air first. On an axial impeller, FanPedia states that "air is drawn through the impeller from the leading edge of the blades" (FanPedia PDF p. 37), so the leading edge always faces the intake side of the fan. On a centrifugal impeller the leading edge is the inner edge of each blade, near the inlet, and the opposite edge at the outer diameter is the trailing edge, or blade tip, where air leaves. Knowing which edge leads is how you check that an axial impeller is mounted facing the right way: if the leading edges face the discharge, the impeller is backward on its shaft.</p>
+<h3 id="impeller-back-plate-and-impeller-shroud">Impeller Back Plate and Impeller Shroud<a class="headerlink" href="#impeller-back-plate-and-impeller-shroud" title="Permanent link">&para;</a></h3>
+<p>The <strong>impeller back plate</strong> is the solid disc on the closed side of a centrifugal impeller. The blades are welded to it, and on most centrifugal impellers the hub is attached to it, so the back plate carries the blade loads to the hub and shaft. It also forms one wall of the air passage, so air entering the open side has nowhere to go except outward between the blades.</p>
+<p>The <strong>impeller shroud</strong> is the ring-shaped plate on the inlet side of a centrifugal impeller. FanPedia labels it the impeller front plate (FanPedia PDF p. 31), and both names are common in the trade. The shroud has a large hole in its center where air enters, and it closes the other side of the blade passages so air is guided outward instead of leaking around the blade edges. Together, the back plate and shroud sandwich the blades. Not every impeller has both: FanPedia's open paddle impeller has neither, and its material handling impeller has a back plate only (FanPedia PDF p. 32), designs that <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a> covers.</p>
+<h3 id="back-plate-fins">Back Plate Fins<a class="headerlink" href="#back-plate-fins" title="Permanent link">&para;</a></h3>
+<p><strong>Back plate fins</strong> are small radial vanes welded to the outside of the back plate, on the side away from the blades. FanPedia lists this accessory as "fins on impeller back plate" and notes that it is also known by these names, any of which may appear on drawings and orders (FanPedia PDF p. 126):</p>
+<ul>
+<li>thrust fins</li>
+<li>thrust vanes or anti-thrust vanes</li>
+<li>back plate fins</li>
+<li>back pressure fins</li>
+<li>cooling fins</li>
+</ul>
+<p>FanPedia also gives their purpose: the fins "reduce the thrust load on the bearings," and they "can create a negative pressure behind the impeller to draw air into the fan through the shaft hole in the housing," which "helps reduce the possibility of leakage of the airstream to atmosphere" (FanPedia PDF pp. 126, 184). Thrust load is the push along the shaft's axis that the bearings must resist. Back plate fins therefore show up when bearing life or airstream leakage around the shaft is a concern.</p>
+<h3 id="impeller-hub">Impeller Hub<a class="headerlink" href="#impeller-hub" title="Permanent link">&para;</a></h3>
+<p>The <strong>impeller hub</strong> is the thick central piece that connects the impeller to the shaft. Its bore, the hole through its center, fits the shaft, and the hub transmits the motor's torque into the blades. On a centrifugal impeller the hub is fastened to the back plate; on an axial impeller the hub is the center body that the blades attach to. FanPedia's axial overview (FanPedia PDF p. 35) names five axial parts: the blade, the blade tip, the hub, the hub boss (the raised center of the hub that holds the bore), and, on adjustable pitch impellers, the shank, which is the root of a blade that fits into the hub.</p>
+<h4 id="worked-example-reading-a-hub-callout-on-a-replacement-order">Worked Example: Reading a Hub Callout on a Replacement Order<a class="headerlink" href="#worked-example-reading-a-hub-callout-on-a-replacement-order" title="Permanent link">&para;</a></h4>
+<p>A plant sends a purchase order for "one replacement impeller, same as existing," with a photo of the old wheel. Before it can be quoted, the hub has to be described. You work through it like this:</p>
+<ol>
+<li><strong>What fastens the hub to the shaft?</strong> The photo shows set screws on the side of the hub and a keyway in the bore. That is a straight bore hub (defined later in this chapter).</li>
+<li><strong>What size is the bore?</strong> A straight bore must match the shaft diameter, so you need the shaft size from the nameplate data or the original order. The photo cannot give it.</li>
+<li><strong>Is it centrifugal or axial?</strong> A back plate and front plate are visible, so it is centrifugal, and the hub sits on the back plate.</li>
+<li><strong>Anything attached to the back plate?</strong> The photo shows short vanes on the back of the back plate, so the replacement must also have back plate fins.</li>
+</ol>
+<p>The order now names the hub type, the bore, and the fins instead of "same as existing." That is the habit to build: name each part, and an order can be checked.</p>
+<p>Before moving on, the table below collects the parts you have just read about.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Where it is</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blade</td>
+<td>Around the axis, between plates (centrifugal) or on the hub (axial)</td>
+<td>Pushes on the air</td>
+</tr>
+<tr>
+<td>Blade leading edge</td>
+<td>Edge of the blade that meets the incoming air</td>
+<td>Faces the intake; shows mounting direction</td>
+</tr>
+<tr>
+<td>Back plate</td>
+<td>Closed side of a centrifugal impeller</td>
+<td>Carries blades to the hub; closes the air passage</td>
+</tr>
+<tr>
+<td>Shroud (front plate)</td>
+<td>Inlet side of a centrifugal impeller</td>
+<td>Guides air outward; closes the blade passages</td>
+</tr>
+<tr>
+<td>Back plate fins</td>
+<td>Outside of the back plate</td>
+<td>Reduce bearing thrust; help limit shaft-hole leakage</td>
+</tr>
+<tr>
+<td>Hub</td>
+<td>Center of the impeller</td>
+<td>Connects the impeller to the shaft</td>
+</tr>
+</tbody>
+</table>
+<h2 id="centrifugal-impellers">Centrifugal Impellers<a class="headerlink" href="#centrifugal-impellers" title="Permanent link">&para;</a></h2>
+<p>A <strong>centrifugal impeller</strong> draws air in along the shaft axis and throws it outward, at a right angle to the shaft, off the blade tips. Air enters through the shroud opening, turns, and is flung outward through the passages between the blades by the impeller's rotation. FanPedia's housed centrifugal fan description states the result: air is drawn in through one or both sides and "is discharged at a right angle to the fan shaft" (FanPedia PDF p. 4). In a housed fan the scroll housing collects the air leaving the blade tips and turns its velocity into useful pressure; in a plenum fan, the plenum does that job; in an inline centrifugal fan, the tubular housing turns the air back in line with the duct.</p>
+<p>FanPedia lists the centrifugal impeller types built into housed centrifugal fans: backward inclined, airfoil, backward curved, radial tip, forward curved, and radial bladed (FanPedia PDF p. 4). This chapter covers backward inclined and forward curved; the others are in <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</p>
+<p>One number connects impeller size and speed to how hard the impeller works on the air: the tip speed, the velocity of the blade tips as they travel around the circle. Higher tip speed means the blades can build more pressure, and it also means more stress in the impeller. For an impeller diameter <span class="arithmatex">\( D \)</span> in inches turning at <span class="arithmatex">\( N \)</span> revolutions per minute, the circumference in feet is <span class="arithmatex">\( \pi D / 12 \)</span>, and the tip speed is:</p>
+<div class="arithmatex">\[
+V_{tip} = \frac{\pi D N}{12}
+\]</div>
+<p>where <span class="arithmatex">\( V_{tip} \)</span> is the tip speed in feet per minute (ft/min), <span class="arithmatex">\( D \)</span> is the impeller diameter in inches, and <span class="arithmatex">\( N \)</span> is the speed in rpm.</p>
+<h4 id="worked-example-tip-speed-of-a-centrifugal-impeller">Worked Example: Tip Speed of a Centrifugal Impeller<a class="headerlink" href="#worked-example-tip-speed-of-a-centrifugal-impeller" title="Permanent link">&para;</a></h4>
+<p>A 30-inch centrifugal impeller runs at 1,200 rpm (illustrative values, not a specific catalog size).</p>
+<div class="arithmatex">\[
+V_{tip} = \frac{\pi \times 30 \times 1200}{12} = 9{,}425 \text{ ft/min}
+\]</div>
+<p>If a belt change raises the speed to 1,800 rpm, the tip speed rises in proportion to 14,137 ft/min, 50% higher. The fan laws in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> show that pressure rises with the square of speed, so this change raises the pressure the impeller can develop by a factor of <span class="arithmatex">\( 1.5^2 = 2.25 \)</span>. The impeller's structure has to be rated for that speed, which is why a speed increase is always checked against the maximum speed the current catalog allows for that fan and its construction.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Same Spin, Different Path</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+A centrifugal impeller works mostly by flinging air outward, so its pressure comes from the radius the air travels through. An axial impeller works by lifting air along the shaft, like a propeller. Once you see which way the air leaves the wheel, the housing, the arrangement, and even the drawing conventions start to make sense.</p>
+</div>
+<h3 id="single-width-single-inlet">Single Width Single Inlet<a class="headerlink" href="#single-width-single-inlet" title="Permanent link">&para;</a></h3>
+<p>A <strong>single width single inlet</strong> (SWSI) impeller takes air in through one side only. It has one back plate, one shroud, and one inlet opening, and its housing has one inlet. The alternative is the double width double inlet (DWDI) impeller, which is essentially two single-width impellers placed back to back on a common center plate, drawing air in from both sides; it is covered in <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>. FanPedia's housed centrifugal fan figure shows both (FanPedia PDF p. 4), and the arrangement pages list the SWSI arrangements separately (FanPedia PDF pp. 20–22).</p>
+<p>Because a SWSI impeller has one open side and one closed side, its shaft can come in through the closed side. That allows the impeller to hang on the end of the shaft, with no bearing on the inlet side to block the airflow.</p>
+<h4 id="worked-example-can-this-be-arrangement-4">Worked Example: Can This Be Arrangement 4?<a class="headerlink" href="#worked-example-can-this-be-arrangement-4" title="Permanent link">&para;</a></h4>
+<p>A mechanical contractor asks for "a direct-drive fan, impeller on the motor shaft, double inlet, to save space." You check it against FanPedia:</p>
+<ol>
+<li>Arrangement 4 is direct drive with the "impeller mounted to motor shaft" and appears on the SWSI arrangement pages (FanPedia PDF p. 20).</li>
+<li>A double inlet impeller takes air from both sides, so a shaft cannot end inside it with a motor on one side without blocking one inlet. FanPedia's double width, double inlet arrangement page lists only Arrangement 3 and 7 variants (3, 3DI, 3F, 7, and 7DI) (FanPedia PDF p. 23), and its orientation page shows those arrangements with the impeller between two bearings (FanPedia PDF p. 30).</li>
+<li>The request is inconsistent. You go back to the contractor with two options: an Arrangement 4 SWSI fan, or a double width fan in Arrangement 3 or 7.</li>
+</ol>
+<p>The words "single width single inlet" carry a real constraint on arrangement, so they belong on every centrifugal order.</p>
+<h3 id="impeller-orientation">Impeller Orientation<a class="headerlink" href="#impeller-orientation" title="Permanent link">&para;</a></h3>
+<p><strong>Impeller orientation</strong> describes where the impeller sits on the shaft relative to the bearings. FanPedia names two orientations for centrifugal fans (FanPedia PDF p. 30):</p>
+<ul>
+<li><strong>Overhung impeller</strong>: the impeller is mounted on the end of the shaft, outboard of the bearings. FanPedia lists Arrangements 1, 8, 9, and 10, and Arrangement 4, where the impeller hangs on the motor shaft.</li>
+<li><strong>Center hung impeller</strong>: the impeller is mounted between the bearings. FanPedia lists Arrangement 3 and Arrangement 7, single and double width.</li>
+</ul>
+<p>Orientation matters for the order because it fixes which arrangements are possible and where the bearings sit relative to the airstream. <a href="../11-drives-and-standard-fan-arrangements/">Chapter 11</a> develops the arrangements in full.</p>
+<h3 id="backward-inclined-impeller">Backward Inclined Impeller<a class="headerlink" href="#backward-inclined-impeller" title="Permanent link">&para;</a></h3>
+<p>A <strong>backward inclined impeller</strong> has flat, single-thickness blades tilted backward, so each blade's outer end trails behind its inner end as the impeller turns. FanPedia's caption reads "impeller with flat, single thickness, backward inclined blades" (FanPedia PDF p. 31). Its close relatives are the backward curved impeller, whose single-thickness blades are curved backward, and the airfoil impeller, whose backward inclined blades have a hollow airfoil section; both are in <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</p>
+<p>Backward inclined impellers are widely used for general ventilation and clean or lightly dusty air because they combine good efficiency with a useful property called a <strong>non-overloading</strong> power curve. On a fan curve, which <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> covers in detail, the brake horsepower of a backward inclined fan at a fixed speed rises to a peak and then falls as airflow keeps increasing. A motor sized for that peak cannot be overloaded at that speed, wherever the fan ends up operating on its curve.</p>
+<h4 id="worked-example-will-the-motor-overload">Worked Example: Will the Motor Overload?<a class="headerlink" href="#worked-example-will-the-motor-overload" title="Permanent link">&para;</a></h4>
+<p>A rooftop filtered supply unit is being selected for a building whose duct system is still being designed. The engineer worries that the real duct resistance may be lower than calculated, which would push the fan to more airflow than planned. FanPedia notes that filtered units use either forward curved or backward inclined impellers (FanPedia PDF p. 4). Which is safer here?</p>
+<ol>
+<li>Lower system resistance moves the operating point to the right on the fan curve, toward more airflow.</li>
+<li>With a backward inclined impeller, power peaks and then falls toward higher airflow, so a motor sized for the peak power at the selected speed covers this case.</li>
+<li>With a forward curved impeller, power keeps rising with airflow (next section), so the same shift can overload a motor that was sized only for the design point.</li>
+<li>When the system resistance is uncertain, the backward inclined unit, or a forward curved unit with a motor sized for the highest airflow it could reach, protects the motor.</li>
+</ol>
+<h3 id="forward-curved-impeller">Forward Curved Impeller<a class="headerlink" href="#forward-curved-impeller" title="Permanent link">&para;</a></h3>
+<p>A <strong>forward curved impeller</strong> has many short, shallow blades that curve forward, so their tips point in the direction of rotation. FanPedia's caption is "impeller with single thickness, forward curved blades," and its drawing shows the end ring and tie rods that hold the narrow blades in place (FanPedia PDF p. 31). The forward curve throws air off the tips at high velocity, so a forward curved impeller moves a given airflow at a lower speed and in a smaller size than a backward inclined impeller, which suits compact, low-pressure equipment. The trade-offs are lower efficiency, a power curve that keeps rising with airflow (an <strong>overloading</strong> curve), and shallow blade pockets that collect dust, so forward curved impellers belong in clean air.</p>
+<h3 id="mixed-flow-impeller">Mixed Flow Impeller<a class="headerlink" href="#mixed-flow-impeller" title="Permanent link">&para;</a></h3>
+<p>A <strong>mixed flow impeller</strong> is a hybrid of axial and centrifugal designs: air leaves it partly along the shaft and partly outward. FanPedia calls it a "hybrid axial-centrifugal impeller design" used in mixed flow fans with tubular housings (FanPedia PDF p. 6), and describes its shape: "airfoil blades taper from impeller front plate to hub end resulting in a larger tip width" (FanPedia PDF p. 32). Because the air turns only partway, a mixed flow fan can sit in a straight duct like an axial fan while developing more pressure than a comparable axial impeller.</p>
+<p>Now that the centrifugal family and the mixed flow hybrid have been described, the comparison below summarizes them.</p>
+<table>
+<thead>
+<tr>
+<th>Impeller</th>
+<th>Blade shape (FanPedia caption)</th>
+<th>Air leaves</th>
+<th>Power curve</th>
+<th>Best airstream</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backward inclined</td>
+<td>Flat, single thickness, tilted backward</td>
+<td>Outward, at a right angle to the shaft</td>
+<td>Non-overloading</td>
+<td>Clean to lightly dusty</td>
+</tr>
+<tr>
+<td>Forward curved</td>
+<td>Single thickness, curved forward; many short blades</td>
+<td>Outward, at a right angle to the shaft</td>
+<td>Overloading</td>
+<td>Clean</td>
+</tr>
+<tr>
+<td>Mixed flow</td>
+<td>Airfoil blades tapering from front plate to hub, larger tip width</td>
+<td>Partly along the shaft, partly outward</td>
+<td>Depends on design; see the catalog</td>
+<td>Clean</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Do Not Judge a Wheel by Its Width</p>
+<p><img alt="Breeze with a caution sign" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is calling any wheel with many narrow blades "forward curved" without checking which way the blades curve against the rotation. Before you write the impeller type on an order, find the rotation arrow and confirm the blade tips point with it (forward curved) or trail it (backward inclined).</p>
+</div>
+<h2 id="axial-impellers">Axial Impellers<a class="headerlink" href="#axial-impellers" title="Permanent link">&para;</a></h2>
+<p>An <strong>axial impeller</strong> moves air parallel to the shaft. Its blades are attached to a central hub and, as the impeller turns, the concave side of each blade "cups the air and pushes it away from the impeller" (FanPedia PDF p. 37). Air enters at the blades' leading edges and leaves straight through, so an axial fan can sit in a duct with no change of direction. Axial impellers are used in tubeaxial and vaneaxial fans, roof mounted axial fans, and panel fans; FanPedia notes that inline centrifugal fans can share the same arrangements but use different impellers (FanPedia PDF p. 28).</p>
+<p>FanPedia lays out three steps for configuring an axial fan (FanPedia PDF p. 36):</p>
+<ol>
+<li>Select the model and impeller type, for example "Model TCTA with 'TCTA' impeller."</li>
+<li>Choose the airflow direction: air through the impeller then over the motor (airflow = PM), or air over the motor then through the impeller (airflow = MP).</li>
+<li>Determine the rotation the impeller needs to produce that airflow direction.</li>
+</ol>
+<p>FanPedia adds two notes to every axial airflow page: airflow direction and rotation "must be correct for the fan to operate at 100% performance," and if the impeller rotates in the wrong direction, "you will not get any airflow in the proper direction" (FanPedia PDF pp. 37–40). For axial fans, rotation is determined by viewing the impeller from the discharge side of the fan.</p>
+<h3 id="fixed-pitch-and-adjustable-pitch-impellers">Fixed Pitch and Adjustable Pitch Impellers<a class="headerlink" href="#fixed-pitch-and-adjustable-pitch-impellers" title="Permanent link">&para;</a></h3>
+<p>The <strong>pitch</strong> of an axial blade is its angle relative to the plane of rotation. A steeper pitch takes a bigger bite of air per revolution.</p>
+<p>A <strong>fixed pitch impeller</strong> has its blades set at one angle that cannot be changed. FanPedia shows fixed pitch impellers as cast or fabricated (FanPedia PDF p. 35); its axial type pages mark the "TCTS," "TCTA," "Z Series," and "L Series" impellers as fixed (FanPedia PDF p. 34).</p>
+<p>An <strong>adjustable pitch impeller</strong> has separate blades whose shanks are clamped into the hub, so the blade angle can be reset to a different pitch. Resetting the pitch moves the fan to a different performance curve without changing the impeller diameter or speed. FanPedia marks the "B Series," "E Series," "TCVX," "A," and "AXIAD" impellers as adjustable and the "C Series" as adjustable only (FanPedia PDF p. 33). Blade count and pitch angle are covered in more depth in <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</p>
+<h3 id="fiberglass-axial-impeller">Fiberglass Axial Impeller<a class="headerlink" href="#fiberglass-axial-impeller" title="Permanent link">&para;</a></h3>
+<p>A <strong>fiberglass axial impeller</strong> has blades, and sometimes a hub, molded from fiberglass-reinforced plastic instead of metal, which suits corrosive airstreams that would attack steel or aluminum. FanPedia shows a fiberglass group (FanPedia PDF p. 34): the "TF" and "FG7" impellers, marked fixed, and the adjustable "F4/F6" impellers with an aluminum hub and "FG4/FG6" impellers with a fiberglass hub. Whether the hub is aluminum or fiberglass is part of the impeller designation, so it has to be stated on the order.</p>
+<h4 id="worked-example-configuring-an-axial-fan">Worked Example: Configuring an Axial Fan<a class="headerlink" href="#worked-example-configuring-an-axial-fan" title="Permanent link">&para;</a></h4>
+<p>A customer needs a direct-drive tubeaxial fan to exhaust warm air from a process area, and asks how the order should describe the impeller. Following FanPedia's three steps:</p>
+<ol>
+<li><strong>Model and impeller.</strong> Suppose the selection, made from the current catalog, is a fan with a fixed pitch cast impeller. (The model is not the point of this example.)</li>
+<li><strong>Airflow direction.</strong> With airflow = PM, air passes through the impeller and then over the motor. With airflow = MP, air passes over the motor first. In a direct-drive axial fan the motor is in the airstream either way; when that is a problem, a belt-driven arrangement is the answer, which <a href="../11-drives-and-standard-fan-arrangements/">Chapter 11</a> covers. Here the customer chooses MP to match an existing duct layout.</li>
+<li><strong>Rotation.</strong> Rotation is read from the discharge side. The rotation must match the impeller hand (left hand or right hand), because FanPedia shows both left hand and right hand fixed and adjustable impellers (FanPedia PDF pp. 42–43). A right hand impeller is ordered with right hand rotation.</li>
+</ol>
+<p>The finished line on the order states the impeller, the airflow direction (MP), and the rotation, and the next section shows how MP also fixes the hub position.</p>
+<h3 id="hub-on-intake-side-and-hub-on-discharge-side">Hub on Intake Side and Hub on Discharge Side<a class="headerlink" href="#hub-on-intake-side-and-hub-on-discharge-side" title="Permanent link">&para;</a></h3>
+<p>FanPedia gives each airflow direction an alternative name based on where the hub's boss faces (FanPedia PDF pp. 36–40):</p>
+<ul>
+<li><strong>Hub on intake side</strong>: airflow = PM, air through the impeller then over the motor. The hub faces the incoming air.</li>
+<li><strong>Hub on discharge side</strong>: airflow = MP, air over the motor then through the impeller. The hub faces the leaving air.</li>
+</ul>
+<p>The hub bore follows the same choice. On FanPedia's left hand and right hand pages, a <strong>standard bore hub</strong> goes with MP airflow and a <strong>reverse bore hub</strong> goes with PM airflow, for both adjustable and fixed cast impellers (FanPedia PDF pp. 42–43). In other words, "MP," "hub on discharge," and "standard bore hub" all describe the same build, and "PM," "hub on intake," and "reverse bore hub" describe the other.</p>
+<table>
+<thead>
+<tr>
+<th>Airflow code</th>
+<th>Air path</th>
+<th>Also called</th>
+<th>Hub bore (FanPedia pp. 42–43)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PM</td>
+<td>Through impeller, then over motor</td>
+<td>Hub on intake</td>
+<td>Reverse bore hub</td>
+</tr>
+<tr>
+<td>MP</td>
+<td>Over motor, then through impeller</td>
+<td>Hub on discharge</td>
+<td>Standard bore hub</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">One Letter Order, Three Answers</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Read the airflow code left to right as the air's path; FanPedia capitalizes the P in "imPeller" to make the point, so PM means impeller first, then motor. If the impeller comes first, the hub faces the intake and the bore is reversed; if the motor comes first, the hub faces the discharge and the bore is standard.</p>
+</div>
+<h3 id="reversible-impeller">Reversible Impeller<a class="headerlink" href="#reversible-impeller" title="Permanent link">&para;</a></h3>
+<p>A <strong>reversible impeller</strong> is an axial impeller designed to move air in either direction along the shaft. FanPedia shows one reversible impeller in two modes (FanPedia PDF p. 41): <strong>standard flow</strong>, with airflow = MP and the hub on the discharge side, and <strong>reverse flow</strong>, with airflow = PM and the hub on the intake side. In both modes, air is drawn in at the blades' leading edge for that flow direction. FanPedia labels the rotation the same in both modes; since rotation is always viewed from the discharge side and the discharge switches ends when the flow reverses, the motor's actual direction of turning reverses with the flow. Reversible impellers are used where a single fan must both supply and exhaust, such as a space that is ventilated in one direction during some operations and the other direction at other times.</p>
+<h4 id="diagram-axial-airflow-and-hub-position-configurator">Diagram: Axial Airflow and Hub Position Configurator<a class="headerlink" href="#diagram-axial-airflow-and-hub-position-configurator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Axial Airflow and Hub Position Configurator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch08-axial-airflow-hub-configurator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply FanPedia's axial airflow rules to state the hub position and hub bore for an axial fan order, given its airflow code or air path, with at least 7 of 8 orders correct.</p>
+<p><strong>Prerequisites:</strong> axial impeller, blade leading edge, airflow = PM, airflow = MP, hub on intake side, hub on discharge side, standard bore hub, reverse bore hub, reversible impeller, rotation viewed from the discharge side (all defined in the section "Axial Impellers" above).</p>
+<p><strong>Evidence of Mastery:</strong> For each of 8 orders the learner commits two answers before the fan is animated: hub position (intake side or discharge side) and hub bore (standard bore or reverse bore). An order is correct when both answers match the answer table. Mastery is 7 of 8 orders correct on the first attempt. Running the free model is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) "Hub on intake" means the motor is on the intake side. (2) PM and MP are rotation codes rather than airflow codes. (3) A reversible impeller has a fixed hub position. (4) Running an axial impeller backward simply gives less airflow in the same direction.</p>
+<p><strong>Instructional Rationale:</strong> Applying a rule set to new orders, with a committed answer checked against the rule, is the Apply-level evidence; animating the air path only after the answer lets the learner see why the rule holds.</p>
+<p><strong>Content:</strong></p>
+<p>A side view of a direct-drive axial fan: tubular housing, motor, impeller with hub and blades, and labels "Intake" and "Discharge" that move with the airflow direction. The free model has two settings: airflow code (PM or MP) and rotation (correct for the impeller, or reversed).</p>
+<p>The 8 orders, in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Order text shown</th>
+<th>Hub position</th>
+<th>Hub bore</th>
+<th>Why (feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Airflow = PM, adjustable pitch</td>
+<td>Intake side</td>
+<td>Reverse bore</td>
+<td>PM is air through the impeller then over the motor, also called hub on intake, built with a reverse bore hub.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Airflow = MP, fixed pitch cast</td>
+<td>Discharge side</td>
+<td>Standard bore</td>
+<td>MP is air over the motor then through the impeller, also called hub on discharge, built with a standard bore hub.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Air passes over the motor first, then through the impeller</td>
+<td>Discharge side</td>
+<td>Standard bore</td>
+<td>Motor first is MP, which is hub on discharge with a standard bore hub.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Air passes through the impeller first, then over the motor</td>
+<td>Intake side</td>
+<td>Reverse bore</td>
+<td>Impeller first is PM, which is hub on intake with a reverse bore hub.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Reversible impeller, standard flow</td>
+<td>Discharge side</td>
+<td>Standard bore</td>
+<td>FanPedia shows standard flow as MP, hub on discharge.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Reversible impeller, reverse flow</td>
+<td>Intake side</td>
+<td>Reverse bore</td>
+<td>FanPedia shows reverse flow as PM, hub on intake.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Right hand adjustable pitch impeller, airflow = MP</td>
+<td>Discharge side</td>
+<td>Standard bore</td>
+<td>Impeller hand does not change the rule: MP is a standard bore hub on the discharge side.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Left hand fixed cast impeller, airflow = PM</td>
+<td>Intake side</td>
+<td>Reverse bore</td>
+<td>Impeller hand does not change the rule: PM is a reverse bore hub on the intake side.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Airflow codes, "aka" names, leading-edge statement and rotation viewing side from FanPedia PDF pp. 36–40; reversible impeller modes from FanPedia PDF p. 41; standard bore with MP and reverse bore with PM for left hand and right hand, adjustable and fixed cast impellers from FanPedia PDF pp. 42–43; wrong-rotation note from FanPedia PDF pp. 37–40.</p>
+<p><strong>Rules:</strong> PM gives hub on intake side and reverse bore hub. MP gives hub on discharge side and standard bore hub. Impeller hand (left or right) and pitch type (fixed or adjustable) do not change hub position or bore. Reversible impeller: standard flow = MP, reverse flow = PM. In the free model, correct rotation shows air entering at the leading edges and leaving at the discharge; reversed rotation shows no airflow in the intended direction, with the message "Wrong rotation: no airflow in the proper direction (FanPedia note 2)." The rotation is always labeled as viewed from the discharge side.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads an order and chooses a hub position and a hub bore, then presses Check.</li>
+<li>The fan is drawn with the hub on the correct side and animated with air moving in the order's direction, intake to discharge.</li>
+<li>Feedback appears; the learner moves to the next order.</li>
+<li>After order 8, the free model unlocks. The learner switches between PM and MP and watches the hub and the intake and discharge labels move, then reverses the rotation and sees the airflow stop in the intended direction.</li>
+</ol>
+<p><strong>Feedback:</strong> 8 orders, fixed order, one attempt each. Correct (both answers right): "Correct." followed by the Why text. Incorrect (either answer wrong): "Not quite." followed by the correct hub position and bore and the Why text. A running count "Orders correct: n of 8" is shown. No retry of scored items; the learner can restart the whole set.</p>
+<p><strong>Starting State:</strong> Order 1 is shown with the fan drawn without its hub, and the question "Which side does the hub face, and which hub bore does this build use?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that PM is hub on intake with a reverse bore hub, MP is hub on discharge with a standard bore hub, reversible standard flow is MP and reverse flow is PM, rotation is viewed from the discharge side, and wrong rotation gives no airflow in the proper direction. Mastery is 7 of 8.</p>
+</details>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Two Codes, Many Names</p>
+<p><img alt="Breeze encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If PM, MP, hub on intake, hub on discharge, standard bore, and reverse bore feel like six things to memorize, most people feel the same on first pass. There are really only two builds with three names each, so learn the air path for one of them and the other is just its opposite; the configurator above lets you test that before it goes on an order.</p>
+</div>
+<h2 id="hub-types">Hub Types<a class="headerlink" href="#hub-types" title="Permanent link">&para;</a></h2>
+<p>The hub's bore has to grip the shaft tightly enough to carry full motor torque and stay put under vibration, and it must also come off when the impeller or shaft needs service. FanPedia shows two common ways to do this, for both centrifugal and axial impellers (FanPedia PDF pp. 44–45). A third, the Trantorque hub, is in <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</p>
+<h3 id="straight-bore-hub">Straight Bore Hub<a class="headerlink" href="#straight-bore-hub" title="Permanent link">&para;</a></h3>
+<p>In a <strong>straight bore hub</strong>, "the bore of the hub is straight through. Shafts are keyed and mounted to the hub" (FanPedia PDF p. 45). A key, a small square bar, sits half in a keyway in the shaft and half in a matching keyway in the hub, so it carries the torque. On centrifugal impellers, set screws through the hub press on the key and shaft to stop the hub sliding along the shaft. On axial impellers FanPedia shows two versions: with key and set screws, and with key, retaining washer, and bolt at the shaft end (FanPedia PDF p. 44). A straight bore has to be machined to suit one shaft diameter.</p>
+<h3 id="taper-lock-hub">Taper Lock Hub<a class="headerlink" href="#taper-lock-hub" title="Permanent link">&para;</a></h3>
+<p>In a <strong>taper lock hub</strong>, "the hub bore is tapered with respect to the fan shaft. The hub is locked to the shaft using a tapered bushing" (FanPedia PDF p. 45). The bushing has a straight bore that fits the shaft and a tapered outside that fits the hub. Tightening the bushing's screws draws it into the tapered hub, which squeezes the bushing onto the shaft for a tight clamping fit along its whole length. Loosening the screws, and using the bushing's removal holes, releases it. FanPedia's axial version is shown "with key and hardware" (FanPedia PDF p. 44).</p>
+<h4 id="worked-example-choosing-between-two-hubs">Worked Example: Choosing Between Two Hubs<a class="headerlink" href="#worked-example-choosing-between-two-hubs" title="Permanent link">&para;</a></h4>
+<p>A plant engineer replaces impellers every few years because of wear and wants the change-outs to be quick. The current impeller has a straight bore hub that has seized to the shaft twice. Compare the two hub types for this customer:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Straight bore hub</th>
+<th>Taper lock hub</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How is torque carried?</td>
+<td>Key in matching keyways</td>
+<td>Clamping fit of the bushing, with a key</td>
+</tr>
+<tr>
+<td>How is it held in place along the shaft?</td>
+<td>Set screws (or washer and bolt on axial)</td>
+<td>The bushing's grip on the shaft</td>
+</tr>
+<tr>
+<td>What does removal require?</td>
+<td>Pulling the hub off a close-fitting bore</td>
+<td>Loosening the bushing screws to release the taper</td>
+</tr>
+<tr>
+<td>Does the hub bore have to match the shaft?</td>
+<td>Yes, machined to one shaft diameter</td>
+<td>The bushing's bore matches the shaft</td>
+</tr>
+</tbody>
+</table>
+<p>For this customer, the taper lock hub answers the stated problem: the taper releases the grip when the screws are backed out, so change-outs do not depend on forcing a close-fitting bore off the shaft. The hub type then goes on the replacement order along with the shaft diameter. Confirm in the current catalog that the impeller is offered with that hub.</p>
+<h2 id="impeller-balancing">Impeller Balancing<a class="headerlink" href="#impeller-balancing" title="Permanent link">&para;</a></h2>
+<p>An impeller is never perfectly symmetric. Slight differences in plate thickness, weld beads, and blade position leave more mass on one side of the axis than the other. When the impeller spins, that off-center mass is pulled outward and the whole rotor is pushed around in a circle once per revolution, which the bearings, shaft, and structure feel as vibration. <strong>Impeller balancing</strong> is the process of measuring that unbalance, usually by spinning the impeller on a balancing machine, and correcting it by adding or removing small weights until what is left, the residual unbalance, is within an allowed limit. Detailed balancing procedures are outside the scope of this course; what an application or sales engineer needs is why it matters and how the limit is set.</p>
+<p>The force from a given unbalance grows with the square of speed. For a residual unbalance <span class="arithmatex">\( U \)</span> in ounce-inches turning at <span class="arithmatex">\( N \)</span> rpm, the rotating force is approximately:</p>
+<div class="arithmatex">\[
+F \approx 1.77 \, U \left( \frac{N}{1000} \right)^2
+\]</div>
+<p>where <span class="arithmatex">\( F \)</span> is the force in pounds-force (lbf), <span class="arithmatex">\( U \)</span> is the unbalance (the unbalance mass in ounces multiplied by its distance from the axis in inches), and <span class="arithmatex">\( N \)</span> is the speed in rpm.</p>
+<p>The allowed residual unbalance is set by a <strong>balance quality grade</strong>, <span class="arithmatex">\( G \)</span>, from the international balancing standard ISO 21940-11 (formerly ISO 1940-1). The grade is a speed in millimeters per second; a smaller grade is tighter balance. The fan industry standard AMCA 204 assigns balance grades by fan application category, with grades such as G6.3 and G2.5 common for industrial fans. For an impeller weighing <span class="arithmatex">\( W \)</span> pounds running at a maximum service speed of <span class="arithmatex">\( N \)</span> rpm, the permissible residual unbalance is:</p>
+<div class="arithmatex">\[
+U_{per} = \frac{6.015 \, G \, W}{N}
+\]</div>
+<p>where <span class="arithmatex">\( U_{per} \)</span> is the permissible residual unbalance in ounce-inches, <span class="arithmatex">\( G \)</span> is the balance grade in mm/s, <span class="arithmatex">\( W \)</span> is the impeller weight in pounds, and <span class="arithmatex">\( N \)</span> is the speed in rpm.</p>
+<h4 id="worked-example-how-much-unbalance-is-allowed">Worked Example: How Much Unbalance Is Allowed?<a class="headerlink" href="#worked-example-how-much-unbalance-is-allowed" title="Permanent link">&para;</a></h4>
+<p>A 200 lb impeller runs at 1,200 rpm and is balanced to grade G6.3 (illustrative values; the grade for a real fan comes from the specification or catalog).</p>
+<ol>
+<li>Permissible residual unbalance: <span class="arithmatex">\( U_{per} = 6.015 \times 6.3 \times 200 / 1200 = 6.32 \)</span> oz·in.</li>
+<li>If the balancer corrects at a radius of 15 in, the largest uncorrected mass allowed there is <span class="arithmatex">\( 6.32 / 15 = 0.42 \)</span> oz, less than half an ounce on a 200 lb wheel.</li>
+<li>At G2.5 the limit drops to <span class="arithmatex">\( 2.51 \)</span> oz·in, or <span class="arithmatex">\( 0.17 \)</span> oz at 15 in.</li>
+<li>The force from the G6.3 limit at 1,200 rpm is <span class="arithmatex">\( 1.77 \times 6.32 \times 1.2^2 \approx 16 \)</span> lbf. Run the same impeller at 1,800 rpm and the force is about 36 lbf; at 2,400 rpm, twice the speed, about 65 lbf, four times as much.</li>
+</ol>
+<p>That last step is the practical lesson: an impeller balanced for one speed is not automatically acceptable at a higher one, which is one more reason a speed increase is checked against the catalog before it is made.</p>
+<h4 id="diagram-impeller-balance-calculator">Diagram: Impeller Balance Calculator<a class="headerlink" href="#diagram-impeller-balance-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Impeller Balance Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch08-impeller-balance-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the permissible residual unbalance and the matching correction mass for an impeller from its weight, speed, balance grade and correction radius, to within 2% of the model value.</p>
+<p><strong>Prerequisites:</strong> impeller balancing, residual unbalance, balance quality grade G, ounce-inch, correction radius (all defined in the section "Impeller Balancing" above).</p>
+<p><strong>Evidence of Mastery:</strong> For three challenge impellers the learner types the permissible residual unbalance (oz·in) and the correction mass (oz) before the answer is shown. A value is correct when it is within ±2% of the model value. Mastery is 3 of 3 challenges with both values correct. Moving the free-exploration controls is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A heavier impeller is allowed less unbalance (it is allowed more, in proportion to weight). (2) Force from unbalance grows in proportion to speed (it grows with the square of speed). (3) A larger grade number means tighter balance (it means looser balance).</p>
+<p><strong>Instructional Rationale:</strong> Calculation at the Apply level needs practice with a committed, checked number; the free model afterward lets the learner see the speed-squared force growth that the misconceptions get wrong.</p>
+<p><strong>Content:</strong></p>
+<p>Adjustable quantities in free exploration:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Impeller weight W</td>
+<td>20</td>
+<td>2000</td>
+<td>10</td>
+<td>200</td>
+<td>lb</td>
+</tr>
+<tr>
+<td>Maximum service speed N</td>
+<td>300</td>
+<td>3600</td>
+<td>50</td>
+<td>1200</td>
+<td>rpm</td>
+</tr>
+<tr>
+<td>Correction radius r</td>
+<td>4</td>
+<td>40</td>
+<td>1</td>
+<td>15</td>
+<td>in</td>
+</tr>
+</tbody>
+</table>
+<p>Balance grade G choices: G16, G6.3, G2.5, G1.0. Default G6.3.</p>
+<p>Displayed results: permissible residual unbalance U (oz·in, two decimals), correction mass m (oz, two decimals), rotating force F at the selected speed (lbf, whole number), and a line showing F at half and at double the selected speed when those speeds lie within 300–3600 rpm.</p>
+<p>Challenge impellers, in this order (all illustrative):</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>W (lb)</th>
+<th>N (rpm)</th>
+<th>G</th>
+<th>r (in)</th>
+<th>U (oz·in)</th>
+<th>m (oz)</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>200</td>
+<td>1200</td>
+<td>G6.3</td>
+<td>15</td>
+<td>6.32</td>
+<td>0.42</td>
+<td>U = 6.015 × 6.3 × 200 / 1200 = 6.32 oz·in; m = 6.32 / 15 = 0.42 oz.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>200</td>
+<td>1200</td>
+<td>G2.5</td>
+<td>15</td>
+<td>2.51</td>
+<td>0.17</td>
+<td>A tighter grade lowers the limit: U = 6.015 × 2.5 × 200 / 1200 = 2.51 oz·in; m = 2.51 / 15 = 0.17 oz.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>600</td>
+<td>1800</td>
+<td>G6.3</td>
+<td>20</td>
+<td>12.63</td>
+<td>0.63</td>
+<td>U = 6.015 × 6.3 × 600 / 1800 = 12.63 oz·in; m = 12.63 / 20 = 0.63 oz.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Formulas from the chapter section "Impeller Balancing": U = 6.015 G W / N (ISO 21940-11 permissible residual unbalance converted to US units) and F ≈ 1.77 U (N/1000)². Grade choices are ISO balance quality grades. All weights, speeds and radii are illustrative and the sim labels them "illustrative".</p>
+<p><strong>Rules:</strong> U = 6.015 × G × W / N, with G in mm/s, W in lb, N in rpm, U in oz·in. m = U / r. F = 1.77 × U × (N/1000)². Speed N is the speed used for both U and F. Values are rounded only for display. Answers are judged within ±2% of the unrounded model value.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1 and types U and m.</li>
+<li>The learner presses Check. The model values and the worked calculation appear next to the learner's answers.</li>
+<li>After the three challenges, free exploration unlocks: the learner changes W, N, G and r, and U, m and F update at once.</li>
+<li>The learner doubles N from 1200 to 2400 rpm with U held by the grade, and notices that F becomes four times larger while U halves.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct (both values within ±2%): "Correct: U = <value> oz·in, m = <value> oz." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model values and calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 with empty answer boxes and the question "How much unbalance may this 200 lb impeller keep at 1,200 rpm and grade G6.3?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter's worked example uses W = 200 lb, N = 1,200 rpm, G6.3, r = 15 in and gets U = 6.32 oz·in and m = 0.42 oz; G2.5 gives 2.51 oz·in and 0.17 oz; F is about 16 lbf at 1,200 rpm, about 36 lbf at 1,800 rpm and about 65 lbf at 2,400 rpm.</p>
+</details>
+<h2 id="identifying-an-impeller-type">Identifying an Impeller Type<a class="headerlink" href="#identifying-an-impeller-type" title="Permanent link">&para;</a></h2>
+<p>You now have the vocabulary to name an impeller from what you can see. The decision runs in a fixed order: first the air path (outward, straight through, or partway), then for centrifugal impellers the blade shape against rotation and the number of inlets, and for axial impellers the pitch type, material, and hub position. The classifier below gives you practice on descriptions like the ones you will meet in field photos and catalog pages.</p>
+<h4 id="diagram-impeller-type-classifier">Diagram: Impeller Type Classifier<a class="headerlink" href="#diagram-impeller-type-classifier" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Impeller Type Classifier</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch08-impeller-type-classifier<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify written descriptions of impellers into the impeller types named in this chapter, with at least 8 of 10 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> centrifugal impeller, axial impeller, mixed flow impeller, backward inclined impeller, forward curved impeller, single width single inlet, fixed pitch impeller, adjustable pitch impeller, fiberglass axial impeller, reversible impeller (all defined in this chapter above this block).</p>
+<p><strong>Evidence of Mastery:</strong> The learner sorts each of 10 description cards into one of six bins before any feedback is shown for that card. A card is correct when its bin matches the answer column. Mastery is 8 of 10 on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Many narrow blades always means forward curved. (2) Any impeller in a tubular housing is axial. (3) Adjustable pitch means the blades can be changed while the fan runs. (4) Fiberglass impellers are always fixed pitch.</p>
+<p><strong>Instructional Rationale:</strong> Classifying new descriptions requires the learner to apply the defining features of each type rather than recall a picture, and asking for a prediction before feedback makes the learner commit to a reason.</p>
+<p><strong>Content:</strong></p>
+<p>Bins: Backward inclined (centrifugal); Forward curved (centrifugal); Mixed flow; Axial, fixed pitch; Axial, adjustable pitch; Axial, reversible.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Card text</th>
+<th>Correct bin</th>
+<th>Why (feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Flat, single-thickness blades whose tips trail the direction of rotation; air leaves at a right angle to the shaft</td>
+<td>Backward inclined (centrifugal)</td>
+<td>Flat blades tilted backward against rotation define backward inclined.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Many short, shallow blades curved so their tips point in the direction of rotation, held by an end ring and tie rods</td>
+<td>Forward curved (centrifugal)</td>
+<td>Tips pointing with rotation, plus end ring and tie rods, define forward curved.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Airfoil blades that taper from the front plate to the hub end, giving a larger tip width; air leaves partly along the shaft</td>
+<td>Mixed flow</td>
+<td>A tapered blade with partly axial discharge is the hybrid axial-centrifugal impeller.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cast impeller with blades formed at one angle that cannot be changed</td>
+<td>Axial, fixed pitch</td>
+<td>Cast or fabricated blades at one angle are fixed pitch.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Separate blades whose shanks clamp into the hub so the blade angle can be reset</td>
+<td>Axial, adjustable pitch</td>
+<td>Clamped shanks allow the pitch to be reset.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>One axial impeller shown in two modes: standard flow MP and reverse flow PM</td>
+<td>Axial, reversible</td>
+<td>An impeller built to move air either way along the shaft is reversible.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fiberglass blades on an aluminum hub, sold as the "F4/F6" impeller</td>
+<td>Axial, adjustable pitch</td>
+<td>FanPedia marks F4/F6 and FG4/FG6 as adjustable; fiberglass does not mean fixed.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Fiberglass "TF" impeller with molded blades</td>
+<td>Axial, fixed pitch</td>
+<td>FanPedia marks the TF impeller as fixed.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>A single width single inlet wheel with backward-tilted flat blades in an inline (tubular) centrifugal fan</td>
+<td>Backward inclined (centrifugal)</td>
+<td>Air still leaves the wheel outward; the tubular housing turns it back in line, so the impeller is centrifugal.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>"TCTA" impeller, as listed in FanPedia's axial impeller types</td>
+<td>Axial, fixed pitch</td>
+<td>FanPedia marks the TCTA impeller as fixed.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Centrifugal captions from FanPedia PDF p. 31; mixed flow caption from FanPedia PDF p. 32 and hybrid description from p. 6; fixed and adjustable markings from FanPedia PDF pp. 33–34; fixed pitch "cast or fabricated" from p. 35; reversible modes from p. 41.</p>
+<p><strong>Rules:</strong> Each card has exactly one correct bin, given in the table. Cards are judged on the first placement only for the score.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>A card appears; the learner drags or assigns it to one bin.</li>
+<li>The card is marked correct or incorrect and the Why text is shown.</li>
+<li>Incorrectly placed cards return to a review pile that the learner can redo after card 10.</li>
+</ol>
+<p><strong>Feedback:</strong> 10 cards in shuffled order, one scored attempt each. Correct: "Correct: <bin>." plus the Why text. Incorrect: "This one is <correct bin>." plus the Why text. Score "n of 10" shown at the end; the review pile does not change the score.</p>
+<p><strong>Starting State:</strong> Six empty bins and the first card, with the prompt "Where does the air go, and what do the blades look like?"</p>
+<p><strong>Chapter Anchors:</strong> Mastery is 8 of 10. The chapter states that TCTA, TF and FG7 are fixed, F4/F6 and FG4/FG6 are adjustable, and reversible standard flow is MP and reverse flow is PM.</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The <strong>impeller</strong> is the only part of a fan that adds energy to the air; its <strong>blades</strong> push the air, and the <strong>blade leading edge</strong> meets the incoming air first.</li>
+<li>A centrifugal impeller's blades sit between a <strong>back plate</strong> and a <strong>shroud</strong> (FanPedia's impeller front plate); <strong>back plate fins</strong> on the back reduce bearing thrust and help limit leakage at the shaft hole.</li>
+<li>The <strong>hub</strong> connects the impeller to the shaft. A <strong>straight bore hub</strong> is keyed and held by set screws (or a washer and bolt); a <strong>taper lock hub</strong> clamps to the shaft through a tapered bushing.</li>
+<li>A <strong>centrifugal impeller</strong> throws air outward at a right angle to the shaft. A <strong>single width single inlet</strong> impeller takes air from one side and can be <strong>overhung</strong>; double width impellers are <strong>center hung</strong> in Arrangements 3 and 7.</li>
+<li><strong>Backward inclined</strong> impellers have flat blades tilted against rotation and a non-overloading power curve; <strong>forward curved</strong> impellers have many short blades curved with rotation, run slower and smaller, and have an overloading power curve.</li>
+<li>A <strong>mixed flow impeller</strong> is a hybrid whose airfoil blades taper from front plate to hub, sending air partly along the shaft.</li>
+<li>An <strong>axial impeller</strong> moves air parallel to the shaft, with <strong>fixed pitch</strong> (cast or fabricated) or <strong>adjustable pitch</strong> blades; <strong>fiberglass axial impellers</strong> come in both.</li>
+<li>Airflow <strong>PM</strong> is <strong>hub on intake</strong> with a reverse bore hub; airflow <strong>MP</strong> is <strong>hub on discharge</strong> with a standard bore hub. A <strong>reversible impeller</strong> runs standard flow MP and reverse flow PM. Axial rotation is viewed from the discharge side, and wrong rotation gives no airflow in the proper direction.</li>
+<li><strong>Impeller balancing</strong> limits residual unbalance to <span class="arithmatex">\( U_{per} = 6.015\,G\,W/N \)</span>; the vibration force from unbalance grows with the square of speed.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Name the Wheel</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now name every major impeller part, tell backward inclined from forward curved by the blades alone, and turn an axial airflow code into a hub position and bore. That is exactly what an impeller line on an order needs.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../07-housing-construction-and-exploded-views/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Housing Construction and Exploded Views">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7. Housing Construction and Exploded Views
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-impeller-construction-and-material-handling/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Impeller Construction and Material Handling">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9. Impeller Construction and Material Handling
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

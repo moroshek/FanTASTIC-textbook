@@ -1,0 +1,97 @@
+{
+  "title": "Fan Law Calculator",
+  "creator": "Twin City Fan (FanPedia intelligent textbook)",
+  "subject": "Fan engineering: fan laws",
+  "description": "Four fan-law challenges for new speed, BHP and static pressure, followed by free exploration of speed, diameter and density ratios applied to illustrative Curve A, with base and new fan curves, system curve, operating points and readouts.",
+  "date": "2026-10-08",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "gradeLevel": [
+      "Undergraduate",
+      "Professional Development"
+    ],
+    "subjectArea": "Engineering",
+    "topic": "Fan laws: speed, size and density changes",
+    "learningObjectives": [
+      "Solve fan-law problems for a new speed, pressure or brake horsepower after a change in speed, impeller diameter or air density, to within 2% of the model value."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "solve",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "fan laws",
+      "speed change calculation",
+      "size change calculation",
+      "fan curve",
+      "system curve",
+      "static efficiency",
+      "density correction factor"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 590
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {"type": "input", "label": "Your answer", "purpose": "Type one number for the current challenge"},
+      {"type": "button", "label": "Check", "purpose": "Check the answer (2% tolerance, two attempts)"},
+      {"type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved"},
+      {"type": "button", "label": "Reset ratios to 1.00", "purpose": "Return to Curve A during exploration"},
+      {"type": "slider", "label": "Speed ratio N2/N1", "range": "0.50-1.50", "step": 0.01, "default": 1.0},
+      {"type": "slider", "label": "Diameter ratio D2/D1", "range": "0.80-1.25", "step": 0.01, "default": 1.0},
+      {"type": "slider", "label": "Density ratio rho2/rho1", "range": "0.40-1.30", "step": 0.01, "default": 1.0}
+    ]
+  },
+  "simulation": {
+    "modelType": "Mathematical (fan laws applied point by point to a fan curve)",
+    "equations": [
+      "Q2 = Q1 x (N2/N1) x (D2/D1)^3",
+      "P2 = P1 x (N2/N1)^2 x (D2/D1)^2 x (rho2/rho1)",
+      "BHP2 = BHP1 x (N2/N1)^3 x (D2/D1)^5 x (rho2/rho1)"
+    ],
+    "assumptions": [
+      "Curve A is illustrative (Chapter 10), standard air, 1,380 RPM",
+      "Geometrically similar fans; static efficiency unchanged at corresponding points",
+      "System curve P = 4.0 x (Q/10,000)^2 with no fixed pressure component, scaled by density ratio"
+    ],
+    "limitations": [
+      "Real product sizes are not perfectly similar; catalog or selection software governs for an order",
+      "With a diameter change the corresponding point is shown, not the intersection with the system curve"
+    ]
+  },
+  "pedagogical": {
+    "teachingStrategy": "Practice with check (commit a number before the result is revealed), then guided exploration",
+    "keyQuestions": [
+      "Why does a 15% airflow increase need 52% more power?",
+      "Why does efficiency stay at 70% when only speed changes?",
+      "Why does lighter air leave CFM unchanged?"
+    ],
+    "commonMisconceptions": [
+      "Power rises in proportion to speed",
+      "Doubling the diameter doubles the airflow",
+      "Changing speed changes the fan's efficiency on a pure-resistance system",
+      "Hotter, lighter air changes the CFM a fan moves"
+    ],
+    "assessmentOpportunities": [
+      "Four challenges answered within 2% of the model value; mastery is 4 of 4"
+    ]
+  },
+  "chapter": "25-fan-laws-system-effect-and-sound"
+}

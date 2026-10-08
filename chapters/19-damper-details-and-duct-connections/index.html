@@ -1,0 +1,2645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Details the gravity, flat and airfoil blade, throttling, blast gate, slide gate and lab exhaust dampers, nested inlet vanes and pre-spin, inlet venturis and inlet box styles, and the bolted, slip, flexible and 125# ASA connections that join a fan to its ductwork.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/19-damper-details-and-duct-connections/">
+      
+      
+        <link rel="prev" href="../18-inlets-outlets-and-flow-control/">
+      
+      
+        <link rel="next" href="../20-construction-classes-materials-spark-resistance/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Damper Details and Duct Connections - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#damper-details-and-duct-connections" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Damper Details and Duct Connections
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-air-pressure-and-the-fan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-centrifugal-and-axial-impeller-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-fan-performance-curves-and-ratings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-discharge-positions-and-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gravity-dampers-ceiling-and-wall-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gravity Dampers: Ceiling and Wall Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damper-blades-flat-or-airfoil-and-the-flutter-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Damper Blades: Flat or Airfoil, and the Flutter Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damper-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Damper Throttling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Damper Throttling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-damper-throttling-operating-point-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Damper Throttling Operating Point Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blast-gates-and-slide-gate-dampers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blast Gates and Slide Gate Dampers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-exhaust-isolation-and-bypass-dampers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Exhaust Isolation and Bypass Dampers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-inlet-vanes-and-pre-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Inlet Vanes and Pre-Spin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested Inlet Vanes and Pre-Spin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-flow-control-device-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Flow Control Device Sorter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inlet-venturis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inlet Venturis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inlet-box-styles-and-the-horn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inlet Box Styles and the Horn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-the-fan-to-the-duct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting the Fan to the Duct
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting the Fan to the Duct">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-to-duct-connection-chooser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan-to-Duct Connection Chooser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reading-catalogs-and-performance-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-fan-selection-and-writing-the-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gravity-dampers-ceiling-and-wall-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gravity Dampers: Ceiling and Wall Types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damper-blades-flat-or-airfoil-and-the-flutter-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Damper Blades: Flat or Airfoil, and the Flutter Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damper-throttling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Damper Throttling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Damper Throttling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-damper-throttling-operating-point-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Damper Throttling Operating Point Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blast-gates-and-slide-gate-dampers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blast Gates and Slide Gate Dampers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-exhaust-isolation-and-bypass-dampers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lab Exhaust Isolation and Bypass Dampers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-inlet-vanes-and-pre-spin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested Inlet Vanes and Pre-Spin
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested Inlet Vanes and Pre-Spin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-flow-control-device-sorter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Flow Control Device Sorter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inlet-venturis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inlet Venturis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inlet-box-styles-and-the-horn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inlet Box Styles and the Horn
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-the-fan-to-the-duct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting the Fan to the Duct
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting the Fan to the Duct">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-to-duct-connection-chooser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan-to-Duct Connection Chooser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="damper-details-and-duct-connections">Damper Details and Duct Connections<a class="headerlink" href="#damper-details-and-duct-connections" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter adds detail to dampers and duct connections. It covers ceiling and wall gravity dampers, flat and airfoil blades, blade flutter, damper actuators and throttling, blast gates and slide gate dampers, and lab exhaust isolation and bypass dampers. It also covers nested inlet vanes and pre-spin, inlet venturis, free-standing and bolt-on inlet boxes and inlet box horns, flexible connectors, tube adapters, bolted flange and slip connections, and the ASA pipe flange bolt pattern. After completing it, readers can specify how a fan connects to its ductwork and controls.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 22 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ceiling Type Gravity Damper</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Wall Type Gravity Damper</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Blade Flutter</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Flat Blade Damper</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Inlet Venturi</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Free-Standing Inlet Box</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Flexible Connector</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Nested Inlet Vanes</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Damper Actuator</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Airfoil Blade Damper</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Inlet Box Horn</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Bolt-On Inlet Box</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Tube Adapter and Sleeve</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Blast Gate</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Damper Throttling</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Lab Exhaust Isolation Damper</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Lab Exhaust Bypass Damper</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Bolted Flange Connection</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Slip Connection</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Slide Gate Damper</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ASA Pipe Flange Bolt Pattern</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Pre-Spin</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../02-airstreams-total-pressure-standard-air/">Chapter 2: Airstreams, Total Pressure and Standard Air</a></li>
+<li><a href="../03-basic-fan-anatomy/">Chapter 3: Basic Fan Anatomy</a></li>
+<li><a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4: Centrifugal, Axial and Mixed Flow Fans</a></li>
+<li><a href="../06-industrial-fans-and-application-product-lines/">Chapter 6: Industrial Fans and Application Product Lines</a></li>
+<li><a href="../10-fan-performance-curves-and-ratings/">Chapter 10: Fan Performance, Curves and Ratings</a></li>
+<li><a href="../12-discharge-positions-and-rotation/">Chapter 12: Discharge Positions and Rotation</a></li>
+<li><a href="../18-inlets-outlets-and-flow-control/">Chapter 18: Inlets, Outlets and Flow Control</a></li>
+</ul>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Where the Fan Meets the Building</p>
+<p><img alt="Breeze waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A fan rarely fails on paper. It fails at the damper that flutters, the inlet box that will not line up, or the rigid joint that carries vibration into the ductwork. This chapter gives you the details that decide whether an order installs cleanly. Let's follow the airflow.</p>
+</div>
+<p><a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a> introduced dampers, inlet vanes, inlet boxes and companion flanges as categories. This chapter goes one level deeper, to the details that appear on an order or a submittal drawing: the type of gravity damper, the blade profile, the actuator, the particular throttling device a pressure blower takes, the inlet box style, and how the fan physically joins the ductwork. The FanPedia accessory pages (pp. 125–145) and technical descriptions (pp. 180–194) are the sources for the product statements below.</p>
+<h2 id="gravity-dampers-ceiling-and-wall-types">Gravity Dampers: Ceiling and Wall Types<a class="headerlink" href="#gravity-dampers-ceiling-and-wall-types" title="Permanent link">&para;</a></h2>
+<p>A <strong>gravity damper</strong> opens when airflow pushes on its blades and closes under its own weight when the fan stops. It needs no power and no controls, which makes it the default backdraft device on small commercial exhaust fans. FanPedia (p. 136) shows three commercial-grade gravity dampers: the butterfly type built into roof-mounted upblast fans, covered in Chapter 18, and two more that matter here.</p>
+<p>A <strong>ceiling type gravity damper</strong> is a parallel blade, end-pivoted damper that opens automatically when the fan is energized and closes by gravity when power is turned off (FanPedia p. 181). Its job is to stop air from flowing backward through the system while also keeping out rain and snow. As the name says, it goes with fans and openings in a ceiling, where the damper sits in a horizontal plane.</p>
+<p>A <strong>wall type gravity damper</strong> has the same technical description, word for word: parallel blades, end pivots, opening on fan start, closing by gravity at fan stop, blocking backflow and weather (p. 181). The difference is the mounting plane. A wall type damper serves a fan or opening in a vertical wall, so its blades hang closed rather than lying closed. When you quote either one, confirm the mounting orientation with the customer, because the two are not interchangeable in the field.</p>
+<p>The three gravity damper types compare as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Gravity damper</th>
+<th>Blade style</th>
+<th>Where it is used</th>
+<th>What it prevents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Butterfly type</td>
+<td>Butterfly, integral to the fan</td>
+<td>Roof-mounted upblast fans</td>
+<td>Backdraft of outside air; weather when the fan is off</td>
+</tr>
+<tr>
+<td>Ceiling type</td>
+<td>Parallel blade, end-pivoted</td>
+<td>Ceiling openings (horizontal plane)</td>
+<td>Backflow through the system; rain and snow</td>
+</tr>
+<tr>
+<td>Wall type</td>
+<td>Parallel blade, end-pivoted</td>
+<td>Wall openings (vertical plane)</td>
+<td>Backflow through the system; rain and snow</td>
+</tr>
+</tbody>
+</table>
+<h2 id="damper-blades-flat-or-airfoil-and-the-flutter-problem">Damper Blades: Flat or Airfoil, and the Flutter Problem<a class="headerlink" href="#damper-blades-flat-or-airfoil-and-the-flutter-problem" title="Permanent link">&para;</a></h2>
+<p>Industrial outlet dampers come in two blade types (FanPedia p. 137). A <strong>flat blade damper</strong> (Type 1) uses plain flat blades. It is the simpler, lower-cost construction and is common on parallel and opposed blade outlet dampers where the damper mostly sits at a few fixed settings.</p>
+<p>An <strong>airfoil blade damper</strong> (Type 2) uses blades with a streamlined, wing-like cross section. In general engineering terms, the airfoil shape lowers the pressure drop across the open damper, reduces turbulence and noise, and makes each blade stiffer for its weight. FanPedia shows parallel and opposed blade outlet dampers in both types, but the parallel blade inlet box damper is offered as <strong>Type 2 only</strong>, so a quote that pairs an inlet box damper with flat blades is a configuration error to catch early.</p>
+<p><strong>Blade flutter</strong> is a rapid, uneven oscillation of damper blades that are only partly open. It happens when the airflow alone is holding the blades in position. FanPedia's description of motorized dampers (p. 182) names the cause: in low-flow conditions, the velocity pressure of the airstream may only partially open automatic damper blades, and the result is blade flutter and potentially more noise. Flutter also wears pivots and bearings over time.</p>
+<p>The cure for flutter is to stop relying on the airstream. A <strong>damper actuator</strong> is a powered operator, electric or pneumatic, that drives the damper blades to a commanded position instead of letting the air position them. FanPedia shows motorized commercial dampers with an actuator at the center pivot or at the end pivot (p. 136), and industrial outlet dampers with either a manual handle or an actuator (p. 137). Inlet vanes, blast gates and lab exhaust dampers can also be furnished with actuators, which is how any of these devices joins an automatic control loop.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A Low-Flow Gravity Damper Will Chatter</p>
+<p><img alt="Breeze cautioning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is putting an airflow-opened damper on a fan that will spend long hours at low flow, such as one on a VFD. The blades hover half-open and flutter. If the fan will run well below full flow, quote a motorized damper with an actuator so the blades are driven fully open.</p>
+</div>
+<h2 id="damper-throttling">Damper Throttling<a class="headerlink" href="#damper-throttling" title="Permanent link">&para;</a></h2>
+<p><strong>Damper throttling</strong> is controlling a fan's airflow by partly closing a damper so that it adds resistance to the system. The fan does not change. The system curve does: closing the damper makes the system steeper, so it crosses the fan curve at a lower airflow and a higher pressure. FanPedia describes this for outlet dampers as "shifting the operating point to the left of the rating point," and notes that the horsepower savings depend on the position on the fan curve and are usually much less than with other methods (pp. 182–183). Throttling is still the least expensive control and is a sensible choice when reduced capacity is needed only occasionally, or when the air is hot, humid or dirty.</p>
+<p>The system curve itself is the familiar square law from <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>: the pressure needed to push air through a fixed system rises with the square of the airflow. Throttling multiplies the system's resistance coefficient.</p>
+<div class="arithmatex">\[ P_{sys} = m \, k \, Q^2 \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( P_{sys} \)</span> is the static pressure the system needs, in in. wg</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow, in CFM</li>
+<li><span class="arithmatex">\( k \)</span> is the resistance coefficient of the system with the damper wide open</li>
+<li><span class="arithmatex">\( m \)</span> is the resistance multiplier added by the damper (1.0 when wide open, larger as it closes)</li>
+</ul>
+<p>The chart below lets you close a damper step by step and watch the operating point move. Its numbers are illustrative, chosen to make the pattern easy to see.</p>
+<h4 id="diagram-damper-throttling-operating-point-explorer">Diagram: Damper Throttling Operating Point Explorer<a class="headerlink" href="#diagram-damper-throttling-operating-point-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Damper Throttling Operating Point Explorer</summary>
+<p>Type: chart
+<strong>sim-id:</strong> ch19-damper-throttling-explorer<br/>
+<strong>Library:</strong> Plotly<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret how closing an outlet damper moves a fan's operating point along its fan curve, predicting the direction of change in airflow and static pressure before each new damper setting is revealed.</p>
+<p><strong>Prerequisites:</strong> fan curve, system curve and operating point (Chapter 10); damper throttling and the resistance multiplier m (defined in the section "Damper Throttling" above).</p>
+<p><strong>Evidence of Mastery:</strong> Before each of the five closing steps is revealed, the learner commits a prediction for airflow (higher, lower, same) and for static pressure (higher, lower, same). A prediction pair is correct when both directions match the Rules. Mastery is 5 of 5 steps with both directions correct. Viewing the chart after the reveal is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Closing a damper lowers the pressure the fan produces. (2) Closing a damper changes the fan curve. (3) Airflow falls in proportion to how far the damper is closed.</p>
+<p><strong>Instructional Rationale:</strong> Interpreting a graphical model requires predicting before seeing, so each step locks a prediction and then shows the new intersection with the numbers. Step-through with visible values, not animation, lets the learner compare consecutive operating points.</p>
+<p><strong>Content:</strong></p>
+<p>Fan curve (illustrative, labeled "illustrative"): static pressure in in. wg as a function of airflow in CFM.</p>
+<p>System curves: six damper settings, each with its resistance multiplier and operating point.</p>
+<table>
+<thead>
+<tr>
+<th>Damper setting label</th>
+<th>Multiplier m</th>
+<th>Operating airflow (CFM)</th>
+<th>Operating static pressure (in. wg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wide open</td>
+<td>1.0</td>
+<td>10,000</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>Step 1</td>
+<td>1.5</td>
+<td>8,402</td>
+<td>5.29</td>
+</tr>
+<tr>
+<td>Step 2</td>
+<td>2.0</td>
+<td>7,385</td>
+<td>5.45</td>
+</tr>
+<tr>
+<td>Step 3</td>
+<td>3.0</td>
+<td>6,124</td>
+<td>5.63</td>
+</tr>
+<tr>
+<td>Step 4</td>
+<td>4.0</td>
+<td>5,345</td>
+<td>5.71</td>
+</tr>
+<tr>
+<td>Step 5</td>
+<td>6.0</td>
+<td>4,399</td>
+<td>5.81</td>
+</tr>
+</tbody>
+</table>
+<p>Labels: axis titles "Airflow (CFM)" and "Static pressure (in. wg)"; curve names "Fan curve" and "System curve, m = <value>"; operating point label "Operating point: <CFM> CFM at <SP> in. wg". Note shown at all times: "Values are illustrative. Real fan curves are read from the catalog."</p>
+<p><strong>Provenance:</strong> All curves and values are illustrative, computed from the Rules. The qualitative behavior (operating point moves to the left of the rating point; horsepower savings usually much less than other methods) is from FanPedia pp. 182–183 and the chapter section "Damper Throttling".</p>
+<p><strong>Rules:</strong> Fan curve: P_fan(Q) = 6.0 − (Q / 10,000)² in. wg, plotted for Q from 0 to 16,000 CFM. System curve: P_sys(Q) = 5.0 × m × (Q / 10,000)² in. wg, plotted over the same range. Operating point: (Q / 10,000)² = 6.0 / (1 + 5.0 × m); Q = 10,000 × √(6.0 / (1 + 5.0m)); P = 6.0 − 6.0 / (1 + 5.0m). Airflow is rounded to the nearest 1 CFM and pressure to 0.01 in. wg, with halves rounded up. The multiplier takes only the six values in Content, in the order listed; m never decreases during the challenge. For every step, the correct prediction is airflow lower and static pressure higher.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner sees the wide-open state and reads its operating point.</li>
+<li>The learner presses "Close damper one step". Before the new system curve appears, the learner chooses airflow higher, lower or same, and static pressure higher, lower or same, then presses "Check".</li>
+<li>The new system curve and operating point appear, with the previous operating point still marked, and the feedback for that step is shown.</li>
+<li>Steps 2 and 3 repeat through Step 5.</li>
+<li>After Step 5, a "Reset" control returns to wide open and the learner may step freely without predictions.</li>
+</ol>
+<p><strong>Feedback:</strong> Five steps, fixed order, one attempt each. Correct: "Correct: closing the damper steepens the system curve, so the fan slides left and up its own curve to <CFM> CFM at <SP> in. wg." Wrong pressure direction: "The fan curve did not move. A steeper system curve meets the same fan curve at lower airflow, where this fan makes more pressure, not less." Wrong airflow direction: "More resistance always means less airflow at the new intersection." After Step 5, a summary shows "Predictions correct: n of 5" and the note "From wide open to Step 5, m rose 6 times but airflow fell by 56%, not by 6 times."</p>
+<p><strong>Starting State:</strong> Fan curve, wide-open system curve and the operating point at 10,000 CFM and 5.00 in. wg. The prompt reads "If you close the damper one step, where will the fan operate?"</p>
+<p><strong>Chapter Anchors:</strong> The chapter states that closing the damper moves the operating point to lower airflow and higher pressure, and that the chart's numbers are illustrative. Wide-open operating point 10,000 CFM at 5.00 in. wg.</p>
+</details>
+<h2 id="blast-gates-and-slide-gate-dampers">Blast Gates and Slide Gate Dampers<a class="headerlink" href="#blast-gates-and-slide-gate-dampers" title="Permanent link">&para;</a></h2>
+<p>Pressure blowers and other small high-pressure fans usually discharge into pipe rather than sheet-metal duct, and they have their own throttling devices.</p>
+<p>A <strong>blast gate</strong> is a wafer-type butterfly valve that mounts to the fan's outlet flange and controls flow all the way to full shutoff (FanPedia pp. 125, 180). It is also known as a waffle damper, wafer-type butterfly valve or butterfly damper. It is available for automatic control, has a maximum temperature of 250°F, and its bolt pattern matches a 125# ASA pipe flange, a standard described later in this chapter. On an order, a blast gate answers the question "Can the customer shut this blower off at the outlet without a separate valve?"</p>
+<p>A <strong>slide gate damper</strong> is a flat gate that slides across the airway in a frame to throttle flow manually. Twin City Fan offers it for cast aluminum pressure blowers, with a cast aluminum frame and a galvanized steel gate, on the inlet or the outlet (FanPedia pp. 127, 192). It is a set-and-leave adjustment, typically used to trim a blower to its system during startup.</p>
+<h2 id="lab-exhaust-isolation-and-bypass-dampers">Lab Exhaust Isolation and Bypass Dampers<a class="headerlink" href="#lab-exhaust-isolation-and-bypass-dampers" title="Permanent link">&para;</a></h2>
+<p>Laboratory exhaust fans dilute fume-hood exhaust with outside air drawn through a bypass air plenum and through the fan's nozzle or windband, then throw the mixture high above the roof (FanPedia pp. 4, 6). FanPedia's lab exhaust damper page (p. 138) shows three items on these fans: isolation dampers, bypass dampers and actuators, on models BCIFE and BAIFE and on models TVIFE, QIFE, QFE and TFE. FanPedia names the parts without describing their duty, so the descriptions below follow standard lab exhaust practice.</p>
+<p>A <strong>lab exhaust isolation damper</strong> sits between the exhaust plenum and an individual fan. It closes when that fan is off, so that a running fan on the same plenum cannot pull air backward through the idle one and so that the idle fan can be serviced. Lab systems often run several fans on one plenum with one on standby, which is why the isolation damper is standard on many of these layouts.</p>
+<p>A <strong>lab exhaust bypass damper</strong> controls the outside air admitted through the bypass air plenum. As fume hood sashes close and the building's exhaust demand drops, the bypass damper opens to make up the difference, so the fan keeps moving a nearly constant volume and holds the discharge velocity that carries the plume clear of the building. Both dampers are normally fitted with actuators tied to the building control system.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Two Dampers, Two Different Jobs</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that the bypass damper exists to keep fan airflow constant while the building's demand changes, while the isolation damper exists to make a stopped fan look like a closed wall. One manages flow; the other manages direction.</p>
+</div>
+<h2 id="nested-inlet-vanes-and-pre-spin">Nested Inlet Vanes and Pre-Spin<a class="headerlink" href="#nested-inlet-vanes-and-pre-spin" title="Permanent link">&para;</a></h2>
+<p>Inlet vanes control flow by changing how air enters the impeller rather than by adding resistance downstream. <strong>Pre-spin</strong> is the swirl that inlet vanes or an inlet box damper give the incoming air, turning it in the same direction the impeller rotates (FanPedia pp. 139, 183, 188). Because the air already has some of the rotation the impeller would otherwise have to give it, the impeller does less work on each pound of air. That is why FanPedia credits the inlet box damper with "a savings in horsepower at reduced loads," and why pre-spin control usually saves more power than outlet damper throttling.</p>
+<p>The general engineering basis is Euler's turbomachinery equation, which gives the work an impeller does on each unit mass of air:</p>
+<div class="arithmatex">\[ w = U_2 \, V_{\theta 2} - U_1 \, V_{\theta 1} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( w \)</span> is the work done per unit mass of air</li>
+<li><span class="arithmatex">\( U_1 \)</span> and <span class="arithmatex">\( U_2 \)</span> are the blade speeds at the impeller inlet and outlet</li>
+<li><span class="arithmatex">\( V_{\theta 1} \)</span> and <span class="arithmatex">\( V_{\theta 2} \)</span> are the tangential (swirl) components of air velocity at the inlet and outlet</li>
+</ul>
+<p>With no pre-spin, <span class="arithmatex">\( V_{\theta 1} \)</span> is zero. Pre-spin in the direction of rotation makes <span class="arithmatex">\( V_{\theta 1} \)</span> positive, so the second term reduces <span class="arithmatex">\( w \)</span>: the fan develops less pressure and moves less air, and it draws less power doing so.</p>
+<p><strong>Nested inlet vanes</strong> do the same job as the external inlet vanes of Chapter 18, but the vanes are built into the inlet funnel instead of a separate housing bolted to the inlet (FanPedia pp. 139, 188). They are applied to clean airstreams up to 600°F; external vanes are the choice for contaminated airstreams. Both come standard with a manual handle and can take an actuator. The trade-off is serviceability: replacing nested vanes requires replacing the inlet funnel assembly.</p>
+<p>The table below compares the two vane styles on the points an order turns on.</p>
+<table>
+<thead>
+<tr>
+<th>Point of comparison</th>
+<th>External inlet vanes</th>
+<th>Nested inlet vanes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>Own housing, bolted to the fan inlet</td>
+<td>Within the inlet funnel</td>
+</tr>
+<tr>
+<td>Airstream</td>
+<td>Contaminated, or high temperature up to 600°F</td>
+<td>Clean, up to 600°F</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>Manual handle standard, actuator optional</td>
+<td>Manual handle standard, actuator optional</td>
+</tr>
+<tr>
+<td>Vane replacement</td>
+<td>Vane assembly</td>
+<td>Entire inlet funnel assembly</td>
+</tr>
+</tbody>
+</table>
+<p>The sorter below asks you to match field situations to the damper or vane that fits them.</p>
+<h4 id="diagram-flow-control-device-sorter">Diagram: Flow Control Device Sorter<a class="headerlink" href="#diagram-flow-control-device-sorter" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Flow Control Device Sorter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch19-flow-control-device-sorter<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify eight field situations by the damper or vane device that fits each one, with at least 7 of 8 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> ceiling type and wall type gravity dampers, blast gate, slide gate damper, nested inlet vanes, pre-spin, lab exhaust isolation and bypass dampers (all defined in the sections above).</p>
+<p><strong>Evidence of Mastery:</strong> The learner assigns each of the 8 situation cards to one of the 7 device bins. An assignment is correct when it matches the Correct device column. Mastery is 7 of 8 correct on the first attempt.</p>
+<p><strong>Misconceptions:</strong> (1) Ceiling and wall gravity dampers are interchangeable. (2) A slide gate is the shutoff device for any pressure blower. (3) Nested and external inlet vanes suit the same airstreams. (4) Isolation and bypass dampers on a lab fan do the same job.</p>
+<p><strong>Instructional Rationale:</strong> Classifying realistic order situations makes the learner use the defining feature of each device rather than recall its name. Immediate, reason-based feedback after each card corrects a confusion before the next card.</p>
+<p><strong>Content:</strong></p>
+<p>Device bins (7): Ceiling type gravity damper; Wall type gravity damper; Blast gate; Slide gate damper; Nested inlet vanes; Lab exhaust isolation damper; Lab exhaust bypass damper.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Situation card shown to the learner</th>
+<th>Correct device</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A fan exhausts through a horizontal opening in a ceiling. When it stops, nothing powered may close the opening, but backflow and rain must be kept out.</td>
+<td>Ceiling type gravity damper</td>
+<td>It opens on fan start and closes by gravity, and it is the type for a ceiling opening.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A fan exhausts through a vertical wall. When it stops, the opening must close by itself against backdraft, rain and snow.</td>
+<td>Wall type gravity damper</td>
+<td>Same gravity action as the ceiling type, but built for the vertical plane of a wall.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A pressure blower's outlet must be able to shut off flow completely, and the outlet bolts to a 125# ASA pipe flange. The airstream is 200°F.</td>
+<td>Blast gate</td>
+<td>A blast gate is a wafer butterfly valve at the outlet flange that controls flow to full shutoff, rated to 250°F, with a 125# ASA bolt pattern.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The same kind of blower outlet needs shutoff, and the plant wants an actuator to open and close it automatically.</td>
+<td>Blast gate</td>
+<td>Blast gates are available for automatic control; a slide gate damper is manual.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A cast aluminum pressure blower needs a simple manual adjustment at its inlet that a technician sets once at startup.</td>
+<td>Slide gate damper</td>
+<td>Slide gate dampers fit cast aluminum pressure blowers, mount on the inlet or outlet, and give manual adjustment.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>A clean 400°F airstream needs flow control with horsepower savings, and the vanes should sit inside the inlet funnel rather than in a separate bolted housing.</td>
+<td>Nested inlet vanes</td>
+<td>Nested vanes pre-spin the air from within the inlet funnel and suit clean air up to 600°F.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Three lab exhaust fans share one plenum, with one on standby. The standby fan must not let air run backward through it.</td>
+<td>Lab exhaust isolation damper</td>
+<td>The isolation damper closes behind an idle fan so the running fans cannot draw air back through it.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>As fume hood sashes close, building exhaust drops, but the lab fan must keep its airflow and plume height constant.</td>
+<td>Lab exhaust bypass damper</td>
+<td>The bypass damper opens to admit outside air through the bypass plenum and make up the lost flow.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Device facts from FanPedia pp. 125, 127, 136, 138, 139, 180, 181, 188 and 192 and the chapter sections above. The duties of lab exhaust isolation and bypass dampers follow standard lab exhaust practice, as the chapter states. Situation cards are illustrative scenarios.</p>
+<p><strong>Rules:</strong> Each card has exactly one correct bin. A card is scored on the first bin it is placed in; later moves do not change the score. Blast gate is the correct bin for cards 3 and 4; every other bin is correct for exactly one card.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads the card at the top of the deck and places it in one of the 7 bins.</li>
+<li>The sim immediately marks the placement correct or incorrect and shows the "Why" text. An incorrect card then moves to its correct bin, marked as missed.</li>
+<li>The next card appears. The learner continues until all 8 cards are placed.</li>
+<li>A "Try again" control reshuffles the deck for a fresh, unscored-for-mastery practice round.</li>
+</ol>
+<p><strong>Feedback:</strong> 8 cards, shuffled order, one scored attempt per card. Correct: "Correct. " followed by the Why text. Incorrect: "Not quite. This is a <correct device>. " followed by the Why text. A running count "Correct: n of 8" is shown, and at the end the message is either "Mastery: 7 or more of 8" or "Review the sections on the devices you missed, then try again."</p>
+<p><strong>Starting State:</strong> The 7 empty bins and the first card. The prompt reads "Which device fits this situation?"</p>
+<p><strong>Chapter Anchors:</strong> Blast gate maximum temperature 250°F; blast gate bolt pattern 125# ASA pipe flange; nested inlet vanes for clean airstreams up to 600°F; slide gate dampers on cast aluminum pressure blowers.</p>
+</details>
+<h2 id="inlet-venturis">Inlet Venturis<a class="headerlink" href="#inlet-venturis" title="Permanent link">&para;</a></h2>
+<p>An <strong>inlet venturi</strong> is a smooth, bell-shaped entry piece mounted on an open fan inlet, or on the free end of an inlet silencer, so that unducted air enters with as little turbulence and loss as possible. FanPedia pictures it beside the inlet funnels (p. 89), and it shares their aliases: inlet cone, funnel and inlet bell. The practical distinction is placement. An inlet funnel is part of the fan, guiding air into the impeller; an inlet venturi is fitted where air enters the system from the room. FanPedia's inlet silencer description, for example, offers the far end of the silencer with an inlet venturi, an inlet flange or an inlet pipe assembly (p. 188). A venturi is the right answer when a blower or silencer draws straight from open air and the buyer wants the entry to perform like a clean, ducted inlet.</p>
+<h2 id="inlet-box-styles-and-the-horn">Inlet Box Styles and the Horn<a class="headerlink" href="#inlet-box-styles-and-the-horn" title="Permanent link">&para;</a></h2>
+<p>An inlet box turns the air 90 degrees into the fan when there is no room for a straight run of duct, and it is designed to minimize the system effect of that turn (FanPedia p. 187; system effect is covered in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>). Chapter 18 separated integral boxes from detached ones. FanPedia lists four styles in total: integral with horn, integral without horn, detached bolt-on, and detached free-standing (p. 141).</p>
+<p>A <strong>bolt-on inlet box</strong> is a detached box bolted directly to the inlet flange of the fan (FanPedia pp. 142, 187). It has a rectangular inlet flange that connects to the customer's ductwork, a round outlet flange that connects to the fan inlet flange, and a mounting structure of a single base angle, gussets and a reinforcement plate. It is available with a straight or a flared connection, and FanPedia names it TCF's preferred inlet box design.</p>
+<p>A <strong>free-standing inlet box</strong> is the same concept, except that it is mounted separately from the fan and fully supported at the floor (p. 187). It connects to the fan in one of two ways, and one must be selected: a round outlet flange for a bolted connection, or an outlet collar that joins the fan inlet collar with a rubber sleeve and clamps for a slip connection (p. 142). Its mounting structure is a base plate (foot), gussets and a reinforcement plate. A free-standing box makes sense when the box is too large to hang on the fan, or when the fan and box sit on different supports.</p>
+<p>An <strong>inlet box horn</strong> is an extension on an integral inlet box that carries the inlet connection out past the fan. FanPedia's note (p. 141) is precise: horns are used when the inlet and discharge airflows would intersect, and the horn lets ductwork be connected without interference. Discharge position and inlet box position together decide whether a horn is needed, which is one more reason both are read from the drive side (<a href="../12-discharge-positions-and-rotation/">Chapter 12</a>).</p>
+<p>The table summarizes the four styles.</p>
+<table>
+<thead>
+<tr>
+<th>Inlet box style</th>
+<th>Supported by</th>
+<th>Connection to fan</th>
+<th>Use it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integral, without horn</td>
+<td>The fan</td>
+<td>Part of the housing</td>
+<td>Standard attached box; no duct interference</td>
+</tr>
+<tr>
+<td>Integral, with horn</td>
+<td>The fan</td>
+<td>Part of the housing</td>
+<td>Inlet and discharge airflows would intersect</td>
+</tr>
+<tr>
+<td>Detached, bolt-on</td>
+<td>Base angle to mounting surface</td>
+<td>Bolted to the fan inlet flange</td>
+<td>Default detached choice (TCF's preferred design)</td>
+</tr>
+<tr>
+<td>Detached, free-standing</td>
+<td>Base plate, fully at the floor</td>
+<td>Bolted flange or slip collar</td>
+<td>Box supported separately from the fan</td>
+</tr>
+</tbody>
+</table>
+<h2 id="connecting-the-fan-to-the-duct">Connecting the Fan to the Duct<a class="headerlink" href="#connecting-the-fan-to-the-duct" title="Permanent link">&para;</a></h2>
+<p>Every fan ends at two joints, inlet and outlet, and the joint type matters to the installer as much as any rating. Four connection types and one standard appear on Twin City Fan orders.</p>
+<p>A <strong>bolted flange connection</strong> joins two mating flanges with bolts through matching hole patterns, usually with a gasket between them. It is rigid and airtight, and it is the normal joint between a fan's inlet or outlet flange and a companion flange on the ductwork. On a free-standing inlet box, the round outlet flange is available only with the bolted connection (FanPedia p. 142).</p>
+<p>A <strong>slip connection</strong> joins a collar to a mating collar or pipe by sliding one over or into the other and sealing the joint, typically with a rubber sleeve held by clamps. FanPedia shows it on free-standing inlet box outlet collars (p. 142) and on welded square-to-round transitions with a slip connection on the outlet (p. 67). Because the sleeve can flex, a slip connection tolerates small misalignment and movement that a bolted joint cannot.</p>
+<p>A <strong>flexible connector</strong>, also called a flex connector or expansion joint, is a short section of flexible material that joins the fan's inlet or outlet to the ductwork (FanPedia pp. 126, 187). It reduces vibration transmission to and from the connecting ductwork and allows for some misalignment. Flex connectors are required on all isolated fans, are available round or rectangular, can be supplied by TCF or by the customer, and are shipped loose for field mounting. FanPedia also requires a flex connector, in the form of a slip connection, between a fan and a detached inlet box mounted on different planes, such as a fan on an isolation base with its inlet box on grade (p. 143).</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Isolated Fan, Rigid Duct</p>
+<p><img alt="Breeze cautioning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for an order with spring isolators and hard-bolted duct at both ends. The duct ties the fan back to the structure and defeats the isolators, and it can load the fan housing as the springs move. Add flexible connectors at the inlet and outlet; FanPedia lists them as required on all isolated fans.</p>
+</div>
+<p>A <strong>tube adapter and sleeve</strong> (FanPedia's full name is tube adapter and rubber sleeve with clamps) is a ready-made flexible outlet connection for pressure blowers (pp. 127, 194). It consists of a 4-inch-long metal collar and flange that bolts to the blower discharge, plus a 6-inch-long, 2-ply molded rubber slip-type connector with two hose clamps that joins the adapter to the pipe line. The sleeve helps isolate vibration and noise from the rest of the system. The connector is rated for pressures up to 5 psi and 180°F. It is also called a flanged adapter with rubber sleeve and clamps, a flange with boot, a mounting flange with boot, or simply a flex connector.</p>
+<p>The <strong>ASA pipe flange bolt pattern</strong> is the bolt-hole layout of a standard 125-pound-class pipe flange, written "125# ASA" in FanPedia. ASA is the American Standards Association, the predecessor of today's ANSI, and Class 125 is a common pressure class for cast iron pipe flanges, now published in ASME B16.1. A fan component with a 125# ASA bolt pattern bolts directly to an ordinary pipe flange, valve or fitting of the same nominal size. FanPedia states this for the blast gate and for the tube adapter (pp. 125, 180, 194).</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Check the Pipe Size, Not Just the Pattern</p>
+<p><img alt="Breeze with a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's a quick sanity check: when a customer says "it bolts to our pipe," ask for the nominal pipe size and the flange class. A 125# ASA pattern matches only a flange of the same nominal size and class, so both numbers belong on the order.</p>
+</div>
+<p>Before the practice activity, here is how these choices line up for the most common situations.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Usual connection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fan on isolators, joining duct</td>
+<td>Flexible connector at inlet and outlet</td>
+</tr>
+<tr>
+<td>Free-standing inlet box and fan on different planes</td>
+<td>Flex connector as a slip connection</td>
+</tr>
+<tr>
+<td>Rigid fan, companion flange on the duct</td>
+<td>Bolted flange connection</td>
+</tr>
+<tr>
+<td>Pressure blower into a pipe line, within 5 psi and 180°F</td>
+<td>Tube adapter and rubber sleeve</td>
+</tr>
+<tr>
+<td>Blower outlet to a standard pipe flange or valve</td>
+<td>125# ASA bolt pattern, bolted</td>
+</tr>
+</tbody>
+</table>
+<h4 id="diagram-fan-to-duct-connection-chooser">Diagram: Fan-to-Duct Connection Chooser<a class="headerlink" href="#diagram-fan-to-duct-connection-chooser" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Fan-to-Duct Connection Chooser</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch19-fan-duct-connection-chooser<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> use<br/>
+<strong>Learning Objective:</strong> The learner will use the support, alignment, temperature and pressure facts in a job description to choose the inlet box style or fan-to-duct connection that fits it, with at least 7 of 8 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> bolted flange connection, slip connection, flexible connector, tube adapter and sleeve, 125# ASA pipe flange bolt pattern, bolt-on inlet box, free-standing inlet box and inlet box horn (all defined in the sections above).</p>
+<p><strong>Evidence of Mastery:</strong> For each of 8 job descriptions, the learner selects one of the 7 options and presses "Submit". An answer is correct when it is in the Accepted answers column. Mastery is 7 of 8 correct on the first attempt. Opening the option definitions is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) A rubber sleeve connector can be used at any temperature. (2) A bolted joint is fine on a spring-isolated fan. (3) Any detached inlet box is supported by the fan. (4) A horn is a sound-control device.</p>
+<p><strong>Instructional Rationale:</strong> Applying the rules requires the learner to find the deciding fact (isolation, separate support, a temperature limit, intersecting airflows) in a description and act on it. Item 4 changes only the temperature from item 3, so the learner must use the 180°F limit rather than pattern-match the word "blower".</p>
+<p><strong>Content:</strong></p>
+<p>Options (7), each with a definition the learner can open: Bolted flange connection; Slip connection; Flexible connector; Tube adapter and rubber sleeve; Bolt-on inlet box; Free-standing inlet box; Inlet box horn.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Job description shown to the learner</th>
+<th>Accepted answers</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A centrifugal fan sits on a spring isolation base. Its outlet joins rectangular ductwork.</td>
+<td>Flexible connector</td>
+<td>Flex connectors are required on all isolated fans to block vibration and allow misalignment.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A free-standing inlet box sits on grade; the fan is on an isolation base, so they are on different planes.</td>
+<td>Slip connection; Flexible connector</td>
+<td>FanPedia requires a flex connector, as a slip connection, between a fan and inlet box on different planes.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A pressure blower discharges into a pipe line at 3 psi and 150°F. The plant wants vibration and noise kept out of the piping.</td>
+<td>Tube adapter and rubber sleeve</td>
+<td>The rubber sleeve isolates vibration and noise and is rated up to 5 psi and 180°F, so 3 psi and 150°F are within it.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The same blower and pipe line, but the airstream is 220°F. The pipe flange is a 125# ASA flange of the same size.</td>
+<td>Bolted flange connection</td>
+<td>220°F exceeds the sleeve's 180°F rating, so bolt the blower to the matching 125# ASA pipe flange instead.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ductwork must turn 90 degrees into the fan in a tight space, and the box should bolt directly to the fan's inlet flange.</td>
+<td>Bolt-on inlet box</td>
+<td>The bolt-on box bolts to the fan inlet flange and is TCF's preferred inlet box design.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The inlet box must be fully supported at the floor, separate from the fan.</td>
+<td>Free-standing inlet box</td>
+<td>A free-standing box is mounted separately and fully supported at the floor.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>An integral inlet box is specified, but the inlet duct would cross the path of the fan's discharge airflow.</td>
+<td>Inlet box horn</td>
+<td>Horns are used when inlet and discharge airflows would intersect, so the duct connects without interference.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>A free-standing inlet box and its fan share one rigid base on the same plane. The box outlet must join the fan's inlet flange.</td>
+<td>Bolted flange connection</td>
+<td>The free-standing box's round outlet flange is available only with the bolted connection.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> FanPedia pp. 67, 126, 127, 131, 132, 141, 142, 143, 187 and 194 and the chapter section "Connecting the Fan to the Duct". Job descriptions are illustrative scenarios.</p>
+<p><strong>Rules:</strong> Ratings used for judging: tube adapter sleeve acceptable when pressure &lt;= 5 psi and temperature &lt;= 180°F; otherwise not acceptable. An answer is correct when it is any entry in the Accepted answers column for that item. Each item is scored on its first submission only.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads job description 1 and may open any option's definition.</li>
+<li>The learner selects one option and presses "Submit". The sim marks the answer and shows the Why text; the item is then locked.</li>
+<li>The learner presses "Next" and repeats for items 2 through 8, in the fixed order of the Content table, so that items 3 and 4 appear back to back.</li>
+<li>After item 8, a summary lists each item with the learner's answer and the accepted answers, and a "Start over" control clears all answers.</li>
+</ol>
+<p><strong>Feedback:</strong> 8 items, fixed order, one scored attempt each. Correct: "Correct. " followed by the Why text. Incorrect: "Not this one. " followed by the Why text and the accepted answer. For item 4, if the learner chooses the tube adapter, the incorrect message adds "Check the temperature against the sleeve's 180°F rating." A running count "Correct: n of 8" is shown, and the summary shows "Mastery: 7 or more of 8" or "Review the sections on the items you missed."</p>
+<p><strong>Starting State:</strong> Job description 1 with no option selected. The prompt reads "How should this fan connect?"</p>
+<p><strong>Chapter Anchors:</strong> Tube adapter sleeve rated to 5 psi and 180°F; tube adapter collar 4 inches long and sleeve 6 inches long with two hose clamps; flex connectors required on all isolated fans; bolt-on inlet box is TCF's preferred design; horns used when inlet and discharge airflows would intersect.</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ceiling type and wall type gravity dampers share one description (parallel blade, end-pivoted, open on fan start, close by gravity, block backflow and weather); they differ in mounting plane.</li>
+<li>Flat blade (Type 1) and airfoil blade (Type 2) dampers are both offered for outlet dampers; the parallel blade inlet box damper is Type 2 only.</li>
+<li>Blade flutter comes from airflow holding blades partly open at low flow; a damper actuator powers the blades to position and prevents it.</li>
+<li>Damper throttling adds resistance and moves the operating point left on the fan curve; it is inexpensive but saves less horsepower than other methods.</li>
+<li>A blast gate is a wafer butterfly valve at the outlet flange for flow control to full shutoff, rated to 250°F, with a 125# ASA bolt pattern; a slide gate damper gives manual adjustment on cast aluminum pressure blowers.</li>
+<li>On lab exhaust fans, isolation dampers seal off idle fans and bypass dampers admit outside air to keep fan flow and plume constant.</li>
+<li>Pre-spin turns incoming air in the direction of rotation, reducing the work the impeller does; nested inlet vanes deliver it from within the inlet funnel for clean air up to 600°F.</li>
+<li>An inlet venturi gives an open inlet or silencer end a smooth, low-loss entry.</li>
+<li>Inlet boxes come integral (with or without a horn), detached bolt-on (TCF's preferred design) and detached free-standing (floor-supported, bolted or slip connection).</li>
+<li>Bolted flanges are rigid; slip connections and flexible connectors tolerate movement, and flex connectors are required on all isolated fans. The tube adapter and rubber sleeve suits pressure blower pipe lines up to 5 psi and 180°F.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Connections Covered</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now specify how a fan joins its ductwork and its controls, from the gravity damper on the opening to the flange pattern on a blower outlet. That is the detail that turns a fan selection into a fan that installs.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../18-inlets-outlets-and-flow-control/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 18. Inlets, Outlets and Flow Control">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                18. Inlets, Outlets and Flow Control
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../20-construction-classes-materials-spark-resistance/" class="md-footer__link md-footer__link--next" aria-label="Next: 20. Construction Classes, Materials and Spark Resistance">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                20. Construction Classes, Materials and Spark Resistance
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

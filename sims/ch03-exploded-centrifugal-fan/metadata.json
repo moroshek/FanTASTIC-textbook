@@ -1,0 +1,66 @@
+{
+  "title": "Exploded View of a Belt-Driven Centrifugal Fan",
+  "creator": "Twin City Fan",
+  "subject": "Fans and blowers: basic fan anatomy",
+  "description": "Interactive exploded view of a belt-driven SWSI centrifugal fan, Arrangement 9. Explore mode opens an infobox for each of 14 parts and can assemble and explode the drawing; quiz mode hides the labels and asks 10 identification prompts with two attempts each. The drawing is a simplified schematic modeled on FanPedia page 10, not to scale.",
+  "date": "2026-10-08",
+  "language": "en",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "gradeLevel": [
+      "Adult professional development"
+    ],
+    "subjectArea": "Mechanical equipment: industrial and commercial fans",
+    "topic": "Parts of a belt-driven centrifugal fan (Arrangement 9)",
+    "learningObjectives": [
+      "Identify each of the 14 labeled parts in an exploded view of a belt-driven Arrangement 9 centrifugal fan when given the part's name or function."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "exploded view", "fan housing", "impeller", "inlet funnel", "inlet collar", "inlet flange",
+      "outlet flange", "shaft", "bearing", "sheave", "V-belt", "motor", "slide base", "pedestal"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 620
+    },
+    "canvasHeight": 620,
+    "responsive": true,
+    "dependencies": [],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Labeled-diagram exploration followed by retrieval practice (identify the part from a name or function)",
+    "interactionPattern": "Explore mode with infoboxes and an assemble/explode toggle; quiz mode with 10 fixed prompts, two attempts each",
+    "keyQuestions": [
+      "Which part adds energy to the air?",
+      "Which inlet part shapes the air, and which ones only connect the duct?",
+      "Which parts of an Arrangement 9 fan sit outside the airstream?",
+      "Which part would you change to change fan speed?"
+    ],
+    "commonMisconceptions": [
+      "The inlet funnel and inlet collar are the same part (the funnel shapes the air into the impeller; the collar is a duct connection).",
+      "The pedestal is part of the housing (it is a separate support for the bearings and shaft).",
+      "The sheave on the fan shaft is the same size as the motor sheave (their ratio sets fan speed)."
+    ],
+    "assessmentOpportunities": [
+      "Quiz mode score: correct on first attempt, n of 10; mastery is 9 of 10.",
+      "Summary list of missed prompts with the reason for each correct answer."
+    ]
+  },
+  "sources": [
+    "FanPedia: The Fan & Blower Encyclopedia, page 10 (exploded view, belt-driven centrifugal fans, Arrangement 9)",
+    "Chapter 3 infobox definitions citing FanPedia pages 59, 79, 90 and 188"
+  ],
+  "chapter": "03-basic-fan-anatomy"
+}

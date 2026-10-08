@@ -1,0 +1,69 @@
+{
+  "title": "Flow Control Power Comparator",
+  "creator": "Twin City Fan",
+  "subject": "Industrial and Commercial Fans: Flow Control",
+  "description": "Prediction-challenge line chart comparing the illustrative shaft power of an outlet damper, variable inlet vanes and speed control from 50% to 100% airflow, with an airflow selector that reports the powers and savings at any 5% step.",
+  "date": "2026-10-08",
+  "language": "en",
+  "educational": {
+    "gradeLevel": [
+      "Adult professional development"
+    ],
+    "subjectArea": "Engineering",
+    "topic": "Flow control methods and fan shaft power",
+    "learningObjectives": [
+      "Differentiate outlet dampers, variable inlet vanes and speed control by the shaft power each needs at reduced airflow, correctly ranking the three methods and estimating the savings gap at a stated airflow between 50% and 100% of design."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "differentiate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "flow control",
+      "operating point",
+      "fan curve",
+      "system curve",
+      "outlet damper",
+      "variable inlet vanes",
+      "speed control",
+      "brake horsepower"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Chart.js",
+    "frameworkVersion": "4.4.4",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 710
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Predict-then-reveal challenges followed by guided exploration",
+    "keyQuestions": [
+      "At 80% airflow, which method uses the least power, and how much does it save compared with an outlet damper?",
+      "At 70% airflow, which method uses the least power, and how much does it save compared with an outlet damper?",
+      "At 50% airflow, which method uses the least power, and how much does it save compared with an outlet damper?"
+    ],
+    "commonMisconceptions": [
+      "Closing a damper to half flow cuts power roughly in half.",
+      "All flow-control methods save about the same energy.",
+      "Inlet vanes save as much as speed control.",
+      "Power falls in proportion to airflow when speed is reduced, rather than with roughly the cube of the airflow."
+    ],
+    "assessmentOpportunities": [
+      "Three prediction challenges (80%, 70%, 50% airflow), two attempts each; correct when the ranking matches and the saving is within 3 percentage points. Mastery is 3 of 3."
+    ]
+  },
+  "dataProvenance": "Speed-control values follow the ideal fan-law cube relation. Outlet damper and inlet vane values are illustrative values written for this chapter, not Twin City Fan test data; the ordering is supported by FanPedia pp. 145, 182, 183, 188.",
+  "chapter": "18-inlets-outlets-and-flow-control",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved."
+}

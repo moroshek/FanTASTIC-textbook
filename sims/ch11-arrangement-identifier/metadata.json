@@ -1,0 +1,84 @@
+{
+  "title": "Arrangement Identifier",
+  "creator": "Twin City Fan",
+  "subject": "Fans and blowers: drives and standard fan arrangements",
+  "description": "Interactive p5.js MicroSim in which learners read ten schematic side views of centrifugal fans, identify the drive, the impeller position and what carries the bearings, and then name the arrangement (1, 2, 3, 3SI, 3DI, 4, 7, 8, 9 or 10). Feature and arrangement answers are scored separately.",
+  "date": "2026-10-08",
+  "language": "en",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "gradeLevel": [
+      "Professional development"
+    ],
+    "subjectArea": "Engineering",
+    "topic": "Centrifugal fan arrangements",
+    "learningObjectives": [
+      "Distinguish centrifugal fan Arrangements 1, 2, 3, 3SI, 3DI, 4, 7, 8, 9 and 10 from schematic side-view drawings by identifying the drive type, the impeller position relative to the bearings, and what carries the bearings and the motor."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "distinguish",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Direct drive",
+      "Belt drive",
+      "Shaft coupling",
+      "Sheave",
+      "Overhung impeller",
+      "Center hung impeller",
+      "Bearing pedestal",
+      "Inlet box",
+      "SWSI",
+      "DWDI",
+      "Fan arrangement"
+    ],
+    "standards": [
+      "AMCA arrangement standard (drive arrangements for centrifugal fans)"
+    ]
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 710
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+    ],
+    "controls": [
+      {"type": "select", "label": "Drive", "options": ["Belt", "Direct with coupling", "Direct on motor shaft"]},
+      {"type": "select", "label": "Impeller", "options": ["Overhung", "Center hung"]},
+      {"type": "select", "label": "Bearings carried by", "options": ["Pedestal", "Fan housing (at least one bearing)", "Independent pedestals outside inlet boxes", "Motor only"]},
+      {"type": "button", "label": "Check Features"},
+      {"type": "radio", "label": "Arrangement", "options": ["1", "2", "3", "3SI", "3DI", "4", "7", "8", "9", "10"]},
+      {"type": "button", "label": "Check Arrangement"},
+      {"type": "button", "label": "Next Drawing / See Results / New Round"}
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Feature decomposition before classification: learners commit three feature answers, then name the arrangement, with immediate corrective feedback.",
+    "keyQuestions": [
+      "How is this fan driven: belts, a coupling, or the impeller on the motor shaft?",
+      "Is the impeller overhung or between the bearings?",
+      "What carries the bearings and the motor?"
+    ],
+    "commonMisconceptions": [
+      "Every direct drive fan is Arrangement 4.",
+      "Any fan with a coupling is Arrangement 7, whatever the impeller position.",
+      "Arrangements 1 and 9 differ in impeller position (they differ only in motor location).",
+      "Arrangements 2 and 1 are the same (Arrangement 2's bearings are on a bracket carried by the housing)."
+    ],
+    "assessmentOpportunities": [
+      "Mastery: 8 of 10 arrangements correct on the first attempt.",
+      "Features correct out of 30, scored separately as scaffolding.",
+      "Results screen lists each drawing's arrangement, the learner's choice and features correct."
+    ]
+  },
+  "provenance": "FanPedia pp. 20-23 (arrangement drawings and captions), p. 30 (impeller orientation), pp. 162-168 (technical descriptions). Arrangement 2: AMCA arrangement standard definition as stated in Chapter 11. Schematics are simplified teaching drawings.",
+  "chapter": "11-drives-and-standard-fan-arrangements"
+}

@@ -1,0 +1,3788 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to turn application requirements into a fan selection, size the motor for cold start, check sound and dimension data, and write a complete fan description and a CSI-format fan specification, ending with the capstone specification.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/27-fan-selection-and-writing-the-specification/">
+      
+      
+        <link rel="prev" href="../26-reading-catalogs-and-performance-tables/">
+      
+      
+        <link rel="next" href="../../learning-graph/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Fan Selection and Writing the Specification - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fan-selection-and-writing-the-specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fan Selection and Writing the Specification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-air-pressure-and-the-fan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-centrifugal-and-axial-impeller-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-fan-performance-curves-and-ratings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-discharge-positions-and-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-damper-details-and-duct-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reading-catalogs-and-performance-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-the-job-site-to-the-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From the Job Site to the Order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From the Job Site to the Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-selection-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan Selection Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airstream-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airstream Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#space-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Space Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noise-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noise Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#efficiency-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficiency Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fan-selection-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan Selection Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-the-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting the Fan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting the Fan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fan-selection-from-duty-point-to-catalog-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Selection: From Duty Point to Catalog Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrangement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrangement Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drive-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drive Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construction-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construction Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-start-motor-sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cold Start Motor Sizing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessory-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessory Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proving-the-selection-sound-and-dimension-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proving the Selection: Sound and Dimension Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proving the Selection: Sound and Dimension Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#octave-band-sound-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Octave Band Sound Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Octave Band Sound Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-octave-band-a-weighting-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Octave Band A-Weighting Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimensional-data-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensional Data Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Candidates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing Candidates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selection-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection Trade-Offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describing-and-specifying-the-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing and Specifying the Fan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing and Specifying the Fan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-fan-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Fan Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotated-fan-drawing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotated Fan Drawing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-format-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI Format Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-performance-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Performance Clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submittal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submittal Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certified-drawings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certified Drawings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Review
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-specification-error-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Specification Error Detector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capstone-writing-your-fan-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capstone: Writing Your Fan Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Capstone: Writing Your Fan Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-capstone-specification-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Capstone Specification Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-the-job-site-to-the-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From the Job Site to the Order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From the Job Site to the Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-fan-selection-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Fan Selection Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airstream-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airstream Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#space-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Space Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noise-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Noise Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#efficiency-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficiency Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fan-selection-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan Selection Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-the-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting the Fan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selecting the Fan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fan-selection-from-duty-point-to-catalog-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Selection: From Duty Point to Catalog Size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrangement-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrangement Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drive-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drive Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construction-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Construction Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cold-start-motor-sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cold Start Motor Sizing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessory-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessory Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proving-the-selection-sound-and-dimension-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proving the Selection: Sound and Dimension Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proving the Selection: Sound and Dimension Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#octave-band-sound-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Octave Band Sound Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Octave Band Sound Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-octave-band-a-weighting-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Octave Band A-Weighting Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimensional-data-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensional Data Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-candidates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Candidates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparing Candidates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selection-trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selection Trade-Offs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describing-and-specifying-the-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing and Specifying the Fan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing and Specifying the Fan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-fan-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Fan Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotated-fan-drawing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotated Fan Drawing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-format-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI Format Specification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-performance-clause" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Performance Clause
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submittal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Submittal Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certified-drawings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certified Drawings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Review
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specification Review">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-specification-error-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Specification Error Detector
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capstone-writing-your-fan-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capstone: Writing Your Fan Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Capstone: Writing Your Fan Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-capstone-specification-builder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Capstone Specification Builder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="fan-selection-and-writing-the-specification">Fan Selection and Writing the Specification<a class="headerlink" href="#fan-selection-and-writing-the-specification" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This final chapter brings the book together. It starts from application requirements (airstream conditions, space constraints, noise limits, and efficiency requirements) and walks through selecting the impeller, arrangement, construction, drive, and accessories, sizing the motor for cold start, and weighing trade-offs between candidates. It then covers the complete fan description, writing a CSI-format specification with a performance clause, submittal data and certified drawings, and specification review. It ends with the capstone: a complete written fan specification for a realistic application.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 27 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fan Efficiency Grade</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Octave Band Sound Data</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Dimensional Data Table</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Drive Selection</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Impeller Selection</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Cold Start Motor Sizing</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Certified Drawings</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Airstream Conditions</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Space Constraints</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Noise Limits</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Efficiency Requirements</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Construction Selection</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Fan Selection</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Application Requirements</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Accessory Selection</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Arrangement Selection</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Selection Trade-Offs</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Fan Selection Checklist</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Complete Fan Description</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Fan Specification</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Annotated Fan Drawing</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fan Comparison</td>
+<td>2</td>
+</tr>
+<tr>
+<td>CSI Format Specification</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Submittal Data</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Specification Performance Clause</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Specification Review</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Capstone Fan Specification</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-air-pressure-and-the-fan/">Chapter 1: Air, Pressure and the Fan</a></li>
+<li><a href="../02-airstreams-total-pressure-standard-air/">Chapter 2: Airstreams, Total Pressure and Standard Air</a></li>
+<li><a href="../03-basic-fan-anatomy/">Chapter 3: Basic Fan Anatomy</a></li>
+<li><a href="../05-roof-wall-and-specialty-exhaust-fans/">Chapter 5: Roof, Wall and Specialty Exhaust Fans</a></li>
+<li><a href="../06-industrial-fans-and-application-product-lines/">Chapter 6: Industrial Fans and Application Product Lines</a></li>
+<li><a href="../07-housing-construction-and-exploded-views/">Chapter 7: Housing Construction and Exploded Views</a></li>
+<li><a href="../08-centrifugal-and-axial-impeller-types/">Chapter 8: Centrifugal and Axial Impeller Types</a></li>
+<li><a href="../09-impeller-construction-and-material-handling/">Chapter 9: Impeller Construction and Material Handling</a></li>
+<li><a href="../10-fan-performance-curves-and-ratings/">Chapter 10: Fan Performance, Curves and Ratings</a></li>
+<li><a href="../11-drives-and-standard-fan-arrangements/">Chapter 11: Drives and Standard Fan Arrangements</a></li>
+<li><a href="../12-discharge-positions-and-rotation/">Chapter 12: Discharge Positions and Rotation</a></li>
+<li><a href="../13-rotation-and-discharge-codes/">Chapter 13: Rotation and Discharge Codes</a></li>
+<li><a href="../16-bearings-shafts-and-shaft-seals/">Chapter 16: Bearings, Shafts and Shaft Seals</a></li>
+<li><a href="../18-inlets-outlets-and-flow-control/">Chapter 18: Inlets, Outlets and Flow Control</a></li>
+<li><a href="../20-construction-classes-materials-spark-resistance/">Chapter 20: Construction Classes, Materials and Spark Resistance</a></li>
+<li><a href="../21-high-temperature-leak-tight-and-rto-construction/">Chapter 21: High Temperature, Leak-Tight and RTO Construction</a></li>
+<li><a href="../22-fan-bases-and-vibration-isolation/">Chapter 22: Fan Bases and Vibration Isolation</a></li>
+<li><a href="../23-spring-isolators-restraints-field-measurement/">Chapter 23: Spring Isolators, Restraints and Field Measurement</a></li>
+<li><a href="../24-advanced-arrangements-and-configuration-variants/">Chapter 24: Advanced Arrangements and Configuration Variants</a></li>
+<li><a href="../25-fan-laws-system-effect-and-sound/">Chapter 25: Fan Laws, System Effect and Sound</a></li>
+<li><a href="../26-reading-catalogs-and-performance-tables/">Chapter 26: Reading Catalogs and Performance Tables</a></li>
+</ul>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome to Fan Selection and the Specification</p>
+<p><img alt="Breeze waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Every chapter so far handed you one part of a fan: a family, an impeller, an arrangement, a rotation code, a construction package, an accessory. This chapter is where you put the parts together into one fan that suits one job, and then write it down so precisely that a factory, a contractor and an owner all build, install and accept the same machine. By the end you will have written a complete fan specification of your own. Let's follow the airflow.</p>
+</div>
+<h2 id="from-the-job-site-to-the-order">From the Job Site to the Order<a class="headerlink" href="#from-the-job-site-to-the-order" title="Permanent link">&para;</a></h2>
+<p><strong>Fan selection</strong> is the process of turning a described application into one fan: a family, a model and size, an impeller, an arrangement, a drive, a construction package, a motor and a list of accessories, each chosen for a reason that can be stated. It is not the same as reading a performance table. The table answers one question (what speed and power does this size need for this airflow and pressure?), while selection answers all of them, and many of the answers constrain each other. A hot airstream rules out some arrangements; the arrangement decides where the motor sits; the motor position has to agree with the discharge; the discharge comes from the ductwork.</p>
+<p>Because the decisions interact, experienced application engineers work through them in a fixed order and loop back when a later step breaks an earlier one. The order used in this chapter runs:</p>
+<ol>
+<li>Gather the application requirements and correct the duty point to standard air.</li>
+<li>Choose the fan family and impeller.</li>
+<li>Pick a size and speed from the current catalog table.</li>
+<li>Choose the arrangement, then the drive.</li>
+<li>Choose the construction, then size the motor for the coldest start.</li>
+<li>Choose the accessories.</li>
+<li>Check the sound data and the dimensions against the limits.</li>
+<li>Compare candidates and settle the trade-offs.</li>
+<li>Write the complete fan description and the specification, then review it.</li>
+</ol>
+<p>The diagram below lets you check that you know what information each step consumes, which is the skill that tells you where to loop back when something changes.</p>
+<h4 id="diagram-fan-selection-workflow">Diagram: Fan Selection Workflow<a class="headerlink" href="#diagram-fan-selection-workflow" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ch27-fan-selection-workflow/main.html" width="100%" height="1042px" scrolling="no"></iframe>
+<p><a href="../../sims/ch27-fan-selection-workflow/main.html">Run Fan Selection Workflow Fullscreen</a></p>
+<details>
+<summary>Fan Selection Workflow</summary>
+<p>Type: workflow
+<strong>sim-id:</strong> ch27-fan-selection-workflow<br/>
+<strong>Library:</strong> Mermaid<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify eight pieces of application information by the selection step that uses them, with at least 7 of 8 correct.</p>
+<p><strong>Prerequisites:</strong> fan selection, duty point, standard air, arrangement, drive, construction, cold start, accessories, sound data, dimensional data (all defined in this chapter or in Chapters 2, 10 and 11).</p>
+<p><strong>Evidence of Mastery:</strong> The learner assigns each of the 8 information cards to one of the 12 workflow steps. An assignment is correct when it matches the answer column in Content. Mastery is 7 of 8 correct on the first attempt. Clicking nodes to read infoboxes is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Selection is finished once a size is read from the performance table. (2) The motor is sized from the operating brake horsepower at the hot design temperature. (3) Dimensions are checked only after the order is placed.</p>
+<p><strong>Instructional Rationale:</strong> Classifying real job information into steps makes the learner explain what each step needs, which is the Understand-level skill behind knowing where to loop back when a requirement changes. The flowchart gives the structure; the sorting task produces the evidence.</p>
+<p><strong>Content:</strong></p>
+<p>Flowchart steps in order, each a clickable node with this infobox text:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Node label</th>
+<th>Infobox text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Application requirements</td>
+<td>Collect airflow, pressure, airstream conditions, space, noise and efficiency limits before choosing anything.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Correct duty point to standard air</td>
+<td>Divide the required static pressure by the density ratio so it can be read from a standard-air catalog table.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Fan family and impeller</td>
+<td>Choose the impeller the airstream allows: clean air permits airfoil or backward curved, dusty air pushes toward radial tip or radial bladed.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Size and speed from catalog</td>
+<td>Read the size, RPM and standard-air brake horsepower from the current catalog performance table.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Arrangement</td>
+<td>Decide where impeller, bearings and motor sit; hot or dirty air favors bearings out of the airstream.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Drive</td>
+<td>Choose belt drive or direct drive so the fan turns at the speed the table requires.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Construction</td>
+<td>Choose pressure class, materials, temperature package and spark resistance.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Motor and cold start</td>
+<td>Size the motor for the densest air the fan will ever start in.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Accessories</td>
+<td>Add the parts the application needs: dampers, liners, doors, drains, bases, isolators, flex connectors.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Sound and dimension check</td>
+<td>Compare octave band sound data with the noise limit and the dimension table with the space.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Compare candidates</td>
+<td>Weigh two or three candidate fans on performance, construction and accessories.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Description and specification</td>
+<td>Write the complete fan description and the specification, then review both.</td>
+</tr>
+</tbody>
+</table>
+<p>Edge labels: 1 to 2 "duty point", 2 to 3 "airstream", 3 to 4 "standard-air duty", 4 to 5 "size", 5 to 6 "motor location", 6 to 7 "speed", 7 to 8 "temperature range", 8 to 9 "motor", 9 to 10 "complete fan", 10 to 11 "passes limits", 11 to 12 "chosen fan". A dashed edge from 10 back to 5 is labeled "fails space or noise: revise".</p>
+<p>Information cards, shown in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Card text</th>
+<th>Correct step</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The plant sits at 5,000 ft elevation.</td>
+<td>2 Correct duty point to standard air</td>
+<td>Elevation changes air density, which changes the standard-air pressure you read from the table.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The table speed of 1,450 RPM falls between the 1,180 and 1,780 RPM motor speeds.</td>
+<td>6 Drive</td>
+<td>Matching fan speed to motor speed is the drive decision.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>On a winter startup the duct air is 70°F, not 500°F.</td>
+<td>8 Motor and cold start</td>
+<td>Cold air is denser and takes more power, so it sizes the motor.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The bearings must stay out of the 500°F gas.</td>
+<td>5 Arrangement</td>
+<td>The arrangement decides whether bearings sit in or out of the airstream.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The dust is sticky and abrasive.</td>
+<td>3 Fan family and impeller</td>
+<td>Dust that builds up or erodes rules out airfoil and backward curved wheels.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The fan sits on spring isolators on a mezzanine.</td>
+<td>9 Accessories</td>
+<td>Isolators, an isolation base and flex connectors are accessories.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The owner limits outlet sound to 95 dB A-weighted sound power.</td>
+<td>10 Sound and dimension check</td>
+<td>A noise limit is checked against the octave band sound data.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The fan must fit a 10 ft by 8 ft pad.</td>
+<td>10 Sound and dimension check</td>
+<td>A space limit is checked against the dimension table.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Step order and content from this chapter's sections; the 1,450, 1,180 and 1,780 RPM values, the 500°F and 70°F temperatures, the 95 dB limit and the 10 ft by 8 ft pad are this chapter's illustrative worked example.</p>
+<p><strong>Rules:</strong> Each card has exactly one correct step. A card can be assigned once; it locks after submission. Score is the count of correct first assignments out of 8; mastery is a score &gt;= 7.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner clicks any node to read its infobox (exploration).</li>
+<li>The learner drags or selects each card into a step, in card order.</li>
+<li>After each assignment the card shows correct or incorrect with the "Why" text, and the matching node is highlighted.</li>
+<li>After card 8 the score is shown; the learner may restart with the cards in the same order.</li>
+</ol>
+<p><strong>Feedback:</strong> One attempt per card; the correct step is revealed with the reason immediately after each answer. Correct: "Right: <Why>." Incorrect: "Not quite. This belongs to <correct step>: <Why>." Final message shows "n of 8 correct" and, when n &lt; 7, suggests rereading the sections named by the missed cards.</p>
+<p><strong>Starting State:</strong> The full flowchart with no node highlighted and card 1 shown, with the prompt "Which step uses this information?"</p>
+<p><strong>Chapter Anchors:</strong> 12 steps as listed; 8 cards; 1,450 RPM; 1,180 and 1,780 RPM motor speeds; 500°F design and 70°F cold start; 95 dB A-weighted outlet limit; 10 ft by 8 ft pad.</p>
+</details>
+<h2 id="application-requirements">Application Requirements<a class="headerlink" href="#application-requirements" title="Permanent link">&para;</a></h2>
+<p><strong>Application requirements</strong> are the facts about the job that any correct fan must satisfy: the duty point (airflow and pressure), the air conditions, the airstream contents, the space available, the noise and efficiency limits, the power supply, and the owner's preferences for maintenance and access. They come from the specifying engineer's schedule, the process engineer's data sheet, the plant walk-down, or a phone call with a customer. Most bad selections are not calculation errors; they are a missing requirement that nobody asked about. The four subsections below cover the requirements that most often go missing.</p>
+<h3 id="airstream-conditions">Airstream Conditions<a class="headerlink" href="#airstream-conditions" title="Permanent link">&para;</a></h3>
+<p><strong>Airstream conditions</strong> are everything about the gas the fan moves except its quantity: temperature (normal, maximum and minimum), elevation or barometric pressure, moisture, and what the gas carries, such as dust, fibers, corrosive vapors, or flammable gases and dusts. Temperature and elevation set the air density, which changes the pressure and power the fan needs (<a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a>). Contents decide the impeller, the materials, the coatings, the liners and whether spark-resistant construction is required. Ask for the <em>range</em>, not one number: the hottest temperature sets the construction package, while the coldest temperature sets the motor.</p>
+<h3 id="space-constraints">Space Constraints<a class="headerlink" href="#space-constraints" title="Permanent link">&para;</a></h3>
+<p><strong>Space constraints</strong> are the physical limits on where the fan can go: the footprint and height available, the location and direction of the connecting ducts, the room needed to remove the impeller or motor, door and aisle widths for rigging the fan in, and the structure that has to carry it. A fixed footprint often decides the arrangement before performance does, since arrangements differ in where the motor sits and how long the assembly runs. Space constraints also drive the discharge position and rotation, because the outlet has to point at the duct (<a href="../12-discharge-positions-and-rotation/">Chapter 12</a>).</p>
+<h3 id="noise-limits">Noise Limits<a class="headerlink" href="#noise-limits" title="Permanent link">&para;</a></h3>
+<p><strong>Noise limits</strong> are the maximum sound a fan installation may produce, written by an acoustical consultant, an owner's standard or a workplace regulation. A limit can be stated as sound power at the fan inlet or outlet, as sound pressure at a stated distance or location, as an A-weighted single number, or as a value in each octave band. The form matters: sound power describes the fan as a source and is what a catalog publishes, while sound pressure depends on the room, the duct and the distance (<a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>). If a limit is written in sound pressure, someone has to convert the fan's sound power to the listener's location before the two can be compared.</p>
+<h3 id="efficiency-requirements">Efficiency Requirements<a class="headerlink" href="#efficiency-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Efficiency requirements</strong> are the project's rules about how much energy the fan may use: a minimum fan efficiency rating, a rule that the operating point sit near the fan's peak efficiency, a motor efficiency standard, or a cap on brake horsepower. They come from energy codes, utility incentive programs, owner standards and the specifying engineer. Twin City Fan's Model RTF guide specification, for example, requires motors that comply with the Energy Independence and Security Act of 2007 and premium efficiency, inverter-duty motors when a variable frequency drive will control them.</p>
+<p>One widely used fan rating is the <strong>fan efficiency grade</strong> (FEG), defined by AMCA Standard 205. An FEG is a label that classifies a fan's <em>peak</em> total efficiency, adjusted for impeller diameter, into bands such as FEG 67, 71, 75, 80 and 85, with higher numbers meaning a more efficient aerodynamic design. It rates the fan alone, not the motor or drive, and it says nothing about where on the curve the fan will actually run. For that reason codes that used FEG paired it with a selection rule: ASHRAE Standard 90.1 editions from 2010 through 2016 required FEG 67 or higher and an operating point within 15 percentage points of the fan's peak total efficiency. Newer codes have moved to the fan energy index (FEI, AMCA Standard 208), which rates efficiency at the actual duty point, so check which metric the project's code edition names.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">A High Grade Does Not Mean an Efficient Selection</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is to accept any size of an FEG 85 fan because the grade is high. The grade describes the fan's best point; a size chosen far to the left or right of that point can still waste power. Check where the duty point falls on the curve, not only the grade on the label.</p>
+</div>
+<h3 id="the-fan-selection-checklist">The Fan Selection Checklist<a class="headerlink" href="#the-fan-selection-checklist" title="Permanent link">&para;</a></h3>
+<p>Requirements that are not written down get lost between the first phone call and the order. A <strong>fan selection checklist</strong> is a standing list of every value needed to select, describe and order a fan, filled in for each job before selection starts. The categories it needs follow from the requirements above and from the decisions later in this chapter:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Values to collect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duty</td>
+<td>Airflow (ACFM), static pressure, whether pressure is at actual or standard conditions, any alternate duty points</td>
+</tr>
+<tr>
+<td>Air conditions</td>
+<td>Normal, maximum and minimum temperature; elevation or barometric pressure; moisture</td>
+</tr>
+<tr>
+<td>Airstream contents</td>
+<td>Dust type, loading, stickiness and abrasiveness; corrosive vapors; flammable gases or dusts</td>
+</tr>
+<tr>
+<td>Space</td>
+<td>Footprint, height, inlet and outlet duct directions, service clearances, rigging path</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>Limit, its form (sound power or pressure, octave bands or A-weighted) and where it applies</td>
+</tr>
+<tr>
+<td>Efficiency</td>
+<td>Code or owner requirement (FEG, FEI, motor efficiency), operating hours</td>
+</tr>
+<tr>
+<td>Electrical</td>
+<td>Voltage, phase, frequency, enclosure, hazardous location classification, VFD or across-the-line start</td>
+</tr>
+<tr>
+<td>Flow control</td>
+<td>Turndown range, how often reduced flow is needed, damper, inlet vanes or speed control</td>
+</tr>
+<tr>
+<td>Installation</td>
+<td>Floor, mezzanine, roof or ceiling; isolation; seismic or wind requirements</td>
+</tr>
+<tr>
+<td>Documents</td>
+<td>Submittal content, certified drawings, tests, schedule</td>
+</tr>
+</tbody>
+</table>
+<p>A checklist is a living document: when a job reveals a requirement you did not ask for, add it to the list for the next job.</p>
+<h2 id="selecting-the-fan">Selecting the Fan<a class="headerlink" href="#selecting-the-fan" title="Permanent link">&para;</a></h2>
+<h3 id="fan-selection-from-duty-point-to-catalog-size">Fan Selection: From Duty Point to Catalog Size<a class="headerlink" href="#fan-selection-from-duty-point-to-catalog-size" title="Permanent link">&para;</a></h3>
+<p>The core of fan selection is finding a size and speed that delivers the required airflow and pressure, and that step depends on a correction you learned in <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a>. Catalog tables are published for standard air (0.075 lb/ft³), but the fan sees actual air. At a fixed speed, a fan moves the same volume regardless of density, while the pressure it develops and the power it draws are both proportional to density. To use a standard-air table for hot or high-altitude air, convert the required static pressure to the pressure the fan would develop in standard air:</p>
+<div class="arithmatex">\[ SP_{std} = \frac{SP_{act}}{d} \qquad d = \frac{P_b}{29.92} \times \frac{530}{T + 460} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( SP_{std} \)</span> is the static pressure to look up in the standard-air table, in. wg</li>
+<li><span class="arithmatex">\( SP_{act} \)</span> is the static pressure required at actual conditions, in. wg</li>
+<li><span class="arithmatex">\( d \)</span> is the density ratio, actual density divided by 0.075 lb/ft³</li>
+<li><span class="arithmatex">\( P_b \)</span> is the barometric pressure at the site, in. Hg (29.92 at sea level)</li>
+<li><span class="arithmatex">\( T \)</span> is the airstream temperature, °F</li>
+</ul>
+<p>The airflow is looked up unchanged, in actual cubic feet per minute. The table then gives the RPM, which is correct as read, and the brake horsepower at standard air, which is multiplied by <span class="arithmatex">\( d \)</span> to get the power at the hot operating condition.</p>
+<p><strong>Worked example.</strong> A dryer exhaust fan must move 20,000 ACFM against 12.0 in. wg static pressure. The gas is 500°F, the plant is at sea level, and the gas carries a moderate load of sticky, abrasive, combustible wood dust. (The duty and the catalog readings below are illustrative values for teaching; a real selection reads the current catalog or Twin City Fan's selection software.)</p>
+<ol>
+<li>Density ratio: <span class="arithmatex">\( d = 1.00 \times 530 / (500 + 460) = 0.552 \)</span>.</li>
+<li>Standard-air static pressure: <span class="arithmatex">\( SP_{std} = 12.0 / 0.552 = 21.7 \)</span> in. wg.</li>
+<li>Read the table at 20,000 CFM and 21.7 in. wg. Suppose it shows a size that needs 1,450 RPM and 96.0 BHP at standard air.</li>
+<li>Hot operating power: <span class="arithmatex">\( 96.0 \times 0.552 = 53.0 \)</span> BHP.</li>
+<li>Check the operating point: it should sit on the stable, right-hand side of the fan curve, clear of the peak pressure region, and near enough to peak efficiency to meet any efficiency requirement.</li>
+</ol>
+<p>The 21.7 in. wg figure matters later: it is the pressure the fan structure must be built for whenever it runs in cold air, and it is the number the construction class is checked against.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Same Fan, Two Weights of Air</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that this fan has two personalities: hot, it works against 12.0 inches of water and draws 53 BHP, while a cold start at the same 1,450 RPM raises that to 21.7 inches and 96 BHP. Every later decision, from construction class to motor size, has to respect whichever personality is harder on that part.</p>
+</div>
+<h3 id="impeller-selection">Impeller Selection<a class="headerlink" href="#impeller-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Impeller selection</strong> is choosing the impeller type, and with it the fan family, that the airstream and the duty allow. The trade runs along one line (<a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>): airfoil and backward curved impellers give the best efficiency but need clean air or light dust, radial tip impellers handle large volumes of clean or dirty gas with a self-cleaning tip, and radial bladed impellers survive sticky, abrasive or stringy material at the cost of more power. For the dryer exhaust, sticky and abrasive dust rules out the airfoil and backward curved wheels, and the large volume at moderate to high pressure points to a radial tip fan. Twin City Fan's guide specification describes its Model RTF radial tip fan for exactly this kind of service: exhaust from collectors, scrubbers and cyclones, and induced draft on boilers, incinerators and kilns.</p>
+<h3 id="arrangement-selection">Arrangement Selection<a class="headerlink" href="#arrangement-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Arrangement selection</strong> is choosing the standard arrangement that places the impeller, bearings and motor where the application needs them (<a href="../11-drives-and-standard-fan-arrangements/">Chapter 11</a>). The deciding questions are, in order: Can the bearings and motor be in the airstream? Is the drive belt or direct? Does the assembly fit the space? Does it need to sit on isolators?</p>
+<p>FanPedia supplies the facts that answer those questions for a single width, single inlet centrifugal fan:</p>
+<ul>
+<li>Arrangement 1 overhangs the impeller with both bearings on a pedestal out of the airstream, "ideal for high temperature or contaminated air," with the motor mounted separately in position W, X, Y or Z (FanPedia p. 162).</li>
+<li>Arrangement 4 mounts the impeller on the motor shaft, so the motor sits right against the housing; FanPedia's plug fan description notes that high airstream temperatures may limit this arrangement (p. 171).</li>
+<li>Arrangement 8 extends the Arrangement 1 pedestal to carry the motor, coupled directly to the fan shaft (p. 165).</li>
+<li>Arrangement 9 is belt drive only, with the motor on a slide base on the side of the bearing pedestal; the unit ships as a complete assembly, and the motor typically goes on the left side for clockwise fans and on the right for counterclockwise fans (p. 165).</li>
+<li>Arrangement 9F extends the frame for a motor too large for the pedestal, and is not suitable for mounting isolators directly under the fan (p. 166).</li>
+<li>FanPedia's high temperature construction page lists Arrangements 1, 8, 9, 9F and 10 for high temperature centrifugal fans (p. 110).</li>
+</ul>
+<p><strong>Worked example.</strong> Continue with the dryer exhaust. The fan must fit a 10 ft by 8 ft pad on a mezzanine and sit on spring isolators.</p>
+<ol>
+<li>Bearings and motor out of the 500°F gas: Arrangement 4 is out. Arrangements 1, 8, 9 and 9F remain.</li>
+<li>Isolators required: Arrangement 9F is out, since FanPedia says it cannot take isolators directly and recommends Arrangement 1 on an isolation base instead.</li>
+<li>Space: Arrangement 1 needs a separate motor base beside or behind the fan, and Arrangement 8 adds the motor and coupling to the length of the pedestal. Arrangement 9 hangs the motor on the side of the pedestal, which keeps the assembly short and lets it ship complete.</li>
+<li>Result: Arrangement 9, provided the catalog confirms the motor frame fits the pedestal (the motor is sized below). If it does not, the fallback is Arrangement 1 on a common isolation base, and the dimension check has to prove that still fits the pad.</li>
+</ol>
+<h3 id="drive-selection">Drive Selection<a class="headerlink" href="#drive-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Drive selection</strong> is choosing how the motor turns the impeller so the fan runs at the speed the table requires: through V-belts and sheaves, through a flexible coupling, or with the impeller on the motor shaft, with or without a variable frequency drive (VFD). A belt drive can produce any fan speed and can be changed later with a new sheave, which is why FanPedia says of belt-driven Arrangement 9 axial and inline fans that "the exact point of rating can be easily achieved" (p. 173). A direct drive removes belts, belt dust and belt maintenance, but without a VFD the fan turns at motor speed.</p>
+<p><strong>Worked example.</strong> The selection needs 1,450 RPM. Four-pole and six-pole motors on 60 Hz power run near 1,780 and 1,180 RPM at full load. The fan laws from <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> show what happens if the fan is simply coupled to one of them on the same system:</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Speed ratio</th>
+<th>Airflow (ACFM)</th>
+<th>Hot BHP</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Belt drive at 1,450 RPM</td>
+<td>1.00</td>
+<td>20,000</td>
+<td>53.0</td>
+<td>Meets the duty</td>
+</tr>
+<tr>
+<td>Direct, 4-pole, 1,780 RPM</td>
+<td>1.23</td>
+<td>about 24,550</td>
+<td>about 98 (×1.85)</td>
+<td>23% too much air, almost twice the power</td>
+</tr>
+<tr>
+<td>Direct, 6-pole, 1,180 RPM</td>
+<td>0.81</td>
+<td>about 16,280</td>
+<td>about 28.6 (×0.54)</td>
+<td>19% short of the duty</td>
+</tr>
+<tr>
+<td>Direct, 4-pole with VFD set to 1,450 RPM</td>
+<td>1.00</td>
+<td>20,000</td>
+<td>53.0 plus VFD losses</td>
+<td>Meets the duty</td>
+</tr>
+</tbody>
+</table>
+<p>Airflow scales with the speed ratio, and power with its cube: <span class="arithmatex">\( (1{,}780/1{,}450)^3 = 1.85 \)</span>. Either the belt drive or the VFD meets the duty. The belt drive matches the Arrangement 9 choice and keeps the speed change cheap; the VFD option would require a direct-drive arrangement such as Arrangement 8, a longer assembly, but it removes belts from a dusty, hot area and gives speed turndown. For this job, Arrangement 9 with a belt drive is chosen, and the dust and heat around the belts become an accessory question (a belt guard and a maintenance plan).</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Run the Fan Laws Before You Say Direct Drive</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's a quick sanity check: divide the nearest motor speed by the required fan speed and cube it. If the result is far from 1.00 and there is no VFD, a direct-drive selection is either starving the system or paying for power it does not need.</p>
+</div>
+<h3 id="construction-selection">Construction Selection<a class="headerlink" href="#construction-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Construction selection</strong> is choosing how the fan is built to survive its duty: the pressure and speed class, the materials and thicknesses, the temperature package, any spark-resistant construction, abrasion protection and coatings (<a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a> and <a href="../21-high-temperature-leak-tight-and-rto-construction/">Chapter 21</a>). Each choice is checked against the harshest condition the fan will meet, not the normal one.</p>
+<p><strong>Worked example.</strong> The dryer exhaust fan, checked item by item against Twin City Fan's Model RTF guide specification (Section 23 34 16) and FanPedia:</p>
+<ol>
+<li><strong>Pressure class.</strong> The guide specification lists RTF Class 18 at a maximum tip speed of 18,000 ft/min and static pressure up to 24 in. wg, and Class 23 at 23,000 ft/min and up to 36 in. wg. The cold-start pressure of 21.7 in. wg is under 24, so Class 18 is the first candidate. Tip speed confirms it: for an illustrative 40.25 in. wheel at 1,450 RPM, <span class="arithmatex">\( \pi \times 40.25 \times 1{,}450 / 12 = 15{,}280 \)</span> ft/min, under 18,000. Because metal loses strength when hot, also confirm in the catalog that the class's maximum speed at 500°F still covers 1,450 RPM.</li>
+<li><strong>Temperature package.</strong> The guide specification's 500°F tier calls for high temperature grease and bearings, a shaft seal and a shaft cooler. FanPedia's high temperature packages are grouped by range, with 301°F to 500°F as the first (p. 110), and it recommends shaft coolers above 300°F (p. 192).</li>
+<li><strong>Spark resistance.</strong> The dust is combustible, so spark-resistant construction is needed. The guide specification limits AMCA Types A and B to 250°F, which leaves Type C, offered for 500°F or 800°F. FanPedia describes Type C as reducing the chance of contact between rotating and stationary parts, typically with an aluminum inlet cone and rub plate, and requiring a steel funnel with a rubbing band and bars at high temperature (p. 193).</li>
+<li><strong>Abrasion.</strong> The guide specification offers a 7-gauge steel scroll liner and side liner, welded in place, and states that bolt-on liners are not acceptable.</li>
+</ol>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Many Rules at Once Is the Normal Feeling Here</p>
+<p><img alt="Breeze encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If juggling temperature, pressure, dust and spark resistance at once feels heavy, that is normal: this is where every earlier chapter lands on one fan. Take the harshest condition for each part, one part at a time, exactly as the worked example does, and write down the source for each answer as you go.</p>
+</div>
+<h3 id="cold-start-motor-sizing">Cold Start Motor Sizing<a class="headerlink" href="#cold-start-motor-sizing" title="Permanent link">&para;</a></h3>
+<p><strong>Cold start motor sizing</strong> is choosing a motor large enough for the brake horsepower the fan draws when it starts in air colder, and therefore denser, than its design air. A hot-gas fan selected for 53.0 BHP at 500°F will draw the standard-air 96.0 BHP if it starts at 70°F at the same 1,450 RPM, because power rises with density. A 60 HP motor sized from the hot rating would overload on every cold start. The two usual answers are to size the motor for the cold condition (here, a 100 HP motor, which also covers belt losses of a few percent) or to limit the cold-start load with a closed damper or reduced VFD speed until the gas is hot, which the specification must state as a required startup sequence. The guide specification adds a general rule: the driven load should not require the motor to run in its service factor range above 1.0.</p>
+<h3 id="accessory-selection">Accessory Selection<a class="headerlink" href="#accessory-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Accessory selection</strong> is adding the optional parts the application needs, each tied to a stated requirement. The most reliable method is to walk the checklist one row at a time and ask what each requirement demands, then confirm each accessory against the catalog option list.</p>
+<p><strong>Worked example.</strong> The accessory list for the dryer exhaust fan, with the requirement each item answers:</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Accessory</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turndown during warm-up and cold-start load control</td>
+<td>Parallel blade outlet damper with electric actuator, rated for 301°F to 600°F</td>
+<td>Outlet dampers suit hot, humid or particulate-laden air (FanPedia p. 183); temperature ranges from the RTF guide specification</td>
+</tr>
+<tr>
+<td>Dirty airstream rules out nested vanes</td>
+<td>No nested inlet vanes</td>
+<td>Guide specification: external vanes suit dirty airstreams; nested vanes take less space</td>
+</tr>
+<tr>
+<td>Abrasive dust</td>
+<td>Welded 7-gauge scroll liner and side liner</td>
+<td>RTF guide specification</td>
+</tr>
+<tr>
+<td>Inspection and cleaning of a dust-laden housing</td>
+<td>Raised bolted access door</td>
+<td>RTF guide specification</td>
+</tr>
+<tr>
+<td>Condensate when the hot gas cools at shutdown</td>
+<td>Scroll drain with 3/4 in. NPT plug</td>
+<td>RTF guide specification; drains, FanPedia p. 183</td>
+</tr>
+<tr>
+<td>Mezzanine mounting</td>
+<td>Isolation base with spring isolators</td>
+<td>Isolation bases, FanPedia p. 176</td>
+</tr>
+<tr>
+<td>Isolated fan</td>
+<td>Inlet and outlet flex connectors rated for the gas temperature</td>
+<td>Flex connectors are required on all isolated fans (FanPedia p. 187)</td>
+</tr>
+<tr>
+<td>Belt drive</td>
+<td>OSHA-compliant belt guard</td>
+<td>RTF guide specification</td>
+</tr>
+<tr>
+<td>500°F operation</td>
+<td>Shaft seal and shaft cooler</td>
+<td>Construction package above</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that every row starts from a requirement. An accessory with no requirement behind it is a cost to question, and a requirement with no accessory beside it is a gap to close.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Isolators Without Flex Connectors</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for a specification that puts the fan on springs but leaves the duct connections rigid. FanPedia states that flex connectors are required on all isolated fans; without them the duct either restrains the isolators or cracks. Add both, and say who furnishes the connectors.</p>
+</div>
+<h2 id="proving-the-selection-sound-and-dimension-data">Proving the Selection: Sound and Dimension Data<a class="headerlink" href="#proving-the-selection-sound-and-dimension-data" title="Permanent link">&para;</a></h2>
+<h3 id="octave-band-sound-data">Octave Band Sound Data<a class="headerlink" href="#octave-band-sound-data" title="Permanent link">&para;</a></h3>
+<p><strong>Octave band sound data</strong> is a fan's sound power level reported separately in each of eight frequency bands, centered at 63, 125, 250, 500, 1,000, 2,000, 4,000 and 8,000 Hz. Twin City Fan's Model RTF guide specification asks for exactly this in the submittal: "fan sound power levels in eight octave bands and A-weighted overall sound power level or sone values," tested to AMCA Standard 300. Band data matters because noise control works band by band: a silencer, a wall or a duct lining attenuates some frequencies far better than others, and the human ear weighs them differently.</p>
+<p>To compare band data with an A-weighted limit, add the standard A-weighting correction to each band and then add the bands logarithmically:</p>
+<div class="arithmatex">\[ L_{WA} = 10 \log_{10} \sum_{i=1}^{8} 10^{(L_{W,i} + A_i)/10} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( L_{WA} \)</span> is the overall A-weighted sound power level, dB</li>
+<li><span class="arithmatex">\( L_{W,i} \)</span> is the sound power level in octave band <span class="arithmatex">\( i \)</span>, dB</li>
+<li><span class="arithmatex">\( A_i \)</span> is the A-weighting correction for band <span class="arithmatex">\( i \)</span>, dB</li>
+</ul>
+<p><strong>Worked example.</strong> The owner limits outlet sound power to 95 dB A-weighted. The selected fan's outlet sound power (illustrative values) is shown with the A-weighting corrections:</p>
+<table>
+<thead>
+<tr>
+<th>Band center (Hz)</th>
+<th>63</th>
+<th>125</th>
+<th>250</th>
+<th>500</th>
+<th>1,000</th>
+<th>2,000</th>
+<th>4,000</th>
+<th>8,000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\( L_W \)</span>, dB</td>
+<td>98</td>
+<td>96</td>
+<td>94</td>
+<td>90</td>
+<td>87</td>
+<td>83</td>
+<td>78</td>
+<td>72</td>
+</tr>
+<tr>
+<td>A-weighting, dB</td>
+<td>−26.2</td>
+<td>−16.1</td>
+<td>−8.6</td>
+<td>−3.2</td>
+<td>0</td>
+<td>+1.2</td>
+<td>+1.0</td>
+<td>−1.1</td>
+</tr>
+<tr>
+<td>A-weighted, dB</td>
+<td>71.8</td>
+<td>79.9</td>
+<td>85.4</td>
+<td>86.8</td>
+<td>87.0</td>
+<td>84.2</td>
+<td>79.0</td>
+<td>70.9</td>
+</tr>
+</tbody>
+</table>
+<p>Adding the eight A-weighted bands logarithmically gives 92.5 dB, which meets the 95 dB limit. Adding the unweighted bands gives 101.6 dB, a number that would wrongly appear to fail. Notice also which bands control the answer: the 63 Hz band is the loudest unweighted, but after weighting the 500 and 1,000 Hz bands dominate, so those are the bands a silencer would need to attack if the limit were lower.</p>
+<h4 id="diagram-octave-band-a-weighting-calculator">Diagram: Octave Band A-Weighting Calculator<a class="headerlink" href="#diagram-octave-band-a-weighting-calculator" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Octave Band A-Weighting Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch27-octave-band-a-weighting<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the overall A-weighted sound power level from eight octave band levels and judge it against a limit, to within ±0.5 dB.</p>
+<p><strong>Prerequisites:</strong> octave band, sound power level, A-weighting, logarithmic addition, noise limit (defined in the sections Noise Limits and Octave Band Sound Data above).</p>
+<p><strong>Evidence of Mastery:</strong> For three challenge spectra the learner enters the overall A-weighted level and chooses "meets limit" or "exceeds limit" before the sim reveals the answer. A challenge is correct when the entered level is within ±0.5 dB of the model value and the meets/exceeds choice is right. Mastery is 3 of 3. Moving band sliders in free mode is exploration.</p>
+<p><strong>Misconceptions:</strong> (1) The overall level is the arithmetic average or sum of the band levels. (2) The loudest unweighted band controls the A-weighted total. (3) An unweighted overall level can be compared with an A-weighted limit.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs practice with a check, so the learner commits a number before the reveal; free mode afterward lets them see how a change in one band moves the total.</p>
+<p><strong>Content:</strong></p>
+<p>Band centers (Hz) and A-weighting corrections (dB): 63: −26.2; 125: −16.1; 250: −8.6; 500: −3.2; 1,000: 0; 2,000: +1.2; 4,000: +1.0; 8,000: −1.1.</p>
+<p>Challenge spectra, in this fixed order (all values illustrative):</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Bands 63 to 8,000 Hz (dB)</th>
+<th>Limit (dB, A-weighted)</th>
+<th>Model overall LwA (dB)</th>
+<th>Verdict</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>98, 96, 94, 90, 87, 83, 78, 72</td>
+<td>95</td>
+<td>92.5</td>
+<td>Meets</td>
+<td>Weight each band first, then add as 10·log10 of the sum of 10^(L/10); the 500 and 1,000 Hz bands dominate.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>90, 92, 95, 97, 96, 93, 88, 82</td>
+<td>95</td>
+<td>100.2</td>
+<td>Exceeds</td>
+<td>After weighting, the 500 to 2,000 Hz bands sit near 94 to 96 dB each; three or four bands near 95 dB add to well over 95.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>105, 100, 92, 86, 82, 78, 74, 68</td>
+<td>95</td>
+<td>90.0</td>
+<td>Meets</td>
+<td>The 105 dB at 63 Hz drops to 78.8 dB after weighting; a loud low band does not control an A-weighted total.</td>
+</tr>
+</tbody>
+</table>
+<p>In free mode, each of the eight bands is adjustable from 50 to 110 dB, step 1 dB, defaults equal to challenge 1. The limit is adjustable from 70 to 110 dB, step 1 dB, default 95 dB. The sim shows the weighted value of each band, the overall A-weighted level, the overall unweighted level, and which band contributes most to the A-weighted total.</p>
+<p><strong>Provenance:</strong> A-weighting corrections are the standard IEC 61672 octave-band values; band centers and the eight-band requirement from Twin City Fan's Model RTF guide specification (tcf.com, Product Specifications in CSI format, Section 23 34 16). All spectra are illustrative and the sim labels them "illustrative".</p>
+<p><strong>Rules:</strong> Weighted band = band level + correction. LwA = 10·log10(Σ 10^(weighted/10)), rounded to 0.1 dB. Unweighted overall = 10·log10(Σ 10^(L/10)). Verdict "meets" when LwA &lt;= limit, "exceeds" when LwA &gt; limit. The largest contributor is the band with the highest weighted level; ties go to the lower frequency.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1's eight bands and the limit, types an overall A-weighted level, and picks meets or exceeds.</li>
+<li>The learner presses Check; the sim shows the weighted bands, the model total and the verdict next to the learner's answer.</li>
+<li>After all three challenges, free mode unlocks: moving any band slider updates the weighted values, both totals and the largest contributor at once. The learner should notice that raising the 63 Hz band by 10 dB barely changes the A-weighted total, while raising the 1,000 Hz band by 10 dB changes it a lot.</li>
+</ol>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: LwA = <model> dB, which <meets/exceeds> the <limit> dB limit." Incorrect: the "Feedback when wrong" text. After the second wrong attempt, the model value and the weighted band table are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Starting State:</strong> Challenge 1 with an empty answer box and the eight band levels listed, asking "What is the A-weighted overall level, and does it meet 95 dB?"</p>
+<p><strong>Chapter Anchors:</strong> Eight bands centered 63 to 8,000 Hz; corrections as listed; challenge 1 equals the chapter's worked example: 92.5 dB A-weighted, 101.6 dB unweighted, 95 dB limit, 500 and 1,000 Hz bands dominate.</p>
+</details>
+<h3 id="dimensional-data-table">Dimensional Data Table<a class="headerlink" href="#dimensional-data-table" title="Permanent link">&para;</a></h3>
+<p>A <strong>dimensional data table</strong> is the catalog table that gives the outside dimensions, mounting dimensions, inlet and outlet sizes and approximate weights of each fan size, keyed by letters to a dimension drawing. Each letter (A, B, C and so on) labels one distance on the drawing, and each row gives the values for one size and often one arrangement. The table is the tool for checking space constraints during selection; it is approximate, and the catalog normally says so, which is why certified drawings exist (below).</p>
+<p><strong>Worked example.</strong> Will the Arrangement 9 dryer exhaust fan fit its 10 ft by 8 ft (120 in. by 96 in.) pad? The dimension letters and values below are illustrative; real ones come from the current catalog page for the selected size and arrangement.</p>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>What it measures</th>
+<th>Value (illustrative)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Overall height, floor to top of housing</td>
+<td>94 in.</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Overall length, inlet face to back of pedestal</td>
+<td>86 in.</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Overall width, including side-mounted motor and belt guard</td>
+<td>90 in.</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Floor to centerline of outlet</td>
+<td>70 in.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Length: 86 in. against 120 in. leaves 34 in., enough for the inlet duct connection and its flex connector.</li>
+<li>Width: 90 in. against 96 in. leaves 6 in. in total, and the isolation base usually extends beyond the fan feet. That is too tight to pull the motor or change belts.</li>
+<li>Height and outlet: the outlet centerline at 70 in. has to line up with the existing duct; a mismatch means a transition piece.</li>
+<li>Action: ask whether the motor can move to the other side (which for Arrangement 9 means checking the rotation), or move the fan so the motor side faces open floor, and get a certified drawing before releasing the order.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Draw the Clearance, Not Just the Fan</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Want to save yourself a field change? Sketch the pad at scale and draw the fan's dimension box plus the space needed to pull the motor, open the access door and change the belts. If the clearance boxes overlap a wall, the fan does not fit, even when its own dimensions do.</p>
+</div>
+<h2 id="comparing-candidates">Comparing Candidates<a class="headerlink" href="#comparing-candidates" title="Permanent link">&para;</a></h2>
+<h3 id="selection-trade-offs">Selection Trade-Offs<a class="headerlink" href="#selection-trade-offs" title="Permanent link">&para;</a></h3>
+<p><strong>Selection trade-offs</strong> are the conflicts between good properties that no single fan can have at once, and that the selection has to settle on purpose. The common ones are efficiency against tolerance for dirty air (the impeller line from airfoil to radial bladed), first cost against operating cost (a larger, slower fan usually costs more to buy and less to run), belt drive flexibility against direct drive maintenance, compact arrangements against service access and isolation, and margin against oversizing (a fan selected with too much margin runs away from its best efficiency). A trade-off is settled well when the reason is written down and traceable to a requirement.</p>
+<h3 id="fan-comparison">Fan Comparison<a class="headerlink" href="#fan-comparison" title="Permanent link">&para;</a></h3>
+<p>A <strong>fan comparison</strong> is a side-by-side table of two or three candidate fans for the same duty point, built so a customer or a reviewer can see why one was chosen. It lists the same attributes for each candidate: performance (RPM, brake horsepower, efficiency, sound), construction (class, materials, temperature package), arrangement and drive, accessories, and the risks each candidate carries. For the dryer exhaust, the impeller types from <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a> give three candidates:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>RTF radial tip</th>
+<th>RBO open radial paddle</th>
+<th>HIB backward curved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Airstream tolerance</td>
+<td>Clean or dirty gas; self-cleaning radial tip</td>
+<td>Coarse, sticky, heavy or abrasive material</td>
+<td>Clean air or light dust loading</td>
+</tr>
+<tr>
+<td>Relative efficiency at this duty</td>
+<td>Higher than radial bladed at high airflow</td>
+<td>Lowest of the three</td>
+<td>Highest of the three</td>
+</tr>
+<tr>
+<td>Risk on this job</td>
+<td>Erosion of blades by abrasive dust; liners help</td>
+<td>Highest power and motor cost</td>
+<td>Dust buildup and erosion on curved blades</td>
+</tr>
+<tr>
+<td>Verdict</td>
+<td>Selected</td>
+<td>Fallback if the dust proves stickier than expected</td>
+<td>Rejected for the airstream</td>
+</tr>
+</tbody>
+</table>
+<p>The table does not replace the numbers: a real comparison adds the RPM, brake horsepower, sound and dimensions for each candidate from the current catalog.</p>
+<h2 id="describing-and-specifying-the-fan">Describing and Specifying the Fan<a class="headerlink" href="#describing-and-specifying-the-fan" title="Permanent link">&para;</a></h2>
+<h3 id="complete-fan-description">Complete Fan Description<a class="headerlink" href="#complete-fan-description" title="Permanent link">&para;</a></h3>
+<p>A <strong>complete fan description</strong> is the compact, ordered statement of every attribute the factory needs to build one fan: quantity, manufacturer and model, size, class, arrangement, rotation and discharge, motor position, drive, motor, construction and accessories, together with the duty point and air conditions. It is what goes on a quote line, a fan schedule or an order, and it is complete when two people reading it would build the same fan.</p>
+<p><strong>Worked example.</strong> The dryer exhaust fan, as one description:</p>
+<blockquote>
+<p>One (1) Twin City Fan Model RTF radial tip fan, Class 18, size per selection, Arrangement 9, belt driven, CW THD (CW 90), motor on left side of pedestal. Duty: 20,000 ACFM at 12.0 in. wg static pressure, 500°F, sea level (0.0414 lb/ft³). Motor: 100 HP, TEFC, 460 V, 3 phase, 60 Hz, sized for cold start at 70°F. Construction: high temperature package to 500°F with shaft seal and shaft cooler; AMCA Type C spark-resistant construction; welded 7-gauge scroll and side liners. Accessories: raised bolted access door; scroll drain with 3/4 in. NPT plug; parallel blade outlet damper with electric actuator, rated 301°F to 600°F; OSHA belt guard; isolation base with spring isolators; inlet and outlet flex connectors rated for 500°F.</p>
+</blockquote>
+<p>To check a description, break it into its parts and check each pair that interacts: the rotation against the motor side (FanPedia puts the Arrangement 9 motor on the left for clockwise fans, p. 165), the discharge against the duct direction, the spark-resistance type against the temperature, the motor against the cold-start load, and the isolators against the flex connectors.</p>
+<h3 id="annotated-fan-drawing">Annotated Fan Drawing<a class="headerlink" href="#annotated-fan-drawing" title="Permanent link">&para;</a></h3>
+<p>An <strong>annotated fan drawing</strong> is a drawing of the fan, usually a simple side and drive-side view, marked with the attributes that set its orientation and layout: the arrangement, the rotation arrow seen from the drive side, the discharge position, the motor position, the inlet and outlet connections, and callouts for accessories such as access doors, drains and the shaft cooler. It is the picture that goes with the complete fan description, and it catches errors words miss, such as a motor drawn on the side where the outlet duct runs. When you produce one, view it from the drive side, label the rotation and discharge in both letter and angle form, and dimension the clearances the space check depends on.</p>
+<h3 id="fan-specification">Fan Specification<a class="headerlink" href="#fan-specification" title="Permanent link">&para;</a></h3>
+<p>A <strong>fan specification</strong> is the written document that tells bidders what the fan must do and how it must be built, tested, documented and installed, so that any compliant product is acceptable and any non-compliant one can be rejected. Unlike the complete fan description, which describes one fan from one manufacturer, a specification describes requirements, names a basis of design and may allow comparable products. It must be specific enough to exclude a fan that would fail and open enough to allow fair bidding.</p>
+<p><strong>Worked example.</strong> One requirement written three ways shows what a specification sentence has to do:</p>
+<ol>
+<li>"Fan shall be suitable for high temperature." This cannot be enforced: no temperature, no construction.</li>
+<li>"Fan shall be suitable for 500°F." Better, but a bidder can still omit the shaft cooler and argue the fan is "suitable."</li>
+<li>"Maximum operating temperature: 500°F (260°C). Provide high temperature grease and bearings, shaft seal and shaft cooler." This follows the Twin City Fan guide specification's wording, states the condition and the required features, and can be checked against a submittal line by line.</li>
+</ol>
+<p>The test for every sentence is the same: could a reviewer prove from the submittal that the requirement is met or not met?</p>
+<h3 id="csi-format-specification">CSI Format Specification<a class="headerlink" href="#csi-format-specification" title="Permanent link">&para;</a></h3>
+<p>A <strong>CSI format specification</strong> is a specification organized by the Construction Specifications Institute's MasterFormat, the numbering system used for construction project manuals in North America. Fans fall in Division 23 (heating, ventilating and air conditioning); Twin City Fan's published guide specifications use sections such as 23 34 13 for axial HVAC fans, 23 34 16 for centrifugal HVAC fans and industrial fans, and 23 34 23 for HVAC power ventilators. Every section follows the same three-part structure:</p>
+<ul>
+<li><strong>Part 1, General:</strong> summary, reference standards (AMCA 204, 205, 210, 211 and 300; ABMA 9 and 11; NEMA MG 1; NFPA 70), submittals, quality assurance, coordination, delivery and warranty.</li>
+<li><strong>Part 2, Products:</strong> manufacturer and basis of design, performance requirements, then the fan itself: impeller, shaft, bearings, housing, drive, motor, construction options and accessories, and source quality control such as factory balance and run tests.</li>
+<li><strong>Part 3, Execution:</strong> examination, installation, field quality control, adjusting and cleaning.</li>
+</ul>
+<p>Twin City Fan publishes these guide specifications in CSI format on tcf.com, with bracketed options and "Specifier" notes that tell the writer which paragraphs to keep for a given drive, arrangement or temperature.</p>
+<h3 id="specification-performance-clause">Specification Performance Clause<a class="headerlink" href="#specification-performance-clause" title="Permanent link">&para;</a></h3>
+<p>The <strong>specification performance clause</strong> is the paragraph in Part 2 that states what the fan must deliver and how its ratings must be proven. A complete clause states the airflow and pressure, the air temperature and elevation (or density) at which they apply, whether the ratings are for site elevation or sea level, the rating standards, and any limit on power, sound or efficiency. For the dryer exhaust fan:</p>
+<blockquote>
+<p>Fan shall deliver 20,000 ACFM at 12.0 in. wg static pressure with gas at 500°F at sea level (0.0414 lb/ft³). Performance shall be rated in accordance with AMCA Standard 210 and certified under AMCA Standard 211, and fan efficiency shall be classified under AMCA Standard 205. Motor shall be sized for the brake horsepower at a 70°F start without operating in the service factor. Outlet sound power shall not exceed 95 dB A-weighted, tested in accordance with AMCA Standard 300 and reported in eight octave bands.</p>
+</blockquote>
+<p>Before keeping the AMCA certification sentences, check that the selected size is eligible: the RTF guide specification itself notes that some, but not all, fans in that series are eligible for the AMCA seal.</p>
+<h3 id="submittal-data">Submittal Data<a class="headerlink" href="#submittal-data" title="Permanent link">&para;</a></h3>
+<p><strong>Submittal data</strong> is the package of documents the manufacturer or contractor sends for the engineer's review before the fan is released for manufacture, so the engineer can confirm it meets the specification. Twin City Fan's Model RTF guide specification lists the action submittals: rated capacities and operating characteristics, fan performance curves with flow, static pressure and horsepower, sound power in eight octave bands with an A-weighted or sone value, motor ratings and electrical characteristics, specialty components and accessories, and dimensioned drawings with weights and attachments. Informational submittals (quality-control reports, an ISO 9001 certificate) and closeout submittals (operation and maintenance data) follow later.</p>
+<h3 id="certified-drawings">Certified Drawings<a class="headerlink" href="#certified-drawings" title="Permanent link">&para;</a></h3>
+<p><strong>Certified drawings</strong> are drawings the manufacturer produces for a specific order and certifies as accurate for the fan being built, unlike catalog dimension drawings, which are typical and approximate. They show the overall and mounting dimensions, anchor bolt locations, inlet and outlet connections, weights, the rotation, discharge and motor position as ordered, and the accessories in their actual locations. Contractors set anchor bolts, cut openings and fabricate duct transitions from them, so the dimension check in this chapter's worked example ends with "get a certified drawing before releasing the order."</p>
+<h3 id="specification-review">Specification Review<a class="headerlink" href="#specification-review" title="Permanent link">&para;</a></h3>
+<p><strong>Specification review</strong> is the check of a specification, or of a submittal against one, for completeness and internal consistency before it is issued or approved. A reviewer reads every clause with the selection checklist beside it and asks two questions: is every requirement stated so it can be proven, and does any clause contradict another or contradict a source? The common findings are a duty point with no air condition, a construction option that cannot meet the temperature, a motor sized for the hot condition, missing accessories that another clause requires, and sound data in the wrong form.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Review the Pairs, Not Only the Lines</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Most specification errors are not wrong lines; they are two right-looking lines that cannot both be true, such as Type B spark resistance and a 500°F airstream. Think of the review as checking the edges between clauses, the same way you checked rotation against motor side.</p>
+</div>
+<p>The sim below gives you a draft specification for the dryer exhaust fan to review.</p>
+<h4 id="diagram-specification-error-detector">Diagram: Specification Error Detector<a class="headerlink" href="#diagram-specification-error-detector" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Specification Error Detector</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch27-specification-error-detector<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Evaluate<br/>
+<strong>Bloom Verb:</strong> critique<br/>
+<strong>Learning Objective:</strong> The learner will critique a ten-clause draft fan specification by flagging each clause as acceptable or defective and choosing the reason for each defect, with at least 9 of 10 clauses judged correctly.</p>
+<p><strong>Prerequisites:</strong> specification review, airstream conditions, arrangement selection, spark-resistant construction types, cold start motor sizing, octave band sound data, flex connectors, Arrangement 9F, certified drawings (all defined above in this chapter).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the 10 clauses the learner marks "acceptable" or "defective" and, for a defective clause, picks one reason from the reason list. A clause is judged correctly when the acceptable/defective mark matches Content and, for a defective clause, the chosen reason matches the reason letter in Content. Mastery is 9 of 10 judged correctly on the first submission.</p>
+<p><strong>Misconceptions:</strong> (1) A clause that sounds technical is complete. (2) Spark-resistant Types A and B work at any temperature. (3) The motor is sized for the hot operating point. (4) An overall dBA value is the sound data a specification asks for.</p>
+<p><strong>Instructional Rationale:</strong> Evaluate-level judgment needs criteria applied to a realistic artifact, so the learner critiques a full draft rather than isolated facts, and must name the reason, which shows the criterion they used.</p>
+<p><strong>Content:</strong></p>
+<p>Application card shown above the draft: dryer exhaust fan, 20,000 ACFM at 12.0 in. wg, 500°F gas at sea level, sticky abrasive combustible wood dust, fan on spring isolators on a mezzanine, cold start at 70°F.</p>
+<p>Reason list: (a) duty has no air condition; (b) arrangement unsuited to the temperature; (c) spark-resistance type not allowed at this temperature; (d) motor not sized for cold start; (e) sound data in the wrong form; (f) isolated fan without flex connectors; (g) arrangement cannot sit directly on isolators.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Clause shown to the learner</th>
+<th>Correct judgment</th>
+<th>Reason</th>
+<th>Why (feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fan shall deliver 20,000 CFM at 12.0 in. wg static pressure.</td>
+<td>Defective</td>
+<td>a</td>
+<td>Without temperature and elevation, a bidder can rate the fan at standard air and deliver a different fan.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fan shall be Arrangement 4, direct drive, for 500°F gas.</td>
+<td>Defective</td>
+<td>b</td>
+<td>Arrangement 4 puts the motor on the fan shaft next to the hot housing; FanPedia notes high temperature may limit it and lists 1, 8, 9, 9F and 10 for high temperature.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Provide AMCA Type B spark-resistant construction.</td>
+<td>Defective</td>
+<td>c</td>
+<td>The guide specification limits Types A and B to 250°F; at 500°F only Type C applies.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rotation and discharge: CW THD (CW 90).</td>
+<td>Acceptable</td>
+<td>none</td>
+<td>A complete orientation code in both letter and angle form.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Motor: 60 HP, sized for the operating brake horsepower at 500°F.</td>
+<td>Defective</td>
+<td>d</td>
+<td>A 70°F start draws about 96 BHP; a 60 HP motor overloads.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sound: overall dBA at 5 ft from the fan.</td>
+<td>Defective</td>
+<td>e</td>
+<td>The guide specification asks for sound power in eight octave bands with an A-weighted or sone value.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Maximum operating temperature 500°F; provide high temperature grease and bearings, shaft seal and shaft cooler.</td>
+<td>Acceptable</td>
+<td>none</td>
+<td>Matches the guide specification's 500°F tier.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Provide 7-gauge steel scroll liner, welded in place.</td>
+<td>Acceptable</td>
+<td>none</td>
+<td>Matches the guide specification; bolt-on liners are not acceptable.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Mount fan on spring isolators; connect ductwork directly to fan flanges.</td>
+<td>Defective</td>
+<td>f</td>
+<td>FanPedia states flex connectors are required on all isolated fans.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Arrangement 9F, mounted directly on spring isolators.</td>
+<td>Defective</td>
+<td>g</td>
+<td>FanPedia says 9F is not suitable for isolators directly; use Arrangement 1 with a separate isolation base.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Clauses 2, 9 and 10 from FanPedia pp. 110, 171, 187 and 166; clauses 3, 6, 7 and 8 from Twin City Fan's Model RTF guide specification (Section 23 34 16, tcf.com Product Specifications in CSI format); clauses 1 and 5 and the application card from this chapter's illustrative worked example.</p>
+<p><strong>Rules:</strong> Ten clauses in fixed order; seven are defective and three acceptable. Each defective clause has exactly one correct reason. A clause marked acceptable is wrong if Content says defective, and vice versa; a defective clause with the wrong reason counts as incorrect. Score = clauses judged correctly out of 10; mastery when score &gt;= 9.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads the application card and the ten-clause draft.</li>
+<li>For each clause the learner marks acceptable or defective and, if defective, picks a reason letter.</li>
+<li>The learner submits the whole review; each clause then shows correct or incorrect with its "Why" text.</li>
+<li>The learner may then press "Show corrected specification" to see the defective clauses rewritten: 1 adds "with gas at 500°F at sea level (0.0414 lb/ft³)"; 2 becomes "Arrangement 9, belt drive"; 3 becomes "AMCA Type C"; 5 becomes "100 HP, sized for a 70°F start"; 6 becomes "sound power in eight octave bands with A-weighted overall value, per AMCA 300"; 9 adds "with inlet and outlet flex connectors"; 10 becomes "Arrangement 9 on an isolation base with spring isolators".</li>
+</ol>
+<p><strong>Feedback:</strong> One submission counts as evidence; marks can be changed freely before submitting. After submission every clause is revealed with correct or incorrect and the "Why" text. Score shown as "n of 10 clauses judged correctly". A "Try again" button clears the marks and keeps the clause order; the first-submission score is the one recorded.</p>
+<p><strong>Starting State:</strong> The application card and the ten clauses with no marks, and the prompt "Which clauses would you send back to the writer, and why?"</p>
+<p><strong>Chapter Anchors:</strong> Ten clauses; seven defective; Type A and B limit 250°F; cold start about 96 BHP against a 60 HP motor; eight octave bands; 7-gauge welded scroll liner; 500°F tier with grease, bearings, shaft seal and shaft cooler.</p>
+</details>
+<h2 id="capstone-writing-your-fan-specification">Capstone: Writing Your Fan Specification<a class="headerlink" href="#capstone-writing-your-fan-specification" title="Permanent link">&para;</a></h2>
+<p>The <strong>capstone fan specification</strong> is the final project of this course: a complete written specification, with the reasoning for each choice, for a realistic application. You choose the fan family, impeller, arrangement, drive, construction, motor and accessories from the current catalog, apply the density and cold-start corrections, check sound and space, and present the result as a complete fan description, a CSI-format specification section built from the matching Twin City Fan guide specification, a performance clause, an annotated drawing and a short list of submittals you will require. Use the dryer exhaust fan in this chapter as your model, then write a specification for a different application of your own or one your instructor assigns.</p>
+<p>A capstone submission is complete when it contains:</p>
+<ol>
+<li>The filled-in selection checklist for the application.</li>
+<li>The duty point corrected to standard air, with the density ratio shown.</li>
+<li>Each selection decision (impeller, arrangement, drive, construction, motor, accessories) with one sentence of reasoning and its source.</li>
+<li>A fan comparison of at least two candidates.</li>
+<li>The complete fan description and an annotated drawing viewed from the drive side.</li>
+<li>The specification section in three parts, including the performance clause and the submittal list.</li>
+<li>A self-review: the pairs you checked for consistency and what you changed as a result.</li>
+</ol>
+<p>The builder below lets you assemble the dryer exhaust specification decision by decision and see each consistency check fire, before you write your own from a blank page.</p>
+<h4 id="diagram-capstone-specification-builder">Diagram: Capstone Specification Builder<a class="headerlink" href="#diagram-capstone-specification-builder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Capstone Specification Builder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch27-capstone-specification-builder<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Create<br/>
+<strong>Bloom Verb:</strong> compose<br/>
+<strong>Learning Objective:</strong> The learner will compose a complete, internally consistent fan specification for the dryer exhaust application by choosing all ten attributes and writing a one-sentence justification for each, finishing with zero rule violations.</p>
+<p><strong>Prerequisites:</strong> every selection term in this chapter: impeller selection, arrangement selection, drive selection, construction selection, cold start motor sizing, accessory selection, complete fan description, specification review.</p>
+<p><strong>Evidence of Mastery:</strong> The learner submits a specification in which all ten attributes are chosen, every justification box contains text, and the rule check reports zero violations. The sim records the number of submissions needed to reach zero violations and the justifications as written; justifications are recorded, not scored. Advisories do not block completion.</p>
+<p><strong>Misconceptions:</strong> (1) The most efficient impeller is always the right one. (2) Any arrangement works if the motor is large enough. (3) Spark resistance of any type works at any temperature. (4) A damper or VFD is optional when the process needs turndown. (5) Isolators can be added without flex connectors.</p>
+<p><strong>Instructional Rationale:</strong> Create-level work means assembling parts into a coherent whole; the builder lets the learner make every decision, then exposes conflicts between decisions so the learner revises the design rather than receiving it.</p>
+<p><strong>Content:</strong></p>
+<p>Application card: dryer exhaust; 20,000 ACFM at 12.0 in. wg; 500°F gas; sea level; sticky, abrasive, combustible wood dust; process needs reduced flow during warm-up; fan on spring isolators on a mezzanine; outlet duct leaves the top of the fan horizontally to the right when viewed from the drive side; cold start at 70°F; selected fan speed 1,450 RPM; cold-start load 96.0 BHP; hot load 53.0 BHP.</p>
+<p>Attributes and options (options shown in this order):</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Attribute</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Impeller / model</td>
+<td>RTF radial tip; RBO open radial paddle; HIB backward curved; HAF airfoil</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Arrangement</td>
+<td>1; 4; 8; 9; 9F</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Drive</td>
+<td>Belt drive; direct coupled at 1,780 RPM without VFD; direct coupled with VFD set to 1,450 RPM</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Rotation and discharge</td>
+<td>CW THD; CCW THD; CW UBD; CCW BHD</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Motor</td>
+<td>60 HP; 75 HP; 100 HP; 125 HP</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Temperature package</td>
+<td>None; to 300°F; to 500°F (grease, bearings, shaft seal, shaft cooler); to 600°F</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Spark resistance</td>
+<td>None; AMCA Type A; AMCA Type B; AMCA Type C</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Abrasion protection</td>
+<td>None; welded 7-gauge scroll liner; bolt-on scroll liner</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Flow control</td>
+<td>None; parallel blade outlet damper with actuator; nested inlet vanes</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Base and isolation</td>
+<td>Unitary base, no isolators; isolation base with spring isolators and flex connectors; spring isolators without flex connectors</td>
+</tr>
+</tbody>
+</table>
+<p>Violations (each blocks completion; message shown when triggered):</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Condition</th>
+<th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V1</td>
+<td>Impeller is HIB or HAF</td>
+<td>Backward curved and airfoil wheels need clean air or light dust; sticky abrasive dust builds up and erodes them.</td>
+</tr>
+<tr>
+<td>V2</td>
+<td>Arrangement is 4</td>
+<td>Arrangement 4 is limited at high airstream temperature; FanPedia lists 1, 8, 9, 9F and 10 for high temperature.</td>
+</tr>
+<tr>
+<td>V3</td>
+<td>Arrangement 9F with option 2 or 3 in attribute 10</td>
+<td>FanPedia: 9F is not suitable for isolators directly; use Arrangement 1 on an isolation base.</td>
+</tr>
+<tr>
+<td>V4</td>
+<td>Arrangement 1, 9 or 9F with a direct drive option</td>
+<td>Arrangements 1, 9 and 9F are belt-driven here; use Arrangement 8 for a coupled direct drive.</td>
+</tr>
+<tr>
+<td>V5</td>
+<td>Arrangement 4 or 8 with belt drive</td>
+<td>Arrangements 4 and 8 are direct drive arrangements.</td>
+</tr>
+<tr>
+<td>V6</td>
+<td>Drive is direct at 1,780 RPM without VFD</td>
+<td>1,780/1,450 = 1.23: 23% too much air and about 1.85 times the power.</td>
+</tr>
+<tr>
+<td>V7</td>
+<td>Rotation and discharge is not CW THD</td>
+<td>From the drive side, a top outlet blowing right is CW THD (CW 90).</td>
+</tr>
+<tr>
+<td>V8</td>
+<td>Motor is 60 or 75 HP</td>
+<td>The 70°F start draws 96.0 BHP; size the motor for the cold start.</td>
+</tr>
+<tr>
+<td>V9</td>
+<td>Temperature package is None or to 300°F</td>
+<td>The gas is 500°F; the 500°F tier needs high temperature grease and bearings, shaft seal and shaft cooler.</td>
+</tr>
+<tr>
+<td>V10</td>
+<td>Spark resistance is None</td>
+<td>Combustible dust requires spark-resistant construction.</td>
+</tr>
+<tr>
+<td>V11</td>
+<td>Spark resistance is Type A or Type B</td>
+<td>Types A and B are limited to 250°F; use Type C.</td>
+</tr>
+<tr>
+<td>V12</td>
+<td>Abrasion protection is None or bolt-on</td>
+<td>Abrasive dust needs a liner, and the guide specification does not accept bolt-on liners.</td>
+</tr>
+<tr>
+<td>V13</td>
+<td>Flow control is None and drive is not the VFD option</td>
+<td>The process needs turndown; add an outlet damper or use the VFD.</td>
+</tr>
+<tr>
+<td>V14</td>
+<td>Flow control is nested inlet vanes</td>
+<td>Nested vanes suit clean air; dirty airstreams call for external vanes or an outlet damper.</td>
+</tr>
+<tr>
+<td>V15</td>
+<td>Attribute 10 is unitary base or isolators without flex connectors</td>
+<td>The fan must be isolated, and FanPedia requires flex connectors on all isolated fans.</td>
+</tr>
+</tbody>
+</table>
+<p>Advisories (shown, do not block): A1 impeller RBO: "Acceptable for this dust; expect higher power than RTF." A2 arrangement 1 or 8: "Longer assembly; check the dimension table against the 10 ft by 8 ft pad." A3 motor 125 HP: "Covers cold start with more margin than needed; 100 HP is sufficient." A4 temperature package to 600°F: "Exceeds the requirement; the 500°F tier is sufficient."</p>
+<p>On zero violations, the sim composes the complete fan description from the choices, in the format of this chapter's worked example, followed by the learner's justifications, and offers it for copying.</p>
+<p><strong>Provenance:</strong> Application values and RPM/BHP figures from this chapter's illustrative worked example (labeled "illustrative" in the sim). V2, V3 and V15 from FanPedia pp. 110, 166, 171 and 187; V4 and V5 from FanPedia pp. 162 and 165; V7 from Chapter 12's discharge table; V9, V11, V12 and V14 from Twin City Fan's Model RTF guide specification (Section 23 34 16); V1 from Chapter 9.</p>
+<p><strong>Rules:</strong> All violation conditions are evaluated together on every Check; all triggered messages are listed. Completion requires: all ten attributes chosen, all ten justification boxes non-empty, and zero violations. The sim counts Check presses until completion.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads the application card.</li>
+<li>The learner chooses an option for each attribute and types a one-sentence justification beside it.</li>
+<li>The learner presses Check; every triggered violation and advisory is listed beside its attribute.</li>
+<li>The learner revises and checks again until no violations remain; the composed fan description then appears.</li>
+<li>The learner should notice that some fixes cascade: changing the arrangement to 8 forces a direct drive, which needs the VFD to meet the speed.</li>
+</ol>
+<p><strong>Feedback:</strong> Unlimited checks. Each check lists all triggered violation and advisory messages from Content. On completion: "Specification complete: ten attributes, zero conflicts, <n> checks." No answers are revealed before the learner chooses; the messages explain each conflict.</p>
+<p><strong>Starting State:</strong> The application card, ten unchosen attributes with empty justification boxes, and the prompt "Build a specification that a factory could build and a reviewer could approve."</p>
+<p><strong>Chapter Anchors:</strong> 20,000 ACFM; 12.0 in. wg; 500°F; 70°F cold start; 1,450 RPM; 96.0 BHP cold; 53.0 BHP hot; 100 HP motor; CW THD; Types A and B limited to 250°F; Arrangement 9 with belt drive as the worked selection; 10 ft by 8 ft pad.</p>
+</details>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">From Vocabulary to a Specification You Can Sign</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You started this book learning what a fan is and what CFM means, and you have just corrected a hot duty to standard air, chosen an impeller, an arrangement, a drive, a construction package, a cold-start motor and every accessory, and written them into a specification a factory can build and a reviewer can check. That is the whole job of describing a fan precisely, and it is the last thing this book set out to teach you. Congratulations on finishing FanPedia.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fan selection is a sequence of linked decisions: requirements, duty correction, impeller, size, arrangement, drive, construction, motor, accessories, then sound and space checks. A later failure sends you back to the step that caused it.</li>
+<li>Collect requirements with a selection checklist: airstream conditions (temperature range, elevation, contents), space constraints, noise limits and efficiency requirements are the ones most often missed.</li>
+<li>Read standard-air tables by dividing the actual static pressure by the density ratio; RPM is read directly and brake horsepower is multiplied back by the density ratio.</li>
+<li>Size the motor for the coldest start, or specify a startup sequence (closed damper or reduced VFD speed) that limits the cold-start load.</li>
+<li>Choose the arrangement from the bearing and motor location, the drive, the space and the isolation; choose the drive by checking the fan laws against real motor speeds.</li>
+<li>Check construction against the harshest condition: cold-start pressure for the class, maximum temperature for the package, and temperature limits on spark-resistance types.</li>
+<li>Tie every accessory to a requirement, and pair isolators with flex connectors.</li>
+<li>Octave band sound data is compared with an A-weighted limit only after weighting each band and adding logarithmically; dimensional data tables are approximate, and certified drawings confirm the fit.</li>
+<li>A fan efficiency grade rates the fan's peak efficiency, not the selected operating point; check which metric (FEG or FEI) the project's code names.</li>
+<li>The complete fan description states one fan; the CSI-format specification (General, Products, Execution) states requirements, with a performance clause that names the air condition and the rating standards, and a submittal list that lets a reviewer prove compliance.</li>
+<li>Review a specification by checking pairs of clauses that interact, and finish with the capstone: a complete written specification with the reasoning for every choice.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../26-reading-catalogs-and-performance-tables/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 26. Reading Catalogs and Performance Tables">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                26. Reading Catalogs and Performance Tables
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../learning-graph/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

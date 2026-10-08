@@ -1,0 +1,7990 @@
+{
+  "metadata": {
+    "title": "FanPedia: An Intelligent Textbook on Fans & Blowers",
+    "description": "A learning graph for an intelligent textbook on industrial and commercial fans and blowers: fan families, anatomy, arrangements, impellers, rotation and discharge, motors, bearings, inlets and outlets, flow control, special construction, installation, performance, and reading catalogs to write fan specifications. Built from Twin City Fan's FanPedia and current tcf.com catalogs.",
+    "creator": "Twin City Fan",
+    "date": "2026-10-08",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "Copyright 2026 Twin City Fan. All rights reserved."
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Air and Fan Fundamentals",
+      "color": "SteelBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "FAM": {
+      "classifierName": "Fan Families and Product Lines",
+      "color": "DarkGreen",
+      "font": {
+        "color": "white"
+      }
+    },
+    "ANAT": {
+      "classifierName": "Fan Anatomy and Housings",
+      "color": "Gold",
+      "font": {
+        "color": "black"
+      }
+    },
+    "IMP": {
+      "classifierName": "Impellers and Hubs",
+      "color": "DodgerBlue",
+      "font": {
+        "color": "white"
+      }
+    },
+    "ARR": {
+      "classifierName": "Arrangements and Drives",
+      "color": "Crimson",
+      "font": {
+        "color": "white"
+      }
+    },
+    "ROT": {
+      "classifierName": "Rotation, Discharge and Motor Position",
+      "color": "MediumPurple",
+      "font": {
+        "color": "white"
+      }
+    },
+    "MOT": {
+      "classifierName": "Motors and Motor Mounting",
+      "color": "Teal",
+      "font": {
+        "color": "white"
+      }
+    },
+    "BRG": {
+      "classifierName": "Bearings, Shafts and Seals",
+      "color": "DarkGoldenrod",
+      "font": {
+        "color": "white"
+      }
+    },
+    "INOUT": {
+      "classifierName": "Inlets, Outlets and Flow Control",
+      "color": "LightSkyBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SPEC": {
+      "classifierName": "Special Construction",
+      "color": "DarkRed",
+      "font": {
+        "color": "white"
+      }
+    },
+    "INST": {
+      "classifierName": "Bases, Isolation and Installation",
+      "color": "OliveDrab",
+      "font": {
+        "color": "white"
+      }
+    },
+    "PERF": {
+      "classifierName": "Fan Performance",
+      "color": "Orange",
+      "font": {
+        "color": "black"
+      }
+    },
+    "CAT": {
+      "classifierName": "Catalogs, Selection and Specification",
+      "color": "DarkOrchid",
+      "font": {
+        "color": "white"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Air Movement",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 13733
+    },
+    {
+      "id": 2,
+      "label": "Fan Speed",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 11322
+    },
+    {
+      "id": 3,
+      "label": "Horsepower",
+      "group": "FOUND",
+      "shape": "box",
+      "cis": 2706
+    },
+    {
+      "id": 4,
+      "label": "Airflow Volume",
+      "group": "FOUND",
+      "cis": 1382
+    },
+    {
+      "id": 5,
+      "label": "Cubic Feet Per Minute",
+      "group": "FOUND",
+      "cis": 59
+    },
+    {
+      "id": 6,
+      "label": "Air Velocity",
+      "group": "FOUND",
+      "cis": 103
+    },
+    {
+      "id": 7,
+      "label": "Feet Per Minute",
+      "group": "FOUND",
+      "cis": 3
+    },
+    {
+      "id": 8,
+      "label": "Air Pressure",
+      "group": "FOUND",
+      "cis": 1283
+    },
+    {
+      "id": 9,
+      "label": "Inches of Water Gauge",
+      "group": "FOUND",
+      "cis": 59
+    },
+    {
+      "id": 10,
+      "label": "Static Pressure",
+      "group": "FOUND",
+      "cis": 1101
+    },
+    {
+      "id": 11,
+      "label": "Velocity Pressure",
+      "group": "FOUND",
+      "cis": 85
+    },
+    {
+      "id": 12,
+      "label": "Total Pressure",
+      "group": "FOUND",
+      "cis": 62
+    },
+    {
+      "id": 13,
+      "label": "Air Density",
+      "group": "FOUND",
+      "cis": 374
+    },
+    {
+      "id": 14,
+      "label": "Air Temperature",
+      "group": "FOUND",
+      "cis": 200
+    },
+    {
+      "id": 15,
+      "label": "Altitude",
+      "group": "FOUND",
+      "cis": 107
+    },
+    {
+      "id": 16,
+      "label": "Standard Air",
+      "group": "FOUND",
+      "cis": 66
+    },
+    {
+      "id": 17,
+      "label": "Airstream",
+      "group": "FOUND",
+      "cis": 371
+    },
+    {
+      "id": 18,
+      "label": "Contaminated Airstream",
+      "group": "FOUND",
+      "cis": 194
+    },
+    {
+      "id": 19,
+      "label": "Corrosive Airstream",
+      "group": "FOUND",
+      "cis": 46
+    },
+    {
+      "id": 20,
+      "label": "Particulate-Laden Airstream",
+      "group": "FOUND",
+      "cis": 26
+    },
+    {
+      "id": 21,
+      "label": "Hot Airstream",
+      "group": "FOUND",
+      "cis": 120
+    },
+    {
+      "id": 22,
+      "label": "Wet Airstream",
+      "group": "FOUND",
+      "cis": 35
+    },
+    {
+      "id": 23,
+      "label": "Explosive Atmosphere",
+      "group": "FOUND",
+      "cis": 77
+    },
+    {
+      "id": 24,
+      "label": "Duct System",
+      "group": "FOUND",
+      "cis": 235
+    },
+    {
+      "id": 25,
+      "label": "Fan",
+      "group": "FOUND",
+      "cis": 10322
+    },
+    {
+      "id": 26,
+      "label": "Blower",
+      "group": "FOUND",
+      "cis": 6
+    },
+    {
+      "id": 27,
+      "label": "Fan Housing",
+      "group": "ANAT",
+      "cis": 1194
+    },
+    {
+      "id": 28,
+      "label": "Impeller",
+      "group": "ANAT",
+      "cis": 5562
+    },
+    {
+      "id": 29,
+      "label": "Fan Inlet",
+      "group": "ANAT",
+      "cis": 147
+    },
+    {
+      "id": 30,
+      "label": "Fan Outlet",
+      "group": "ANAT",
+      "cis": 303
+    },
+    {
+      "id": 31,
+      "label": "Fan Shaft",
+      "group": "ANAT",
+      "cis": 2742
+    },
+    {
+      "id": 32,
+      "label": "Bearing",
+      "group": "ANAT",
+      "cis": 1755
+    },
+    {
+      "id": 33,
+      "label": "Fan Motor",
+      "group": "ANAT",
+      "cis": 2380
+    },
+    {
+      "id": 34,
+      "label": "Drive Train",
+      "group": "ANAT",
+      "cis": 725
+    },
+    {
+      "id": 35,
+      "label": "Fan Family",
+      "group": "FAM",
+      "cis": 1085
+    },
+    {
+      "id": 36,
+      "label": "Centrifugal Fan",
+      "group": "FAM",
+      "cis": 562
+    },
+    {
+      "id": 37,
+      "label": "Axial Fan",
+      "group": "FAM",
+      "cis": 134
+    },
+    {
+      "id": 38,
+      "label": "Mixed Flow Fan",
+      "group": "FAM",
+      "cis": 4
+    },
+    {
+      "id": 39,
+      "label": "Scroll Housing",
+      "group": "ANAT",
+      "cis": 263
+    },
+    {
+      "id": 40,
+      "label": "Housed Centrifugal Fan",
+      "group": "FAM",
+      "cis": 91
+    },
+    {
+      "id": 41,
+      "label": "Unhoused Centrifugal Fan",
+      "group": "FAM",
+      "cis": 80
+    },
+    {
+      "id": 42,
+      "label": "Plenum Fan",
+      "group": "FAM",
+      "cis": 79
+    },
+    {
+      "id": 43,
+      "label": "Plug Fan",
+      "group": "FAM",
+      "cis": 72
+    },
+    {
+      "id": 44,
+      "label": "Inline Centrifugal Fan",
+      "group": "FAM",
+      "cis": 25
+    },
+    {
+      "id": 45,
+      "label": "Square Inline Centrifugal Fan",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 46,
+      "label": "Tubular Housing",
+      "group": "ANAT",
+      "cis": 32
+    },
+    {
+      "id": 47,
+      "label": "Tubeaxial Fan",
+      "group": "FAM",
+      "cis": 28
+    },
+    {
+      "id": 48,
+      "label": "Guide Vanes",
+      "group": "ANAT",
+      "cis": 25
+    },
+    {
+      "id": 49,
+      "label": "Vaneaxial Fan",
+      "group": "FAM",
+      "cis": 22
+    },
+    {
+      "id": 50,
+      "label": "Panel Fan",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 51,
+      "label": "Ring Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 52,
+      "label": "Pressure Blower",
+      "group": "FAM",
+      "cis": 5
+    },
+    {
+      "id": 53,
+      "label": "Radial Bladed Fan",
+      "group": "FAM",
+      "cis": 14
+    },
+    {
+      "id": 54,
+      "label": "Radial Tip Fan",
+      "group": "FAM",
+      "cis": 22
+    },
+    {
+      "id": 55,
+      "label": "Duct Fan",
+      "group": "FAM",
+      "cis": 22
+    },
+    {
+      "id": 56,
+      "label": "Filtered Supply Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 57,
+      "label": "Power Roof Ventilator",
+      "group": "FAM",
+      "cis": 30
+    },
+    {
+      "id": 58,
+      "label": "Roof Ventilator",
+      "group": "FAM",
+      "cis": 4
+    },
+    {
+      "id": 59,
+      "label": "Centrifugal Roof Exhauster",
+      "group": "FAM",
+      "cis": 6
+    },
+    {
+      "id": 60,
+      "label": "Centrifugal Wall Exhauster",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 61,
+      "label": "Roof Mounted Axial Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 62,
+      "label": "Wall Mounted Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 63,
+      "label": "Gravity Relief Ventilator",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 64,
+      "label": "Ceiling Ventilator",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 65,
+      "label": "Cabinet Ventilator",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 66,
+      "label": "Utility Set",
+      "group": "FAM",
+      "cis": 22
+    },
+    {
+      "id": 67,
+      "label": "Laboratory Fume Exhaust Fan",
+      "group": "FAM",
+      "cis": 35
+    },
+    {
+      "id": 68,
+      "label": "Kitchen Exhaust Fan",
+      "group": "FAM",
+      "cis": 3
+    },
+    {
+      "id": 69,
+      "label": "Smoke and Heat Exhaust Fan",
+      "group": "FAM",
+      "cis": 3
+    },
+    {
+      "id": 70,
+      "label": "Fiberglass Fan",
+      "group": "FAM",
+      "cis": 3
+    },
+    {
+      "id": 71,
+      "label": "Mancooler",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 72,
+      "label": "Air Kit",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 73,
+      "label": "Commercial Duty Fan",
+      "group": "FAM",
+      "cis": 22
+    },
+    {
+      "id": 74,
+      "label": "Industrial Duty Fan",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 75,
+      "label": "Upblast Discharge",
+      "group": "FAM",
+      "cis": 3
+    },
+    {
+      "id": 76,
+      "label": "Downblast Discharge",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 77,
+      "label": "Entrained Flow",
+      "group": "FAM",
+      "cis": 6
+    },
+    {
+      "id": 78,
+      "label": "Plume Dilution",
+      "group": "FAM",
+      "cis": 4
+    },
+    {
+      "id": 79,
+      "label": "Nozzle and Windband",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 80,
+      "label": "Bypass Air Plenum",
+      "group": "ANAT",
+      "cis": 4
+    },
+    {
+      "id": 81,
+      "label": "Exploded View",
+      "group": "ANAT",
+      "cis": 3
+    },
+    {
+      "id": 82,
+      "label": "Housing Side Plate",
+      "group": "ANAT",
+      "cis": 3
+    },
+    {
+      "id": 83,
+      "label": "Scroll Wrapper",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 84,
+      "label": "Cutoff",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 85,
+      "label": "Inlet Collar",
+      "group": "ANAT",
+      "cis": 3
+    },
+    {
+      "id": 86,
+      "label": "Inlet Flange",
+      "group": "ANAT",
+      "cis": 11
+    },
+    {
+      "id": 87,
+      "label": "Outlet Flange",
+      "group": "ANAT",
+      "cis": 9
+    },
+    {
+      "id": 88,
+      "label": "Access Door",
+      "group": "ANAT",
+      "cis": 18
+    },
+    {
+      "id": 89,
+      "label": "Belt Guard",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 90,
+      "label": "Belt Tube",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 91,
+      "label": "Straightening Vanes",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 92,
+      "label": "Welded Housing",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 93,
+      "label": "Bolted Housing",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 94,
+      "label": "Weatherhood",
+      "group": "ANAT",
+      "cis": 4
+    },
+    {
+      "id": 95,
+      "label": "Backdraft Damper",
+      "group": "ANAT",
+      "cis": 16
+    },
+    {
+      "id": 96,
+      "label": "Bird and Safety Screens",
+      "group": "ANAT",
+      "cis": 16
+    },
+    {
+      "id": 97,
+      "label": "Roof Curb",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 98,
+      "label": "Stack Cap",
+      "group": "ANAT",
+      "cis": 3
+    },
+    {
+      "id": 99,
+      "label": "Split Housing",
+      "group": "ANAT",
+      "cis": 5
+    },
+    {
+      "id": 100,
+      "label": "Horizontal Split Housing",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 101,
+      "label": "Three-Way Split Housing",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 102,
+      "label": "Pie Split Housing",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 103,
+      "label": "Impeller Blade",
+      "group": "IMP",
+      "cis": 26
+    },
+    {
+      "id": 104,
+      "label": "Blade Leading Edge",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 105,
+      "label": "Impeller Back Plate",
+      "group": "IMP",
+      "cis": 4
+    },
+    {
+      "id": 106,
+      "label": "Impeller Shroud",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 107,
+      "label": "Impeller Hub",
+      "group": "IMP",
+      "cis": 9
+    },
+    {
+      "id": 108,
+      "label": "Centrifugal Impeller",
+      "group": "IMP",
+      "cis": 55
+    },
+    {
+      "id": 109,
+      "label": "Single Width Single Inlet",
+      "group": "IMP",
+      "cis": 10
+    },
+    {
+      "id": 110,
+      "label": "Double Width Double Inlet",
+      "group": "IMP",
+      "cis": 8
+    },
+    {
+      "id": 111,
+      "label": "Backward Inclined Impeller",
+      "group": "IMP",
+      "cis": 13
+    },
+    {
+      "id": 112,
+      "label": "Backward Curved Impeller",
+      "group": "IMP",
+      "cis": 4
+    },
+    {
+      "id": 113,
+      "label": "Airfoil Impeller",
+      "group": "IMP",
+      "cis": 4
+    },
+    {
+      "id": 114,
+      "label": "Forward Curved Impeller",
+      "group": "IMP",
+      "cis": 5
+    },
+    {
+      "id": 115,
+      "label": "Radial Bladed Impeller",
+      "group": "IMP",
+      "cis": 13
+    },
+    {
+      "id": 116,
+      "label": "Radial Tip Impeller",
+      "group": "IMP",
+      "cis": 3
+    },
+    {
+      "id": 117,
+      "label": "Material Handling Impeller",
+      "group": "IMP",
+      "cis": 3
+    },
+    {
+      "id": 118,
+      "label": "Paper Handling Impeller",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 119,
+      "label": "Mixed Flow Impeller",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 120,
+      "label": "Axial Impeller",
+      "group": "IMP",
+      "cis": 17
+    },
+    {
+      "id": 121,
+      "label": "Fixed Pitch Impeller",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 122,
+      "label": "Adjustable Pitch Impeller",
+      "group": "IMP",
+      "cis": 3
+    },
+    {
+      "id": 123,
+      "label": "Fiberglass Axial Impeller",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 124,
+      "label": "Impeller Orientation",
+      "group": "IMP",
+      "cis": 5
+    },
+    {
+      "id": 125,
+      "label": "Hub on Intake Side",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 126,
+      "label": "Hub on Discharge Side",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 127,
+      "label": "Reversible Impeller",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 128,
+      "label": "Straight Bore Hub",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 129,
+      "label": "Taper Lock Hub",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 130,
+      "label": "Reverse Bore Hub",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 131,
+      "label": "Back Plate Fins",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 132,
+      "label": "Impeller Balancing",
+      "group": "IMP",
+      "cis": 47
+    },
+    {
+      "id": 133,
+      "label": "Direct Drive",
+      "group": "ARR",
+      "cis": 497
+    },
+    {
+      "id": 134,
+      "label": "Belt Drive",
+      "group": "ARR",
+      "cis": 713
+    },
+    {
+      "id": 135,
+      "label": "Sheave",
+      "group": "ARR",
+      "cis": 24
+    },
+    {
+      "id": 136,
+      "label": "V-Belt",
+      "group": "ARR",
+      "cis": 23
+    },
+    {
+      "id": 137,
+      "label": "Drive Service Factor",
+      "group": "ARR",
+      "cis": 23
+    },
+    {
+      "id": 138,
+      "label": "Shaft Coupling",
+      "group": "ARR",
+      "cis": 28
+    },
+    {
+      "id": 139,
+      "label": "Overhung Impeller",
+      "group": "ARR",
+      "cis": 470
+    },
+    {
+      "id": 140,
+      "label": "Center Hung Impeller",
+      "group": "ARR",
+      "cis": 456
+    },
+    {
+      "id": 141,
+      "label": "Fan Arrangement",
+      "group": "ARR",
+      "cis": 445
+    },
+    {
+      "id": 142,
+      "label": "Arrangement 1",
+      "group": "ARR",
+      "cis": 83
+    },
+    {
+      "id": 143,
+      "label": "Arrangement 2",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 144,
+      "label": "Arrangement 3",
+      "group": "ARR",
+      "cis": 10
+    },
+    {
+      "id": 145,
+      "label": "Arrangement 3 SI and DI",
+      "group": "ARR",
+      "cis": 3
+    },
+    {
+      "id": 146,
+      "label": "Arrangement 4",
+      "group": "ARR",
+      "cis": 28
+    },
+    {
+      "id": 147,
+      "label": "Arrangement 7",
+      "group": "ARR",
+      "cis": 2
+    },
+    {
+      "id": 148,
+      "label": "Arrangement 8",
+      "group": "ARR",
+      "cis": 23
+    },
+    {
+      "id": 149,
+      "label": "Arrangement 9",
+      "group": "ARR",
+      "cis": 34
+    },
+    {
+      "id": 150,
+      "label": "Arrangement 10",
+      "group": "ARR",
+      "cis": 2
+    },
+    {
+      "id": 151,
+      "label": "Plug Fan Arrangements",
+      "group": "ARR",
+      "cis": 68
+    },
+    {
+      "id": 152,
+      "label": "Arrangement 1P Plug",
+      "group": "ARR",
+      "cis": 23
+    },
+    {
+      "id": 153,
+      "label": "Arrangement 4P Plug",
+      "group": "ARR",
+      "cis": 22
+    },
+    {
+      "id": 154,
+      "label": "Plenum Fan Arrangements",
+      "group": "ARR",
+      "cis": 5
+    },
+    {
+      "id": 155,
+      "label": "Vertical Arrangement",
+      "group": "ARR",
+      "cis": 3
+    },
+    {
+      "id": 156,
+      "label": "Axial and Inline Arrangements",
+      "group": "ARR",
+      "cis": 15
+    },
+    {
+      "id": 157,
+      "label": "Lab Exhaust Arrangements",
+      "group": "ARR",
+      "cis": 22
+    },
+    {
+      "id": 158,
+      "label": "Swingout Fan",
+      "group": "ARR",
+      "cis": 6
+    },
+    {
+      "id": 159,
+      "label": "Clamshell Fan",
+      "group": "ARR",
+      "cis": 3
+    },
+    {
+      "id": 160,
+      "label": "Bearings Out of Airstream",
+      "group": "ARR",
+      "cis": 22
+    },
+    {
+      "id": 161,
+      "label": "Viewed From Drive Side",
+      "group": "ROT",
+      "cis": 111
+    },
+    {
+      "id": 162,
+      "label": "Rotation",
+      "group": "ROT",
+      "cis": 87
+    },
+    {
+      "id": 163,
+      "label": "Clockwise Rotation",
+      "group": "ROT",
+      "cis": 24
+    },
+    {
+      "id": 164,
+      "label": "Counterclockwise Rotation",
+      "group": "ROT",
+      "cis": 24
+    },
+    {
+      "id": 165,
+      "label": "Rotation Arrow",
+      "group": "ROT",
+      "cis": 19
+    },
+    {
+      "id": 166,
+      "label": "Discharge Position",
+      "group": "ROT",
+      "cis": 164
+    },
+    {
+      "id": 167,
+      "label": "Discharge Angle",
+      "group": "ROT",
+      "cis": 115
+    },
+    {
+      "id": 168,
+      "label": "Up Blast Discharge Position",
+      "group": "ROT",
+      "cis": 22
+    },
+    {
+      "id": 169,
+      "label": "Top Horizontal Discharge",
+      "group": "ROT",
+      "cis": 22
+    },
+    {
+      "id": 170,
+      "label": "Bottom Horizontal Discharge",
+      "group": "ROT",
+      "cis": 22
+    },
+    {
+      "id": 171,
+      "label": "Down Blast Discharge Position",
+      "group": "ROT",
+      "cis": 22
+    },
+    {
+      "id": 172,
+      "label": "Angular Discharge",
+      "group": "ROT",
+      "cis": 5
+    },
+    {
+      "id": 173,
+      "label": "Rotation and Discharge Code",
+      "group": "ROT",
+      "cis": 21
+    },
+    {
+      "id": 174,
+      "label": "DWDI Discharge Limits",
+      "group": "ROT",
+      "cis": 2
+    },
+    {
+      "id": 175,
+      "label": "Axial Rotation Convention",
+      "group": "ROT",
+      "cis": 2
+    },
+    {
+      "id": 176,
+      "label": "Inline Configuration",
+      "group": "ROT",
+      "cis": 5
+    },
+    {
+      "id": 177,
+      "label": "Motor Position",
+      "group": "ROT",
+      "cis": 48
+    },
+    {
+      "id": 178,
+      "label": "Motor Positions W X Y Z",
+      "group": "ROT",
+      "cis": 20
+    },
+    {
+      "id": 179,
+      "label": "Motor Position Restrictions",
+      "group": "ROT",
+      "cis": 19
+    },
+    {
+      "id": 180,
+      "label": "Axial Motor Positions",
+      "group": "ROT",
+      "cis": 3
+    },
+    {
+      "id": 181,
+      "label": "Plenum Motor Positions",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 182,
+      "label": "Conduit Box Position",
+      "group": "ROT",
+      "cis": 19
+    },
+    {
+      "id": 183,
+      "label": "Inlet Box Position",
+      "group": "ROT",
+      "cis": 19
+    },
+    {
+      "id": 184,
+      "label": "Induction Motor",
+      "group": "MOT",
+      "cis": 71
+    },
+    {
+      "id": 185,
+      "label": "EC Motor",
+      "group": "MOT",
+      "cis": 24
+    },
+    {
+      "id": 186,
+      "label": "NEMA Frame Size",
+      "group": "MOT",
+      "cis": 5
+    },
+    {
+      "id": 187,
+      "label": "Motor Enclosure",
+      "group": "MOT",
+      "cis": 154
+    },
+    {
+      "id": 188,
+      "label": "ODP Motor",
+      "group": "MOT",
+      "cis": 25
+    },
+    {
+      "id": 189,
+      "label": "TEFC Motor",
+      "group": "MOT",
+      "cis": 25
+    },
+    {
+      "id": 190,
+      "label": "TEAO Motor",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 191,
+      "label": "TENV Motor",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 192,
+      "label": "Explosion Proof Motor",
+      "group": "MOT",
+      "cis": 26
+    },
+    {
+      "id": 193,
+      "label": "Motor Service Factor",
+      "group": "MOT",
+      "cis": 51
+    },
+    {
+      "id": 194,
+      "label": "Insulation Class",
+      "group": "MOT",
+      "cis": 5
+    },
+    {
+      "id": 195,
+      "label": "Motor Efficiency Class",
+      "group": "MOT",
+      "cis": 26
+    },
+    {
+      "id": 196,
+      "label": "Conduit Box",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 197,
+      "label": "C-Face Motor Mount",
+      "group": "MOT",
+      "cis": 2
+    },
+    {
+      "id": 198,
+      "label": "Foot Mounted Motor",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 199,
+      "label": "Shaft Grounding Ring",
+      "group": "MOT",
+      "cis": 27
+    },
+    {
+      "id": 200,
+      "label": "Motor Winding RTD",
+      "group": "MOT",
+      "cis": 2
+    },
+    {
+      "id": 201,
+      "label": "Variable Frequency Drive",
+      "group": "MOT",
+      "cis": 69
+    },
+    {
+      "id": 202,
+      "label": "Motor Base",
+      "group": "MOT",
+      "cis": 43
+    },
+    {
+      "id": 203,
+      "label": "Slide Base",
+      "group": "MOT",
+      "cis": 6
+    },
+    {
+      "id": 204,
+      "label": "Pivot Motor Base",
+      "group": "MOT",
+      "cis": 3
+    },
+    {
+      "id": 205,
+      "label": "Motor Positioner",
+      "group": "MOT",
+      "cis": 5
+    },
+    {
+      "id": 206,
+      "label": "Bi-Directional Positioner",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 207,
+      "label": "Tri-Directional Positioner",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 208,
+      "label": "Vertical Jack Screws",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 209,
+      "label": "Bearing Life",
+      "group": "BRG",
+      "cis": 3
+    },
+    {
+      "id": 210,
+      "label": "L-10 Bearing Life",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 211,
+      "label": "L-50 Bearing Life",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 212,
+      "label": "Ball Bearing",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 213,
+      "label": "Spherical Roller Bearing",
+      "group": "BRG",
+      "cis": 3
+    },
+    {
+      "id": 214,
+      "label": "Pillow Block Bearing",
+      "group": "BRG",
+      "cis": 5
+    },
+    {
+      "id": 215,
+      "label": "Split Pillow Block Bearing",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 216,
+      "label": "Flange Mount Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 217,
+      "label": "Totally Split Roller Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 218,
+      "label": "Two-Bearing Housing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 219,
+      "label": "Set Screw Mount",
+      "group": "BRG",
+      "cis": 3
+    },
+    {
+      "id": 220,
+      "label": "Adapter Sleeve Mount",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 221,
+      "label": "Fixed Bearing",
+      "group": "BRG",
+      "cis": 6
+    },
+    {
+      "id": 222,
+      "label": "Floating Bearing",
+      "group": "BRG",
+      "cis": 5
+    },
+    {
+      "id": 223,
+      "label": "Bearing Lubrication",
+      "group": "BRG",
+      "cis": 7
+    },
+    {
+      "id": 224,
+      "label": "Grease Fitting",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 225,
+      "label": "Static Oil Lubrication",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 226,
+      "label": "Oil Mist Lubrication",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 227,
+      "label": "Bearing Seal",
+      "group": "BRG",
+      "cis": 6
+    },
+    {
+      "id": 228,
+      "label": "Labyrinth Seal",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 229,
+      "label": "Taconite Seal",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 230,
+      "label": "Bearing Positioner",
+      "group": "BRG",
+      "cis": 4
+    },
+    {
+      "id": 231,
+      "label": "Bearing Stop Blocks",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 232,
+      "label": "Bearing Dowel Pins",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 233,
+      "label": "Bearing Vibration Sensor",
+      "group": "BRG",
+      "cis": 16
+    },
+    {
+      "id": 234,
+      "label": "Restrained Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 235,
+      "label": "Shaft Keyway",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 236,
+      "label": "Shaft Turndown",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 237,
+      "label": "Shaft Sleeve",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 238,
+      "label": "Clad Shaft",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 239,
+      "label": "Shaft Locking Collar",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 240,
+      "label": "Fan Pedestal",
+      "group": "BRG",
+      "cis": 24
+    },
+    {
+      "id": 241,
+      "label": "Separated Pedestal",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 242,
+      "label": "Shaft Seal",
+      "group": "BRG",
+      "cis": 162
+    },
+    {
+      "id": 243,
+      "label": "Lip Shaft Seal",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 244,
+      "label": "Friction Shaft Seal",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 245,
+      "label": "Carbon Ring Seal",
+      "group": "BRG",
+      "cis": 49
+    },
+    {
+      "id": 246,
+      "label": "Stuffing Box Seal",
+      "group": "BRG",
+      "cis": 48
+    },
+    {
+      "id": 247,
+      "label": "Gas Purge Seal",
+      "group": "BRG",
+      "cis": 48
+    },
+    {
+      "id": 248,
+      "label": "Inlet Funnel",
+      "group": "INOUT",
+      "cis": 7
+    },
+    {
+      "id": 249,
+      "label": "Inlet Venturi",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 250,
+      "label": "Inlet Box",
+      "group": "INOUT",
+      "cis": 28
+    },
+    {
+      "id": 251,
+      "label": "Integral Inlet Box",
+      "group": "INOUT",
+      "cis": 2
+    },
+    {
+      "id": 252,
+      "label": "Detached Inlet Box",
+      "group": "INOUT",
+      "cis": 7
+    },
+    {
+      "id": 253,
+      "label": "Free-Standing Inlet Box",
+      "group": "INOUT",
+      "cis": 4
+    },
+    {
+      "id": 254,
+      "label": "Evas\u00e9",
+      "group": "INOUT",
+      "cis": 16
+    },
+    {
+      "id": 255,
+      "label": "Transition Piece",
+      "group": "INOUT",
+      "cis": 2
+    },
+    {
+      "id": 256,
+      "label": "Companion Flange",
+      "group": "INOUT",
+      "cis": 7
+    },
+    {
+      "id": 257,
+      "label": "Flexible Connector",
+      "group": "INOUT",
+      "cis": 4
+    },
+    {
+      "id": 258,
+      "label": "Tube Adapter and Sleeve",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 259,
+      "label": "Inlet Silencer",
+      "group": "INOUT",
+      "cis": 16
+    },
+    {
+      "id": 260,
+      "label": "Outlet Silencer",
+      "group": "INOUT",
+      "cis": 16
+    },
+    {
+      "id": 261,
+      "label": "Flow Control",
+      "group": "INOUT",
+      "cis": 97
+    },
+    {
+      "id": 262,
+      "label": "Damper",
+      "group": "INOUT",
+      "cis": 54
+    },
+    {
+      "id": 263,
+      "label": "Parallel Blade Damper",
+      "group": "INOUT",
+      "cis": 12
+    },
+    {
+      "id": 264,
+      "label": "Opposed Blade Damper",
+      "group": "INOUT",
+      "cis": 9
+    },
+    {
+      "id": 265,
+      "label": "Outlet Damper",
+      "group": "INOUT",
+      "cis": 6
+    },
+    {
+      "id": 266,
+      "label": "Inlet Box Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 267,
+      "label": "Gravity Damper",
+      "group": "INOUT",
+      "cis": 8
+    },
+    {
+      "id": 268,
+      "label": "Manual Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 269,
+      "label": "Motorized Damper",
+      "group": "INOUT",
+      "cis": 4
+    },
+    {
+      "id": 270,
+      "label": "Blast Gate",
+      "group": "INOUT",
+      "cis": 3
+    },
+    {
+      "id": 271,
+      "label": "Slide Gate Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 272,
+      "label": "Variable Inlet Vanes",
+      "group": "INOUT",
+      "cis": 9
+    },
+    {
+      "id": 273,
+      "label": "Pre-Spin",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 274,
+      "label": "Nested Inlet Vanes",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 275,
+      "label": "External Inlet Vanes",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 276,
+      "label": "Speed Control",
+      "group": "INOUT",
+      "cis": 28
+    },
+    {
+      "id": 277,
+      "label": "Turndown",
+      "group": "INOUT",
+      "cis": 5
+    },
+    {
+      "id": 278,
+      "label": "Construction Class",
+      "group": "SPEC",
+      "cis": 237
+    },
+    {
+      "id": 279,
+      "label": "Construction Material",
+      "group": "SPEC",
+      "cis": 40
+    },
+    {
+      "id": 280,
+      "label": "Stainless Steel Construction",
+      "group": "SPEC",
+      "cis": 2
+    },
+    {
+      "id": 281,
+      "label": "Aluminum Construction",
+      "group": "SPEC",
+      "cis": 17
+    },
+    {
+      "id": 282,
+      "label": "Coatings",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 283,
+      "label": "Spark Resistant Construction",
+      "group": "SPEC",
+      "cis": 49
+    },
+    {
+      "id": 284,
+      "label": "Non-Ferrous Material",
+      "group": "SPEC",
+      "cis": 16
+    },
+    {
+      "id": 285,
+      "label": "Spark Resistant Type A",
+      "group": "SPEC",
+      "cis": 15
+    },
+    {
+      "id": 286,
+      "label": "Spark Resistant Type B",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 287,
+      "label": "Spark Resistant Type C",
+      "group": "SPEC",
+      "cis": 3
+    },
+    {
+      "id": 288,
+      "label": "Rub Ring",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 289,
+      "label": "Rub Plate",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 290,
+      "label": "Fan Grounding Device",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 291,
+      "label": "High Temperature Construction",
+      "group": "SPEC",
+      "cis": 69
+    },
+    {
+      "id": 292,
+      "label": "Maximum Operating Temperature",
+      "group": "SPEC",
+      "cis": 6
+    },
+    {
+      "id": 293,
+      "label": "Shaft Cooler",
+      "group": "SPEC",
+      "cis": 5
+    },
+    {
+      "id": 294,
+      "label": "Heat Shield",
+      "group": "SPEC",
+      "cis": 15
+    },
+    {
+      "id": 295,
+      "label": "High Temperature Pedestal",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 296,
+      "label": "Thermal Expansion",
+      "group": "SPEC",
+      "cis": 2
+    },
+    {
+      "id": 297,
+      "label": "Insulated Fan",
+      "group": "SPEC",
+      "cis": 21
+    },
+    {
+      "id": 298,
+      "label": "Double Wall Construction",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 299,
+      "label": "Insulated Jacket",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 300,
+      "label": "Nominally Leak-Tight Fan",
+      "group": "SPEC",
+      "cis": 47
+    },
+    {
+      "id": 301,
+      "label": "Fan Leakage",
+      "group": "SPEC",
+      "cis": 2
+    },
+    {
+      "id": 302,
+      "label": "Gasketing",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 303,
+      "label": "Soap Bubble Test",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 304,
+      "label": "Regenerative Thermal Oxidizer",
+      "group": "SPEC",
+      "cis": 15
+    },
+    {
+      "id": 305,
+      "label": "High Moisture Construction",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 306,
+      "label": "Housing Drain",
+      "group": "SPEC",
+      "cis": 17
+    },
+    {
+      "id": 307,
+      "label": "Weep Hole",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 308,
+      "label": "Flue Gas Recirculation",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 309,
+      "label": "Fan Installation",
+      "group": "INST",
+      "cis": 91
+    },
+    {
+      "id": 310,
+      "label": "Fan Base",
+      "group": "INST",
+      "cis": 25
+    },
+    {
+      "id": 311,
+      "label": "Unitary Base",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 312,
+      "label": "Isolation Base",
+      "group": "INST",
+      "cis": 19
+    },
+    {
+      "id": 313,
+      "label": "Inertia Base",
+      "group": "INST",
+      "cis": 16
+    },
+    {
+      "id": 314,
+      "label": "Vibration",
+      "group": "INST",
+      "cis": 43
+    },
+    {
+      "id": 315,
+      "label": "Vibration Isolation",
+      "group": "INST",
+      "cis": 39
+    },
+    {
+      "id": 316,
+      "label": "Isolator Deflection",
+      "group": "INST",
+      "cis": 11
+    },
+    {
+      "id": 317,
+      "label": "Neoprene Isolation Pad",
+      "group": "INST",
+      "cis": 2
+    },
+    {
+      "id": 318,
+      "label": "Rubber-in-Shear Isolator",
+      "group": "INST",
+      "cis": 2
+    },
+    {
+      "id": 319,
+      "label": "Spring Isolator",
+      "group": "INST",
+      "cis": 10
+    },
+    {
+      "id": 320,
+      "label": "Floor Mounted Isolation",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 321,
+      "label": "Ceiling Hung Isolation",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 322,
+      "label": "Seismic Restraint",
+      "group": "INST",
+      "cis": 3
+    },
+    {
+      "id": 323,
+      "label": "Snubber",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 324,
+      "label": "Thrust Restraint",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 325,
+      "label": "Anti-Backspin Device",
+      "group": "INST",
+      "cis": 16
+    },
+    {
+      "id": 326,
+      "label": "Zero Speed Switch",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 327,
+      "label": "Piezometer Ring",
+      "group": "INST",
+      "cis": 3
+    },
+    {
+      "id": 328,
+      "label": "Airflow Measurement",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 329,
+      "label": "Pressure Transmitter",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 330,
+      "label": "Weather Cover",
+      "group": "INST",
+      "cis": 2
+    },
+    {
+      "id": 331,
+      "label": "Fan Performance",
+      "group": "PERF",
+      "cis": 877
+    },
+    {
+      "id": 332,
+      "label": "Brake Horsepower",
+      "group": "PERF",
+      "cis": 323
+    },
+    {
+      "id": 333,
+      "label": "Outlet Velocity",
+      "group": "PERF",
+      "cis": 8
+    },
+    {
+      "id": 334,
+      "label": "Tip Speed",
+      "group": "PERF",
+      "cis": 49
+    },
+    {
+      "id": 335,
+      "label": "Fan Static Pressure",
+      "group": "PERF",
+      "cis": 95
+    },
+    {
+      "id": 336,
+      "label": "Fan Total Pressure",
+      "group": "PERF",
+      "cis": 60
+    },
+    {
+      "id": 337,
+      "label": "Fan Efficiency",
+      "group": "PERF",
+      "cis": 59
+    },
+    {
+      "id": 338,
+      "label": "Static Efficiency",
+      "group": "PERF",
+      "cis": 19
+    },
+    {
+      "id": 339,
+      "label": "Peak Efficiency",
+      "group": "PERF",
+      "cis": 23
+    },
+    {
+      "id": 340,
+      "label": "Fan Curve",
+      "group": "PERF",
+      "cis": 151
+    },
+    {
+      "id": 341,
+      "label": "System Resistance",
+      "group": "PERF",
+      "cis": 63
+    },
+    {
+      "id": 342,
+      "label": "System Curve",
+      "group": "PERF",
+      "cis": 61
+    },
+    {
+      "id": 343,
+      "label": "Operating Point",
+      "group": "PERF",
+      "cis": 48
+    },
+    {
+      "id": 344,
+      "label": "Duty Point",
+      "group": "PERF",
+      "cis": 10
+    },
+    {
+      "id": 345,
+      "label": "Stall Region",
+      "group": "PERF",
+      "cis": 21
+    },
+    {
+      "id": 346,
+      "label": "Surge",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 347,
+      "label": "Non-Overloading Power Curve",
+      "group": "PERF",
+      "cis": 4
+    },
+    {
+      "id": 348,
+      "label": "Overloading Power Curve",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 349,
+      "label": "Fan Laws",
+      "group": "PERF",
+      "cis": 10
+    },
+    {
+      "id": 350,
+      "label": "Speed Change Calculation",
+      "group": "PERF",
+      "cis": 7
+    },
+    {
+      "id": 351,
+      "label": "Size Change Calculation",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 352,
+      "label": "Power Varies With Speed Cubed",
+      "group": "PERF",
+      "cis": 5
+    },
+    {
+      "id": 353,
+      "label": "Density Correction Factor",
+      "group": "PERF",
+      "cis": 33
+    },
+    {
+      "id": 354,
+      "label": "Temperature Correction",
+      "group": "PERF",
+      "cis": 8
+    },
+    {
+      "id": 355,
+      "label": "Altitude Correction",
+      "group": "PERF",
+      "cis": 6
+    },
+    {
+      "id": 356,
+      "label": "Fan Sound",
+      "group": "PERF",
+      "cis": 27
+    },
+    {
+      "id": 357,
+      "label": "Sound Power Level",
+      "group": "PERF",
+      "cis": 16
+    },
+    {
+      "id": 358,
+      "label": "Sone Rating",
+      "group": "PERF",
+      "cis": 4
+    },
+    {
+      "id": 359,
+      "label": "Fan Class",
+      "group": "PERF",
+      "cis": 41
+    },
+    {
+      "id": 360,
+      "label": "Maximum Safe Speed",
+      "group": "PERF",
+      "cis": 7
+    },
+    {
+      "id": 361,
+      "label": "System Effect",
+      "group": "PERF",
+      "cis": 7
+    },
+    {
+      "id": 362,
+      "label": "Fan Selection Range",
+      "group": "PERF",
+      "cis": 19
+    },
+    {
+      "id": 363,
+      "label": "Flow Control Efficiency",
+      "group": "PERF",
+      "cis": 4
+    },
+    {
+      "id": 364,
+      "label": "Fan Size",
+      "group": "CAT",
+      "cis": 155
+    },
+    {
+      "id": 365,
+      "label": "Model Code",
+      "group": "CAT",
+      "cis": 152
+    },
+    {
+      "id": 366,
+      "label": "Product Catalog",
+      "group": "CAT",
+      "cis": 133
+    },
+    {
+      "id": 367,
+      "label": "AMCA Certified Ratings",
+      "group": "CAT",
+      "cis": 12
+    },
+    {
+      "id": 368,
+      "label": "Performance Table",
+      "group": "CAT",
+      "cis": 69
+    },
+    {
+      "id": 369,
+      "label": "Reading a Performance Table",
+      "group": "CAT",
+      "cis": 58
+    },
+    {
+      "id": 370,
+      "label": "Interpolation",
+      "group": "CAT",
+      "cis": 19
+    },
+    {
+      "id": 371,
+      "label": "Catalog Operating Limits",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 372,
+      "label": "Technical Description",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 373,
+      "label": "FanPedia vs Current Catalog",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 374,
+      "label": "Product Options",
+      "group": "CAT",
+      "cis": 17
+    },
+    {
+      "id": 375,
+      "label": "Accessory Selection",
+      "group": "CAT",
+      "cis": 15
+    },
+    {
+      "id": 376,
+      "label": "Motor Selection",
+      "group": "CAT",
+      "cis": 24
+    },
+    {
+      "id": 377,
+      "label": "Drive Selection",
+      "group": "CAT",
+      "cis": 22
+    },
+    {
+      "id": 378,
+      "label": "Fan Family Selection",
+      "group": "CAT",
+      "cis": 21
+    },
+    {
+      "id": 379,
+      "label": "Impeller Selection",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 380,
+      "label": "Arrangement Selection",
+      "group": "CAT",
+      "cis": 21
+    },
+    {
+      "id": 381,
+      "label": "Construction Selection",
+      "group": "CAT",
+      "cis": 13
+    },
+    {
+      "id": 382,
+      "label": "Fan Selection",
+      "group": "CAT",
+      "cis": 18
+    },
+    {
+      "id": 383,
+      "label": "Selection Trade-Offs",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 384,
+      "label": "Fan Selection Checklist",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 385,
+      "label": "Complete Fan Description",
+      "group": "CAT",
+      "cis": 18
+    },
+    {
+      "id": 386,
+      "label": "Fan Specification",
+      "group": "CAT",
+      "cis": 12
+    },
+    {
+      "id": 387,
+      "label": "Specification Review",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 388,
+      "label": "Fan Comparison",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 389,
+      "label": "Annotated Fan Drawing",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 390,
+      "label": "Capstone Fan Specification",
+      "group": "CAT",
+      "cis": 1
+    },
+    {
+      "id": 391,
+      "label": "Pressure Rise",
+      "group": "FOUND",
+      "cis": 3
+    },
+    {
+      "id": 392,
+      "label": "Air Power",
+      "group": "FOUND",
+      "cis": 2
+    },
+    {
+      "id": 393,
+      "label": "Airflow Continuity Equation",
+      "group": "FOUND",
+      "cis": 3
+    },
+    {
+      "id": 394,
+      "label": "Velocity Pressure Equation",
+      "group": "FOUND",
+      "cis": 2
+    },
+    {
+      "id": 395,
+      "label": "Barometric Pressure",
+      "group": "FOUND",
+      "cis": 34
+    },
+    {
+      "id": 396,
+      "label": "Fan Outlet Area",
+      "group": "PERF",
+      "cis": 2
+    },
+    {
+      "id": 397,
+      "label": "Outlet Velocity Pressure",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 398,
+      "label": "Fan Power Equation",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 399,
+      "label": "Efficiency Curve",
+      "group": "PERF",
+      "cis": 4
+    },
+    {
+      "id": 400,
+      "label": "Peak Pressure Point",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 401,
+      "label": "Free Delivery",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 402,
+      "label": "Shutoff Pressure",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 403,
+      "label": "Fans in Parallel",
+      "group": "PERF",
+      "cis": 4
+    },
+    {
+      "id": 404,
+      "label": "Fans in Series",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 405,
+      "label": "Pressure Varies as Speed Squared",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 406,
+      "label": "Specific Speed",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 407,
+      "label": "Cold Start Horsepower",
+      "group": "PERF",
+      "cis": 2
+    },
+    {
+      "id": 408,
+      "label": "AMCA 210 Rating Standard",
+      "group": "PERF",
+      "cis": 32
+    },
+    {
+      "id": 409,
+      "label": "AMCA Installation Type",
+      "group": "PERF",
+      "cis": 31
+    },
+    {
+      "id": 410,
+      "label": "Inlet System Effect",
+      "group": "PERF",
+      "cis": 2
+    },
+    {
+      "id": 411,
+      "label": "Outlet System Effect",
+      "group": "PERF",
+      "cis": 3
+    },
+    {
+      "id": 412,
+      "label": "Effective Duct Length",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 413,
+      "label": "System Effect Curve",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 414,
+      "label": "Decibel",
+      "group": "PERF",
+      "cis": 5
+    },
+    {
+      "id": 415,
+      "label": "Sound Pressure Level",
+      "group": "PERF",
+      "cis": 4
+    },
+    {
+      "id": 416,
+      "label": "Octave Band",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 417,
+      "label": "Blade Pass Frequency",
+      "group": "PERF",
+      "cis": 1
+    },
+    {
+      "id": 418,
+      "label": "Fan Energy Index",
+      "group": "PERF",
+      "cis": 7
+    },
+    {
+      "id": 419,
+      "label": "Hooded Roof Exhauster",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 420,
+      "label": "Louvered Roof Exhauster",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 421,
+      "label": "Low Profile Roof Ventilator",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 422,
+      "label": "Roof Mounted Panel Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 423,
+      "label": "Paint Booth Exhaust Fan",
+      "group": "FAM",
+      "cis": 3
+    },
+    {
+      "id": 424,
+      "label": "Dust Collection Fan",
+      "group": "FAM",
+      "cis": 3
+    },
+    {
+      "id": 425,
+      "label": "High Efficiency Centrifugal Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 426,
+      "label": "Inline Lab Exhaust Fan",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 427,
+      "label": "Bypass Flow",
+      "group": "FAM",
+      "cis": 2
+    },
+    {
+      "id": 428,
+      "label": "Lab Exhaust Total Flow",
+      "group": "FAM",
+      "cis": 1
+    },
+    {
+      "id": 429,
+      "label": "Wiper Bar",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 430,
+      "label": "Housing Framing",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 431,
+      "label": "Bearing Structural Support",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 432,
+      "label": "Setback Outlet Flange",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 433,
+      "label": "Cast Housing",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 434,
+      "label": "Inspection Port",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 435,
+      "label": "Motor Support Base",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 436,
+      "label": "Motor Base Saddle",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 437,
+      "label": "Discharge Cone",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 438,
+      "label": "Housing Access Panel",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 439,
+      "label": "Mounting Panel",
+      "group": "ANAT",
+      "cis": 2
+    },
+    {
+      "id": 440,
+      "label": "Insulation Plug",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 441,
+      "label": "Motor Cover",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 442,
+      "label": "Roof Exhauster Shroud",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 443,
+      "label": "Curb Cap",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 444,
+      "label": "Relieved Inlet Transition",
+      "group": "ANAT",
+      "cis": 1
+    },
+    {
+      "id": 445,
+      "label": "Impeller Airflow Path",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 446,
+      "label": "Impeller Width",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 447,
+      "label": "Impeller Material",
+      "group": "IMP",
+      "cis": 3
+    },
+    {
+      "id": 448,
+      "label": "Impeller End Ring",
+      "group": "IMP",
+      "cis": 2
+    },
+    {
+      "id": 449,
+      "label": "Impeller Tie Rod",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 450,
+      "label": "Impeller Gusset",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 451,
+      "label": "Open Radial Paddle Impeller",
+      "group": "IMP",
+      "cis": 3
+    },
+    {
+      "id": 452,
+      "label": "Air Handling Impeller",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 453,
+      "label": "Axial Blade Tip",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 454,
+      "label": "Axial Blade Count",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 455,
+      "label": "Blade Pitch Angle",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 456,
+      "label": "Fiberglass Hub",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 457,
+      "label": "Trantorque Hub",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 458,
+      "label": "Axial Fan Configuration",
+      "group": "IMP",
+      "cis": 1
+    },
+    {
+      "id": 459,
+      "label": "Arrangement 3F",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 460,
+      "label": "Arrangement 4S Swingout",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 461,
+      "label": "Arrangement 4VI and 4HI",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 462,
+      "label": "Arrangement 7SI and 7DI",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 463,
+      "label": "Arrangement 9F",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 464,
+      "label": "Arrangement 9H",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 465,
+      "label": "Arrangement 9ST and 9SS",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 466,
+      "label": "Ventilating Set",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 467,
+      "label": "Arrangement 8P and 9P Plug",
+      "group": "ARR",
+      "cis": 22
+    },
+    {
+      "id": 468,
+      "label": "Plenum Arrangements 3HS and 3HA",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 469,
+      "label": "Plenum Arrangement 3SM",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 470,
+      "label": "Plenum Arrangements 3VA and 3VS",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 471,
+      "label": "Plenum Arrangement 4V",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 472,
+      "label": "Arrangement 4CS and 9CS",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 473,
+      "label": "Arrangement 4SO and 9SO",
+      "group": "ARR",
+      "cis": 1
+    },
+    {
+      "id": 474,
+      "label": "Top Angular Up Discharge",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 475,
+      "label": "Top Angular Down Discharge",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 476,
+      "label": "Bottom Angular Down Discharge",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 477,
+      "label": "Bottom Angular Up Discharge",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 478,
+      "label": "Inline Horizontal Configuration",
+      "group": "ROT",
+      "cis": 2
+    },
+    {
+      "id": 479,
+      "label": "Inline Vertical Configuration",
+      "group": "ROT",
+      "cis": 2
+    },
+    {
+      "id": 480,
+      "label": "Motor Positions L and R",
+      "group": "ROT",
+      "cis": 3
+    },
+    {
+      "id": 481,
+      "label": "Standard Motor Position Rule",
+      "group": "ROT",
+      "cis": 2
+    },
+    {
+      "id": 482,
+      "label": "Swingout Motor Position Rule",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 483,
+      "label": "K Mount Motor",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 484,
+      "label": "Inline Motor Positions A to H",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 485,
+      "label": "Vertical Inline Motor Location",
+      "group": "ROT",
+      "cis": 1
+    },
+    {
+      "id": 486,
+      "label": "Motor Nameplate",
+      "group": "MOT",
+      "cis": 3
+    },
+    {
+      "id": 487,
+      "label": "Motor Intended Duty",
+      "group": "MOT",
+      "cis": 51
+    },
+    {
+      "id": 488,
+      "label": "Severe Duty Motor",
+      "group": "MOT",
+      "cis": 25
+    },
+    {
+      "id": 489,
+      "label": "Hazardous Location Motor",
+      "group": "MOT",
+      "cis": 25
+    },
+    {
+      "id": 490,
+      "label": "Premium Efficiency Motor",
+      "group": "MOT",
+      "cis": 25
+    },
+    {
+      "id": 491,
+      "label": "Motor Voltage and Phase",
+      "group": "MOT",
+      "cis": 2
+    },
+    {
+      "id": 492,
+      "label": "Synchronous Motor Speed",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 493,
+      "label": "Motor Temperature Rise",
+      "group": "MOT",
+      "cis": 2
+    },
+    {
+      "id": 494,
+      "label": "Motor Thermal Protection",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 495,
+      "label": "Inverter-Duty Motor",
+      "group": "MOT",
+      "cis": 25
+    },
+    {
+      "id": 496,
+      "label": "EC Motor Speed Controller",
+      "group": "MOT",
+      "cis": 23
+    },
+    {
+      "id": 497,
+      "label": "Solid Pillow Block Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 498,
+      "label": "Concentric Bearing Mount",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 499,
+      "label": "Drive End Bearing",
+      "group": "BRG",
+      "cis": 3
+    },
+    {
+      "id": 500,
+      "label": "Non-Drive End Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 501,
+      "label": "Two and Four Hole Mount",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 502,
+      "label": "Fixed-Floating Bearing Rules",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 503,
+      "label": "Bearing Seal Speed Limit",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 504,
+      "label": "Bearing RTD and Thermocouple",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 505,
+      "label": "High Expansion Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 506,
+      "label": "Damper and Vane Bearings",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 507,
+      "label": "Insulated Bearing",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 508,
+      "label": "Shaft Material Grades",
+      "group": "BRG",
+      "cis": 2
+    },
+    {
+      "id": 509,
+      "label": "Forged Shaft",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 510,
+      "label": "Keystock",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 511,
+      "label": "Shaft and Coupling Guards",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 512,
+      "label": "Bolt-On Pedestal",
+      "group": "BRG",
+      "cis": 1
+    },
+    {
+      "id": 513,
+      "label": "Isolator Mounting Method",
+      "group": "INST",
+      "cis": 4
+    },
+    {
+      "id": 514,
+      "label": "Direct Mounted Isolators",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 515,
+      "label": "Isolation Rails",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 516,
+      "label": "Isolator Mounting Angle",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 517,
+      "label": "Open Spring Isolator",
+      "group": "INST",
+      "cis": 4
+    },
+    {
+      "id": 518,
+      "label": "Housed Spring Isolator",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 519,
+      "label": "Restrained Spring Isolator",
+      "group": "INST",
+      "cis": 2
+    },
+    {
+      "id": 520,
+      "label": "Seismic Spring Isolator",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 521,
+      "label": "Internally Isolated Fan",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 522,
+      "label": "Shaft and Coupling Alignment",
+      "group": "INST",
+      "cis": 1
+    },
+    {
+      "id": 523,
+      "label": "Post Mount Motor Base",
+      "group": "MOT",
+      "cis": 1
+    },
+    {
+      "id": 524,
+      "label": "Butterfly Gravity Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 525,
+      "label": "Ceiling Type Gravity Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 526,
+      "label": "Wall Type Gravity Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 527,
+      "label": "Blade Flutter",
+      "group": "INOUT",
+      "cis": 4
+    },
+    {
+      "id": 528,
+      "label": "Damper Actuator",
+      "group": "INOUT",
+      "cis": 3
+    },
+    {
+      "id": 529,
+      "label": "Flat Blade Damper",
+      "group": "INOUT",
+      "cis": 2
+    },
+    {
+      "id": 530,
+      "label": "Airfoil Blade Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 531,
+      "label": "Damper Throttling",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 532,
+      "label": "Lab Exhaust Isolation Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 533,
+      "label": "Lab Exhaust Bypass Damper",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 534,
+      "label": "Inlet Box Horn",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 535,
+      "label": "Bolt-On Inlet Box",
+      "group": "INOUT",
+      "cis": 2
+    },
+    {
+      "id": 536,
+      "label": "Bolted Flange Connection",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 537,
+      "label": "Slip Connection",
+      "group": "INOUT",
+      "cis": 2
+    },
+    {
+      "id": 538,
+      "label": "Inlet Box Mounting Planes",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 539,
+      "label": "Insulated Inlet Box",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 540,
+      "label": "ASA Pipe Flange Bolt Pattern",
+      "group": "INOUT",
+      "cis": 1
+    },
+    {
+      "id": 541,
+      "label": "High Temperature Package",
+      "group": "SPEC",
+      "cis": 2
+    },
+    {
+      "id": 542,
+      "label": "Axial High Temperature Package",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 543,
+      "label": "High Temperature Grease",
+      "group": "SPEC",
+      "cis": 3
+    },
+    {
+      "id": 544,
+      "label": "Cooler Guard",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 545,
+      "label": "Cooler Box",
+      "group": "SPEC",
+      "cis": 2
+    },
+    {
+      "id": 546,
+      "label": "Insulation Pins",
+      "group": "SPEC",
+      "cis": 2
+    },
+    {
+      "id": 547,
+      "label": "Aluminum Clad Construction",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 548,
+      "label": "Recess Cone",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 549,
+      "label": "Corten Steel",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 550,
+      "label": "Buffer Strip",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 551,
+      "label": "Continuous Seal Weld",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 552,
+      "label": "Centering Plate",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 553,
+      "label": "RTO Service Conditions",
+      "group": "SPEC",
+      "cis": 14
+    },
+    {
+      "id": 554,
+      "label": "Swingout Door Assembly",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 555,
+      "label": "Double Door Clamshell",
+      "group": "SPEC",
+      "cis": 1
+    },
+    {
+      "id": 556,
+      "label": "Catalog Structure",
+      "group": "CAT",
+      "cis": 26
+    },
+    {
+      "id": 557,
+      "label": "Fan Selector Software",
+      "group": "CAT",
+      "cis": 8
+    },
+    {
+      "id": 558,
+      "label": "Performance Table Header",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 559,
+      "label": "Class Shading in Tables",
+      "group": "CAT",
+      "cis": 20
+    },
+    {
+      "id": 560,
+      "label": "Rating Conditions",
+      "group": "CAT",
+      "cis": 30
+    },
+    {
+      "id": 561,
+      "label": "Transmission Losses",
+      "group": "CAT",
+      "cis": 23
+    },
+    {
+      "id": 562,
+      "label": "Appurtenance Effects",
+      "group": "CAT",
+      "cis": 1
+    },
+    {
+      "id": 563,
+      "label": "Actual Operating Conditions",
+      "group": "CAT",
+      "cis": 5
+    },
+    {
+      "id": 564,
+      "label": "Cold Start Motor Sizing",
+      "group": "CAT",
+      "cis": 1
+    },
+    {
+      "id": 565,
+      "label": "Fan Efficiency Grade",
+      "group": "CAT",
+      "cis": 1
+    },
+    {
+      "id": 566,
+      "label": "Octave Band Sound Data",
+      "group": "CAT",
+      "cis": 7
+    },
+    {
+      "id": 567,
+      "label": "Dimensional Data Table",
+      "group": "CAT",
+      "cis": 8
+    },
+    {
+      "id": 568,
+      "label": "Certified Drawings",
+      "group": "CAT",
+      "cis": 4
+    },
+    {
+      "id": 569,
+      "label": "Material Specifications Table",
+      "group": "CAT",
+      "cis": 13
+    },
+    {
+      "id": 570,
+      "label": "Airstream Conditions",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 571,
+      "label": "Air Change Method",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 572,
+      "label": "Minimum Conveying Velocity",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 573,
+      "label": "Space Constraints",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 574,
+      "label": "Noise Limits",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 575,
+      "label": "Efficiency Requirements",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 576,
+      "label": "Application Requirements",
+      "group": "CAT",
+      "cis": 2
+    },
+    {
+      "id": 577,
+      "label": "CSI Format Specification",
+      "group": "CAT",
+      "cis": 4
+    },
+    {
+      "id": 578,
+      "label": "Specification Performance Clause",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 579,
+      "label": "AMCA 204 Balance Grade",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 580,
+      "label": "First Critical Speed",
+      "group": "CAT",
+      "cis": 3
+    },
+    {
+      "id": 581,
+      "label": "Submittal Data",
+      "group": "CAT",
+      "cis": 3
+    }
+  ],
+  "edges": [
+    {
+      "from": 4,
+      "to": 1
+    },
+    {
+      "from": 5,
+      "to": 4
+    },
+    {
+      "from": 6,
+      "to": 4
+    },
+    {
+      "from": 7,
+      "to": 6
+    },
+    {
+      "from": 8,
+      "to": 1
+    },
+    {
+      "from": 9,
+      "to": 8
+    },
+    {
+      "from": 10,
+      "to": 8
+    },
+    {
+      "from": 11,
+      "to": 8
+    },
+    {
+      "from": 11,
+      "to": 6
+    },
+    {
+      "from": 12,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 1
+    },
+    {
+      "from": 14,
+      "to": 13
+    },
+    {
+      "from": 15,
+      "to": 13
+    },
+    {
+      "from": 16,
+      "to": 13
+    },
+    {
+      "from": 16,
+      "to": 14
+    },
+    {
+      "from": 16,
+      "to": 15
+    },
+    {
+      "from": 17,
+      "to": 1
+    },
+    {
+      "from": 18,
+      "to": 17
+    },
+    {
+      "from": 19,
+      "to": 18
+    },
+    {
+      "from": 20,
+      "to": 18
+    },
+    {
+      "from": 21,
+      "to": 17
+    },
+    {
+      "from": 21,
+      "to": 14
+    },
+    {
+      "from": 22,
+      "to": 17
+    },
+    {
+      "from": 23,
+      "to": 18
+    },
+    {
+      "from": 24,
+      "to": 4
+    },
+    {
+      "from": 25,
+      "to": 1
+    },
+    {
+      "from": 25,
+      "to": 2
+    },
+    {
+      "from": 26,
+      "to": 25
+    },
+    {
+      "from": 27,
+      "to": 25
+    },
+    {
+      "from": 28,
+      "to": 25
+    },
+    {
+      "from": 29,
+      "to": 27
+    },
+    {
+      "from": 30,
+      "to": 27
+    },
+    {
+      "from": 31,
+      "to": 28
+    },
+    {
+      "from": 32,
+      "to": 31
+    },
+    {
+      "from": 33,
+      "to": 3
+    },
+    {
+      "from": 33,
+      "to": 25
+    },
+    {
+      "from": 34,
+      "to": 33
+    },
+    {
+      "from": 34,
+      "to": 31
+    },
+    {
+      "from": 34,
+      "to": 32
+    },
+    {
+      "from": 35,
+      "to": 25
+    },
+    {
+      "from": 36,
+      "to": 35
+    },
+    {
+      "from": 36,
+      "to": 28
+    },
+    {
+      "from": 37,
+      "to": 35
+    },
+    {
+      "from": 37,
+      "to": 28
+    },
+    {
+      "from": 38,
+      "to": 36
+    },
+    {
+      "from": 38,
+      "to": 37
+    },
+    {
+      "from": 39,
+      "to": 27
+    },
+    {
+      "from": 39,
+      "to": 36
+    },
+    {
+      "from": 40,
+      "to": 36
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 41,
+      "to": 36
+    },
+    {
+      "from": 42,
+      "to": 41
+    },
+    {
+      "from": 43,
+      "to": 42
+    },
+    {
+      "from": 44,
+      "to": 36
+    },
+    {
+      "from": 44,
+      "to": 24
+    },
+    {
+      "from": 45,
+      "to": 44
+    },
+    {
+      "from": 46,
+      "to": 27
+    },
+    {
+      "from": 46,
+      "to": 37
+    },
+    {
+      "from": 47,
+      "to": 37
+    },
+    {
+      "from": 47,
+      "to": 46
+    },
+    {
+      "from": 48,
+      "to": 37
+    },
+    {
+      "from": 49,
+      "to": 47
+    },
+    {
+      "from": 49,
+      "to": 48
+    },
+    {
+      "from": 50,
+      "to": 37
+    },
+    {
+      "from": 51,
+      "to": 37
+    },
+    {
+      "from": 52,
+      "to": 40
+    },
+    {
+      "from": 52,
+      "to": 26
+    },
+    {
+      "from": 53,
+      "to": 40
+    },
+    {
+      "from": 53,
+      "to": 20
+    },
+    {
+      "from": 54,
+      "to": 40
+    },
+    {
+      "from": 55,
+      "to": 40
+    },
+    {
+      "from": 55,
+      "to": 24
+    },
+    {
+      "from": 56,
+      "to": 40
+    },
+    {
+      "from": 57,
+      "to": 35
+    },
+    {
+      "from": 58,
+      "to": 57
+    },
+    {
+      "from": 59,
+      "to": 57
+    },
+    {
+      "from": 59,
+      "to": 36
+    },
+    {
+      "from": 60,
+      "to": 59
+    },
+    {
+      "from": 61,
+      "to": 57
+    },
+    {
+      "from": 61,
+      "to": 37
+    },
+    {
+      "from": 62,
+      "to": 37
+    },
+    {
+      "from": 63,
+      "to": 58
+    },
+    {
+      "from": 64,
+      "to": 36
+    },
+    {
+      "from": 65,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 40
+    },
+    {
+      "from": 67,
+      "to": 18
+    },
+    {
+      "from": 67,
+      "to": 36
+    },
+    {
+      "from": 68,
+      "to": 57
+    },
+    {
+      "from": 68,
+      "to": 18
+    },
+    {
+      "from": 69,
+      "to": 21
+    },
+    {
+      "from": 69,
+      "to": 57
+    },
+    {
+      "from": 70,
+      "to": 19
+    },
+    {
+      "from": 70,
+      "to": 35
+    },
+    {
+      "from": 71,
+      "to": 37
+    },
+    {
+      "from": 72,
+      "to": 35
+    },
+    {
+      "from": 72,
+      "to": 34
+    },
+    {
+      "from": 73,
+      "to": 35
+    },
+    {
+      "from": 74,
+      "to": 35
+    },
+    {
+      "from": 75,
+      "to": 57
+    },
+    {
+      "from": 75,
+      "to": 30
+    },
+    {
+      "from": 76,
+      "to": 57
+    },
+    {
+      "from": 76,
+      "to": 30
+    },
+    {
+      "from": 77,
+      "to": 67
+    },
+    {
+      "from": 78,
+      "to": 77
+    },
+    {
+      "from": 79,
+      "to": 78
+    },
+    {
+      "from": 80,
+      "to": 67
+    },
+    {
+      "from": 81,
+      "to": 27
+    },
+    {
+      "from": 81,
+      "to": 28
+    },
+    {
+      "from": 81,
+      "to": 34
+    },
+    {
+      "from": 82,
+      "to": 39
+    },
+    {
+      "from": 83,
+      "to": 39
+    },
+    {
+      "from": 84,
+      "to": 39
+    },
+    {
+      "from": 85,
+      "to": 29
+    },
+    {
+      "from": 86,
+      "to": 29
+    },
+    {
+      "from": 87,
+      "to": 30
+    },
+    {
+      "from": 88,
+      "to": 27
+    },
+    {
+      "from": 89,
+      "to": 34
+    },
+    {
+      "from": 90,
+      "to": 47
+    },
+    {
+      "from": 90,
+      "to": 34
+    },
+    {
+      "from": 91,
+      "to": 48
+    },
+    {
+      "from": 92,
+      "to": 27
+    },
+    {
+      "from": 93,
+      "to": 27
+    },
+    {
+      "from": 94,
+      "to": 57
+    },
+    {
+      "from": 95,
+      "to": 30
+    },
+    {
+      "from": 96,
+      "to": 29
+    },
+    {
+      "from": 96,
+      "to": 30
+    },
+    {
+      "from": 97,
+      "to": 57
+    },
+    {
+      "from": 98,
+      "to": 30
+    },
+    {
+      "from": 99,
+      "to": 27
+    },
+    {
+      "from": 99,
+      "to": 88
+    },
+    {
+      "from": 100,
+      "to": 99
+    },
+    {
+      "from": 101,
+      "to": 99
+    },
+    {
+      "from": 102,
+      "to": 99
+    },
+    {
+      "from": 103,
+      "to": 28
+    },
+    {
+      "from": 104,
+      "to": 103
+    },
+    {
+      "from": 105,
+      "to": 28
+    },
+    {
+      "from": 106,
+      "to": 28
+    },
+    {
+      "from": 107,
+      "to": 28
+    },
+    {
+      "from": 107,
+      "to": 31
+    },
+    {
+      "from": 108,
+      "to": 28
+    },
+    {
+      "from": 108,
+      "to": 36
+    },
+    {
+      "from": 109,
+      "to": 108
+    },
+    {
+      "from": 109,
+      "to": 29
+    },
+    {
+      "from": 110,
+      "to": 109
+    },
+    {
+      "from": 111,
+      "to": 108
+    },
+    {
+      "from": 111,
+      "to": 103
+    },
+    {
+      "from": 112,
+      "to": 111
+    },
+    {
+      "from": 113,
+      "to": 111
+    },
+    {
+      "from": 114,
+      "to": 108
+    },
+    {
+      "from": 114,
+      "to": 103
+    },
+    {
+      "from": 115,
+      "to": 108
+    },
+    {
+      "from": 115,
+      "to": 53
+    },
+    {
+      "from": 116,
+      "to": 115
+    },
+    {
+      "from": 116,
+      "to": 112
+    },
+    {
+      "from": 117,
+      "to": 115
+    },
+    {
+      "from": 117,
+      "to": 20
+    },
+    {
+      "from": 118,
+      "to": 117
+    },
+    {
+      "from": 119,
+      "to": 38
+    },
+    {
+      "from": 119,
+      "to": 108
+    },
+    {
+      "from": 120,
+      "to": 28
+    },
+    {
+      "from": 120,
+      "to": 37
+    },
+    {
+      "from": 121,
+      "to": 120
+    },
+    {
+      "from": 122,
+      "to": 120
+    },
+    {
+      "from": 123,
+      "to": 120
+    },
+    {
+      "from": 123,
+      "to": 70
+    },
+    {
+      "from": 124,
+      "to": 28
+    },
+    {
+      "from": 124,
+      "to": 29
+    },
+    {
+      "from": 125,
+      "to": 120
+    },
+    {
+      "from": 125,
+      "to": 124
+    },
+    {
+      "from": 126,
+      "to": 120
+    },
+    {
+      "from": 126,
+      "to": 124
+    },
+    {
+      "from": 127,
+      "to": 120
+    },
+    {
+      "from": 128,
+      "to": 107
+    },
+    {
+      "from": 129,
+      "to": 107
+    },
+    {
+      "from": 130,
+      "to": 128
+    },
+    {
+      "from": 131,
+      "to": 105
+    },
+    {
+      "from": 131,
+      "to": 21
+    },
+    {
+      "from": 132,
+      "to": 28
+    },
+    {
+      "from": 133,
+      "to": 33
+    },
+    {
+      "from": 133,
+      "to": 28
+    },
+    {
+      "from": 134,
+      "to": 33
+    },
+    {
+      "from": 134,
+      "to": 34
+    },
+    {
+      "from": 135,
+      "to": 134
+    },
+    {
+      "from": 136,
+      "to": 135
+    },
+    {
+      "from": 137,
+      "to": 134
+    },
+    {
+      "from": 138,
+      "to": 31
+    },
+    {
+      "from": 138,
+      "to": 33
+    },
+    {
+      "from": 139,
+      "to": 28
+    },
+    {
+      "from": 139,
+      "to": 32
+    },
+    {
+      "from": 140,
+      "to": 28
+    },
+    {
+      "from": 140,
+      "to": 32
+    },
+    {
+      "from": 141,
+      "to": 133
+    },
+    {
+      "from": 141,
+      "to": 134
+    },
+    {
+      "from": 141,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 140
+    },
+    {
+      "from": 142,
+      "to": 141
+    },
+    {
+      "from": 142,
+      "to": 134
+    },
+    {
+      "from": 143,
+      "to": 142
+    },
+    {
+      "from": 144,
+      "to": 141
+    },
+    {
+      "from": 144,
+      "to": 140
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 145,
+      "to": 110
+    },
+    {
+      "from": 146,
+      "to": 141
+    },
+    {
+      "from": 146,
+      "to": 133
+    },
+    {
+      "from": 147,
+      "to": 144
+    },
+    {
+      "from": 147,
+      "to": 138
+    },
+    {
+      "from": 148,
+      "to": 142
+    },
+    {
+      "from": 148,
+      "to": 138
+    },
+    {
+      "from": 149,
+      "to": 142
+    },
+    {
+      "from": 149,
+      "to": 134
+    },
+    {
+      "from": 150,
+      "to": 149
+    },
+    {
+      "from": 151,
+      "to": 43
+    },
+    {
+      "from": 151,
+      "to": 141
+    },
+    {
+      "from": 152,
+      "to": 151
+    },
+    {
+      "from": 152,
+      "to": 142
+    },
+    {
+      "from": 153,
+      "to": 151
+    },
+    {
+      "from": 153,
+      "to": 146
+    },
+    {
+      "from": 154,
+      "to": 42
+    },
+    {
+      "from": 154,
+      "to": 141
+    },
+    {
+      "from": 155,
+      "to": 141
+    },
+    {
+      "from": 156,
+      "to": 37
+    },
+    {
+      "from": 156,
+      "to": 44
+    },
+    {
+      "from": 156,
+      "to": 141
+    },
+    {
+      "from": 157,
+      "to": 67
+    },
+    {
+      "from": 157,
+      "to": 141
+    },
+    {
+      "from": 158,
+      "to": 156
+    },
+    {
+      "from": 158,
+      "to": 88
+    },
+    {
+      "from": 159,
+      "to": 156
+    },
+    {
+      "from": 159,
+      "to": 88
+    },
+    {
+      "from": 160,
+      "to": 141
+    },
+    {
+      "from": 160,
+      "to": 21
+    },
+    {
+      "from": 161,
+      "to": 141
+    },
+    {
+      "from": 162,
+      "to": 28
+    },
+    {
+      "from": 162,
+      "to": 161
+    },
+    {
+      "from": 163,
+      "to": 162
+    },
+    {
+      "from": 164,
+      "to": 162
+    },
+    {
+      "from": 165,
+      "to": 162
+    },
+    {
+      "from": 166,
+      "to": 30
+    },
+    {
+      "from": 166,
+      "to": 39
+    },
+    {
+      "from": 167,
+      "to": 166
+    },
+    {
+      "from": 168,
+      "to": 167
+    },
+    {
+      "from": 169,
+      "to": 167
+    },
+    {
+      "from": 170,
+      "to": 167
+    },
+    {
+      "from": 171,
+      "to": 167
+    },
+    {
+      "from": 172,
+      "to": 167
+    },
+    {
+      "from": 173,
+      "to": 163
+    },
+    {
+      "from": 173,
+      "to": 164
+    },
+    {
+      "from": 173,
+      "to": 167
+    },
+    {
+      "from": 173,
+      "to": 168
+    },
+    {
+      "from": 173,
+      "to": 169
+    },
+    {
+      "from": 173,
+      "to": 170
+    },
+    {
+      "from": 173,
+      "to": 171
+    },
+    {
+      "from": 174,
+      "to": 173
+    },
+    {
+      "from": 174,
+      "to": 110
+    },
+    {
+      "from": 175,
+      "to": 162
+    },
+    {
+      "from": 175,
+      "to": 37
+    },
+    {
+      "from": 176,
+      "to": 44
+    },
+    {
+      "from": 176,
+      "to": 156
+    },
+    {
+      "from": 177,
+      "to": 134
+    },
+    {
+      "from": 177,
+      "to": 141
+    },
+    {
+      "from": 178,
+      "to": 177
+    },
+    {
+      "from": 178,
+      "to": 161
+    },
+    {
+      "from": 179,
+      "to": 178
+    },
+    {
+      "from": 179,
+      "to": 166
+    },
+    {
+      "from": 180,
+      "to": 177
+    },
+    {
+      "from": 180,
+      "to": 37
+    },
+    {
+      "from": 181,
+      "to": 177
+    },
+    {
+      "from": 181,
+      "to": 42
+    },
+    {
+      "from": 182,
+      "to": 177
+    },
+    {
+      "from": 183,
+      "to": 166
+    },
+    {
+      "from": 184,
+      "to": 33
+    },
+    {
+      "from": 185,
+      "to": 33
+    },
+    {
+      "from": 186,
+      "to": 33
+    },
+    {
+      "from": 187,
+      "to": 33
+    },
+    {
+      "from": 188,
+      "to": 187
+    },
+    {
+      "from": 189,
+      "to": 187
+    },
+    {
+      "from": 190,
+      "to": 187
+    },
+    {
+      "from": 191,
+      "to": 187
+    },
+    {
+      "from": 192,
+      "to": 187
+    },
+    {
+      "from": 192,
+      "to": 23
+    },
+    {
+      "from": 193,
+      "to": 33
+    },
+    {
+      "from": 194,
+      "to": 33
+    },
+    {
+      "from": 194,
+      "to": 14
+    },
+    {
+      "from": 195,
+      "to": 33
+    },
+    {
+      "from": 196,
+      "to": 33
+    },
+    {
+      "from": 197,
+      "to": 186
+    },
+    {
+      "from": 198,
+      "to": 186
+    },
+    {
+      "from": 199,
+      "to": 33
+    },
+    {
+      "from": 199,
+      "to": 31
+    },
+    {
+      "from": 200,
+      "to": 194
+    },
+    {
+      "from": 201,
+      "to": 184
+    },
+    {
+      "from": 201,
+      "to": 2
+    },
+    {
+      "from": 202,
+      "to": 33
+    },
+    {
+      "from": 203,
+      "to": 202
+    },
+    {
+      "from": 203,
+      "to": 134
+    },
+    {
+      "from": 204,
+      "to": 202
+    },
+    {
+      "from": 204,
+      "to": 134
+    },
+    {
+      "from": 205,
+      "to": 202
+    },
+    {
+      "from": 206,
+      "to": 205
+    },
+    {
+      "from": 207,
+      "to": 205
+    },
+    {
+      "from": 208,
+      "to": 205
+    },
+    {
+      "from": 209,
+      "to": 32
+    },
+    {
+      "from": 210,
+      "to": 209
+    },
+    {
+      "from": 211,
+      "to": 210
+    },
+    {
+      "from": 212,
+      "to": 32
+    },
+    {
+      "from": 213,
+      "to": 32
+    },
+    {
+      "from": 214,
+      "to": 32
+    },
+    {
+      "from": 215,
+      "to": 214
+    },
+    {
+      "from": 216,
+      "to": 32
+    },
+    {
+      "from": 217,
+      "to": 213
+    },
+    {
+      "from": 217,
+      "to": 215
+    },
+    {
+      "from": 218,
+      "to": 32
+    },
+    {
+      "from": 219,
+      "to": 32
+    },
+    {
+      "from": 219,
+      "to": 31
+    },
+    {
+      "from": 220,
+      "to": 219
+    },
+    {
+      "from": 221,
+      "to": 32
+    },
+    {
+      "from": 222,
+      "to": 221
+    },
+    {
+      "from": 222,
+      "to": 21
+    },
+    {
+      "from": 223,
+      "to": 32
+    },
+    {
+      "from": 224,
+      "to": 223
+    },
+    {
+      "from": 225,
+      "to": 223
+    },
+    {
+      "from": 226,
+      "to": 223
+    },
+    {
+      "from": 227,
+      "to": 32
+    },
+    {
+      "from": 228,
+      "to": 227
+    },
+    {
+      "from": 229,
+      "to": 227
+    },
+    {
+      "from": 229,
+      "to": 20
+    },
+    {
+      "from": 230,
+      "to": 32
+    },
+    {
+      "from": 231,
+      "to": 230
+    },
+    {
+      "from": 232,
+      "to": 230
+    },
+    {
+      "from": 233,
+      "to": 32
+    },
+    {
+      "from": 234,
+      "to": 32
+    },
+    {
+      "from": 234,
+      "to": 23
+    },
+    {
+      "from": 235,
+      "to": 31
+    },
+    {
+      "from": 235,
+      "to": 107
+    },
+    {
+      "from": 236,
+      "to": 31
+    },
+    {
+      "from": 237,
+      "to": 31
+    },
+    {
+      "from": 238,
+      "to": 31
+    },
+    {
+      "from": 238,
+      "to": 19
+    },
+    {
+      "from": 239,
+      "to": 31
+    },
+    {
+      "from": 239,
+      "to": 32
+    },
+    {
+      "from": 240,
+      "to": 139
+    },
+    {
+      "from": 240,
+      "to": 32
+    },
+    {
+      "from": 241,
+      "to": 240
+    },
+    {
+      "from": 242,
+      "to": 31
+    },
+    {
+      "from": 242,
+      "to": 27
+    },
+    {
+      "from": 243,
+      "to": 242
+    },
+    {
+      "from": 244,
+      "to": 242
+    },
+    {
+      "from": 245,
+      "to": 242
+    },
+    {
+      "from": 246,
+      "to": 242
+    },
+    {
+      "from": 247,
+      "to": 245
+    },
+    {
+      "from": 248,
+      "to": 29
+    },
+    {
+      "from": 248,
+      "to": 108
+    },
+    {
+      "from": 249,
+      "to": 248
+    },
+    {
+      "from": 250,
+      "to": 29
+    },
+    {
+      "from": 250,
+      "to": 24
+    },
+    {
+      "from": 251,
+      "to": 250
+    },
+    {
+      "from": 252,
+      "to": 250
+    },
+    {
+      "from": 253,
+      "to": 252
+    },
+    {
+      "from": 254,
+      "to": 30
+    },
+    {
+      "from": 254,
+      "to": 11
+    },
+    {
+      "from": 255,
+      "to": 30
+    },
+    {
+      "from": 255,
+      "to": 24
+    },
+    {
+      "from": 256,
+      "to": 86
+    },
+    {
+      "from": 256,
+      "to": 87
+    },
+    {
+      "from": 257,
+      "to": 256
+    },
+    {
+      "from": 258,
+      "to": 257
+    },
+    {
+      "from": 258,
+      "to": 46
+    },
+    {
+      "from": 259,
+      "to": 29
+    },
+    {
+      "from": 260,
+      "to": 30
+    },
+    {
+      "from": 261,
+      "to": 4
+    },
+    {
+      "from": 262,
+      "to": 261
+    },
+    {
+      "from": 263,
+      "to": 262
+    },
+    {
+      "from": 264,
+      "to": 262
+    },
+    {
+      "from": 265,
+      "to": 263
+    },
+    {
+      "from": 265,
+      "to": 264
+    },
+    {
+      "from": 265,
+      "to": 30
+    },
+    {
+      "from": 266,
+      "to": 250
+    },
+    {
+      "from": 266,
+      "to": 263
+    },
+    {
+      "from": 267,
+      "to": 262
+    },
+    {
+      "from": 268,
+      "to": 262
+    },
+    {
+      "from": 269,
+      "to": 262
+    },
+    {
+      "from": 270,
+      "to": 262
+    },
+    {
+      "from": 270,
+      "to": 52
+    },
+    {
+      "from": 271,
+      "to": 270
+    },
+    {
+      "from": 272,
+      "to": 261
+    },
+    {
+      "from": 272,
+      "to": 29
+    },
+    {
+      "from": 273,
+      "to": 272
+    },
+    {
+      "from": 273,
+      "to": 162
+    },
+    {
+      "from": 274,
+      "to": 272
+    },
+    {
+      "from": 274,
+      "to": 248
+    },
+    {
+      "from": 275,
+      "to": 272
+    },
+    {
+      "from": 276,
+      "to": 261
+    },
+    {
+      "from": 276,
+      "to": 201
+    },
+    {
+      "from": 277,
+      "to": 261
+    },
+    {
+      "from": 278,
+      "to": 27
+    },
+    {
+      "from": 278,
+      "to": 28
+    },
+    {
+      "from": 279,
+      "to": 278
+    },
+    {
+      "from": 280,
+      "to": 279
+    },
+    {
+      "from": 280,
+      "to": 19
+    },
+    {
+      "from": 281,
+      "to": 279
+    },
+    {
+      "from": 282,
+      "to": 279
+    },
+    {
+      "from": 282,
+      "to": 19
+    },
+    {
+      "from": 283,
+      "to": 23
+    },
+    {
+      "from": 283,
+      "to": 278
+    },
+    {
+      "from": 284,
+      "to": 283
+    },
+    {
+      "from": 284,
+      "to": 281
+    },
+    {
+      "from": 285,
+      "to": 283
+    },
+    {
+      "from": 285,
+      "to": 284
+    },
+    {
+      "from": 286,
+      "to": 285
+    },
+    {
+      "from": 287,
+      "to": 283
+    },
+    {
+      "from": 288,
+      "to": 287
+    },
+    {
+      "from": 289,
+      "to": 287
+    },
+    {
+      "from": 290,
+      "to": 283
+    },
+    {
+      "from": 290,
+      "to": 31
+    },
+    {
+      "from": 291,
+      "to": 21
+    },
+    {
+      "from": 291,
+      "to": 278
+    },
+    {
+      "from": 292,
+      "to": 291
+    },
+    {
+      "from": 293,
+      "to": 291
+    },
+    {
+      "from": 293,
+      "to": 31
+    },
+    {
+      "from": 294,
+      "to": 291
+    },
+    {
+      "from": 294,
+      "to": 240
+    },
+    {
+      "from": 295,
+      "to": 294
+    },
+    {
+      "from": 296,
+      "to": 291
+    },
+    {
+      "from": 296,
+      "to": 222
+    },
+    {
+      "from": 297,
+      "to": 291
+    },
+    {
+      "from": 298,
+      "to": 297
+    },
+    {
+      "from": 299,
+      "to": 297
+    },
+    {
+      "from": 300,
+      "to": 278
+    },
+    {
+      "from": 300,
+      "to": 242
+    },
+    {
+      "from": 300,
+      "to": 247
+    },
+    {
+      "from": 300,
+      "to": 246
+    },
+    {
+      "from": 301,
+      "to": 300
+    },
+    {
+      "from": 302,
+      "to": 300
+    },
+    {
+      "from": 303,
+      "to": 301
+    },
+    {
+      "from": 304,
+      "to": 21
+    },
+    {
+      "from": 304,
+      "to": 300
+    },
+    {
+      "from": 305,
+      "to": 22
+    },
+    {
+      "from": 305,
+      "to": 278
+    },
+    {
+      "from": 306,
+      "to": 22
+    },
+    {
+      "from": 306,
+      "to": 27
+    },
+    {
+      "from": 307,
+      "to": 306
+    },
+    {
+      "from": 308,
+      "to": 21
+    },
+    {
+      "from": 308,
+      "to": 250
+    },
+    {
+      "from": 309,
+      "to": 25
+    },
+    {
+      "from": 309,
+      "to": 24
+    },
+    {
+      "from": 310,
+      "to": 309
+    },
+    {
+      "from": 310,
+      "to": 202
+    },
+    {
+      "from": 311,
+      "to": 310
+    },
+    {
+      "from": 312,
+      "to": 310
+    },
+    {
+      "from": 313,
+      "to": 312
+    },
+    {
+      "from": 314,
+      "to": 132
+    },
+    {
+      "from": 314,
+      "to": 309
+    },
+    {
+      "from": 315,
+      "to": 314
+    },
+    {
+      "from": 316,
+      "to": 315
+    },
+    {
+      "from": 317,
+      "to": 315
+    },
+    {
+      "from": 318,
+      "to": 315
+    },
+    {
+      "from": 319,
+      "to": 316
+    },
+    {
+      "from": 320,
+      "to": 319
+    },
+    {
+      "from": 321,
+      "to": 319
+    },
+    {
+      "from": 322,
+      "to": 315
+    },
+    {
+      "from": 323,
+      "to": 322
+    },
+    {
+      "from": 324,
+      "to": 319
+    },
+    {
+      "from": 324,
+      "to": 12
+    },
+    {
+      "from": 325,
+      "to": 309
+    },
+    {
+      "from": 325,
+      "to": 162
+    },
+    {
+      "from": 326,
+      "to": 2
+    },
+    {
+      "from": 326,
+      "to": 309
+    },
+    {
+      "from": 327,
+      "to": 248
+    },
+    {
+      "from": 327,
+      "to": 10
+    },
+    {
+      "from": 328,
+      "to": 327
+    },
+    {
+      "from": 328,
+      "to": 4
+    },
+    {
+      "from": 329,
+      "to": 327
+    },
+    {
+      "from": 330,
+      "to": 309
+    },
+    {
+      "from": 330,
+      "to": 33
+    },
+    {
+      "from": 331,
+      "to": 4
+    },
+    {
+      "from": 331,
+      "to": 10
+    },
+    {
+      "from": 331,
+      "to": 2
+    },
+    {
+      "from": 332,
+      "to": 3
+    },
+    {
+      "from": 332,
+      "to": 331
+    },
+    {
+      "from": 333,
+      "to": 6
+    },
+    {
+      "from": 333,
+      "to": 30
+    },
+    {
+      "from": 334,
+      "to": 2
+    },
+    {
+      "from": 334,
+      "to": 28
+    },
+    {
+      "from": 335,
+      "to": 10
+    },
+    {
+      "from": 335,
+      "to": 331
+    },
+    {
+      "from": 336,
+      "to": 12
+    },
+    {
+      "from": 336,
+      "to": 331
+    },
+    {
+      "from": 337,
+      "to": 332
+    },
+    {
+      "from": 337,
+      "to": 336
+    },
+    {
+      "from": 338,
+      "to": 337
+    },
+    {
+      "from": 338,
+      "to": 335
+    },
+    {
+      "from": 339,
+      "to": 337
+    },
+    {
+      "from": 340,
+      "to": 331
+    },
+    {
+      "from": 340,
+      "to": 332
+    },
+    {
+      "from": 341,
+      "to": 24
+    },
+    {
+      "from": 341,
+      "to": 10
+    },
+    {
+      "from": 342,
+      "to": 341
+    },
+    {
+      "from": 343,
+      "to": 340
+    },
+    {
+      "from": 343,
+      "to": 342
+    },
+    {
+      "from": 344,
+      "to": 343
+    },
+    {
+      "from": 345,
+      "to": 340
+    },
+    {
+      "from": 346,
+      "to": 345
+    },
+    {
+      "from": 347,
+      "to": 340
+    },
+    {
+      "from": 347,
+      "to": 111
+    },
+    {
+      "from": 348,
+      "to": 340
+    },
+    {
+      "from": 348,
+      "to": 114
+    },
+    {
+      "from": 349,
+      "to": 331
+    },
+    {
+      "from": 349,
+      "to": 343
+    },
+    {
+      "from": 350,
+      "to": 349
+    },
+    {
+      "from": 351,
+      "to": 349
+    },
+    {
+      "from": 352,
+      "to": 350
+    },
+    {
+      "from": 353,
+      "to": 16
+    },
+    {
+      "from": 353,
+      "to": 331
+    },
+    {
+      "from": 353,
+      "to": 395
+    },
+    {
+      "from": 354,
+      "to": 353
+    },
+    {
+      "from": 354,
+      "to": 14
+    },
+    {
+      "from": 355,
+      "to": 353
+    },
+    {
+      "from": 355,
+      "to": 15
+    },
+    {
+      "from": 356,
+      "to": 331
+    },
+    {
+      "from": 357,
+      "to": 356
+    },
+    {
+      "from": 358,
+      "to": 356
+    },
+    {
+      "from": 359,
+      "to": 335
+    },
+    {
+      "from": 359,
+      "to": 334
+    },
+    {
+      "from": 360,
+      "to": 359
+    },
+    {
+      "from": 360,
+      "to": 334
+    },
+    {
+      "from": 361,
+      "to": 342
+    },
+    {
+      "from": 361,
+      "to": 29
+    },
+    {
+      "from": 361,
+      "to": 30
+    },
+    {
+      "from": 362,
+      "to": 339
+    },
+    {
+      "from": 362,
+      "to": 345
+    },
+    {
+      "from": 362,
+      "to": 559
+    },
+    {
+      "from": 363,
+      "to": 277
+    },
+    {
+      "from": 363,
+      "to": 276
+    },
+    {
+      "from": 363,
+      "to": 272
+    },
+    {
+      "from": 363,
+      "to": 265
+    },
+    {
+      "from": 363,
+      "to": 332
+    },
+    {
+      "from": 363,
+      "to": 352
+    },
+    {
+      "from": 364,
+      "to": 28
+    },
+    {
+      "from": 364,
+      "to": 35
+    },
+    {
+      "from": 365,
+      "to": 364
+    },
+    {
+      "from": 365,
+      "to": 35
+    },
+    {
+      "from": 366,
+      "to": 365
+    },
+    {
+      "from": 366,
+      "to": 331
+    },
+    {
+      "from": 367,
+      "to": 366
+    },
+    {
+      "from": 367,
+      "to": 331
+    },
+    {
+      "from": 368,
+      "to": 366
+    },
+    {
+      "from": 368,
+      "to": 340
+    },
+    {
+      "from": 369,
+      "to": 368
+    },
+    {
+      "from": 369,
+      "to": 332
+    },
+    {
+      "from": 369,
+      "to": 5
+    },
+    {
+      "from": 369,
+      "to": 9
+    },
+    {
+      "from": 370,
+      "to": 369
+    },
+    {
+      "from": 371,
+      "to": 366
+    },
+    {
+      "from": 371,
+      "to": 360
+    },
+    {
+      "from": 371,
+      "to": 292
+    },
+    {
+      "from": 372,
+      "to": 366
+    },
+    {
+      "from": 373,
+      "to": 372
+    },
+    {
+      "from": 373,
+      "to": 366
+    },
+    {
+      "from": 374,
+      "to": 366
+    },
+    {
+      "from": 374,
+      "to": 278
+    },
+    {
+      "from": 375,
+      "to": 374
+    },
+    {
+      "from": 375,
+      "to": 262
+    },
+    {
+      "from": 375,
+      "to": 250
+    },
+    {
+      "from": 375,
+      "to": 315
+    },
+    {
+      "from": 375,
+      "to": 242
+    },
+    {
+      "from": 375,
+      "to": 306
+    },
+    {
+      "from": 375,
+      "to": 259
+    },
+    {
+      "from": 375,
+      "to": 260
+    },
+    {
+      "from": 375,
+      "to": 254
+    },
+    {
+      "from": 375,
+      "to": 313
+    },
+    {
+      "from": 375,
+      "to": 325
+    },
+    {
+      "from": 375,
+      "to": 96
+    },
+    {
+      "from": 375,
+      "to": 95
+    },
+    {
+      "from": 375,
+      "to": 233
+    },
+    {
+      "from": 376,
+      "to": 332
+    },
+    {
+      "from": 376,
+      "to": 187
+    },
+    {
+      "from": 376,
+      "to": 193
+    },
+    {
+      "from": 376,
+      "to": 189
+    },
+    {
+      "from": 376,
+      "to": 188
+    },
+    {
+      "from": 376,
+      "to": 490
+    },
+    {
+      "from": 376,
+      "to": 495
+    },
+    {
+      "from": 376,
+      "to": 489
+    },
+    {
+      "from": 376,
+      "to": 488
+    },
+    {
+      "from": 377,
+      "to": 134
+    },
+    {
+      "from": 377,
+      "to": 133
+    },
+    {
+      "from": 377,
+      "to": 376
+    },
+    {
+      "from": 377,
+      "to": 136
+    },
+    {
+      "from": 377,
+      "to": 137
+    },
+    {
+      "from": 377,
+      "to": 496
+    },
+    {
+      "from": 377,
+      "to": 561
+    },
+    {
+      "from": 378,
+      "to": 35
+    },
+    {
+      "from": 378,
+      "to": 343
+    },
+    {
+      "from": 378,
+      "to": 17
+    },
+    {
+      "from": 378,
+      "to": 49
+    },
+    {
+      "from": 378,
+      "to": 66
+    },
+    {
+      "from": 378,
+      "to": 73
+    },
+    {
+      "from": 378,
+      "to": 54
+    },
+    {
+      "from": 378,
+      "to": 55
+    },
+    {
+      "from": 379,
+      "to": 378
+    },
+    {
+      "from": 379,
+      "to": 113
+    },
+    {
+      "from": 379,
+      "to": 115
+    },
+    {
+      "from": 379,
+      "to": 114
+    },
+    {
+      "from": 379,
+      "to": 116
+    },
+    {
+      "from": 379,
+      "to": 451
+    },
+    {
+      "from": 379,
+      "to": 122
+    },
+    {
+      "from": 379,
+      "to": 447
+    },
+    {
+      "from": 380,
+      "to": 141
+    },
+    {
+      "from": 380,
+      "to": 160
+    },
+    {
+      "from": 380,
+      "to": 377
+    },
+    {
+      "from": 380,
+      "to": 157
+    },
+    {
+      "from": 380,
+      "to": 153
+    },
+    {
+      "from": 380,
+      "to": 467
+    },
+    {
+      "from": 381,
+      "to": 283
+    },
+    {
+      "from": 381,
+      "to": 291
+    },
+    {
+      "from": 381,
+      "to": 300
+    },
+    {
+      "from": 381,
+      "to": 305
+    },
+    {
+      "from": 381,
+      "to": 282
+    },
+    {
+      "from": 381,
+      "to": 286
+    },
+    {
+      "from": 381,
+      "to": 295
+    },
+    {
+      "from": 381,
+      "to": 298
+    },
+    {
+      "from": 381,
+      "to": 302
+    },
+    {
+      "from": 381,
+      "to": 553
+    },
+    {
+      "from": 382,
+      "to": 378
+    },
+    {
+      "from": 382,
+      "to": 369
+    },
+    {
+      "from": 382,
+      "to": 353
+    },
+    {
+      "from": 382,
+      "to": 362
+    },
+    {
+      "from": 382,
+      "to": 370
+    },
+    {
+      "from": 382,
+      "to": 338
+    },
+    {
+      "from": 383,
+      "to": 382
+    },
+    {
+      "from": 383,
+      "to": 337
+    },
+    {
+      "from": 383,
+      "to": 357
+    },
+    {
+      "from": 383,
+      "to": 363
+    },
+    {
+      "from": 383,
+      "to": 403
+    },
+    {
+      "from": 383,
+      "to": 399
+    },
+    {
+      "from": 384,
+      "to": 382
+    },
+    {
+      "from": 384,
+      "to": 375
+    },
+    {
+      "from": 384,
+      "to": 380
+    },
+    {
+      "from": 385,
+      "to": 365
+    },
+    {
+      "from": 385,
+      "to": 173
+    },
+    {
+      "from": 385,
+      "to": 179
+    },
+    {
+      "from": 385,
+      "to": 380
+    },
+    {
+      "from": 385,
+      "to": 165
+    },
+    {
+      "from": 385,
+      "to": 183
+    },
+    {
+      "from": 385,
+      "to": 182
+    },
+    {
+      "from": 386,
+      "to": 385
+    },
+    {
+      "from": 386,
+      "to": 381
+    },
+    {
+      "from": 386,
+      "to": 375
+    },
+    {
+      "from": 386,
+      "to": 382
+    },
+    {
+      "from": 386,
+      "to": 569
+    },
+    {
+      "from": 387,
+      "to": 386
+    },
+    {
+      "from": 387,
+      "to": 371
+    },
+    {
+      "from": 387,
+      "to": 581
+    },
+    {
+      "from": 387,
+      "to": 579
+    },
+    {
+      "from": 387,
+      "to": 580
+    },
+    {
+      "from": 387,
+      "to": 578
+    },
+    {
+      "from": 388,
+      "to": 383
+    },
+    {
+      "from": 388,
+      "to": 386
+    },
+    {
+      "from": 389,
+      "to": 385
+    },
+    {
+      "from": 389,
+      "to": 81
+    },
+    {
+      "from": 390,
+      "to": 387
+    },
+    {
+      "from": 390,
+      "to": 388
+    },
+    {
+      "from": 390,
+      "to": 379
+    },
+    {
+      "from": 390,
+      "to": 384
+    },
+    {
+      "from": 390,
+      "to": 389
+    },
+    {
+      "from": 390,
+      "to": 373
+    },
+    {
+      "from": 390,
+      "to": 576
+    },
+    {
+      "from": 391,
+      "to": 8
+    },
+    {
+      "from": 391,
+      "to": 25
+    },
+    {
+      "from": 392,
+      "to": 4
+    },
+    {
+      "from": 392,
+      "to": 391
+    },
+    {
+      "from": 392,
+      "to": 3
+    },
+    {
+      "from": 393,
+      "to": 4
+    },
+    {
+      "from": 393,
+      "to": 6
+    },
+    {
+      "from": 394,
+      "to": 11
+    },
+    {
+      "from": 394,
+      "to": 7
+    },
+    {
+      "from": 394,
+      "to": 16
+    },
+    {
+      "from": 395,
+      "to": 8
+    },
+    {
+      "from": 395,
+      "to": 15
+    },
+    {
+      "from": 396,
+      "to": 30
+    },
+    {
+      "from": 396,
+      "to": 393
+    },
+    {
+      "from": 397,
+      "to": 333
+    },
+    {
+      "from": 397,
+      "to": 394
+    },
+    {
+      "from": 397,
+      "to": 396
+    },
+    {
+      "from": 398,
+      "to": 392
+    },
+    {
+      "from": 398,
+      "to": 337
+    },
+    {
+      "from": 398,
+      "to": 332
+    },
+    {
+      "from": 399,
+      "to": 340
+    },
+    {
+      "from": 399,
+      "to": 337
+    },
+    {
+      "from": 400,
+      "to": 340
+    },
+    {
+      "from": 401,
+      "to": 340
+    },
+    {
+      "from": 401,
+      "to": 341
+    },
+    {
+      "from": 402,
+      "to": 340
+    },
+    {
+      "from": 402,
+      "to": 335
+    },
+    {
+      "from": 403,
+      "to": 343
+    },
+    {
+      "from": 403,
+      "to": 342
+    },
+    {
+      "from": 404,
+      "to": 343
+    },
+    {
+      "from": 404,
+      "to": 335
+    },
+    {
+      "from": 405,
+      "to": 350
+    },
+    {
+      "from": 406,
+      "to": 349
+    },
+    {
+      "from": 406,
+      "to": 35
+    },
+    {
+      "from": 407,
+      "to": 354
+    },
+    {
+      "from": 407,
+      "to": 332
+    },
+    {
+      "from": 408,
+      "to": 331
+    },
+    {
+      "from": 408,
+      "to": 335
+    },
+    {
+      "from": 409,
+      "to": 408
+    },
+    {
+      "from": 409,
+      "to": 29
+    },
+    {
+      "from": 409,
+      "to": 30
+    },
+    {
+      "from": 410,
+      "to": 361
+    },
+    {
+      "from": 410,
+      "to": 29
+    },
+    {
+      "from": 411,
+      "to": 361
+    },
+    {
+      "from": 411,
+      "to": 333
+    },
+    {
+      "from": 412,
+      "to": 411
+    },
+    {
+      "from": 412,
+      "to": 333
+    },
+    {
+      "from": 413,
+      "to": 410
+    },
+    {
+      "from": 413,
+      "to": 411
+    },
+    {
+      "from": 414,
+      "to": 356
+    },
+    {
+      "from": 415,
+      "to": 414
+    },
+    {
+      "from": 415,
+      "to": 357
+    },
+    {
+      "from": 416,
+      "to": 357
+    },
+    {
+      "from": 417,
+      "to": 356
+    },
+    {
+      "from": 417,
+      "to": 2
+    },
+    {
+      "from": 417,
+      "to": 103
+    },
+    {
+      "from": 418,
+      "to": 337
+    },
+    {
+      "from": 418,
+      "to": 344
+    },
+    {
+      "from": 419,
+      "to": 59
+    },
+    {
+      "from": 419,
+      "to": 94
+    },
+    {
+      "from": 420,
+      "to": 59
+    },
+    {
+      "from": 420,
+      "to": 76
+    },
+    {
+      "from": 421,
+      "to": 58
+    },
+    {
+      "from": 421,
+      "to": 75
+    },
+    {
+      "from": 422,
+      "to": 50
+    },
+    {
+      "from": 422,
+      "to": 57
+    },
+    {
+      "from": 423,
+      "to": 47
+    },
+    {
+      "from": 423,
+      "to": 18
+    },
+    {
+      "from": 424,
+      "to": 40
+    },
+    {
+      "from": 424,
+      "to": 20
+    },
+    {
+      "from": 425,
+      "to": 40
+    },
+    {
+      "from": 425,
+      "to": 113
+    },
+    {
+      "from": 425,
+      "to": 74
+    },
+    {
+      "from": 426,
+      "to": 67
+    },
+    {
+      "from": 426,
+      "to": 44
+    },
+    {
+      "from": 426,
+      "to": 38
+    },
+    {
+      "from": 427,
+      "to": 80
+    },
+    {
+      "from": 427,
+      "to": 78
+    },
+    {
+      "from": 428,
+      "to": 427
+    },
+    {
+      "from": 428,
+      "to": 77
+    },
+    {
+      "from": 428,
+      "to": 4
+    },
+    {
+      "from": 429,
+      "to": 84
+    },
+    {
+      "from": 429,
+      "to": 248
+    },
+    {
+      "from": 430,
+      "to": 27
+    },
+    {
+      "from": 430,
+      "to": 82
+    },
+    {
+      "from": 431,
+      "to": 110
+    },
+    {
+      "from": 431,
+      "to": 32
+    },
+    {
+      "from": 431,
+      "to": 430
+    },
+    {
+      "from": 432,
+      "to": 87
+    },
+    {
+      "from": 432,
+      "to": 110
+    },
+    {
+      "from": 433,
+      "to": 27
+    },
+    {
+      "from": 433,
+      "to": 52
+    },
+    {
+      "from": 434,
+      "to": 88
+    },
+    {
+      "from": 435,
+      "to": 46
+    },
+    {
+      "from": 435,
+      "to": 133
+    },
+    {
+      "from": 435,
+      "to": 33
+    },
+    {
+      "from": 436,
+      "to": 46
+    },
+    {
+      "from": 436,
+      "to": 202
+    },
+    {
+      "from": 436,
+      "to": 134
+    },
+    {
+      "from": 437,
+      "to": 44
+    },
+    {
+      "from": 437,
+      "to": 91
+    },
+    {
+      "from": 437,
+      "to": 30
+    },
+    {
+      "from": 438,
+      "to": 45
+    },
+    {
+      "from": 438,
+      "to": 88
+    },
+    {
+      "from": 439,
+      "to": 43
+    },
+    {
+      "from": 440,
+      "to": 439
+    },
+    {
+      "from": 440,
+      "to": 31
+    },
+    {
+      "from": 441,
+      "to": 59
+    },
+    {
+      "from": 441,
+      "to": 33
+    },
+    {
+      "from": 442,
+      "to": 59
+    },
+    {
+      "from": 442,
+      "to": 28
+    },
+    {
+      "from": 443,
+      "to": 97
+    },
+    {
+      "from": 444,
+      "to": 255
+    },
+    {
+      "from": 444,
+      "to": 118
+    },
+    {
+      "from": 445,
+      "to": 108
+    },
+    {
+      "from": 445,
+      "to": 120
+    },
+    {
+      "from": 445,
+      "to": 119
+    },
+    {
+      "from": 446,
+      "to": 108
+    },
+    {
+      "from": 446,
+      "to": 109
+    },
+    {
+      "from": 447,
+      "to": 28
+    },
+    {
+      "from": 447,
+      "to": 279
+    },
+    {
+      "from": 448,
+      "to": 108
+    },
+    {
+      "from": 448,
+      "to": 103
+    },
+    {
+      "from": 449,
+      "to": 114
+    },
+    {
+      "from": 449,
+      "to": 448
+    },
+    {
+      "from": 450,
+      "to": 105
+    },
+    {
+      "from": 450,
+      "to": 107
+    },
+    {
+      "from": 451,
+      "to": 115
+    },
+    {
+      "from": 452,
+      "to": 115
+    },
+    {
+      "from": 452,
+      "to": 105
+    },
+    {
+      "from": 452,
+      "to": 106
+    },
+    {
+      "from": 453,
+      "to": 120
+    },
+    {
+      "from": 453,
+      "to": 103
+    },
+    {
+      "from": 454,
+      "to": 120
+    },
+    {
+      "from": 454,
+      "to": 103
+    },
+    {
+      "from": 455,
+      "to": 120
+    },
+    {
+      "from": 455,
+      "to": 103
+    },
+    {
+      "from": 456,
+      "to": 123
+    },
+    {
+      "from": 456,
+      "to": 107
+    },
+    {
+      "from": 457,
+      "to": 129
+    },
+    {
+      "from": 458,
+      "to": 120
+    },
+    {
+      "from": 458,
+      "to": 125
+    },
+    {
+      "from": 458,
+      "to": 126
+    },
+    {
+      "from": 458,
+      "to": 175
+    },
+    {
+      "from": 459,
+      "to": 144
+    },
+    {
+      "from": 459,
+      "to": 319
+    },
+    {
+      "from": 460,
+      "to": 146
+    },
+    {
+      "from": 460,
+      "to": 158
+    },
+    {
+      "from": 461,
+      "to": 146
+    },
+    {
+      "from": 461,
+      "to": 86
+    },
+    {
+      "from": 461,
+      "to": 197
+    },
+    {
+      "from": 462,
+      "to": 147
+    },
+    {
+      "from": 462,
+      "to": 145
+    },
+    {
+      "from": 463,
+      "to": 149
+    },
+    {
+      "from": 463,
+      "to": 142
+    },
+    {
+      "from": 463,
+      "to": 312
+    },
+    {
+      "from": 464,
+      "to": 149
+    },
+    {
+      "from": 464,
+      "to": 203
+    },
+    {
+      "from": 465,
+      "to": 149
+    },
+    {
+      "from": 465,
+      "to": 158
+    },
+    {
+      "from": 465,
+      "to": 203
+    },
+    {
+      "from": 465,
+      "to": 204
+    },
+    {
+      "from": 466,
+      "to": 150
+    },
+    {
+      "from": 466,
+      "to": 330
+    },
+    {
+      "from": 467,
+      "to": 151
+    },
+    {
+      "from": 467,
+      "to": 148
+    },
+    {
+      "from": 467,
+      "to": 149
+    },
+    {
+      "from": 467,
+      "to": 152
+    },
+    {
+      "from": 468,
+      "to": 154
+    },
+    {
+      "from": 468,
+      "to": 144
+    },
+    {
+      "from": 468,
+      "to": 203
+    },
+    {
+      "from": 469,
+      "to": 154
+    },
+    {
+      "from": 469,
+      "to": 144
+    },
+    {
+      "from": 469,
+      "to": 203
+    },
+    {
+      "from": 470,
+      "to": 154
+    },
+    {
+      "from": 470,
+      "to": 155
+    },
+    {
+      "from": 470,
+      "to": 203
+    },
+    {
+      "from": 471,
+      "to": 154
+    },
+    {
+      "from": 471,
+      "to": 146
+    },
+    {
+      "from": 471,
+      "to": 155
+    },
+    {
+      "from": 472,
+      "to": 159
+    },
+    {
+      "from": 472,
+      "to": 146
+    },
+    {
+      "from": 472,
+      "to": 149
+    },
+    {
+      "from": 473,
+      "to": 158
+    },
+    {
+      "from": 473,
+      "to": 146
+    },
+    {
+      "from": 473,
+      "to": 149
+    },
+    {
+      "from": 474,
+      "to": 172
+    },
+    {
+      "from": 475,
+      "to": 172
+    },
+    {
+      "from": 476,
+      "to": 172
+    },
+    {
+      "from": 476,
+      "to": 174
+    },
+    {
+      "from": 477,
+      "to": 172
+    },
+    {
+      "from": 478,
+      "to": 176
+    },
+    {
+      "from": 479,
+      "to": 176
+    },
+    {
+      "from": 479,
+      "to": 98
+    },
+    {
+      "from": 479,
+      "to": 94
+    },
+    {
+      "from": 480,
+      "to": 177
+    },
+    {
+      "from": 480,
+      "to": 161
+    },
+    {
+      "from": 480,
+      "to": 149
+    },
+    {
+      "from": 481,
+      "to": 480
+    },
+    {
+      "from": 481,
+      "to": 163
+    },
+    {
+      "from": 481,
+      "to": 164
+    },
+    {
+      "from": 482,
+      "to": 481
+    },
+    {
+      "from": 482,
+      "to": 158
+    },
+    {
+      "from": 482,
+      "to": 204
+    },
+    {
+      "from": 483,
+      "to": 177
+    },
+    {
+      "from": 483,
+      "to": 144
+    },
+    {
+      "from": 483,
+      "to": 39
+    },
+    {
+      "from": 483,
+      "to": 202
+    },
+    {
+      "from": 484,
+      "to": 180
+    },
+    {
+      "from": 484,
+      "to": 478
+    },
+    {
+      "from": 484,
+      "to": 149
+    },
+    {
+      "from": 485,
+      "to": 180
+    },
+    {
+      "from": 485,
+      "to": 479
+    },
+    {
+      "from": 486,
+      "to": 33
+    },
+    {
+      "from": 487,
+      "to": 187
+    },
+    {
+      "from": 488,
+      "to": 487
+    },
+    {
+      "from": 488,
+      "to": 19
+    },
+    {
+      "from": 489,
+      "to": 487
+    },
+    {
+      "from": 489,
+      "to": 192
+    },
+    {
+      "from": 490,
+      "to": 195
+    },
+    {
+      "from": 491,
+      "to": 33
+    },
+    {
+      "from": 491,
+      "to": 486
+    },
+    {
+      "from": 492,
+      "to": 184
+    },
+    {
+      "from": 492,
+      "to": 491
+    },
+    {
+      "from": 492,
+      "to": 2
+    },
+    {
+      "from": 493,
+      "to": 194
+    },
+    {
+      "from": 494,
+      "to": 493
+    },
+    {
+      "from": 494,
+      "to": 193
+    },
+    {
+      "from": 495,
+      "to": 201
+    },
+    {
+      "from": 495,
+      "to": 193
+    },
+    {
+      "from": 495,
+      "to": 199
+    },
+    {
+      "from": 496,
+      "to": 185
+    },
+    {
+      "from": 496,
+      "to": 276
+    },
+    {
+      "from": 497,
+      "to": 214
+    },
+    {
+      "from": 498,
+      "to": 219
+    },
+    {
+      "from": 499,
+      "to": 32
+    },
+    {
+      "from": 499,
+      "to": 240
+    },
+    {
+      "from": 499,
+      "to": 34
+    },
+    {
+      "from": 500,
+      "to": 499
+    },
+    {
+      "from": 501,
+      "to": 214
+    },
+    {
+      "from": 501,
+      "to": 240
+    },
+    {
+      "from": 502,
+      "to": 222
+    },
+    {
+      "from": 502,
+      "to": 212
+    },
+    {
+      "from": 502,
+      "to": 213
+    },
+    {
+      "from": 502,
+      "to": 499
+    },
+    {
+      "from": 503,
+      "to": 227
+    },
+    {
+      "from": 503,
+      "to": 228
+    },
+    {
+      "from": 503,
+      "to": 229
+    },
+    {
+      "from": 503,
+      "to": 2
+    },
+    {
+      "from": 504,
+      "to": 32
+    },
+    {
+      "from": 504,
+      "to": 200
+    },
+    {
+      "from": 505,
+      "to": 222
+    },
+    {
+      "from": 505,
+      "to": 296
+    },
+    {
+      "from": 505,
+      "to": 72
+    },
+    {
+      "from": 506,
+      "to": 32
+    },
+    {
+      "from": 506,
+      "to": 262
+    },
+    {
+      "from": 506,
+      "to": 272
+    },
+    {
+      "from": 507,
+      "to": 199
+    },
+    {
+      "from": 507,
+      "to": 201
+    },
+    {
+      "from": 508,
+      "to": 31
+    },
+    {
+      "from": 508,
+      "to": 279
+    },
+    {
+      "from": 509,
+      "to": 508
+    },
+    {
+      "from": 509,
+      "to": 236
+    },
+    {
+      "from": 509,
+      "to": 145
+    },
+    {
+      "from": 510,
+      "to": 235
+    },
+    {
+      "from": 511,
+      "to": 89
+    },
+    {
+      "from": 511,
+      "to": 138
+    },
+    {
+      "from": 511,
+      "to": 32
+    },
+    {
+      "from": 512,
+      "to": 240
+    },
+    {
+      "from": 512,
+      "to": 166
+    },
+    {
+      "from": 513,
+      "to": 315
+    },
+    {
+      "from": 513,
+      "to": 310
+    },
+    {
+      "from": 514,
+      "to": 513
+    },
+    {
+      "from": 514,
+      "to": 317
+    },
+    {
+      "from": 514,
+      "to": 318
+    },
+    {
+      "from": 515,
+      "to": 513
+    },
+    {
+      "from": 515,
+      "to": 319
+    },
+    {
+      "from": 516,
+      "to": 513
+    },
+    {
+      "from": 516,
+      "to": 29
+    },
+    {
+      "from": 517,
+      "to": 319
+    },
+    {
+      "from": 518,
+      "to": 517
+    },
+    {
+      "from": 519,
+      "to": 517
+    },
+    {
+      "from": 520,
+      "to": 519
+    },
+    {
+      "from": 520,
+      "to": 322
+    },
+    {
+      "from": 521,
+      "to": 315
+    },
+    {
+      "from": 521,
+      "to": 58
+    },
+    {
+      "from": 522,
+      "to": 138
+    },
+    {
+      "from": 522,
+      "to": 230
+    },
+    {
+      "from": 522,
+      "to": 205
+    },
+    {
+      "from": 523,
+      "to": 202
+    },
+    {
+      "from": 523,
+      "to": 47
+    },
+    {
+      "from": 523,
+      "to": 186
+    },
+    {
+      "from": 524,
+      "to": 267
+    },
+    {
+      "from": 524,
+      "to": 75
+    },
+    {
+      "from": 525,
+      "to": 267
+    },
+    {
+      "from": 525,
+      "to": 263
+    },
+    {
+      "from": 526,
+      "to": 267
+    },
+    {
+      "from": 526,
+      "to": 263
+    },
+    {
+      "from": 527,
+      "to": 267
+    },
+    {
+      "from": 527,
+      "to": 11
+    },
+    {
+      "from": 528,
+      "to": 269
+    },
+    {
+      "from": 528,
+      "to": 527
+    },
+    {
+      "from": 529,
+      "to": 263
+    },
+    {
+      "from": 529,
+      "to": 264
+    },
+    {
+      "from": 530,
+      "to": 529
+    },
+    {
+      "from": 531,
+      "to": 265
+    },
+    {
+      "from": 531,
+      "to": 343
+    },
+    {
+      "from": 531,
+      "to": 342
+    },
+    {
+      "from": 532,
+      "to": 67
+    },
+    {
+      "from": 532,
+      "to": 528
+    },
+    {
+      "from": 533,
+      "to": 80
+    },
+    {
+      "from": 533,
+      "to": 528
+    },
+    {
+      "from": 534,
+      "to": 251
+    },
+    {
+      "from": 534,
+      "to": 166
+    },
+    {
+      "from": 535,
+      "to": 252
+    },
+    {
+      "from": 535,
+      "to": 86
+    },
+    {
+      "from": 536,
+      "to": 256
+    },
+    {
+      "from": 536,
+      "to": 535
+    },
+    {
+      "from": 537,
+      "to": 253
+    },
+    {
+      "from": 537,
+      "to": 85
+    },
+    {
+      "from": 537,
+      "to": 257
+    },
+    {
+      "from": 538,
+      "to": 253
+    },
+    {
+      "from": 538,
+      "to": 537
+    },
+    {
+      "from": 538,
+      "to": 312
+    },
+    {
+      "from": 539,
+      "to": 250
+    },
+    {
+      "from": 539,
+      "to": 297
+    },
+    {
+      "from": 540,
+      "to": 270
+    },
+    {
+      "from": 540,
+      "to": 256
+    },
+    {
+      "from": 541,
+      "to": 291
+    },
+    {
+      "from": 541,
+      "to": 292
+    },
+    {
+      "from": 541,
+      "to": 543
+    },
+    {
+      "from": 542,
+      "to": 541
+    },
+    {
+      "from": 542,
+      "to": 37
+    },
+    {
+      "from": 543,
+      "to": 223
+    },
+    {
+      "from": 543,
+      "to": 291
+    },
+    {
+      "from": 544,
+      "to": 293
+    },
+    {
+      "from": 545,
+      "to": 293
+    },
+    {
+      "from": 545,
+      "to": 297
+    },
+    {
+      "from": 546,
+      "to": 297
+    },
+    {
+      "from": 547,
+      "to": 546
+    },
+    {
+      "from": 547,
+      "to": 545
+    },
+    {
+      "from": 548,
+      "to": 293
+    },
+    {
+      "from": 548,
+      "to": 43
+    },
+    {
+      "from": 549,
+      "to": 279
+    },
+    {
+      "from": 549,
+      "to": 291
+    },
+    {
+      "from": 550,
+      "to": 280
+    },
+    {
+      "from": 550,
+      "to": 240
+    },
+    {
+      "from": 551,
+      "to": 300
+    },
+    {
+      "from": 551,
+      "to": 92
+    },
+    {
+      "from": 552,
+      "to": 300
+    },
+    {
+      "from": 552,
+      "to": 99
+    },
+    {
+      "from": 553,
+      "to": 304
+    },
+    {
+      "from": 553,
+      "to": 201
+    },
+    {
+      "from": 554,
+      "to": 158
+    },
+    {
+      "from": 554,
+      "to": 240
+    },
+    {
+      "from": 555,
+      "to": 159
+    },
+    {
+      "from": 555,
+      "to": 88
+    },
+    {
+      "from": 556,
+      "to": 366
+    },
+    {
+      "from": 557,
+      "to": 368
+    },
+    {
+      "from": 557,
+      "to": 367
+    },
+    {
+      "from": 558,
+      "to": 368
+    },
+    {
+      "from": 558,
+      "to": 333
+    },
+    {
+      "from": 558,
+      "to": 364
+    },
+    {
+      "from": 559,
+      "to": 369
+    },
+    {
+      "from": 559,
+      "to": 359
+    },
+    {
+      "from": 560,
+      "to": 409
+    },
+    {
+      "from": 560,
+      "to": 16
+    },
+    {
+      "from": 561,
+      "to": 560
+    },
+    {
+      "from": 561,
+      "to": 134
+    },
+    {
+      "from": 561,
+      "to": 332
+    },
+    {
+      "from": 562,
+      "to": 560
+    },
+    {
+      "from": 562,
+      "to": 374
+    },
+    {
+      "from": 562,
+      "to": 361
+    },
+    {
+      "from": 563,
+      "to": 560
+    },
+    {
+      "from": 563,
+      "to": 354
+    },
+    {
+      "from": 563,
+      "to": 355
+    },
+    {
+      "from": 564,
+      "to": 407
+    },
+    {
+      "from": 564,
+      "to": 563
+    },
+    {
+      "from": 564,
+      "to": 376
+    },
+    {
+      "from": 565,
+      "to": 337
+    },
+    {
+      "from": 565,
+      "to": 558
+    },
+    {
+      "from": 566,
+      "to": 357
+    },
+    {
+      "from": 566,
+      "to": 557
+    },
+    {
+      "from": 567,
+      "to": 556
+    },
+    {
+      "from": 567,
+      "to": 141
+    },
+    {
+      "from": 567,
+      "to": 166
+    },
+    {
+      "from": 568,
+      "to": 567
+    },
+    {
+      "from": 569,
+      "to": 556
+    },
+    {
+      "from": 569,
+      "to": 359
+    },
+    {
+      "from": 569,
+      "to": 32
+    },
+    {
+      "from": 569,
+      "to": 31
+    },
+    {
+      "from": 570,
+      "to": 21
+    },
+    {
+      "from": 570,
+      "to": 22
+    },
+    {
+      "from": 570,
+      "to": 18
+    },
+    {
+      "from": 570,
+      "to": 563
+    },
+    {
+      "from": 571,
+      "to": 4
+    },
+    {
+      "from": 572,
+      "to": 6
+    },
+    {
+      "from": 572,
+      "to": 20
+    },
+    {
+      "from": 572,
+      "to": 24
+    },
+    {
+      "from": 573,
+      "to": 567
+    },
+    {
+      "from": 573,
+      "to": 309
+    },
+    {
+      "from": 574,
+      "to": 415
+    },
+    {
+      "from": 574,
+      "to": 566
+    },
+    {
+      "from": 574,
+      "to": 358
+    },
+    {
+      "from": 575,
+      "to": 418
+    },
+    {
+      "from": 575,
+      "to": 339
+    },
+    {
+      "from": 576,
+      "to": 344
+    },
+    {
+      "from": 576,
+      "to": 570
+    },
+    {
+      "from": 576,
+      "to": 573
+    },
+    {
+      "from": 576,
+      "to": 574
+    },
+    {
+      "from": 576,
+      "to": 575
+    },
+    {
+      "from": 576,
+      "to": 68
+    },
+    {
+      "from": 576,
+      "to": 69
+    },
+    {
+      "from": 576,
+      "to": 424
+    },
+    {
+      "from": 576,
+      "to": 423
+    },
+    {
+      "from": 576,
+      "to": 571
+    },
+    {
+      "from": 576,
+      "to": 572
+    },
+    {
+      "from": 577,
+      "to": 386
+    },
+    {
+      "from": 577,
+      "to": 556
+    },
+    {
+      "from": 578,
+      "to": 577
+    },
+    {
+      "from": 578,
+      "to": 367
+    },
+    {
+      "from": 578,
+      "to": 418
+    },
+    {
+      "from": 578,
+      "to": 347
+    },
+    {
+      "from": 579,
+      "to": 132
+    },
+    {
+      "from": 579,
+      "to": 314
+    },
+    {
+      "from": 580,
+      "to": 31
+    },
+    {
+      "from": 580,
+      "to": 360
+    },
+    {
+      "from": 581,
+      "to": 568
+    },
+    {
+      "from": 581,
+      "to": 385
+    },
+    {
+      "from": 581,
+      "to": 566
+    },
+    {
+      "from": 581,
+      "to": 386
+    }
+  ]
+}

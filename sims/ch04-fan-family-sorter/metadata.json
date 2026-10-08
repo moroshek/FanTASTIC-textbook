@@ -1,0 +1,90 @@
+{
+  "title": "Fan Family Sorter",
+  "creator": "Twin City Fan",
+  "subject": "Industrial and Commercial Fans",
+  "description": "A p5.js sorting activity in which learners place fifteen current Twin City Fan product lines into the centrifugal, axial and mixed flow families from short descriptions that never name the family. Each placement locks and shows the correct family and the reason; a summary lists every miss and reports mastery at 13 of 15.",
+  "date": "2026-10-08",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "source": "Twin City Fan product catalog pages on tcf.com (retrieved 2026-10-08); FanPedia: The Fan & Blower Encyclopedia (Twin City Fan, 2021), pp. 4-8, 17 and 32",
+  "educational": {
+    "gradeLevel": [
+      "Adult professional development"
+    ],
+    "audience": "New application engineers, sales staff, manufacturer's representatives, distributors and plant staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Fan families: centrifugal, axial and mixed flow",
+    "learningObjectives": [
+      "Differentiate fifteen Twin City Fan product lines into the centrifugal, axial and mixed flow families from a short description of each, correctly placing at least 13 of 15 on the first placement."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "differentiate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "fan family",
+      "centrifugal fan",
+      "axial fan",
+      "mixed flow fan",
+      "scroll housing",
+      "tubular housing",
+      "guide vanes",
+      "unhoused centrifugal fan (plenum and plug types)",
+      "inline centrifugal fan",
+      "panel fan",
+      "power roof ventilator",
+      "centrifugal roof exhauster",
+      "roof ventilator",
+      "wall mounted fan",
+      "laboratory fume exhaust fan"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 610
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text for screen readers; keys 1, 2, 3 place a card and Enter turns up the next; correct and incorrect are marked with check and cross symbols as well as color."
+    }
+  },
+  "controls": [
+    { "type": "button", "label": "Centrifugal", "purpose": "Place the face-up card in the Centrifugal bin (key 1)" },
+    { "type": "button", "label": "Axial", "purpose": "Place the face-up card in the Axial bin (key 2)" },
+    { "type": "button", "label": "Mixed flow", "purpose": "Place the face-up card in the Mixed flow bin (key 3)" },
+    { "type": "button", "label": "Next card / Show summary", "purpose": "Turn up the next card after reading the feedback; after the fifteenth card, show the summary (Enter)" },
+    { "type": "button", "label": "More misses", "purpose": "Page through the misplaced cards on the summary when they do not fit on one page" },
+    { "type": "button", "label": "Sort again", "purpose": "On the summary, reshuffle all fifteen cards and reset the score" }
+  ],
+  "pedagogical": {
+    "teachingStrategy": "Committed-placement sorting with immediate per-item feedback and an end-of-sort error review",
+    "interactionPattern": "Classify items into categories; one attempt per item",
+    "keyQuestions": [
+      "What does the description say about the path air takes through the impeller?",
+      "Which clue on this card is about the housing, the mounting location or the application rather than the impeller?",
+      "Why can two fans in the same round tube belong to different families?"
+    ],
+    "commonMisconceptions": [
+      "Any fan in a tubular housing is axial.",
+      "Any roof fan, or any power roof ventilator, is centrifugal.",
+      "Lab exhaust fans are their own family rather than centrifugal or mixed flow fans.",
+      "Fans without a housing cannot be centrifugal."
+    ],
+    "assessmentOpportunities": [
+      "Score on first placements, shown as 'Correct: n of 15'; mastery is 13 or more.",
+      "Summary list of misplaced cards, each with its correct family and reason, for the learner to name the clue that misled them."
+    ]
+  },
+  "chapter": "04-centrifugal-axial-and-mixed-flow-fans"
+}

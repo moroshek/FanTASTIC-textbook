@@ -1,0 +1,4421 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to read a current Twin City Fan catalog: structure, fan size and model codes, performance tables, class shading, interpolation, rating conditions, limits, options, motor selection and the Fan Selector software.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/26-reading-catalogs-and-performance-tables/">
+      
+      
+        <link rel="prev" href="../25-fan-laws-system-effect-and-sound/">
+      
+      
+        <link rel="next" href="../27-fan-selection-and-writing-the-specification/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Reading Catalogs and Performance Tables - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reading-catalogs-and-performance-tables" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reading Catalogs and Performance Tables
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-air-pressure-and-the-fan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-centrifugal-and-axial-impeller-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-fan-performance-curves-and-ratings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-discharge-positions-and-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-damper-details-and-duct-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-catalog-is-the-last-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Catalog Is the Last Word
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-product-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Product Catalog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Product Catalog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-answering-a-customer-question-from-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Answering a Customer Question from the Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalog-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalog Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalog Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-three-questions-three-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Three Questions, Three Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-catalog-section-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Catalog Section Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-descriptions-and-the-typical-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Descriptions and the Typical Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fanpedia-versus-the-current-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FanPedia Versus the Current Catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tip-speed-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-size-913-tells-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: What Size 913 Tells You
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-is-this-designation-buildable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Is This Designation Buildable?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-model-code-decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Model Code Decoder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-duty-point-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Duty Point Comes From
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where the Duty Point Comes From">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#air-change-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Change Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Change Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airflow-by-the-air-change-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow by the Air Change Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-conveying-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Conveying Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-family-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Family Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Family Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-three-inquiries-three-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Three Inquiries, Three Families
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-performance-table-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Performance Table Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-a-performance-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading a Performance Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading a Performance Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-direct-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Direct Reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-shading-in-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class Shading in Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Shading in Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-from-selection-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class from Selection Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-the-class-from-the-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading the Class from the Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpolation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Interpolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-single-and-double-interpolation-on-rba-913" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Single and Double Interpolation on RBA 913
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-performance-table-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Performance Table Reader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-selection-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Selection Range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Selection Range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-efficiency-from-a-table-cell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Efficiency from a Table Cell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-same-airflow-three-pressures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Same Airflow, Three Pressures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rating-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rating Conditions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rating Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-when-the-job-is-not-the-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: When the Job Is Not the Rating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amca-certified-ratings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMCA Certified Ratings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMCA Certified Ratings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-a-specification-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking a Specification Requirement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmission-losses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmission Losses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmission Losses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor-power-including-drive-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Power Including Drive Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-the-drive-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Adding the Drive Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appurtenance-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appurtenance Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actual-operating-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Operating Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-and-mechanical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limits and Mechanical Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits and Mechanical Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catalog-operating-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalog Operating Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-critical-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Critical Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amca-204-balance-grade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMCA 204 Balance Grade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-specifications-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Specifications Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material Specifications Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-one-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading One Row
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-choosing-a-capacity-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Choosing a Capacity Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-two-motors-from-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Two Motors from the Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-selector-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Selector Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Selector Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-a-software-selection-against-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking a Software Selection Against the Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-fan-selection-and-writing-the-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-catalog-is-the-last-word" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Catalog Is the Last Word
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-product-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Product Catalog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Product Catalog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-answering-a-customer-question-from-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Answering a Customer Question from the Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalog-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalog Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Catalog Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-three-questions-three-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Three Questions, Three Sections
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-catalog-section-finder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Catalog Section Finder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-descriptions-and-the-typical-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Descriptions and the Typical Specification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fanpedia-versus-the-current-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FanPedia Versus the Current Catalog
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Size
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Size">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tip-speed-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tip Speed Factor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-what-size-913-tells-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: What Size 913 Tells You
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Code
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-is-this-designation-buildable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Is This Designation Buildable?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-model-code-decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Model Code Decoder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-duty-point-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the Duty Point Comes From
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where the Duty Point Comes From">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#air-change-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Change Method
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Change Method">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airflow-by-the-air-change-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow by the Air Change Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-conveying-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum Conveying Velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-family-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Family Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Family Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-three-inquiries-three-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Three Inquiries, Three Families
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-performance-table-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Performance Table Header
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-a-performance-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reading a Performance Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading a Performance Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-direct-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Direct Reading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class-shading-in-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class Shading in Tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Class Shading in Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#class-from-selection-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class from Selection Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-the-class-from-the-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading the Class from the Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpolation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linear Interpolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-single-and-double-interpolation-on-rba-913" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Single and Double Interpolation on RBA 913
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-performance-table-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Performance Table Reader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fan-selection-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Selection Range
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Selection Range">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-efficiency-from-a-table-cell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Efficiency from a Table Cell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-same-airflow-three-pressures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Same Airflow, Three Pressures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rating-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rating Conditions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rating Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-when-the-job-is-not-the-rating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: When the Job Is Not the Rating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amca-certified-ratings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMCA Certified Ratings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMCA Certified Ratings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-a-specification-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking a Specification Requirement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmission-losses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transmission Losses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmission Losses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor-power-including-drive-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Power Including Drive Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-the-drive-loss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Adding the Drive Loss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appurtenance-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appurtenance Effects
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actual-operating-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Operating Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-and-mechanical-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limits and Mechanical Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limits and Mechanical Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#catalog-operating-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catalog Operating Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-critical-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Critical Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amca-204-balance-grade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMCA 204 Balance Grade
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material-specifications-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material Specifications Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material Specifications Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-reading-one-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Reading One Row
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Product Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-choosing-a-capacity-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Choosing a Capacity Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-two-motors-from-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Two Motors from the Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-selector-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Selector Software
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Selector Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-checking-a-software-selection-against-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Checking a Software Selection Against the Catalog
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="reading-catalogs-and-performance-tables">Reading Catalogs and Performance Tables<a class="headerlink" href="#reading-catalogs-and-performance-tables" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter teaches how to read a current Twin City Fan catalog. It covers catalog structure, fan size and model codes, performance tables and their headers, class shading, interpolation, rating conditions and AMCA certified ratings, transmission losses and appurtenance effects, actual operating conditions, catalog operating limits, first critical speed, balance grade, material specification tables, and the fan selector software. It explains why current catalogs take precedence over FanPedia where they disagree, and introduces fan family and motor selection. After completing it, readers can find a fan's speed and brake horsepower for a duty point in a catalog.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 27 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air Change Method</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Fan Size</td>
+<td>155</td>
+</tr>
+<tr>
+<td>Model Code</td>
+<td>152</td>
+</tr>
+<tr>
+<td>Minimum Conveying Velocity</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Product Catalog</td>
+<td>133</td>
+</tr>
+<tr>
+<td>AMCA 204 Balance Grade</td>
+<td>3</td>
+</tr>
+<tr>
+<td>AMCA Certified Ratings</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Performance Table</td>
+<td>69</td>
+</tr>
+<tr>
+<td>Technical Description</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Product Options</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Motor Selection</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Catalog Structure</td>
+<td>26</td>
+</tr>
+<tr>
+<td>Reading a Performance Table</td>
+<td>58</td>
+</tr>
+<tr>
+<td>Catalog Operating Limits</td>
+<td>3</td>
+</tr>
+<tr>
+<td>FanPedia vs Current Catalog</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Fan Family Selection</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Fan Selector Software</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Performance Table Header</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Rating Conditions</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Material Specifications Table</td>
+<td>13</td>
+</tr>
+<tr>
+<td>First Critical Speed</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Interpolation</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Class Shading in Tables</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Transmission Losses</td>
+<td>23</td>
+</tr>
+<tr>
+<td>Appurtenance Effects</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Actual Operating Conditions</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Fan Selection Range</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-air-pressure-and-the-fan/">Chapter 1: Air, Pressure and the Fan</a></li>
+<li><a href="../02-airstreams-total-pressure-standard-air/">Chapter 2: Airstreams, Total Pressure and Standard Air</a></li>
+<li><a href="../03-basic-fan-anatomy/">Chapter 3: Basic Fan Anatomy</a></li>
+<li><a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4: Centrifugal, Axial and Mixed Flow Fans</a></li>
+<li><a href="../06-industrial-fans-and-application-product-lines/">Chapter 6: Industrial Fans and Application Product Lines</a></li>
+<li><a href="../08-centrifugal-and-axial-impeller-types/">Chapter 8: Centrifugal and Axial Impeller Types</a></li>
+<li><a href="../10-fan-performance-curves-and-ratings/">Chapter 10: Fan Performance, Curves and Ratings</a></li>
+<li><a href="../11-drives-and-standard-fan-arrangements/">Chapter 11: Drives and Standard Fan Arrangements</a></li>
+<li><a href="../14-fan-motors-and-enclosures/">Chapter 14: Fan Motors and Enclosures</a></li>
+<li><a href="../15-motor-ratings-speed-control-and-positioners/">Chapter 15: Motor Ratings, Speed Control and Positioners</a></li>
+<li><a href="../20-construction-classes-materials-spark-resistance/">Chapter 20: Construction Classes, Materials and Spark Resistance</a></li>
+<li><a href="../22-fan-bases-and-vibration-isolation/">Chapter 22: Fan Bases and Vibration Isolation</a></li>
+<li><a href="../25-fan-laws-system-effect-and-sound/">Chapter 25: Fan Laws, System Effect and Sound</a></li>
+</ul>
+<hr />
+<h2 id="why-the-catalog-is-the-last-word">Why the Catalog Is the Last Word<a class="headerlink" href="#why-the-catalog-is-the-last-word" title="Permanent link">&para;</a></h2>
+<p>Every earlier chapter described fans in general terms: what an arrangement is, why a class limits speed, how density changes pressure. A customer does not order a general fan. They order a specific model, in a specific size and class, at a speed and horsepower that someone read out of a Twin City Fan catalog or the Fan Selector software. This chapter teaches you to do that reading accurately, and to know which numbers the catalog gives you, which it leaves to you, and which it deliberately leaves out.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">From Duty Point to Order Line</p>
+<p><img alt="Breeze waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+A customer gives you an airflow and a pressure; by the end of this chapter you will turn that into a fan size, a class, a speed and a brake horsepower you can defend line by line. That is the moment a conversation becomes an order. Let's follow the airflow, from the catalog cover to the last footnote under the performance table.</p>
+</div>
+<p>The examples in this chapter use three current Twin City Fan publications posted on tcf.com: Catalog 300 for the BC backward inclined fan (dated April 2024), Catalog 902 for the RBA, RBO, RBR, RBW and RBP radial bladed industrial fans (dated November 2017), and the Engineering Resource Guide ERG-100 (dated May 2024). Numbers quoted from them are real catalog values and are labeled with their source. Numbers that are not from a catalog are labeled illustrative. Before you quote any of them to a customer, check the catalog on tcf.com for a newer edition; that habit is the first lesson of the chapter.</p>
+<h2 id="the-product-catalog">The Product Catalog<a class="headerlink" href="#the-product-catalog" title="Permanent link">&para;</a></h2>
+<p>A <strong>product catalog</strong> is the manufacturer's published document for one product line: the models in the line, the sizes and classes built, the arrangements and options offered, the construction details, the engineering limits and, for many lines, the rated performance. Twin City Fan publishes one numbered catalog per line and lists them on the tcf.com Product Catalogs page. Catalog 300 covers the BC-SW and BC-DW backward inclined fans, Catalog 600 covers the BCV, BAV and FCV utility sets, Catalog 902 covers the radial bladed industrial fans, and so on through the axial, plenum, mixed flow and roof lines. Each catalog's cover carries its number and its edition date.</p>
+<p>A catalog answers three kinds of question, and it helps to know which kind you are asking before you start turning pages:</p>
+<ul>
+<li><strong>Can it be built?</strong> Which sizes, classes, arrangements, materials and temperatures are offered. These answers are yes or no, and a "no" ends the discussion.</li>
+<li><strong>How will it perform?</strong> Speed and brake horsepower for a stated airflow and pressure, either in printed performance tables or, for newer lines, in the Fan Selector software the catalog points to.</li>
+<li><strong>What will it look like on the job?</strong> Dimensions, weights, shaft and bearing sizes, and the paragraphs an engineer copies into a specification.</li>
+</ul>
+<p>The catalog is also a legal document of sorts. Its performance is certified under stated conditions, its dimension pages carry the warning "Dimensions not to be used for construction. Certified drawings available upon request," and its statements about what is standard and what is optional decide what a customer receives for the quoted price. Reading a catalog carelessly is how quotes go wrong.</p>
+<h4 id="worked-example-answering-a-customer-question-from-the-catalog">Worked Example: Answering a Customer Question from the Catalog<a class="headerlink" href="#worked-example-answering-a-customer-question-from-the-catalog" title="Permanent link">&para;</a></h4>
+<p>A plant engineer asks whether a BC-SW fan in Arrangement 9 can exhaust air at 600°F. Here is how the question is answered from Catalog 300 alone.</p>
+<ol>
+<li><strong>Find the product.</strong> The cover and the overview (pages 2–3) confirm that the BC-SW is the single width, single inlet backward inclined fan and that Arrangement 9 is offered for it.</li>
+<li><strong>Find the limit.</strong> The high temperature section (page 5) contains Table 1, High Temperature Construction Requirements. It has three temperature bands: –20°F to +300°F, 300°F to 500°F, and 500°F to 800°F.</li>
+<li><strong>Read the row.</strong> In the 500°F to 800°F row, the bearings are ball or roller with one expansion bearing, lubricated with high temperature grease, and the fan needs high temperature aluminum paint, a shaft cooler and a shaft seal, with a motor heat shield included for Arrangement 9 and 10 fans. The available arrangements are 1, 8, 9, 9F and 10, with the note that Arrangements 9 and 10 are limited to 600°F.</li>
+<li><strong>Read the footnote that follows.</strong> The same page says that high temperature reduces impeller strength, so maximum safe speed must be derated, and directs you to the Fan Selector (FS10) software for the derated speeds.</li>
+</ol>
+<p>The answer is "yes, at exactly the 600°F limit for Arrangement 9, with high temperature construction, and only if the selection speed is below the derated maximum speed from Fan Selector." A good answer names the construction it requires and the check that is still open.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Read the Edition Date First</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Before you quote anything from a catalog PDF saved on your laptop, compare its cover date with the copy on tcf.com. Thirty seconds spent checking the date saves you from quoting an arrangement, option or limit that the current edition has changed.</p>
+</div>
+<h2 id="catalog-structure">Catalog Structure<a class="headerlink" href="#catalog-structure" title="Permanent link">&para;</a></h2>
+<p><strong>Catalog structure</strong> is the standard order of sections inside a Twin City Fan product catalog. The order is close to the same from line to line, so once you know it in one catalog you can find your way in any other. Catalog 300 runs in this sequence:</p>
+<ol>
+<li><strong>Overview</strong> (pages 2–3): models, impeller diameters, airflow and pressure range, arrangements, standard and optional construction, certifications and typical applications.</li>
+<li><strong>Construction features</strong> (page 4): how the impeller, housing, shaft and bearings are built, including balance grade, shaft critical speed and bearing life.</li>
+<li><strong>High temperature modifications and energy regulations</strong> (page 5): Table 1 and the derating note, plus a statement on DOE and state efficiency rules.</li>
+<li><strong>Arrangements</strong> (pages 6–9): a picture and paragraph for every arrangement offered.</li>
+<li><strong>Options and accessories</strong> (pages 10–12): numbered callouts for guards, bases, dampers, inlet vanes, flanges, seals, doors and drives.</li>
+<li><strong>Motor positions and standard configurations</strong> (page 13), <strong>inlet boxes</strong> (page 14) and <strong>vibration isolation</strong> (page 15).</li>
+<li><strong>Engineering data</strong> (page 16): maximum RPM, impeller weight and WR² (the moment of inertia of the rotating impeller, in lb-ft², used to check that a motor can start it) for every size and class.</li>
+<li><strong>Material specifications</strong> (page 17 onward): housing gauges, shaft diameters, bearing types and bare fan weights.</li>
+<li><strong>Dimensions</strong>: one drawing and table per arrangement and size range.</li>
+<li><strong>Typical specifications</strong> (pages 50–51): ready-to-copy specification paragraphs.</li>
+</ol>
+<p>Catalog 902 follows the same pattern but adds a section that Catalog 300 does not have: <strong>performance data</strong>, printed tables of RPM and brake horsepower for each model and size, starting on page 20. Catalog 300 instead says on its overview page that "certified performance data may be found in Twin City Fan &amp; Blower's Fan Selector software." Whether performance is printed or lives in software is the single biggest structural difference between catalogs, and you should check which kind you are holding before you look for a table.</p>
+<h4 id="worked-example-three-questions-three-sections">Worked Example: Three Questions, Three Sections<a class="headerlink" href="#worked-example-three-questions-three-sections" title="Permanent link">&para;</a></h4>
+<p>A representative is preparing a quote for a BC-SW and has three questions. Each one maps to a section by the kind of answer it needs:</p>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Kind of answer</th>
+<th>Section</th>
+<th>What the catalog says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What is the highest speed a size 365 Class II can run?</td>
+<td>Engineering limit</td>
+<td>Engineering data, page 16</td>
+<td>1,283 RPM</td>
+</tr>
+<tr>
+<td>What shaft diameter and bearing does a size 365 Class I use in Arrangement 1?</td>
+<td>Construction detail</td>
+<td>Material specifications, page 17</td>
+<td>1-15/16 in. shaft, ball bearings</td>
+</tr>
+<tr>
+<td>Can the outlet damper modulate airflow over the whole range?</td>
+<td>Option choice</td>
+<td>Options and accessories, page 12</td>
+<td>Opposed blade dampers are recommended for modulation over the entire range</td>
+</tr>
+</tbody>
+</table>
+<p>None of the three questions needed a performance table. Most of the questions a sales or application engineer fields in a day are "can it be built" and "what does it look like" questions, and they are answered in the front and back of the catalog, not in the middle.</p>
+<p>The MicroSim below gives you practice at the same skill: matching a question to the catalog section that answers it, before you start searching.</p>
+<h4 id="diagram-catalog-section-finder">Diagram: Catalog Section Finder<a class="headerlink" href="#diagram-catalog-section-finder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Catalog Section Finder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch26-catalog-section-finder<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> classify<br/>
+<strong>Learning Objective:</strong> The learner will classify ten customer questions by the Twin City Fan catalog section that answers them, getting at least 8 of 10 right on the first attempt.</p>
+<p><strong>Prerequisites:</strong> product catalog, catalog structure, engineering data, material specifications, performance data, typical specifications (all defined in the sections "The Product Catalog" and "Catalog Structure" above).</p>
+<p><strong>Evidence of Mastery:</strong> The learner assigns each question card to one of ten section bins. An assignment is correct when it matches the Correct section column. Mastery is 8 of 10 correct on the first attempt. Opening a section's description before assigning is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Every catalog has printed performance tables (Catalog 300 does not; it points to Fan Selector). (2) Maximum speed is found in the performance tables rather than in engineering data. (3) Dimension pages can be used for construction (they cannot; certified drawings are required).</p>
+<p><strong>Instructional Rationale:</strong> Classifying questions by the kind of answer they need builds the mental map of catalog structure that makes later lookups fast. Committing each card before feedback makes the learner predict, which an Understand objective needs.</p>
+<p><strong>Content:</strong></p>
+<p>Ten section bins, each with a one-line description shown on request:</p>
+<table>
+<thead>
+<tr>
+<th>Bin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overview</td>
+<td>Models, diameters, airflow and pressure range, arrangements, certifications</td>
+</tr>
+<tr>
+<td>Construction Features</td>
+<td>How the impeller, housing, shaft and bearings are built</td>
+</tr>
+<tr>
+<td>High Temperature Modifications</td>
+<td>Temperature bands, bearing and lubrication requirements, derating</td>
+</tr>
+<tr>
+<td>Arrangements</td>
+<td>Picture and paragraph for each arrangement offered</td>
+</tr>
+<tr>
+<td>Options/Accessories</td>
+<td>Guards, bases, dampers, inlet vanes, flanges, seals, doors, drives</td>
+</tr>
+<tr>
+<td>Engineering Data</td>
+<td>Maximum RPM, impeller weight and WR² by size and class</td>
+</tr>
+<tr>
+<td>Material Specifications</td>
+<td>Housing gauges, shaft diameters, bearing types, bare fan weights</td>
+</tr>
+<tr>
+<td>Performance Data</td>
+<td>Printed RPM and BHP tables by model and size</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>Drawings and dimension tables by arrangement and size</td>
+</tr>
+<tr>
+<td>Typical Specifications</td>
+<td>Specification paragraphs ready to copy</td>
+</tr>
+</tbody>
+</table>
+<p>Ten question cards, shown in shuffled order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Correct section</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>What is the maximum RPM of a BC-SW size 365 Class II?</td>
+<td>Engineering Data</td>
+<td>Maximum RPM by size and class is engineering data (Catalog 300, page 16: 1,283 RPM).</td>
+</tr>
+<tr>
+<td>2</td>
+<td>What shaft diameter and bearing type does a BC SWSI Class I size 365 use in Arrangement 1?</td>
+<td>Material Specifications</td>
+<td>Shaft and bearing sizes by size and class are in the material specifications table.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>What RPM and BHP does an RBA 913 need for 4,092 CFM at 12 in. wg?</td>
+<td>Performance Data</td>
+<td>Speed and power at a duty point are read from the performance tables (Catalog 902, page 24).</td>
+</tr>
+<tr>
+<td>4</td>
+<td>What bearing and grease does a BC-SW need at 450°F?</td>
+<td>High Temperature Modifications</td>
+<td>Table 1 lists bearing type and lubrication for each temperature band.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Where does the motor mount on an Arrangement 9H?</td>
+<td>Arrangements</td>
+<td>Each arrangement's paragraph describes the motor location.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Is an opposed blade or parallel blade outlet damper better for modulating over the full range?</td>
+<td>Options/Accessories</td>
+<td>Damper types and where to use each are described with the accessories.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Are lifting lugs standard on BC housings?</td>
+<td>Construction Features</td>
+<td>Housing construction, including lifting lugs, is described in construction features.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>What is the highest airflow the BC-DW line covers?</td>
+<td>Overview</td>
+<td>The overview states the airflow and pressure range for each model (344,300 CFM for BC-DW).</td>
+</tr>
+<tr>
+<td>9</td>
+<td>How tall is a BC-SW size 300 in Arrangement 9?</td>
+<td>Dimensions</td>
+<td>Overall dimensions are in the dimension tables, which are not for construction.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>What paragraph can an engineer paste into a project specification for a BC-DW?</td>
+<td>Typical Specifications</td>
+<td>Specification paragraphs are collected at the back of the catalog.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Section names and contents from Twin City Fan Catalog 300 (April 2024) and Catalog 902 (November 2017), https://tcf.com/resources/product-catalogs/. Values 1,283 RPM and 344,300 CFM from Catalog 300 pages 16 and 3.</p>
+<p><strong>Rules:</strong> Each card has exactly one correct bin. A card's first assignment is scored. Each bin can hold any number of cards.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads a question card and may open any bin's description.</li>
+<li>The learner assigns the card to a bin. The card is marked correct or incorrect and the feedback is shown.</li>
+<li>An incorrect card returns to the deck once; the learner may reassign it, but only the first attempt is scored.</li>
+<li>After all ten cards, the learner sees the score and the list of missed cards with their reasons.</li>
+</ol>
+<p><strong>Feedback:</strong> Ten cards, shuffled, two attempts each, first attempt scored. Correct: "Correct: " plus the Why text. Incorrect: "Not quite. " plus the Why text, and the correct bin is shown after the second attempt. A running score "First-try correct: n of 10" is shown.</p>
+<p><strong>Starting State:</strong> The ten bins are shown with card 1 of the shuffled deck. The prompt reads "Which catalog section answers this question?"</p>
+<p><strong>Chapter Anchors:</strong> BC-SW size 365 Class II maximum RPM is 1,283 RPM. BC-DW airflow range is to 344,300 CFM. Catalog 300 has no printed performance tables. Mastery is 8 of 10.</p>
+</details>
+<h2 id="technical-descriptions-and-the-typical-specification">Technical Descriptions and the Typical Specification<a class="headerlink" href="#technical-descriptions-and-the-typical-specification" title="Permanent link">&para;</a></h2>
+<p>A catalog explains in words as well as in tables. A <strong>technical description</strong> is a short written paragraph that defines one component, arrangement or option and states its restrictions. FanPedia collects these in its Technical Descriptions section (pages 161–197), alphabetically from Anti-Backspin Devices onward, and the product catalogs carry similar paragraphs beside each arrangement and accessory. Technical descriptions often hold rules that never appear in a table. FanPedia's description of Arrangement 1 SWSI (page 162), for example, says the motor can go in any of the four AMCA motor positions W, X, Y or Z, and then lists the exceptions: on a bottom horizontal discharge (BHD), motor position Z is not allowed on a CW fan and position W is not allowed on a CCW fan, because the motor would block the outlet. A table of arrangements would simply show "W, X, Y, Z"; the description is where the exception lives.</p>
+<p>The <strong>typical specification</strong> at the back of each catalog is the same idea written for an engineer's project manual. Catalog 300's BC-SW paragraph requires, among other things, AMCA certified ratings for sound, air and fan energy index (FEI, the AMCA 208 efficiency metric), shafts sized for a first critical speed of at least 1.43 times maximum speed, and balance to AMCA 204 grade BV-3. When a specification on a bid looks familiar, it has often been copied from one of these paragraphs.</p>
+<h2 id="fanpedia-versus-the-current-catalog">FanPedia Versus the Current Catalog<a class="headerlink" href="#fanpedia-versus-the-current-catalog" title="Permanent link">&para;</a></h2>
+<p>FanPedia (©2021) is Twin City Fan's encyclopedia of terms, arrangements, components and construction across all its product lines. It explains what things are. A product catalog states what one line offers today: its sizes, limits, options and ratings. <strong>FanPedia vs current catalog</strong> is the rule for when they disagree: the current catalog wins, because it is the document that describes what the factory builds and certifies now. FanPedia carries almost no size-specific numbers at all; it does not list maximum speeds, performance or dimensions, and it points to the product catalogs for details such as bearing life by model.</p>
+<p>"Current" means the latest edition on tcf.com, not "newer than FanPedia." Catalog 300 (April 2024) is newer than FanPedia, but Catalog 902 (November 2017) is older, and it is still the current catalog for the radial bladed line. Use FanPedia to understand a feature, then confirm the specific offering, limit or option in the current catalog for the model you are quoting, and use Fan Selector or the factory when the catalog is silent.</p>
+<h2 id="fan-size">Fan Size<a class="headerlink" href="#fan-size" title="Permanent link">&para;</a></h2>
+<p><strong>Fan size</strong> is the number Twin City Fan uses to identify one impeller diameter within a model. The industrial fans in Catalog 902 state that their sizes and impeller diameters conform to AMCA Standard 2402 (Sizes for Industrial Centrifugal Fans), and every performance page heads its table with the size number and the impeller diameter it stands for. Fan size is not the outlet dimension, the inlet diameter or the housing width; it is a label for the impeller, and every other dimension follows from it.</p>
+<p>Two numbering styles appear in the catalogs used in this chapter:</p>
+<ul>
+<li>In Catalog 300, the BC size number tracks the impeller diameter in inches with the decimal point dropped. The BC-SW line runs from 12.25-inch to 98.25-inch impeller diameters, and its sizes run from 122 to 982.</li>
+<li>In Catalog 902, the radial bladed sizes are a 900-series code. Size 905 is an 8.75-inch impeller, size 913 is 22.625 inches, and size 960 is 104.25 inches. The digits after the 9 are not the diameter; you read the diameter from the performance page.</li>
+</ul>
+<p>The table below gives a few real size-to-diameter pairs from Catalog 902's performance pages, so you can see that the size code climbs with diameter but is not equal to it:</p>
+<table>
+<thead>
+<tr>
+<th>Size (Catalog 902)</th>
+<th>Impeller diameter (in.)</th>
+<th>Tip speed factor (FPM per RPM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>905</td>
+<td>8.75</td>
+<td>2.29</td>
+</tr>
+<tr>
+<td>913</td>
+<td>22.625</td>
+<td>5.92</td>
+</tr>
+<tr>
+<td>921</td>
+<td>36.5</td>
+<td>not used in this chapter</td>
+</tr>
+<tr>
+<td>960</td>
+<td>104.25</td>
+<td>not used in this chapter</td>
+</tr>
+</tbody>
+</table>
+<p>Size also decides which classes and arrangements exist. In Catalog 902's RB Series Availability table (page 13), size 905 is offered only in Class 22, while sizes 913 through 919 are offered in Classes 22, 32 and 45. In Catalog 300, Arrangement 10 units of Class I and II in sizes 122 through 365 are the fans commonly called ventilating sets. So the first question about any size is not "how big is it?" but "what does this size let me build?"</p>
+<p>The header of each performance page turns the size into the numbers you need for calculations. For size 913 it reads: impeller diameter 22.625 in., tip speed (FPM) 5.92 × RPM, inlet area 0.87 ft², inlet diameter 13 in. O.D., outlet area 0.93 ft², outlet dimension 10-7/8 in. × 12-3/16 in.</p>
+<h4 id="tip-speed-factor">Tip Speed Factor<a class="headerlink" href="#tip-speed-factor" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ TS = k \times N, \qquad k = \frac{\pi \times D}{12} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( TS \)</span> is the impeller tip speed in FPM</li>
+<li><span class="arithmatex">\( k \)</span> is the catalog's tip speed factor in FPM per RPM</li>
+<li><span class="arithmatex">\( N \)</span> is the fan speed in RPM</li>
+<li><span class="arithmatex">\( D \)</span> is the impeller diameter in inches</li>
+</ul>
+<h4 id="worked-example-what-size-913-tells-you">Worked Example: What Size 913 Tells You<a class="headerlink" href="#worked-example-what-size-913-tells-you" title="Permanent link">&para;</a></h4>
+<p>Check the header against itself, then use it.</p>
+<ol>
+<li><strong>Tip speed factor.</strong> <span class="arithmatex">\( k = \pi \times 22.625 / 12 = 5.92 \)</span> FPM per RPM, which matches the printed "5.92 × RPM."</li>
+<li><strong>Tip speed at a selection.</strong> The RBA 913 table gives 2,167 RPM for 4,092 CFM at 12 in. wg (Catalog 902, page 24). The tip speed is <span class="arithmatex">\( 5.92 \times 2{,}167 = 12{,}829 \)</span> FPM.</li>
+<li><strong>Outlet velocity.</strong> Outlet velocity is airflow divided by outlet area: <span class="arithmatex">\( 4{,}092 / 0.93 = 4{,}400 \)</span> FPM. That is the number printed in the OV column on the same row, which confirms that the OV column is computed from the outlet area in the header.</li>
+</ol>
+<p>Three numbers from the header (diameter, tip speed factor, outlet area) let you check the table, compute tip speed for comparison with other sizes (Chapter 10), and size the duct transition at the outlet. A size number with no header beside it tells you very little.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Size Is Not Interchangeable Across Models</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is assuming that "size 365" or "size 913" means the same impeller in every model. Size numbering belongs to a model's catalog, and the same digits can mean different diameters in different lines. Always read the diameter from that model's own performance page or engineering data before comparing two fans.</p>
+</div>
+<h2 id="model-code">Model Code<a class="headerlink" href="#model-code" title="Permanent link">&para;</a></h2>
+<p>A <strong>model code</strong> is the short letter designation that identifies a Twin City Fan product line and impeller type, such as BC-SW, RBA or TCTA. On its own it names a family; combined with a size, a class and an arrangement, it names one buildable fan. Twin City Fan's catalogs are titled by model code, so the code is also how you find the right catalog:</p>
+<table>
+<thead>
+<tr>
+<th>Model code</th>
+<th>Catalog title (tcf.com)</th>
+<th>Catalog</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BC-SW, BC-DW</td>
+<td>Backward Inclined Fans (single width, double width)</td>
+<td>300</td>
+</tr>
+<tr>
+<td>BAE</td>
+<td>Airfoil Fans</td>
+<td>370</td>
+</tr>
+<tr>
+<td>RBA, RBO, RBR, RBW, RBP</td>
+<td>Industrial Fans (radial bladed)</td>
+<td>902</td>
+</tr>
+<tr>
+<td>BCV, BAV, FCV</td>
+<td>Utility Sets</td>
+<td>600</td>
+</tr>
+<tr>
+<td>EPF, EPFN, EPQ, EPQN</td>
+<td>E-Series Plenum Fans</td>
+<td>470</td>
+</tr>
+<tr>
+<td>TCTA</td>
+<td>Tubeaxial Fans</td>
+<td>AX200</td>
+</tr>
+<tr>
+<td>TCVA</td>
+<td>Vaneaxial Fans</td>
+<td>AX100</td>
+</tr>
+<tr>
+<td>QSL, QSLSH, QSLR, QFE</td>
+<td>Mixed Flow Fans</td>
+<td>1060</td>
+</tr>
+</tbody>
+</table>
+<p>Inside a line, the letters often separate impeller types that share a housing. Catalog 902 uses one housing family with five impellers: RBA (air handling, backward inclined blades welded to a back plate and front ring), RBO (open radial paddle), RBR (paddle with blade end rings for larger sizes and higher RPM), RBW (back plate wool impeller for stringy material) and RBP (paper handling, a modified RBW with trapezoidal gussets). The performance of each impeller differs, so each has its own table on the same size page: RBO 913 and RBA 913 share a header but not their numbers.</p>
+<p>A complete order line adds the rest of the designation. A typical written form is model, size, class and arrangement, for example "RBA 913, Class 32, Arrangement 9." Rotation and discharge (Chapter 13), motor position and construction options are then added for a full fan description, which Chapter 27 builds in full.</p>
+<h4 id="worked-example-is-this-designation-buildable">Worked Example: Is This Designation Buildable?<a class="headerlink" href="#worked-example-is-this-designation-buildable" title="Permanent link">&para;</a></h4>
+<p>Catalog 902's RB Series Availability table (page 13) lists the arrangements offered for each impeller type, size and class. For RBA sizes 913 through 919 it reads:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Arrangements offered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class 22</td>
+<td>1, 4, 8, 10, 4VI, 9A, 9B, 9F</td>
+</tr>
+<tr>
+<td>Class 32</td>
+<td>1, 4, 8, 9, 4VI, 9F</td>
+</tr>
+<tr>
+<td>Class 45</td>
+<td>1, 8, 9, 9F</td>
+</tr>
+</tbody>
+</table>
+<p>Now check three designations a customer might send:</p>
+<ol>
+<li><strong>RBA 913, Class 22, Arrangement 10.</strong> Arrangement 10 appears in the Class 22 list. Buildable.</li>
+<li><strong>RBA 913, Class 32, Arrangement 10.</strong> Arrangement 10 is not in the Class 32 list. Not buildable; offer Arrangement 9 or 9F, which are the belt-drive arrangements listed for Class 32.</li>
+<li><strong>RBA 913, Class 45, Arrangement 4.</strong> Arrangement 4 (impeller on the motor shaft) is not in the Class 45 list. Not buildable; a Class 45 RBA 913 must have its own shaft and bearings, as in Arrangements 1, 8, 9 or 9F.</li>
+</ol>
+<p>The second and third designations look reasonable and would pass a casual read. They fail only when you check the model, size and class together against the availability table, which is why a model code is never checked one field at a time.</p>
+<p>The MicroSim below gives you eight designations to check in the same way, using real Catalog 300 and Catalog 902 data.</p>
+<h4 id="diagram-model-code-decoder">Diagram: Model Code Decoder<a class="headerlink" href="#diagram-model-code-decoder" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Model Code Decoder</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch26-model-code-decoder<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret a Twin City Fan designation (model code, size, class, arrangement) by judging whether it is offered and reading its class maximum RPM from catalog extracts, for at least 7 of 8 designations.</p>
+<p><strong>Prerequisites:</strong> model code, fan size, fan class, arrangement, maximum RPM (defined in the sections "Fan Size" and "Model Code" above and in Chapters 10 and 11).</p>
+<p><strong>Evidence of Mastery:</strong> For each designation the learner commits two answers: Offered or Not offered, and the class maximum RPM chosen from the extract. A designation is correct when both answers match the answer table. Mastery is 7 of 8 designations correct on the first attempt. Browsing the extracts is exploration.</p>
+<p><strong>Misconceptions:</strong> (1) If a size is offered in a class and an arrangement is offered in the line, every combination is offered. (2) A direct-drive arrangement is available in every class. (3) A size number means the same diameter in every model.</p>
+<p><strong>Instructional Rationale:</strong> Interpreting a designation requires reading three catalog tables together; judging real designations with feedback makes the learner cross-reference rather than recall.</p>
+<p><strong>Content:</strong></p>
+<p>Catalog extracts the learner can open at any time:</p>
+<p>Extract A, Catalog 902 availability and maximum RPM:</p>
+<table>
+<thead>
+<tr>
+<th>Model and size</th>
+<th>Impeller diameter</th>
+<th>Class 22 arrangements</th>
+<th>Class 32 arrangements</th>
+<th>Class 45 arrangements</th>
+<th>Maximum RPM by class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RBO 905</td>
+<td>8.75 in.</td>
+<td>1, 8, 10, 9A, 9B</td>
+<td>not offered</td>
+<td>not offered</td>
+<td>Class 22 = 5,296</td>
+</tr>
+<tr>
+<td>RBA 913</td>
+<td>22.625 in.</td>
+<td>1, 4, 8, 10, 4VI, 9A, 9B, 9F</td>
+<td>1, 4, 8, 9, 4VI, 9F</td>
+<td>1, 8, 9, 9F</td>
+<td>Class 22 = 2,812; Class 32 = 3,337; Class 45 = 4,000</td>
+</tr>
+</tbody>
+</table>
+<p>Extract B, Catalog 300 arrangements and maximum RPM:</p>
+<table>
+<thead>
+<tr>
+<th>Model and size</th>
+<th>Arrangements offered</th>
+<th>Maximum RPM by class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BC-SW 365</td>
+<td>1, 3, 3F, 3SI, 4, 7SI, 8, 9, 9F, 9H, 9ST, 9SS, 10</td>
+<td>Class I = 995; Class II = 1,283; Class III = 1,727; Class IV = 1,883</td>
+</tr>
+<tr>
+<td>BC-DW 365</td>
+<td>3, 3F, 3DI, 7DI</td>
+<td>Class I = 1,015; Class II = 1,302; Class III = 1,651; Class IV = 1,883</td>
+</tr>
+</tbody>
+</table>
+<p>Eight designations, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Designation</th>
+<th>Offered?</th>
+<th>Class maximum RPM</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>RBA 913, Class 22, Arrangement 10</td>
+<td>Offered</td>
+<td>2,812</td>
+<td>Arrangement 10 is in the Class 22 list for RBA 913.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>RBA 913, Class 32, Arrangement 10</td>
+<td>Not offered</td>
+<td>3,337</td>
+<td>Arrangement 10 is offered only in Class 22 for this size; Class 32 lists 1, 4, 8, 9, 4VI, 9F.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>RBA 913, Class 45, Arrangement 4</td>
+<td>Not offered</td>
+<td>4,000</td>
+<td>Class 45 lists only 1, 8, 9 and 9F; the direct-drive Arrangement 4 is not offered at Class 45.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>RBA 913, Class 45, Arrangement 9</td>
+<td>Offered</td>
+<td>4,000</td>
+<td>Arrangement 9 is in the Class 45 list.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>RBO 905, Class 22, Arrangement 9A</td>
+<td>Offered</td>
+<td>5,296</td>
+<td>Size 905 offers 9A in Class 22; selections above 4,000 RPM are not recommended without consulting the factory.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>RBO 905, Class 32, Arrangement 1</td>
+<td>Not offered</td>
+<td>none</td>
+<td>Size 905 is built only in Class 22.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>BC-SW 365, Class II, Arrangement 9</td>
+<td>Offered</td>
+<td>1,283</td>
+<td>Arrangement 9 is offered for BC-SW, and Class II size 365 runs to 1,283 RPM.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>BC-DW 365, Class I, Arrangement 9</td>
+<td>Not offered</td>
+<td>1,015</td>
+<td>Arrangement 9 is a single width arrangement; BC-DW is offered in 3, 3F, 3DI and 7DI.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Catalog 902 (November 2017), page 13 (RB Series Availability) and performance pages 20 and 24 (maximum RPM, diameters). Catalog 300 (April 2024), page 3 (arrangements by model) and page 16 (maximum RPM). https://tcf.com/resources/product-catalogs/</p>
+<p><strong>Rules:</strong> Offered when the arrangement appears in the list for that model, size and class; Not offered otherwise, including when the class is not built for that size. The class maximum RPM answer is the value in the extract for that class, or "none" when the class is not built. Both answers must match for the designation to count as correct.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads designation 1 and opens whichever extract they need.</li>
+<li>The learner chooses Offered or Not offered, and chooses the class maximum RPM from the values in that model's row plus "none".</li>
+<li>The learner submits; both answers are marked and the Why text appears.</li>
+<li>The learner moves to the next designation. After designation 8, the score and missed items are shown.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight designations, fixed order, one attempt each for scoring, with a second try allowed for practice. Correct: "Correct: " plus the Why text. Incorrect: names which of the two answers was wrong, then the Why text. Score shown as "Designations correct: n of 8".</p>
+<p><strong>Starting State:</strong> Designation 1 is shown with both extracts collapsed. The prompt reads "Can the factory build this fan, and how fast can it run?"</p>
+<p><strong>Chapter Anchors:</strong> RBA 913 diameter 22.625 in.; RBO 905 diameter 8.75 in.; RBA 913 Class 22 arrangements 1, 4, 8, 10, 4VI, 9A, 9B, 9F; Class 32 arrangements 1, 4, 8, 9, 4VI, 9F; Class 45 arrangements 1, 8, 9, 9F; RBA 913 maximum RPM 2,812 / 3,337 / 4,000; BC-SW 365 Class II maximum 1,283 RPM; designations 1, 2 and 3 match the worked example.</p>
+</details>
+<h2 id="where-the-duty-point-comes-from">Where the Duty Point Comes From<a class="headerlink" href="#where-the-duty-point-comes-from" title="Permanent link">&para;</a></h2>
+<p>A performance table is entered with an airflow and a static pressure, the <strong>duty point</strong>. On many inquiries the customer supplies both. On others, especially ventilation and dust collection jobs, the airflow has to be estimated first. Twin City Fan's Engineering Resource Guide ERG-100 gives two quick methods that belong in every application engineer's toolkit.</p>
+<h3 id="air-change-method">Air Change Method<a class="headerlink" href="#air-change-method" title="Permanent link">&para;</a></h3>
+<p>The <strong>air change method</strong> estimates the ventilation airflow for a space from its volume and a recommended time to replace all of its air once. ERG-100 recommends it for standard commercial applications where environmental control of hazards, heat or odors is not required, and it lists typical minutes per air change by area type, for example 3–6 minutes for a machine shop, 1–3 for a boiler room and 4–10 for a warehouse. Local code, how the space is used, and the climate also affect the choice.</p>
+<h4 id="airflow-by-the-air-change-method">Airflow by the Air Change Method<a class="headerlink" href="#airflow-by-the-air-change-method" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ Q = \frac{V_{room}}{t_{change}} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( Q \)</span> is the required airflow in CFM</li>
+<li><span class="arithmatex">\( V_{room} \)</span> is the room volume in ft³</li>
+<li><span class="arithmatex">\( t_{change} \)</span> is the chosen time per air change in minutes</li>
+</ul>
+<p>For an illustrative machine shop 100 ft × 60 ft × 20 ft high (120,000 ft³), choosing 4 minutes per change gives <span class="arithmatex">\( Q = 120{,}000 / 4 = 30{,}000 \)</span> CFM. The method gives airflow only; the static pressure still comes from the duct, louver and filter losses.</p>
+<h3 id="minimum-conveying-velocity">Minimum Conveying Velocity<a class="headerlink" href="#minimum-conveying-velocity" title="Permanent link">&para;</a></h3>
+<p>The <strong>minimum conveying velocity</strong> is the lowest average duct velocity that keeps a given material suspended in the airstream so it does not settle and clog the duct. ERG-100 reprints typical values from the ACGIH <em>Industrial Ventilation</em> manual: 2,500–3,000 FPM for very fine light dust such as cotton lint, 3,500–4,000 FPM for average industrial dust such as grinding dust, 4,000–4,500 FPM for heavy dusts such as metal turnings, and 4,500 FPM and up for heavy or moist material. Dividing the airflow by the conveying velocity gives the largest duct area that will still convey: 4,092 CFM at 4,000 FPM needs a duct no larger than about 1.02 ft² (roughly a 13.7-inch round duct). Conveying velocity also points toward the fan family, because a fan that the material passes through must survive it.</p>
+<h2 id="fan-family-selection">Fan Family Selection<a class="headerlink" href="#fan-family-selection" title="Permanent link">&para;</a></h2>
+<p><strong>Fan family selection</strong> is choosing the product line, and within it the impeller type, before choosing a size. It comes first because every later step happens inside one catalog. Chapter 6 described the families; here the point is that each catalog's overview tells you, in a few sentences, what the family is for:</p>
+<ul>
+<li>Catalog 300 calls the BC "a popular choice for the efficient handling of large volumes of relatively clean air at low to moderate pressures," with BC-SW static pressure to 20 in. wg and airflow to 277,500 CFM.</li>
+<li>Catalog 902 describes the radial bladed fans as "designed for applications with moderate air volumes of moderate to high pressures," built for "dirty, abrasive, sticky or bulky particulate-laden airstreams," with static pressure to 46 in. wg for RBA, RBO and RBR.</li>
+<li>Within Catalog 902, the RBA is "the most efficient impeller in the RB family" but is "limited to handling relatively clean air or gases," the RBO and RBR suit "coarse, sticky, heavy and/or abrasive materials," the RBW keeps "long, stringy, fibrous" material from wrapping, and the RBP handles paper trim. The RBP is not AMCA licensed, and its Class 32 construction is limited to 22 in. wg.</li>
+</ul>
+<h4 id="worked-example-three-inquiries-three-families">Worked Example: Three Inquiries, Three Families<a class="headerlink" href="#worked-example-three-inquiries-three-families" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Inquiry</th>
+<th>Deciding facts</th>
+<th>Family and impeller</th>
+<th>Catalog reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>60,000 CFM at 4 in. wg supply air for an air handler</td>
+<td>Large volume, clean air, low pressure</td>
+<td>BC (backward inclined)</td>
+<td>Large volumes of relatively clean air at low to moderate pressure</td>
+</tr>
+<tr>
+<td>4,000 CFM at 12 in. wg, clean side of a dust collector</td>
+<td>Moderate volume, moderate-high pressure, light contaminant</td>
+<td>RBA</td>
+<td>Most efficient RB impeller, for relatively clean air</td>
+</tr>
+<tr>
+<td>3,000 CFM at 18 in. wg conveying metal turnings through the fan</td>
+<td>Material passes through the fan; heavy dust needs 4,000–4,500 FPM</td>
+<td>RBO or RBR</td>
+<td>Paddle impellers for coarse, heavy and abrasive material</td>
+</tr>
+</tbody>
+</table>
+<p>The table is the summary; the reasoning is in the second column. Notice that the second and third inquiries have similar airflow and pressure. What separates them is the airstream, which the duty point does not show. Ask what passes through the fan before you open a performance table.</p>
+<h2 id="performance-tables">Performance Tables<a class="headerlink" href="#performance-tables" title="Permanent link">&para;</a></h2>
+<p>A <strong>performance table</strong> is a grid in a product catalog that lists, for one model and size at standard air, the fan speed (RPM) and brake horsepower (BHP) required to deliver each combination of airflow and static pressure. Rows are airflows; columns are static pressures; each cell holds an RPM and a BHP. A performance table is a fan curve (Chapter 10) laid out as numbers: each column is one pressure, and reading down the column follows the fan along a family of curves at increasing speed.</p>
+<h3 id="the-performance-table-header">The Performance Table Header<a class="headerlink" href="#the-performance-table-header" title="Permanent link">&para;</a></h3>
+<p>The <strong>performance table header</strong> is the block above and around the grid that tells you what the grid means. On a Catalog 902 page it has four parts:</p>
+<ul>
+<li><strong>The size block:</strong> size number, impeller diameter, tip speed factor, inlet area and diameter, outlet area and outlet dimension, as in the Fan Size section.</li>
+<li><strong>The model line:</strong> the model and size (for example RBA 913) and its <strong>Fan Efficiency Grade</strong> (FEG), an AMCA 205 rating of the fan's peak efficiency; RBA 913 is FEG80 and RBO 913 is FEG67.</li>
+<li><strong>The column heads:</strong> CFM and OV (outlet velocity in FPM) for the rows, then one static pressure per column pair, each split into RPM and BHP.</li>
+<li><strong>The footer:</strong> maximum RPM for each class, followed by the rating notes that say what the numbers include and exclude (covered under Rating Conditions below), and the legend for shading, italics and underlining.</li>
+</ul>
+<p>Read the header and footer before the grid. The grid has no units printed in its cells, no class labels and no conditions; all of that is in the header and footer.</p>
+<h3 id="reading-a-performance-table">Reading a Performance Table<a class="headerlink" href="#reading-a-performance-table" title="Permanent link">&para;</a></h3>
+<p><strong>Reading a performance table</strong> means finding the row for the required airflow and the column for the required static pressure, and taking the RPM and BHP printed where they meet. The excerpt below reproduces part of the RBA 913 table. In the printed catalog, Class 22 cells are in regular face, Class 32 cells are shaded, and Class 45 cells are in italics; here shaded cells are shown in <strong>bold</strong>, italic cells in <em>italics</em>, and the cells the catalog underlines (maximum static efficiency) are <u>underlined</u>. Each cell gives RPM / BHP.</p>
+<table>
+<thead>
+<tr>
+<th>CFM</th>
+<th>OV (FPM)</th>
+<th>4 in. SP</th>
+<th>8 in. SP</th>
+<th>12 in. SP</th>
+<th>16 in. SP</th>
+<th>20 in. SP</th>
+<th>24 in. SP</th>
+<th>28 in. SP</th>
+<th>32 in. SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3,348</td>
+<td>3,600</td>
+<td>1384 / 3.59</td>
+<td>1774 / 6.42</td>
+<td>2093 / 9.39</td>
+<td>2374 / 12.52</td>
+<td>2630 / 15.84</td>
+<td><strong>2868 / 19.35</strong></td>
+<td><strong>3088 / 22.95</strong></td>
+<td><strong>3295 / 26.70</strong></td>
+</tr>
+<tr>
+<td>3,720</td>
+<td>4,000</td>
+<td>1439 / 4.20</td>
+<td>1818 / 7.30</td>
+<td>2128 / 10.51</td>
+<td>2401 / 13.87</td>
+<td>2648 / 17.34</td>
+<td><strong>2879 / 21.02</strong></td>
+<td><strong>3095 / 24.83</strong></td>
+<td><strong>3299 / 28.79</strong></td>
+</tr>
+<tr>
+<td>4,092</td>
+<td>4,400</td>
+<td>1495 / 4.86</td>
+<td>1865 / 8.25</td>
+<td>2167 / 11.72</td>
+<td>2433 / 15.30</td>
+<td>2674 / 19.00</td>
+<td><strong>2897 / 22.82</strong></td>
+<td><strong>3108 / 26.82</strong></td>
+<td><strong>3307 / 30.95</strong></td>
+</tr>
+<tr>
+<td>4,464</td>
+<td>4,800</td>
+<td>1552 / 5.58</td>
+<td>1915 / 9.29</td>
+<td>2210 / 13.01</td>
+<td>2470 / 16.85</td>
+<td>2705 / 20.77</td>
+<td><strong>2922 / 24.78</strong></td>
+<td><strong>3126 / 28.92</strong></td>
+<td><strong>3321 / 33.24</strong></td>
+</tr>
+<tr>
+<td>4,836</td>
+<td>5,200</td>
+<td>1612 / 6.38</td>
+<td>1967 / 10.41</td>
+<td>2256 / 14.40</td>
+<td>2510 / 18.48</td>
+<td>2740 / 22.64</td>
+<td><strong>2953 / 26.89</strong></td>
+<td><strong><u>3152 / 31.23</u></strong></td>
+<td><em><u>3340 / 35.65</u></em></td>
+</tr>
+</tbody>
+</table>
+<p><em>Source: Twin City Fan Catalog 902 (November 2017), page 24, RBA 913, standard air, installation type B and D. Excerpt only; the printed table runs from 1,116 to 6,696 CFM and from 1 to 46 in. SP.</em></p>
+<h4 id="worked-example-a-direct-reading">Worked Example: A Direct Reading<a class="headerlink" href="#worked-example-a-direct-reading" title="Permanent link">&para;</a></h4>
+<p>A customer needs 4,092 CFM at 12 in. wg static pressure, standard air, from an RBA 913.</p>
+<ol>
+<li><strong>Row:</strong> 4,092 CFM (OV 4,400 FPM).</li>
+<li><strong>Column:</strong> 12 in. SP.</li>
+<li><strong>Cell:</strong> 2,167 RPM and 11.72 BHP.</li>
+<li><strong>Class:</strong> The cell is in regular face to the left of the shaded area, so it is Class 22. Check it against the footer: 2,167 RPM is at or below the Class 22 maximum of 2,812 RPM.</li>
+<li><strong>State the result with its conditions:</strong> RBA 913, Class 22, 2,167 RPM, 11.72 BHP at standard air, not including drive losses or accessory effects.</li>
+</ol>
+<p>Step 5 is not decoration. A number quoted without its conditions will be compared with a motor nameplate or a field reading taken under different conditions, and someone will conclude the fan is wrong.</p>
+<h3 id="class-shading-in-tables">Class Shading in Tables<a class="headerlink" href="#class-shading-in-tables" title="Permanent link">&para;</a></h3>
+<p><strong>Class shading</strong> is the catalog's way of showing, inside the grid, which fan class each duty point requires. Because a class is defined by a maximum safe speed for the size (Chapter 10), the class boundary in a table is really a speed boundary. On the RBA 913 page the footer gives Class 22 = 2,812 RPM, Class 32 = 3,337 RPM and Class 45 = 4,000 RPM, and the legend says: regular face to the left of Class 32 = Class 22; regular face in light shaded area = Class 32; italic face to right of Class 32 = Class 45. Other catalogs use the same idea with their own legend, so read the legend on the page you are using.</p>
+<h4 id="class-from-selection-speed">Class from Selection Speed<a class="headerlink" href="#class-from-selection-speed" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ \text{Class} = \begin{cases} 22 &amp; N \le 2{,}812 \\ 32 &amp; 2{,}812 &lt; N \le 3{,}337 \\ 45 &amp; 3{,}337 &lt; N \le 4{,}000 \end{cases} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( N \)</span> is the selection speed in RPM read from the RBA 913 table</li>
+<li>the limits are the RBA 913 maximum RPM values for each class from Catalog 902, page 24</li>
+</ul>
+<h4 id="worked-example-reading-the-class-from-the-grid">Worked Example: Reading the Class from the Grid<a class="headerlink" href="#worked-example-reading-the-class-from-the-grid" title="Permanent link">&para;</a></h4>
+<p>Take three cells from the 4,836 CFM row of the excerpt:</p>
+<ul>
+<li><strong>20 in. SP:</strong> 2,740 RPM, regular face. <span class="arithmatex">\( 2{,}740 \le 2{,}812 \)</span>, so Class 22.</li>
+<li><strong>28 in. SP:</strong> 3,152 RPM, shaded. <span class="arithmatex">\( 2{,}812 &lt; 3{,}152 \le 3{,}337 \)</span>, so Class 32.</li>
+<li><strong>32 in. SP:</strong> 3,340 RPM, italic. <span class="arithmatex">\( 3{,}337 &lt; 3{,}340 \le 4{,}000 \)</span>, so Class 45.</li>
+</ul>
+<p>The last cell is the instructive one. At 4,464 CFM the same 32 in. column reads 3,321 RPM and is Class 32; one row lower it crosses the Class 32 limit by 3 RPM and becomes Class 45. Class boundaries do not follow straight columns or rows, which is why the catalog shades cell by cell. When a selection lands within a few RPM of a boundary, consider the heavier class or a different size, because any later correction for temperature, drive slip or system effect will push the speed up, not down.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Shading Is a Speed Map</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that class shading is just the maximum safe speed for each class drawn onto the grid. Once you see it that way, you can check any cell yourself by comparing its RPM with the footer, and you can predict where the shading starts on a table you have never seen.</p>
+</div>
+<h3 id="interpolation">Interpolation<a class="headerlink" href="#interpolation" title="Permanent link">&para;</a></h3>
+<p>Duty points rarely land exactly on a printed row and column. <strong>Interpolation</strong> is estimating the RPM and BHP between printed values by assuming they change in a straight line between neighboring rows or columns. Catalog tables are spaced closely enough that straight-line interpolation is the accepted practice; ERG-100 works its density examples this way.</p>
+<h4 id="linear-interpolation">Linear Interpolation<a class="headerlink" href="#linear-interpolation" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ y = y_1 + \frac{x - x_1}{x_2 - x_1}\,(y_2 - y_1) \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( x \)</span> is the required airflow (or static pressure)</li>
+<li><span class="arithmatex">\( x_1 \)</span> and <span class="arithmatex">\( x_2 \)</span> are the printed airflows (or pressures) on either side of <span class="arithmatex">\( x \)</span></li>
+<li><span class="arithmatex">\( y_1 \)</span> and <span class="arithmatex">\( y_2 \)</span> are the printed RPM (or BHP) values at <span class="arithmatex">\( x_1 \)</span> and <span class="arithmatex">\( x_2 \)</span></li>
+<li><span class="arithmatex">\( y \)</span> is the interpolated RPM (or BHP)</li>
+</ul>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Two Directions, One Step at a Time</p>
+<p><img alt="Breeze encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+Double interpolation looks like a lot of arithmetic the first time, and most people lose track of which number goes where. Do it as three single interpolations: across the airflow rows in each of two pressure columns, then once between those two results. Write each intermediate RPM and BHP down before moving on.</p>
+</div>
+<h4 id="worked-example-single-and-double-interpolation-on-rba-913">Worked Example: Single and Double Interpolation on RBA 913<a class="headerlink" href="#worked-example-single-and-double-interpolation-on-rba-913" title="Permanent link">&para;</a></h4>
+<p><strong>Single interpolation.</strong> Find RPM and BHP for 4,000 CFM at 12 in. SP. The airflow lies between the 3,720 and 4,092 CFM rows:</p>
+<div class="arithmatex">\[ f = \frac{4{,}000 - 3{,}720}{4{,}092 - 3{,}720} = \frac{280}{372} = 0.753 \]</div>
+<div class="arithmatex">\[ N = 2{,}128 + 0.753 \times (2{,}167 - 2{,}128) = 2{,}157 \text{ RPM} \]</div>
+<div class="arithmatex">\[ BHP = 10.51 + 0.753 \times (11.72 - 10.51) = 11.42 \]</div>
+<p><strong>Double interpolation.</strong> Now find 4,000 CFM at 14 in. SP. The pressure lies between the 12 and 16 in. columns, so first interpolate the 16 in. column at the same fraction <span class="arithmatex">\( f = 0.753 \)</span>:</p>
+<div class="arithmatex">\[ N_{16} = 2{,}401 + 0.753 \times (2{,}433 - 2{,}401) = 2{,}425 \text{ RPM}, \quad BHP_{16} = 13.87 + 0.753 \times (15.30 - 13.87) = 14.95 \]</div>
+<p>Then interpolate between the two columns. 14 in. is halfway between 12 and 16, so the fraction is 0.5:</p>
+<div class="arithmatex">\[ N = 2{,}157 + 0.5 \times (2{,}425 - 2{,}157) = 2{,}291 \text{ RPM}, \quad BHP = 11.42 + 0.5 \times (14.95 - 11.42) = 13.18 \]</div>
+<p>The result, 2,291 RPM and 13.18 BHP, is Class 22 (<span class="arithmatex">\( 2{,}291 \le 2{,}812 \)</span>). Because the pressure columns are 4 in. wg apart at this point in the table, a straight line between them is an approximation; for a quotation, confirm the final speed in Fan Selector, which computes the point directly.</p>
+<p>The MicroSim below lets you practice reading, interpolating and classifying on the same RBA 913 excerpt, with each answer checked.</p>
+<h4 id="diagram-performance-table-reader">Diagram: Performance Table Reader<a class="headerlink" href="#diagram-performance-table-reader" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Performance Table Reader</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch26-performance-table-reader<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> use<br/>
+<strong>Learning Objective:</strong> The learner will use an excerpt of the RBA 913 performance table to find the RPM and BHP for a duty point, by direct reading or linear interpolation within ±1%, and to name the fan class the point requires.</p>
+<p><strong>Prerequisites:</strong> performance table, performance table header, outlet velocity, class shading, interpolation (all defined in the section "Performance Tables" above).</p>
+<p><strong>Evidence of Mastery:</strong> For six duty points the learner types an RPM and a BHP and picks a class (22, 32 or 45) before checking. A duty point is correct when RPM and BHP are each within the tolerance in Rules and the class matches. Mastery is 5 of 6 correct. Hovering cells and toggling the class overlay are exploration.</p>
+<p><strong>Misconceptions:</strong> (1) The class is decided by the static pressure column alone. (2) Interpolation can use the nearest cell instead of the two bracketing cells. (3) A duty point between two pressure columns can be interpolated in one step.</p>
+<p><strong>Instructional Rationale:</strong> Computing values and committing a class before feedback is the Apply-level practice a quoting engineer needs; the class overlay is shown only after the answer so the learner must use the footer speeds.</p>
+<p><strong>Content:</strong></p>
+<p>The grid is the 5-row by 8-column RBA 913 excerpt exactly as printed in the chapter section "Reading a Performance Table" (CFM 3,348, 3,720, 4,092, 4,464, 4,836 with OV 3,600, 4,000, 4,400, 4,800, 5,200 FPM; SP 4, 8, 12, 16, 20, 24, 28, 32 in. wg; all 40 RPM / BHP cells). Cells marked as Class 32 or Class 45 in that table carry that marking only when the class overlay is turned on. The underlined cells (4,836 CFM at 28 and at 32 in. SP) carry the label "maximum static efficiency".</p>
+<p>Header shown above the grid: "RBA 913. Impeller diameter 22.625 in. Tip speed (FPM) = 5.92 × RPM. Outlet area 0.93 ft². Fan Efficiency Grade FEG80." Footer: "Maximum RPM: Class 22 = 2,812; Class 32 = 3,337; Class 45 = 4,000. Performance certified for installation type B and D. BHP does not include transmission losses. Ratings do not include the effects of appurtenances."</p>
+<p>Six duty points, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Duty</th>
+<th>Method</th>
+<th>RPM</th>
+<th>BHP</th>
+<th>Class</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4,092 CFM at 12 in.</td>
+<td>Direct</td>
+<td>2,167</td>
+<td>11.72</td>
+<td>22</td>
+<td>Row 4,092, column 12 in.; 2,167 ≤ 2,812 so Class 22.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3,720 CFM at 24 in.</td>
+<td>Direct</td>
+<td>2,879</td>
+<td>21.02</td>
+<td>32</td>
+<td>2,879 is above 2,812 and at or below 3,337, so Class 32.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4,836 CFM at 32 in.</td>
+<td>Direct</td>
+<td>3,340</td>
+<td>35.65</td>
+<td>45</td>
+<td>3,340 is 3 RPM above the Class 32 limit of 3,337, so Class 45.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4,000 CFM at 12 in.</td>
+<td>Interpolate CFM</td>
+<td>2,157</td>
+<td>11.42</td>
+<td>22</td>
+<td>f = (4,000 − 3,720) / (4,092 − 3,720) = 0.753 between rows 3,720 and 4,092.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4,000 CFM at 14 in.</td>
+<td>Interpolate CFM then SP</td>
+<td>2,291</td>
+<td>13.18</td>
+<td>22</td>
+<td>Interpolate the 12 in. and 16 in. columns at f = 0.753, then halfway between them.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4,464 CFM at 30 in.</td>
+<td>Interpolate SP</td>
+<td>3,224</td>
+<td>31.08</td>
+<td>32</td>
+<td>Halfway between 28 in. (3,126 / 28.92) and 32 in. (3,321 / 33.24).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Twin City Fan Catalog 902 (November 2017), page 24, RBA 913; https://tcf.com/wp-content/uploads/2018/06/RBO-RBR-RBA-RBW-RBP-Industrial-Fans-Catalog-902.pdf. Interpolated answers computed from the Rules. The sim states that values must be confirmed in Fan Selector before quoting.</p>
+<p><strong>Rules:</strong> Linear interpolation y = y1 + (x − x1) / (x2 − x1) × (y2 − y1). Double interpolation interpolates airflow within each bracketing pressure column first, then interpolates pressure between the two results. Tolerance: direct readings must match exactly (±1 RPM, ±0.01 BHP); interpolated answers must be within ±1% of the RPM and BHP in Content. Class: 22 when RPM ≤ 2,812; 32 when 2,812 &lt; RPM ≤ 3,337; 45 when 3,337 &lt; RPM ≤ 4,000.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads duty point 1 and finds the row and column; hovering a cell highlights its row and column heads.</li>
+<li>The learner types RPM and BHP, picks a class and presses Check. Each of the three answers is marked; then the class overlay turns on.</li>
+<li>For interpolated points, the learner can open a scratch panel that shows the bracketing cells they selected and the fraction f once they enter it; the panel does not compute the answer.</li>
+<li>The overlay turns off again when the next duty point loads. After point 6 the score is shown.</li>
+</ol>
+<p><strong>Feedback:</strong> Six points, fixed order, two attempts each; the first is scored. Correct: "Correct: " followed by the row, column and class reasoning. Incorrect: names which of RPM, BHP or class is wrong and shows the "Feedback when wrong" text. After the second attempt the answer and its calculation are revealed. Score shown as "Duty points correct: n of 6".</p>
+<p><strong>Starting State:</strong> The grid with the class overlay off, the header and footer visible, and duty point 1 shown. The prompt reads "What speed and power does this duty need, and which class must you order?"</p>
+<p><strong>Chapter Anchors:</strong> RBA 913 values in the chapter excerpt table; 4,092 CFM at 12 in. gives 2,167 RPM and 11.72 BHP, Class 22; 4,000 CFM at 12 in. gives 2,157 RPM and 11.42 BHP; 4,000 CFM at 14 in. gives 2,291 RPM and 13.18 BHP, Class 22; 4,836 CFM at 32 in. is 3,340 RPM, Class 45; class limits 2,812, 3,337 and 4,000 RPM.</p>
+</details>
+<h3 id="fan-selection-range">Fan Selection Range<a class="headerlink" href="#fan-selection-range" title="Permanent link">&para;</a></h3>
+<p>A size can deliver a duty point and still be the wrong size. The <strong>fan selection range</strong> is the part of a fan's performance table, or curve, where it runs stably and near its best efficiency: to the right of the stall region (Chapter 10) and not so far right that efficiency falls away. Catalog 902's overview puts it directly: "it is important that the fan size is selected so that it will operate at or near its maximum efficiency point." Its tables mark the maximum static efficiency by underlining those figures. Catalog 300's typical specification says the BC's horsepower curve "shall reach a peak in the normal selection area," which is the same idea expressed through the power curve.</p>
+<p>Static efficiency for any cell can be computed from the table with the equation from Chapter 10:</p>
+<h4 id="static-efficiency-from-a-table-cell">Static Efficiency from a Table Cell<a class="headerlink" href="#static-efficiency-from-a-table-cell" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ \eta_s = \frac{Q \times P_s}{6356 \times BHP} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( \eta_s \)</span> is the fan static efficiency (as a decimal)</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow in CFM</li>
+<li><span class="arithmatex">\( P_s \)</span> is the fan static pressure in in. wg</li>
+<li><span class="arithmatex">\( BHP \)</span> is the brake horsepower from the table</li>
+<li>6,356 converts CFM × in. wg to horsepower</li>
+</ul>
+<h4 id="worked-example-same-airflow-three-pressures">Worked Example: Same Airflow, Three Pressures<a class="headerlink" href="#worked-example-same-airflow-three-pressures" title="Permanent link">&para;</a></h4>
+<p>All three cells are on the 4,836 CFM row of RBA 913:</p>
+<table>
+<thead>
+<tr>
+<th>SP (in. wg)</th>
+<th>RPM / BHP</th>
+<th>Static efficiency</th>
+<th>Position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>28</td>
+<td>3152 / 31.23</td>
+<td><span class="arithmatex">\( 4{,}836 \times 28 / (6356 \times 31.23) = 0.68 \)</span></td>
+<td>Underlined: maximum static efficiency</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1967 / 10.41</td>
+<td><span class="arithmatex">\( 4{,}836 \times 8 / (6356 \times 10.41) = 0.58 \)</span></td>
+<td>Right of peak</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1612 / 6.38</td>
+<td><span class="arithmatex">\( 4{,}836 \times 4 / (6356 \times 6.38) = 0.48 \)</span></td>
+<td>Far right of peak</td>
+</tr>
+</tbody>
+</table>
+<p>At 28 in. wg the RBA 913 is working at its best. At 4 in. wg it delivers the airflow, but at less than half the static efficiency, because a fan this size is built for higher pressure than 4 in. wg needs. A low-pressure duty at this airflow belongs on a different size or a different family, not on the RBA 913, and comparing several sizes at the same duty point, in the tables or in Fan Selector, is how you find it.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Check the Neighbors</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Before accepting a size, look one size smaller and one size larger at the same duty point. If a neighbor needs noticeably less BHP, your first choice is outside its selection range.</p>
+</div>
+<h2 id="rating-conditions">Rating Conditions<a class="headerlink" href="#rating-conditions" title="Permanent link">&para;</a></h2>
+<p>Every number in a performance table is true only under the conditions the catalog states. <strong>Rating conditions</strong> are those stated conditions: the air density, the installation type, and what the BHP does and does not include. The Catalog 902 footer states all of them in three lines:</p>
+<ul>
+<li>"Performance certified is for installation type B &amp; D: Free or ducted inlet, ducted outlet."</li>
+<li>"Power ratings (BHP) do not include transmission losses."</li>
+<li>"Performance ratings do not include the effects of appurtenances (accessories)."</li>
+</ul>
+<p>The density is stated elsewhere: ERG-100 says that in each fan catalog the performance tables are based on standard air density, dry air at 70°F at sea level (29.92 in. Hg), equal to 0.075 lb/ft³. The installation types are the four AMCA test setups introduced in Chapter 10: A (free inlet, free outlet), B (free inlet, ducted outlet), C (ducted inlet, free outlet) and D (ducted inlet, ducted outlet). A rating certified for B and D therefore assumes there is a duct on the fan outlet.</p>
+<h4 id="worked-example-when-the-job-is-not-the-rating">Worked Example: When the Job Is Not the Rating<a class="headerlink" href="#worked-example-when-the-job-is-not-the-rating" title="Permanent link">&para;</a></h4>
+<p>An RBA 913 will move 4,464 CFM at 16 in. wg on a job where it discharges directly into a plenum room with no outlet duct.</p>
+<ol>
+<li><strong>Read the table:</strong> 2,470 RPM, 16.85 BHP, Class 22.</li>
+<li><strong>Compare the installation:</strong> no outlet duct means installation type A or C. The rating is certified for B and D, so the table does not describe this installation.</li>
+<li><strong>Size the energy at stake:</strong> the outlet velocity on this row is 4,800 FPM, so the outlet velocity pressure at standard air is <span class="arithmatex">\( (4{,}800 / 4{,}005)^2 = 1.44 \)</span> in. wg. That is the kinetic energy leaving the fan; with a ducted outlet some of it is recovered as static pressure, and with a free outlet it is not, so the fan will not deliver the tabulated static pressure at the tabulated speed.</li>
+<li><strong>Act:</strong> confirm the selection for the actual installation with Fan Selector or the factory, or add an outlet duct, and account for the outlet condition as a system effect (Chapter 25).</li>
+</ol>
+<p>The table value was correct and the selection was still wrong, because the job broke a rating condition. Read the conditions every time.</p>
+<h3 id="amca-certified-ratings">AMCA Certified Ratings<a class="headerlink" href="#amca-certified-ratings" title="Permanent link">&para;</a></h3>
+<p><strong>AMCA certified ratings</strong> are published performance figures that the Air Movement and Control Association has licensed the manufacturer to mark with the AMCA seal, after testing in an AMCA-accredited laboratory and check tests under the AMCA Certified Ratings Program (AMCA 211 for air, AMCA 311 for sound). The seal applies only to the models, the catalog and the performance types the certification statement names, so the statement itself is the thing to read.</p>
+<p>The two catalogs used here word it differently:</p>
+<ul>
+<li>Catalog 300: "Twin City Fan &amp; Blower certifies that the Model BC-SW fans shown herein are licensed to bear the AMCA Seal. Certified performance data may be found in Twin City Fan &amp; Blower's Fan Selector software." The overview lists certifications as AMCA Sound/Air, AMCA Air, FEI and UL 705.</li>
+<li>Catalog 902: the RBO, RBR, RBA and RBW are licensed to bear the AMCA Seal, and "the ratings shown are based on tests and procedures performed in accordance with AMCA Publication 211." The overview lists certifications as AMCA Air and FEG. The RBP "is not AMCA licensed."</li>
+</ul>
+<h4 id="worked-example-checking-a-specification-requirement">Worked Example: Checking a Specification Requirement<a class="headerlink" href="#worked-example-checking-a-specification-requirement" title="Permanent link">&para;</a></h4>
+<p>A specification requires "AMCA certified ratings seal for both sound and air performance." Three candidates are on the table:</p>
+<table>
+<thead>
+<tr>
+<th>Candidate</th>
+<th>What the catalog states</th>
+<th>Meets the requirement?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BC-SW</td>
+<td>AMCA Sound/Air certification listed</td>
+<td>Yes, with certified data taken from Fan Selector</td>
+</tr>
+<tr>
+<td>RBA</td>
+<td>AMCA Air (and FEG) listed; no sound certification listed</td>
+<td>No, for the sound part; raise it with the engineer before bidding</td>
+</tr>
+<tr>
+<td>RBP</td>
+<td>Not AMCA licensed</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>The RBA might be the better fan for the airstream, and it may still be the right recommendation. The point is to find the gap from the certification statement before the bid, not from a submittal rejection after it.</p>
+<h3 id="transmission-losses">Transmission Losses<a class="headerlink" href="#transmission-losses" title="Permanent link">&para;</a></h3>
+<p><strong>Transmission losses</strong> are the power lost between the motor shaft and the fan shaft in the drive: belt flexing and slip, and bearing friction in the drive components. Catalog BHP is the power at the fan shaft, and the Catalog 902 footer says plainly that it does not include them. On a belt-driven fan the motor must supply the fan BHP plus the drive loss. On an Arrangement 4 or 8 fan there are no belts, and coupling losses are small enough to be ignored in a catalog selection.</p>
+<p>AMCA Publication 203 gives estimated belt drive losses as a percentage of motor power, larger for small drives and smaller for large ones. The 4 percent used below is illustrative.</p>
+<h4 id="motor-power-including-drive-loss">Motor Power Including Drive Loss<a class="headerlink" href="#motor-power-including-drive-loss" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[ HP_{motor} = \frac{BHP}{1 - L_d} \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( HP_{motor} \)</span> is the power the motor must deliver, in horsepower</li>
+<li><span class="arithmatex">\( BHP \)</span> is the fan brake horsepower from the performance table</li>
+<li><span class="arithmatex">\( L_d \)</span> is the drive loss as a decimal fraction of motor power</li>
+</ul>
+<h4 id="worked-example-adding-the-drive-loss">Worked Example: Adding the Drive Loss<a class="headerlink" href="#worked-example-adding-the-drive-loss" title="Permanent link">&para;</a></h4>
+<p>The RBA 913 at 4,092 CFM and 12 in. wg needs 11.72 BHP at the fan shaft. On a belt-driven Arrangement 9 with an illustrative 4 percent drive loss:</p>
+<div class="arithmatex">\[ HP_{motor} = \frac{11.72}{1 - 0.04} = 12.21 \text{ hp} \]</div>
+<p>The difference is about half a horsepower. It decides nothing here, but it is the half horsepower that pushes a selection over a motor size when the fan BHP sits just under a standard rating, which is exactly the case where people forget it.</p>
+<h3 id="appurtenance-effects">Appurtenance Effects<a class="headerlink" href="#appurtenance-effects" title="Permanent link">&para;</a></h3>
+<p><strong>Appurtenance effects</strong> are the changes in fan performance caused by accessories in or at the airstream, such as inlet boxes, variable inlet vanes, outlet dampers, inlet and outlet screens, and guards over an open inlet. Catalog ratings are for the bare fan and exclude them. Each accessory adds a pressure loss or disturbs the flow into or out of the impeller, so the fan must run faster and draw more power to deliver the same duty. The catalogs describe accessories in terms of this effect: Catalog 300 calls its inlet boxes "designed to minimize pressure drop," and its typical specification uses cantilevered inlet vane blades through size 660 "to minimize air performance insertion losses and noise." Account for appurtenances with the manufacturer's data in Fan Selector or from the factory, and treat their flow disturbance as a system effect (Chapter 25).</p>
+<h3 id="actual-operating-conditions">Actual Operating Conditions<a class="headerlink" href="#actual-operating-conditions" title="Permanent link">&para;</a></h3>
+<p><strong>Actual operating conditions</strong> are the temperature, altitude and density at which the fan will really run, as opposed to the standard air of the table. Because tables are at standard air, actual conditions must be converted before entering the table, and the results converted back. ERG-100 works this example: 17,000 CFM at 2.5 in. wg, 300°F and 3,000 ft altitude.</p>
+<ol>
+<li>The ERG-100 correction factor for 300°F at 3,000 ft is 0.624.</li>
+<li>Standard-air static pressure: <span class="arithmatex">\( 2.5 / 0.624 = 4.0 \)</span> in. wg. Enter the table at 17,000 CFM and 4.0 in. wg. Airflow is not corrected.</li>
+<li>The table (by interpolation) gives 918 RPM and 14.36 BHP at standard air.</li>
+<li>BHP at operating conditions: <span class="arithmatex">\( 14.36 \times 0.624 = 8.96 \)</span> BHP.</li>
+<li>Cold start BHP at the site (70°F, 3,000 ft, factor 0.896): <span class="arithmatex">\( 14.36 \times 0.896 = 12.87 \)</span> BHP.</li>
+</ol>
+<p>The fan runs at 918 RPM in every case. The motor sees 8.96 BHP when the air is hot but 12.87 BHP when the fan starts in cold air, and that difference is the subject of motor selection below.</p>
+<h2 id="limits-and-mechanical-data">Limits and Mechanical Data<a class="headerlink" href="#limits-and-mechanical-data" title="Permanent link">&para;</a></h2>
+<h3 id="catalog-operating-limits">Catalog Operating Limits<a class="headerlink" href="#catalog-operating-limits" title="Permanent link">&para;</a></h3>
+<p><strong>Catalog operating limits</strong> are the published boundaries a selection must stay inside: maximum RPM by size and class, temperature limits by construction and arrangement, and limits stated as notes. Examples from the two catalogs:</p>
+<ul>
+<li>Maximum RPM: BC-SW size 365 runs to 995 RPM in Class I and 1,283 RPM in Class II (Catalog 300, page 16).</li>
+<li>Speed notes: "Operating speeds above 4000 RPM are not recommended. Consult factory" (Catalog 300); RBO 905 has a Class 22 maximum of 5,296 RPM but "selections above 4000 RPM not recommended" (Catalog 902).</li>
+<li>Temperature: standard BC construction from –20°F to +300°F, but Arrangements 3 and 3F only to 130°F and Arrangement 4 to 180°F; standard RB Arrangement 4 fans to 200°F.</li>
+<li>Derating: maximum safe speed must be reduced at high temperature; Catalog 300 directs you to Fan Selector for the derated values.</li>
+</ul>
+<p>A selection that violates any one of these is not a selection, however good its efficiency.</p>
+<h3 id="first-critical-speed">First Critical Speed<a class="headerlink" href="#first-critical-speed" title="Permanent link">&para;</a></h3>
+<p>The <strong>first critical speed</strong> is the lowest rotating speed at which the shaft and impeller assembly's natural bending frequency matches the speed of rotation, so that small unbalance forces are amplified into severe vibration. Fans are designed to run well below it. Both catalogs state the margin: shafts "are sized for a first critical speed of at least 1.43 times the maximum speed for the class." For a BC-SW size 365 Class II, the shaft's first critical speed is therefore at least <span class="arithmatex">\( 1.43 \times 1{,}283 = 1{,}835 \)</span> RPM. That margin is calculated at the class maximum, which is one more reason a fan must never be sped up past its class limit in the field.</p>
+<h3 id="amca-204-balance-grade">AMCA 204 Balance Grade<a class="headerlink" href="#amca-204-balance-grade" title="Permanent link">&para;</a></h3>
+<p>The <strong>AMCA 204 balance grade</strong> is the balance quality and vibration category a fan is built to under ANSI/AMCA Standard 204, <em>Balance Quality and Vibration Levels for Fans</em>. Each fan application category (BV-1 through BV-5) sets a balance quality grade for the impeller and vibration limits for the assembled fan. Catalog 300 states that BC impellers are statically and dynamically balanced to grade BV-3, which "corresponds to a Balance Quality Grade G6.3," that assembled fans are test run at the rated speed or maximum RPM with vibration recorded in three directions on both bearings, and that trim balancing is performed if needed to stay within BV-3 limits. When a specification asks for a stricter category, it is asking for something beyond the catalog standard and must be quoted as such.</p>
+<h3 id="material-specifications-table">Material Specifications Table<a class="headerlink" href="#material-specifications-table" title="Permanent link">&para;</a></h3>
+<p>The <strong>material specifications table</strong> lists, for each size and class, the physical makeup of the fan: housing sheet gauges for the sides and scroll, shaft diameter and bearing type by arrangement, and bare fan weight by arrangement. Its columns use terms from Chapters 16 and 17, and its footnotes carry the bearing type codes. In Catalog 300 the bearing codes are B (ball bearing), R (unit roller bearings) and SR (spherical roller bearings with split pillow block housings); gauge numbers follow sheet steel practice, where a smaller number is thicker steel.</p>
+<h4 id="worked-example-reading-one-row">Worked Example: Reading One Row<a class="headerlink" href="#worked-example-reading-one-row" title="Permanent link">&para;</a></h4>
+<p>Catalog 300, BC SWSI Class I, size 365 (page 17):</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Value</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Housing sides</td>
+<td>10</td>
+<td>10 gauge steel sides</td>
+</tr>
+<tr>
+<td>Housing scroll</td>
+<td>12</td>
+<td>12 gauge steel scroll, lighter than the sides</td>
+</tr>
+<tr>
+<td>Arr. 1 and 9 shaft and bearing</td>
+<td>1-15/16 in., B</td>
+<td>Ball bearings on a 1-15/16 in. shaft</td>
+</tr>
+<tr>
+<td>Arr. 3 shaft and bearing</td>
+<td>1-15/16 in., B</td>
+<td>Same shaft and bearing in Arrangement 3</td>
+</tr>
+<tr>
+<td>Bare fan weight, Arr. 1 / 3 / 9</td>
+<td>1,009 / 948 / 1,059 lb</td>
+<td>Weight without motor and drive, for rigging and isolator selection</td>
+</tr>
+</tbody>
+</table>
+<p>Two uses follow directly. The bare fan weight, plus motor and drive weight, sets the load for vibration isolators (Chapter 22). The bearing type tells the maintenance department which bearings to stock. Moving up the same table, size 490 switches from ball to unit roller bearings in Arrangement 3 (R) while Arrangements 1 and 9 stay on ball bearings, a difference a reader only finds by reading the row.</p>
+<h2 id="product-options">Product Options<a class="headerlink" href="#product-options" title="Permanent link">&para;</a></h2>
+<p><strong>Product options</strong> are the construction choices and accessories a catalog offers beyond the standard fan: optional materials and construction (aluminum, stainless steel, high temperature, spark resistant), and accessories such as belt guards, shaft and bearing guards, vibration isolation and inertia bases, drains, access doors, flanged inlets and outlets, companion flanges, shaft seals, inlet boxes, coupling guards, inlet and outlet screens, outlet dampers, variable inlet vanes and drives. The catalog states what each one does and when to use it, and those statements are the basis of a recommendation.</p>
+<h4 id="worked-example-choosing-a-capacity-control">Worked Example: Choosing a Capacity Control<a class="headerlink" href="#worked-example-choosing-a-capacity-control" title="Permanent link">&para;</a></h4>
+<p>A BC-SW on clean supply air must reduce airflow, and the customer expects to run at about 60 percent of full volume for most of the year. Catalog 300 describes three options:</p>
+<ol>
+<li><strong>Outlet dampers</strong> add resistance and move the operating point left. They are the least expensive option, and the horsepower savings are "usually much less than other methods." Parallel blade dampers suit modulation from full open to about 75 percent open; opposed blade dampers cost about 10 percent more and suit modulation over the entire range.</li>
+<li><strong>Variable inlet vanes</strong> pre-spin the air in the direction of rotation, giving a family of reduced curves. They cost about 50 to 80 percent more than outlet dampers but offer significant energy savings.</li>
+<li><strong>A variable frequency drive</strong> changes fan speed and "can provide the greatest potential for energy savings"; the catalog says it should be considered for extended operation at part load, "especially below 70% of the full volume operation."</li>
+</ol>
+<p>Sixty percent of full volume for most of the year is below the 70 percent the catalog names, so the VFD is the recommendation. If the owner cannot accept a VFD, the next choice is variable inlet vanes; an outlet damper would have to be opposed blade to modulate that far. Any damper or vane is an appurtenance, so its effect must be included in the selection.</p>
+<h2 id="motor-selection">Motor Selection<a class="headerlink" href="#motor-selection" title="Permanent link">&para;</a></h2>
+<p><strong>Motor selection</strong> is choosing the motor horsepower, enclosure and type for a fan from the catalog BHP and the job conditions. The catalog gives the fan BHP at standard air; the motor must also cover drive losses, the cold start of a hot fan, and the service conditions covered in Chapters 14 and 15 (enclosure, efficiency class, inverter duty, hazardous location). Catalog 300 also sets drive rules that follow from the motor: drives and belts rated for 150 percent of the required motor horsepower, and variable pitch motor sheaves on 10 HP and smaller, fixed pitch on 15 HP and larger.</p>
+<h4 id="worked-example-two-motors-from-the-catalog">Worked Example: Two Motors from the Catalog<a class="headerlink" href="#worked-example-two-motors-from-the-catalog" title="Permanent link">&para;</a></h4>
+<p><strong>Room-temperature duty.</strong> The RBA 913 at 4,092 CFM and 12 in. wg needs 12.21 hp at the motor after the illustrative 4 percent drive loss. The next standard NEMA motor rating at or above 12.21 hp is 15 HP. A 15 HP TEFC motor is a sound choice for a dust collector exhauster; the motor is not running into its service factor, and Catalog 300's drive rule would call for a fixed pitch sheave at 15 HP.</p>
+<p><strong>Hot duty.</strong> For the ERG-100 fan at 300°F and 3,000 ft, the hot BHP is 8.96, but the fan starts in 70°F air at 3,000 ft and draws 12.87 BHP until the air heats up. With the same illustrative 4 percent drive loss the cold requirement is <span class="arithmatex">\( 12.87 / 0.96 = 13.41 \)</span> hp, so the motor is 15 HP, not the 10 HP that the hot BHP alone would suggest. If the fan could be started with dampers closed or on a VFD, a smaller motor might be justified, but that is a deliberate design choice covered in Chapter 27, not a default.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Size the Motor for the Cold Start</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap on hot jobs is sizing the motor from the operating BHP, because that is the number at the design condition. Cold air is denser, so the same fan at the same speed draws more power at start-up and until the system warms. Always take the cold BHP at the site altitude, add the drive loss, and size the motor from that.</p>
+</div>
+<h2 id="fan-selector-software">Fan Selector Software<a class="headerlink" href="#fan-selector-software" title="Permanent link">&para;</a></h2>
+<p><strong>Fan Selector software</strong> is Twin City Fan's selection program, downloaded from tcf.com, that computes certified performance for a duty point and supplies the performance, drawings and accessory data the printed catalog leaves out, including maximum safe speeds derated for elevated temperature. Catalog 300 states that BC certified performance data "may be found in Twin City Fan &amp; Blower's Fan Selector software," and Catalog 902 says that "for complete product performance, drawings and available accessories," you should download the Fan Selector program. Fan Selector does what tables cannot: it computes the exact point instead of interpolating, and it holds certified data for lines, such as the BC, whose catalogs print no tables at all.</p>
+<p>The catalog still matters when you use the software, because the software answers "what does it take?" and the catalog answers "is that allowed, and what does it include?"</p>
+<h4 id="worked-example-checking-a-software-selection-against-the-catalog">Worked Example: Checking a Software Selection Against the Catalog<a class="headerlink" href="#worked-example-checking-a-software-selection-against-the-catalog" title="Permanent link">&para;</a></h4>
+<p>Fan Selector returns a BC-SW size 365 at 1,150 RPM for a customer's duty at standard air (the selection speed is illustrative). Check it against Catalog 300:</p>
+<ol>
+<li><strong>Class.</strong> Engineering data (page 16) gives size 365 maximum RPM of 995 in Class I and 1,283 in Class II. Since <span class="arithmatex">\( 995 &lt; 1{,}150 \le 1{,}283 \)</span>, the fan must be ordered Class II.</li>
+<li><strong>Critical speed margin.</strong> The shaft is sized for a first critical speed of at least <span class="arithmatex">\( 1.43 \times 1{,}283 = 1{,}835 \)</span> RPM, well above 1,150 RPM.</li>
+<li><strong>Arrangement and temperature.</strong> If the customer wants Arrangement 4 on 160°F air, Table 1 limits Arrangement 4 to 180°F, so it is allowed; at 200°F it would not be.</li>
+<li><strong>Certification.</strong> The BC-SW is listed for AMCA Sound/Air, so certified sound and air data can be taken from the same selection.</li>
+<li><strong>What is not included.</strong> Add drive losses for a belt-driven arrangement and any appurtenance effects before choosing the motor.</li>
+</ol>
+<p>The software produced a number; the catalog turned it into an order line: BC-SW 365, Class II, at 1,150 RPM, in an arrangement and temperature the catalog permits.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Software Computes, the Catalog Permits</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of Fan Selector and the catalog as two halves of one answer. The software tells you what speed and power a duty requires; the catalog tells you whether that speed, class, arrangement and temperature are allowed and what the numbers leave out. A selection is finished only when both halves agree.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A Twin City Fan <strong>product catalog</strong> answers three kinds of question: can it be built, how will it perform, and what will it look like. Know which one you are asking.</li>
+<li><strong>Catalog structure</strong> is consistent: overview, construction, high temperature, arrangements, options, engineering data, material specifications, dimensions, typical specifications, and in some catalogs performance data. Catalog 300 puts BC performance in Fan Selector instead of tables.</li>
+<li><strong>Technical descriptions</strong> hold restrictions that tables omit. When <strong>FanPedia and the current catalog</strong> disagree, the current catalog wins; check the edition date on tcf.com.</li>
+<li><strong>Fan size</strong> labels one impeller diameter within a model; the performance page header gives the diameter, tip speed factor and outlet area. A <strong>model code</strong> names the line and impeller; model, size, class and arrangement must be checked together against the availability table.</li>
+<li>The <strong>air change method</strong> and <strong>minimum conveying velocity</strong> supply airflow and duct velocity; <strong>fan family selection</strong> comes before size and depends on the airstream.</li>
+<li>A <strong>performance table</strong> lists RPM and BHP by airflow and static pressure at standard air. Read the <strong>header</strong> and footer first, read the cell, use <strong>interpolation</strong> between rows and columns, and read the class from the <strong>class shading</strong>, which is a map of the class maximum speeds.</li>
+<li>Stay in the <strong>fan selection range</strong> near the underlined maximum efficiency; compute static efficiency to compare cells and sizes.</li>
+<li><strong>Rating conditions</strong> are standard air, a stated installation type (B and D in Catalog 902), BHP without <strong>transmission losses</strong>, and no <strong>appurtenance effects</strong>. <strong>AMCA certified ratings</strong> apply only to what the certification statement names.</li>
+<li>Convert <strong>actual operating conditions</strong> to standard air before entering a table, and size the motor for the cold start. <strong>Motor selection</strong> adds drive loss to BHP and goes to the next standard motor rating.</li>
+<li><strong>Catalog operating limits</strong>, <strong>first critical speed</strong> (at least 1.43 times class maximum speed), the <strong>AMCA 204 balance grade</strong> (BV-3 for BC) and the <strong>material specifications table</strong> describe what the fan is built to tolerate.</li>
+<li><strong>Product options</strong> carry catalog guidance on when to use them; <strong>Fan Selector software</strong> computes the point, and the catalog decides whether it is allowed.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Read the Catalog Now</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You took a duty point through a real Twin City Fan performance table, interpolated in two directions, read the class from the shading, and checked it against the rating conditions and the catalog limits. That is the core skill behind every quote, and Chapter 27 builds the full selection and specification on top of it.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../25-fan-laws-system-effect-and-sound/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 25. Fan Laws, System Effect and Sound">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                25. Fan Laws, System Effect and Sound
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../27-fan-selection-and-writing-the-specification/" class="md-footer__link md-footer__link--next" aria-label="Next: 27. Fan Selection and Writing the Specification">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                27. Fan Selection and Writing the Specification
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

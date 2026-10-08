@@ -1,0 +1,582 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Air Movement,,FOUND
+2,Fan Speed,,FOUND
+3,Horsepower,,FOUND
+4,Airflow Volume,1,FOUND
+5,Cubic Feet Per Minute,4,FOUND
+6,Air Velocity,4,FOUND
+7,Feet Per Minute,6,FOUND
+8,Air Pressure,1,FOUND
+9,Inches of Water Gauge,8,FOUND
+10,Static Pressure,8,FOUND
+11,Velocity Pressure,8|6,FOUND
+12,Total Pressure,10|11,FOUND
+13,Air Density,1,FOUND
+14,Air Temperature,13,FOUND
+15,Altitude,13,FOUND
+16,Standard Air,13|14|15,FOUND
+17,Airstream,1,FOUND
+18,Contaminated Airstream,17,FOUND
+19,Corrosive Airstream,18,FOUND
+20,Particulate-Laden Airstream,18,FOUND
+21,Hot Airstream,17|14,FOUND
+22,Wet Airstream,17,FOUND
+23,Explosive Atmosphere,18,FOUND
+24,Duct System,4,FOUND
+25,Fan,1|2,FOUND
+26,Blower,25,FOUND
+27,Fan Housing,25,ANAT
+28,Impeller,25,ANAT
+29,Fan Inlet,27,ANAT
+30,Fan Outlet,27,ANAT
+31,Fan Shaft,28,ANAT
+32,Bearing,31,ANAT
+33,Fan Motor,3|25,ANAT
+34,Drive Train,33|31|32,ANAT
+35,Fan Family,25,FAM
+36,Centrifugal Fan,35|28,FAM
+37,Axial Fan,35|28,FAM
+38,Mixed Flow Fan,36|37,FAM
+39,Scroll Housing,27|36,ANAT
+40,Housed Centrifugal Fan,36|39,FAM
+41,Unhoused Centrifugal Fan,36,FAM
+42,Plenum Fan,41,FAM
+43,Plug Fan,42,FAM
+44,Inline Centrifugal Fan,36|24,FAM
+45,Square Inline Centrifugal Fan,44,FAM
+46,Tubular Housing,27|37,ANAT
+47,Tubeaxial Fan,37|46,FAM
+48,Guide Vanes,37,ANAT
+49,Vaneaxial Fan,47|48,FAM
+50,Panel Fan,37,FAM
+51,Ring Fan,37,FAM
+52,Pressure Blower,40|26,FAM
+53,Radial Bladed Fan,40|20,FAM
+54,Radial Tip Fan,40,FAM
+55,Duct Fan,40|24,FAM
+56,Filtered Supply Fan,40,FAM
+57,Power Roof Ventilator,35,FAM
+58,Roof Ventilator,57,FAM
+59,Centrifugal Roof Exhauster,57|36,FAM
+60,Centrifugal Wall Exhauster,59,FAM
+61,Roof Mounted Axial Fan,57|37,FAM
+62,Wall Mounted Fan,37,FAM
+63,Gravity Relief Ventilator,58,FAM
+64,Ceiling Ventilator,36,FAM
+65,Cabinet Ventilator,64,FAM
+66,Utility Set,40,FAM
+67,Laboratory Fume Exhaust Fan,18|36,FAM
+68,Kitchen Exhaust Fan,57|18,FAM
+69,Smoke and Heat Exhaust Fan,21|57,FAM
+70,Fiberglass Fan,19|35,FAM
+71,Mancooler,37,FAM
+72,Air Kit,35|34,FAM
+73,Commercial Duty Fan,35,FAM
+74,Industrial Duty Fan,35,FAM
+75,Upblast Discharge,57|30,FAM
+76,Downblast Discharge,57|30,FAM
+77,Entrained Flow,67,FAM
+78,Plume Dilution,77,FAM
+79,Nozzle and Windband,78,ANAT
+80,Bypass Air Plenum,67,ANAT
+81,Exploded View,27|28|34,ANAT
+82,Housing Side Plate,39,ANAT
+83,Scroll Wrapper,39,ANAT
+84,Cutoff,39,ANAT
+85,Inlet Collar,29,ANAT
+86,Inlet Flange,29,ANAT
+87,Outlet Flange,30,ANAT
+88,Access Door,27,ANAT
+89,Belt Guard,34,ANAT
+90,Belt Tube,47|34,ANAT
+91,Straightening Vanes,48,ANAT
+92,Welded Housing,27,ANAT
+93,Bolted Housing,27,ANAT
+94,Weatherhood,57,ANAT
+95,Backdraft Damper,30,ANAT
+96,Bird and Safety Screens,29|30,ANAT
+97,Roof Curb,57,ANAT
+98,Stack Cap,30,ANAT
+99,Split Housing,27|88,ANAT
+100,Horizontal Split Housing,99,ANAT
+101,Three-Way Split Housing,99,ANAT
+102,Pie Split Housing,99,ANAT
+103,Impeller Blade,28,IMP
+104,Blade Leading Edge,103,IMP
+105,Impeller Back Plate,28,IMP
+106,Impeller Shroud,28,IMP
+107,Impeller Hub,28|31,IMP
+108,Centrifugal Impeller,28|36,IMP
+109,Single Width Single Inlet,108|29,IMP
+110,Double Width Double Inlet,109,IMP
+111,Backward Inclined Impeller,108|103,IMP
+112,Backward Curved Impeller,111,IMP
+113,Airfoil Impeller,111,IMP
+114,Forward Curved Impeller,108|103,IMP
+115,Radial Bladed Impeller,108|53,IMP
+116,Radial Tip Impeller,115|112,IMP
+117,Material Handling Impeller,115|20,IMP
+118,Paper Handling Impeller,117,IMP
+119,Mixed Flow Impeller,38|108,IMP
+120,Axial Impeller,28|37,IMP
+121,Fixed Pitch Impeller,120,IMP
+122,Adjustable Pitch Impeller,120,IMP
+123,Fiberglass Axial Impeller,120|70,IMP
+124,Impeller Orientation,28|29,IMP
+125,Hub on Intake Side,120|124,IMP
+126,Hub on Discharge Side,120|124,IMP
+127,Reversible Impeller,120,IMP
+128,Straight Bore Hub,107,IMP
+129,Taper Lock Hub,107,IMP
+130,Reverse Bore Hub,128,IMP
+131,Back Plate Fins,105|21,IMP
+132,Impeller Balancing,28,IMP
+133,Direct Drive,33|28,ARR
+134,Belt Drive,33|34,ARR
+135,Sheave,134,ARR
+136,V-Belt,135,ARR
+137,Drive Service Factor,134,ARR
+138,Shaft Coupling,31|33,ARR
+139,Overhung Impeller,28|32,ARR
+140,Center Hung Impeller,28|32,ARR
+141,Fan Arrangement,133|134|139|140,ARR
+142,Arrangement 1,141|134,ARR
+143,Arrangement 2,142,ARR
+144,Arrangement 3,141|140,ARR
+145,Arrangement 3 SI and DI,144|110,ARR
+146,Arrangement 4,141|133,ARR
+147,Arrangement 7,144|138,ARR
+148,Arrangement 8,142|138,ARR
+149,Arrangement 9,142|134,ARR
+150,Arrangement 10,149,ARR
+151,Plug Fan Arrangements,43|141,ARR
+152,Arrangement 1P Plug,151|142,ARR
+153,Arrangement 4P Plug,151|146,ARR
+154,Plenum Fan Arrangements,42|141,ARR
+155,Vertical Arrangement,141,ARR
+156,Axial and Inline Arrangements,37|44|141,ARR
+157,Lab Exhaust Arrangements,67|141,ARR
+158,Swingout Fan,156|88,ARR
+159,Clamshell Fan,156|88,ARR
+160,Bearings Out of Airstream,141|21,ARR
+161,Viewed From Drive Side,141,ROT
+162,Rotation,28|161,ROT
+163,Clockwise Rotation,162,ROT
+164,Counterclockwise Rotation,162,ROT
+165,Rotation Arrow,162,ROT
+166,Discharge Position,30|39,ROT
+167,Discharge Angle,166,ROT
+168,Up Blast Discharge Position,167,ROT
+169,Top Horizontal Discharge,167,ROT
+170,Bottom Horizontal Discharge,167,ROT
+171,Down Blast Discharge Position,167,ROT
+172,Angular Discharge,167,ROT
+173,Rotation and Discharge Code,163|164|167|168|169|170|171,ROT
+174,DWDI Discharge Limits,173|110,ROT
+175,Axial Rotation Convention,162|37,ROT
+176,Inline Configuration,44|156,ROT
+177,Motor Position,134|141,ROT
+178,Motor Positions W X Y Z,177|161,ROT
+179,Motor Position Restrictions,178|166,ROT
+180,Axial Motor Positions,177|37,ROT
+181,Plenum Motor Positions,177|42,ROT
+182,Conduit Box Position,177,ROT
+183,Inlet Box Position,166,ROT
+184,Induction Motor,33,MOT
+185,EC Motor,33,MOT
+186,NEMA Frame Size,33,MOT
+187,Motor Enclosure,33,MOT
+188,ODP Motor,187,MOT
+189,TEFC Motor,187,MOT
+190,TEAO Motor,187,MOT
+191,TENV Motor,187,MOT
+192,Explosion Proof Motor,187|23,MOT
+193,Motor Service Factor,33,MOT
+194,Insulation Class,33|14,MOT
+195,Motor Efficiency Class,33,MOT
+196,Conduit Box,33,MOT
+197,C-Face Motor Mount,186,MOT
+198,Foot Mounted Motor,186,MOT
+199,Shaft Grounding Ring,33|31,MOT
+200,Motor Winding RTD,194,MOT
+201,Variable Frequency Drive,184|2,MOT
+202,Motor Base,33,MOT
+203,Slide Base,202|134,MOT
+204,Pivot Motor Base,202|134,MOT
+205,Motor Positioner,202,MOT
+206,Bi-Directional Positioner,205,MOT
+207,Tri-Directional Positioner,205,MOT
+208,Vertical Jack Screws,205,MOT
+209,Bearing Life,32,BRG
+210,L-10 Bearing Life,209,BRG
+211,L-50 Bearing Life,210,BRG
+212,Ball Bearing,32,BRG
+213,Spherical Roller Bearing,32,BRG
+214,Pillow Block Bearing,32,BRG
+215,Split Pillow Block Bearing,214,BRG
+216,Flange Mount Bearing,32,BRG
+217,Totally Split Roller Bearing,213|215,BRG
+218,Two-Bearing Housing,32,BRG
+219,Set Screw Mount,32|31,BRG
+220,Adapter Sleeve Mount,219,BRG
+221,Fixed Bearing,32,BRG
+222,Floating Bearing,221|21,BRG
+223,Bearing Lubrication,32,BRG
+224,Grease Fitting,223,BRG
+225,Static Oil Lubrication,223,BRG
+226,Oil Mist Lubrication,223,BRG
+227,Bearing Seal,32,BRG
+228,Labyrinth Seal,227,BRG
+229,Taconite Seal,227|20,BRG
+230,Bearing Positioner,32,BRG
+231,Bearing Stop Blocks,230,BRG
+232,Bearing Dowel Pins,230,BRG
+233,Bearing Vibration Sensor,32,BRG
+234,Restrained Bearing,32|23,BRG
+235,Shaft Keyway,31|107,BRG
+236,Shaft Turndown,31,BRG
+237,Shaft Sleeve,31,BRG
+238,Clad Shaft,31|19,BRG
+239,Shaft Locking Collar,31|32,BRG
+240,Fan Pedestal,139|32,BRG
+241,Separated Pedestal,240,BRG
+242,Shaft Seal,31|27,BRG
+243,Lip Shaft Seal,242,BRG
+244,Friction Shaft Seal,242,BRG
+245,Carbon Ring Seal,242,BRG
+246,Stuffing Box Seal,242,BRG
+247,Gas Purge Seal,245,BRG
+248,Inlet Funnel,29|108,INOUT
+249,Inlet Venturi,248,INOUT
+250,Inlet Box,29|24,INOUT
+251,Integral Inlet Box,250,INOUT
+252,Detached Inlet Box,250,INOUT
+253,Free-Standing Inlet Box,252,INOUT
+254,Evasé,30|11,INOUT
+255,Transition Piece,30|24,INOUT
+256,Companion Flange,86|87,INOUT
+257,Flexible Connector,256,INOUT
+258,Tube Adapter and Sleeve,257|46,INOUT
+259,Inlet Silencer,29,INOUT
+260,Outlet Silencer,30,INOUT
+261,Flow Control,4,INOUT
+262,Damper,261,INOUT
+263,Parallel Blade Damper,262,INOUT
+264,Opposed Blade Damper,262,INOUT
+265,Outlet Damper,263|264|30,INOUT
+266,Inlet Box Damper,250|263,INOUT
+267,Gravity Damper,262,INOUT
+268,Manual Damper,262,INOUT
+269,Motorized Damper,262,INOUT
+270,Blast Gate,262|52,INOUT
+271,Slide Gate Damper,270,INOUT
+272,Variable Inlet Vanes,261|29,INOUT
+273,Pre-Spin,272|162,INOUT
+274,Nested Inlet Vanes,272|248,INOUT
+275,External Inlet Vanes,272,INOUT
+276,Speed Control,261|201,INOUT
+277,Turndown,261,INOUT
+278,Construction Class,27|28,SPEC
+279,Construction Material,278,SPEC
+280,Stainless Steel Construction,279|19,SPEC
+281,Aluminum Construction,279,SPEC
+282,Coatings,279|19,SPEC
+283,Spark Resistant Construction,23|278,SPEC
+284,Non-Ferrous Material,283|281,SPEC
+285,Spark Resistant Type A,283|284,SPEC
+286,Spark Resistant Type B,285,SPEC
+287,Spark Resistant Type C,283,SPEC
+288,Rub Ring,287,SPEC
+289,Rub Plate,287,SPEC
+290,Fan Grounding Device,283|31,SPEC
+291,High Temperature Construction,21|278,SPEC
+292,Maximum Operating Temperature,291,SPEC
+293,Shaft Cooler,291|31,SPEC
+294,Heat Shield,291|240,SPEC
+295,High Temperature Pedestal,294,SPEC
+296,Thermal Expansion,291|222,SPEC
+297,Insulated Fan,291,SPEC
+298,Double Wall Construction,297,SPEC
+299,Insulated Jacket,297,SPEC
+300,Nominally Leak-Tight Fan,278|242|247|246,SPEC
+301,Fan Leakage,300,SPEC
+302,Gasketing,300,SPEC
+303,Soap Bubble Test,301,SPEC
+304,Regenerative Thermal Oxidizer,21|300,SPEC
+305,High Moisture Construction,22|278,SPEC
+306,Housing Drain,22|27,SPEC
+307,Weep Hole,306,SPEC
+308,Flue Gas Recirculation,21|250,SPEC
+309,Fan Installation,25|24,INST
+310,Fan Base,309|202,INST
+311,Unitary Base,310,INST
+312,Isolation Base,310,INST
+313,Inertia Base,312,INST
+314,Vibration,132|309,INST
+315,Vibration Isolation,314,INST
+316,Isolator Deflection,315,INST
+317,Neoprene Isolation Pad,315,INST
+318,Rubber-in-Shear Isolator,315,INST
+319,Spring Isolator,316,INST
+320,Floor Mounted Isolation,319,INST
+321,Ceiling Hung Isolation,319,INST
+322,Seismic Restraint,315,INST
+323,Snubber,322,INST
+324,Thrust Restraint,319|12,INST
+325,Anti-Backspin Device,309|162,INST
+326,Zero Speed Switch,2|309,INST
+327,Piezometer Ring,248|10,INST
+328,Airflow Measurement,327|4,INST
+329,Pressure Transmitter,327,INST
+330,Weather Cover,309|33,INST
+331,Fan Performance,4|10|2,PERF
+332,Brake Horsepower,3|331,PERF
+333,Outlet Velocity,6|30,PERF
+334,Tip Speed,2|28,PERF
+335,Fan Static Pressure,10|331,PERF
+336,Fan Total Pressure,12|331,PERF
+337,Fan Efficiency,332|336,PERF
+338,Static Efficiency,337|335,PERF
+339,Peak Efficiency,337,PERF
+340,Fan Curve,331|332,PERF
+341,System Resistance,24|10,PERF
+342,System Curve,341,PERF
+343,Operating Point,340|342,PERF
+344,Duty Point,343,PERF
+345,Stall Region,340,PERF
+346,Surge,345,PERF
+347,Non-Overloading Power Curve,340|111,PERF
+348,Overloading Power Curve,340|114,PERF
+349,Fan Laws,331|343,PERF
+350,Speed Change Calculation,349,PERF
+351,Size Change Calculation,349,PERF
+352,Power Varies With Speed Cubed,350,PERF
+353,Density Correction Factor,16|331|395,PERF
+354,Temperature Correction,353|14,PERF
+355,Altitude Correction,353|15,PERF
+356,Fan Sound,331,PERF
+357,Sound Power Level,356,PERF
+358,Sone Rating,356,PERF
+359,Fan Class,335|334,PERF
+360,Maximum Safe Speed,359|334,PERF
+361,System Effect,342|29|30,PERF
+362,Fan Selection Range,339|345|559,PERF
+363,Flow Control Efficiency,277|276|272|265|332|352,PERF
+364,Fan Size,28|35,CAT
+365,Model Code,364|35,CAT
+366,Product Catalog,365|331,CAT
+367,AMCA Certified Ratings,366|331,CAT
+368,Performance Table,366|340,CAT
+369,Reading a Performance Table,368|332|5|9,CAT
+370,Interpolation,369,CAT
+371,Catalog Operating Limits,366|360|292,CAT
+372,Technical Description,366,CAT
+373,FanPedia vs Current Catalog,372|366,CAT
+374,Product Options,366|278,CAT
+375,Accessory Selection,374|262|250|315|242|306|259|260|254|313|325|96|95|233,CAT
+376,Motor Selection,332|187|193|189|188|490|495|489|488,CAT
+377,Drive Selection,134|133|376|136|137|496|561,CAT
+378,Fan Family Selection,35|343|17|49|66|73|54|55,CAT
+379,Impeller Selection,378|113|115|114|116|451|122|447,CAT
+380,Arrangement Selection,141|160|377|157|153|467,CAT
+381,Construction Selection,283|291|300|305|282|286|295|298|302|553,CAT
+382,Fan Selection,378|369|353|362|370|338,CAT
+383,Selection Trade-Offs,382|337|357|363|403|399,CAT
+384,Fan Selection Checklist,382|375|380,CAT
+385,Complete Fan Description,365|173|179|380|165|183|182,CAT
+386,Fan Specification,385|381|375|382|569,CAT
+387,Specification Review,386|371|581|579|580|578,CAT
+388,Fan Comparison,383|386,CAT
+389,Annotated Fan Drawing,385|81,CAT
+390,Capstone Fan Specification,387|388|379|384|389|373|576,CAT
+391,Pressure Rise,8|25,FOUND
+392,Air Power,4|391|3,FOUND
+393,Airflow Continuity Equation,4|6,FOUND
+394,Velocity Pressure Equation,11|7|16,FOUND
+395,Barometric Pressure,8|15,FOUND
+396,Fan Outlet Area,30|393,PERF
+397,Outlet Velocity Pressure,333|394|396,PERF
+398,Fan Power Equation,392|337|332,PERF
+399,Efficiency Curve,340|337,PERF
+400,Peak Pressure Point,340,PERF
+401,Free Delivery,340|341,PERF
+402,Shutoff Pressure,340|335,PERF
+403,Fans in Parallel,343|342,PERF
+404,Fans in Series,343|335,PERF
+405,Pressure Varies as Speed Squared,350,PERF
+406,Specific Speed,349|35,PERF
+407,Cold Start Horsepower,354|332,PERF
+408,AMCA 210 Rating Standard,331|335,PERF
+409,AMCA Installation Type,408|29|30,PERF
+410,Inlet System Effect,361|29,PERF
+411,Outlet System Effect,361|333,PERF
+412,Effective Duct Length,411|333,PERF
+413,System Effect Curve,410|411,PERF
+414,Decibel,356,PERF
+415,Sound Pressure Level,414|357,PERF
+416,Octave Band,357,PERF
+417,Blade Pass Frequency,356|2|103,PERF
+418,Fan Energy Index,337|344,PERF
+419,Hooded Roof Exhauster,59|94,FAM
+420,Louvered Roof Exhauster,59|76,FAM
+421,Low Profile Roof Ventilator,58|75,FAM
+422,Roof Mounted Panel Fan,50|57,FAM
+423,Paint Booth Exhaust Fan,47|18,FAM
+424,Dust Collection Fan,40|20,FAM
+425,High Efficiency Centrifugal Fan,40|113|74,FAM
+426,Inline Lab Exhaust Fan,67|44|38,FAM
+427,Bypass Flow,80|78,FAM
+428,Lab Exhaust Total Flow,427|77|4,FAM
+429,Wiper Bar,84|248,ANAT
+430,Housing Framing,27|82,ANAT
+431,Bearing Structural Support,110|32|430,ANAT
+432,Setback Outlet Flange,87|110,ANAT
+433,Cast Housing,27|52,ANAT
+434,Inspection Port,88,ANAT
+435,Motor Support Base,46|133|33,ANAT
+436,Motor Base Saddle,46|202|134,ANAT
+437,Discharge Cone,44|91|30,ANAT
+438,Housing Access Panel,45|88,ANAT
+439,Mounting Panel,43,ANAT
+440,Insulation Plug,439|31,ANAT
+441,Motor Cover,59|33,ANAT
+442,Roof Exhauster Shroud,59|28,ANAT
+443,Curb Cap,97,ANAT
+444,Relieved Inlet Transition,255|118,ANAT
+445,Impeller Airflow Path,108|120|119,IMP
+446,Impeller Width,108|109,IMP
+447,Impeller Material,28|279,IMP
+448,Impeller End Ring,108|103,IMP
+449,Impeller Tie Rod,114|448,IMP
+450,Impeller Gusset,105|107,IMP
+451,Open Radial Paddle Impeller,115,IMP
+452,Air Handling Impeller,115|105|106,IMP
+453,Axial Blade Tip,120|103,IMP
+454,Axial Blade Count,120|103,IMP
+455,Blade Pitch Angle,120|103,IMP
+456,Fiberglass Hub,123|107,IMP
+457,Trantorque Hub,129,IMP
+458,Axial Fan Configuration,120|125|126|175,IMP
+459,Arrangement 3F,144|319,ARR
+460,Arrangement 4S Swingout,146|158,ARR
+461,Arrangement 4VI and 4HI,146|86|197,ARR
+462,Arrangement 7SI and 7DI,147|145,ARR
+463,Arrangement 9F,149|142|312,ARR
+464,Arrangement 9H,149|203,ARR
+465,Arrangement 9ST and 9SS,149|158|203|204,ARR
+466,Ventilating Set,150|330,ARR
+467,Arrangement 8P and 9P Plug,151|148|149|152,ARR
+468,Plenum Arrangements 3HS and 3HA,154|144|203,ARR
+469,Plenum Arrangement 3SM,154|144|203,ARR
+470,Plenum Arrangements 3VA and 3VS,154|155|203,ARR
+471,Plenum Arrangement 4V,154|146|155,ARR
+472,Arrangement 4CS and 9CS,159|146|149,ARR
+473,Arrangement 4SO and 9SO,158|146|149,ARR
+474,Top Angular Up Discharge,172,ROT
+475,Top Angular Down Discharge,172,ROT
+476,Bottom Angular Down Discharge,172|174,ROT
+477,Bottom Angular Up Discharge,172,ROT
+478,Inline Horizontal Configuration,176,ROT
+479,Inline Vertical Configuration,176|98|94,ROT
+480,Motor Positions L and R,177|161|149,ROT
+481,Standard Motor Position Rule,480|163|164,ROT
+482,Swingout Motor Position Rule,481|158|204,ROT
+483,K Mount Motor,177|144|39|202,ROT
+484,Inline Motor Positions A to H,180|478|149,ROT
+485,Vertical Inline Motor Location,180|479,ROT
+486,Motor Nameplate,33,MOT
+487,Motor Intended Duty,187,MOT
+488,Severe Duty Motor,487|19,MOT
+489,Hazardous Location Motor,487|192,MOT
+490,Premium Efficiency Motor,195,MOT
+491,Motor Voltage and Phase,33|486,MOT
+492,Synchronous Motor Speed,184|491|2,MOT
+493,Motor Temperature Rise,194,MOT
+494,Motor Thermal Protection,493|193,MOT
+495,Inverter-Duty Motor,201|193|199,MOT
+496,EC Motor Speed Controller,185|276,MOT
+497,Solid Pillow Block Bearing,214,BRG
+498,Concentric Bearing Mount,219,BRG
+499,Drive End Bearing,32|240|34,BRG
+500,Non-Drive End Bearing,499,BRG
+501,Two and Four Hole Mount,214|240,BRG
+502,Fixed-Floating Bearing Rules,222|212|213|499,BRG
+503,Bearing Seal Speed Limit,227|228|229|2,BRG
+504,Bearing RTD and Thermocouple,32|200,BRG
+505,High Expansion Bearing,222|296|72,BRG
+506,Damper and Vane Bearings,32|262|272,BRG
+507,Insulated Bearing,199|201,BRG
+508,Shaft Material Grades,31|279,BRG
+509,Forged Shaft,508|236|145,BRG
+510,Keystock,235,BRG
+511,Shaft and Coupling Guards,89|138|32,BRG
+512,Bolt-On Pedestal,240|166,BRG
+513,Isolator Mounting Method,315|310,INST
+514,Direct Mounted Isolators,513|317|318,INST
+515,Isolation Rails,513|319,INST
+516,Isolator Mounting Angle,513|29,INST
+517,Open Spring Isolator,319,INST
+518,Housed Spring Isolator,517,INST
+519,Restrained Spring Isolator,517,INST
+520,Seismic Spring Isolator,519|322,INST
+521,Internally Isolated Fan,315|58,INST
+522,Shaft and Coupling Alignment,138|230|205,INST
+523,Post Mount Motor Base,202|47|186,MOT
+524,Butterfly Gravity Damper,267|75,INOUT
+525,Ceiling Type Gravity Damper,267|263,INOUT
+526,Wall Type Gravity Damper,267|263,INOUT
+527,Blade Flutter,267|11,INOUT
+528,Damper Actuator,269|527,INOUT
+529,Flat Blade Damper,263|264,INOUT
+530,Airfoil Blade Damper,529,INOUT
+531,Damper Throttling,265|343|342,INOUT
+532,Lab Exhaust Isolation Damper,67|528,INOUT
+533,Lab Exhaust Bypass Damper,80|528,INOUT
+534,Inlet Box Horn,251|166,INOUT
+535,Bolt-On Inlet Box,252|86,INOUT
+536,Bolted Flange Connection,256|535,INOUT
+537,Slip Connection,253|85|257,INOUT
+538,Inlet Box Mounting Planes,253|537|312,INOUT
+539,Insulated Inlet Box,250|297,INOUT
+540,ASA Pipe Flange Bolt Pattern,270|256,INOUT
+541,High Temperature Package,291|292|543,SPEC
+542,Axial High Temperature Package,541|37,SPEC
+543,High Temperature Grease,223|291,SPEC
+544,Cooler Guard,293,SPEC
+545,Cooler Box,293|297,SPEC
+546,Insulation Pins,297,SPEC
+547,Aluminum Clad Construction,546|545,SPEC
+548,Recess Cone,293|43,SPEC
+549,Corten Steel,279|291,SPEC
+550,Buffer Strip,280|240,SPEC
+551,Continuous Seal Weld,300|92,SPEC
+552,Centering Plate,300|99,SPEC
+553,RTO Service Conditions,304|201,SPEC
+554,Swingout Door Assembly,158|240,SPEC
+555,Double Door Clamshell,159|88,SPEC
+556,Catalog Structure,366,CAT
+557,Fan Selector Software,368|367,CAT
+558,Performance Table Header,368|333|364,CAT
+559,Class Shading in Tables,369|359,CAT
+560,Rating Conditions,409|16,CAT
+561,Transmission Losses,560|134|332,CAT
+562,Appurtenance Effects,560|374|361,CAT
+563,Actual Operating Conditions,560|354|355,CAT
+564,Cold Start Motor Sizing,407|563|376,CAT
+565,Fan Efficiency Grade,337|558,CAT
+566,Octave Band Sound Data,357|557,CAT
+567,Dimensional Data Table,556|141|166,CAT
+568,Certified Drawings,567,CAT
+569,Material Specifications Table,556|359|32|31,CAT
+570,Airstream Conditions,21|22|18|563,CAT
+571,Air Change Method,4,CAT
+572,Minimum Conveying Velocity,6|20|24,CAT
+573,Space Constraints,567|309,CAT
+574,Noise Limits,415|566|358,CAT
+575,Efficiency Requirements,418|339,CAT
+576,Application Requirements,344|570|573|574|575|68|69|424|423|571|572,CAT
+577,CSI Format Specification,386|556,CAT
+578,Specification Performance Clause,577|367|418|347,CAT
+579,AMCA 204 Balance Grade,132|314,CAT
+580,First Critical Speed,31|360,CAT
+581,Submittal Data,568|385|566|386,CAT

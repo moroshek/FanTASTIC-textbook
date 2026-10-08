@@ -1,0 +1,88 @@
+{
+  "title": "Construction Class Advisor",
+  "creator": "Twin City Fan",
+  "subject": "Industrial and Commercial Fans",
+  "description": "A p5.js recommendation activity in which learners choose the construction for six illustrative airstream inquiries (steam, steam at 220°F, a Type C specification on a non-ferrous radial bladed fan, a touchable 700°F kiln fan, flue gas recirculation and a stainless housing on a mild steel pedestal). Each recommendation is committed before the reason is shown; the first attempt is scored, one practice attempt is allowed, and a summary reports the score out of 6 with mastery at 5.",
+  "date": "2026-10-08",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "source": "FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), https://tcf.com/fanpedia/, pp. 85, 107, 110, 116, 119, 122 and 145. Inquiries are illustrative.",
+  "educational": {
+    "gradeLevel": [
+      "Adult professional development"
+    ],
+    "audience": "New application engineers, sales staff, manufacturer's representatives, distributors and plant staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Construction classes: moisture, high temperature, spark resistance, insulation, FGR and dissimilar metals",
+    "learningObjectives": [
+      "Recommend the construction choice for six stated airstream inquiries, consistent with the FanPedia rules in Chapter 20, with at least 5 of 6 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "construction class",
+      "construction material",
+      "stainless steel construction",
+      "buffer strips",
+      "spark resistant Types A, B and C",
+      "non-ferrous material",
+      "high temperature construction and packages",
+      "high moisture construction",
+      "housing drain",
+      "insulated fan",
+      "insulated jacket",
+      "double wall construction",
+      "flue gas recirculation",
+      "inlet box"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text for screen readers; keys A-D select an option and Enter commits it (or moves to the next inquiry once committed); option status is written as text labels ('your first answer: breaks a rule', 'correct recommendation') as well as shown by color."
+    }
+  },
+  "controls": [
+    { "type": "button", "label": "A / B / C / D", "purpose": "Select one of the four construction recommendations (keys A-D)" },
+    { "type": "button", "label": "Recommend", "purpose": "Commit the selected recommendation and show the verdict and reason (Enter)" },
+    { "type": "button", "label": "Next inquiry / See summary", "purpose": "Move to the next inquiry once the first answer is committed; after inquiry 6, show the summary" },
+    { "type": "button", "label": "Start over", "purpose": "Reset all six inquiries and the score" }
+  ],
+  "pedagogical": {
+    "teachingStrategy": "Committed recommendation with delayed reason, first-attempt scoring and one practice retry, followed by a summary review",
+    "interactionPattern": "Choose one of four options per scenario; commit before feedback",
+    "keyQuestions": [
+      "Which airstream condition in the tags decides the construction, and which tags are distractors?",
+      "Which chapter rule does each rejected option break?",
+      "Why does a Type C specification end in a Type B recommendation when the impeller is already non-ferrous?"
+    ],
+    "commonMisconceptions": [
+      "High moisture and high temperature construction can be stacked.",
+      "Type C is always the lowest-cost answer, even when the impeller is already non-ferrous.",
+      "Insulation is only for heat (it also addresses condensation, sound and personnel protection).",
+      "A stainless housing can always be welded to a mild steel pedestal.",
+      "An FGR job is just a normal inlet box."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'n of 6'; mastery is 5 or more, reported as 'You can turn an airstream into a construction line.'",
+      "Summary list of each inquiry's first answer, correct answer and reason, for the learner to name the rule each wrong answer breaks."
+    ]
+  },
+  "chapter": "20-construction-classes-materials-spark-resistance"
+}

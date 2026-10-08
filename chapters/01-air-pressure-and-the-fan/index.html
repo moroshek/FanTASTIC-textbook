@@ -1,0 +1,3914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Defines the quantities that describe air in motion (airflow in CFM, velocity, static pressure in inches of water gauge, fan speed, horsepower and air density with temperature and altitude) and what a fan delivers.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/01-air-pressure-and-the-fan/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-airstreams-total-pressure-standard-air/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Air, Pressure and the Fan - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#air-pressure-and-the-fan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Air, Pressure and the Fan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-chapter-comes-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Chapter Comes First
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-movement-why-we-move-air-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Movement: Why We Move Air at All
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Movement: Why We Move Air at All">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-how-much-air-is-in-a-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: How Much Air Is in a Room?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-airstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Airstream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Airstream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-which-parts-sit-in-a-300f-airstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Which Parts Sit in a 300°F Airstream?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-how-big-is-a-fans-pressure-rise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: How Big Is a Fan's Pressure Rise?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airflow-volume-and-cubic-feet-per-minute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow Volume and Cubic Feet Per Minute
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Airflow Volume and Cubic Feet Per Minute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mass-flow-from-airflow-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mass Flow from Airflow Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-same-cfm-different-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Same CFM, Different Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Velocity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Velocity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airflow-velocity-and-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow, Velocity and Area
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-velocity-in-a-rectangular-duct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Velocity in a Rectangular Duct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-duct-airflow-and-velocity-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Duct Airflow and Velocity Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inches-of-water-gauge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inches of Water Gauge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inches of Water Gauge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-the-force-behind-a-small-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: The Force Behind a Small Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Pressure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static Pressure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-up-a-systems-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Adding Up a System's Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-reading-static-pressure-with-a-manometer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Reading Static Pressure with a Manometer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Speed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Speed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#belt-drive-speed-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Belt Drive Speed Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-tip-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Tip Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-setting-a-belt-driven-fans-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Setting a Belt-Driven Fan's Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horsepower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Horsepower
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Horsepower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brake-horsepower-from-airflow-and-static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brake Horsepower from Airflow and Static Pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-from-duty-point-to-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: From Duty Point to Motor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Density
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-air-density-ratio-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Air Density Ratio Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-fan-in-a-250f-airstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Fan in a 250°F Airstream
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altitude
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altitude">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-selecting-a-fan-for-a-5000-ft-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Selecting a Fan for a 5,000 ft Site
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contaminated-airstreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contaminated Airstreams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contaminated Airstreams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-diluting-a-lab-exhaust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Diluting a Lab Exhaust
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-airstream-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Airstream Classifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-together-what-a-fan-delivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It Together: What a Fan Delivers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It Together: What a Fan Delivers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-a-fan-duty-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Anatomy of a Fan Duty Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-centrifugal-and-axial-impeller-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-fan-performance-curves-and-ratings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-discharge-positions-and-rotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-damper-details-and-duct-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reading-catalogs-and-performance-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-fan-selection-and-writing-the-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-chapter-comes-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Chapter Comes First
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-movement-why-we-move-air-at-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Movement: Why We Move Air at All
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Movement: Why We Move Air at All">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-how-much-air-is-in-a-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: How Much Air Is in a Room?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-airstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Airstream
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Airstream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-which-parts-sit-in-a-300f-airstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Which Parts Sit in a 300°F Airstream?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-fan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-how-big-is-a-fans-pressure-rise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: How Big Is a Fan's Pressure Rise?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#airflow-volume-and-cubic-feet-per-minute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow Volume and Cubic Feet Per Minute
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Airflow Volume and Cubic Feet Per Minute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mass-flow-from-airflow-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mass Flow from Airflow Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-same-cfm-different-air" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Same CFM, Different Air
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Velocity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Velocity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#airflow-velocity-and-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Airflow, Velocity and Area
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-velocity-in-a-rectangular-duct" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Velocity in a Rectangular Duct
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-duct-airflow-and-velocity-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Duct Airflow and Velocity Calculator
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Pressure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inches-of-water-gauge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inches of Water Gauge
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inches of Water Gauge">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-the-force-behind-a-small-number" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: The Force Behind a Small Number
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Static Pressure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Static Pressure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-adding-up-a-systems-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Adding Up a System's Resistance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-reading-static-pressure-with-a-manometer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Reading Static Pressure with a Manometer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fan-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fan Speed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fan Speed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#belt-drive-speed-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Belt Drive Speed Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impeller-tip-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impeller Tip Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-setting-a-belt-driven-fans-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Setting a Belt-Driven Fan's Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#horsepower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Horsepower
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Horsepower">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brake-horsepower-from-airflow-and-static-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brake Horsepower from Airflow and Static Pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-from-duty-point-to-motor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: From Duty Point to Motor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Density
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Density">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#density-ratio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Density Ratio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-air-density-ratio-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Air Density Ratio Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#air-temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Air Temperature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Air Temperature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-a-fan-in-a-250f-airstream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: A Fan in a 250°F Airstream
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#altitude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Altitude
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Altitude">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-selecting-a-fan-for-a-5000-ft-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Selecting a Fan for a 5,000 ft Site
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contaminated-airstreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contaminated Airstreams
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contaminated Airstreams">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-diluting-a-lab-exhaust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Diluting a Lab Exhaust
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-airstream-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Airstream Classifier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-together-what-a-fan-delivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It Together: What a Fan Delivers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Putting It Together: What a Fan Delivers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-anatomy-of-a-fan-duty-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Anatomy of a Fan Duty Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="air-pressure-and-the-fan">Air, Pressure and the Fan<a class="headerlink" href="#air-pressure-and-the-fan" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces the physical quantities used to describe air in motion: airflow volume in cubic feet per minute, air velocity, static pressure in inches of water gauge, and air density as it changes with temperature and altitude. It defines a fan as a machine that moves air by turning at a given speed and power. Every later chapter builds on this vocabulary. After completing it, readers can state what a fan delivers and in which units.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air Movement</td>
+<td>13733</td>
+</tr>
+<tr>
+<td>Fan Speed</td>
+<td>11322</td>
+</tr>
+<tr>
+<td>Horsepower</td>
+<td>2706</td>
+</tr>
+<tr>
+<td>Airflow Volume</td>
+<td>1382</td>
+</tr>
+<tr>
+<td>Air Pressure</td>
+<td>1283</td>
+</tr>
+<tr>
+<td>Air Density</td>
+<td>374</td>
+</tr>
+<tr>
+<td>Airstream</td>
+<td>371</td>
+</tr>
+<tr>
+<td>Fan</td>
+<td>10322</td>
+</tr>
+<tr>
+<td>Cubic Feet Per Minute</td>
+<td>59</td>
+</tr>
+<tr>
+<td>Air Velocity</td>
+<td>103</td>
+</tr>
+<tr>
+<td>Inches of Water Gauge</td>
+<td>59</td>
+</tr>
+<tr>
+<td>Static Pressure</td>
+<td>1101</td>
+</tr>
+<tr>
+<td>Air Temperature</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Altitude</td>
+<td>107</td>
+</tr>
+<tr>
+<td>Contaminated Airstream</td>
+<td>194</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
+<h2 id="why-this-chapter-comes-first">Why This Chapter Comes First<a class="headerlink" href="#why-this-chapter-comes-first" title="Permanent link">&para;</a></h2>
+<p>Every fan order, catalog page and specification in this book reduces to a short sentence: <em>move this much air, against this much resistance, at these conditions, without the air destroying the fan.</em> Before you can read that sentence on a performance table or write it in a submittal, you need the handful of quantities it is built from: airflow volume in cubic feet per minute, air velocity, pressure in inches of water gauge, fan speed in revolutions per minute, horsepower, and the density of the air itself. This chapter defines each one, shows how they connect, and works a realistic number for every idea so you can check a catalog value instead of just copying it.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Meet Breeze</p>
+<p><img alt="Breeze the hummingbird waving hello" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Hi, I'm Breeze, a hummingbird. My wings beat dozens of times a second, so I take airflow personally, and I care about exact designations the way an application engineer does. Here is what I do when I show up in this book:</p>
+<ol>
+<li><strong>Welcome:</strong> I open each chapter and tell you what it will let you do on the job.</li>
+<li><strong>Thinking:</strong> I stop you at an idea worth rethinking, so you can build the right mental model.</li>
+<li><strong>Tip:</strong> I hand you a shortcut or a quick check that saves time on a real order.</li>
+<li><strong>Warning:</strong> I warn you about a common mistake, why it happens and how to avoid it.</li>
+<li><strong>Encouraging:</strong> I encourage you when a topic is genuinely hard, and point to a way through it.</li>
+<li><strong>Celebration:</strong> I celebrate at the end of a chapter by naming the skill you just gained.</li>
+<li><strong>Neutral:</strong> Once in a while I add a brief aside, such as a pointer to another chapter.</li>
+</ol>
+<p>If I'm not doing one of those seven things, I'm not in the chapter. Let's follow the airflow.</p>
+</div>
+<h2 id="air-movement-why-we-move-air-at-all">Air Movement: Why We Move Air at All<a class="headerlink" href="#air-movement-why-we-move-air-at-all" title="Permanent link">&para;</a></h2>
+<p><strong>Air movement</strong> is the transfer of a mass of air from one place to another, driven by a difference in pressure. Buildings and plants move air for a small number of practical reasons: to supply fresh air to people, to carry heat into or out of a space, to deliver air a process needs (combustion air for a burner, drying air for a dryer), and to capture and remove something unwanted (fumes from a lab hood, dust from a grinder, steam from a kitchen). In each case the air is not the product; it is the vehicle. The fan's job is to keep that vehicle moving at the rate the job requires.</p>
+<p>Two physical facts make air movement an engineering problem rather than an afterthought. First, air has <strong>mass</strong>. A cubic foot of air at room conditions weighs about 0.075 pound, which sounds negligible until you multiply it by the volume of a building. Second, air moves only when something pushes it: it always flows from a region of higher pressure toward a region of lower pressure, and it resists being speeded up, turned and squeezed through filters and ducts. A fan supplies the pressure difference that keeps the air moving against that resistance.</p>
+<p>The following table organizes the common jobs of air movement that the paragraph above described, with a typical site for each and the property of the air that matters most for that job.</p>
+<table>
+<thead>
+<tr>
+<th>Job of air movement</th>
+<th>Typical site</th>
+<th>What matters most</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ventilation (fresh air for people)</td>
+<td>Office, school, warehouse</td>
+<td>Enough volume, delivered quietly</td>
+</tr>
+<tr>
+<td>Heating or cooling</td>
+<td>Air handler, cooling tower, oven</td>
+<td>Volume and the air temperature</td>
+</tr>
+<tr>
+<td>Process air</td>
+<td>Burner combustion air, dryer, kiln</td>
+<td>Volume, pressure and temperature, often high</td>
+</tr>
+<tr>
+<td>Contaminant capture and removal</td>
+<td>Lab hood, paint booth, dust collector, kitchen hood</td>
+<td>What the air carries, and where it is discharged</td>
+</tr>
+<tr>
+<td>Pressurization or exhaust balance</td>
+<td>Clean room, stair tower, plenum</td>
+<td>Pressure difference between spaces</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-how-much-air-is-in-a-room">Worked Example: How Much Air Is in a Room?<a class="headerlink" href="#worked-example-how-much-air-is-in-a-room" title="Permanent link">&para;</a></h4>
+<p>A small machine shop measures 40 ft by 30 ft with a 12 ft ceiling. The owner wants the room air replaced ten times every hour.</p>
+<ol>
+<li>Room volume: <span class="arithmatex">\( 40 \times 30 \times 12 = 14{,}400 \)</span> cubic feet.</li>
+<li>Weight of that air at room conditions: <span class="arithmatex">\( 14{,}400 \times 0.075 = 1{,}080 \)</span> pounds, more than half a ton.</li>
+<li>Ten changes per hour means the fan must move <span class="arithmatex">\( 14{,}400 \times 10 = 144{,}000 \)</span> cubic feet, or about 10,800 pounds of air, every hour.</li>
+<li>Per minute, that is <span class="arithmatex">\( 144{,}000 \div 60 = 2{,}400 \)</span> cubic feet.</li>
+</ol>
+<p>The last number, 2,400 cubic feet every minute, is the form in which a fan's airflow is ordered and cataloged. You will meet it again below as a duct calculation and as a MicroSim challenge.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Air Is Heavy Enough to Matter</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of a fan as a machine that keeps lifting and throwing a steady stream of mass, not as something that "stirs" weightless air. Once you picture those 10,800 pounds an hour, it stops being surprising that a modest ventilation fan needs a real motor, and that the weight of each cubic foot changes the work the fan must do.</p>
+</div>
+<h2 id="the-airstream">The Airstream<a class="headerlink" href="#the-airstream" title="Permanent link">&para;</a></h2>
+<p>The <strong>airstream</strong> is the moving body of air that passes through a fan and its connected ductwork, together with everything that air carries: heat, moisture, dust, fibers, fumes or vapors. FanPedia uses the term constantly because so many construction decisions depend on which parts of a fan sit <em>in the airstream</em> and which sit <em>out of it</em>. The impeller and the inside of the housing are always in the airstream. Bearings, motors and belts may or may not be, depending on how the fan is arranged.</p>
+<p>The properties of the airstream decide what the fan must be built from and how it must be laid out. Temperature changes the air's weight and the strength of metals and seals. Moisture and corrosive gases attack materials. Solids wear blades and build up on them. Flammable vapors and dusts make a spark dangerous. Before looking at a worked example, the following table summarizes those airstream properties and what each one changes in a fan selection; later chapters treat each in depth.</p>
+<table>
+<thead>
+<tr>
+<th>Airstream property</th>
+<th>What it changes in the fan</th>
+<th>Where this book covers it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature</td>
+<td>Air density, material strength, bearing and seal choice</td>
+<td>This chapter; <a href="../21-high-temperature-leak-tight-and-rto-construction/">Chapter 21</a></td>
+</tr>
+<tr>
+<td>Altitude (site elevation)</td>
+<td>Air density, and therefore pressure and power</td>
+<td>This chapter</td>
+</tr>
+<tr>
+<td>Moisture</td>
+<td>Drains, coatings, materials</td>
+<td><a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a></td>
+</tr>
+<tr>
+<td>Solids (dust, fibers, chips)</td>
+<td>Impeller type, wear protection</td>
+<td><a href="../09-impeller-construction-and-material-handling/">Chapter 9</a></td>
+</tr>
+<tr>
+<td>Corrosive gases</td>
+<td>Materials and coatings</td>
+<td><a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a></td>
+</tr>
+<tr>
+<td>Flammable vapors or dusts</td>
+<td>Spark-resistant construction</td>
+<td><a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-which-parts-sit-in-a-300f-airstream">Worked Example: Which Parts Sit in a 300°F Airstream?<a class="headerlink" href="#worked-example-which-parts-sit-in-a-300f-airstream" title="Permanent link">&para;</a></h4>
+<p>A customer needs a belt-driven centrifugal fan to exhaust 300°F air from a curing oven. Compare two arrangements described in FanPedia's technical descriptions:</p>
+<ul>
+<li><strong>Arrangement 1, single width, single inlet:</strong> the impeller is overhung on the end of the shaft, and "the two fan bearings are mounted on the bearing pedestal, out of the airstream," which FanPedia says makes the arrangement suited to high-temperature or contaminated air (FanPedia, p. 162).</li>
+<li><strong>Arrangement 3, double width, double inlet:</strong> the impeller is mounted between the bearings, and "both bearings are located in the airstream," so standard double width, double inlet fans should be used for clean air with air temperatures limited to 130°F (FanPedia, p. 167).</li>
+</ul>
+<p>Trace the airstream: in Arrangement 3 the 300°F air flows directly past both bearings, which is well above the 130°F limit for the standard design. In Arrangement 1 the hot air stays inside the housing while the bearings sit outside on the pedestal. Arrangement 1 is the natural starting point for this job. Arrangements themselves are the subject of <a href="../11-drives-and-standard-fan-arrangements/">Chapter 11</a>; the point here is that you cannot pick one until you know what is in the airstream.</p>
+<h2 id="the-fan">The Fan<a class="headerlink" href="#the-fan" title="Permanent link">&para;</a></h2>
+<p>A <strong>fan</strong> is a machine that moves air by turning a bladed wheel, the <strong>impeller</strong>, inside or in front of a housing. The rotating blades push on the air, raise its pressure slightly and send it on its way. A motor turns the impeller either directly (the impeller is mounted on the motor shaft) or through belts and pulleys. FanPedia describes the main families by the path the air takes: housed centrifugal fans draw air in along the shaft and discharge it "at a right angle to the fan shaft," while axial and inline fans "move air straight through the fan with a rotating impeller" (FanPedia, pp. 4, 6-7). <a href="../03-basic-fan-anatomy/">Chapter 3</a> names every part, and <a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4</a> compares the families.</p>
+<p>What separates a fan from a compressor is how <em>little</em> it raises the pressure. Atmospheric pressure at sea level is about 14.7 pounds per square inch, and a fan adds only a small fraction to that. Because the air is squeezed so little, it barely changes volume passing through, and for most work you can treat the cubic feet per minute entering a fan as equal to the cubic feet per minute leaving it.</p>
+<h4 id="worked-example-how-big-is-a-fans-pressure-rise">Worked Example: How Big Is a Fan's Pressure Rise?<a class="headerlink" href="#worked-example-how-big-is-a-fans-pressure-rise" title="Permanent link">&para;</a></h4>
+<p>A heavy-duty industrial fan develops 10 inches of water gauge (a unit defined in the pressure section below; atmospheric pressure is about 407 of these units).</p>
+<ol>
+<li>Pressure rise as a fraction of atmospheric pressure: <span class="arithmatex">\( 10 \div 407 = 0.025 \)</span>, or about 2.5 percent.</li>
+<li>The air's volume therefore shrinks by only about 2.5 percent through the fan; at a typical HVAC pressure of 2 inches of water gauge, about 0.5 percent.</li>
+<li>Conclusion: in catalog work the fan's inlet and outlet airflow are taken as the same number, and the fan is rated by the airflow at its inlet.</li>
+</ol>
+<p>Every fan rating states what the fan delivers in a fixed set of quantities: airflow, pressure, speed, power and the air density the rating assumes. The sections that follow define each one, and the chapter closes with an interactive duty statement that puts them back together.</p>
+<h2 id="airflow-volume-and-cubic-feet-per-minute">Airflow Volume and Cubic Feet Per Minute<a class="headerlink" href="#airflow-volume-and-cubic-feet-per-minute" title="Permanent link">&para;</a></h2>
+<p><strong>Airflow volume</strong> is the volume of air a fan moves in a unit of time. It is a <em>rate</em>: not "how much air is in the duct" but "how much air passes a point each minute." In the United States the unit is <strong>cubic feet per minute</strong>, abbreviated <strong>CFM</strong>. One CFM is one cubic foot of air passing a point every minute. The machine-shop example above needed 2,400 CFM; a large industrial exhaust fan may move several hundred thousand CFM.</p>
+<p>Airflow volume is not the same as the <em>amount</em> of air in pounds. A cubic foot of hot air weighs less than a cubic foot of cool air, so the same CFM carries different masses at different temperatures. The connection is the mass flow equation below; air density, its key ingredient, gets its own section later in this chapter.</p>
+<h4 id="mass-flow-from-airflow-volume">Mass Flow from Airflow Volume<a class="headerlink" href="#mass-flow-from-airflow-volume" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\dot{m} = Q \times \rho
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( \dot{m} \)</span> is the mass flow rate in pounds per minute</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow volume in cubic feet per minute (CFM)</li>
+<li><span class="arithmatex">\( \rho \)</span> is the air density in pounds per cubic foot</li>
+</ul>
+<h4 id="worked-example-same-cfm-different-air">Worked Example: Same CFM, Different Air<a class="headerlink" href="#worked-example-same-cfm-different-air" title="Permanent link">&para;</a></h4>
+<p>A process fan moves 10,000 CFM.</p>
+<ol>
+<li>At 70°F and sea level, density is 0.075 lb/ft³: <span class="arithmatex">\( 10{,}000 \times 0.075 = 750 \)</span> lb of air per minute.</li>
+<li>At 400°F and sea level, density falls to about 0.0462 lb/ft³: <span class="arithmatex">\( 10{,}000 \times 0.0462 = 462 \)</span> lb per minute.</li>
+<li>The fan is moving the same 10,000 CFM in both cases but nearly 40 percent less air by weight when it is hot.</li>
+</ol>
+<p>This is why fan catalogs and specifications always state CFM <em>at a stated condition</em>. Fan airflow is rated as the actual volume at the fan inlet, at the density of the air actually entering the fan. When a specification lists CFM without a temperature and elevation, ask for them before selecting anything.</p>
+<h2 id="air-velocity">Air Velocity<a class="headerlink" href="#air-velocity" title="Permanent link">&para;</a></h2>
+<p><strong>Air velocity</strong> is how fast the air is moving at a point, in feet per minute. Velocity and airflow volume are linked by the area the air passes through: the same CFM moves slowly through a large duct and quickly through a small one. Velocity matters because fast air is noisy, costs pressure to push through ducts, and can carry dust that slow air would drop. <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> turns this relationship into the continuity equation and shows how velocity creates its own pressure; here we need only the basic calculation.</p>
+<h4 id="airflow-velocity-and-area">Airflow, Velocity and Area<a class="headerlink" href="#airflow-velocity-and-area" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+Q = V \times A
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( Q \)</span> is the airflow volume in CFM</li>
+<li><span class="arithmatex">\( V \)</span> is the average air velocity in feet per minute</li>
+<li><span class="arithmatex">\( A \)</span> is the flow area in square feet</li>
+</ul>
+<h4 id="worked-example-velocity-in-a-rectangular-duct">Worked Example: Velocity in a Rectangular Duct<a class="headerlink" href="#worked-example-velocity-in-a-rectangular-duct" title="Permanent link">&para;</a></h4>
+<p>The machine shop's 2,400 CFM flows through a 16 in by 12 in duct.</p>
+<ol>
+<li>Convert the duct size to square feet: <span class="arithmatex">\( (16 \times 12) \div 144 = 1.333 \)</span> ft².</li>
+<li>Solve for velocity: <span class="arithmatex">\( V = Q \div A = 2{,}400 \div 1.333 = 1{,}800 \)</span> feet per minute.</li>
+<li>If the same air were carried in a 24 in by 16 in duct (2.667 ft²), velocity would halve to 900 feet per minute.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Check the Units Before the Arithmetic</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Duct sizes come in inches but the equation wants square feet, so divide width times height by 144 (or use <span class="arithmatex">\( \pi D^2 \div 576 \)</span> for a round duct of diameter <span class="arithmatex">\( D \)</span> inches) before you divide CFM by area. If your answer comes out 144 times too small, you skipped that step.</p>
+</div>
+<p>The calculator below lets you practice that conversion and the velocity equation on the kinds of ducts you will see on drawings, including the 16 in by 12 in example above.</p>
+<h4 id="diagram-duct-airflow-and-velocity-calculator">Diagram: Duct Airflow and Velocity Calculator<a class="headerlink" href="#diagram-duct-airflow-and-velocity-calculator" title="Permanent link">&para;</a></h4>
+<iframe src="../../sims/ch01-duct-airflow-velocity-calculator/main.html" width="100%" height="672px" scrolling="no"></iframe>
+<p><a href="../../sims/ch01-duct-airflow-velocity-calculator/main.html">Run Duct Airflow and Velocity Calculator Fullscreen</a></p>
+<details>
+<summary>Duct Airflow and Velocity Calculator</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch01-duct-airflow-velocity-calculator<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate air velocity, airflow volume or required flow area from the other two quantities for rectangular and round ducts, to within 2 percent of the model value.</p>
+<p><strong>Prerequisites:</strong> airflow volume, cubic feet per minute (CFM), air velocity in feet per minute, flow area in square feet, the equation Q = V × A, converting duct dimensions in inches to square feet (all defined in the sections "Airflow Volume and Cubic Feet Per Minute" and "Air Velocity" above).</p>
+<p><strong>Evidence of Mastery:</strong> For four fixed challenges, the learner types one number (velocity, CFM or area) before the sim reveals the model value. An answer is correct when it is within ±2% of the model value. Mastery is 4 of 4 correct, with at most two attempts each. Free exploration with the duct and airflow controls is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Velocity can be found by dividing CFM by the duct dimensions in inches without converting to square feet. (2) A bigger duct moves more air at the same fan airflow; in fact the CFM is the same and only the velocity drops. (3) A round duct of diameter D has the same area as a square duct of side D.</p>
+<p><strong>Instructional Rationale:</strong> Apply-level calculation needs practice with an immediate check, so each challenge requires a committed number before the answer appears. The free mode afterward lets the learner see the inverse relationship between area and velocity at fixed CFM, which addresses misconception 2.</p>
+<p><strong>Content:</strong></p>
+<p>Adjustable quantities in free mode:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Duct shape</td>
+<td>rectangular or round</td>
+<td></td>
+<td></td>
+<td>rectangular</td>
+<td></td>
+</tr>
+<tr>
+<td>Rectangular width</td>
+<td>6</td>
+<td>48</td>
+<td>2</td>
+<td>16</td>
+<td>in</td>
+</tr>
+<tr>
+<td>Rectangular height</td>
+<td>6</td>
+<td>48</td>
+<td>2</td>
+<td>12</td>
+<td>in</td>
+</tr>
+<tr>
+<td>Round diameter</td>
+<td>6</td>
+<td>60</td>
+<td>2</td>
+<td>18</td>
+<td>in</td>
+</tr>
+<tr>
+<td>Airflow Q</td>
+<td>200</td>
+<td>20,000</td>
+<td>100</td>
+<td>2,400</td>
+<td>CFM</td>
+</tr>
+</tbody>
+</table>
+<p>Displayed values in free mode: flow area in ft² (3 decimals), velocity in feet per minute (nearest 10), and the equation with the current numbers substituted.</p>
+<p>Challenges, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Given</th>
+<th>Asked</th>
+<th>Model answer</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2,400 CFM in a 16 in × 12 in rectangular duct</td>
+<td>Velocity (ft/min)</td>
+<td>1,800</td>
+<td>Area is (16 × 12) ÷ 144 = 1.333 ft²; V = 2,400 ÷ 1.333 = 1,800 ft/min. Did you forget to divide by 144?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5,000 CFM in a 24 in round duct</td>
+<td>Velocity (ft/min)</td>
+<td>1,592</td>
+<td>Round area is π × 24² ÷ 576 = 3.142 ft², not 24 × 24 ÷ 144; V = 5,000 ÷ 3.142 = 1,592 ft/min.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A 20 in × 10 in rectangular duct at 1,500 ft/min</td>
+<td>Airflow (CFM)</td>
+<td>2,083</td>
+<td>Area is 200 ÷ 144 = 1.389 ft²; Q = V × A = 1,500 × 1.389 = 2,083 CFM.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10,000 CFM with velocity no higher than 2,000 ft/min</td>
+<td>Minimum flow area (ft²)</td>
+<td>5.00</td>
+<td>A = Q ÷ V = 10,000 ÷ 2,000 = 5.00 ft². A larger area lowers the velocity further.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Equations and conversions from the chapter section "Air Velocity". Challenge 1 values come from the chapter's machine-shop worked example. Challenges 2-4 are illustrative; the sim labels them "illustrative values".</p>
+<p><strong>Rules:</strong> Rectangular area A = (W × H) ÷ 144 ft². Round area A = π × D² ÷ 576 ft². V = Q ÷ A, displayed rounded to the nearest 10 ft/min in free mode and to the nearest 1 ft/min in challenges. Q = V × A rounded to the nearest 1 CFM. A = Q ÷ V rounded to 0.01 ft². A learner answer x is correct when |x − model| ≤ 0.02 × model. Non-numeric or empty input is rejected with "Enter a number" and does not use an attempt. Because every dimension is at least 6 in, area is never zero.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1 and types a velocity, then presses Check. The sim shows the model value beside the learner's answer and highlights the step where the learner's number departs from the worked calculation, if it does.</li>
+<li>The learner completes challenges 2, 3 and 4 the same way.</li>
+<li>After the fourth challenge, free mode unlocks. The learner changes duct dimensions, shape and airflow; area, velocity and the substituted equation update immediately.</li>
+<li>When the learner increases the duct size while CFM is fixed, the sim notes once: "Airflow unchanged at Q CFM; velocity fell from V1 to V2 ft/min."</li>
+</ol>
+<p><strong>Feedback:</strong> Four challenges, fixed order, two attempts each. Correct: "Correct: model value is <value> <unit>." Incorrect: the "Feedback when wrong" text for that challenge. After a second wrong attempt the model value and worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 4" is shown. Challenges cannot be re-answered after they are revealed.</p>
+<p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box and a drawing of the 16 in × 12 in duct carrying 2,400 CFM. The question on screen is "How fast is the air moving?"</p>
+<p><strong>Chapter Anchors:</strong> 2,400 CFM; 16 in × 12 in duct; 1.333 ft²; 1,800 ft/min; 24 in × 16 in duct at 900 ft/min (prose only, reachable in free mode); divide by 144 for rectangular and use π D² ÷ 576 for round ducts.</p>
+</details>
+<h2 id="air-pressure">Air Pressure<a class="headerlink" href="#air-pressure" title="Permanent link">&para;</a></h2>
+<p><strong>Air pressure</strong> is the force air exerts on each unit of area it touches. At sea level the weight of the atmosphere above us presses on everything with about 14.7 pounds per square inch; that is <strong>atmospheric pressure</strong>, and it falls as you climb higher. We do not feel it because it pushes equally from every side. What moves air, and what a fan creates, is a <em>difference</em> in pressure: a little more than atmospheric on one side, a little less on the other.</p>
+<p>For that reason fan work almost always uses <strong>gauge pressure</strong>, pressure measured relative to the surrounding atmosphere, rather than absolute pressure. A positive gauge pressure means the air is pushing outward (inside a supply duct, for instance); a negative gauge pressure, often called <strong>suction</strong>, means the surroundings are pushing in (inside an exhaust duct or at a fan inlet). Air in a duct moves from the higher-pressure end toward the lower-pressure end, and the fan sits in the middle, pulling on its inlet side and pushing on its discharge side. Because fan pressures are so small compared with the atmosphere, pounds per square inch is an awkward unit for them, and the fan industry uses a smaller one.</p>
+<h2 id="inches-of-water-gauge">Inches of Water Gauge<a class="headerlink" href="#inches-of-water-gauge" title="Permanent link">&para;</a></h2>
+<p>An <strong>inch of water gauge</strong> (written <strong>in. wg</strong>, or sometimes in. w.g. or "inches of water column") is the pressure that holds up a column of water one inch tall. The name comes from the instrument: a <strong>manometer</strong> is a U-shaped glass tube partly filled with water. Connect one leg to a duct and leave the other open to the room; if the duct pressure is higher than the room's, the water is pushed down on the duct side and up on the open side, and the difference in the two water levels, in inches, is the gauge pressure in inches of water gauge.</p>
+<p>One inch of water gauge is a very small pressure, which is exactly why it suits fans. The conversions below are the ones you will actually use.</p>
+<table>
+<thead>
+<tr>
+<th>Pressure</th>
+<th>In inches of water gauge</th>
+<th>Other units</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 in. wg</td>
+<td>1</td>
+<td>0.0361 psi; 5.2 lb/ft²; about 249 Pa</td>
+</tr>
+<tr>
+<td>1 psi</td>
+<td>27.7</td>
+<td>144 lb/ft²</td>
+</tr>
+<tr>
+<td>Atmosphere at sea level</td>
+<td>407</td>
+<td>14.7 psi; 29.92 inches of mercury</td>
+</tr>
+<tr>
+<td>Typical commercial HVAC fan</td>
+<td>1 to 4</td>
+<td>illustrative range</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-the-force-behind-a-small-number">Worked Example: The Force Behind a Small Number<a class="headerlink" href="#worked-example-the-force-behind-a-small-number" title="Permanent link">&para;</a></h4>
+<p>A 4 ft by 4 ft access door on an air-handling unit sits on a section running at +2.0 in. wg.</p>
+<ol>
+<li>Convert to pounds per square foot: <span class="arithmatex">\( 2.0 \times 5.2 = 10.4 \)</span> lb/ft².</li>
+<li>Multiply by the door area: <span class="arithmatex">\( 10.4 \times 16 = 166 \)</span> pounds pushing the door outward.</li>
+<li>Expressed in psi, the same pressure is only <span class="arithmatex">\( 2.0 \times 0.0361 = 0.072 \)</span> psi, which is why nobody quotes fan pressure in psi.</li>
+</ol>
+<p>The same 166 pounds acts <em>inward</em> on a door in a section under −2.0 in. wg suction, which is why access doors, inspection panels and housing seams are built for the pressure the fan develops, not just for the weather.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Psi and Inches Are Not Interchangeable</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is reading "2 psi" on a process sheet where the writer meant 2 in. wg, or the reverse; the two differ by a factor of 27.7, and a fan selected at the wrong one is useless. Whenever a pressure has no unit or an unusual one, confirm it with the customer and restate it in inches of water gauge on the quote.</p>
+</div>
+<h2 id="static-pressure">Static Pressure<a class="headerlink" href="#static-pressure" title="Permanent link">&para;</a></h2>
+<p><strong>Static pressure</strong> (SP) is the pressure air exerts equally in all directions on the walls of a duct or housing, independent of whether the air is moving. It is the "squeezing" pressure, and it is the one a manometer reads when its tube is connected flush to the side of the duct, perpendicular to the flow. Moving air also has a second pressure associated with its speed, called velocity pressure; <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> defines it and adds the two into total pressure.</p>
+<p>For catalog work, static pressure is the main way to describe <strong>resistance</strong>. Every filter, coil, damper, grille, hood and length of duct takes away some static pressure as the air passes through it; that loss is its <strong>pressure drop</strong>. The fan must develop enough static pressure to make up all those drops at the required airflow. When a specification says "12,000 CFM at 3.0 in. wg SP," the 3.0 is the system's total resistance that the fan must overcome. Static pressure is negative (suction) on the inlet side of the fan and positive on the discharge side.</p>
+<h4 id="worked-example-adding-up-a-systems-resistance">Worked Example: Adding Up a System's Resistance<a class="headerlink" href="#worked-example-adding-up-a-systems-resistance" title="Permanent link">&para;</a></h4>
+<p>A supply system draws outdoor air through a louver, a filter and a coil, then pushes it through ductwork to a diffuser. The design engineer lists these pressure drops at the design airflow (illustrative values):</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Side of fan</th>
+<th>Pressure drop (in. wg)</th>
+<th>Static pressure reading after it (in. wg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intake louver</td>
+<td>Inlet</td>
+<td>0.15</td>
+<td>−0.15</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Inlet</td>
+<td>0.50</td>
+<td>−0.65</td>
+</tr>
+<tr>
+<td>Coil</td>
+<td>Inlet</td>
+<td>0.75</td>
+<td>−1.40 (fan inlet)</td>
+</tr>
+<tr>
+<td>Ductwork and fittings</td>
+<td>Discharge</td>
+<td>0.95</td>
+<td>+1.10 at fan outlet, falling to +0.15</td>
+</tr>
+<tr>
+<td>Diffuser</td>
+<td>Discharge</td>
+<td>0.15</td>
+<td>0 (room)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Inlet-side drops: <span class="arithmatex">\( 0.15 + 0.50 + 0.75 = 1.40 \)</span> in. wg, so the fan inlet sits at −1.40 in. wg.</li>
+<li>Discharge-side drops: <span class="arithmatex">\( 0.95 + 0.15 = 1.10 \)</span> in. wg, so the fan outlet must be at +1.10 in. wg to push the air out into the room.</li>
+<li>The fan must raise the static pressure from −1.40 to +1.10: <span class="arithmatex">\( 1.10 - (-1.40) = 2.50 \)</span> in. wg.</li>
+</ol>
+<p>This simple subtraction treats the air velocity at the fan inlet and outlet as equal; the exact definition of fan static pressure, which accounts for velocity pressure, is in <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>. The sim below lets you read each of these points on a manometer.</p>
+<h4 id="diagram-reading-static-pressure-with-a-manometer">Diagram: Reading Static Pressure with a Manometer<a class="headerlink" href="#diagram-reading-static-pressure-with-a-manometer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Reading Static Pressure with a Manometer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch01-manometer-static-pressure<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Understand<br/>
+<strong>Bloom Verb:</strong> interpret<br/>
+<strong>Learning Objective:</strong> The learner will interpret U-tube manometer readings taken at six points in a supply system as signed static pressures in inches of water gauge, and infer the fan's static pressure rise, with at least 6 of 7 answers correct.</p>
+<p><strong>Prerequisites:</strong> air pressure, atmospheric pressure, gauge pressure, suction, inches of water gauge, manometer, static pressure, pressure drop (all defined in the sections "Air Pressure", "Inches of Water Gauge" and "Static Pressure" above).</p>
+<p><strong>Evidence of Mastery:</strong> At each of six measurement points, the learner sees a manometer with one leg connected to the duct and one open to the room, predicts the sign (positive or negative) and enters the reading in in. wg before it is revealed. A reading is correct when the sign matches and the magnitude is within ±0.05 in. wg of the Content value. A seventh question asks for the fan's static pressure rise; correct within ±0.05 in. wg of 2.50. Mastery is at least 6 of 7 correct on the first attempt. Moving the probe without answering is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Static pressure is always positive. (2) The water rises on the side connected to the duct when the duct is pressurized; in fact it is pushed down on that side. (3) The fan's pressure rise equals the outlet reading alone, ignoring the suction on the inlet side.</p>
+<p><strong>Instructional Rationale:</strong> Interpreting an instrument is an Understand-level skill best practiced with concrete readings at each step rather than an animation, so the learner steps point by point through the system, commits a prediction, and sees the water columns and the number side by side.</p>
+<p><strong>Content:</strong></p>
+<p>The system drawing shows, from left to right: intake louver, filter, coil, fan, ductwork, diffuser, room. Measurement points and correct readings:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Point</th>
+<th>Correct reading (in. wg)</th>
+<th>Water column on duct leg</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>After the intake louver</td>
+<td>−0.15</td>
+<td>Up</td>
+<td>The louver used 0.15 in. wg, so the duct is below room pressure and the room pushes the water toward the duct leg.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>After the filter</td>
+<td>−0.65</td>
+<td>Up</td>
+<td>Suction grows as each inlet component adds its drop: 0.15 + 0.50.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Fan inlet, after the coil</td>
+<td>−1.40</td>
+<td>Up</td>
+<td>All three inlet-side drops add up: 0.15 + 0.50 + 0.75 = 1.40.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Fan outlet</td>
+<td>+1.10</td>
+<td>Down</td>
+<td>The fan must push hard enough to overcome everything downstream: 0.95 + 0.15.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Before the diffuser</td>
+<td>+0.15</td>
+<td>Down</td>
+<td>The ductwork has used 0.95 of the 1.10, leaving 0.15 for the diffuser.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>In the room</td>
+<td>0.00</td>
+<td>Level</td>
+<td>The room is the reference; both legs see the same pressure.</td>
+</tr>
+</tbody>
+</table>
+<p>Question 7: "How much static pressure must the fan add?" Correct answer: 2.50 in. wg. Feedback when wrong: "The fan raises the air from −1.40 to +1.10: 1.10 − (−1.40) = 2.50 in. wg. The suction on the inlet side counts."</p>
+<p>Each manometer shows the two water levels and a ruler in inches; the difference between levels equals the magnitude in the table.</p>
+<p><strong>Provenance:</strong> All values from the chapter section "Static Pressure", worked example "Adding Up a System's Resistance" (illustrative values); the sim labels them "illustrative".</p>
+<p><strong>Rules:</strong> Level difference in inches equals the magnitude of the gauge reading. Positive reading: water pushed down on the duct leg and up on the open leg. Negative reading: water pulled up on the duct leg. Zero: legs level. Fan static pressure rise = outlet reading − inlet reading (equal inlet and outlet velocities assumed, as stated in the chapter). Answer correct when sign matches and |entered − correct| ≤ 0.05. An entry of 0 for point 6 is correct with or without a sign.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner selects point 1. The manometer appears with its water levels hidden behind a shutter. The learner chooses a sign and types a magnitude, then presses Check.</li>
+<li>The shutter opens, the water levels and ruler appear, and the reading is compared with the learner's answer.</li>
+<li>The learner repeats for points 2 to 6, in order. After each reveal, the point is labeled on the system drawing with its reading, so the pressure profile builds up across the system.</li>
+<li>With all six labeled, question 7 appears. The learner enters the fan's static pressure rise.</li>
+<li>After question 7, the learner may click any point again to review its manometer; no further answers are recorded.</li>
+</ol>
+<p><strong>Feedback:</strong> Seven items, fixed order, one scored attempt each and one retry after the reveal that is not scored. Correct: "Correct: <reading> in. wg." Incorrect: the "Why" text for that point, plus the correct reading. A score "First-attempt correct: n of 7" is shown at the end.</p>
+<p><strong>Starting State:</strong> The system drawing with all six points unlabeled and the manometer for point 1 hidden. The question on screen is "The air has just passed the intake louver. Is the duct above or below room pressure, and by how much?"</p>
+<p><strong>Chapter Anchors:</strong> Pressure drops: louver 0.15, filter 0.50, coil 0.75, ductwork and fittings 0.95, diffuser 0.15 in. wg. Readings −0.15, −0.65, −1.40, +1.10, +0.15, 0. Fan static pressure rise 2.50 in. wg. Static pressure is negative on the inlet side and positive on the discharge side.</p>
+</details>
+<h2 id="fan-speed">Fan Speed<a class="headerlink" href="#fan-speed" title="Permanent link">&para;</a></h2>
+<p><strong>Fan speed</strong> is how fast the impeller turns, in <strong>revolutions per minute (RPM)</strong>. It is the single most powerful lever on a fan's performance: at a given size, turning the impeller faster moves more air and develops more pressure, at the cost of much more power and noise. The fan laws in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> quantify this; for now it is enough to know that airflow rises in proportion to speed, pressure with the square of speed, and power with the cube.</p>
+<p>How the fan gets its speed depends on the drive. In a <strong>direct drive</strong> fan the impeller is on the motor shaft, so the fan runs at motor speed. AC induction motors run near a <strong>synchronous speed</strong> set by the power frequency and the motor's number of poles, and slightly below it under load. FanPedia lists the typical values, organized here by frequency.</p>
+<table>
+<thead>
+<tr>
+<th>Typical synchronous speed, 60 Hz power</th>
+<th>Typical synchronous speed, 50 Hz power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3600 RPM</td>
+<td>3000 RPM</td>
+</tr>
+<tr>
+<td>1800 RPM</td>
+<td>1500 RPM</td>
+</tr>
+<tr>
+<td>1200 RPM</td>
+<td>1000 RPM</td>
+</tr>
+<tr>
+<td>900 RPM</td>
+<td>750 RPM</td>
+</tr>
+</tbody>
+</table>
+<p>FanPedia adds that "actual nominal motor speeds vary by motor HP and manufacturer" (FanPedia, p. 71). A motor listed as "1800 RPM" typically turns a little under that under load, which is why catalog direct-drive speeds sit slightly below these round numbers. A <strong>belt drive</strong> fan uses pulleys, called sheaves, of different diameters so the fan can run at any speed the job requires, not just the four motor speeds. A variable frequency drive can also change a motor's speed electrically; <a href="../15-motor-ratings-speed-control-and-positioners/">Chapter 15</a> covers speed control.</p>
+<h4 id="belt-drive-speed-ratio">Belt Drive Speed Ratio<a class="headerlink" href="#belt-drive-speed-ratio" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+N_{fan} = N_{motor} \times \frac{D_{motor}}{D_{fan}}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( N_{fan} \)</span> is the fan speed in RPM</li>
+<li><span class="arithmatex">\( N_{motor} \)</span> is the motor speed in RPM</li>
+<li><span class="arithmatex">\( D_{motor} \)</span> is the pitch diameter of the motor sheave in inches</li>
+<li><span class="arithmatex">\( D_{fan} \)</span> is the pitch diameter of the fan sheave in inches</li>
+</ul>
+<p>The speed of the blade tips, not just the RPM, governs the stress in an impeller, because a larger wheel at the same RPM has faster tips. <strong>Tip speed</strong> is the distance around the impeller times the revolutions per minute.</p>
+<h4 id="impeller-tip-speed">Impeller Tip Speed<a class="headerlink" href="#impeller-tip-speed" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+V_{tip} = \frac{\pi \times D \times N}{12}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( V_{tip} \)</span> is the tip speed in feet per minute</li>
+<li><span class="arithmatex">\( D \)</span> is the impeller diameter in inches</li>
+<li><span class="arithmatex">\( N \)</span> is the fan speed in RPM</li>
+</ul>
+<h4 id="worked-example-setting-a-belt-driven-fans-speed">Worked Example: Setting a Belt-Driven Fan's Speed<a class="headerlink" href="#worked-example-setting-a-belt-driven-fans-speed" title="Permanent link">&para;</a></h4>
+<p>A belt-driven fan with a 36.5 in impeller (illustrative) is driven by a motor turning 1,760 RPM. The motor sheave is 6 in and the fan sheave is 9 in (pitch diameters).</p>
+<ol>
+<li>Fan speed: <span class="arithmatex">\( 1{,}760 \times 6 \div 9 = 1{,}173 \)</span> RPM.</li>
+<li>Tip speed: <span class="arithmatex">\( \pi \times 36.5 \times 1{,}173 \div 12 = 11{,}210 \)</span> feet per minute, roughly 127 miles per hour at the blade tips.</li>
+<li>To speed the fan up by about 10 percent, the motor sheave could be enlarged to 6.6 in: <span class="arithmatex">\( 1{,}760 \times 6.6 \div 9 = 1{,}291 \)</span> RPM. That would also raise power by roughly a third (<span class="arithmatex">\( 1.1^3 = 1.33 \)</span>), so the motor must be rechecked.</li>
+</ol>
+<p>Every fan design has a maximum safe operating speed, and higher fan classes allow higher speeds; <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> explains fan class and maximum safe speed. A speed change on a job site is therefore never "just a sheave swap": check the class limit and the motor load first.</p>
+<h2 id="horsepower">Horsepower<a class="headerlink" href="#horsepower" title="Permanent link">&para;</a></h2>
+<p><strong>Horsepower (hp)</strong> is a unit of power, the rate of doing work. One horsepower equals 33,000 foot-pounds of work per minute, or 0.7457 kilowatt. FanPedia's motor pages give the conversion directly: "kW = HP x .7457" (FanPedia, p. 71). In fan work three different horsepowers appear, and mixing them up is a frequent source of confusion:</p>
+<ul>
+<li><strong>Air horsepower</strong> is the useful power delivered to the air: airflow times pressure, converted to horsepower.</li>
+<li><strong>Brake horsepower (BHP)</strong> is the power that must be delivered to the fan shaft. It is larger than air horsepower because no fan is perfectly efficient; this is the number in a catalog performance table.</li>
+<li><strong>Motor horsepower</strong> is the nameplate rating of the motor chosen to supply the brake horsepower, picked from a ladder of standard sizes.</li>
+</ul>
+<p>The constant 6356 in the equation below comes from the unit definitions: one horsepower is 33,000 ft·lb/min, and one inch of water gauge is about 5.19 lb/ft², so <span class="arithmatex">\( 33{,}000 \div 5.19 \approx 6{,}356 \)</span>. Static efficiency, the ratio of air horsepower (based on static pressure) to brake horsepower, is treated fully in <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>.</p>
+<h4 id="brake-horsepower-from-airflow-and-static-pressure">Brake Horsepower from Airflow and Static Pressure<a class="headerlink" href="#brake-horsepower-from-airflow-and-static-pressure" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+BHP = \frac{Q \times SP}{6356 \times \eta_s}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( BHP \)</span> is the brake horsepower at the fan shaft</li>
+<li><span class="arithmatex">\( Q \)</span> is the airflow in CFM</li>
+<li><span class="arithmatex">\( SP \)</span> is the fan static pressure in in. wg</li>
+<li><span class="arithmatex">\( \eta_s \)</span> is the fan's static efficiency, as a decimal</li>
+</ul>
+<p>Motors come in standard power ratings. The following excerpt from FanPedia's power equivalents table lists the common sizes in the range you will see most often, with their metric equivalents (FanPedia, p. 71).</p>
+<table>
+<thead>
+<tr>
+<th>Motor rating (hp)</th>
+<th>1</th>
+<th>1-1/2</th>
+<th>2</th>
+<th>3</th>
+<th>5</th>
+<th>7-1/2</th>
+<th>10</th>
+<th>15</th>
+<th>20</th>
+<th>25</th>
+<th>30</th>
+<th>40</th>
+<th>50</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equivalent (kW)</td>
+<td>0.75</td>
+<td>1.1</td>
+<td>1.5</td>
+<td>2.2</td>
+<td>4</td>
+<td>5.5</td>
+<td>7.5</td>
+<td>11</td>
+<td>15</td>
+<td>18.5</td>
+<td>22</td>
+<td>30</td>
+<td>37</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-from-duty-point-to-motor">Worked Example: From Duty Point to Motor<a class="headerlink" href="#worked-example-from-duty-point-to-motor" title="Permanent link">&para;</a></h4>
+<p>A fan must deliver 12,000 CFM at 3.0 in. wg static pressure, and the catalog shows a static efficiency of 72 percent at that point (illustrative).</p>
+<ol>
+<li>Brake horsepower: <span class="arithmatex">\( 12{,}000 \times 3.0 \div (6{,}356 \times 0.72) = 7.87 \)</span>, call it 7.9 BHP.</li>
+<li>Choose the next standard motor above 7.9 hp from the table: 10 hp (7.5 kW).</li>
+<li>Check the motor load: <span class="arithmatex">\( 7.9 \div 10 = 79 \)</span> percent. FanPedia notes that most motors are designed to run at 50 to 100 percent of rated load, with maximum efficiency usually near 75 percent; its own example is a 10 hp motor with an acceptable range of 5 to 10 hp (FanPedia, p. 72). A 79 percent load is a good fit.</li>
+<li>In metric terms the fan shaft needs <span class="arithmatex">\( 7.9 \times 0.7457 = 5.9 \)</span> kW.</li>
+</ol>
+<p>A 7-1/2 hp motor would be overloaded at 7.9 BHP, and a 20 hp motor would run at under 40 percent load, below the range where motor efficiency holds up. Motor selection rules, including service factor and cold starts, are in <a href="../14-fan-motors-and-enclosures/">Chapter 14</a> and <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>.</p>
+<h2 id="air-density">Air Density<a class="headerlink" href="#air-density" title="Permanent link">&para;</a></h2>
+<p><strong>Air density</strong> is the mass of air in one cubic foot, in pounds per cubic foot (lb/ft³). Every number so far has quietly assumed air at 70°F and sea level, where it weighs 0.075 lb/ft³. That reference condition is called <strong>standard air</strong>, and fan catalogs publish their tables at standard air; <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> gives its full definition. Real jobs are hotter, colder or higher, and the air's density changes with them.</p>
+<p>Two things set the density of dry air: its <strong>temperature</strong> and its <strong>absolute pressure</strong>, which on a job site is set mostly by <strong>altitude</strong>. Hot air is thinner because its molecules spread out; air at high elevation is thinner because there is less atmosphere above it pressing down. Engineers express the effect as a <strong>density ratio</strong>, the actual density divided by standard density.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Fan Moves Volume, Not Weight</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice what the impeller actually does: each revolution sweeps out roughly the same volume of air no matter how heavy that air is. So at a fixed speed a fan delivers the same CFM in thin air or thick air, while the static pressure it develops and the horsepower it draws both rise and fall in direct proportion to density.</p>
+</div>
+<h4 id="density-ratio">Density Ratio<a class="headerlink" href="#density-ratio" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+DR = \frac{\rho}{0.075} = \frac{530}{T + 460} \times \frac{P_b}{29.92}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( DR \)</span> is the density ratio (1.000 at standard air)</li>
+<li><span class="arithmatex">\( \rho \)</span> is the actual air density in lb/ft³</li>
+<li><span class="arithmatex">\( T \)</span> is the air temperature in °F; adding 460 converts it to degrees Rankine, an absolute temperature scale, and 530 is 70°F on that scale</li>
+<li><span class="arithmatex">\( P_b \)</span> is the absolute pressure in inches of mercury; 29.92 is sea-level standard</li>
+</ul>
+<p>Fan static pressure and brake horsepower scale with the density ratio, while airflow at a given speed does not. That gives the two rules used every day:</p>
+<ul>
+<li><strong>Reading a catalog for the job:</strong> actual SP and BHP = catalog value × DR.</li>
+<li><strong>Selecting from a catalog for the job:</strong> catalog SP to look up = required actual SP ÷ DR.</li>
+</ul>
+<p>The chart that follows plots the density ratio across the temperature and altitude range met in industrial work, and lets you practice both rules. The temperature and altitude sections after it work the examples behind its challenges.</p>
+<h4 id="diagram-air-density-ratio-explorer">Diagram: Air Density Ratio Explorer<a class="headerlink" href="#diagram-air-density-ratio-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Air Density Ratio Explorer</summary>
+<p>Type: chart
+<strong>sim-id:</strong> ch01-air-density-ratio-explorer<br/>
+<strong>Library:</strong> Chart.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> calculate<br/>
+<strong>Learning Objective:</strong> The learner will calculate the density ratio for a stated air temperature and site altitude, and use it to correct a static pressure between catalog and job conditions, to within ±0.005 on the ratio and ±0.03 in. wg on the pressure.</p>
+<p><strong>Prerequisites:</strong> air density, standard air (70°F, sea level, 0.075 lb/ft³), density ratio, air temperature, altitude, absolute pressure, static pressure, the two correction rules (all defined in the section "Air Density" above).</p>
+<p><strong>Evidence of Mastery:</strong> For four fixed challenges the learner types the density ratio, and for challenges 1 and 2 also the corrected static pressure, before the answer is revealed. A ratio is correct within ±0.005; a pressure within ±0.03 in. wg. Mastery is all six entries correct within two attempts each. Hovering over the curves and moving the temperature and altitude settings is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Hot air or high altitude reduces the CFM a fan moves at a given speed; in fact CFM is unchanged and pressure and power fall. (2) The temperature correction can be done in °F directly (70 ÷ 250) instead of absolute degrees. (3) To select a fan for thin air you multiply the required pressure by the density ratio, when you must divide.</p>
+<p><strong>Instructional Rationale:</strong> Applying a correction is a procedural skill that needs practice with checking. The chart makes the shape of the relationship visible (density falls steadily with both temperature and altitude) so the learner can sanity-check each calculated ratio against the curve before committing an answer.</p>
+<p><strong>Content:</strong></p>
+<p>Chart: density ratio (vertical axis, 0.40 to 1.25) against air temperature (horizontal axis, −20°F to 600°F), one curve for each of four site altitudes: 0 ft, 2,000 ft, 5,000 ft and 8,000 ft. Hovering a point shows temperature, altitude, density ratio (3 decimals) and density in lb/ft³ (4 decimals). A movable marker shows the learner's current temperature and altitude setting.</p>
+<p>Adjustable settings:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Min</th>
+<th>Max</th>
+<th>Step</th>
+<th>Default</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Air temperature</td>
+<td>−20</td>
+<td>600</td>
+<td>10</td>
+<td>70</td>
+<td>°F</td>
+</tr>
+<tr>
+<td>Site altitude</td>
+<td>0</td>
+<td>10,000</td>
+<td>500</td>
+<td>0</td>
+<td>ft</td>
+</tr>
+</tbody>
+</table>
+<p>Altitude pressure ratios (P_b ÷ 29.92) that the learner can read from a reference panel: 0 ft 1.000; 1,000 ft 0.964; 2,000 ft 0.930; 3,000 ft 0.896; 4,000 ft 0.864; 5,000 ft 0.832; 6,000 ft 0.801; 7,000 ft 0.772; 8,000 ft 0.743; 9,000 ft 0.715; 10,000 ft 0.688.</p>
+<p>Challenges, in this order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Situation</th>
+<th>Asked</th>
+<th>Model answer</th>
+<th>Feedback when wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>250°F at sea level; catalog shows 4.0 in. wg at standard air</td>
+<td>Density ratio; actual SP</td>
+<td>0.746; 2.99 in. wg</td>
+<td>530 ÷ (250 + 460) = 0.746. Use absolute temperature, not 70 ÷ 250. Actual SP = 4.0 × 0.746 = 2.99 in. wg.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>70°F at 5,000 ft; job needs 2.0 in. wg actual</td>
+<td>Density ratio; catalog SP to select at</td>
+<td>0.832; 2.40 in. wg</td>
+<td>At 70°F only altitude matters: 0.832. To select, divide: 2.0 ÷ 0.832 = 2.40 in. wg. Multiplying would undersize the fan.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>120°F at 5,000 ft</td>
+<td>Density ratio</td>
+<td>0.760</td>
+<td>Multiply both effects: 530 ÷ 580 = 0.914, times 0.832 = 0.760.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>600°F at sea level</td>
+<td>Density ratio</td>
+<td>0.500</td>
+<td>530 ÷ (600 + 460) = 530 ÷ 1,060 = 0.500: the air weighs half as much as standard air.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Equation and challenge values from the chapter sections "Air Density", "Air Temperature" and "Altitude". Pressure ratios computed from the standard-atmosphere relation in Rules, rounded to 3 decimals. Catalog pressures in challenges 1 and 2 are illustrative and labeled so.</p>
+<p><strong>Rules:</strong> DR = (530 ÷ (T + 460)) × (P_b ÷ 29.92), with P_b ÷ 29.92 = (1 − 6.8754 × 10⁻⁶ × h)^5.2559 for altitude h in feet. Density = 0.075 × DR lb/ft³. Actual SP = catalog SP × DR. Catalog SP for selection = required actual SP ÷ DR. Ratios displayed to 3 decimals, pressures to 2. A ratio answer is correct when |answer − model| ≤ 0.005; a pressure answer when |answer − model| ≤ 0.03. Temperatures within the range keep T + 460 positive, so no division by zero arises.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads challenge 1 and, before calculating, places the marker at 250°F and 0 ft to see the approximate ratio on the curve.</li>
+<li>The learner types the density ratio and the corrected pressure and presses Check.</li>
+<li>The learner completes challenges 2 to 4 in order. Changing the marker after a challenge is revealed does not change the recorded answer.</li>
+<li>After challenge 4, the learner moves freely; the hover readout updates and a note reminds them that CFM at a given speed does not change with density.</li>
+</ol>
+<p><strong>Feedback:</strong> Four challenges (six entries), fixed order, two attempts per entry. Correct: "Correct: <value>." Incorrect: the challenge's "Feedback when wrong" text. After two wrong attempts the model answer and calculation are shown and the entry counts as missed. A score "Entries correct: n of 6" is shown.</p>
+<p><strong>Starting State:</strong> The four curves are drawn, the marker sits at 70°F and 0 ft reading 1.000, and challenge 1 is shown with empty answer boxes. The question on screen is "A fan rated at standard air will handle 250°F air. How much pressure will it really develop?"</p>
+<p><strong>Chapter Anchors:</strong> Standard air 0.075 lb/ft³ at 70°F and sea level. Ratios 0.746 (250°F), 0.832 (5,000 ft), 0.760 (120°F at 5,000 ft), 0.500 (600°F). Corrected pressures 2.99 in. wg and 2.40 in. wg. CFM at a given speed is unchanged by density; SP and BHP scale with density ratio.</p>
+</details>
+<h2 id="air-temperature">Air Temperature<a class="headerlink" href="#air-temperature" title="Permanent link">&para;</a></h2>
+<p><strong>Air temperature</strong> is the temperature of the air in the airstream at the fan inlet, in °F. It touches a fan selection in two separate ways. The first is density: hotter air is thinner, so a fan handling hot air develops less pressure and draws less power than its standard-air catalog rating at the same speed. The second is materials: heat weakens steel, degrades seals and lubricants, and can overheat bearings and motors, which is why FanPedia devotes a full section to high-temperature construction (FanPedia, pp. 110-116) and treats temperature limits as part of many component descriptions.</p>
+<p>The density side follows directly from the density ratio equation. The table below lists the temperature factor, <span class="arithmatex">\( 530 \div (T + 460) \)</span>, and the resulting density at sea level for temperatures common in fan work.</p>
+<table>
+<thead>
+<tr>
+<th>Air temperature (°F)</th>
+<th>Temperature factor (density ratio at sea level)</th>
+<th>Density (lb/ft³)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>−20</td>
+<td>1.205</td>
+<td>0.0903</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1.060</td>
+<td>0.0795</td>
+</tr>
+<tr>
+<td>70</td>
+<td>1.000</td>
+<td>0.0750</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0.946</td>
+<td>0.0710</td>
+</tr>
+<tr>
+<td>200</td>
+<td>0.803</td>
+<td>0.0602</td>
+</tr>
+<tr>
+<td>250</td>
+<td>0.746</td>
+<td>0.0560</td>
+</tr>
+<tr>
+<td>400</td>
+<td>0.616</td>
+<td>0.0462</td>
+</tr>
+<tr>
+<td>600</td>
+<td>0.500</td>
+<td>0.0375</td>
+</tr>
+</tbody>
+</table>
+<h4 id="worked-example-a-fan-in-a-250f-airstream">Worked Example: A Fan in a 250°F Airstream<a class="headerlink" href="#worked-example-a-fan-in-a-250f-airstream" title="Permanent link">&para;</a></h4>
+<p>A catalog shows a fan delivering a certain CFM at 4.0 in. wg static pressure and some brake horsepower at a stated RPM, all at standard air. The fan will actually handle 250°F air at sea level.</p>
+<ol>
+<li>Density ratio: <span class="arithmatex">\( 530 \div (250 + 460) = 0.746 \)</span>.</li>
+<li>Airflow at the catalog RPM: unchanged, because the fan moves volume.</li>
+<li>Static pressure actually developed: <span class="arithmatex">\( 4.0 \times 0.746 = 2.99 \)</span> in. wg.</li>
+<li>Brake horsepower: also multiplied by 0.746, so the fan draws about a quarter less power when hot.</li>
+</ol>
+<p>The fourth step has a catch. When the same fan starts up cold, at perhaps 70°F, it handles air at a density ratio of 1.000 and draws the full standard-air horsepower, about one third more than its hot running load. A motor sized only for the hot condition can overload on every cold start. That cold-start horsepower is part of the motor check in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>.</p>
+<p>On the materials side, the temperature limits are written into component descriptions throughout FanPedia. Standard double width, double inlet fans with bearings in the airstream are limited to clean air at 130°F (FanPedia, p. 167). Nested inlet vanes are rated for clean airstreams up to 600°F (FanPedia, p. 139). Even the airflow-measuring piezometer ring changes material with temperature: nylon tubing up to 180°F and copper tubing above 180°F (FanPedia, p. 158). Every one of those choices begins with the same question: how hot is the airstream?</p>
+<h2 id="altitude">Altitude<a class="headerlink" href="#altitude" title="Permanent link">&para;</a></h2>
+<p><strong>Altitude</strong> is the elevation of the job site above sea level, in feet. As elevation rises, the atmosphere above the site is thinner, so barometric pressure falls, and with it the density of the air entering the fan. At 5,000 ft, for example, the pressure ratio is 0.832, so even air at 70°F weighs only about 83 percent of what it does at sea level. A fan at a mountain site behaves exactly as if it were handling warm air: same CFM at a given speed, less pressure and less power.</p>
+<h4 id="worked-example-selecting-a-fan-for-a-5000-ft-site">Worked Example: Selecting a Fan for a 5,000 ft Site<a class="headerlink" href="#worked-example-selecting-a-fan-for-a-5000-ft-site" title="Permanent link">&para;</a></h4>
+<p>A plant at 5,000 ft elevation needs 2.0 in. wg of actual static pressure from an exhaust fan handling 70°F air.</p>
+<ol>
+<li>Density ratio: temperature factor 1.000 times pressure ratio 0.832, so DR = 0.832.</li>
+<li>The catalog is printed at standard air, so convert the requirement to catalog conditions by dividing: <span class="arithmatex">\( 2.0 \div 0.832 = 2.40 \)</span> in. wg.</li>
+<li>Look up the fan in the catalog at the required CFM and 2.40 in. wg, and read the RPM and brake horsepower there.</li>
+<li>Convert the catalog BHP back to the site by multiplying by 0.832. The fan runs at the catalog RPM, but the motor sees only 83 percent of the catalog power.</li>
+</ol>
+<p>Selecting at 2.0 in. wg straight from the catalog would leave the fan about 17 percent short of the pressure the system needs. Both temperature and altitude often apply at once, and then the two factors multiply. A dryer exhaust at 120°F on the same 5,000 ft site has <span class="arithmatex">\( DR = (530 \div 580) \times 0.832 = 0.914 \times 0.832 = 0.760 \)</span>.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">Two Factors, One Habit</p>
+<p><img alt="Breeze encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
+If multiplying here and dividing there feels slippery, that's normal; nearly everyone flips the rule at least once. Anchor it to the one thing you already know for sure, that thin air makes a fan weaker, so a selection for thin air must look up a <em>higher</em> catalog pressure, then work the challenges in the density explorer until the direction is automatic.</p>
+</div>
+<h2 id="contaminated-airstreams">Contaminated Airstreams<a class="headerlink" href="#contaminated-airstreams" title="Permanent link">&para;</a></h2>
+<p>A <strong>contaminated airstream</strong> is an airstream that carries something other than clean air: solid particles such as dust, fibers, chips or grit; liquid droplets or moisture; corrosive gases or mists; flammable vapors or dusts; or fumes hazardous to people. Clean air at an extreme temperature is not, by itself, contaminated, although it raises its own construction questions. Contamination matters because the fan's internal parts are <em>in</em> the airstream: solids erode blades and build up on them until the impeller is out of balance, corrosives eat the metal, moisture collects in the housing, and a spark in a flammable atmosphere can start a fire.</p>
+<p>FanPedia shows several ways the industry responds, and each points to a later chapter:</p>
+<ul>
+<li><strong>Impeller design.</strong> Radial bladed impellers come in paddle, material handling and paper handling versions built for air carrying material (FanPedia, p. 32); see <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</li>
+<li><strong>Arrangement.</strong> Arrangement 1 keeps both bearings on the pedestal, out of the airstream, and FanPedia names it for contaminated air applications (FanPedia, p. 162).</li>
+<li><strong>Accessories.</strong> External inlet vanes are described as "used for contaminated airstreams," while nested inlet vanes, which sit inside the inlet funnel, are for clean airstreams (FanPedia, p. 139); see <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a>.</li>
+<li><strong>Discharge and dilution.</strong> Lab exhaust fans "dilute contaminated air by drawing in fresh outside air" and send it "up and away from the building" (FanPedia, pp. 4, 6).</li>
+<li><strong>Construction.</strong> Flammable atmospheres call for spark-resistant construction; see <a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a>.</li>
+</ul>
+<h4 id="worked-example-diluting-a-lab-exhaust">Worked Example: Diluting a Lab Exhaust<a class="headerlink" href="#worked-example-diluting-a-lab-exhaust" title="Permanent link">&para;</a></h4>
+<p>A lab exhaust fan pulls 5,000 CFM of contaminated air from fume hoods and draws in 3,000 CFM of outside air through its bypass plenum (illustrative values).</p>
+<ol>
+<li>Total flow leaving the fan: <span class="arithmatex">\( 5{,}000 + 3{,}000 = 8{,}000 \)</span> CFM.</li>
+<li>The contaminant is now spread through 8,000 CFM instead of 5,000, so its concentration falls to <span class="arithmatex">\( 5{,}000 \div 8{,}000 = 0.625 \)</span>, or 62.5 percent of its concentration at the hoods.</li>
+<li>The fan must be selected for the 8,000 CFM total, not the 5,000 CFM of hood exhaust, and every wetted part sees the contaminated mixture.</li>
+</ol>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Ask What Is in the Air Before Picking a Fan</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is quoting a fan from CFM and static pressure alone, then learning after shipment that the airstream carries grinding dust or solvent vapor. It happens because the request form only had boxes for performance; avoid it by asking every time for temperature, what the air carries, and whether it is flammable or corrosive, and by writing the answers on the quote.</p>
+</div>
+<p>The sorter below gives you ten airstreams from real types of jobs. Decide for each whether the air is clean, and if not, what kind of threat it poses to the fan or to people.</p>
+<h4 id="diagram-airstream-classifier">Diagram: Airstream Classifier<a class="headerlink" href="#diagram-airstream-classifier" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Airstream Classifier</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch01-airstream-classifier<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Analyze<br/>
+<strong>Bloom Verb:</strong> distinguish<br/>
+<strong>Learning Objective:</strong> The learner will distinguish clean airstreams from contaminated ones and assign each contaminated airstream to its main threat category, with at least 8 of 10 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> airstream, contaminated airstream, "in the airstream" versus "out of the airstream", air temperature (all defined in the sections "The Airstream", "Air Temperature" and "Contaminated Airstreams" above).</p>
+<p><strong>Evidence of Mastery:</strong> The learner places each of 10 airstream cards into one of five bins. A placement is correct when it matches the "Correct bin" column in Content. Mastery is at least 8 of 10 correct on the first attempt. Reading the bin definitions is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) Hot air is contaminated air; in fact hot clean air is clean, with its own temperature concerns. (2) Any airstream from a factory is contaminated. (3) If the fan survives the airstream, the airstream is not a concern; hazardous fumes are a concern for people even when they do not harm the fan.</p>
+<p><strong>Instructional Rationale:</strong> Distinguishing categories requires attending to the specific property that matters in each description. A sorter with immediate, reasoned feedback forces that comparison item by item, and the first-attempt score measures whether the learner can make the distinction unaided.</p>
+<p><strong>Content:</strong></p>
+<p>Bins, with the definition shown on each bin:</p>
+<ul>
+<li>A. Clean air: no significant solids, moisture, corrosives, flammables or hazardous fumes, at any temperature.</li>
+<li>B. Contaminated: solids that wear or build up on the impeller.</li>
+<li>C. Contaminated: corrosive gases or heavy moisture that attack materials.</li>
+<li>D. Contaminated: flammable vapors, gases or dusts that make a spark dangerous.</li>
+<li>E. Contaminated: fumes hazardous to people, which must be diluted and discharged away from the building.</li>
+</ul>
+<p>Cards:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Airstream shown to the learner</th>
+<th>Correct bin</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Filtered supply air for an office floor at 70°F</td>
+<td>A</td>
+<td>Filtered air at room temperature carries nothing that threatens the fan or people.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Air conveying paper trim away from a converting line</td>
+<td>B</td>
+<td>Paper trim is solid material; FanPedia lists paper handling radial impellers for this kind of duty.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Exhaust above a plating tank with acid mist</td>
+<td>C</td>
+<td>Acid mist corrodes metal parts in the airstream.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Exhaust from a commercial dishwasher room, saturated with water vapor</td>
+<td>C</td>
+<td>Heavy moisture condenses and attacks materials; the fan needs drains and suitable materials.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Exhaust from a paint booth carrying solvent vapor</td>
+<td>D</td>
+<td>Solvent vapor is flammable, so a spark from rubbing parts could ignite it.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Exhaust from laboratory fume hoods</td>
+<td>E</td>
+<td>Lab exhaust carries fumes hazardous to people; FanPedia's lab exhaust fans dilute it and send it up and away from the building.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Recirculated air inside a 400°F drying oven, with no dust or vapor</td>
+<td>A</td>
+<td>High temperature alone does not make air contaminated; it calls for high-temperature construction instead.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Sand and grit from a foundry shakeout</td>
+<td>B</td>
+<td>Abrasive solids erode blades and housings.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Exhaust from a battery charging room where hydrogen can collect</td>
+<td>D</td>
+<td>Hydrogen is a flammable gas, so ignition sources must be controlled.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Outdoor make-up air drawn into a warehouse</td>
+<td>A</td>
+<td>Outdoor air with nothing added is clean air for fan selection purposes.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Bin definitions from the chapter section "Contaminated Airstreams". Card 2 rationale: FanPedia p. 32 (radial bladed paper handling impeller). Card 6 rationale: FanPedia pp. 4, 6 (lab exhaust dilution). Card 7: chapter section "Air Temperature" and FanPedia pp. 110-116 (high-temperature construction). Remaining cards are general engineering knowledge.</p>
+<p><strong>Rules:</strong> Each card has exactly one correct bin, given in the table. Cards are shown one at a time in a shuffled order, seeded per session. A placement is scored on the first attempt only.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>The learner reads the five bin definitions.</li>
+<li>A card appears. The learner places it into a bin.</li>
+<li>The sim marks the placement correct or incorrect and shows the "Why" text. An incorrect card stays on screen until the learner places it in the correct bin, then the next card appears.</li>
+<li>After the tenth card, a summary lists each card, the learner's first choice and the correct bin.</li>
+</ol>
+<p><strong>Feedback:</strong> Ten cards, shuffled order, one scored attempt each, unlimited unscored retries until correct. Correct: "Correct: <bin letter>. <Why>". Incorrect: "Not quite. <Why>". The correct bin is revealed after the second wrong placement. A score "First-attempt correct: n of 10" is shown at the end.</p>
+<p><strong>Starting State:</strong> Five empty bins with their definitions and the first card face up. The question on screen is "What is in this air, and why does it matter to the fan?"</p>
+<p><strong>Chapter Anchors:</strong> Five categories: clean, solids, corrosive or moisture, flammable, hazardous fumes. Hot clean air counts as clean. Ten cards. FanPedia references p. 32, pp. 4 and 6, pp. 110-116.</p>
+</details>
+<h2 id="putting-it-together-what-a-fan-delivers">Putting It Together: What a Fan Delivers<a class="headerlink" href="#putting-it-together-what-a-fan-delivers" title="Permanent link">&para;</a></h2>
+<p>You now have every quantity a fan rating is written in. A complete <strong>duty statement</strong>, the line on a schedule or specification that tells you what the fan must do, combines them. Using the numbers from this chapter's worked examples, a full duty statement reads:</p>
+<blockquote>
+<p>12,000 CFM at 3.0 in. wg static pressure, 1,173 RPM, 7.9 BHP, at 0.075 lb/ft³ (70°F, sea level), clean air.</p>
+</blockquote>
+<p>Read left to right: the airflow volume, the static pressure the system demands at that airflow, the fan speed needed to deliver both, the brake horsepower the shaft will draw, the air density the rating assumes, and what is in the airstream. Leave out the density or the airstream and the line cannot be checked against a catalog; leave out the static pressure and it cannot be selected at all. <a href="../26-reading-catalogs-and-performance-tables/">Chapter 26</a> shows how to find this line in a performance table. The infographic below lets you check each part.</p>
+<h4 id="diagram-anatomy-of-a-fan-duty-statement">Diagram: Anatomy of a Fan Duty Statement<a class="headerlink" href="#diagram-anatomy-of-a-fan-duty-statement" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Anatomy of a Fan Duty Statement</summary>
+<p>Type: infographic
+<strong>sim-id:</strong> ch01-fan-duty-statement<br/>
+<strong>Library:</strong> html<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Remember<br/>
+<strong>Bloom Verb:</strong> identify<br/>
+<strong>Learning Objective:</strong> The learner will identify each of the six parts of a fan duty statement by its quantity and unit, with at least 5 of 6 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> airflow volume, cubic feet per minute, static pressure, inches of water gauge, fan speed, RPM, brake horsepower, air density, standard air, airstream (all defined earlier in this chapter).</p>
+<p><strong>Evidence of Mastery:</strong> In quiz mode the learner matches each of the six highlighted segments of the duty statement to one of six quantity names. A match is correct when it agrees with the Content table. Mastery is at least 5 of 6 correct on the first attempt. Clicking segments in explore mode to read their callouts is exploration, not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) BHP is the motor nameplate size. (2) The static pressure is a property of the fan alone rather than the resistance of the system at that airflow. (3) The density can be left off because every catalog uses standard air.</p>
+<p><strong>Instructional Rationale:</strong> Recognizing the parts of a real rating line is a Remember-level skill; a labeled picture with clickable callouts followed by a short matching check lets the learner first see each part with its meaning and then retrieve the names without support.</p>
+<p><strong>Content:</strong></p>
+<p>The duty statement shown: "12,000 CFM at 3.0 in. wg static pressure, 1,173 RPM, 7.9 BHP, at 0.075 lb/ft³ (70°F, sea level), clean air."</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Segment</th>
+<th>Quantity name</th>
+<th>Callout text (explore mode and feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>12,000 CFM</td>
+<td>Airflow volume</td>
+<td>Cubic feet of air per minute, measured at the fan inlet conditions.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.0 in. wg static pressure</td>
+<td>Static pressure</td>
+<td>The system's resistance at this airflow, which the fan must overcome.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,173 RPM</td>
+<td>Fan speed</td>
+<td>Impeller revolutions per minute; here set by a 6 in motor sheave and a 9 in fan sheave on a 1,760 RPM motor.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7.9 BHP</td>
+<td>Brake horsepower</td>
+<td>Power required at the fan shaft; a 10 hp motor would run at 79 percent load. It is not the motor size.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.075 lb/ft³ (70°F, sea level)</td>
+<td>Air density</td>
+<td>The density the rating assumes; here standard air. Hot air or a high site changes pressure and power.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>clean air</td>
+<td>Airstream condition</td>
+<td>What the air carries; contaminated airstreams change the impeller, arrangement and construction.</td>
+</tr>
+</tbody>
+</table>
+<p>Quiz mode presents the six quantity names as choices for each segment.</p>
+<p><strong>Provenance:</strong> All values from this chapter's worked examples: "From Duty Point to Motor" (12,000 CFM, 3.0 in. wg, 7.9 BHP, 10 hp, 79 percent) and "Setting a Belt-Driven Fan's Speed" (1,760 RPM, 6 in and 9 in sheaves, 1,173 RPM). The combination is illustrative and the infographic labels it "illustrative duty statement, not a catalog selection".</p>
+<p><strong>Rules:</strong> Each segment has exactly one correct quantity name. Each name is used once. In quiz mode, segments are asked in a shuffled order, seeded per session.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>In explore mode the learner clicks any segment; its callout opens with the text from Content.</li>
+<li>The learner switches to quiz mode. Callouts are hidden, and the first segment is highlighted.</li>
+<li>For each highlighted segment the learner chooses one of the six quantity names. The choice is marked correct or incorrect and the callout text is shown.</li>
+<li>After the sixth segment, the learner sees a summary and can return to explore mode.</li>
+</ol>
+<p><strong>Feedback:</strong> Six items, shuffled order, one scored attempt each. Correct: "Correct: <quantity name>. <callout text>". Incorrect: "That segment is the <correct name>. <callout text>". The correct answer is revealed after the first attempt. A score "Correct on first attempt: n of 6" is shown.</p>
+<p><strong>Starting State:</strong> Explore mode, with the duty statement displayed and its six segments marked as clickable. The prompt reads "Click each part of this rating line to see what it tells you."</p>
+<p><strong>Chapter Anchors:</strong> 12,000 CFM; 3.0 in. wg; 1,173 RPM; 7.9 BHP; 0.075 lb/ft³ at 70°F and sea level; clean air; 10 hp motor at 79 percent load; 1,760 RPM motor with 6 in and 9 in sheaves; six parts.</p>
+</details>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Air movement</strong> is the transfer of a mass of air driven by a pressure difference. Air is heavy: the 2,400 CFM machine-shop example moves about 10,800 pounds of air an hour.</li>
+<li>The <strong>airstream</strong> is the moving air and everything it carries. Whether bearings and motors sit in it or out of it drives arrangement choices, as in FanPedia's Arrangement 1 (bearings out of the airstream) versus standard Arrangement 3 (bearings in it, clean air to 130°F).</li>
+<li>A <strong>fan</strong> moves air with a rotating impeller and raises pressure only a few percent above atmospheric, so its inlet and outlet CFM are treated as equal.</li>
+<li><strong>Airflow volume</strong> is a rate in <strong>cubic feet per minute (CFM)</strong>, rated at the actual inlet condition. Mass flow equals CFM times density.</li>
+<li><strong>Air velocity</strong>, in feet per minute, equals CFM divided by flow area in square feet: 2,400 CFM in a 16 in by 12 in duct moves at 1,800 feet per minute.</li>
+<li><strong>Air pressure</strong> in fan work is gauge pressure, measured relative to the atmosphere: positive on the discharge side, negative (suction) on the inlet side.</li>
+<li><strong>Inches of water gauge</strong> is the fan industry's pressure unit: 27.7 in. wg equals 1 psi, and 1 in. wg is 5.2 lb/ft².</li>
+<li><strong>Static pressure</strong> describes system resistance. The fan must make up every component's pressure drop; in the worked example it raises static pressure from −1.40 to +1.10 in. wg, a 2.50 in. wg rise.</li>
+<li><strong>Fan speed</strong> in RPM comes from the motor's synchronous speed (3600, 1800, 1200 or 900 at 60 Hz) in direct drive, or from the sheave ratio in belt drive. Airflow rises with speed, pressure with its square, and power with its cube.</li>
+<li><strong>Horsepower</strong> is power: brake horsepower is what the fan shaft needs, and the motor is the next standard size above it, ideally loaded between 50 and 100 percent.</li>
+<li><strong>Air density</strong> at standard conditions is 0.075 lb/ft³. At a fixed speed, CFM stays the same while static pressure and horsepower scale with the density ratio.</li>
+<li><strong>Air temperature</strong> and <strong>altitude</strong> both thin the air, and their factors multiply. To select from a standard-air catalog, divide the required pressure by the density ratio; to predict actual performance, multiply.</li>
+<li>A <strong>contaminated airstream</strong> carries solids, moisture, corrosives, flammables or hazardous fumes. Ask what is in the air before selecting a fan, because it changes the impeller, the arrangement, the accessories and the construction.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Read a Duty Statement</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You can now take a line like "12,000 CFM at 3.0 in. wg, 1,173 RPM, 7.9 BHP, standard air" and say what every number means, check the horsepower and the velocity yourself, and correct the pressure for a hot airstream or a high-altitude site. That vocabulary is the foundation for every chapter that follows.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of Chapters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                List of Chapters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-airstreams-total-pressure-standard-air/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. Airstreams, Total Pressure and Standard Air">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. Airstreams, Total Pressure and Standard Air
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

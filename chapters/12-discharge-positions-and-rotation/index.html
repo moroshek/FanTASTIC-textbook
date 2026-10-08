@@ -1,0 +1,2967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How to read a fan's rotation, discharge position and angle, inlet box position, inline configuration and motor position from the drive side.">
+      
+      
+        <meta name="author" content="Twin City Fan">
+      
+      
+        <link rel="canonical" href="https://moroshek.github.io/FanTASTIC-textbook/chapters/12-discharge-positions-and-rotation/">
+      
+      
+        <link rel="prev" href="../11-drives-and-standard-fan-arrangements/">
+      
+      
+        <link rel="next" href="../13-rotation-and-discharge-codes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Discharge Positions and Rotation - FanPedia: An Intelligent Textbook on Fans & Blowers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#discharge-positions-and-rotation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-header__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FanPedia: An Intelligent Textbook on Fans & Blowers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Discharge Positions and Rotation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FanPedia: An Intelligent Textbook on Fans &amp; Blowers" class="md-nav__button md-logo" aria-label="FanPedia: An Intelligent Textbook on Fans & Blowers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FanPedia: An Intelligent Textbook on Fans & Blowers
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/moroshek/FanTASTIC-textbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FanTASTIC-textbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Course Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chapters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-air-pressure-and-the-fan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Air, Pressure and the Fan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-airstreams-total-pressure-standard-air/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Airstreams, Total Pressure and Standard Air
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-basic-fan-anatomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Basic Fan Anatomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-centrifugal-axial-and-mixed-flow-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Centrifugal, Axial and Mixed Flow Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-roof-wall-and-specialty-exhaust-fans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Roof, Wall and Specialty Exhaust Fans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-industrial-fans-and-application-product-lines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Industrial Fans and Application Product Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-housing-construction-and-exploded-views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Housing Construction and Exploded Views
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-centrifugal-and-axial-impeller-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Centrifugal and Axial Impeller Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-impeller-construction-and-material-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Impeller Construction and Material Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-fan-performance-curves-and-ratings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Fan Performance, Curves and Ratings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-drives-and-standard-fan-arrangements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Drives and Standard Fan Arrangements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Discharge Positions and Rotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-orientation-needs-a-shared-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Orientation Needs a Shared Language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewed-from-the-drive-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewed From the Drive Side
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discharge-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discharge Position
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discharge Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discharge-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discharge Angle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discharge Angle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-discharge-position-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Discharge Position Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up-blast-discharge-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Up Blast Discharge Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-horizontal-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Horizontal Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-horizontal-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Horizontal Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#down-blast-discharge-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Down Blast Discharge Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angular-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angular Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-angular-up-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Angular Up Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-angular-down-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Angular Down Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-angular-up-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Angular Up Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inlet-box-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inlet Box Position
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inlet Box Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inlet-box-position-dial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Inlet Box Position Dial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Position
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor-positions-w-x-y-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Positions W X Y Z
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axial-motor-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axial Motor Positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-together-reading-a-full-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It Together: Reading a Full Orientation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-rotation-and-discharge-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Rotation and Discharge Codes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-fan-motors-and-enclosures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fan Motors and Enclosures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-motor-ratings-speed-control-and-positioners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Motor Ratings, Speed Control and Positioners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-bearings-shafts-and-shaft-seals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Bearings, Shafts and Shaft Seals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-bearing-details-lubrication-and-pedestals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Bearing Details, Lubrication and Pedestals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-inlets-outlets-and-flow-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Inlets, Outlets and Flow Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-damper-details-and-duct-connections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Damper Details and Duct Connections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-construction-classes-materials-spark-resistance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Construction Classes, Materials and Spark Resistance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-high-temperature-leak-tight-and-rto-construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. High Temperature, Leak-Tight and RTO Construction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-fan-bases-and-vibration-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Fan Bases and Vibration Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-spring-isolators-restraints-field-measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Spring Isolators, Restraints and Field Measurement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-advanced-arrangements-and-configuration-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Advanced Arrangements and Configuration Variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-fan-laws-system-effect-and-sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25. Fan Laws, System Effect and Sound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26-reading-catalogs-and-performance-tables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. Reading Catalogs and Performance Tables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../27-fan-selection-and-writing-the-specification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Fan Selection and Writing the Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Graph
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../sims/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MicroSims
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copyright
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-orientation-needs-a-shared-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Orientation Needs a Shared Language
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewed-from-the-drive-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewed From the Drive Side
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discharge-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discharge Position
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discharge Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discharge-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discharge Angle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discharge Angle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-discharge-position-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Discharge Position Explorer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up-blast-discharge-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Up Blast Discharge Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-horizontal-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Horizontal Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-horizontal-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Horizontal Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#down-blast-discharge-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Down Blast Discharge Position
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angular-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Angular Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-angular-up-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Angular Up Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-angular-down-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top Angular Down Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bottom-angular-up-discharge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bottom Angular Up Discharge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inlet-box-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inlet Box Position
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inlet Box Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-inlet-box-position-dial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram: Inlet Box Position Dial
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Position
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Position">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motor-positions-w-x-y-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor Positions W X Y Z
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axial-motor-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Axial Motor Positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-together-reading-a-full-orientation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Putting It Together: Reading a Full Orientation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="discharge-positions-and-rotation">Discharge Positions and Rotation<a class="headerlink" href="#discharge-positions-and-rotation" title="Permanent link">&para;</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>This chapter introduces the conventions used to describe a fan's orientation. It establishes the rule that a fan is viewed from the drive side, then covers discharge positions and angles (up blast, top horizontal, bottom horizontal, down blast, and the angular discharges), inlet box position, rotation, inline configurations, and the standard W, X, Y, Z and axial motor positions. After completing it, readers can describe which way a fan discharges and where its motor sits.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">&para;</a></h2>
+<p>This chapter covers the following 17 concepts from the learning graph:</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Concept Impact Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discharge Position</td>
+<td>164</td>
+</tr>
+<tr>
+<td>Discharge Angle</td>
+<td>115</td>
+</tr>
+<tr>
+<td>Inlet Box Position</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Up Blast Discharge Position</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Top Horizontal Discharge</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Bottom Horizontal Discharge</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Down Blast Discharge Position</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Angular Discharge</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Viewed From Drive Side</td>
+<td>111</td>
+</tr>
+<tr>
+<td>Motor Position</td>
+<td>48</td>
+</tr>
+<tr>
+<td>Top Angular Up Discharge</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Top Angular Down Discharge</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Bottom Angular Up Discharge</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Rotation</td>
+<td>87</td>
+</tr>
+<tr>
+<td>Inline Configuration</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Motor Positions W X Y Z</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Axial Motor Positions</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../03-basic-fan-anatomy/">Chapter 3: Basic Fan Anatomy</a></li>
+<li><a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4: Centrifugal, Axial and Mixed Flow Fans</a></li>
+<li><a href="../11-drives-and-standard-fan-arrangements/">Chapter 11: Drives and Standard Fan Arrangements</a></li>
+</ul>
+<hr />
+<h2 id="why-orientation-needs-a-shared-language">Why Orientation Needs a Shared Language<a class="headerlink" href="#why-orientation-needs-a-shared-language" title="Permanent link">&para;</a></h2>
+<p>A fan that arrives on a job site with its outlet pointing the wrong way is not a small problem. The housing of a centrifugal fan is cast or welded around a fixed scroll, so the outlet cannot simply be turned to meet the duct. The installing contractor either rebuilds the ductwork, returns the fan, or waits for a replacement, and all three cost time and money. Almost every one of these mistakes traces back to two people describing the same fan from opposite sides.</p>
+<p>This chapter gives you the vocabulary that prevents that mistake. You will learn the single viewing rule the industry uses, then the names for which way the impeller turns, which way the outlet points, where an inlet box sits, and where the motor goes. <a href="../13-rotation-and-discharge-codes/">Chapter 13</a> turns these names into the compact codes written on orders; this chapter makes sure you can see what each code means before you write one.</p>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Point It the Right Way the First Time</p>
+<p><img alt="Breeze waving welcome" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
+Every order you write, quote you check, or drawing you approve carries a rotation, a discharge and a motor position. Get them right and the fan bolts straight onto the duct; get one wrong and a crane sits idle while the outlet points at the wrong wall. By the end of this chapter you will read any fan's orientation as easily as reading a clock. Let's follow the airflow.</p>
+</div>
+<h2 id="viewed-from-the-drive-side">Viewed From the Drive Side<a class="headerlink" href="#viewed-from-the-drive-side" title="Permanent link">&para;</a></h2>
+<p>Before you can name a fan's rotation or discharge, you must agree where the observer is standing. A fan housing seen from one side is the mirror image of the same housing seen from the other side: the outlet that points right from one side points left from the other, and a wheel that turns clockwise from one side turns counterclockwise from the other. Without a fixed viewpoint, every orientation word is ambiguous.</p>
+<p>The convention that resolves this is to describe a centrifugal fan <strong>viewed from the drive side</strong>. The <strong>drive side</strong> is the side of the fan where the drive is located: the sheave and belts on a belt-driven fan, the coupling on a coupled fan, or the motor on a direct-drive fan. FanPedia's discharge pages show a person standing beside the bearing pedestal and looking at the housing, under the heading "Rotation View From Drive Side" (FanPedia pp. 46-49). Rotation, discharge position, inlet box position and the centrifugal motor positions are all read from that spot.</p>
+<p>Two practical consequences follow. First, on a single-inlet fan with the drive on the pedestal, the drive side is the side <em>opposite</em> the inlet, so an installer standing at the inlet sees everything mirrored. Second, on a double-width, double-inlet (DWDI) fan, both faces of the housing have inlets, so "the inlet side" means nothing; only the end of the shaft carrying the drive identifies the viewpoint.</p>
+<p><strong>Worked example.</strong> A field technician sends a photo taken from the inlet of an Arrangement 1 single-inlet fan. In the photo the outlet is at the top of the housing and points to the technician's left, and the rotation arrow on the housing appears counterclockwise. The order says CW, Top Horizontal. Is the fan wrong?</p>
+<ol>
+<li>The photo was taken from the inlet side, which on this fan is opposite the drive side.</li>
+<li>Mirror the photo left to right. The outlet now points right, and the rotation arrow now reads clockwise.</li>
+<li>From the drive side, the fan is clockwise with a top horizontal outlet pointing right, which is exactly what was ordered.</li>
+</ol>
+<p>The fan is correct. The only error was the viewpoint, which is the most common cause of a false "wrong fan" report.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Ask Where the Photo Was Taken</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+A common trap is comparing a job-site photo or sketch with the order without asking which side it was taken from. Before you agree that a fan is wrong, find the sheave, coupling or motor in the picture; if it is on the far side of the housing, mirror the image before you compare. Check it from the drive side.</p>
+</div>
+<h2 id="rotation">Rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h2>
+<p><strong>Rotation</strong> is the direction in which the impeller turns. For centrifugal fans it is stated as <strong>clockwise (CW)</strong> or <strong>counterclockwise (CCW)</strong>, judged from the drive side. Rotation is not a free choice once the housing is built: a centrifugal impeller must turn toward the outlet, so that the air spinning off the blades travels around the scroll and leaves through the outlet. A backward-inclined or airfoil wheel turned the wrong way still moves some air, but at a fraction of its rated performance, while drawing power and making noise.</p>
+<p>Axial impellers use a different reference. FanPedia's airflow and rotation pages state that axial rotation "is determined by viewing the impeller from the discharge side of the fan," and name the result left-hand (LH) or right-hand (RH) rotation (FanPedia pp. 37-41). The same pages warn that airflow direction and rotation must both be correct for the fan to deliver full performance, and that an impeller turning the wrong way will not move air in the proper direction. Chapter 13 develops the axial convention fully; for now, remember that the viewing rule depends on the fan family.</p>
+<p>The following list summarizes the two viewpoints just described:</p>
+<ul>
+<li><strong>Centrifugal fans:</strong> view from the drive side; rotation is CW or CCW.</li>
+<li><strong>Axial impellers:</strong> view from the discharge side; rotation is LH or RH.</li>
+</ul>
+<p><strong>Worked example.</strong> After a motor replacement on a belt-driven SWSI fan, a facilities technician bumps the motor to check rotation. Standing at the sheave guard (the drive side), they see the wheel turning counterclockwise. The nameplate and order say CW.</p>
+<ol>
+<li>The observer is on the drive side, so no mirroring is needed: the wheel really is turning CCW.</li>
+<li>The required rotation is CW, so the wheel is turning backward.</li>
+<li>On a three-phase motor, interchanging any two of the three supply leads reverses the motor. The electrician swaps two leads, and the next bump shows clockwise rotation.</li>
+</ol>
+<p>Had the technician stood at the inlet, the wheel would have <em>appeared</em> clockwise and the backward wheel would have been missed. That fan would then have run at reduced airflow with no obvious fault, which is the expensive version of this mistake.</p>
+<h2 id="discharge-position">Discharge Position<a class="headerlink" href="#discharge-position" title="Permanent link">&para;</a></h2>
+<p>The <strong>discharge position</strong> of a centrifugal fan is the direction in which air leaves the housing outlet, described from the drive side. Because the housing scroll wraps around the impeller in the direction of rotation, the outlet always sits where the spinning air naturally leaves the wheel. That ties discharge position to rotation: a given outlet direction can be built on a clockwise housing or on a counterclockwise housing, and the two are mirror images that are not interchangeable.</p>
+<p>FanPedia defines eight standard discharge positions for single-width, single-inlet (SWSI) centrifugal fans, each 45 degrees apart (FanPedia pp. 46-47). Each has a full name and a three-letter abbreviation:</p>
+<ul>
+<li><strong>UBD</strong>, Upblast: the outlet points straight up.</li>
+<li><strong>TAU</strong>, Top Angular Up: the outlet is near the top and points upward at 45 degrees.</li>
+<li><strong>THD</strong>, Top Horizontal: the outlet is at the top and points horizontally.</li>
+<li><strong>TAD</strong>, Top Angular Down: the outlet is near the top and points downward at 45 degrees.</li>
+<li><strong>DBD</strong>, Downblast: the outlet points straight down.</li>
+<li><strong>BAD</strong>, Bottom Angular Down: the outlet is near the bottom and points downward at 45 degrees.</li>
+<li><strong>BHD</strong>, Bottom Horizontal: the outlet is at the bottom and points horizontally.</li>
+<li><strong>BAU</strong>, Bottom Angular Up: the outlet is near the bottom and points upward at 45 degrees.</li>
+</ul>
+<p>The name alone does not tell you whether a horizontal outlet points left or right. That comes from the rotation. On a clockwise fan, air at the top of the wheel is moving to the right, so a CW top horizontal outlet points right; on a counterclockwise fan, the same outlet points left. A complete discharge description therefore always pairs a rotation with a position.</p>
+<h3 id="discharge-angle">Discharge Angle<a class="headerlink" href="#discharge-angle" title="Permanent link">&para;</a></h3>
+<p>The <strong>discharge angle</strong> is the number of degrees from the upblast position to the actual outlet direction, measured in the direction of rotation. Upblast is both 0 and 360 degrees, and FanPedia writes it as 360. Each step of 45 degrees moves the outlet one position around the housing, so the angle and the name carry the same information: FanPedia lists "CW 90" as also known as "Clockwise 90°" for Top Horizontal, and so on around the circle (FanPedia pp. 46-47).</p>
+<p>Measuring in the direction of rotation is what makes the system work for both hands. A CW 90 outlet and a CCW 90 outlet are both top horizontal, one pointing right and the other pointing left. If you want the outlet direction as a single compass-style angle, measured clockwise from straight up as seen from the drive side, it is:</p>
+<div class="arithmatex">\[ \theta = \begin{cases} N &amp; \text{for clockwise rotation} \\ 360^\circ - N &amp; \text{for counterclockwise rotation} \end{cases} \]</div>
+<p>where <span class="arithmatex">\( N \)</span> is the discharge angle in degrees (45 to 360) and <span class="arithmatex">\( \theta \)</span> is the direction the air leaves, with 0 degrees straight up, 90 degrees to the right, 180 degrees straight down, and 270 degrees to the left (360 is treated as 0).</p>
+<p><strong>Worked example.</strong> A submittal lists a fan as CCW 135. Which way does the air leave?</p>
+<ol>
+<li>The angle is <span class="arithmatex">\( N = 135^\circ \)</span> and the rotation is counterclockwise.</li>
+<li><span class="arithmatex">\( \theta = 360^\circ - 135^\circ = 225^\circ \)</span>, which is down and to the left as seen from the drive side.</li>
+<li>An outlet that points downward at 45 degrees from near the top of the housing is Top Angular Down, so CCW 135 is TAD with the air heading down and to the left.</li>
+</ol>
+<p>A CW 135 fan is also TAD, but with <span class="arithmatex">\( \theta = 135^\circ \)</span> the air heads down and to the right. The two housings are mirror images.</p>
+<p>The table below gathers the eight positions with their angles and the outlet direction for each rotation, using the rule you just applied.</p>
+<table>
+<thead>
+<tr>
+<th>Abbreviation</th>
+<th>Name</th>
+<th>Discharge angle</th>
+<th>Air leaves toward (CW)</th>
+<th>Air leaves toward (CCW)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UBD</td>
+<td>Upblast</td>
+<td>360</td>
+<td>Straight up</td>
+<td>Straight up</td>
+</tr>
+<tr>
+<td>TAU</td>
+<td>Top Angular Up</td>
+<td>45</td>
+<td>Up and right</td>
+<td>Up and left</td>
+</tr>
+<tr>
+<td>THD</td>
+<td>Top Horizontal</td>
+<td>90</td>
+<td>Right</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>TAD</td>
+<td>Top Angular Down</td>
+<td>135</td>
+<td>Down and right</td>
+<td>Down and left</td>
+</tr>
+<tr>
+<td>DBD</td>
+<td>Downblast</td>
+<td>180</td>
+<td>Straight down</td>
+<td>Straight down</td>
+</tr>
+<tr>
+<td>BAD</td>
+<td>Bottom Angular Down</td>
+<td>225</td>
+<td>Down and left</td>
+<td>Down and right</td>
+</tr>
+<tr>
+<td>BHD</td>
+<td>Bottom Horizontal</td>
+<td>270</td>
+<td>Left</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>BAU</td>
+<td>Bottom Angular Up</td>
+<td>315</td>
+<td>Up and left</td>
+<td>Up and right</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">The Angle Follows the Wheel</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Notice that the discharge angle is not a compass bearing; it counts degrees in whichever direction the wheel turns, starting from upblast. That is why one table of names serves both rotations, and why "CW 90" and "CCW 90" are the same name with mirror-image housings.</p>
+</div>
+<p>Even upblast and downblast, which point the same way for both rotations, are not interchangeable between hands. On a CW upblast fan the outlet sits on the left side of the housing top, because that is where air on a clockwise wheel is moving upward; on a CCW upblast fan it sits on the right. Duct centerlines on a drawing reveal the difference immediately.</p>
+<p>Before working through the interactive explorer below, make sure the three ideas it uses are clear: rotation is read from the drive side, the discharge angle counts from upblast in the direction of rotation, and a view from the opposite side is a mirror image.</p>
+<h4 id="diagram-discharge-position-explorer">Diagram: Discharge Position Explorer<a class="headerlink" href="#diagram-discharge-position-explorer" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Discharge Position Explorer</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch12-discharge-position-explorer<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> apply<br/>
+<strong>Learning Objective:</strong> The learner will apply the drive-side viewing rule and the discharge-angle convention to name the rotation and discharge position of ten SWSI centrifugal housing drawings, with at least 8 of 10 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> drive side, viewed from the drive side, rotation (CW and CCW), discharge position, discharge angle, the eight position names and abbreviations, mirror image of an opposite-side view (all defined in the sections "Viewed From the Drive Side", "Rotation", "Discharge Position" and "Discharge Angle" above).</p>
+<p><strong>Evidence of Mastery:</strong> For each of the ten challenge drawings, the learner commits one rotation (CW or CCW) and one of the eight discharge abbreviations before pressing Check. An answer is correct only when both the rotation and the abbreviation match the answer column in Content. Mastery is 8 of 10 correct on the first attempt. Exploration mode (changing rotation, angle and viewpoint and watching the housing redraw) is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The rotation seen from the inlet side is the fan's rotation. (2) The discharge angle is a fixed compass bearing that ignores rotation, so CW 90 and CCW 90 point the same way. (3) Upblast and downblast housings are the same for both rotations because the air points the same way. (4) "Top Horizontal" alone tells you which way the air goes.</p>
+<p><strong>Instructional Rationale:</strong> Naming an orientation from a drawing is an Apply-level skill that needs practice with a judged answer, so the learner commits rotation and position before feedback. Exploration mode first lets the learner see each angle step move the outlet around the housing and see the mirror flip when the viewpoint changes, which confronts misconceptions 2 and 3 with the drawing itself; the inlet-side challenge items confront misconception 1.</p>
+<p><strong>Content:</strong></p>
+<p>Exploration mode. The learner can set three things, and the sim draws an SWSI centrifugal housing with a rotation arrow, the outlet, and a label stating the viewpoint:</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotation</td>
+<td>CW, CCW</td>
+<td>CW</td>
+</tr>
+<tr>
+<td>Discharge angle</td>
+<td>45 to 360 in steps of 45 degrees (eight values)</td>
+<td>360</td>
+</tr>
+<tr>
+<td>Viewpoint</td>
+<td>Drive side, Inlet side (opposite drive)</td>
+<td>Drive side</td>
+</tr>
+</tbody>
+</table>
+<p>For the current setting the sim shows: the abbreviation and full name; the designation in the form "CW 90"; the FanPedia "also known as" form ("Clockwise 90°"); and the direction the air leaves as seen from the drive side, from the "Air leaves toward" columns of the chapter's discharge table. When the viewpoint is Inlet side, the drawing is mirrored left to right and a note reads: "You are looking from the inlet side. The fan's rotation and discharge are still named as seen from the drive side."</p>
+<p>The eight positions (abbreviation, name, discharge angle): UBD Upblast 360; TAU Top Angular Up 45; THD Top Horizontal 90; TAD Top Angular Down 135; DBD Downblast 180; BAD Bottom Angular Down 225; BHD Bottom Horizontal 270; BAU Bottom Angular Up 315.</p>
+<p>Challenge mode. Ten drawings in this fixed order. "Viewpoint" is what the drawing shows; the arrow and outlet are described as they appear in that drawing.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Viewpoint shown</th>
+<th>Rotation arrow as drawn</th>
+<th>Outlet as drawn</th>
+<th>Correct answer</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Drive side</td>
+<td>Clockwise</td>
+<td>At the top, pointing right</td>
+<td>CW THD (CW 90)</td>
+<td>From upblast, 90 degrees clockwise is top horizontal, and a CW wheel throws air to the right at the top.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Drive side</td>
+<td>Counterclockwise</td>
+<td>On the right side of the top, pointing straight up</td>
+<td>CCW UBD (CCW 360)</td>
+<td>Straight up is upblast; it sits on the right because air on the right of a CCW wheel moves upward.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Drive side</td>
+<td>Clockwise</td>
+<td>At the bottom, pointing left</td>
+<td>CW BHD (CW 270)</td>
+<td>270 degrees clockwise from upblast is bottom horizontal; a CW wheel moves air to the left at the bottom.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Drive side</td>
+<td>Counterclockwise</td>
+<td>On the left side, pointing straight down</td>
+<td>CCW DBD (CCW 180)</td>
+<td>Straight down is downblast; it sits on the left because air on the left of a CCW wheel moves downward.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Drive side</td>
+<td>Clockwise</td>
+<td>Near the top on the left, pointing up and to the right at 45 degrees</td>
+<td>CW TAU (CW 45)</td>
+<td>One 45-degree step clockwise from upblast is top angular up.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Drive side</td>
+<td>Counterclockwise</td>
+<td>Near the top on the left, pointing down and to the left at 45 degrees</td>
+<td>CCW TAD (CCW 135)</td>
+<td>Three 45-degree steps counterclockwise from upblast is top angular down; the air heads down and left.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Drive side</td>
+<td>Clockwise</td>
+<td>Near the bottom on the left, pointing up and to the left at 45 degrees</td>
+<td>CW BAU (CW 315)</td>
+<td>Seven 45-degree steps clockwise from upblast is bottom angular up.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Inlet side</td>
+<td>Counterclockwise</td>
+<td>At the top, pointing left</td>
+<td>CW THD (CW 90)</td>
+<td>From the inlet side everything is mirrored; from the drive side the wheel is CW and the top outlet points right.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Inlet side</td>
+<td>Clockwise</td>
+<td>On the left side of the top, pointing straight up</td>
+<td>CCW UBD (CCW 360)</td>
+<td>Mirror the inlet-side view: from the drive side the wheel is CCW and the upblast outlet is on the right.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Drive side</td>
+<td>Counterclockwise</td>
+<td>At the bottom, pointing right</td>
+<td>CCW BHD (CCW 270)</td>
+<td>270 degrees counterclockwise from upblast is bottom horizontal; a CCW wheel moves air to the right at the bottom.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Position names, abbreviations, angles and the "also known as" forms come from FanPedia pp. 46-47 (SWSI Centrifugal Fans, Clockwise and Counterclockwise, "Rotation View From Drive Side"), local copy <code>fanpedia.pdf</code> in the course source folder. The outlet-location rule follows the housing drawings on those pages. Challenge items are constructed for this chapter from those rules.</p>
+<p><strong>Rules:</strong> Let N be the discharge angle (45, 90, ..., 360) and let all directions be measured clockwise from straight up, as seen from the drive side, with 360 treated as 0. Air direction: theta = N for CW; theta = (360 - N) mod 360 for CCW. Outlet location on the housing: for CW, location = (theta - 90) mod 360; for CCW, location = (theta + 90) mod 360. Inlet-side view: draw the mirror image, so every direction d becomes (360 - d) mod 360 and the drawn rotation arrow reverses; the correct name does not change. Position names map from N exactly as in Content. A challenge answer is correct when rotation equals the answer's rotation AND abbreviation equals the answer's abbreviation; there is no partial credit.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>In exploration mode the learner steps the discharge angle from 360 through 45, 90 and on to 315 with CW selected, and watches the outlet move clockwise around the housing one position per step while the name and designation update.</li>
+<li>The learner switches rotation to CCW at the same angle. The housing redraws as a mirror image and the "Air leaves toward" text changes side; the learner should notice that the name and angle stayed the same.</li>
+<li>The learner sets the viewpoint to Inlet side. The drawing mirrors and the arrow appears reversed, while the name and designation do not change; the learner should notice that only the picture changed.</li>
+<li>The learner starts the challenge. For each drawing they choose a rotation and an abbreviation, then press Check.</li>
+<li>After the tenth item a summary shows the score and lists any missed items with their feedback.</li>
+</ol>
+<p><strong>Feedback:</strong> Ten items, fixed order, two attempts each. Correct: "Correct: <rotation> <abbreviation> (<rotation> <angle>)." Incorrect on the first attempt: if the rotation is wrong on an inlet-side item, "Check the viewpoint: this drawing is from the inlet side, so mirror it before naming the rotation."; if the rotation is wrong on a drive-side item, "Read the arrow as drawn: this view is from the drive side."; if only the abbreviation is wrong, "Count 45-degree steps from upblast in the direction of rotation." After a second wrong attempt the correct answer and the Why text are shown and the item counts as missed. Only first-attempt answers count toward the score. A running count "Correct on first attempt: n of 10" is shown.</p>
+<p><strong>Starting State:</strong> Exploration mode, CW, discharge angle 360, viewpoint Drive side. The housing shows a CW upblast outlet on the left side of the top. The prompt reads: "Step the angle and predict where the outlet will go before it moves."</p>
+<p><strong>Chapter Anchors:</strong> Eight positions, 45 degrees apart; upblast written as 360; the discharge angle is measured from upblast in the direction of rotation; theta = N for CW and 360 - N for CCW; CCW 135 is TAD with the air heading down and to the left; a CW upblast outlet sits on the left of the housing top and a CCW upblast outlet on the right; the challenge has ten items with mastery at 8 of 10.</p>
+</details>
+<h3 id="up-blast-discharge-position">Up Blast Discharge Position<a class="headerlink" href="#up-blast-discharge-position" title="Permanent link">&para;</a></h3>
+<p>The <strong>up blast discharge position</strong> (UBD, 360 degrees) points the outlet straight up. It is the natural choice when a fan exhausts vertically through a roof or into a stack, because the air leaves the housing already moving in the direction it must travel and no elbow is needed at the outlet. Avoiding an elbow close to the outlet matters because a fan's outlet velocity profile is uneven for several duct diameters downstream, and an elbow placed in that region costs pressure that the fan rating does not account for. Chapter 25 treats this loss, called system effect, in detail.</p>
+<p><strong>Worked example.</strong> A dust collector exhaust fan sits on a pad beside a building and must discharge into a vertical stack directly above it.</p>
+<ol>
+<li>The air must leave going up, so the discharge position is UBD.</li>
+<li>The stack foundation was poured before the fan was selected, and from the drive side its centerline sits to the left of the fan shaft.</li>
+<li>For UBD the outlet sits on the left side of the housing top for CW and on the right side for CCW, so only the CW housing puts the outlet over the existing foundation. The order reads CW 360.</li>
+<li>Had the order been written as "upblast" with no rotation, the factory could have built either hand, and half the time the outlet would miss the stack.</li>
+</ol>
+<h3 id="top-horizontal-discharge">Top Horizontal Discharge<a class="headerlink" href="#top-horizontal-discharge" title="Permanent link">&para;</a></h3>
+<p><strong>Top horizontal discharge</strong> (THD, 90 degrees) puts the outlet at the top of the housing, pointing sideways. It suits a fan that feeds an overhead horizontal duct, a common layout in mechanical rooms and plants where ducts run near the ceiling. Because the air leaves at the top of the housing and travels horizontally, the duct can start at roughly the height of the housing top without an elbow.</p>
+<p>THD also has a practical interaction with the motor. FanPedia's technical descriptions for Arrangements 1, 3 and 3F note a height restriction for THD: the motor "may not fit below the discharge" in one of the four standard motor positions, a limit described later in this chapter and in detail in Chapter 13 (FanPedia pp. 162-163).</p>
+<p><strong>Worked example.</strong> A supply fan in a penthouse must feed a duct running to the east at the ceiling. The fan will be set so that, standing on the drive side, the observer faces north.</p>
+<ol>
+<li>Facing north, east is on the observer's right.</li>
+<li>The air must leave horizontally at the top, toward the right: THD.</li>
+<li>From the discharge table, a CW top horizontal outlet throws air to the right. The order reads CW 90 (CW THD).</li>
+<li>Had the fan been set with the drive side facing south, east would be on the observer's left, and the same duct would need CCW 90.</li>
+</ol>
+<p>The same duct can need either hand, depending on which way the fan is set on its base, which is why layout drawings must show the drive side.</p>
+<h3 id="bottom-horizontal-discharge">Bottom Horizontal Discharge<a class="headerlink" href="#bottom-horizontal-discharge" title="Permanent link">&para;</a></h3>
+<p><strong>Bottom horizontal discharge</strong> (BHD, 270 degrees) puts the outlet at the bottom of the housing, pointing sideways. It suits fans that feed a duct running at floor level or below grade, a tunnel, or an under-floor plenum. A bottom horizontal outlet keeps the duct low, which helps when headroom is limited or when the discharge feeds equipment at grade.</p>
+<p>BHD has its own interaction with the motor. FanPedia notes that on Arrangements 1, 3 and 3F a BHD outlet can collide with the motor in one standard position, because the motor "interferes with outlet opening of housing" (FanPedia pp. 162-163).</p>
+<p><strong>Worked example.</strong> A boiler forced-draft fan must deliver air into a windbox inlet located low on the boiler front, to the observer's left when they stand on the fan's drive side.</p>
+<ol>
+<li>The air must leave horizontally at the bottom of the housing: BHD.</li>
+<li>From the discharge table, a CW bottom horizontal outlet throws air to the left.</li>
+<li>The order reads CW 270 (CW BHD).</li>
+<li>Because a CW BHD outlet projects to the left at floor level, the motor cannot be placed on the left side of the fan in the position the outlet occupies. The motor position must be chosen with the outlet in mind, as the motor position section below shows.</li>
+</ol>
+<h3 id="down-blast-discharge-position">Down Blast Discharge Position<a class="headerlink" href="#down-blast-discharge-position" title="Permanent link">&para;</a></h3>
+<p>The <strong>down blast discharge position</strong> (DBD, 180 degrees) points the outlet straight down. It suits a fan mounted above the space it serves: a fan on a platform or mezzanine discharging down into a duct or chamber below it, or a fan supported on structural steel above a process. A downblast fan's outlet usually connects through a floor opening or into a plenum, so the support frame must leave room around the outlet flange.</p>
+<p>Like upblast, downblast points the same direction for both rotations, but the housings differ: a CW downblast outlet sits on the right side of the housing bottom, and a CCW downblast outlet on the left, because those are the sides where the wheel moves air downward.</p>
+<p><strong>Worked example.</strong> A fan on a mezzanine must discharge through a floor sleeve into a supply chamber below. The sleeve is already cast in the slab, and the architect's drawing shows the sleeve centerline offset to the right of the fan shaft when viewed from the drive side.</p>
+<ol>
+<li>Air must leave straight down: DBD.</li>
+<li>The outlet must sit to the right of the shaft.</li>
+<li>A CW downblast outlet sits on the right of the housing bottom, so the order reads CW 180.</li>
+<li>Ordering CCW 180 would put the outlet on the left, off the sleeve, and the slab would need a new opening.</li>
+</ol>
+<h3 id="angular-discharge">Angular Discharge<a class="headerlink" href="#angular-discharge" title="Permanent link">&para;</a></h3>
+<p>An <strong>angular discharge</strong> is any of the four positions that point the outlet at 45 degrees rather than straight up, straight down or horizontally: TAU (45), TAD (135), BAD (225) and BAU (315). Angular discharges let the outlet meet a duct that rises or falls at an angle, or clear an obstruction without a full elbow. They are named by where the outlet is (top or bottom of the housing) and which way the air heads (up or down). Not every fan type offers all four: FanPedia's DWDI discharge pages list seven positions and omit Bottom Angular Down, a limit covered in Chapter 13 (FanPedia pp. 48-49).</p>
+<h3 id="top-angular-up-discharge">Top Angular Up Discharge<a class="headerlink" href="#top-angular-up-discharge" title="Permanent link">&para;</a></h3>
+<p><strong>Top angular up discharge</strong> (TAU, 45 degrees) places the outlet near the top of the housing with the air heading upward at 45 degrees, one step past upblast in the direction of rotation. For a CW fan the air heads up and to the right; for a CCW fan, up and to the left. A TAU outlet is a good fit when an exhaust duct must climb toward a roof penetration that is offset from the fan, because it replaces an elbow with the housing's own geometry.</p>
+<h3 id="top-angular-down-discharge">Top Angular Down Discharge<a class="headerlink" href="#top-angular-down-discharge" title="Permanent link">&para;</a></h3>
+<p><strong>Top angular down discharge</strong> (TAD, 135 degrees) places the outlet near the top of the housing with the air heading downward at 45 degrees. For a CW fan the air heads down and to the right; for a CCW fan, down and to the left. Because the outlet projects down beside the housing, it can collide with a motor placed on that side; FanPedia lists TAD among the discharges that restrict motor position on Arrangements 1, 3 and 3F (FanPedia pp. 162-163).</p>
+<h3 id="bottom-angular-up-discharge">Bottom Angular Up Discharge<a class="headerlink" href="#bottom-angular-up-discharge" title="Permanent link">&para;</a></h3>
+<p><strong>Bottom angular up discharge</strong> (BAU, 315 degrees) places the outlet near the bottom of the housing with the air heading upward at 45 degrees. For a CW fan the air heads up and to the left; for a CCW fan, up and to the right. BAU is one step short of upblast in the direction of rotation, and it suits a duct that leaves low and climbs away from the fan at an angle, for instance to rise over a walkway beside the unit.</p>
+<h2 id="inlet-box-position">Inlet Box Position<a class="headerlink" href="#inlet-box-position" title="Permanent link">&para;</a></h2>
+<p>Some centrifugal fans are fitted with an <strong>inlet box</strong>, a sheet-metal box attached to the fan inlet that turns the incoming air 90 degrees so the inlet duct can approach from the side, top or bottom instead of along the shaft. An inlet box also lets the bearing on an Arrangement 3 fan sit outside the airstream; Chapter 18 covers inlet boxes as accessories. The <strong>inlet box position</strong> states where the box's opening faces.</p>
+<p>FanPedia defines inlet box position by an angle measured around the fan as viewed from the drive side, in 45-degree steps from 45 to 360, with 360 at the top and the angle increasing clockwise (FanPedia p. 144). Unlike the discharge angle, this angle does not change direction with rotation: it is a fixed clock around the housing. Each position also has a description of how the air enters:</p>
+<ul>
+<li><strong>45</strong> — Angular Down Intake (box at the upper right)</li>
+<li><strong>90</strong> — Horizontal Right Intake (box on the right)</li>
+<li><strong>135</strong> — Angular Up Intake (box at the lower right)</li>
+<li><strong>180</strong> — Bottom Up Intake (box at the bottom)</li>
+<li><strong>225</strong> — Angular Up Intake (box at the lower left)</li>
+<li><strong>270</strong> — Horizontal Left Intake (box on the left)</li>
+<li><strong>315</strong> — Angular Down Intake (box at the upper left)</li>
+<li><strong>360</strong> — Top Down Intake (box at the top)</li>
+</ul>
+<p>The descriptions repeat for the angular positions: 45 and 315 are both Angular Down Intake, and 135 and 225 are both Angular Up Intake. The number, not the description, is what pins down the side.</p>
+<p><strong>Worked example.</strong> A fan with an inlet box must take air from a horizontal duct that arrives from the observer's left when standing on the drive side, and the fan's outlet is CW top horizontal, pointing right.</p>
+<ol>
+<li>The box opening must face left to meet the duct: Horizontal Left Intake.</li>
+<li>Horizontal Left Intake is position 270.</li>
+<li>Check for conflicts: the outlet is at the top pointing right, and the box is on the left, so the two connections do not compete for the same space.</li>
+<li>The order specifies CW 90 discharge with the inlet box at 270.</li>
+</ol>
+<p>If the duct instead arrived from above at an angle on the left, the position would be 315, Angular Down Intake.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Two Angles, Two Rules</p>
+<p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
+Watch out for treating the inlet box angle like the discharge angle. The discharge angle counts from upblast in the direction of rotation, but the inlet box angle is always counted clockwise from the top as seen from the drive side, so a CCW fan's inlet box at 90 is still on the right. Write each angle with its own label on the order so no one converts one into the other.</p>
+</div>
+<p>Before working through the next interactive element, recall that the inlet box angle runs clockwise from the top in 45-degree steps and that two pairs of positions share a description.</p>
+<h4 id="diagram-inlet-box-position-dial">Diagram: Inlet Box Position Dial<a class="headerlink" href="#diagram-inlet-box-position-dial" title="Permanent link">&para;</a></h4>
+<details>
+<summary>Inlet Box Position Dial</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> ch12-inlet-box-position-dial<br/>
+<strong>Library:</strong> p5.js<br/>
+<strong>Status:</strong> Specified<br/>
+<strong>Bloom Level:</strong> Apply<br/>
+<strong>Bloom Verb:</strong> use<br/>
+<strong>Learning Objective:</strong> The learner will use the drive-side inlet box angle convention to set the correct inlet box position for eight duct-approach descriptions, with at least 7 of 8 correct on the first attempt.</p>
+<p><strong>Prerequisites:</strong> inlet box, inlet box position, viewed from the drive side, the eight inlet box position numbers and their descriptions, the difference between the inlet box angle and the discharge angle (all defined in the sections "Viewed From the Drive Side", "Discharge Angle" and "Inlet Box Position" above).</p>
+<p><strong>Evidence of Mastery:</strong> For each of eight challenge items, the learner sets the inlet box to one of the eight positions on a drive-side view of the fan and presses Check. An answer is correct when the position number equals the answer column in Content. Mastery is 7 of 8 correct on the first attempt. Rotating the box freely in exploration mode is not evidence.</p>
+<p><strong>Misconceptions:</strong> (1) The inlet box angle counts in the direction of rotation, like the discharge angle. (2) The description alone ("Angular Down Intake") identifies one position. (3) The inlet box angle is read from the inlet side.</p>
+<p><strong>Instructional Rationale:</strong> Setting a position from a described duct approach makes the learner perform the conversion an order writer performs, and judging each setting gives immediate correction. Items 5 to 8 share descriptions in pairs so that the learner must use the location, not the words, which confronts misconception 2; item 8 is shown on a CCW fan to confront misconception 1.</p>
+<p><strong>Content:</strong></p>
+<p>Exploration mode. A drive-side view of a centrifugal housing with an inlet box that the learner can move to any of eight positions. For the current position the sim shows the number and its FanPedia description:</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>Description</th>
+<th>Box location seen from the drive side</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45</td>
+<td>Angular Down Intake</td>
+<td>Upper right</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Horizontal Right Intake</td>
+<td>Right</td>
+</tr>
+<tr>
+<td>135</td>
+<td>Angular Up Intake</td>
+<td>Lower right</td>
+</tr>
+<tr>
+<td>180</td>
+<td>Bottom Up Intake</td>
+<td>Bottom</td>
+</tr>
+<tr>
+<td>225</td>
+<td>Angular Up Intake</td>
+<td>Lower left</td>
+</tr>
+<tr>
+<td>270</td>
+<td>Horizontal Left Intake</td>
+<td>Left</td>
+</tr>
+<tr>
+<td>315</td>
+<td>Angular Down Intake</td>
+<td>Upper left</td>
+</tr>
+<tr>
+<td>360</td>
+<td>Top Down Intake</td>
+<td>Top</td>
+</tr>
+</tbody>
+</table>
+<p>The learner can also switch the fan's drawn rotation between CW and CCW; the position numbers do not move.</p>
+<p>Challenge mode. Eight items in this fixed order:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Fan rotation shown</th>
+<th>Duct approach described to the learner</th>
+<th>Correct position</th>
+<th>Why (shown as feedback)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CW</td>
+<td>The inlet duct runs horizontally and arrives from the right of the drive-side observer.</td>
+<td>90</td>
+<td>A box opening facing right is Horizontal Right Intake, position 90.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CW</td>
+<td>The inlet duct drops vertically from the roof directly above the fan.</td>
+<td>360</td>
+<td>Air entering downward from the top is Top Down Intake, position 360.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CW</td>
+<td>The inlet duct rises from a trench directly below the fan.</td>
+<td>180</td>
+<td>Air entering upward from the bottom is Bottom Up Intake, position 180.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>CW</td>
+<td>The inlet duct runs horizontally and arrives from the left of the drive-side observer.</td>
+<td>270</td>
+<td>A box opening facing left is Horizontal Left Intake, position 270.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>CW</td>
+<td>The inlet duct comes down at 45 degrees from the upper right.</td>
+<td>45</td>
+<td>Angular Down Intake on the upper right is 45; the upper-left one is 315.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CW</td>
+<td>The inlet duct comes down at 45 degrees from the upper left.</td>
+<td>315</td>
+<td>Angular Down Intake on the upper left is 315, counted clockwise from the top.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>CW</td>
+<td>The inlet duct rises at 45 degrees from the lower left.</td>
+<td>225</td>
+<td>Angular Up Intake on the lower left is 225; the lower-right one is 135.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>CCW</td>
+<td>The inlet duct rises at 45 degrees from the lower right.</td>
+<td>135</td>
+<td>The inlet box angle always runs clockwise from the top, whatever the rotation, so lower right is 135.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Provenance:</strong> Position numbers, descriptions and the drive-side viewing rule come from FanPedia p. 144 (Inlet Boxes: Positions, "Inlet Box Positions Determined From Drive Side"), local copy <code>fanpedia.pdf</code> in the course source folder. Challenge items are constructed for this chapter.</p>
+<p><strong>Rules:</strong> Positions are 45, 90, 135, 180, 225, 270, 315 and 360 degrees, measured clockwise from the top as seen from the drive side; 360 is the top. The position does not depend on the fan's rotation. An answer is correct only when the selected number equals the answer; there is no partial credit.</p>
+<p><strong>Learner Activity:</strong></p>
+<ol>
+<li>In exploration mode the learner moves the box around the housing one position at a time and reads each number and description.</li>
+<li>The learner switches the drawn rotation from CW to CCW; the box and its number stay where they were. The learner should notice that rotation does not change the inlet box angle.</li>
+<li>The learner starts the challenge, reads each duct description, moves the box to a position and presses Check.</li>
+<li>After item 8 a summary shows the score and lists missed items with their feedback.</li>
+</ol>
+<p><strong>Feedback:</strong> Eight items, fixed order, two attempts each. Correct: "Correct: position <number>, <description>." Incorrect on the first attempt: if the learner chose the mirror position (for example 315 instead of 45), "Same description, other side: the angle counts clockwise from the top as seen from the drive side."; if the learner's answer equals the correct position counted counterclockwise on item 8, "The inlet box angle does not follow rotation; count clockwise from the top."; otherwise "Find where the duct arrives, then read that position's number." After the second wrong attempt the correct answer and the Why text are shown and the item counts as missed. Only first-attempt answers count. A running count "Correct on first attempt: n of 8" is shown.</p>
+<p><strong>Starting State:</strong> Exploration mode, CW fan, inlet box at 360 (Top Down Intake). The prompt reads: "Move the box. Which positions share a description?"</p>
+<p><strong>Chapter Anchors:</strong> Eight positions in 45-degree steps from 45 to 360; 360 is the top and the angle increases clockwise; positions are read from the drive side; 45 and 315 are both Angular Down Intake; 135 and 225 are both Angular Up Intake; the inlet box angle does not change with rotation; the worked example sets a left-hand horizontal approach at 270.</p>
+</details>
+<h2 id="inline-configuration">Inline Configuration<a class="headerlink" href="#inline-configuration" title="Permanent link">&para;</a></h2>
+<p>Inline, mixed flow and axial fans move air straight through a cylindrical housing, so they have no scroll outlet to point. Their orientation is instead described by an <strong>inline configuration</strong>: whether the fan's axis runs horizontally or vertically, which way the air flows, and how the fan is supported. FanPedia lists three horizontal configurations, HOR (Horizontal, No Brackets), HCH (Horizontal, Ceiling Hung) and HBM (Horizontal, Base Mount), and ten vertical configurations whose codes begin VU (vertical up), VD (vertical down) or VR (vertical reversible), such as VUI (Vertical Up, Floor Mount Brackets on Inlet) and VDH (Vertical Down with Hood) (FanPedia pp. 50-51). For example, an inline fan hung from roof joists in a horizontal duct run is HCH. Chapter 13 covers the full horizontal and vertical lists.</p>
+<h2 id="motor-position">Motor Position<a class="headerlink" href="#motor-position" title="Permanent link">&para;</a></h2>
+<p>The <strong>motor position</strong> states where a belt-drive motor sits relative to the fan. On a direct-drive fan the motor is on the shaft and has no separate position, but on a belt-driven fan the motor can be placed on several sides of the fan, and the choice affects floor space, access for belt changes, and whether the motor collides with the outlet or the inlet duct. Like rotation and discharge, the motor position of a centrifugal fan is read from the drive side.</p>
+<p>Different fan families use different naming systems for motor position, and FanPedia's motor position pages show each one (FanPedia pp. 52-57):</p>
+<ul>
+<li><strong>Arrangements 1, 3 and 3F</strong> use the four AMCA standard positions W, X, Y and Z.</li>
+<li><strong>Arrangements 9 and 9F</strong> use L and R; FanPedia lists the standard as CW (L) / CCW (R).</li>
+<li><strong>"K" mount motors</strong>, also called piggyback or scroll-mounted motors, sit directly on the housing scroll and are located by clock positions such as 12 o'clock or 1:30.</li>
+<li><strong>Plenum fans</strong> and <strong>swingout fans</strong> have their own position sets; Chapter 13 covers the plenum positions.</li>
+<li><strong>Axial and inline Arrangement 9 fans</strong> use the letters A through H.</li>
+</ul>
+<p><strong>Worked example.</strong> A distributor receives two quotes for "the same" belt-driven SWSI fan. One lists "Arr. 9, CW, motor position L"; the other lists "Arr. 1, CW, motor position W". Are they the same?</p>
+<ol>
+<li>The arrangement differs. In Arrangement 9 the motor hangs on the side of the fan's own bearing pedestal; in Arrangement 1 the motor sits on the floor or a base beside the pedestal (Chapter 11).</li>
+<li>The motor position systems differ because the arrangements differ: L and R describe the two sides of a pedestal-mounted motor, and W, X, Y and Z describe four floor positions around an Arrangement 1 or 3 fan.</li>
+<li>The quotes are therefore for different assemblies with different footprints and different base requirements. The distributor should ask which arrangement the job needs before comparing prices.</li>
+</ol>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Read the Arrangement Before the Letter</p>
+<p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
+Here's a shortcut: a motor position letter means nothing until you know the arrangement, because each arrangement family has its own letters. Find the arrangement on the order first, then look up that arrangement's motor position page.</p>
+</div>
+<h3 id="motor-positions-w-x-y-z">Motor Positions W X Y Z<a class="headerlink" href="#motor-positions-w-x-y-z" title="Permanent link">&para;</a></h3>
+<p>The <strong>motor positions W, X, Y and Z</strong> are the four standard belt-drive motor locations that AMCA defines for centrifugal fans, and FanPedia states that the motor on an Arrangement 1 or Arrangement 3 SWSI fan "can be mounted in any of the four AMCA standard motor positions: W, X, Y or Z" (FanPedia pp. 162-163). The positions are read facing the drive side. FanPedia's illustration for Arrangements 1 and 3 places W and X on the right-hand side of the fan and Y and Z on the left-hand side; on an Arrangement 3F, whose extended frame carries the motor, the illustration shows two positions, Z and W, also known as L and R (FanPedia p. 52).</p>
+<p>Not every position works with every discharge. The technical descriptions list restrictions for Arrangements 1, 3 and 3F where the outlet and the motor would collide or the motor would not fit under the outlet. For example, with a BHD discharge the motor "interferes with outlet opening of housing," so on a CW fan motor position Z is not allowed and on a CCW fan motor position W is not allowed (FanPedia pp. 162-163). Chapter 13 sets out the complete restriction list.</p>
+<p><strong>Worked example.</strong> Return to the boiler forced-draft fan from the bottom horizontal section: an Arrangement 1 fan, CW 270 (CW BHD), with the outlet projecting to the left at floor level. Maintenance wants the motor on the left side of the fan for belt access from an aisle.</p>
+<ol>
+<li>Facing the drive side, the left-hand positions are Y and Z.</li>
+<li>FanPedia's restriction for a CW BHD discharge rules out Z, because the motor would interfere with the housing outlet.</li>
+<li>That leaves Y on the left side, or W and X on the right side.</li>
+<li>The engineer checks Y against the drawing and confirms it clears the outlet, and the order reads CW 270, motor position Y. If it did not clear, the motor would move to the right side and the aisle access would be rearranged instead.</li>
+</ol>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Every Orientation Choice Is Linked</p>
+<p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
+Think of rotation, discharge, inlet box and motor position as four hands on one clock face: moving one can push another out of a legal position. That is why experienced application engineers sketch the drive-side view with all four before they write any of them on the order.</p>
+</div>
+<h3 id="axial-motor-positions">Axial Motor Positions<a class="headerlink" href="#axial-motor-positions" title="Permanent link">&para;</a></h3>
+<p><strong>Axial motor positions</strong> locate the belt-drive motor on an Arrangement 9 axial, mixed flow or inline fan in a horizontal configuration. FanPedia labels eight positions A through H around the fan as seen in the discharge view: A at the top, then B, C, D, E, F, G and H in turn around the housing, with E at the bottom (FanPedia p. 56). A duct- or ceiling-mounted fan can take any of the eight; FanPedia's floor-mounted illustration shows only the upper five, G, H, A, B and C, since the floor supports sit below the fan. For vertical configurations FanPedia specifies no motor position for roof- and duct-mounted fans: the motor is centered on the curb cap or between the support brackets (FanPedia p. 57).</p>
+<h2 id="putting-it-together-reading-a-full-orientation">Putting It Together: Reading a Full Orientation<a class="headerlink" href="#putting-it-together-reading-a-full-orientation" title="Permanent link">&para;</a></h2>
+<p>A complete orientation for a belt-driven centrifugal fan pairs the arrangement with four facts, each read from the drive side. The table below summarizes the conventions covered in this chapter.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What it states</th>
+<th>How it is read</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rotation</td>
+<td>Direction the impeller turns</td>
+<td>CW or CCW from the drive side (axial: LH or RH from the discharge side)</td>
+</tr>
+<tr>
+<td>Discharge position</td>
+<td>Direction the air leaves the outlet</td>
+<td>One of eight names, 45 degrees apart</td>
+</tr>
+<tr>
+<td>Discharge angle</td>
+<td>Degrees from upblast to the outlet</td>
+<td>Counted from 360 in the direction of rotation</td>
+</tr>
+<tr>
+<td>Inlet box position</td>
+<td>Where the inlet box opening faces</td>
+<td>45 to 360, clockwise from the top, from the drive side</td>
+</tr>
+<tr>
+<td>Motor position</td>
+<td>Where the belt-drive motor sits</td>
+<td>Letters set by the arrangement family</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Worked example.</strong> A specifying engineer's schedule reads: "Arr. 3 SWSI, CCW, discharge THD, inlet box 90, motor position X." Sketch it from the drive side.</p>
+<ol>
+<li>CCW rotation with THD: the outlet is at the top and the air leaves to the left (<span class="arithmatex">\( \theta = 360^\circ - 90^\circ = 270^\circ \)</span>).</li>
+<li>Inlet box 90 is Horizontal Right Intake, so the inlet duct arrives from the right.</li>
+<li>Motor position X is on the right-hand side of the fan.</li>
+<li>Check conflicts: the outlet is at the top heading left, so it neither collides with the right-hand motor nor competes with the right-hand inlet box duct. THD on a CCW fan restricts position Z, which is not the one chosen.</li>
+</ol>
+<p>The sketch confirms the schedule is buildable, and it is the drawing the installer will compare against when the fan arrives.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">You Can Read a Fan From Across the Room</p>
+<p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
+You just learned to fix the viewpoint at the drive side, name all eight discharge positions with their angles, place an inlet box, and locate a motor in each arrangement family's system. That is the orientation half of every fan order handled, and Chapter 13 turns it into codes.</p>
+</div>
+<h2 id="key-takeaways">Key Takeaways<a class="headerlink" href="#key-takeaways" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Centrifugal fan orientation is read <strong>viewed from the drive side</strong>, the side where the sheave, coupling or motor is. A view from the inlet side is a mirror image.</li>
+<li><strong>Rotation</strong> is CW or CCW from the drive side for centrifugal fans; axial impeller rotation is LH or RH viewed from the discharge side. A wheel turning the wrong way delivers only a fraction of its rated performance.</li>
+<li>The <strong>discharge position</strong> is one of eight directions 45 degrees apart: UBD, TAU, THD, TAD, DBD, BAD, BHD and BAU. Each name is valid for both rotations, with mirror-image housings.</li>
+<li>The <strong>discharge angle</strong> counts from upblast (360) in the direction of rotation, so CW 90 and CCW 90 are both top horizontal, pointing right and left respectively.</li>
+<li><strong>Up blast</strong>, <strong>top horizontal</strong>, <strong>bottom horizontal</strong> and <strong>down blast</strong> suit vertical stacks, overhead ducts, low ducts and downward discharges; the four <strong>angular discharges</strong> point the outlet at 45 degrees.</li>
+<li><strong>Inlet box position</strong> runs from 45 to 360 clockwise from the top, from the drive side, and does not change with rotation.</li>
+<li><strong>Inline configuration</strong> describes axis orientation, flow direction and support for inline, mixed flow and axial fans.</li>
+<li><strong>Motor position</strong> depends on the arrangement: <strong>W, X, Y, Z</strong> for Arrangements 1, 3 and 3F, L and R for Arrangement 9, clock positions for K-mount motors, and <strong>A through H</strong> for axial Arrangement 9 fans. Some discharges rule out some motor positions.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../11-drives-and-standard-fan-arrangements/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 11. Drives and Standard Fan Arrangements">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                11. Drives and Standard Fan Arrangements
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../13-rotation-and-discharge-codes/" class="md-footer__link md-footer__link--next" aria-label="Next: 13. Rotation and Discharge Codes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                13. Rotation and Discharge Codes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

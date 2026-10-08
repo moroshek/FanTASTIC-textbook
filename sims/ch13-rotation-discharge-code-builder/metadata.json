@@ -1,0 +1,91 @@
+{
+  "title": "Rotation and Discharge Code Builder",
+  "creator": "FanPedia: An Intelligent Textbook on Fans & Blowers",
+  "subject": "Fans and Blowers: Centrifugal Fan Rotation and Discharge Codes",
+  "description": "Learners write the rotation and discharge code, in letter form (CW THD) and angle form (CW 90), for eight illustrative job cards describing a centrifugal fan's outlet as seen from the drive side, with feedback and a drive-side housing outline after each submission. Free practice then lets them pick SWSI or DWDI, a rotation and a discharge angle, including the Bottom Angular Down discharge that DWDI fans do not offer.",
+  "date": "2026-10-08",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "gradeLevel": [
+      "Professional Development",
+      "Undergraduate"
+    ],
+    "subjectArea": "Mechanical Engineering",
+    "topic": "Rotation and discharge codes for centrifugal fans",
+    "learningObjectives": [
+      "Apply the drive-side rotation and discharge-angle conventions to write the correct rotation and discharge code, in letter form and angle form, for a described centrifugal fan.",
+      "Recognize that Bottom Angular Down (BAD) is not offered on DWDI fans.",
+      "Explain why switching rotation at a fixed discharge angle mirrors the outlet left to right."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "drive side",
+      "clockwise rotation (CW)",
+      "counterclockwise rotation (CCW)",
+      "discharge position",
+      "discharge angle",
+      "SWSI",
+      "DWDI",
+      "Bottom Angular Down discharge",
+      "DWDI discharge limits"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 557
+    },
+    "responsive": true,
+    "dependencies": [
+      "p5.js 1.11.10 (jsDelivr CDN)"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Rotation", "description": "CW or CCW for the learner's code (starts unselected)" },
+      { "type": "select", "label": "Discharge", "description": "One of UBD, TAU, THD, TAD, DBD, BAD, BHD, BAU, or Not offered (starts unselected)" },
+      { "type": "button", "label": "Submit Code / Retry (unscored)", "description": "Scores the first submission on a card; allows one unscored retry" },
+      { "type": "button", "label": "Next Card / Start Free Practice", "description": "Advances to the next job card; after card 8 opens free practice" },
+      { "type": "select", "label": "Free practice fan type", "description": "SWSI or DWDI (unlocks after card 8)" },
+      { "type": "select", "label": "Free practice rotation", "description": "CW or CCW, default CW (unlocks after card 8)" },
+      { "type": "slider", "label": "Angle", "description": "Discharge angle 45 to 360 degrees in steps of 45, default 360 (unlocks after card 8)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "Rule-based lookup with geometric rendering",
+    "variables": ["fan type", "rotation", "discharge angle"],
+    "rules": "Outlet direction, seen from the drive side, is straight up turned through the discharge angle in the direction of rotation. UBD 360, TAU 45, THD 90, TAD 135, DBD 180, BAD 225, BHD 270, BAU 315. DWDI fans omit BAD.",
+    "assumptions": "Job cards are illustrative scenarios. The housing outline is schematic, not a scaled drawing of a product.",
+    "limitations": "Does not cover motor positions, arrangements, or product-specific catalog availability; check the current catalog for a product line.",
+    "sources": ["FanPedia PDF pp. 46-49", "Chapter 13: Rotation and Discharge Codes"]
+  },
+  "pedagogical": {
+    "teachingStrategy": "Practice problems with immediate feedback, followed by free exploration",
+    "keyQuestions": [
+      "Why does CW 90 blow right but CCW 90 blow left?",
+      "Which discharge is missing from DWDI fans?",
+      "Which angles point the same way for both rotations?"
+    ],
+    "commonMisconceptions": [
+      "The same angle number points the same way for CW and CCW fans.",
+      "Rotation can be judged from the inlet side.",
+      "Every discharge is available on every centrifugal fan, including DWDI."
+    ],
+    "assessmentOpportunities": [
+      "Codes correct on the first attempt across 8 job cards (mastery is 7 of 8)"
+    ]
+  },
+  "chapter": "13-rotation-and-discharge-codes"
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Exploded View of a Belt-Driven Centrifugal Fan using html</title>
+    <style>
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; background: #ffffff; color: #1d2a36; }
+        main { max-width: 900px; margin: 0 auto; padding: 6px 8px 4px; box-sizing: border-box; }
+        #toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
+        #toolbar .title { font-weight: bold; font-size: 15px; margin-right: auto; }
+        #toolbar button { font-size: 14px; padding: 5px 11px; border: 1px solid #6b7c8c; background: #f4f7fa; color: #1d2a36; border-radius: 4px; cursor: pointer; }
+        #toolbar button.active { background: #1f5f8b; color: #ffffff; border-color: #1f5f8b; }
+        #toolbar button:disabled { opacity: 0.45; cursor: not-allowed; }
+        #btnToggle { min-width: 92px; }
+        #toolbar .count { font-size: 13px; color: #44515d; min-width: 120px; text-align: right; }
+        #prompt { font-size: 15px; background: #eaf2f8; border-left: 4px solid #1f5f8b; padding: 7px 10px; min-height: 20px; margin-bottom: 4px; }
+        #drawing { width: 100%; height: auto; display: block; background: #ffffff; touch-action: manipulation; }
+        #info { font-size: 14px; line-height: 1.4; border: 1px solid #c6d0d9; border-radius: 4px; padding: 8px 10px; height: 124px; overflow-y: auto; box-sizing: border-box; background: #fbfcfd; }
+        #info h3 { margin: 0 0 3px 0; font-size: 15px; }
+        #info p { margin: 0 0 4px 0; }
+        #info .ok { color: #1b6e3a; font-weight: bold; }
+        #info .bad { color: #a3361f; font-weight: bold; }
+        #info button { font-size: 14px; padding: 4px 12px; margin-right: 6px; border: 1px solid #1f5f8b; background: #1f5f8b; color: #fff; border-radius: 4px; cursor: pointer; }
+        #info ul { margin: 2px 0 4px 0; padding-left: 20px; }
+        .part { cursor: pointer; transition: transform 0.9s ease-in-out; }
+        .part:focus { outline: none; }
+        .part:hover .shape, .part:focus .shape { filter: brightness(1.08) drop-shadow(0 0 3px #1f5f8b); }
+        .part.selected .shape { filter: drop-shadow(0 0 4px #e07b00) drop-shadow(0 0 2px #e07b00); }
+        .part.reveal .shape { filter: drop-shadow(0 0 5px #d42a2a) drop-shadow(0 0 3px #d42a2a); }
+        .lbl { pointer-events: none; transition: opacity 0.4s; }
+        .lbl rect { fill: #ffffff; stroke: #6b7c8c; stroke-width: 1; }
+        .lbl text { font-size: 16.5px; fill: #1d2a36; font-family: Arial, Helvetica, sans-serif; }
+        .lbl line { stroke: #6b7c8c; stroke-width: 1.2; }
+        .lbl.visited rect { fill: #e5f4ea; stroke: #2b8a4b; }
+        .lbl.sel rect { fill: #fff1de; stroke: #e07b00; stroke-width: 2; }
+        .hidden { opacity: 0; }
+    </style>
+    <link rel="icon" href="data:,">
+    <script src="ch03-exploded-centrifugal-fan.js"></script>
+</head>
+<body>
+    <main></main>
+    <br/>
+    <a href=".">Back to Lesson Plan</a>
+</body>
+</html>

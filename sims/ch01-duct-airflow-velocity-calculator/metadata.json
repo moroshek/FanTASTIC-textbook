@@ -1,0 +1,93 @@
+{
+  "title": "Duct Airflow and Velocity Calculator",
+  "creator": "Twin City Fan",
+  "subject": "Fans and air movement",
+  "description": "Four fixed challenges ask the learner to calculate air velocity, airflow or minimum flow area for rectangular and round ducts using Q = V x A, checked within 2 percent with step-by-step feedback; a free mode then shows how velocity changes with duct size at fixed CFM.",
+  "date": "2026-10-08",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "gradeLevel": [
+      "Adult professional development"
+    ],
+    "subjectArea": "Engineering",
+    "topic": "Airflow, velocity and flow area in ducts (Q = V x A)",
+    "learningObjectives": [
+      "Calculate air velocity, airflow volume or required flow area from the other two quantities for rectangular and round ducts, to within 2 percent of the model value."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Airflow volume in cubic feet per minute (CFM)",
+      "Air velocity in feet per minute",
+      "Flow area in square feet",
+      "The equation Q = V x A",
+      "Converting duct dimensions in inches to square feet"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "version": "1.11.10",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 670
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "name": "Your answer", "description": "Learner types a number for the current challenge; Enter also checks" },
+      { "type": "button", "name": "Check", "description": "Checks the answer within 2 percent; empty or non-numeric input shows 'Enter a number' without using an attempt" },
+      { "type": "button", "name": "Next challenge / Start free mode", "description": "Advances after a challenge is answered correctly or missed" },
+      { "type": "select", "name": "Duct shape", "description": "Rectangular or round (free mode)" },
+      { "type": "slider", "name": "Airflow Q", "description": "200 to 20,000 CFM, step 100, default 2,400 (free mode)" },
+      { "type": "slider", "name": "Width", "description": "6 to 48 in, step 2, default 16 (free mode, rectangular)" },
+      { "type": "slider", "name": "Height", "description": "6 to 48 in, step 2, default 12 (free mode, rectangular)" },
+      { "type": "slider", "name": "Diameter", "description": "6 to 60 in, step 2, default 18 (free mode, round)" }
+    ]
+  },
+  "simulationModel": {
+    "modelType": "Algebraic calculator",
+    "equations": [
+      "Rectangular A = (W x H) / 144 ft^2",
+      "Round A = pi x D^2 / 576 ft^2",
+      "V = Q / A",
+      "Q = V x A",
+      "Correct when |x - model| <= 0.02 x model"
+    ],
+    "assumptions": [
+      "Velocity is the average velocity over the full duct cross-section",
+      "Duct dimensions are inside dimensions in inches"
+    ],
+    "dataProvenance": "Challenge 1 is the chapter's machine-shop worked example; challenges 2-4 are illustrative values and are labeled as such in the sim."
+  },
+  "pedagogical": {
+    "teachingStrategy": "Committed-answer practice problems with immediate diagnostic feedback, followed by free exploration",
+    "keyQuestions": [
+      "Why must duct dimensions in inches be divided by 144 before dividing CFM by area?",
+      "Does a bigger duct move more air when the fan airflow is unchanged?",
+      "Is a round duct of diameter D the same area as a square duct of side D?"
+    ],
+    "commonMisconceptions": [
+      "Velocity can be found by dividing CFM by the duct dimensions in inches without converting to square feet.",
+      "A bigger duct moves more air at the same fan airflow; in fact the CFM is the same and only the velocity drops.",
+      "A round duct of diameter D has the same area as a square duct of side D."
+    ],
+    "assessmentOpportunities": [
+      "Mastery: 4 of 4 challenges correct within 2 percent, at most two attempts each",
+      "Free exploration is not evidence of mastery"
+    ]
+  },
+  "chapter": "01-air-pressure-and-the-fan"
+}

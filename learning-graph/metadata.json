@@ -1,0 +1,10 @@
+{
+  "title": "FanPedia: An Intelligent Textbook on Fans & Blowers",
+  "description": "A learning graph for an intelligent textbook on industrial and commercial fans and blowers: fan families, anatomy, arrangements, impellers, rotation and discharge, motors, bearings, inlets and outlets, flow control, special construction, installation, performance, and reading catalogs to write fan specifications. Built from Twin City Fan's FanPedia and current tcf.com catalogs.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "Copyright 2026 Twin City Fan. All rights reserved."
+}

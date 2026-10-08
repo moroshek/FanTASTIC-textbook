@@ -1,0 +1,62 @@
+{
+  "title": "Fan Curve Explorer",
+  "creator": "Twin City Fan",
+  "subject": ["fan curve", "stall region", "brake horsepower", "non-overloading power curve", "overloading power curve"],
+  "description": "Plotly chart of two illustrative fans' pressure and BHP curves with a six-question check that asks the learner to differentiate stall-region from stable operating points and overloading from non-overloading power curves.",
+  "date": "2026-10-08",
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: application engineers, sales staff, representatives and specifying engineers",
+    "subjectArea": "Fan engineering",
+    "topic": "Fan curves, stall region and power curves",
+    "learningObjectives": [
+      "Differentiate stable from stall-region operating points by locating each point relative to the pressure-curve peak",
+      "Differentiate overloading from non-overloading power curves by reading the shape of the BHP curve",
+      "Read the maximum BHP of a non-overloading curve as the motor size that cannot be overloaded at that speed"
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "differentiate",
+    "duration": "10-15 minutes",
+    "prerequisites": ["fan curve", "fan static pressure", "brake horsepower", "stall region", "overloading power curve", "non-overloading power curve"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Plotly",
+    "version": "1.0",
+    "libraryVersion": "plotly.js 2.35.0",
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 662
+    },
+    "responsive": true,
+    "dependencies": ["https://cdn.plot.ly/plotly-2.35.0.min.js"],
+    "accessibility": {
+      "hasAltText": false,
+      "keyboardNavigable": true
+    }
+  },
+  "pedagogical": {
+    "teachingStrategy": "Hover-to-read exploration followed by committed answers with immediate feedback",
+    "keyQuestions": [
+      "Is 3,000 CFM on Curve A in the stall region?",
+      "Is 9,000 CFM on Curve A in the stall region?",
+      "Is 6,000 CFM on Curve B in the stall region?",
+      "Is 11,000 CFM on Curve B in the stall region?",
+      "Which curve has a non-overloading power curve?",
+      "What is the highest BHP anywhere on Curve A?"
+    ],
+    "commonMisconceptions": [
+      "Any point the pressure curve passes through is a safe operating point, including points left of the peak",
+      "A fan's BHP always rises with airflow",
+      "The highest-pressure point is the best place to select a fan"
+    ],
+    "assessmentOpportunities": [
+      "Mastery is 5 of 6 correct on the first attempt; question 6 is correct within 0.1 of 9.5 BHP"
+    ]
+  },
+  "dataProvenance": "Illustrative curves shaped after typical backward inclined (Curve A) and forward curved (Curve B) centrifugal fan behavior; not Twin City Fan published ratings.",
+  "chapter": "10-fan-performance-curves-and-ratings"
+}
