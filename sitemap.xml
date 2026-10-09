@@ -209,6 +209,10 @@
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch03-direct-drive-centrifugal-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch03-exploded-centrifugal-fan/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
@@ -218,6 +222,10 @@
     </url>
     <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch03-housing-feature-classifier/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch03-induction-motor-overlay/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
@@ -233,7 +241,15 @@
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch04-vaneaxial-fan-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch05-lab-exhaust-entrained-flow-calculator/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch05-roof-exhauster-overlay/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
@@ -257,7 +273,15 @@
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch07-belt-driven-plug-fan-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch07-exploded-view-part-sorter/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch07-inline-centrifugal-mixed-flow-overlay/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
@@ -361,11 +385,23 @@
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch16-stuffing-box-seal-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch17-bearing-life-calendar-years/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch17-fan-pedestal-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch17-fixed-floating-bearing-assignment/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch17-pillow-block-bearing-overlay/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
@@ -374,6 +410,14 @@
     </url>
     <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch18-flow-control-power-comparator/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch18-industrial-damper-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch18-inlet-box-overlay/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
@@ -429,6 +473,10 @@
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch23-snubber-thrust-restraint-overlay/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch23-spring-isolator-deflection-calculator/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
@@ -438,6 +486,10 @@
     </url>
     <url>
          <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch24-motor-position-rule-checker/</loc>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://moroshek.github.io/FanTASTIC-textbook/sims/ch24-swingout-clamshell-overlay/</loc>
          <lastmod>2026-10-09</lastmod>
     </url>
     <url>

@@ -1,0 +1,149 @@
+{
+  "title": "Direct Drive Centrifugal Fan Parts",
+  "description": "FanPedia's exploded view of an Arrangement 8 direct drive centrifugal fan (p. 9) with twelve numbered markers, leader lines and a label column. Explore mode previews each part's name and description; quiz mode hides the labels and describes each part by its job, with two attempts, a hint after the first miss and mastery at 10 of 12 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "inlet collar",
+    "inlet funnel",
+    "impeller",
+    "housing",
+    "outlet flange",
+    "access hole for mounting bolts",
+    "pedestal",
+    "bearings",
+    "shaft",
+    "coupling",
+    "motor",
+    "inlet flange"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of an Arrangement 8 direct drive centrifugal fan",
+    "learningObjectives": [
+      "The learner will identify the twelve labeled parts of an Arrangement 8 direct drive centrifugal fan on an exploded view, given each part's function."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "inlet collar",
+      "inlet funnel",
+      "impeller",
+      "housing",
+      "outlet flange",
+      "access hole for mounting bolts",
+      "pedestal",
+      "bearings",
+      "shaft",
+      "coupling",
+      "motor",
+      "inlet flange"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 708,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 708
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch03-direct-drive-centrifugal-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Marker n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 12-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 12 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 10 of 12."
+    ],
+    "assumptions": [
+      "FanPedia p. 9 exploded view, with the printed labels removed; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawing is FanPedia's, not a specific current catalog model; the Arrangement 4 inset photo of the original page is not shown."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 9 (Exploded Views: Centrifugal Fans, Direct Drive Centrifugal Fans): drawing and part names",
+      "FanPedia p. 174 (Arrangement 8), p. 188 (inlet funnel), pp. 79-80 (shaft), p. 97 (bearings): descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 9"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which part lets the impeller turn at motor speed without a belt?",
+      "Which inlet connection slips over a duct, and which one bolts on?"
+    ],
+    "commonMisconceptions": [
+      "The inlet collar and the inlet flange are the same connection.",
+      "A direct drive fan has no shaft or bearings of its own.",
+      "The pedestal only holds up the motor."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 12'; mastery is 10 of 12 on the first attempt."
+    ]
+  },
+  "chapter": "03-basic-fan-anatomy"
+}

@@ -1,0 +1,150 @@
+{
+  "title": "Inline Centrifugal and Mixed Flow Fan Parts",
+  "description": "FanPedia's exploded and assembled views of a direct drive inline centrifugal fan and a belt driven mixed flow fan (p. 17) with twelve numbered markers, leader lines and two label columns. Explore mode previews each part's name and description; quiz mode hides the labels and describes each part by its job or look, with two attempts, a hint after the first miss and mastery at 10 of 12 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "tubular housing",
+    "straightening vanes",
+    "shaft",
+    "impeller (inline centrifugal)",
+    "inlet funnel",
+    "motor",
+    "impeller (mixed flow)",
+    "bearing housing",
+    "belt guard",
+    "belt tube",
+    "sheave",
+    "discharge cone"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of inline centrifugal and mixed flow fans in tubular housings",
+    "learningObjectives": [
+      "The learner will identify the twelve labeled parts of a direct drive inline centrifugal fan and a belt driven mixed flow fan on FanPedia's exploded views, given each part's function or appearance."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "exploded view",
+      "tubular housing",
+      "straightening vanes",
+      "inline centrifugal fan",
+      "mixed flow fan",
+      "impeller",
+      "shaft",
+      "bearing",
+      "sheave",
+      "V-belt",
+      "belt guard",
+      "motor"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 884,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 884
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch07-inline-centrifugal-mixed-flow-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the two label columns move below the drawing as a numbered list below 820 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 12-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 12 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 10 of 12."
+    ],
+    "assumptions": [
+      "FanPedia p. 17 exploded and assembled views, with the printed labels, leader lines and column divider removed; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawings are FanPedia's, not specific current catalog models.",
+      "Parts drawn on both fans (tubular housing, straightening vanes, shaft, inlet funnel, motor) carry one marker each; selecting the other copy counts as empty space and uses no attempt."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 17 (Exploded Views: Inline Centrifugal & Mixed Flow Fans): drawing and part names",
+      "FanPedia pp. 15-17 and 63-64 (belt tube), pp. 17 and 64 (straightening vanes), p. 17 (discharge cone, belt guard), as summarized in Chapter 7: descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 17"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which part shields the belts where they cross the airstream, and which part guards them outside the tube?",
+      "Which part turns the swirling air leaving the impeller back into straight-through flow?"
+    ],
+    "commonMisconceptions": [
+      "The belt tube and the belt guard do the same job.",
+      "A fan in a round tube must be an axial fan.",
+      "Straightening vanes move the air."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 12'; mastery is 10 of 12 on the first attempt."
+    ]
+  },
+  "chapter": "07-housing-construction-and-exploded-views"
+}

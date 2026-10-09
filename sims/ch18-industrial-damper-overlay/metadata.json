@@ -1,0 +1,135 @@
+{
+  "title": "Industrial Grade Dampers",
+  "description": "FanPedia's five industrial grade damper drawings (p. 137) as numbered zones with a name list. Explore mode previews each damper's name, summary and key facts; quiz mode hides the names and describes each damper, with two attempts, a hint after the first miss and mastery at 4 of 5 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "parallel blade outlet damper",
+    "opposed blade outlet damper",
+    "parallel blade inlet box damper",
+    "manual outlet damper",
+    "outlet damper with actuator"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Industrial grade dampers",
+    "learningObjectives": [
+      "The learner will identify the parallel blade and opposed blade outlet dampers, the parallel blade inlet box damper, the manual outlet damper and the outlet damper with actuator on FanPedia's drawings, given a description of each."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "parallel blade outlet damper",
+      "opposed blade outlet damper",
+      "parallel blade inlet box damper",
+      "manual outlet damper",
+      "outlet damper with actuator"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 794,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 794
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch18-industrial-damper-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered zone is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name, summary and facts. During the quiz the zones are named only 'Drawing n' until resolved, the names are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; number chips keep a constant pixel size at every width."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered drawing to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 5-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay grid engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a drawing's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 5 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 4 of 5."
+    ],
+    "assumptions": [
+      "FanPedia p. 137 drawings with the captions and blade-type tags removed and the bottom row moved up; zones are percentages of the image."
+    ],
+    "limitations": [
+      "Industrial grade dampers only; the commercial grade gravity and motorized dampers of FanPedia p. 136 are not shown, and the Type 1 / Type 2 blade close-ups are part of the outlet damper zones rather than zones of their own."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 137 (Dampers: Industrial Grade): drawings and damper names",
+      "FanPedia pp. 182-183 (outlet, parallel blade, opposed blade, manual and inlet box dampers), pp. 136-137 (grades): descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 137"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled zones on the real FanPedia drawings first, then retrieval practice: find each damper from a description of its blades, range or operator, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which outlet damper suits modulation over the entire range, and which one only down to about 75% open?",
+      "Which damper saves horsepower by pre-spinning the air?"
+    ],
+    "commonMisconceptions": [
+      "Parallel and opposed blade dampers do the same job.",
+      "An inlet box damper is an outlet damper moved to the inlet.",
+      "A manual damper is for day-to-day flow control."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 5'; mastery is 4 of 5 on the first attempt."
+    ]
+  },
+  "chapter": "18-inlets-outlets-and-flow-control"
+}

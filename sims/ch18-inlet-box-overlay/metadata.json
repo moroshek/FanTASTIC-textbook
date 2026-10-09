@@ -1,0 +1,139 @@
+{
+  "title": "Inlet Box Features",
+  "description": "FanPedia's colour-coded drawing of a centrifugal fan with an inlet box (p. 145) with seven numbered markers, leader lines and a label column. Explore mode previews each feature's name and description; quiz mode hides the labels and describes each feature by its job, with two attempts, a hint after the first miss and mastery at 6 of 7 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "inlet box",
+    "inlet box damper",
+    "flange at inlet",
+    "access door",
+    "flange or collar",
+    "drain connection",
+    "fan housing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Features and accessories of a fan inlet box",
+    "learningObjectives": [
+      "The learner will identify the inlet box, its damper, its two connections, its access door and drain connection, and the fan housing it feeds on a drawing, given each feature's function."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "inlet box",
+      "inlet box damper",
+      "flange at inlet",
+      "access door",
+      "flange or collar",
+      "drain connection",
+      "fan housing"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 824,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 824
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch18-inlet-box-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 7-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 7 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 6 of 7."
+    ],
+    "assumptions": [
+      "FanPedia p. 145 main colour-coded drawing, with the legend and captions removed; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawing is FanPedia's, not a specific current catalog model; the FGR connection, insulated inlet box and damper airflow insets of the original page are not shown, so the FGR connection has no marker."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 145 (Inlet Boxes: Features and Accessories): drawing and feature names",
+      "FanPedia p. 141 (inlet box purpose and styles), p. 183 (inlet box damper): descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 145"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which two features connect the inlet box, one to the duct and one to the fan?",
+      "Which features are standard on most inlet boxes?"
+    ],
+    "commonMisconceptions": [
+      "An inlet box has only one flange.",
+      "The access door and drain connection are special options.",
+      "The inlet box damper only adds resistance, like an outlet damper."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 7'; mastery is 6 of 7 on the first attempt."
+    ]
+  },
+  "chapter": "18-inlets-outlets-and-flow-control"
+}

@@ -1,0 +1,138 @@
+{
+  "title": "Swingout and Clamshell Fans",
+  "description": "FanPedia's special construction drawings (p. 123) with five numbered zones: housed centrifugal, axial and inline centrifugal swingout fans, and double door and single door clamshell fans. Explore mode previews each drawing's name, summary and facts; quiz mode hides the names and describes each drawing, with two attempts, a hint after the first miss and mastery at 4 of 5 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "centrifugal swingout fan",
+    "axial swingout fan",
+    "inline centrifugal swingout fan",
+    "double door clamshell fans",
+    "single door clamshell fans"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Swingout and clamshell fan construction",
+    "learningObjectives": [
+      "The learner will identify the housed centrifugal, axial and inline centrifugal swingout fans and the double door and single door clamshell fans on FanPedia's drawings, given a description of each."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "swingout fan",
+      "swingout door assembly",
+      "arrangement 4S, 9ST and 9SS",
+      "arrangement 4SO and 9SO",
+      "clamshell fan",
+      "double door clamshell",
+      "arrangement 4CS and 9CS"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 757,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 757
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch24-swingout-clamshell-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered drawing is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the drawings are named only 'Drawing n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered drawing to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 5-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay grid engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a drawing's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 5 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 4 of 5."
+    ],
+    "assumptions": [
+      "FanPedia p. 123 drawings with the titles and arrangement captions removed and the bottom row moved up; zones are percentages of the image."
+    ],
+    "limitations": [
+      "Each bottom-row zone covers a pair of drawings (one axial, one inline centrifugal); the zones name the construction, not the individual fan.",
+      "Motor positions and swing side are not shown."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 123 (Special Construction: Swingout & Clamshell): drawings and descriptions",
+      "FanPedia pp. 164, 166 (Arrangements 4S, 9ST, 9SS), pp. 172-173 (Arrangements 4SO, 9SO, 4CS, 9CS), p. 195 (swingout door): descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 123"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "What moves when the door opens: the rotor or the casing?",
+      "Which fan types can be built as swingout fans?"
+    ],
+    "commonMisconceptions": [
+      "Swingout and clamshell are two names for the same construction.",
+      "Swingout construction is only for housed centrifugal fans.",
+      "The second door of a double door clamshell is only for cleaning."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 5'; mastery is 4 of 5 on the first attempt."
+    ]
+  },
+  "chapter": "24-advanced-arrangements-and-configuration-variants"
+}

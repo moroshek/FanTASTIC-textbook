@@ -1,0 +1,139 @@
+{
+  "title": "Pillow Block Bearings and Shaft Mounts",
+  "description": "FanPedia's pillow block bearing drawings (p. 92) with six numbered zones: solid ball, solid spherical roller and split pillow blocks, and the set screw, D-Lok / Skwezloc and adapter shaft mounts. Explore mode previews each drawing's name, summary and facts; quiz mode hides the names and describes each drawing, with two attempts, a hint after the first miss and mastery at 5 of 6 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "solid pillow block bearing",
+    "spherical roller bearing",
+    "split pillow block bearing",
+    "set screw mount",
+    "D-Lok / Skwezloc mount",
+    "adapter mount",
+    "concentric bearing mount"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Pillow block bearing housings and shaft mounts",
+    "learningObjectives": [
+      "The learner will identify the solid (ball and spherical roller) and split pillow block housings and the set screw, D-Lok / Skwezloc and adapter shaft mounts on FanPedia's drawings, given a description of each."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "solid pillow block bearing",
+      "spherical roller bearing",
+      "split pillow block bearing",
+      "set screw mount",
+      "D-Lok / Skwezloc mount",
+      "adapter mount",
+      "concentric bearing mount"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 702,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 702
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch17-pillow-block-bearing-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered drawing is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the drawings are named only 'Drawing n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered drawing to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 6-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay grid engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a drawing's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 6 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 5 of 6."
+    ],
+    "assumptions": [
+      "FanPedia p. 92 drawings with the captions removed and the bottom row moved up; zones are percentages of the image."
+    ],
+    "limitations": [
+      "Six drawings only; the totally split pillow block is not shown on this FanPedia page."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 92 (Bearings: Pillow Block Bearings; How Bearings Connect to Shaft): drawings",
+      "FanPedia p. 91 (concentric mounts), pp. 93 and 177-178 (housings): descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 92"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which housing can be opened by lifting a cap?",
+      "Which mounts clamp the inner ring evenly around the shaft?"
+    ],
+    "commonMisconceptions": [
+      "A split pillow block is a different kind of bearing rather than a different housing.",
+      "Every mount pushes the bearing to one side of the shaft.",
+      "One set screw is enough."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 6'; mastery is 5 of 6 on the first attempt."
+    ]
+  },
+  "chapter": "17-bearing-details-lubrication-and-pedestals"
+}

@@ -1,0 +1,138 @@
+{
+  "title": "Snubbers and Thrust Restraints",
+  "description": "FanPedia's snubber and thrust restraint drawings (p. 135): an isolation base with snubbers and a detail inset, and a fan-to-duct joint with two thrust restraints, with nine numbered markers, leader lines and label strips. Explore mode previews each part's name and description; quiz mode hides the labels and describes each part by its job or place, with two attempts, a hint after the first miss and mastery at 8 of 9 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "snubber bracket (attached to the fan or base)",
+    "snubber bracket (attached to the floor)",
+    "elastomeric (rubberized) material",
+    "isolators",
+    "discharge duct",
+    "flex connector",
+    "fan discharge",
+    "ceiling hung type isolator",
+    "threaded rod"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of a snubber and a thrust restraint on a spring-isolated fan",
+    "learningObjectives": [
+      "The learner will identify the nine labeled parts of a snubber on an isolation base and of a thrust restraint across a fan-to-duct joint, given each part's function or location."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "spring isolators",
+      "open, housed, restrained and seismic springs",
+      "where the isolators go",
+      "snubbers and thrust restraints"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 794,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 794
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch23-snubber-thrust-restraint-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label strips move below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 9-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 9 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 8 of 9."
+    ],
+    "assumptions": [
+      "FanPedia p. 135 snubber and thrust restraint drawings, with the printed labels, colour legend and captions removed; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawings are FanPedia's, not a specific current catalog model; only one of the two thrust restraints carries markers, and the isolators marker sits on one of the several isolators on the base."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 135 (Vibration Isolation: Isolator Types; snubbers on an isolation base with a detail inset, and thrust restraints): drawing, part names and the snubber description",
+      "FanPedia p. 197 (thrust restraints): ceiling hung type isolators, threaded rod, two restraints per fan mounted 180 degrees apart",
+      "Drawing: FanPedia, Twin City Fan, p. 135"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which part keeps the two snubber brackets from touching metal to metal?",
+      "Which parts of a thrust restraint stop a spring-mounted fan from moving horizontally at every start?"
+    ],
+    "commonMisconceptions": [
+      "A snubber holds the fan rigidly in place.",
+      "The snubber's two brackets touch when it engages.",
+      "The flex connector keeps a spring-mounted fan in place."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 9'; mastery is 8 of 9 on the first attempt."
+    ]
+  },
+  "chapter": "23-spring-isolators-restraints-field-measurement"
+}

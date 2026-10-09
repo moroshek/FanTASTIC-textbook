@@ -1,0 +1,143 @@
+{
+  "title": "Centrifugal Roof Exhauster Parts",
+  "description": "FanPedia's exploded views of an upblast and a downblast centrifugal roof exhauster (p. 19) with nine numbered markers, leader lines and two label columns. Explore mode previews each part's name and description; quiz mode hides the labels and describes each part by its job, with two attempts, a hint after the first miss and mastery at 8 of 9 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "motor cover",
+    "motor housing",
+    "motor",
+    "bird screen",
+    "impeller",
+    "shroud",
+    "skirt",
+    "curb cap",
+    "roof curb"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of upblast and downblast centrifugal roof exhausters",
+    "learningObjectives": [
+      "The learner will identify the nine labeled parts of a centrifugal roof exhauster on FanPedia's upblast and downblast exploded views, given each part's function."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "motor cover",
+      "motor housing",
+      "motor",
+      "bird screen",
+      "impeller",
+      "shroud",
+      "skirt",
+      "curb cap",
+      "roof curb"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 1078,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 1078
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch05-roof-exhauster-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the two label columns move below the drawing as a numbered list on screens narrower than 820 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 9-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 9 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 8 of 9."
+    ],
+    "assumptions": [
+      "FanPedia p. 19 exploded views (upblast left, downblast right), with the printed labels removed; marker positions are percentages of the image; each part is marked once, on one of the two units."
+    ],
+    "limitations": [
+      "The drawings are FanPedia's, not specific current catalog models; the downblast column keeps the PDF's mirrored orientation and was moved closer to the upblast column."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 19 (Exploded Views: Centrifugal Roof Exhausters, upblast and downblast): drawing and part names",
+      "FanPedia p. 5 (roof ventilator configurations by discharge direction) and Chapter 5 section 'Downblast Discharge': descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 19"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which part turns the rising air back down on a downblast unit?",
+      "Which part belongs to the fan and which to the roof: the curb cap or the roof curb?"
+    ],
+    "commonMisconceptions": [
+      "The motor cover is only a rain lid.",
+      "The curb cap and the roof curb are the same part.",
+      "Upblast and downblast exhausters are built from different parts."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 9'; mastery is 8 of 9 on the first attempt."
+    ]
+  },
+  "chapter": "05-roof-wall-and-specialty-exhaust-fans"
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Fan Pedestal Features",
+  "description": "FanPedia's drawing of pedestal features (p. 85): a pedestal beside a single width centrifugal fan housing, with an inset pedestal carrying bearing or motor pads, marked with seven numbered markers, leader lines and a label column. Explore mode previews each feature's name and description; quiz mode hides the labels and describes each feature by its job or look, with two attempts, a hint after the first miss and mastery at 6 of 7 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "top",
+    "pillow block bearing",
+    "hand holes",
+    "sides",
+    "front",
+    "feet",
+    "bearing or motor pads"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Features of a fan pedestal",
+    "learningObjectives": [
+      "The learner will identify the top, pillow block bearing, hand holes, sides, front, feet and bearing or motor pads of a fan pedestal on FanPedia's drawing, given each feature's job or look."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "pillow block bearing",
+      "two and four hole mounts",
+      "fan pedestal"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 982,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 982
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch17-fan-pedestal-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the pillow block bearing marker is offset with a pointer so it does not hide the bearing; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 7-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 7 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 6 of 7."
+    ],
+    "assumptions": [
+      "FanPedia p. 85 pedestal features drawing with the 'Bearing or Motor Pads' inset, with the printed labels removed; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawing is FanPedia's, not a specific current catalog model; the other pedestal features in the chapter (reinforcements, heat shields, buffer strips, accessories) are not drawn, and the back of the pedestal is not visible."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 85 (Pedestals: Features, pedestal on a SWSI fan, with the 'Bearing or Motor Pads' inset): drawing and feature names",
+      "FanPedia pp. 82-86 (Pedestals) and Chapter 17 'Fan Pedestals' and 'Pillow Block Housings': descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 85"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each feature from a description of its job or look, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which feature lets a mechanic reach the bearing and motor fasteners?",
+      "Which two features give a flat, stiff surface for bearing alignment?"
+    ],
+    "commonMisconceptions": [
+      "The pedestal is just a stand.",
+      "The hand holes are only for looking in.",
+      "Bearing or motor pads are needed on every pedestal."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 7'; mastery is 6 of 7 on the first attempt."
+    ]
+  },
+  "chapter": "17-bearing-details-lubrication-and-pedestals"
+}
