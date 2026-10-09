@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Choose the plug fan arrangement (4, 4P, 8, 8P, 9 or 9P) for eight illustrative jobs using the drive, temperature and support rules, with the deciding rule and a side-view sketch shown after each check.">
+        <meta name="description" content="Choose the plug fan arrangement (1P, 4, 4P, 8, 8P, 9 or 9P) for nine illustrative jobs using the drive, temperature and support rules, with the deciding rule and a side-view sketch shown after each check.">
       
       
         <meta name="author" content="Twin City Fan">
@@ -4883,17 +4883,18 @@ or their published URLs) to the editor's <code>index.html</code> before pasting 
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>A plug fan is an unhoused centrifugal fan mounted through the wall of a plenum: the impeller
 sits inside with the process air, and the mounting panel keeps the motor and drive outside.
-FanPedia defines seven plug fan arrangements (pp. 170–172); this sim uses the six without Arrangement 1P, the belt-driven grade version with a separate motor base. They differ on two questions: is the
+FanPedia defines seven plug fan arrangements (pp. 170–172) and this sim offers all of them. Not every model is built in every one: the current catalogs list 1P, 9, 9P, 4 and 8P for all four plug lines, plus 4P on the BEPL and BFPL, and none lists a plain Arrangement 8. They differ on two questions: is the
 fan direct drive or belt driven, and does the customer's wall carry the fan, or does it stand on
 grade? The "P" suffix marks the same arrangement mounted to grade.</p>
-<p>The sim gives you eight illustrative jobs in a fixed order. For each one you choose one
+<p>The sim gives you nine illustrative jobs in a fixed order. For each one you choose one
 arrangement and press <strong>Check</strong>; there is one scored attempt per job. The decision rules are:</p>
 <ol>
 <li><strong>Drive:</strong> direct drive or belt drive, from the job description.</li>
 <li><strong>Temperature:</strong> with direct drive and a hot airstream, Arrangement 4/4P is excluded (the
    impeller would sit on the motor shaft), so 8/8P is used.</li>
 <li><strong>Support:</strong> if the wall is not sufficient, or the job states a low-vibration requirement,
-   use the P version; otherwise the wall-mounted version.</li>
+   use the P version; otherwise the wall-mounted version. For belt drive on grade, a motor on its
+   own base separate from the fan is 1P; a motor on the fan's pedestal is 9P.</li>
 </ol>
 <table>
 <thead>
@@ -4944,6 +4945,11 @@ arrangement and press <strong>Check</strong>; there is one scored attempt per jo
 <td>Most compact and lowest maintenance, room temperature, adequate wall</td>
 <td>4</td>
 </tr>
+<tr>
+<td>9</td>
+<td>Large belt-driven fan on grade, motor on its own separate base</td>
+<td>1P</td>
+</tr>
 </tbody>
 </table>
 <p>After each check the sim shows the reason, marks the deciding rule with "◆ deciding rule" in the
@@ -4951,25 +4957,25 @@ rule list, and sketches the correct arrangement in side view: plenum wall, impel
 funnel inside, motor, bearings, coupling or belts outside, and either a wall bracket or a pedestal
 on grade (the mounting panel is drawn dashed on P versions, where it is optional). The sketch is
 schematic, not to scale.</p>
-<p>The six <strong>reference cards</strong> (drive, what carries the fan, and FanPedia's notes for each
+<p>The seven <strong>reference cards</strong> (drive, what carries the fan, and FanPedia's notes for each
 arrangement) can be opened at any time. Opening them is exploration and is not scored. A checked
 scenario can be revisited with <strong>Back</strong>; it shows your answer and the reason but cannot be
-re-answered. Mastery is 6 of 8 on the first (only) attempt.</p>
+re-answered. Mastery is 7 of 9 on the first (only) attempt.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Read the scenario and choose an arrangement with the buttons below the drawing (or keys
-   1–6), then press <strong>Check</strong> (or Enter).</li>
+   1–7), then press <strong>Check</strong> (or Enter).</li>
 <li>Read the verdict: "✓ Correct: Arrangement <em>n</em>." with the reason in a solid green box, or
    "✗ Not quite. The answer is Arrangement <em>n</em>." with the reason in a dashed red box. The rule list
    marks the deciding rule and the sketch shows the correct arrangement.</li>
-<li>Press <strong>Next scenario</strong> (or Enter). After scenario 8 press <strong>See summary</strong> to read the
+<li>Press <strong>Next scenario</strong> (or Enter). After scenario 9 press <strong>See summary</strong> to read the
    first-attempt score, the mastery line and every missed scenario with its reason.</li>
-<li>Use <strong>Back</strong> and <strong>Forward</strong> to review checked scenarios, <strong>Reference cards</strong> to compare the six
+<li>Use <strong>Back</strong> and <strong>Forward</strong> to review checked scenarios, <strong>Reference cards</strong> to compare the seven
    arrangements, and <strong>Start over</strong> for a new scored round.</li>
 </ol>
-<p><strong>Keyboard:</strong> keys 1–6 choose Arrangement 4, 4P, 8, 8P, 9 or 9P; Enter checks, then goes to the
+<p><strong>Keyboard:</strong> keys 1–7 choose Arrangement 1P, 4, 4P, 8, 8P, 9 or 9P; Enter checks, then goes to the
 next scenario (and closes the reference cards when they are open). Tab reaches every button.</p>
-<p><strong>Data label:</strong> "Illustrative scenarios · Source: FanPedia pp. 171–172", at the bottom left of the
+<p><strong>Data label:</strong> "Illustrative scenarios · Source: FanPedia pp. 170–172", at the bottom left of the
 drawing.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
@@ -4981,8 +4987,8 @@ drawing.</p>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
 <p>The learner will apply the drive, support and temperature rules for plug fan arrangements to
-choose the correct arrangement (4, 4P, 8, 8P, 9 or 9P) for a described job, getting at least 6 of
-8 scenarios right on the first attempt (Bloom: Apply, verb: apply).</p>
+choose the correct arrangement (1P, 4, 4P, 8, 8P, 9 or 9P) for a described job, getting at least 7 of
+9 scenarios right on the first attempt (Bloom: Apply, verb: apply).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Adult professional development: new application engineers, sales staff, representatives and
 facilities staff.</p>
@@ -4996,9 +5002,9 @@ facilities staff.</p>
 </ul>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Warm-up</strong> (2 min): Open the reference cards and say, for each pair (4/4P, 8/8P, 9/9P), what
+<li><strong>Warm-up</strong> (2 min): Open the reference cards and say, for each pair (4/4P, 8/8P, 9/9P), then find 1P and say how it differs from 9P, what
    the P changes and what it does not.</li>
-<li><strong>Scenarios</strong> (6-8 min): Work the eight scenarios. Before pressing Check, say which rule
+<li><strong>Scenarios</strong> (6-8 min): Work the nine scenarios. Before pressing Check, say which rule
    decides the job.</li>
 <li><strong>Review</strong> (3 min): Use Back to revisit any miss and read the deciding rule; compare with the
    chapter's worked example (hot oven, belt drive, weak wall: Arrangement 9P).</li>
@@ -5014,16 +5020,17 @@ facilities staff.</p>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
 <ul>
-<li>The running line "Scenarios correct: n of 8" counts correct first (only) attempts; the summary
-  shows "First-attempt score: n of 8" and the mastery line. Mastery is 6 of 8.</li>
+<li>The running line "Scenarios correct: n of 9" counts correct first (only) attempts; the summary
+  shows "First-attempt score: n of 9" and the mastery line. Mastery is 7 of 9.</li>
 <li>Opening the reference cards is exploration, not evidence. Follow-up: a customer wants belt drive
   on a wall that can carry the fan but has a low-vibration specification; which arrangement, and
   which rule decides it?</li>
 </ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">FanPedia: The Fan &amp; Blower Encyclopedia (PDF)</a> - Technical Descriptions of plug fan Arrangements 4, 4P, 8, 8P, 9 and 9P (pp. 171–172) and the belt-driven plug fan exploded view (p. 14).</li>
+<li><a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">FanPedia: The Fan &amp; Blower Encyclopedia (PDF)</a> - Technical Descriptions of plug fan Arrangements 1P, 4, 4P, 8, 8P, 9 and 9P (pp. 170–172) and the belt-driven plug fan exploded view (p. 14).</li>
 <li><a href="https://www.tcf.com/">Twin City Fan</a> - current plug fan catalog pages (BEPL, BFPL, AFPL, BCPL) with mounting panel, temperature and pedestal options.</li>
+<li><a href="https://www.tcf.com/wp-content/uploads/2018/06/BEPL-High-Efficiency-Plug-Fans-Catalog-355.pdf">BEPL High Efficiency Plug Fans Catalog 355 (PDF)</a> and <a href="https://www.tcf.com/wp-content/uploads/2021/12/BCPL-AFPL-Plug-Fans-Catalog-350.pdf">BCPL AFPL Plug Fans Catalog 350 (PDF)</a> - Twin City Fan, April 2024 - arrangements available per plug fan line.</li>
 <li><a href="https://tcf.com/fanpedia/">FanPedia online</a> - Twin City Fan's reference on fan types and arrangements.</li>
 </ol>
 

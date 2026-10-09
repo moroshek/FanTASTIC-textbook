@@ -1,9 +1,9 @@
 // Plug Fan Arrangement Picker - p5.js MicroSim (Chapter 6: Industrial Fans and Application Product Lines)
 // CANVAS_HEIGHT: 610
-// Eight illustrative jobs, fixed order, one scored attempt each: the learner picks one of the six
-// plug fan arrangements (4, 4P, 8, 8P, 9, 9P). After Check the sim shows the reason, the three
+// Nine illustrative jobs, fixed order, one scored attempt each: the learner picks one of the seven
+// plug fan arrangements (1P, 4, 4P, 8, 8P, 9, 9P). After Check the sim shows the reason, the three
 // decision rules with the deciding rule marked, and a side-view sketch of the correct arrangement.
-// Reference cards for all six arrangements can be opened at any time (exploration, not scored).
+// Reference cards for all seven arrangements can be opened at any time (exploration, not scored).
 // Built on the FanPedia kit: FP.CardDeck (scenarios, score, mastery, wording), FP.p5 (layout,
 // text, buttons, keys). Needs ../shared-libs/: fanpedia-sim.css, fanpedia-core.js, fanpedia-p5.js.
 
@@ -14,33 +14,36 @@ let canvasWidth = 800;
 const drawHeight = 460;
 const controlHeight = K.controlHeightFor(4);   // 150: choices (1-2 rows), navigation (1-2 rows)
 const canvasHeight = drawHeight + controlHeight;
-const MASTERY = 6;
+const MASTERY = 7;   // 7 of 9 (78%), scaled from the earlier 6 of 8 (75%)
 
-// Reference cards (FanPedia pp. 171-172, Technical Descriptions, plug arrangements). FanPedia also lists
-// Arrangement 1P (belt driven, grade mounted, motor on its own base, p. 170); the picker leaves it out.
+// Reference cards (FanPedia pp. 170-172, Technical Descriptions, plug arrangements; the current BEPL,
+// BFPL, BCPL and AFPL catalogs word 1P the same way).
 const ARRS = [
-  { code: '4', drive: 'Direct, impeller on motor shaft', carried: "Customer's wall",
+  { code: '1P', short: 'Motor mounted separate from the fan. Panel optional.', drive: 'Belt, motor on its own base', carried: 'Grade',
+    text: 'Belt driven; fan mounted to grade with the motor mounted separate from the fan. Larger fans and larger-HP motors. Mounting panel optional.' },
+  { code: '4', short: 'Compact; no fan shaft, bearings or belts. Hot air may limit use.', drive: 'Direct, impeller on motor shaft', carried: "Customer's wall",
     text: 'Compact; no fan shaft, bearings or belts. High airstream temperatures may limit use.' },
-  { code: '4P', drive: 'Direct, impeller on motor shaft', carried: 'Grade',
+  { code: '4P', short: 'Arrangement 4 on grade: weak wall or low vibration.', drive: 'Direct, impeller on motor shaft', carried: 'Grade',
     text: 'Arrangement 4 mounted to grade, for walls that cannot carry the fan or lower vibration requirements. Mounting panel optional.' },
-  { code: '8', drive: 'Direct, motor coupled to fan shaft', carried: "Customer's wall",
+  { code: '8', short: 'Least common plug arrangement (long assembly).', drive: 'Direct, motor coupled to fan shaft', carried: "Customer's wall",
     text: 'Least common plug arrangement because of assembly length.' },
-  { code: '8P', drive: 'Direct, motor coupled to fan shaft', carried: 'Grade',
+  { code: '8P', short: 'Arrangement 8 on grade; larger fans and motors.', drive: 'Direct, motor coupled to fan shaft', carried: 'Grade',
     text: 'Arrangement 8 mounted to grade; larger fans and larger-HP motors. Mounting panel optional.' },
-  { code: '9', drive: 'Belt', carried: "Customer's wall",
+  { code: '9', short: 'Most common plug arrangement.', drive: 'Belt', carried: "Customer's wall",
     text: 'Most common plug arrangement.' },
-  { code: '9P', drive: 'Belt', carried: 'Grade',
+  { code: '9P', short: 'Arrangement 9 on grade; larger fans and motors.', drive: 'Belt', carried: 'Grade',
     text: 'Arrangement 9 mounted to grade; larger fans and larger-HP motors. Mounting panel optional.' }
 ];
 const CODES = ARRS.map(a => a.code);
 const SHORT_DRIVE = { 'Direct, impeller on motor shaft': 'direct, impeller on motor shaft',
-  'Direct, motor coupled to fan shaft': 'direct, coupled to fan shaft', Belt: 'belt' };
+  'Direct, motor coupled to fan shaft': 'direct, coupled to fan shaft', Belt: 'belt',
+  'Belt, motor on its own base': 'belt, motor on its own base' };
 
 // Decision rules (spec Rules), in order
 const RULES = [
   { n: 1, name: 'Drive', q: 'Direct drive or belt drive?' },
   { n: 2, name: 'Temperature', q: 'Direct drive with a hot airstream? Then not 4/4P: use 8/8P.' },
-  { n: 3, name: 'Support', q: 'Wall not sufficient, or a low-vibration requirement? Then the P version.' }
+  { n: 3, name: 'Support', q: 'Wall not sufficient, or a low-vibration requirement? Then a P version. Belt drive with the motor on its own base: 1P; on the fan\'s pedestal: 9P.' }
 ];
 
 // Scenarios (illustrative jobs), fixed order. r1-r3: how each rule reads for this job;
@@ -85,7 +88,12 @@ const SCENARIOS = [
     text: 'Customer wants the most compact, lowest-maintenance plug fan possible, the airstream is near room temperature, and the wall is adequate.',
     r: ['Direct: most compact, lowest maintenance', 'Near room temperature: 4 is not ruled out', 'Wall adequate: wall-mounted'],
     decides: [1, 2],
-    why: 'Arrangement 4 is the compact, low-maintenance choice when temperature does not rule it out.' }
+    why: 'Arrangement 4 is the compact, low-maintenance choice when temperature does not rule it out.' },
+  { id: 9, answer: '1P',
+    text: 'Large belt-driven fan with a large-HP motor. The wall cannot carry it, so the fan stands on grade, and the plant wants the motor on its own separate base on the floor, not on the fan\'s pedestal.',
+    r: ['Belt drive', 'Belt drive: the temperature rule does not apply', 'Wall not sufficient: P version; motor on its own base: 1P, not 9P'],
+    decides: [3],
+    why: 'Belt driven, mounted to grade, with the motor mounted separate from the fan is Arrangement 1P. On 9P the motor rides on the fan\'s pedestal.' }
 ].map(s => Object.assign(s, { answerText: 'Arrangement ' + s.answer }));
 
 const deck = new FP.CardDeck({
@@ -98,8 +106,8 @@ const deck = new FP.CardDeck({
 });
 
 const PROMPT = 'Which plug fan arrangement fits this job?';
-const DATA_NOTE_WIDE = ['Illustrative scenarios', 'Source: FanPedia pp. 171–172', 'Keys: 1–6 choose, Enter checks or goes on'];
-const DATA_NOTE_NARROW = ['Illustrative scenarios', 'FanPedia pp. 171–172', 'Keys 1–6, Enter'];
+const DATA_NOTE_WIDE = ['Illustrative scenarios', 'Source: FanPedia pp. 170–172', 'Keys: 1–7 choose, Enter checks or goes on'];
+const DATA_NOTE_NARROW = ['Illustrative scenarios', 'FanPedia pp. 170–172', 'Keys 1–7, Enter'];
 
 // ---------- State ----------
 let selected = null;        // arrangement code chosen for the current scenario (before Check)
@@ -138,18 +146,18 @@ function setup() {
   cardsButton.attribute('aria-pressed', 'false');
   startOverButton = K.button(FP.msg.START_OVER, startOver, { variant: 'secondary' });
 
-  // Fixed width for the six choices (room for the ✓ of the selected one), so the rows never jump
+  // Fixed width for the seven choices (room for the ✓ of the selected one), so the rows never jump
   choiceButtons.forEach(b => b.attribute('aria-pressed', 'true'));
   const cw = Math.max(...choiceButtons.map(b => b.elt.offsetWidth)) + 2;
   choiceButtons.forEach(b => { b.style('width', cw + 'px'); b.attribute('aria-pressed', 'false'); });
 
   updateControls();
 
-  describe('Plug fan arrangement picker. Eight illustrative jobs are shown one at a time. For each, ' +
-    'choose one of six plug fan arrangements (4, 4P, 8, 8P, 9 or 9P) and press Check. The sim says ' +
+  describe('Plug fan arrangement picker. Nine illustrative jobs are shown one at a time. For each, ' +
+    'choose one of seven plug fan arrangements (1P, 4, 4P, 8, 8P, 9 or 9P) and press Check. The sim says ' +
     'whether the choice is correct, gives the reason, lists the three decision rules (drive, ' +
     'temperature, support) with the deciding rule marked, and sketches the correct arrangement. ' +
-    'Reference cards describing all six arrangements can be opened at any time.');
+    'Reference cards describing all seven arrangements can be opened at any time.');
 }
 
 // ---------- Flow ----------
@@ -169,7 +177,7 @@ function checkAnswer() {
   const st = deck.state();
   if (reviewing() || st.phase !== 'choose') return;
   if (!selected) {
-    notice = 'Choose an arrangement first (buttons or keys 1–6).';
+    notice = 'Choose an arrangement first (buttons or keys 1–7).';
     FP.announce(notice);
     return;
   }
@@ -234,7 +242,7 @@ function onEnter() {
 function toggleCards() {
   showCards = !showCards;
   updateControls();
-  FP.announce(showCards ? 'Reference cards open: six plug fan arrangements.' : 'Reference cards closed.');
+  FP.announce(showCards ? 'Reference cards open: seven plug fan arrangements.' : 'Reference cards closed.');
 }
 
 function startOver() {
@@ -371,7 +379,7 @@ function drawScenarioText(x, y, w, h, idx, s, rec) {
     (reviewing() ? '  (already checked; not re-scored)' : ''), bold: true, size: 1 }];
   const body = [{ t: s.text, gap: 6 }, { t: PROMPT, bold: true, gap: 8 }];
   if (!rec && selected) body.push({ t: 'Selected: Arrangement ' + selected + '. Press Check.', color: FP.tok('primary-dark'), gap: 6 });
-  if (!rec && !selected && !notice) body.push({ t: 'Pick one of the six arrangements below, then press Check.', color: FP.tok('text-muted'), gap: 6 });
+  if (!rec && !selected && !notice) body.push({ t: 'Pick one of the seven arrangements below, then press Check.', color: FP.tok('text-muted'), gap: 6 });
   if (notice) body.push({ t: 'ℹ ' + notice, color: FP.tok('primary-dark'), gap: 6 });
   const fb = rec ? [{ t: 'You chose: Arrangement ' + rec.chosen, color: FP.tok('text-muted') },
     { t: rec.message, color: FP.tok(rec.kind === 'ok' ? 'correct' : 'incorrect'), gap: 2 }] : [];
@@ -503,6 +511,36 @@ function drawPlugFan(x, y, w, h, code) {
     driveEnd = d0 + w * 0.53;
     label('Bearings', d0 + w * 0.02, sh - 13, c.text, LEFT);
     label('Coupling, motor', d0 + w * 0.25, sh - mh / 2 - 4, c.text, LEFT);
+  } else if (fam === '1') {
+    // 1P: fan on its own pedestal on grade; the motor sits on a separate base on the floor, belts between
+    const fanBase = sh + h * 0.2;
+    line(i1, sh, d0 + w * 0.29, sh);
+    fill(c.side);
+    rect(d0 + w * 0.02 + 3, sh + 9, 6, fanBase - sh - 9);
+    rect(d0 + w * 0.15 + 3, sh + 9, 6, fanBase - sh - 9);
+    bearing(d0 + w * 0.02); bearing(d0 + w * 0.15);
+    fill(c.side); rect(d0 + w * 0.25, sh - h * 0.12, 8, h * 0.24);     // fan sheave
+    // Fan pedestal on grade
+    rect(d0 - 2, fanBase, w * 0.31, 6);
+    rect(d0 + 8, fanBase + 6, w * 0.31 - 20, floorY - fanBase - 6);
+    // Motor on its own base, on the floor, to the right of the fan stand
+    const mx = d0 + w * 0.46, mw = w * 0.15, mbh = 8, mhh = mh * 0.8;
+    const my = floorY - mbh - mhh / 2;
+    fill(c.side); rect(mx - 4, floorY - mbh, mw + 8, mbh);              // motor base
+    fill(c.motor); rect(mx, my - mhh / 2, mw, mhh, 3);
+    fill(c.side); rect(mx - 8, my - 7, 8, 14);                          // motor sheave
+    stroke(c.belt); strokeWeight(2);
+    line(d0 + w * 0.25, sh + h * 0.12, mx - 8, my - 7);
+    line(d0 + w * 0.25 + 8, sh + h * 0.12, mx, my - 7);
+    strokeWeight(1.5); stroke(c.edge);
+    strokeWeight(2); line(x, floorY, x + w, floorY); strokeWeight(1);
+    for (let hx = x + 8; hx < x + w; hx += 12) line(hx, floorY + 1, hx - 6, floorY + 8);
+    label('Bearings', d0 + w * 0.02, sh - 13, c.text, LEFT);
+    label('Belts', d0 + w * 0.31, sh + h * 0.09, c.text, LEFT);
+    label('Motor, own base', x + w, my - mhh / 2 - 4, c.text, RIGHT);
+    label('Fan stand', d0 - 6, floorY - 4, c.text, RIGHT);
+    driveEnd = mx + mw;
+    baseY = null;
   } else {
     line(i1, sh, d0 + w * 0.29, sh);
     const my = sh + h * 0.28;
@@ -524,7 +562,9 @@ function drawPlugFan(x, y, w, h, code) {
   }
   // Support: wall bracket, or a pedestal on grade
   fill(c.side); stroke(c.edge);
-  if (grade) {
+  if (baseY === null) {
+    // 1P: support already drawn above
+  } else if (grade) {
     rect(d0 - 2, baseY, driveEnd - d0 + 4, 6);
     rect(d0 + 8, baseY + 6, (driveEnd - d0) - 16, floorY - baseY - 6);
     strokeWeight(2);
@@ -557,7 +597,7 @@ function label(str, lx, by, col, align) {
   push();
   noStroke();
   textSize(12);
-  textAlign(align === LEFT ? LEFT : CENTER, BOTTOM);
+  textAlign(align === LEFT ? LEFT : align === RIGHT ? RIGHT : CENTER, BOTTOM);
   fill(col);
   text(str, lx, by);
   pop();
@@ -591,7 +631,7 @@ function drawCards(x, y, w, h) {
   ] : [
     { t: 'Arr. ' + a.code + ': ' + SHORT_DRIVE[a.drive] + '; ' + (a.carried === 'Grade' ? 'on grade' : 'on the wall'),
       bold: true, color: FP.tok('primary-dark') },
-    { t: a.text, color: FP.tok('text') }
+    { t: a.short, color: FP.tok('text') }
   ];
   const avail = y + h - 8 - top;
   const contentH = (a, t) => paras(list(a), 0, 0, cw - 16, t, true) + 2 * pad;
@@ -622,7 +662,7 @@ function drawSummary(x, y, w, h) {
   K.panel(x, y, w, h);
   const s = deck.summary();
   const list = [
-    { t: 'All 8 scenarios checked', bold: true, size: 1 },
+    { t: 'All ' + SCENARIOS.length + ' scenarios checked', bold: true, size: 1 },
     { t: s.lines[0], bold: true, gap: 6 },
     { t: s.lines[1], bold: s.mastered, color: s.mastered ? FP.tok('primary-dark') : FP.tok('text') }
   ];

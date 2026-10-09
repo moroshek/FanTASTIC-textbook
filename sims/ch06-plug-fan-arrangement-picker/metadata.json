@@ -1,6 +1,6 @@
 {
   "title": "Plug Fan Arrangement Picker",
-  "description": "Eight illustrative jobs, one scored attempt each: choose plug fan Arrangement 4, 4P, 8, 8P, 9 or 9P, then see the reason, the deciding rule (drive, temperature or support) and a side-view sketch of the correct arrangement. Reference cards for all six arrangements are available at any time.",
+  "description": "Nine illustrative jobs, one scored attempt each: choose plug fan Arrangement 1P, 4, 4P, 8, 8P, 9 or 9P, then see the reason, the deciding rule (drive, temperature or support) and a side-view sketch of the correct arrangement. Reference cards for all seven arrangements are available at any time.",
   "creator": "Twin City Fan",
   "date": "2026-10-08",
   "subject": ["plug fan", "plenum fan", "mounting panel", "arrangement", "direct drive", "belt drive", "grade"],
@@ -11,9 +11,9 @@
   "educational": {
     "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
     "subjectArea": "Fans and blowers",
-    "topic": "Plug fan arrangements 4, 4P, 8, 8P, 9 and 9P",
+    "topic": "Plug fan arrangements 1P, 4, 4P, 8, 8P, 9 and 9P",
     "learningObjectives": [
-      "The learner will apply the drive, support and temperature rules for plug fan arrangements to choose the correct arrangement (4, 4P, 8, 8P, 9 or 9P) for a described job, getting at least 6 of 8 scenarios right on the first attempt."
+      "The learner will apply the drive, support and temperature rules for plug fan arrangements to choose the correct arrangement (1P, 4, 4P, 8, 8P, 9 or 9P) for a described job, getting at least 7 of 9 scenarios right on the first attempt."
     ],
     "bloomsTaxonomy": "Apply",
     "bloomVerb": "apply",
@@ -37,17 +37,17 @@
     "accessibility": {
       "hasAltText": true,
       "keyboardNavigable": true,
-      "notes": "describe() text (fallback mode); verdicts, scenario changes and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the deciding rule is marked with the text '◆ deciding rule' and a heavier border; keys 1-6 choose, Enter checks and goes on; every button is reachable with Tab and focus moves to the next sensible control."
+      "notes": "describe() text (fallback mode); verdicts, scenario changes and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the deciding rule is marked with the text '◆ deciding rule' and a heavier border; keys 1-7 choose, Enter checks and goes on; every button is reachable with Tab and focus moves to the next sensible control."
     }
   },
   "userInterface": {
     "controls": [
-      { "type": "button", "label": "Arr. 4 / 4P / 8 / 8P / 9 / 9P", "purpose": "Choose an arrangement (keys 1-6)" },
+      { "type": "button", "label": "Arr. 1P / 4 / 4P / 8 / 8P / 9 / 9P", "purpose": "Choose an arrangement (keys 1-7)" },
       { "type": "button", "label": "Check", "purpose": "Check the choice (Enter); one scored attempt" },
       { "type": "button", "label": "Back / Forward", "purpose": "Review checked scenarios (not re-scored)" },
       { "type": "button", "label": "Next scenario / See summary", "purpose": "Advance after a check (Enter)" },
-      { "type": "button", "label": "Reference cards", "purpose": "Open or close the six arrangement cards (exploration)" },
-      { "type": "button", "label": "Start over", "purpose": "Reset all eight scenarios and the score" }
+      { "type": "button", "label": "Reference cards", "purpose": "Open or close the seven arrangement cards (exploration)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all nine scenarios and the score" }
     ]
   },
   "simulation": {
@@ -56,7 +56,7 @@
     "rules": [
       "Rule 1: drive type from the scenario (direct or belt)",
       "Rule 2: direct drive with a hot airstream excludes 4/4P; use 8/8P",
-      "Rule 3: wall not sufficient, or a low-vibration requirement, gives the P (grade-mounted) version; otherwise wall-mounted",
+      "Rule 3: wall not sufficient, or a low-vibration requirement, gives the P (grade-mounted) version; otherwise wall-mounted. Belt drive on grade: motor on its own base is 1P, motor on the fan pedestal is 9P",
       "Exactly one arrangement is correct per scenario; one scored attempt"
     ],
     "assumptions": ["Scenarios are illustrative jobs written for Chapter 6"],
@@ -80,10 +80,11 @@
     "commonMisconceptions": [
       "Arrangement 4 is always best because it has the fewest parts, even with a hot airstream",
       "The P versions are a different fan rather than the same arrangement mounted to grade",
-      "Arrangement 8 is common"
+      "Arrangement 8 is common",
+      "Every grade-mounted belt-driven fan is 9P (1P has the motor on its own base)"
     ],
     "assessmentOpportunities": [
-      "Running score shown as 'Scenarios correct: n of 8'; mastery is 6 of 8 on the first attempt."
+      "Running score shown as 'Scenarios correct: n of 9'; mastery is 7 of 9 on the first attempt."
     ]
   },
   "chapter": "06-industrial-fans-and-application-product-lines"

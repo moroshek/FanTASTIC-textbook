@@ -251,7 +251,7 @@ function lookupText(famId, t) {
   }
   if (r.below) return { head: 'Below the first listed band', review: 'No package band below ' + fmtF(r.below) + ' for this family.', note: '' };
   return { head: 'No listed band', review: 'The listed bands for this family stop at ' + fmtF(r.above) + '.',
-    note: 'FanPedia describes axial service up to 600°F, but lists no band above 300°F; ask the factory.' };
+    note: 'FanPedia describes axial service up to 600°F, but lists no band above 300°F. Current catalogs: TCTA/TCVA to 250°F, TCTS to 300°F, TCVS to 500°F; ask the factory.' };
 }
 let lastExplore = '';
 function announceExplore() {
