@@ -1,0 +1,134 @@
+{
+  "title": "Inlet Box Styles",
+  "description": "FanPedia's four inlet box styles (pp. 141-142), integral without and with horn and detached bolt-on and free-standing, as four numbered zones with a numbered name list. Explore mode previews each style's name, summary and facts; quiz mode hides the names and describes each style, with two attempts, a hint after the first miss and mastery at 4 of 4 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "integral inlet box without horn",
+    "integral inlet box with horn",
+    "bolt-on inlet box",
+    "free-standing inlet box"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "The four inlet box styles: integral without and with horn, detached bolt-on and free-standing",
+    "learningObjectives": [
+      "The learner will identify the integral inlet box without horn, the integral inlet box with horn, the bolt-on inlet box and the free-standing inlet box on FanPedia's drawings, given a description of each."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "inlet box",
+      "integral inlet box",
+      "detached inlet box",
+      "inlet box horn"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 989,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 989
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch19-inlet-box-styles-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered zone is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name, summary and facts. During the quiz the zones are named only 'Drawing n' until resolved, names are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; number chips keep a constant pixel size; the name list sits below the drawing at every width."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered drawing to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 4-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay grid engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a drawing's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 4 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 4 of 4."
+    ],
+    "assumptions": [
+      "FanPedia p. 141 (integral styles) and p. 142 (detached styles) drawings placed on one canvas, with the captions, the horn leader and the numbered callouts removed; zones are percentages of the image."
+    ],
+    "limitations": [
+      "The p. 142 connection close-ups (straight, flared, slip and bolted) are not shown; the free-standing box is drawn with the slip connection only."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 141 (Inlet Boxes: Overview and Styles, integral inlet box without and with horn): drawings, styles, horn note",
+      "FanPedia p. 142 (detached bolt-on and free-standing inlet boxes): drawings, connections and mounting structure",
+      "FanPedia p. 187 (inlet box descriptions)",
+      "Drawing: FanPedia, Twin City Fan, pp. 141-142"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore the four labelled styles on the real FanPedia drawings first, then retrieval practice: pick each style from a description of how it is attached, supported or used, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which styles are carried by the fan, and which have their own support?",
+      "When does an integral inlet box need a horn?"
+    ],
+    "commonMisconceptions": [
+      "Every inlet box bolts to the fan's inlet flange.",
+      "A horn is a separate detached box.",
+      "A free-standing box is just a bolt-on box with a longer leg."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 4'; mastery is 4 of 4 on the first attempt."
+    ]
+  },
+  "chapter": "19-damper-details-and-duct-connections"
+}

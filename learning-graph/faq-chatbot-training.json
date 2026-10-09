@@ -1,0 +1,3361 @@
+{
+  "faq_version": "1.0",
+  "generated_date": "2026-10-09",
+  "source_textbook": "FanPedia: An Intelligent Textbook on Fans & Blowers",
+  "total_questions": 98,
+  "questions": [
+    {
+      "id": "faq-001",
+      "category": "Getting Started",
+      "question": "What is this textbook about?",
+      "answer": "This book teaches the vocabulary of industrial and commercial fans and the engineering reasons behind it, so you can read a catalog, understand a specification and describe a fan precisely. A single order has to state the fan type, the arrangement, the impeller design, the rotation and discharge, the motor position, the construction class and a list of accessories, and getting any one of them wrong means a fan that does not fit, does not perform or cannot be installed.\n\nThe 27 chapters move from the physics a fan works with (airflow, pressure, density), through fan families, anatomy, impellers, arrangements, orientation codes, motors, bearings, inlets and outlets, flow control, special construction and installation, to fan laws, catalog reading and finally writing a complete fan specification. Each chapter moves from recognizing a part or configuration, to explaining why it exists, to choosing it for an application.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Fan Family",
+        "Rotation",
+        "Motor Position",
+        "Flow Control",
+        "Construction Class",
+        "Fan Laws",
+        "Fan Specification"
+      ],
+      "keywords": [
+        "bearing",
+        "construction class",
+        "fan",
+        "fan family",
+        "fan laws",
+        "fan specification",
+        "flow control",
+        "impeller",
+        "motor position",
+        "rotation"
+      ],
+      "source_links": [
+        "docs/course-description.md",
+        "docs/chapters/index.md"
+      ],
+      "has_example": false,
+      "word_count": 145
+    },
+    {
+      "id": "faq-002",
+      "category": "Getting Started",
+      "question": "Who is this book written for?",
+      "answer": "The book is written for adult professional development. Its intended readers are new application engineers, inside and outside sales staff, manufacturer's representatives, distributors, specifying engineers, and plant or facilities staff who need to identify, specify or order industrial and commercial fans.\n\nThe worked examples reflect those jobs. For example, Chapter 4 follows a distributor who takes a school restroom-exhaust call and a foundry dust-collection call in the same morning, and Chapter 12 follows a field technician whose job-site photo seems to show the wrong fan. If your work involves reading a fan schedule, quoting a fan, checking a submittal or ordering a replacement, the book is aimed at you.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan"
+      ],
+      "keywords": [
+        "fan"
+      ],
+      "source_links": [
+        "docs/course-description.md",
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md"
+      ],
+      "has_example": true,
+      "word_count": 109
+    },
+    {
+      "id": "faq-003",
+      "category": "Getting Started",
+      "question": "What do I need to know before I start?",
+      "answer": "The prerequisites are deliberately modest:\n\n- High-school algebra: ratios, square and cube relationships, and reading a graph.\n- Basic physical units: feet, inches, pounds, horsepower, RPM and degrees Fahrenheit.\n\nNo prior fan, HVAC or mechanical engineering coursework is assumed. The square and cube relationships matter more than any other piece of math in the book, because the fan laws say pressure varies with the square of speed and power with its cube. For example, a fan slowed to half speed needs only one-eighth of the power. If those ratios are comfortable, the rest of the math follows. Chapter 1 builds every unit you need from scratch, including inches of water gauge, which most readers have never used.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Horsepower",
+        "Inches of Water Gauge",
+        "Fan",
+        "Fan Laws"
+      ],
+      "keywords": [
+        "fan",
+        "fan laws",
+        "horsepower",
+        "inches of water gauge"
+      ],
+      "source_links": [
+        "docs/course-description.md",
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 117
+    },
+    {
+      "id": "faq-004",
+      "category": "Getting Started",
+      "question": "What sources is the book built from, and which one wins when they disagree?",
+      "answer": "The book draws on three sources, in priority order:\n\n1. The current Twin City Fan product catalogs on tcf.com, for product lines, sizes, ratings and current data.\n2. FanPedia online, at tcf.com/fanpedia.\n3. FanPedia: The Fan & Blower Encyclopedia, the PDF edition.\n\nFanPedia supplies the structure and explains what things are; a catalog states what one product line offers today. When the two disagree, the current catalog wins, because it describes what the factory builds and certifies now. \"Current\" means the latest edition on tcf.com, not simply \"newer than FanPedia.\" For example, Catalog 902 (November 2017) is older than FanPedia (©2021) but is still the current catalog for the radial bladed line. The chapters flag places where the sources differ; Chapter 9, for instance, notes that FanPedia and the catalog describe the air handling impeller's blades differently and tells you to follow the catalog.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Blower",
+        "Impeller",
+        "Product Catalog",
+        "Air Handling Impeller"
+      ],
+      "keywords": [
+        "air handling impeller",
+        "blower",
+        "fan",
+        "impeller",
+        "product catalog"
+      ],
+      "source_links": [
+        "docs/course-description.md",
+        "docs/chapters/26-reading-catalogs-and-performance-tables/index.md"
+      ],
+      "has_example": true,
+      "word_count": 144
+    },
+    {
+      "id": "faq-005",
+      "category": "Getting Started",
+      "question": "How is the book organized, and should I read it in order?",
+      "answer": "Read the chapters in order. The book has 27 chapters covering 581 concepts, and every concept is introduced only after the concepts it depends on. Each chapter page opens with a summary, a \"Concepts Covered\" table and a list of prerequisite chapters; if a term is unfamiliar, go back to the chapter that introduced it.\n\nThe sequence runs roughly in five blocks:\n\n- Chapters 1 to 2: air, pressure, density and airstreams.\n- Chapters 3 to 9: fan anatomy, families, product lines, housings and impellers.\n- Chapters 10 to 17: performance, arrangements, rotation and discharge, motors and bearings.\n- Chapters 18 to 24: inlets, outlets, flow control, special construction, bases and isolation, and advanced arrangements.\n- Chapters 25 to 27: fan laws, catalogs and performance tables, selection and the specification.\n\nEach chapter also has a quiz and an annotated reference list in the left navigation.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Rotation",
+        "Flow Control",
+        "Fan Laws",
+        "Performance Table"
+      ],
+      "keywords": [
+        "airstream",
+        "bearing",
+        "fan",
+        "fan laws",
+        "flow control",
+        "impeller",
+        "performance table",
+        "rotation"
+      ],
+      "source_links": [
+        "docs/chapters/index.md",
+        "docs/learning-graph/index.md"
+      ],
+      "has_example": false,
+      "word_count": 145
+    },
+    {
+      "id": "faq-006",
+      "category": "Getting Started",
+      "question": "What is a MicroSim, and how should I use one?",
+      "answer": "A MicroSim is a small, self-contained, browser-based simulation embedded in a chapter. The book includes more than 90 of them, listed in the MicroSim gallery. They fall into a few patterns: calculators (change an input and watch a result move), sorters and classifiers (place job descriptions into the right category), labeled-diagram explorers (click a part on a FanPedia drawing to see its name and job) and challenge sets that check your answer.\n\nUse them when the chapter points you to one, not afterward. For example, the Operating Point Finder MicroSim asks you to predict where a fan curve and three system curves cross, then lets you move the system resistance and watch the operating point slide along the fan curve, which is faster than reading three worked examples. Each sim's lesson page has a fullscreen link and a description of what to try.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Fan Curve",
+        "System Resistance",
+        "System Curve",
+        "Operating Point"
+      ],
+      "keywords": [
+        "fan",
+        "fan curve",
+        "operating point",
+        "system curve",
+        "system resistance"
+      ],
+      "source_links": [
+        "docs/sims/index.md",
+        "docs/sims/ch10-operating-point-finder/index.md",
+        "docs/chapters/index.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
+      ],
+      "has_example": true,
+      "word_count": 143
+    },
+    {
+      "id": "faq-007",
+      "category": "Getting Started",
+      "question": "What is the learning graph?",
+      "answer": "The learning graph is a map of the concepts in this book and the order they depend on each other. Each concept is a node; each directed edge says that one concept must be understood before another. The graph is a directed acyclic graph, meaning no concept depends on itself through a loop. This book's graph has 581 concepts and 1,098 dependency edges in 13 categories, drawn from FanPedia and the current product categories on tcf.com.\n\nFoundational concepts such as Air Movement, Fan Speed and Horsepower have no prerequisites; advanced concepts such as Fan Specification sit at the far end and depend on many others. The chapters were designed from the graph, so a chapter never uses a concept before an earlier chapter defines it. You can browse it in the interactive Learning Graph Viewer MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Air Movement",
+        "Fan Speed",
+        "Horsepower",
+        "Fan",
+        "Fan Specification"
+      ],
+      "keywords": [
+        "air movement",
+        "fan",
+        "fan specification",
+        "fan speed",
+        "horsepower"
+      ],
+      "source_links": [
+        "docs/sims/graph-viewer/index.md",
+        "docs/learning-graph/index.md"
+      ],
+      "has_example": false,
+      "word_count": 136
+    },
+    {
+      "id": "faq-008",
+      "category": "Getting Started",
+      "question": "Where can I look up a term I do not recognize?",
+      "answer": "Use the Glossary. It defines all 581 concepts in the learning graph, in alphabetical order, and most entries include a one-line example. The definitions follow the chapter text, which follows the current catalogs and FanPedia. For example, the glossary entry for Actual Operating Conditions defines them as the temperature, altitude and density at which a fan will actually run, as opposed to the standard air of the catalog table.\n\nThe site search (top right) is the other quick route: type a term such as \"evasé\" or \"taper lock hub\" and it lists every chapter that uses it. When a term means two different things, such as turndown (an airflow range, or a shaft machined to a smaller diameter), the chapter text explains which meaning applies.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Altitude",
+        "Standard Air",
+        "Fan",
+        "Taper Lock Hub",
+        "Evasé",
+        "Turndown",
+        "Actual Operating Conditions"
+      ],
+      "keywords": [
+        "actual operating conditions",
+        "altitude",
+        "evasé",
+        "fan",
+        "standard air",
+        "taper lock hub",
+        "turndown"
+      ],
+      "source_links": [
+        "docs/glossary.md",
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md"
+      ],
+      "has_example": true,
+      "word_count": 125
+    },
+    {
+      "id": "faq-009",
+      "category": "Getting Started",
+      "question": "What will I be able to do when I finish the book?",
+      "answer": "The course outcomes are written at all six levels of Bloom's Taxonomy. By the end you should be able to:\n\n- Remember: list the fan families, the arrangement numbers, the impeller types, and the three spark-resistant construction types.\n- Understand: explain how air moves through each impeller family, how rotation and discharge are designated from the drive side, and why a fan runs where its curve crosses the system curve.\n- Apply: use the fan laws, apply density and temperature corrections, read a catalog performance table, and write a rotation and discharge designation.\n- Analyze: compare impeller types, break a fan description into its parts and check them for consistency.\n- Evaluate: judge which fan family and construction suit an application and critique a specification.\n- Create: write a complete fan specification, which is the capstone project in Chapter 27.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Fan Family",
+        "Rotation",
+        "Spark Resistant Construction",
+        "System Curve",
+        "Fan Laws",
+        "Temperature Correction",
+        "Performance Table",
+        "Fan Specification"
+      ],
+      "keywords": [
+        "fan",
+        "fan family",
+        "fan laws",
+        "fan specification",
+        "impeller",
+        "performance table",
+        "rotation",
+        "spark resistant construction",
+        "system curve",
+        "temperature correction"
+      ],
+      "source_links": [
+        "docs/course-description.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": false,
+      "word_count": 140
+    },
+    {
+      "id": "faq-010",
+      "category": "Getting Started",
+      "question": "What topics does the book deliberately not cover?",
+      "answer": "The course description lists the topics left out:\n\n- Aerodynamic design of impellers or housings, including computational fluid dynamics.\n- Duct system design and full HVAC load calculations; system curves are covered only far enough to find an operating point.\n- Electrical design of motors and the programming of variable frequency drives.\n- Detailed field service, repair, balancing and maintenance procedures.\n- Pricing, quoting, lead times and order-entry systems.\n- Fan manufacturing processes and shop practices.\n- Laboratory test procedures for certifying fan ratings.\n- Products from manufacturers other than Twin City Fan.\n\nFor example, Chapter 10 explains what the AMCA 210 test standard does so you can trust and compare certified ratings, but it does not teach you to run the test.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Duct System",
+        "Fan",
+        "Impeller",
+        "Variable Frequency Drive",
+        "System Curve",
+        "Operating Point"
+      ],
+      "keywords": [
+        "duct system",
+        "fan",
+        "impeller",
+        "operating point",
+        "system curve",
+        "variable frequency drive"
+      ],
+      "source_links": [
+        "docs/course-description.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
+      ],
+      "has_example": true,
+      "word_count": 123
+    },
+    {
+      "id": "faq-011",
+      "category": "Getting Started",
+      "question": "Who is Breeze, and why does a hummingbird appear in the chapters?",
+      "answer": "Breeze is the book's learning mascot, a hummingbird who introduces themselves at the start of Chapter 1. Breeze is a signal, not decoration: each pose has one job. Breeze welcomes you at the start of a chapter, stops you at an idea worth rethinking, hands you a shortcut, warns you about a common mistake and how to avoid it, encourages you when a topic is genuinely hard, celebrates the specific skill you gained at the end of a chapter, and occasionally adds a brief aside. As Breeze puts it, \"If I'm not doing one of those seven things, I'm not in the chapter.\"\n\nThe practical use: when you review a chapter, the warning boxes are a ready-made list of the mistakes most often made on real orders, such as confusing psi with inches of water gauge.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Inches of Water Gauge"
+      ],
+      "keywords": [
+        "inches of water gauge"
+      ],
+      "source_links": [
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": false,
+      "word_count": 136
+    },
+    {
+      "id": "faq-012",
+      "category": "Getting Started",
+      "question": "What is the capstone project?",
+      "answer": "The capstone is the final project of the course: a complete written fan specification, with the reasoning for each choice, for a realistic application. You choose the family, impeller, arrangement, drive, construction, motor and accessories from the current catalog, apply density and cold-start corrections, check sound and space, and present the result. A complete submission contains seven parts:\n\n1. The filled-in selection checklist.\n2. The duty point corrected to standard air, with the density ratio shown.\n3. Each decision (impeller selection, arrangement selection, drive selection, construction selection, motor selection and accessory selection) with one sentence of reasoning and its source.\n4. A comparison of at least two candidate fans.\n5. The complete fan description and an annotated drawing viewed from the drive side.\n6. A three-part specification section with the performance clause and submittal list.\n7. A self-review of the clause pairs you checked.\n\nChapter 27's dryer exhaust fan is the model, and the Capstone Specification Builder MicroSim walks through it decision by decision.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Standard Air",
+        "Fan",
+        "Impeller",
+        "Duty Point",
+        "Accessory Selection",
+        "Motor Selection",
+        "Drive Selection",
+        "Impeller Selection",
+        "Arrangement Selection",
+        "Construction Selection",
+        "Complete Fan Description",
+        "Fan Specification"
+      ],
+      "keywords": [
+        "accessory selection",
+        "arrangement selection",
+        "complete fan description",
+        "construction selection",
+        "drive selection",
+        "duty point",
+        "fan",
+        "fan specification",
+        "impeller",
+        "impeller selection",
+        "motor selection",
+        "standard air"
+      ],
+      "source_links": [
+        "docs/sims/ch27-capstone-specification-builder/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": false,
+      "word_count": 164
+    },
+    {
+      "id": "faq-013",
+      "category": "Core Concepts",
+      "question": "What is a fan, and how is it different from a compressor?",
+      "answer": "A fan is a machine that moves air by turning a bladed wheel, the impeller, inside or in front of a housing. The rotating blades push on the air, raise its pressure slightly and send it on its way, driven by a motor either directly or through belts and sheaves.\n\nWhat separates a fan from a compressor is how little it raises the pressure. Atmospheric pressure at sea level is about 407 in. wg, so even a heavy-duty fan making 10 in. wg raises pressure only about 2.5 percent, and a typical 2 in. wg HVAC fan about 0.5 percent. The air barely changes volume passing through, so the CFM entering a fan is treated as equal to the CFM leaving it, and fans are rated by inlet airflow. Engineering standards draw the line by pressure ratio: commonly cited ASME definitions call a machine a fan up to a ratio of 1.11, a blower from 1.11 to 1.20, and a compressor above 1.20.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Blower",
+        "Impeller",
+        "Sheave"
+      ],
+      "keywords": [
+        "blower",
+        "fan",
+        "impeller",
+        "sheave"
+      ],
+      "source_links": [
+        "docs/chapters/01-air-pressure-and-the-fan/index.md",
+        "docs/chapters/02-airstreams-total-pressure-standard-air/index.md"
+      ],
+      "has_example": false,
+      "word_count": 163
+    },
+    {
+      "id": "faq-014",
+      "category": "Core Concepts",
+      "question": "What does CFM mean, and why must it always be stated with conditions?",
+      "answer": "CFM (cubic feet per minute) is the unit of airflow volume, the volume of air passing a point each minute. It is a rate, not an amount of air.\n\nCFM is linked to air velocity by the flow area (velocity in fpm = CFM ÷ area in ft²). A cubic foot of hot air weighs less than a cubic foot of cool air, so the same CFM carries different masses at different temperatures. Mass flow equals CFM times density. For example, a fan moving 10,000 CFM at 70°F and sea level (0.075 lb/ft³) moves 750 lb of air a minute; at 400°F (about 0.0462 lb/ft³) the same 10,000 CFM is only 462 lb a minute, nearly 40 percent less by weight.\n\nThat is why fan airflow is rated as the actual volume at the fan inlet, at the density of the air actually entering the fan. When a specification lists CFM without a temperature and elevation, ask for them before selecting anything. The Duct Airflow and Velocity Calculator MicroSim links CFM, duct area and velocity.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Airflow Volume",
+        "Cubic Feet Per Minute",
+        "Air Velocity",
+        "Feet Per Minute",
+        "Fan",
+        "Fan Inlet"
+      ],
+      "keywords": [
+        "air velocity",
+        "airflow volume",
+        "cubic feet per minute",
+        "fan",
+        "fan inlet",
+        "feet per minute"
+      ],
+      "source_links": [
+        "docs/sims/ch01-duct-airflow-velocity-calculator/index.md",
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 175
+    },
+    {
+      "id": "faq-015",
+      "category": "Core Concepts",
+      "question": "What is static pressure, and why is it the main number on a fan specification?",
+      "answer": "Static pressure (SP) is the pressure air exerts equally in all directions on the walls of a duct or housing, whether or not the air is moving. It is what a manometer reads through a tap flush with the duct wall.\n\nFor catalog work, static pressure is the main way to describe resistance. Every filter, coil, damper, grille, hood and length of duct takes away some static pressure as air passes through it; that loss is its pressure drop. The fan must develop enough static pressure to make up all the drops at the required airflow, so \"12,000 CFM at 3.0 in. wg SP\" means 3.0 in. wg is the system resistance the fan must overcome. Static pressure is negative (suction) on the inlet side and positive on the discharge side.\n\nFor example, if a louver, filter and coil on the inlet side drop 1.40 in. wg and the duct and diffuser on the discharge side drop 1.10 in. wg, the fan must raise static pressure from −1.40 to +1.10, a 2.50 in. wg rise. Try it in the Reading Static Pressure with a Manometer MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Static Pressure",
+        "Fan",
+        "Damper",
+        "System Resistance",
+        "Fan Specification"
+      ],
+      "keywords": [
+        "damper",
+        "fan",
+        "fan specification",
+        "static pressure",
+        "system resistance"
+      ],
+      "source_links": [
+        "docs/sims/ch01-manometer-static-pressure/index.md",
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 186
+    },
+    {
+      "id": "faq-016",
+      "category": "Core Concepts",
+      "question": "What is an inch of water gauge?",
+      "answer": "An inch of water gauge (in. wg) is the pressure that holds up a column of water one inch tall. The name comes from the manometer, a U-tube partly filled with water: connect one leg to a duct and leave the other open, and the difference in the two water levels, in inches, is the gauge pressure.\n\nIt is a very small unit, which is why it suits fans. The conversions to remember:\n\n- 1 in. wg = 0.0361 psi = 5.2 lb/ft² (about 249 Pa).\n- 1 psi = 27.7 in. wg.\n- The atmosphere at sea level is about 407 in. wg (14.7 psi, 29.92 in. Hg).\n\nSmall does not mean harmless. For example, a 4 ft by 4 ft access door on a section at +2.0 in. wg carries 2.0 × 5.2 × 16 = 166 lb pushing outward, even though that is only 0.072 psi. Because psi and in. wg differ by a factor of 27.7, always confirm a pressure that arrives with no unit or an unusual one.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Access Door"
+      ],
+      "keywords": [
+        "access door",
+        "fan"
+      ],
+      "source_links": [
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 173
+    },
+    {
+      "id": "faq-017",
+      "category": "Core Concepts",
+      "question": "What are velocity pressure and total pressure?",
+      "answer": "Velocity pressure (VP) is the pressure that would be produced if a moving airstream were brought to rest. It exists only because the air is moving, acts only in the direction of motion, and is always positive. At standard air:\n\nVP = (V ÷ 4005)², or V = 4005 × √VP, with V in feet per minute and VP in in. wg.\n\nSo 4,005 fpm is exactly 1.00 in. wg, and doubling velocity quadruples velocity pressure.\n\nTotal pressure (TP) is static pressure plus velocity pressure at a point: TP = SP + VP. It represents all the energy the air carries. On a fan's inlet side SP is negative, so keep the sign when you add. Total pressure falls steadily along a duct in the direction of flow and never rises unless a fan adds energy, whereas static pressure can rise where a duct expands and velocity pressure converts back to static. For example, 2,500 fpm in a duct gives a VP of about 0.39 in. wg.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Feet Per Minute",
+        "Static Pressure",
+        "Velocity Pressure",
+        "Total Pressure",
+        "Standard Air",
+        "Airstream",
+        "Fan"
+      ],
+      "keywords": [
+        "airstream",
+        "fan",
+        "feet per minute",
+        "standard air",
+        "static pressure",
+        "total pressure",
+        "velocity pressure"
+      ],
+      "source_links": [
+        "docs/chapters/02-airstreams-total-pressure-standard-air/index.md"
+      ],
+      "has_example": true,
+      "word_count": 167
+    },
+    {
+      "id": "faq-018",
+      "category": "Core Concepts",
+      "question": "What is standard air, and why do catalogs use it?",
+      "answer": "Standard air is air with a density of 0.075 lb/ft³, very nearly the density of dry air at 70°F and a barometric pressure of 29.92 in. Hg (sea level). Every catalog has to rate its fans at some condition, and the industry agreed on this one, so unless a table says otherwise its static pressures and brake horsepower are standard-air values.\n\nReal air rarely matches. The density ratio compares actual air with standard air:\n\ndensity ratio = (barometric pressure ÷ 29.92) × (530 ÷ (T + 460)), with T in °F.\n\nAt the same fan speed, airflow in CFM does not change with density, while pressure and brake horsepower change in direct proportion to the density ratio. For example, at 300°F and sea level the ratio is 530 ÷ 760 = 0.697, so the fan makes and absorbs about 70 percent of its catalog pressure and power. The Density Ratio by Temperature and Altitude MicroSim plots the ratio across temperature and altitude.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan Speed",
+        "Horsepower",
+        "Static Pressure",
+        "Altitude",
+        "Standard Air",
+        "Fan",
+        "Brake Horsepower",
+        "Barometric Pressure"
+      ],
+      "keywords": [
+        "altitude",
+        "barometric pressure",
+        "brake horsepower",
+        "fan",
+        "fan speed",
+        "horsepower",
+        "standard air",
+        "static pressure"
+      ],
+      "source_links": [
+        "docs/sims/ch02-density-ratio-temperature-altitude/index.md",
+        "docs/chapters/02-airstreams-total-pressure-standard-air/index.md",
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 162
+    },
+    {
+      "id": "faq-019",
+      "category": "Core Concepts",
+      "question": "Which airstream conditions change how a fan must be built?",
+      "answer": "Before selecting anything, ask what is in the air, because a contaminated airstream or an extreme temperature changes the impeller, the arrangement, the accessories and the construction. Chapter 2 sorts airstreams into five conditions beyond clean air:\n\n- Hot airstream: lowers operating pressure and power, raises the cold-start load, and calls for high-temperature construction whose starting temperature depends on the fan design.\n- Wet airstream: water condenses and pools; it calls for drains and weep holes, a totally enclosed motor rather than ODP, and on Arrangement 9 axial fans high moisture construction.\n- Corrosive airstream: acids, alkalis, chlorine or solvents attack mild steel; the defense is material selection: coatings, stainless steel or fiberglass-reinforced plastic (FRP).\n- Particulate-laden airstream: dust and fibers erode blades, build up and unbalance the impeller; it calls for rugged impellers, bearings out of the airstream and adequate conveying velocity.\n- Explosive atmosphere: flammable vapors or combustible dusts call for spark-resistant construction plus a correctly rated motor.\n\nConditions often combine. For example, a laundry is wet and particulate-laden, a grain elevator is particulate-laden and explosive, and a natatorium is wet and corrosive, so ask about each one. Practice tagging them in the Airstream Condition Sorter MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Contaminated Airstream",
+        "Corrosive Airstream",
+        "Particulate-Laden Airstream",
+        "Hot Airstream",
+        "Wet Airstream",
+        "Explosive Atmosphere",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Axial Fan",
+        "Arrangement 9",
+        "Coatings",
+        "Spark Resistant Construction",
+        "High Temperature Construction",
+        "High Moisture Construction",
+        "Weep Hole",
+        "Airstream Conditions"
+      ],
+      "keywords": [
+        "airstream",
+        "airstream conditions",
+        "arrangement 9",
+        "axial fan",
+        "bearing",
+        "coatings",
+        "contaminated airstream",
+        "corrosive airstream",
+        "explosive atmosphere",
+        "fan",
+        "high moisture construction",
+        "high temperature construction"
+      ],
+      "source_links": [
+        "docs/sims/ch02-airstream-condition-sorter/index.md",
+        "docs/chapters/02-airstreams-total-pressure-standard-air/index.md",
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 199
+    },
+    {
+      "id": "faq-020",
+      "category": "Core Concepts",
+      "question": "What are the three fan families?",
+      "answer": "A fan family is defined by the airflow path through the impeller, relative to the shaft:\n\n1. Centrifugal fans: air enters along the shaft and leaves the impeller radially, at a right angle to the shaft.\n2. Axial fans: air enters and leaves along the shaft, with a swirl added by the blades; it never turns the corner.\n3. Mixed flow fans: air enters along the shaft and leaves on a diagonal, partly axial and partly radial; FanPedia calls the impeller a hybrid axial-centrifugal design.\n\nThe impeller decides the family, not the box around it. A round tube in a duct run can hold an axial impeller, the centrifugal impeller of an inline centrifugal fan, or a mixed flow impeller, and a hooded rooftop unit can be axial or centrifugal. For example, a drawing that labels a round tube \"vaneaxial\" is an axial fan, while a snail-shaped housing is centrifugal. Practice with the Fan Family Sorter MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Fan Family",
+        "Centrifugal Fan",
+        "Axial Fan",
+        "Mixed Flow Fan",
+        "Inline Centrifugal Fan",
+        "Centrifugal Impeller",
+        "Mixed Flow Impeller",
+        "Axial Impeller"
+      ],
+      "keywords": [
+        "axial fan",
+        "axial impeller",
+        "centrifugal fan",
+        "centrifugal impeller",
+        "fan",
+        "fan family",
+        "impeller",
+        "inline centrifugal fan",
+        "mixed flow fan",
+        "mixed flow impeller"
+      ],
+      "source_links": [
+        "docs/sims/ch04-fan-family-sorter/index.md",
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md"
+      ],
+      "has_example": true,
+      "word_count": 157
+    },
+    {
+      "id": "faq-021",
+      "category": "Core Concepts",
+      "question": "What is the impeller, and why does it matter so much?",
+      "answer": "The impeller is the rotating part that does the work on the air. It is the only part of the fan that adds energy to the airstream; every other part guides the air, supports the impeller or turns it. Older literature and job sites also call it the wheel, and on axial fans the propeller or rotor.\n\nA centrifugal impeller has blades, a back plate on the drive side, an impeller front plate or shroud on the inlet side that matches the inlet funnel, and a hub that fastens it to the shaft. An axial impeller has blades around a hub, with a blade tip, a hub boss and, on adjustable-pitch impellers, a shank at the blade root.\n\nThe blade shape names the impeller type (backward inclined, backward curved, airfoil, forward curved, radial tip, radial bladed or mixed flow), and the type sets efficiency, pressure capability, tolerance for dirty air and the shape of the power curve. That is why an order names the impeller type, not just the fan size.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Axial Fan",
+        "Centrifugal Impeller",
+        "Axial Impeller",
+        "Adjustable Pitch Impeller",
+        "Inlet Funnel",
+        "Fan Size"
+      ],
+      "keywords": [
+        "adjustable pitch impeller",
+        "airstream",
+        "axial fan",
+        "axial impeller",
+        "centrifugal impeller",
+        "fan",
+        "fan size",
+        "impeller",
+        "inlet funnel"
+      ],
+      "source_links": [
+        "docs/chapters/03-basic-fan-anatomy/index.md",
+        "docs/chapters/08-centrifugal-and-axial-impeller-types/index.md"
+      ],
+      "has_example": false,
+      "word_count": 171
+    },
+    {
+      "id": "faq-022",
+      "category": "Core Concepts",
+      "question": "What are the main parts of a housed centrifugal fan?",
+      "answer": "Following the air from inlet to outlet, the main parts are:\n\n- Fan inlet, with an inlet funnel that guides air into the impeller and an inlet collar (slip fit) or inlet flange (bolted) to connect the duct.\n- Impeller, the only part that adds energy to the air.\n- Fan housing, a scroll housing made of two side plates and a curved scroll wrapper, with a cutoff near the outlet that keeps discharged air from recirculating.\n- Fan outlet, with an outlet flange, a transition or an evasé.\n- Fan shaft, carried on two bearings, one fixed and one floating.\n- Drive train: direct drive or belt drive, with the fan motor.\n- Service features such as access doors, inspection ports, drains, and protective bird and safety screens.\n\nThe Exploded View of a Belt-Driven Centrifugal Fan MicroSim and the Follow the Airflow Through a Centrifugal Fan MicroSim let you name each part on a drawing.",
+      "bloom_level": "Remember",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan",
+        "Fan Housing",
+        "Impeller",
+        "Fan Inlet",
+        "Fan Outlet",
+        "Fan Shaft",
+        "Bearing",
+        "Fan Motor",
+        "Drive Train",
+        "Centrifugal Fan",
+        "Scroll Housing",
+        "Housed Centrifugal Fan",
+        "Exploded View",
+        "Scroll Wrapper",
+        "Cutoff",
+        "Inlet Collar",
+        "Inlet Flange",
+        "Outlet Flange",
+        "Access Door",
+        "Bird and Safety Screens",
+        "Direct Drive",
+        "Belt Drive",
+        "Inlet Funnel",
+        "Evasé",
+        "Inspection Port"
+      ],
+      "keywords": [
+        "access door",
+        "bearing",
+        "belt drive",
+        "bird and safety screens",
+        "centrifugal fan",
+        "cutoff",
+        "direct drive",
+        "drive train",
+        "evasé",
+        "exploded view",
+        "fan",
+        "fan housing"
+      ],
+      "source_links": [
+        "docs/sims/ch03-exploded-centrifugal-fan/index.md",
+        "docs/sims/ch03-follow-the-airflow/index.md",
+        "docs/chapters/03-basic-fan-anatomy/index.md",
+        "docs/chapters/07-housing-construction-and-exploded-views/index.md"
+      ],
+      "has_example": false,
+      "word_count": 156
+    },
+    {
+      "id": "faq-023",
+      "category": "Core Concepts",
+      "question": "What is a fan arrangement number?",
+      "answer": "A fan arrangement is a standard numbered description of how the drive, impeller, bearings and motor are put together. The base numbers come from the AMCA arrangement standard, and one number answers three questions: how the fan is driven, where the impeller sits relative to the bearings, and what carries the bearings and motor.\n\n Arrangement  Drive  Impeller  Motor \n------------\n 1  Belt (direct possible)  Overhung, bearings on a pedestal  Separate, on floor or base \n 3  Usually belt  Center hung, bearings on the housing  On floor or base \n 4  Direct  Overhung on the motor shaft  On a pedestal \n 7  Direct, coupled  Center hung  On a pedestal, coupled \n 8  Direct, coupled  Overhung  On the extended pedestal \n 9  Belt only  Overhung  On the side of the pedestal \n 10  Belt only  Overhung  Inside the pedestal \n\nArrangement 10 units of Class I and II in certain sizes are called ventilating sets, and utility sets are packaged Arrangement 10 ventilating sets. Suffix letters mark variants, such as SI and DI for integral inlet boxes, F for a motor frame and P for a pedestal plug fan. Arrangements are defined per fan type, so the same number can look different on a centrifugal and an axial fan. Test yourself with the Arrangement Identifier MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Axial Fan",
+        "Plug Fan",
+        "Utility Set",
+        "Fan Arrangement",
+        "Arrangement 10",
+        "Inlet Box",
+        "Integral Inlet Box",
+        "Ventilating Set"
+      ],
+      "keywords": [
+        "arrangement 10",
+        "axial fan",
+        "bearing",
+        "fan",
+        "fan arrangement",
+        "impeller",
+        "inlet box",
+        "integral inlet box",
+        "plug fan",
+        "utility set",
+        "ventilating set"
+      ],
+      "source_links": [
+        "docs/sims/ch11-arrangement-identifier/index.md",
+        "docs/chapters/11-drives-and-standard-fan-arrangements/index.md"
+      ],
+      "has_example": false,
+      "word_count": 206
+    },
+    {
+      "id": "faq-024",
+      "category": "Core Concepts",
+      "question": "What is the difference between direct drive and belt drive?",
+      "answer": "In direct drive, the impeller turns at motor speed, either mounted on the motor shaft (Arrangement 4) or through a shaft coupling to a separate fan shaft (Arrangements 7 and 8). It is simple and low maintenance, but without a variable frequency drive the fan speed is fixed at what the motor runs, roughly 3600, 1800, 1200 or 900 RPM synchronous at 60 Hz.\n\nIn belt drive, V-belts and sheaves set the fan speed through the sheave ratio:\n\nfan RPM = motor RPM × motor sheave diameter ÷ fan sheave diameter.\n\nA larger fan sheave slows the fan. For example (illustrative values), a 1,750 RPM motor with a 6 in. motor sheave and a 9 in. fan sheave turns the fan at 1,750 × 6 ÷ 9 = 1,167 RPM. Belt drive can hit any speed the table calls for and can be changed later with a new sheave, at the cost of belts to tension, wear and replace. The Belt Drive Speed Calculator MicroSim lets you try sheave combinations.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Fan Speed",
+        "Fan",
+        "Impeller",
+        "Fan Shaft",
+        "Direct Drive",
+        "Belt Drive",
+        "Sheave",
+        "V-Belt",
+        "Shaft Coupling",
+        "Arrangement 4",
+        "Variable Frequency Drive"
+      ],
+      "keywords": [
+        "arrangement 4",
+        "belt drive",
+        "direct drive",
+        "fan",
+        "fan shaft",
+        "fan speed",
+        "impeller",
+        "shaft coupling",
+        "sheave",
+        "v-belt",
+        "variable frequency drive"
+      ],
+      "source_links": [
+        "docs/sims/ch11-belt-drive-speed-calculator/index.md",
+        "docs/chapters/11-drives-and-standard-fan-arrangements/index.md"
+      ],
+      "has_example": true,
+      "word_count": 170
+    },
+    {
+      "id": "faq-025",
+      "category": "Core Concepts",
+      "question": "What is the difference between an overhung and a center hung impeller?",
+      "answer": "An overhung impeller is mounted on the end of the shaft, with both bearings on one side of it. Arrangements 1, 4, 8, 9 and 10 are overhung. Because the bearings sit together on a pedestal outside the housing (or, in Arrangement 4, there are no fan bearings at all), overhung designs keep the bearings out of the airstream.\n\nA center hung impeller sits between the two bearings. Arrangements 3 and 7 are center hung. Double width, double inlet impellers are center hung, and on a standard Arrangement 3 DWDI fan both bearings sit in the airstream, which limits it to clean air at 130°F; a single inlet Arrangement 3 fan has one bearing in the airstream.\n\nThe distinction drives many later choices. For example, an anti-backspin device mounts between the bearings on an overhung design but on a non-drive-end shaft extension on a center hung design. The Overhung or Center Hung Sorter MicroSim gives practice.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Overhung Impeller",
+        "Center Hung Impeller",
+        "Arrangement 3",
+        "Arrangement 4",
+        "Anti-Backspin Device"
+      ],
+      "keywords": [
+        "airstream",
+        "anti-backspin device",
+        "arrangement 3",
+        "arrangement 4",
+        "bearing",
+        "center hung impeller",
+        "fan",
+        "impeller",
+        "overhung impeller"
+      ],
+      "source_links": [
+        "docs/sims/ch11-overhung-center-hung-sorter/index.md",
+        "docs/chapters/11-drives-and-standard-fan-arrangements/index.md",
+        "docs/chapters/23-spring-isolators-restraints-field-measurement/index.md"
+      ],
+      "has_example": true,
+      "word_count": 156
+    },
+    {
+      "id": "faq-026",
+      "category": "Core Concepts",
+      "question": "What is a fan curve?",
+      "answer": "A fan curve shows every possible operating point of one fan at one speed and one air density: pressure plotted against airflow, usually with a brake horsepower curve and an efficiency curve on the same chart. The fan can run anywhere on its curve; where it actually runs depends on the system it is connected to.\n\nSeveral landmarks matter. Shutoff is the pressure at zero airflow; free delivery is the airflow at zero static pressure; the peak pressure point is the top of the pressure curve. To the left of the peak is the stall region, where air separates from the blades and the fan may pulse, surge and rumble, so you never select there. Efficiency is zero at shutoff and at free delivery and peaks in between, which is where a good selection sits. The shape of the BHP curve tells you whether the motor can be overloaded. Practice spotting stall-region points and the non-overloading curve in the Fan Curve Explorer MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Static Pressure",
+        "Air Density",
+        "Fan",
+        "Brake Horsepower",
+        "Fan Curve",
+        "Operating Point",
+        "Stall Region",
+        "Surge",
+        "Efficiency Curve",
+        "Peak Pressure Point",
+        "Free Delivery"
+      ],
+      "keywords": [
+        "air density",
+        "brake horsepower",
+        "efficiency curve",
+        "fan",
+        "fan curve",
+        "free delivery",
+        "horsepower",
+        "operating point",
+        "peak pressure point",
+        "stall region",
+        "static pressure",
+        "surge"
+      ],
+      "source_links": [
+        "docs/sims/ch10-fan-curve-explorer/index.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": false,
+      "word_count": 163
+    },
+    {
+      "id": "faq-027",
+      "category": "Core Concepts",
+      "question": "How do I find where a fan will actually operate in its system?",
+      "answer": "System resistance is the pressure needed to push air through the ducts, filters, coils and fittings. It rises with the square of airflow, so the system curve is a parabola through zero and the design point: 20 percent more airflow needs 44 percent more pressure.\n\nThe operating point is where the fan curve and the system curve cross. There, the pressure the fan develops equals the pressure the system needs, so the airflow settles and stays. The fan cannot run anywhere else unless the system curve or the fan speed changes.\n\nFor example, an illustrative fan designed for 10,000 CFM at 4.0 in. wg drops to about 8,390 CFM at 4.40 in. wg when its filters load with dust, and rises to about 11,600 CFM at 3.36 in. wg if the real system needs only 2.5 in. wg at 10,000 CFM. The fan did not fail in either case; the system moved the point. Try it in the Operating Point Finder MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan Speed",
+        "Fan",
+        "Fan Curve",
+        "System Resistance",
+        "System Curve",
+        "Operating Point"
+      ],
+      "keywords": [
+        "fan",
+        "fan curve",
+        "fan speed",
+        "operating point",
+        "system curve",
+        "system resistance"
+      ],
+      "source_links": [
+        "docs/sims/ch10-operating-point-finder/index.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
+      ],
+      "has_example": true,
+      "word_count": 162
+    },
+    {
+      "id": "faq-028",
+      "category": "Core Concepts",
+      "question": "What are brake horsepower and fan efficiency?",
+      "answer": "Brake horsepower (BHP) is the power delivered to the fan shaft. It is always larger than the air power that ends up in the air, because the impeller and housing lose energy to friction, turbulence, recirculation and leakage. BHP does not include belt, sheave or motor losses; those are added when the motor is chosen.\n\nFan efficiency is air power divided by BHP. Static efficiency uses fan static pressure; total efficiency uses fan total pressure and is always the larger of the two. The working equation is:\n\nBHP = CFM × pressure ÷ (6356 × efficiency), using static pressure with static efficiency or total pressure with total efficiency.\n\nFor example, 12,000 CFM at 3.0 in. wg with 72 percent static efficiency needs 12,000 × 3.0 ÷ (6356 × 0.72) = 7.9 BHP. The next standard motor is 10 hp, loaded to 79 percent, inside the 50 to 100 percent range where motors run well. The Fan Power and Efficiency Calculator MicroSim runs the same arithmetic.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Static Pressure",
+        "Total Pressure",
+        "Fan",
+        "Impeller",
+        "Fan Shaft",
+        "Sheave",
+        "Brake Horsepower",
+        "Fan Static Pressure",
+        "Fan Total Pressure",
+        "Fan Efficiency",
+        "Static Efficiency",
+        "Air Power"
+      ],
+      "keywords": [
+        "air power",
+        "brake horsepower",
+        "fan",
+        "fan efficiency",
+        "fan shaft",
+        "fan static pressure",
+        "fan total pressure",
+        "horsepower",
+        "impeller",
+        "sheave",
+        "static efficiency",
+        "static pressure"
+      ],
+      "source_links": [
+        "docs/sims/ch10-fan-power-efficiency-calculator/index.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/01-air-pressure-and-the-fan/index.md"
+      ],
+      "has_example": true,
+      "word_count": 165
+    },
+    {
+      "id": "faq-029",
+      "category": "Core Concepts",
+      "question": "How do I correct a catalog rating for temperature and altitude?",
+      "answer": "Catalogs are rated at standard air (0.075 lb/ft³). At a fixed speed a fan moves the same CFM whatever the density, but pressure and BHP scale with the density correction factor Kd, the product of a temperature factor and an altitude factor. The temperature factor is Kt = 530 ÷ (T + 460).\n\nThe rule has two directions:\n\n- Job to catalog: divide the required actual pressure by Kd, then look up the fan at the actual CFM and that standard-air pressure.\n- Catalog to job: multiply the catalog BHP (and pressure) by Kd. RPM is read directly.\n\nFor example, a 300°F oven exhaust at sea level needs 3.00 in. wg. Kd = 530 ÷ 760 = 0.697, so you select at 3.00 ÷ 0.697 = 4.30 in. wg. If the catalog shows 10.0 BHP there, the fan absorbs 10.0 × 0.697 = 6.97 BHP when hot, and more when it starts cold. Practice in the Density Correction Calculator MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Air Pressure",
+        "Altitude",
+        "Standard Air",
+        "Fan",
+        "Density Correction Factor"
+      ],
+      "keywords": [
+        "air pressure",
+        "altitude",
+        "density correction factor",
+        "fan",
+        "standard air"
+      ],
+      "source_links": [
+        "docs/sims/ch10-density-correction-calculator/index.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/02-airstreams-total-pressure-standard-air/index.md"
+      ],
+      "has_example": true,
+      "word_count": 160
+    },
+    {
+      "id": "faq-030",
+      "category": "Core Concepts",
+      "question": "What do the fan laws say?",
+      "answer": "The fan laws predict how airflow, pressure and power change with speed, size and density, for geometrically similar fans at the same point of rating. For one fan at one density they reduce to three rules:\n\n- Airflow varies directly with speed.\n- Pressure varies with speed squared.\n- Power varies with speed cubed.\n\nFor size, airflow varies with diameter cubed, pressure with diameter squared and power with diameter to the fifth. Pressure and power vary directly with density; CFM does not.\n\nFor example, a fan at 1,380 RPM delivers 10,000 CFM at 4.0 in. wg and 9.0 BHP. To get 11,500 CFM through the same system, the speed ratio is 1.15, so speed becomes 1,587 RPM, pressure 4.0 × 1.15² = 5.29 in. wg, and power 9.0 × 1.15³ = 13.7 BHP. A 15 percent airflow increase costs 52 percent more power, overloading the 10 hp motor. Always recheck the motor and the maximum safe speed. Try the Fan Law Calculator MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Fan Laws",
+        "Power Varies With Speed Cubed",
+        "Maximum Safe Speed"
+      ],
+      "keywords": [
+        "fan",
+        "fan laws",
+        "maximum safe speed",
+        "power varies with speed cubed"
+      ],
+      "source_links": [
+        "docs/sims/ch25-fan-law-calculator/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": true,
+      "word_count": 163
+    },
+    {
+      "id": "faq-031",
+      "category": "Core Concepts",
+      "question": "What does \"viewed from the drive side\" mean?",
+      "answer": "A fan housing seen from one side is the mirror image of the same housing seen from the other: an outlet that points right from one side points left from the other, and a clockwise wheel looks counterclockwise. To remove the ambiguity, a centrifugal fan's rotation, discharge position, inlet box position and motor positions are all read from the drive side, the side where the sheave and belts, the coupling, or the direct-drive motor is located.\n\nOn a single-inlet fan with the drive on the pedestal, the drive side is opposite the inlet, so an installer standing at the inlet sees everything mirrored. On a DWDI fan both faces have inlets, so only the end of the shaft carrying the drive identifies the viewpoint. Axial impellers use a different rule: their rotation is read from the discharge side, as left-hand or right-hand.\n\nFor example, a photo taken from the inlet that shows a CCW fan with the outlet pointing left is, from the drive side, a CW top horizontal fan, exactly what was ordered.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Fan Housing",
+        "Impeller",
+        "Centrifugal Fan",
+        "Axial Impeller",
+        "Direct Drive",
+        "Sheave",
+        "Rotation",
+        "Discharge Position",
+        "Motor Position",
+        "Inlet Box Position",
+        "Inlet Box"
+      ],
+      "keywords": [
+        "axial impeller",
+        "centrifugal fan",
+        "direct drive",
+        "discharge position",
+        "fan",
+        "fan housing",
+        "impeller",
+        "inlet box",
+        "inlet box position",
+        "motor position",
+        "rotation",
+        "sheave"
+      ],
+      "source_links": [
+        "docs/chapters/12-discharge-positions-and-rotation/index.md"
+      ],
+      "has_example": true,
+      "word_count": 174
+    },
+    {
+      "id": "faq-032",
+      "category": "Core Concepts",
+      "question": "How are discharge positions named?",
+      "answer": "A centrifugal fan's discharge position is one of eight directions 45 degrees apart. The discharge angle counts from upblast (written 360) in the direction of rotation:\n\n Code  Name  Angle \n---------\n UBD  Upblast  360 \n TAU  Top Angular Up  45 \n THD  Top Horizontal  90 \n TAD  Top Angular Down  135 \n DBD  Downblast  180 \n BAD  Bottom Angular Down  225 \n BHD  Bottom Horizontal  270 \n BAU  Bottom Angular Up  315 \n\nBecause the angle follows the wheel, every name works for both clockwise rotation and counterclockwise rotation with mirror-image housings. For example, CW 90 and CCW 90 are both top horizontal, pointing right and left respectively as seen from the drive side. A full code is written in letter form (CW THD) or angle form (CW 90). DWDI fans are offered in seven discharges; BAD is SWSI only. Practice with the Discharge Position Explorer MicroSim and the Rotation and Discharge Code Builder MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Centrifugal Fan",
+        "Rotation",
+        "Clockwise Rotation",
+        "Counterclockwise Rotation",
+        "Discharge Position",
+        "Discharge Angle",
+        "Rotation and Discharge Code"
+      ],
+      "keywords": [
+        "centrifugal fan",
+        "clockwise rotation",
+        "counterclockwise rotation",
+        "discharge angle",
+        "discharge position",
+        "fan",
+        "rotation",
+        "rotation and discharge code"
+      ],
+      "source_links": [
+        "docs/sims/ch12-discharge-position-explorer/index.md",
+        "docs/sims/ch13-rotation-discharge-code-builder/index.md",
+        "docs/chapters/12-discharge-positions-and-rotation/index.md",
+        "docs/chapters/13-rotation-and-discharge-codes/index.md"
+      ],
+      "has_example": true,
+      "word_count": 146
+    },
+    {
+      "id": "faq-033",
+      "category": "Core Concepts",
+      "question": "What is the difference between construction class and fan class?",
+      "answer": "They answer different questions, and both go on the order.\n\nFan class (Class I, II, III and IV, defined by AMCA Standard 99-2408) is a pressure and speed rating. Each heavier class is built with the impeller, shaft, bearings and housing to reach higher pressure and outlet velocity, so in practice the class sets the maximum safe speed for a fan size. Catalogs show class boundaries in their performance tables by shading.\n\nConstruction class is the build designation that matches the housing and impeller to the airstream: standard construction, or special constructions such as spark resistant, high temperature, insulated, nominally leak-tight, RTO and high moisture, all resting on a construction material.\n\nThe two are independent. For example, a Class II fan can be built in standard steel or in spark-resistant construction. Construction class also covers the material, such as aluminum construction, and finishes such as coatings; an insulated fan adds aluminum clad, double wall construction or jacket construction. If a document ties \"class\" to a maximum speed, it means fan class; if it ties it to materials or spark resistance, it means construction class.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Construction Class",
+        "Construction Material",
+        "Aluminum Construction",
+        "Coatings",
+        "Spark Resistant Construction",
+        "Insulated Fan",
+        "Double Wall Construction",
+        "Outlet Velocity",
+        "Fan Class",
+        "Maximum Safe Speed",
+        "Fan Size",
+        "Performance Table"
+      ],
+      "keywords": [
+        "airstream",
+        "aluminum construction",
+        "bearing",
+        "coatings",
+        "construction class",
+        "construction material",
+        "double wall construction",
+        "fan",
+        "fan class",
+        "fan size",
+        "impeller",
+        "insulated fan"
+      ],
+      "source_links": [
+        "docs/chapters/20-construction-classes-materials-spark-resistance/index.md",
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
+      ],
+      "has_example": true,
+      "word_count": 184
+    },
+    {
+      "id": "faq-034",
+      "category": "Core Concepts",
+      "question": "What are spark-resistant construction Types A, B and C?",
+      "answer": "Spark-resistant construction lowers the chance that the fan itself strikes a spark, by making key airstream parts non-ferrous and arranging parts so rotating and stationary components are unlikely to touch. Twin City Fan builds three types, following the AMCA classification:\n\n- Type A, the highest degree: every fan component in the airstream is non-ferrous, and the bearings are restrained.\n- Type B: a non-ferrous impeller, typically aluminum with an aluminum rub plate; if the fan fails mechanically, the aluminum impeller contacts a steel inlet cone.\n- Type C, a minimal level: non-ferrous parts only at the points where contact is most likely, using rub plates and rub rings. At 501°F and above it switches to a steel funnel with a rubbing band and bars.\n\nNo type makes a fan explosion-proof, and bearings are never allowed in the airstream of a spark-resistant fan. Non-ferrous materials on FanPedia's list are aluminum, aluminum/nickel/bronze, Monel, copper, brass and bronze. Stainless steel is ferrous. See the Spark Resistance Parts Matrix MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Spark Resistant Construction",
+        "Non-Ferrous Material",
+        "Rub Ring",
+        "Rub Plate"
+      ],
+      "keywords": [
+        "airstream",
+        "bearing",
+        "fan",
+        "impeller",
+        "non-ferrous material",
+        "rub plate",
+        "rub ring",
+        "spark resistant construction"
+      ],
+      "source_links": [
+        "docs/sims/ch20-spark-resistance-parts-matrix/index.md",
+        "docs/chapters/20-construction-classes-materials-spark-resistance/index.md",
+        "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
+      ],
+      "has_example": false,
+      "word_count": 166
+    },
+    {
+      "id": "faq-035",
+      "category": "Core Concepts",
+      "question": "What is L-10 bearing life, and how do I turn it into years?",
+      "answer": "All bearings eventually fail from metal fatigue, so bearing life is a statistic. L-10 life is the number of operating hours at which 10 percent of a population of identical bearings at a given speed and load is expected to fail; 90 percent survive past it. L-50, the average life, is five times L-10. Most Twin City Fan models offer L-10 life of 40,000 hours, and some models offer 20,000 up to 100,000 hours; the product catalog states which.\n\nTo convert to years, divide the rated hours by the fan's annual operating hours:\n\nyears = rated hours ÷ (hours per day × days per week × 52.14).\n\nFor example, L-10 of 40,000 hours is about 4.6 years running 24 hours a day, 7 days a week, but about 9.6 years at 16 hours a day, 5 days a week. A competitor's \"200,000-hour average life\" and a quote of \"L-10 40,000 hours\" may describe the same bearing. Try the Bearing Life to Calendar Years MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Bearing",
+        "Bearing Life",
+        "L-10 Bearing Life",
+        "Product Catalog"
+      ],
+      "keywords": [
+        "bearing",
+        "bearing life",
+        "fan",
+        "l-10 bearing life",
+        "product catalog"
+      ],
+      "source_links": [
+        "docs/sims/ch17-bearing-life-calendar-years/index.md",
+        "docs/chapters/17-bearing-details-lubrication-and-pedestals/index.md",
+        "docs/chapters/16-bearings-shafts-and-shaft-seals/index.md"
+      ],
+      "has_example": true,
+      "word_count": 164
+    },
+    {
+      "id": "faq-036",
+      "category": "Core Concepts",
+      "question": "What are the main ways to control a fan's airflow?",
+      "answer": "Flow control changes either the system curve or the fan curve:\n\n- Dampers add resistance, steepening the system curve and moving the operating point left. Outlet dampers are the least expensive and suit infrequent reduction and hot, humid or dirty air, but save little power. Parallel blade dampers are recommended from full open to about 75 percent open; opposed blade dampers modulate across the whole range for about 10 percent more cost.\n- Inlet box dampers and variable inlet vanes pre-spin the air in the direction of rotation, lowering the fan curve and saving more power than outlet dampers. Inlet vanes are available to 600°F; external vanes suit dirty air and nested vanes suit clean air.\n- Speed control with a VFD (induction motors) or an EC motor speed controller saves the most, because power falls with roughly the cube of speed.\n\nSeparate devices answer other needs: gravity dampers stop backdraft when the fan is off, and manual dampers balance a system once. The Flow Control Power Comparator MicroSim compares the power each method uses.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Rotation",
+        "Induction Motor",
+        "EC Motor",
+        "Inlet Box",
+        "Flow Control",
+        "Damper",
+        "Parallel Blade Damper",
+        "Opposed Blade Damper",
+        "Outlet Damper",
+        "Inlet Box Damper",
+        "Gravity Damper",
+        "Manual Damper",
+        "Variable Inlet Vanes",
+        "Pre-Spin",
+        "Speed Control",
+        "Fan Curve",
+        "System Curve",
+        "Operating Point",
+        "EC Motor Speed Controller"
+      ],
+      "keywords": [
+        "damper",
+        "ec motor",
+        "ec motor speed controller",
+        "fan",
+        "fan curve",
+        "flow control",
+        "gravity damper",
+        "induction motor",
+        "inlet box",
+        "inlet box damper",
+        "manual damper",
+        "operating point"
+      ],
+      "source_links": [
+        "docs/sims/ch18-flow-control-power-comparator/index.md",
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md"
+      ],
+      "has_example": false,
+      "word_count": 175
+    },
+    {
+      "id": "faq-037",
+      "category": "Core Concepts",
+      "question": "What is system effect, and why does it matter?",
+      "answer": "A catalog rating is measured with ideal test ductwork: long, straight, uniform runs into and out of the fan. System effect is the loss of fan performance caused by the way a real installation connects to the fan, expressed as an extra pressure the fan must overcome. Typical causes are an elbow bolted directly to the inlet, a short or missing discharge duct, an abrupt transition, an obstruction close to an open inlet, and swirl in the incoming air.\n\nSystem effect is in neither the fan curve nor the designer's duct calculation, so if it is ignored the fan falls short even though both calculations are right. For example, a fan selected for exactly 4.0 in. wg at 10,000 CFM with a 0.5 in. wg inlet-elbow system effect ends up at about 9,560 CFM. Values come from AMCA Publication 201, Fans and Systems; add them to the design pressure before selecting. FanPedia's fix for an elbow at the inlet is an inlet box, designed to minimize the system effect of a 90-degree turn into the fan.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Inlet Box",
+        "Fan Performance",
+        "Fan Curve",
+        "System Effect"
+      ],
+      "keywords": [
+        "fan",
+        "fan curve",
+        "fan performance",
+        "inlet box",
+        "system effect"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": true,
+      "word_count": 176
+    },
+    {
+      "id": "faq-038",
+      "category": "Core Concepts",
+      "question": "How do I check whether an isolator will actually isolate a fan?",
+      "answer": "Vibration isolation limits the force an operating fan transfers to its supporting structure. It does not reduce the fan's own vibration; it keeps that vibration out of the building. It earns its cost when the fan sits on a roof, mezzanine or other light structure, or near occupied space or sensitive equipment.\n\nAn isolator works by having a natural frequency well below the fan's forcing frequency (fan RPM ÷ 60). Natural frequency comes from static deflection: fn ≈ 3.13 ÷ √deflection, in hertz with deflection in inches. Isolation happens only when the frequency ratio (forcing ÷ natural) exceeds about 1.4; at 1 the assembly resonates, and below 1.4 the isolator amplifies the force.\n\nFor example, 1 in. springs (fn = 3.13 Hz) under a 1,170 RPM fan (19.5 Hz) give a ratio of 6.2 and about 97 percent isolation. When isolation is used, rigid duct connections are not allowed and flex connectors are required. Explore it in the Isolator Transmissibility Explorer MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Vibration",
+        "Vibration Isolation"
+      ],
+      "keywords": [
+        "fan",
+        "vibration",
+        "vibration isolation"
+      ],
+      "source_links": [
+        "docs/sims/ch22-isolator-transmissibility-explorer/index.md",
+        "docs/chapters/22-fan-bases-and-vibration-isolation/index.md"
+      ],
+      "has_example": true,
+      "word_count": 162
+    },
+    {
+      "id": "faq-039",
+      "category": "Core Concepts",
+      "question": "How do I read a catalog performance table?",
+      "answer": "A performance table lists RPM and BHP by airflow (rows) and static pressure (columns) at standard air. The steps:\n\n1. Read the header and footer first: size, impeller diameter, outlet area, class maximum speeds and the rating conditions.\n2. Find the row for the required CFM and the column for the required static pressure (already converted to standard air).\n3. Read the RPM and BHP in the cell, interpolating between rows and columns if the duty falls between them.\n4. Read the class from the shading, which is a map of the class maximum speeds.\n5. State the result with its conditions, and stay in the fan selection range near the underlined maximum-efficiency cells.\n\nFor example, an RBA 913 at 4,092 CFM and 12 in. SP reads 2,167 RPM and 11.72 BHP, in regular face, so Class 22 (at or below the 2,812 RPM Class 22 limit). The result is stated as \"RBA 913, Class 22, 2,167 RPM, 11.72 BHP at standard air, not including drive losses or accessory effects.\" Practice in the Performance Table Reader MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Static Pressure",
+        "Standard Air",
+        "Fan",
+        "Impeller",
+        "Fan Selection Range",
+        "Performance Table",
+        "Fan Selection",
+        "Rating Conditions"
+      ],
+      "keywords": [
+        "fan",
+        "fan selection",
+        "fan selection range",
+        "impeller",
+        "performance table",
+        "rating conditions",
+        "standard air",
+        "static pressure"
+      ],
+      "source_links": [
+        "docs/sims/ch26-performance-table-reader/index.md",
+        "docs/chapters/26-reading-catalogs-and-performance-tables/index.md"
+      ],
+      "has_example": true,
+      "word_count": 177
+    },
+    {
+      "id": "faq-040",
+      "category": "Core Concepts",
+      "question": "What is the difference between a plenum fan and a plug fan?",
+      "answer": "Both are unhoused centrifugal fans: an impeller and inlet funnel with no scroll, discharging all the way around into the space they pressurize, a plenum.\n\n- A plenum fan is designed for air handling applications where the whole fan operates inside the plenum, such as an air handling unit cabinet. Its motor, shaft and bearings live in the air the impeller moves.\n- A plug fan is \"plugged\" into the plenum wall: a mounting panel fastens to the outside of the wall, the impeller sits inside, and the motor and drive stay outside, separated from the process air. FanPedia lists high-temperature ovens and OEM paint booths as typical uses.\n\nThe difference is where the drive lives relative to the wall. For example, an oven builder who needs to recirculate hot air while keeping the motor and bearings out of the hot zone needs a plug fan; the same builder making an air handler cabinet would use a plenum fan. Among the plug fan arrangements, Arrangement 9 is the most common, and P versions stand on a pedestal at grade. See the Plug Fan Arrangement Picker MicroSim.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Centrifugal Fan",
+        "Unhoused Centrifugal Fan",
+        "Plenum Fan",
+        "Plug Fan",
+        "Fan Arrangement",
+        "Arrangement 9",
+        "Plug Fan Arrangements",
+        "Inlet Funnel",
+        "Mounting Panel"
+      ],
+      "keywords": [
+        "arrangement 9",
+        "bearing",
+        "centrifugal fan",
+        "fan",
+        "fan arrangement",
+        "impeller",
+        "inlet funnel",
+        "mounting panel",
+        "plenum fan",
+        "plug fan",
+        "plug fan arrangements",
+        "unhoused centrifugal fan"
+      ],
+      "source_links": [
+        "docs/sims/ch06-plug-fan-arrangement-picker/index.md",
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md",
+        "docs/chapters/06-industrial-fans-and-application-product-lines/index.md"
+      ],
+      "has_example": true,
+      "word_count": 186
+    },
+    {
+      "id": "faq-041",
+      "category": "Core Concepts",
+      "question": "What separates commercial duty from industrial duty?",
+      "answer": "Commercial duty and industrial duty describe the service, not the fan family. Many families appear in both of Twin City Fan's website lists.\n\nA commercial duty fan is built and rated for building ventilation and HVAC: comfort air handling, restroom and general exhaust in offices, schools, hospitals and retail buildings, usually with clean air at normal temperatures, quiet operation and standard construction.\n\nAn industrial duty fan is built for process and plant service, where the airstream may be hot, dusty, wet, corrosive or explosive and the fan is part of a production process that must keep running. Industrial fans are typically heavier and offered with options such as spark-resistant, high-temperature, nominally leak-tight and special-material construction.\n\nFor example, restroom exhaust for a school wing is commercial duty (ceiling ventilators or a centrifugal roof exhauster), while hot, dusty air from a foundry hood to a dust collector is industrial duty. Both might end in a centrifugal fan, but the duty changes the line, construction and accessories.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Fan Family",
+        "Centrifugal Fan",
+        "Centrifugal Roof Exhauster",
+        "Ceiling Ventilator",
+        "Commercial Duty Fan",
+        "Industrial Duty Fan"
+      ],
+      "keywords": [
+        "airstream",
+        "ceiling ventilator",
+        "centrifugal fan",
+        "centrifugal roof exhauster",
+        "commercial duty fan",
+        "fan",
+        "fan family",
+        "industrial duty fan"
+      ],
+      "source_links": [
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md"
+      ],
+      "has_example": true,
+      "word_count": 164
+    },
+    {
+      "id": "faq-042",
+      "category": "Core Concepts",
+      "question": "What is the Fan Energy Index (FEI)?",
+      "answer": "The Fan Energy Index is the ratio of the electrical input power of a reference fan to the electrical input power of the actual fan, both delivering the same airflow and pressure. It is defined in AMCA Standard 208. The actual fan's power includes the motor, drive and any speed-control losses.\n\nAn FEI of 1.00 means the fan uses exactly the reference power; above 1.00 it uses less, and below 1.00 more. Because FEI is calculated at a duty point, one fan model has a different FEI at every point on its curve. Energy codes and standards, including ASHRAE Standard 90.1 and several state regulations, set minimum FEI values at the design point.\n\nFor example, an illustrative fan scores 1.21 at 10,000 CFM and 4.0 in. wg, near its peak efficiency, but 0.88 at 14,000 CFM and 2.0 in. wg, far right on its curve. Nothing about the fan changed; its position on the curve did. A failing selection is usually fixed by choosing a different size.",
+      "bloom_level": "Understand",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Speed Control",
+        "Peak Efficiency",
+        "Duty Point",
+        "Fan Energy Index"
+      ],
+      "keywords": [
+        "duty point",
+        "fan",
+        "fan energy index",
+        "peak efficiency",
+        "speed control"
+      ],
+      "source_links": [
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": true,
+      "word_count": 167
+    },
+    {
+      "id": "faq-043",
+      "category": "Core Concepts",
+      "question": "How do I check a selection against the fan's maximum safe speed?",
+      "answer": "Maximum safe speed is the highest RPM at which the manufacturer allows a particular fan size and construction to run. It is set by the strength of the impeller and other rotating parts, the shaft's critical speed and the bearing limits. Centrifugal stress rises with the square of tip speed (tip speed = π × D × N ÷ 12, in ft/min with D in inches), so a modest speed increase above the limit consumes the impeller's safety margin quickly. The limit is published in the catalog for each size and class.\n\nIt is reduced for high temperature, because steel loses strength as it gets hot. For example, a selection at 1,380 RPM passes a room-temperature limit of 1,450 RPM, but with an illustrative temperature derate of 0.93 the hot limit is 1,349 RPM and the selection fails. The fix is a heavier class, a larger size that runs slower, or a construction rated for the temperature. Any speed increase, by sheave change or VFD, starts with this check.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Sheave",
+        "Tip Speed",
+        "Maximum Safe Speed",
+        "Fan Size"
+      ],
+      "keywords": [
+        "bearing",
+        "fan",
+        "fan size",
+        "impeller",
+        "maximum safe speed",
+        "sheave",
+        "tip speed"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
+      ],
+      "has_example": true,
+      "word_count": 169
+    },
+    {
+      "id": "faq-044",
+      "category": "Technical Details",
+      "question": "What is the difference between backward inclined and forward curved impellers?",
+      "answer": "A backward inclined impeller has flat, single-thickness blades tilted back, so each blade's outer end trails its inner end as the wheel turns. It combines good efficiency with a non-overloading power curve: at a fixed speed, BHP rises to a peak and then falls as airflow increases, so a motor sized for that peak cannot be overloaded at that speed. It is widely used for general ventilation and clean or lightly dusty air.\n\nA forward curved impeller has many short, shallow blades curving toward the direction of rotation. It throws air off the tips at high velocity, so it moves a given airflow at lower speed and in a smaller size, which suits compact, low-pressure equipment. The trade-offs are lower efficiency, an overloading power curve that keeps rising with airflow, and shallow blade pockets that collect dust, so forward curved wheels belong in clean air.\n\nFor example, when a filtered supply unit's duct resistance is uncertain, a backward inclined unit, or a forward curved unit with a motor sized for the highest airflow it could reach, protects the motor. Test yourself with the Impeller Type Classifier MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Impeller",
+        "Backward Inclined Impeller",
+        "Forward Curved Impeller",
+        "Rotation",
+        "Non-Overloading Power Curve",
+        "Overloading Power Curve"
+      ],
+      "keywords": [
+        "backward inclined impeller",
+        "forward curved impeller",
+        "impeller",
+        "non-overloading power curve",
+        "overloading power curve",
+        "rotation"
+      ],
+      "source_links": [
+        "docs/sims/ch08-impeller-type-classifier/index.md",
+        "docs/chapters/08-centrifugal-and-axial-impeller-types/index.md"
+      ],
+      "has_example": true,
+      "word_count": 187
+    },
+    {
+      "id": "faq-045",
+      "category": "Technical Details",
+      "question": "Why do airfoil impellers have the highest efficiency, and when is backward curved better?",
+      "answer": "Both are refinements of the backward inclined impeller, and both keep the non-overloading power curve.\n\nAn airfoil impeller has backward inclined blades with a hollow, wing-shaped cross section: a rounded leading edge and a tapered trailing edge. Air follows the blade surface with less separation, which is why airfoil wheels reach the highest static efficiency of the centrifugal family. A hollow formed blade, however, is less forgiving of abrasive or sticky material.\n\nA backward curved impeller has single-thickness blades curved back from the direction of rotation. The curve gives smoother air passage than a flat blade, while the solid plate stays simple and tolerant of some dust. It trades a little efficiency for that tolerance.\n\nTwin City Fan's high efficiency centrifugal fans are the HAF (airfoil) and HIB (backward curved). The general pattern runs through the whole impeller family: from airfoil to backward curved to radial tip to radial bladed, each step gives up some efficiency to survive a dirtier airstream. For example, clean HVAC supply air points to airfoil, while air with light dust points to backward curved.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Centrifugal Fan",
+        "Backward Inclined Impeller",
+        "Backward Curved Impeller",
+        "Airfoil Impeller",
+        "Rotation",
+        "Static Efficiency",
+        "Non-Overloading Power Curve",
+        "Overloading Power Curve",
+        "High Efficiency Centrifugal Fan"
+      ],
+      "keywords": [
+        "airfoil impeller",
+        "airstream",
+        "backward curved impeller",
+        "backward inclined impeller",
+        "centrifugal fan",
+        "fan",
+        "high efficiency centrifugal fan",
+        "impeller",
+        "non-overloading power curve",
+        "overloading power curve",
+        "rotation",
+        "static efficiency"
+      ],
+      "source_links": [
+        "docs/chapters/09-impeller-construction-and-material-handling/index.md"
+      ],
+      "has_example": true,
+      "word_count": 179
+    },
+    {
+      "id": "faq-046",
+      "category": "Technical Details",
+      "question": "What are the radial bladed impeller variants, and what material does each handle?",
+      "answer": "A radial bladed impeller has flat blades pointing straight out from the hub. Material strikes a flat, heavy blade and is flung off the tip instead of building up, which makes it the rugged, self-cleaning \"workhorse\" for dirty air, at a cost in efficiency. Twin City Fan builds several forms:\n\n- Open radial paddle (catalog RBO): paddle blades with support gussets and no back plate or rings, for coarse, sticky, heavy or abrasive material. The RBR adds front and back end rings for stiffness.\n- Material handling, back plate wool (RBW): the open radial design with a full back plate, so long, stringy or fibrous material does not wrap around the spiders and blades.\n- Paper handling (RBP): a material handling wheel made extra rugged for high-impact loading, with trapezoidal gussets and a paper deflector cone; it is supplied with bearing stop blocks and a relieved inlet transition.\n- Air handling (RBA): for relatively clean air, fumes and light contaminants. FanPedia describes heavy-gauge blades welded to both the back plate and the front plate; the current catalog describes the blades as backwardly inclined, and the catalog governs.\n\nFor example, a buffing-system exhaust carrying threads points to the RBW. The Impeller Recommender for Real Airstreams MicroSim practices the choice.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Radial Bladed Impeller",
+        "Bearing Stop Blocks",
+        "Relieved Inlet Transition"
+      ],
+      "keywords": [
+        "airstream",
+        "bearing",
+        "bearing stop blocks",
+        "fan",
+        "impeller",
+        "radial bladed impeller",
+        "relieved inlet transition"
+      ],
+      "source_links": [
+        "docs/sims/ch09-impeller-recommender/index.md",
+        "docs/chapters/09-impeller-construction-and-material-handling/index.md"
+      ],
+      "has_example": true,
+      "word_count": 208
+    },
+    {
+      "id": "faq-047",
+      "category": "Technical Details",
+      "question": "How does a radial tip fan compare with a radial bladed fan?",
+      "answer": "A radial tip impeller has blades curved forward at the entering edge and radial at the tip of the leaving edge. The radial tip keeps the dirty-air tolerance of a radial blade, while the curved entry lets air onto the blade more smoothly. The current catalog states the payoff: at high airflows, a radial tip fan is much more efficient than a comparable radial blade fan. Twin City Fan sells them as the RTF (industrial) and HRT (industrial, high specific speed).\n\nThe radial bladed fan remains the choice for abrasive, sticky or bulky material passing through the fan, where ruggedness matters more than efficiency.\n\nFor example, Chapter 6 compares an illustrative dryer exhaust carrying light, dusty air at 30,000 CFM and 12 in. wg total pressure. Using BHP = CFM × TP ÷ (6356 × efficiency), a radial bladed selection at an illustrative 60 percent total efficiency needs about 94.4 BHP, while a radial tip selection at 72 percent needs about 78.7 BHP, about 15.7 BHP less for as long as it runs. The radial blade still wins when the airstream is bulky, sticky or abrasive enough that efficiency must give way to durability.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Total Pressure",
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Radial Bladed Fan",
+        "Radial Tip Fan",
+        "Radial Tip Impeller",
+        "Specific Speed"
+      ],
+      "keywords": [
+        "airstream",
+        "fan",
+        "impeller",
+        "radial bladed fan",
+        "radial tip fan",
+        "radial tip impeller",
+        "specific speed",
+        "total pressure"
+      ],
+      "source_links": [
+        "docs/chapters/06-industrial-fans-and-application-product-lines/index.md",
+        "docs/chapters/09-impeller-construction-and-material-handling/index.md"
+      ],
+      "has_example": true,
+      "word_count": 194
+    },
+    {
+      "id": "faq-048",
+      "category": "Technical Details",
+      "question": "What does DWDI mean, and when is it used instead of SWSI?",
+      "answer": "A double width double inlet (DWDI) fan uses an impeller that is, in effect, two single width impellers back to back on one hub, in a housing about twice as wide with an inlet on each side. Air enters from both sides and leaves through one scroll outlet. A single width single inlet (SWSI) fan takes air from one side only.\n\nBecause both sides of the wheel work at once, a DWDI fan moves roughly twice the air of an SWSI fan of the same diameter and speed, at about the same pressure. That makes DWDI fans common in air handlers and duct fans where a lot of air must move through a limited footprint. The rule of thumb compares families; real selections still come from the catalog table.\n\nThe trade-offs follow from the construction. A DWDI impeller is center hung, and a standard Arrangement 3 DWDI fan carries both bearings in the airstream on bearing structural supports, which limits it to clean air at 130°F. DWDI fans are offered in seven discharge positions; Bottom Angular Down is SWSI only. Explore the parts in the DWDI Housing Parts Explorer MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Duct Fan",
+        "Single Width Single Inlet",
+        "Double Width Double Inlet",
+        "Arrangement 3",
+        "Discharge Position",
+        "Bearing Structural Support"
+      ],
+      "keywords": [
+        "airstream",
+        "arrangement 3",
+        "bearing",
+        "bearing structural support",
+        "discharge position",
+        "double width double inlet",
+        "duct fan",
+        "fan",
+        "impeller",
+        "single width single inlet"
+      ],
+      "source_links": [
+        "docs/sims/ch09-dwdi-housing-parts-explorer/index.md",
+        "docs/chapters/09-impeller-construction-and-material-handling/index.md",
+        "docs/chapters/13-rotation-and-discharge-codes/index.md"
+      ],
+      "has_example": false,
+      "word_count": 190
+    },
+    {
+      "id": "faq-049",
+      "category": "Technical Details",
+      "question": "What is the difference between a tubeaxial and a vaneaxial fan?",
+      "answer": "Both are axial fans in a tubular housing. A tubeaxial fan is an axial impeller turning inside a plain tube. A vaneaxial fan adds a section of stationary guide vanes downstream of the impeller.\n\nAir leaving any axial impeller carries a swirl. The guide vanes straighten it, partly recovering the rotational energy as static pressure and sending the air downstream in a cleaner pattern. That is why the current catalog describes vaneaxial fans as built for large volumes at moderate to high pressures in a compact tubular package; current models include the TCVA (cast aluminum impeller), TCVX (adjustable-pitch aluminum) and TCVS (steel), in direct and belt driven versions.\n\nDo not confuse guide vanes with \"inlet guide vanes\" on a centrifugal fan, which usually means the inlet vane flow-control accessory. For example, a schedule note reading \"vaneaxial fan, guide vanes required\" is consistent and simply confirms the vane section. See the Vaneaxial Fan Parts MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "easy",
+      "concepts": [
+        "Static Pressure",
+        "Fan",
+        "Impeller",
+        "Centrifugal Fan",
+        "Axial Fan",
+        "Tubular Housing",
+        "Tubeaxial Fan",
+        "Guide Vanes",
+        "Vaneaxial Fan",
+        "Axial Impeller",
+        "Flow Control"
+      ],
+      "keywords": [
+        "axial fan",
+        "axial impeller",
+        "centrifugal fan",
+        "fan",
+        "flow control",
+        "guide vanes",
+        "impeller",
+        "static pressure",
+        "tubeaxial fan",
+        "tubular housing",
+        "vaneaxial fan"
+      ],
+      "source_links": [
+        "docs/sims/ch04-vaneaxial-fan-overlay/index.md",
+        "docs/chapters/06-industrial-fans-and-application-product-lines/index.md",
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md"
+      ],
+      "has_example": true,
+      "word_count": 154
+    },
+    {
+      "id": "faq-050",
+      "category": "Technical Details",
+      "question": "What do the axial airflow codes PM and MP mean?",
+      "answer": "Read the code left to right as the air's path, with P for the impeller and M for the motor:\n\n Code  Air path  Also called  Hub bore \n------------\n PM  Through the impeller, then over the motor  Hub on intake side  Reverse bore hub \n MP  Over the motor, then through the impeller  Hub on discharge side  Standard bore hub \n\nSo \"MP,\" \"hub on discharge\" and \"standard bore hub\" describe the same build, and \"PM,\" \"hub on intake\" and \"reverse bore hub\" describe the other. A reversible impeller runs standard flow MP and reverse flow PM.\n\nAxial rotation is read from the discharge side, as left-hand or right-hand, not from the drive side as on a centrifugal fan. Airflow direction and rotation must both be right: an impeller turning the wrong way will not move air in the proper direction. For example, a request for \"hub on intake\" calls for a reverse bore hub. The Axial Airflow and Hub Position Configurator MicroSim lets you build each combination.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Centrifugal Fan",
+        "Hub on Intake Side",
+        "Hub on Discharge Side",
+        "Reversible Impeller",
+        "Reverse Bore Hub",
+        "Rotation"
+      ],
+      "keywords": [
+        "centrifugal fan",
+        "fan",
+        "hub on discharge side",
+        "hub on intake side",
+        "impeller",
+        "reverse bore hub",
+        "reversible impeller",
+        "rotation"
+      ],
+      "source_links": [
+        "docs/sims/ch08-axial-airflow-hub-configurator/index.md",
+        "docs/chapters/08-centrifugal-and-axial-impeller-types/index.md"
+      ],
+      "has_example": true,
+      "word_count": 165
+    },
+    {
+      "id": "faq-051",
+      "category": "Technical Details",
+      "question": "What is the difference between a straight bore hub and a taper lock hub?",
+      "answer": "The hub connects the impeller to the shaft; it must carry full motor torque and stay put under vibration, yet come off for service.\n\n- A straight bore hub has a bore that runs straight through. A key, half in a shaft keyway and half in the hub keyway, carries the torque; set screws (or, on axial impellers, a retaining washer and bolt) stop the hub sliding along the shaft. The bore is machined to one shaft diameter.\n- A taper lock hub has a tapered bore and is locked to the shaft with a tapered bushing. Tightening the bushing screws draws it into the hub and squeezes it onto the shaft along its whole length; loosening them and using the removal holes releases it.\n\nFor example, a plant that replaces worn impellers every few years and has had a straight bore hub seize to its shaft twice is better served by a taper lock hub, which releases by loosening the bushing. A third type, the Trantorque hub, locks to the shaft with a keyless bushing.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Impeller",
+        "Axial Impeller",
+        "Straight Bore Hub",
+        "Taper Lock Hub",
+        "Shaft Keyway",
+        "Vibration",
+        "Trantorque Hub"
+      ],
+      "keywords": [
+        "axial impeller",
+        "impeller",
+        "shaft keyway",
+        "straight bore hub",
+        "taper lock hub",
+        "trantorque hub",
+        "vibration"
+      ],
+      "source_links": [
+        "docs/chapters/08-centrifugal-and-axial-impeller-types/index.md",
+        "docs/chapters/09-impeller-construction-and-material-handling/index.md"
+      ],
+      "has_example": true,
+      "word_count": 176
+    },
+    {
+      "id": "faq-052",
+      "category": "Technical Details",
+      "question": "What are split housings, and when should one be specified?",
+      "answer": "A split housing is built in sections that bolt together along a planned joint, so it can be opened or shipped in pieces. FanPedia names three centrifugal styles:\n\n- Horizontal split: along the horizontal centerline, the standard split. On size 807 and above the shop may split a housing this way for shipping.\n- Pie split: a wedge of 90 degrees or more is cut out so the impeller can be removed without disturbing the inlet or outlet ductwork. It comes in Mohawk or standard style.\n- Three-way split: three sections, either for shipping or so the fan can pass through an opening of a specific size; it takes extra drafting and engineering time.\n\nSpecify a split when the fan must enter a small room or when the impeller will be pulled for service. Splits add bolted joints, so on leak-tight service they are not recommended; where one is unavoidable it needs centering plates and double gaskets. For example, a fan that must pass through a fixed doorway into a mechanical room is a three-way split candidate. Practice with the Split Housing Selector MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Split Housing",
+        "Centering Plate"
+      ],
+      "keywords": [
+        "centering plate",
+        "fan",
+        "impeller",
+        "split housing"
+      ],
+      "source_links": [
+        "docs/sims/ch07-split-housing-selector/index.md",
+        "docs/chapters/03-basic-fan-anatomy/index.md",
+        "docs/chapters/07-housing-construction-and-exploded-views/index.md",
+        "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
+      ],
+      "has_example": true,
+      "word_count": 184
+    },
+    {
+      "id": "faq-053",
+      "category": "Technical Details",
+      "question": "What are the five motor enclosures, and where does each belong?",
+      "answer": "Enclosure  How it is cooled  Typical use \n---------\n ODP (open drip-proof)  Internal fan blows room air across the windings  Clean, dry, indoor locations \n TEFC (totally enclosed fan cooled)  External fan blows air over the frame  Dirty, damp or outdoor locations; most industrial fans \n TEAO (totally enclosed air over)  The fan's own airstream flows over the frame  Motors inside the airstream of direct-drive axial and inline fans \n TENV (totally enclosed non-ventilated)  Heat leaves through the frame only  Where a cooling fan is a problem; larger frame accepted \n Explosion proof (EXPL)  External fan; interior built to contain ignition  NEC-classified hazardous locations (DFG duty) \n\nTwo questions settle most choices: is the area classified as hazardous, and what is in the air around the motor? For example, a motor in a dusty, damp plant is TEFC, and a motor in a room the plant has classified for flammable vapor is explosion proof. Enclosure and motor intended duty must agree: ODP is GD only, and an IEEE 841 specification forces TEFC. The Motor Enclosure Selector MicroSim gives ten illustrative jobs to practice on.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Direct Drive",
+        "Motor Enclosure",
+        "Motor Intended Duty"
+      ],
+      "keywords": [
+        "airstream",
+        "direct drive",
+        "fan",
+        "motor enclosure",
+        "motor intended duty"
+      ],
+      "source_links": [
+        "docs/sims/ch14-motor-enclosure-selector/index.md",
+        "docs/chapters/14-fan-motors-and-enclosures/index.md",
+        "docs/chapters/15-motor-ratings-speed-control-and-positioners/index.md"
+      ],
+      "has_example": true,
+      "word_count": 178
+    },
+    {
+      "id": "faq-054",
+      "category": "Technical Details",
+      "question": "What do insulation class and service factor on a motor nameplate mean?",
+      "answer": "Insulation class is a letter rating how hot the winding insulation may run continuously. The classes are A, B, F and H, with commonly published hottest-spot limits of 130°C for Class B, 155°C for Class F and 180°C for Class H; Class A is no longer used. The typical fan motor has Class F insulation designed for a Class B temperature rise, and the gap is thermal margin that extends winding life. Class H is an available upgrade.\n\nService factor (S.F.) is the multiplier above rated horsepower at which a motor may be used. For example, a 100 HP motor with a 1.15 service factor may run at 115 HP. Common values are 1.0, 1.15 and 1.25, and the service factor is 1.0 when the motor runs on a VFD.\n\nService factor is a margin, not capacity to plan around: running in it means running hotter and spending the insulation's margin. Size the motor so the fan's BHP at the worst condition, often a cold start, is at or below nameplate horsepower.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Fan",
+        "Fan Motor",
+        "Insulation Class",
+        "Motor Nameplate"
+      ],
+      "keywords": [
+        "fan",
+        "fan motor",
+        "horsepower",
+        "insulation class",
+        "motor nameplate"
+      ],
+      "source_links": [
+        "docs/chapters/14-fan-motors-and-enclosures/index.md"
+      ],
+      "has_example": true,
+      "word_count": 172
+    },
+    {
+      "id": "faq-055",
+      "category": "Technical Details",
+      "question": "What are a model code and a fan size?",
+      "answer": "A model code is the short letter designation that identifies a Twin City Fan product line and impeller type, such as BC-SW, RBA or TCTA. Catalogs are titled by model code, so the code is also how you find the right catalog: BC-SW and BC-DW backward inclined fans are in Catalog 300, the RBA, RBO, RBR, RBW and RBP radial bladed fans in Catalog 902, and TCVA vaneaxial fans in AX100, for example.\n\nFan size is the number that identifies one impeller diameter within a model. It is not the outlet dimension, inlet diameter or housing width. In Catalog 300 the BC size tracks the impeller diameter in inches with the decimal point dropped, so the 12.25-inch wheel is size 122. In Catalog 902 the radial bladed sizes are a 900-series code: size 913 is a 22.625-inch impeller, and you read the diameter from the performance page.\n\nOn its own a model code names a family; with a size, a class and an arrangement it names one buildable fan, such as \"RBA 913, Class 32, Arrangement 9.\" Check all four together against the catalog's availability table, because size also decides which classes and arrangements exist. Check eight designations against catalog extracts in the Model Code Decoder MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Vaneaxial Fan",
+        "Radial Bladed Fan",
+        "Arrangement 9",
+        "Fan Size",
+        "Model Code"
+      ],
+      "keywords": [
+        "arrangement 9",
+        "fan",
+        "fan size",
+        "impeller",
+        "model code",
+        "radial bladed fan",
+        "vaneaxial fan"
+      ],
+      "source_links": [
+        "docs/sims/ch26-model-code-decoder/index.md",
+        "docs/chapters/26-reading-catalogs-and-performance-tables/index.md"
+      ],
+      "has_example": true,
+      "word_count": 207
+    },
+    {
+      "id": "faq-056",
+      "category": "Technical Details",
+      "question": "How do I read and write the motor line on a fan order?",
+      "answer": "The motor line lists the motor in a fixed order: power, speed, technology, efficiency, electrical supply, intended duty, enclosure and frame. For example, \"50 HP, 1800 RPM, IN, P, 3 Phase, 60 Frequency, 460 Volt, SD, TEFC, 326T\" decodes as:\n\n Field  Meaning \n------\n 50 HP  Rated power, about 37 kW \n 1800 RPM  Synchronous speed; a four-pole motor at 60 Hz \n IN  Induction motor (the alternative is EC) \n P  TCF Premium Efficiency, comparable to NEMA Premium and IE3 \n 3 Phase, 60 Frequency, 460 Volt  Electrical supply \n SD  Severe duty \n TEFC  Totally enclosed fan cooled \n 326T  NEMA 326 frame, T-frame foot mount \n\nTo write one, take each field from the job: horsepower from the cold-start BHP plus drive losses, speed from the drive, efficiency class from the code or owner, one site voltage with phase and frequency (even for a dual-voltage motor when the fan ships with electrical add-ons), intended duty and enclosure from the environment, and an inverter-duty motor when a VFD will drive it, with a shaft grounding ring or insulated bearings to protect the bearings from VFD-induced shaft currents. The nameplate is the field authority for what shipped. Practice in the Motor Line Decoder MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Fan",
+        "Bearing",
+        "Induction Motor",
+        "Shaft Grounding Ring",
+        "Inverter-Duty Motor",
+        "Insulated Bearing"
+      ],
+      "keywords": [
+        "bearing",
+        "fan",
+        "horsepower",
+        "induction motor",
+        "insulated bearing",
+        "inverter-duty motor",
+        "shaft grounding ring"
+      ],
+      "source_links": [
+        "docs/sims/ch14-motor-line-decoder/index.md",
+        "docs/chapters/14-fan-motors-and-enclosures/index.md",
+        "docs/chapters/15-motor-ratings-speed-control-and-positioners/index.md"
+      ],
+      "has_example": true,
+      "word_count": 196
+    },
+    {
+      "id": "faq-057",
+      "category": "Technical Details",
+      "question": "Why do impellers need balancing, and how much unbalance is allowed?",
+      "answer": "No impeller is perfectly symmetric: plate thickness, weld beads and blade position leave more mass on one side. When it spins, that off-center mass pushes the rotor around once per revolution, which the bearings, shaft and structure feel as vibration. Impeller balancing measures the unbalance, usually on a balancing machine, and corrects it with small weights until the residual unbalance is within a limit.\n\nThe limit comes from a balance quality grade G (ISO 21940-11), assigned by fan application category in AMCA 204; G6.3 and G2.5 are common for industrial fans. The permissible residual unbalance is:\n\nUper = 6.015 × G × W ÷ N, in ounce-inches, with W the impeller weight in pounds and N the speed in RPM.\n\nFor example, a 200 lb impeller at 1,200 RPM balanced to G6.3 may carry 6.015 × 6.3 × 200 ÷ 1,200 = 6.32 oz·in, less than half an ounce at a 15 in. radius. The force from unbalance grows with the square of speed, so running the same wheel at twice the speed quadruples it. Try the Impeller Balance Calculator MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Impeller Balancing",
+        "Vibration"
+      ],
+      "keywords": [
+        "bearing",
+        "fan",
+        "impeller",
+        "impeller balancing",
+        "vibration"
+      ],
+      "source_links": [
+        "docs/sims/ch08-impeller-balance-calculator/index.md",
+        "docs/chapters/08-centrifugal-and-axial-impeller-types/index.md"
+      ],
+      "has_example": true,
+      "word_count": 181
+    },
+    {
+      "id": "faq-058",
+      "category": "Technical Details",
+      "question": "How do I work out a motor's synchronous speed?",
+      "answer": "An induction motor's field rotates at the synchronous speed, set only by supply frequency and the number of poles:\n\nsynchronous RPM = 120 × frequency (Hz) ÷ number of poles.\n\n Poles  60 Hz  50 Hz \n---------\n 2  3600  3000 \n 4  1800  1500 \n 6  1200  1000 \n 8  900  750 \n\nThe rotor always turns a little slower than the field. That difference, slip, is what produces torque, so a motor ordered as \"1800 RPM\" shows a somewhat lower full-load speed on its nameplate; actual speeds vary by horsepower and manufacturer. On the order, state the synchronous speed; the fan selection uses the actual speed.\n\nFor example, a 4-pole motor on 60 Hz is 1800 RPM synchronous, but the same motor shipped to a 50 Hz site runs at 1500 RPM, and a direct-drive fan on it delivers about 17 percent less air. A VFD uses this same equation: changing frequency changes speed in proportion.",
+      "bloom_level": "Apply",
+      "difficulty": "easy",
+      "concepts": [
+        "Horsepower",
+        "Fan",
+        "Direct Drive",
+        "Induction Motor",
+        "Fan Selection"
+      ],
+      "keywords": [
+        "direct drive",
+        "fan",
+        "fan selection",
+        "horsepower",
+        "induction motor"
+      ],
+      "source_links": [
+        "docs/chapters/15-motor-ratings-speed-control-and-positioners/index.md",
+        "docs/chapters/14-fan-motors-and-enclosures/index.md"
+      ],
+      "has_example": true,
+      "word_count": 152
+    },
+    {
+      "id": "faq-059",
+      "category": "Technical Details",
+      "question": "How do I decide which bearing is fixed and which is floating?",
+      "answer": "A shaft grows as it heats, so one bearing (fixed) locates the shaft axially and the other (floating) lets it slide. FanPedia's fixed-floating bearing rules come in two parts.\n\nPlacement: on horizontal fans the fixed bearing is on the drive side and the floating bearing on the non-drive side. On vertical fans the floating bearing is on the drive side.\n\nQuantity:\n\n Operating temperature  Ball type  Roller or split roller type \n---------\n 300°F and below  2 fixed  1 fixed, 1 floating \n 301°F and above  1 fixed, 1 floating  1 fixed, 1 floating \n\nOn Arrangements 3SI, 7SI, 3DI and 7DI, where the bearings straddle the impeller on a long shaft, ball bearings at 300°F and below may still need one fixed and one floating; treat that as an engineering review item. For example, a horizontal Arrangement 9 fan at 450°F on spherical roller bearings gets one fixed bearing on the drive side and one floating bearing on the non-drive side. Ask the questions in order (orientation, bearing type, temperature, straddle arrangement) in the Fixed or Floating Bearing Assignment MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Arrangement 9",
+        "Ball Bearing",
+        "Spherical Roller Bearing",
+        "Fixed Bearing",
+        "Floating Bearing",
+        "Fixed-Floating Bearing Rules"
+      ],
+      "keywords": [
+        "arrangement 9",
+        "ball bearing",
+        "bearing",
+        "fan",
+        "fixed bearing",
+        "fixed-floating bearing rules",
+        "floating bearing",
+        "impeller",
+        "spherical roller bearing"
+      ],
+      "source_links": [
+        "docs/sims/ch17-fixed-floating-bearing-assignment/index.md",
+        "docs/chapters/17-bearing-details-lubrication-and-pedestals/index.md",
+        "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
+      ],
+      "has_example": true,
+      "word_count": 177
+    },
+    {
+      "id": "faq-060",
+      "category": "Technical Details",
+      "question": "What types of shaft seal are there?",
+      "answer": "A shaft seal is mounted on the housing where the shaft passes through the housing wall, to limit leakage of air or gas along the shaft. It has nothing to do with the bearings or lubrication. An overhung fan needs one, on the drive side; a center hung fan whose shaft passes through both sides needs two. Excess leakage can release hazardous gas, waste energy, damage the drive-end bearing and make noise.\n\nSeals fall into three families:\n\n1. Contact seals rub a soft material on the shaft: the friction seal (the standard type), the V-ring seal and the lip seal. Simple and inexpensive.\n2. Carbon ring seals surround the shaft with split carbon rings at very small clearance; a purge connection can be added between two rings.\n3. Stuffing box (packing) seals compress packing rings, such as Graphoil, into a box around the shaft; purged versions use a lantern ring and a customer-supplied purge line.\n\nFor example, nominally leak-tight fans use a lip, Graphoil stuffing box or double carbon ring seal, while RTO fans use friction or carbon ring seals. Practice with the Shaft Seal Identifier MicroSim.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Bearing",
+        "Shaft Seal",
+        "Carbon Ring Seal",
+        "Nominally Leak-Tight Fan",
+        "Drive End Bearing"
+      ],
+      "keywords": [
+        "bearing",
+        "carbon ring seal",
+        "drive end bearing",
+        "fan",
+        "nominally leak-tight fan",
+        "shaft seal"
+      ],
+      "source_links": [
+        "docs/sims/ch16-shaft-seal-identifier/index.md",
+        "docs/chapters/16-bearings-shafts-and-shaft-seals/index.md"
+      ],
+      "has_example": true,
+      "word_count": 187
+    },
+    {
+      "id": "faq-061",
+      "category": "Technical Details",
+      "question": "What does an evasé do?",
+      "answer": "An evasé (pronounced \"ev-ah-SAY\") is a section of ductwork, usually bolted to the fan discharge, whose outlet is larger than its inlet. FanPedia gives its purpose: it expands the fan's outlet area \"to reduce the outlet velocity of the fan and to increase the static pressure capability.\"\n\nAir leaving a fan carries velocity pressure, energy the fan has already paid for, and air discharged at high velocity into a plenum or the atmosphere loses it. A gradually expanding section slows the air and converts part of that velocity pressure back into static pressure, called static regain. How much is regained depends on the evasé's angle and length; it is never the full drop.\n\nFor example, an illustrative fan moving 12,000 CFM through a 3.0 ft² outlet discharges at 4,000 fpm, about 1.00 in. wg of velocity pressure. An evasé expanding the outlet to 4.5 ft² drops the velocity to 2,667 fpm and the velocity pressure to 0.44 in. wg, so less energy is thrown away at the discharge. Some catalog ratings include the evasé, so check before adding it to the system curve.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Static Pressure",
+        "Velocity Pressure",
+        "Fan",
+        "Evasé",
+        "Outlet Velocity",
+        "System Curve"
+      ],
+      "keywords": [
+        "evasé",
+        "fan",
+        "outlet velocity",
+        "static pressure",
+        "system curve",
+        "velocity pressure"
+      ],
+      "source_links": [
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md"
+      ],
+      "has_example": true,
+      "word_count": 183
+    },
+    {
+      "id": "faq-062",
+      "category": "Technical Details",
+      "question": "What is an inlet box, and how is its position named?",
+      "answer": "An inlet box is a sheet-metal enclosure on the fan inlet that receives air from the side, at an angle, or from above or below, and turns it into the fan. FanPedia recommends it where uniform flow is hard to obtain because of limited space or where air must enter at an angle; it is a designed turn whose losses are known, unlike an elbow bolted to the inlet.\n\nFanPedia lists four styles: integral with or without a horn (sharing the housing side plate), detached bolt-on (TCF's preferred design) and detached free-standing (floor supported). Most inlet boxes carry an access door and drain connection as standard, and an FGR connection is available for flue gas recirculation. When a fan and detached box sit on different mounting planes, a flex connector is required between them.\n\nInlet box position states where the box's opening faces. It runs from 45 to 360 degrees in 45-degree steps, with 360 at the top, counted clockwise as seen from the drive side, and unlike the discharge angle it does not change with rotation. For example, a box that must meet a horizontal duct arriving from the left, seen from the drive side, is position 270, Horizontal Left Intake; a box at the top is 360, Top Down Intake. Practice with the Inlet Box Position Trainer MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Fan Inlet",
+        "Housing Side Plate",
+        "Access Door",
+        "Rotation",
+        "Discharge Angle",
+        "Inlet Box Position",
+        "Inlet Box",
+        "Flue Gas Recirculation"
+      ],
+      "keywords": [
+        "access door",
+        "discharge angle",
+        "fan",
+        "fan inlet",
+        "flue gas recirculation",
+        "housing side plate",
+        "inlet box",
+        "inlet box position",
+        "rotation"
+      ],
+      "source_links": [
+        "docs/sims/ch18-inlet-box-position-trainer/index.md",
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md",
+        "docs/chapters/12-discharge-positions-and-rotation/index.md",
+        "docs/chapters/19-damper-details-and-duct-connections/index.md"
+      ],
+      "has_example": true,
+      "word_count": 220
+    },
+    {
+      "id": "faq-063",
+      "category": "Technical Details",
+      "question": "What is the difference between sound power, sound pressure and sones?",
+      "answer": "Sound power level (Lw) is the total acoustic power a fan radiates, in decibels relative to 10⁻¹² watts. It belongs to the fan at its operating point, like BHP, and does not depend on the room or distance. That is why manufacturers publish it, usually in eight octave bands from 63 to 8,000 Hz.\n\nSound pressure level (Lp) is what a microphone measures at one location, in decibels relative to 20 micropascals. It depends on distance, room size and reflections; outdoors it falls about 6 dB each time the distance doubles. A sound pressure figure means nothing without its distance and setting.\n\nA sone measures perceived loudness on a linear scale: 2 sones sounds twice as loud as 1 sone, so a 10-sone fan sounds about twice as loud as a 5-sone fan. Sones are common on commercial roof and wall exhausters and ceiling ventilators.\n\nFor example, a specification that says only \"85 dB\" cannot be checked until you know whether it means sound power or sound pressure, at what distance, and overall or by octave band.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Ceiling Ventilator",
+        "Operating Point",
+        "Fan Sound",
+        "Sound Power Level",
+        "Decibel",
+        "Sound Pressure Level",
+        "Octave Band"
+      ],
+      "keywords": [
+        "ceiling ventilator",
+        "decibel",
+        "fan",
+        "fan sound",
+        "octave band",
+        "operating point",
+        "sound power level",
+        "sound pressure level"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": true,
+      "word_count": 177
+    },
+    {
+      "id": "faq-064",
+      "category": "Technical Details",
+      "question": "What are the four AMCA installation types?",
+      "answer": "The AMCA 210 rating standard defines four installation types by whether each side of the fan is free (open to the surroundings) or ducted, because a duct changes how air approaches and leaves the impeller:\n\n- Type A: free inlet, free outlet.\n- Type B: free inlet, ducted outlet.\n- Type C: ducted inlet, free outlet.\n- Type D: ducted inlet, ducted outlet.\n\nA certified catalog rating states which type it applies to. For example, Catalog 902's footer says performance is certified for installation types B and D, so it assumes a duct on the fan outlet. A plug fan in an air handler cabinet draws from and discharges into the open cabinet, Type A; a centrifugal fan with an open inlet in an equipment room discharging into a supply duct is Type B.\n\nApplying a rating made for one type to a job installed as another is a common source of field shortfall: a fan rated with a ducted outlet but discharging straight into a plenum loses the benefit of the outlet duct. Classify eight illustrative installations in the AMCA Installation Type Sorter MicroSim.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Fan Outlet",
+        "Centrifugal Fan",
+        "Plug Fan",
+        "AMCA 210 Rating Standard",
+        "AMCA Installation Type"
+      ],
+      "keywords": [
+        "amca 210 rating standard",
+        "amca installation type",
+        "centrifugal fan",
+        "fan",
+        "fan outlet",
+        "impeller",
+        "plug fan"
+      ],
+      "source_links": [
+        "docs/sims/ch25-amca-installation-type-sorter/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md",
+        "docs/chapters/26-reading-catalogs-and-performance-tables/index.md"
+      ],
+      "has_example": true,
+      "word_count": 185
+    },
+    {
+      "id": "faq-065",
+      "category": "Technical Details",
+      "question": "When should a roof exhauster be upblast rather than downblast?",
+      "answer": "Upblast discharge sends exhaust straight up, away from the roof surface, so the plume carries contaminants, heat and grease clear of the roof and of nearby air intakes. Upblast units carry butterfly-type gravity dampers that keep outside air from back-drafting in and give weather protection when the fan is off. Twin City Fan's VCU, VCUB and BCRU upblast roof exhausters, and the kitchen and smoke versions, use this discharge.\n\nDownblast discharge turns the air back down toward the roof, out around the unit, under a mushroom-shaped motor cover. The low silhouette and built-in weather protection suit clean air only: restroom, general office and storage exhaust. Current downblast models include the VC, DCRD and BCRD.\n\nThe deciding question is what is in the air. Both are power roof ventilators, and every rooftop unit sits on a roof curb. For example, a kitchen hood exhaust is upblast, because a downblast unit would lay grease on the roof and send fumes toward the nearest outdoor-air intake, while restroom exhaust for an office can be downblast. Practice with the Roof and Wall Exhaust Path Explorer MicroSim.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Power Roof Ventilator",
+        "Roof Ventilator",
+        "Upblast Discharge",
+        "Downblast Discharge",
+        "Roof Curb",
+        "Damper",
+        "Gravity Damper",
+        "Motor Cover"
+      ],
+      "keywords": [
+        "damper",
+        "downblast discharge",
+        "fan",
+        "gravity damper",
+        "motor cover",
+        "power roof ventilator",
+        "roof curb",
+        "roof ventilator",
+        "upblast discharge"
+      ],
+      "source_links": [
+        "docs/sims/ch05-roof-wall-exhaust-path-explorer/index.md",
+        "docs/chapters/05-roof-wall-and-specialty-exhaust-fans/index.md"
+      ],
+      "has_example": true,
+      "word_count": 182
+    },
+    {
+      "id": "faq-066",
+      "category": "Technical Details",
+      "question": "How do bypass flow and entrained flow dilute a lab exhaust plume?",
+      "answer": "A laboratory fume exhaust fan must keep hood exhaust from re-entering the building. Four flows need names:\n\n- Contaminated air: the exhaust from the fume hoods.\n- Bypass flow: fresh outside air drawn in through the bypass air plenum and mixed in before the fan.\n- Fan flow: everything through the impeller, contaminated plus bypass. The fan is selected for this.\n- Entrained flow: outside air pulled into the plume by the high-velocity jet at the nozzle or windband. It never passes through the fan.\n\nTotal plume flow = fan flow + entrained flow, and plume concentration = hood concentration × contaminated flow ÷ total flow.\n\nFor example, 8,000 CFM of hood exhaust at an illustrative 100 ppm, plus 2,000 CFM of bypass air, gives a fan flow of 10,000 CFM. If the nozzle entrains 7,000 CFM, the plume carries 17,000 CFM at 100 × 8,000 ÷ 17,000 = 47 ppm. Real entrainment is a catalog-rated value for a specific model and nozzle. Try it in the Lab Exhaust Entrained Flow Calculator MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Laboratory Fume Exhaust Fan",
+        "Entrained Flow",
+        "Bypass Air Plenum",
+        "Bypass Flow"
+      ],
+      "keywords": [
+        "bypass air plenum",
+        "bypass flow",
+        "entrained flow",
+        "fan",
+        "impeller",
+        "laboratory fume exhaust fan"
+      ],
+      "source_links": [
+        "docs/sims/ch05-lab-exhaust-entrained-flow-calculator/index.md",
+        "docs/chapters/05-roof-wall-and-specialty-exhaust-fans/index.md",
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md"
+      ],
+      "has_example": true,
+      "word_count": 173
+    },
+    {
+      "id": "faq-067",
+      "category": "Technical Details",
+      "question": "Which motor positions are allowed for a given discharge?",
+      "answer": "On SWSI Arrangements 1 and 3, the motor can sit in any of the four AMCA positions W, X, Y and Z, read facing the drive side, with W and X on the right and Y and Z on the left. Three discharges carry restrictions on Arrangements 1, 3 and 3F:\n\n- BHD: the motor interferes with the outlet, so CW excludes Z and CCW excludes W.\n- TAD: same reason; CW excludes W and CCW excludes Z.\n- THD: a height check, because the motor may not fit below the discharge (CW position W, CCW position Z). On Arrangement 1 a lengthened pedestal can accommodate it.\n\nEvery CW restriction on W becomes a CCW restriction on Z, because the housings are mirror images. Other arrangements have their own rules: Arrangement 9 uses (L) for CW and (R) for CCW, Arrangement 10 has no options, and horizontal inline fans use positions A to H.\n\nFor example, \"SWSI Arrangement 3, CW, BHD, motor position Z\" cannot be built; correct it to W, X or Y. Check combinations in the Motor Position Restriction Checker MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Arrangement 1",
+        "Arrangement 3",
+        "Arrangement 9",
+        "Arrangement 10",
+        "Motor Position"
+      ],
+      "keywords": [
+        "arrangement 1",
+        "arrangement 10",
+        "arrangement 3",
+        "arrangement 9",
+        "fan",
+        "motor position"
+      ],
+      "source_links": [
+        "docs/sims/ch13-motor-position-restriction-checker/index.md",
+        "docs/chapters/13-rotation-and-discharge-codes/index.md",
+        "docs/chapters/12-discharge-positions-and-rotation/index.md"
+      ],
+      "has_example": true,
+      "word_count": 183
+    },
+    {
+      "id": "faq-068",
+      "category": "Common Challenges",
+      "question": "Why does a fan running backward still move some air, and how is it fixed?",
+      "answer": "A centrifugal impeller must turn toward the outlet so the air spinning off the blades travels around the scroll and out. A backward inclined or airfoil wheel turned the wrong way still moves some air, but at a fraction of its rated performance, while still drawing power and making noise, so a reversed fan is easy to miss. An axial impeller turning the wrong way will not move air in the proper direction.\n\nFirst confirm the viewpoint. Centrifugal rotation is judged from the drive side; a technician at the inlet sees it mirrored. Axial rotation is judged from the discharge side. Compare with the rotation arrow on the housing, which is the startup check.\n\nFor example, after a motor replacement on a belt-driven SWSI fan ordered CW, a technician standing at the sheave guard sees the wheel turn counterclockwise. Since that is the drive side, the wheel really is backward. On a three-phase motor, interchanging any two of the three supply leads reverses it, and the next bump shows clockwise.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Centrifugal Impeller",
+        "Axial Impeller",
+        "Sheave",
+        "Rotation",
+        "Rotation Arrow"
+      ],
+      "keywords": [
+        "axial impeller",
+        "centrifugal impeller",
+        "fan",
+        "impeller",
+        "rotation",
+        "rotation arrow",
+        "sheave"
+      ],
+      "source_links": [
+        "docs/chapters/12-discharge-positions-and-rotation/index.md",
+        "docs/chapters/13-rotation-and-discharge-codes/index.md"
+      ],
+      "has_example": true,
+      "word_count": 170
+    },
+    {
+      "id": "faq-069",
+      "category": "Common Challenges",
+      "question": "Why does an installed fan deliver less air than its catalog rating?",
+      "answer": "The fan almost always matches its curve; the conditions differ from the rating. Check these causes in order:\n\n1. System resistance. If the real system needs more pressure than the design calculation, the operating point moves left. Loading filters do the same.\n2. System effect. An elbow on the inlet, a short or missing outlet duct, or swirl into the inlet adds a loss that is in neither the fan curve nor the duct calculation.\n3. Installation type. A rating certified for a ducted outlet (Types B and D) does not describe a fan discharging straight into a plenum.\n4. Density. At high temperature or altitude the fan moves the same CFM but develops less pressure, so a standard-air selection falls short against the real system.\n5. Rotation or speed. A reversed wheel or a slipping belt delivers less.\n\nFor example, a fan selected for exactly 4.0 in. wg at 10,000 CFM with an elbow at its inlet carrying 0.5 in. wg of system effect settles at about 9,560 CFM. A piezometer ring on the inlet funnel measures the installed airflow, since airflow varies with the square root of its pressure reading.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Altitude",
+        "Standard Air",
+        "Fan",
+        "Rotation",
+        "Inlet Funnel",
+        "Piezometer Ring",
+        "Fan Curve",
+        "System Resistance",
+        "Operating Point",
+        "System Effect"
+      ],
+      "keywords": [
+        "altitude",
+        "fan",
+        "fan curve",
+        "inlet funnel",
+        "operating point",
+        "piezometer ring",
+        "rotation",
+        "standard air",
+        "system effect",
+        "system resistance"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/23-spring-isolators-restraints-field-measurement/index.md"
+      ],
+      "has_example": true,
+      "word_count": 192
+    },
+    {
+      "id": "faq-070",
+      "category": "Common Challenges",
+      "question": "Why did a forward curved fan trip its motor after the ductwork changed?",
+      "answer": "Forward curved and radial bladed fans have an overloading power curve: brake horsepower keeps rising as airflow increases, all the way to the right end of the curve. A motor sized exactly for the design point is overloaded if the fan runs at more airflow than expected. That happens when the duct system has less resistance than calculated, an access door is left open, or a downstream damper or filter is removed. Less resistance moves the operating point to the right, toward more airflow and more power.\n\nBackward inclined, backward curved and airfoil fans have a non-overloading curve: BHP peaks and then falls, so a motor sized for that peak is protected at that speed wherever the fan runs.\n\nFor example, on an illustrative backward inclined fan whose BHP peaks at 9.5, a 10 hp motor is safe even if the resistance was overestimated. For an overloading fan, either size the motor for the highest airflow the fan could realistically see, or confirm the system resistance before startup.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Duct System",
+        "Fan",
+        "Radial Bladed Fan",
+        "Access Door",
+        "Damper",
+        "Brake Horsepower",
+        "System Resistance",
+        "Operating Point",
+        "Overloading Power Curve"
+      ],
+      "keywords": [
+        "access door",
+        "brake horsepower",
+        "damper",
+        "duct system",
+        "fan",
+        "horsepower",
+        "operating point",
+        "overloading power curve",
+        "radial bladed fan",
+        "system resistance"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/08-centrifugal-and-axial-impeller-types/index.md"
+      ],
+      "has_example": true,
+      "word_count": 168
+    },
+    {
+      "id": "faq-071",
+      "category": "Common Challenges",
+      "question": "Why does a hot-gas fan overload its motor at startup?",
+      "answer": "At a given speed a fan moves the same CFM whatever the density, but brake horsepower rises in proportion to density. A fan selected for hot air starts on cold, denser air, so it draws more power until the airstream heats up. That is cold start horsepower.\n\nThe density ratio of cold to hot air is (Thot + 460) ÷ (Tcold + 460). For example, a fan showing 7.0 BHP at 200°F starts on 70°F air at 660 ÷ 530 = 1.245 times the power, or 8.7 BHP. A 7-1/2 HP motor with a 1.15 service factor can carry only 8.6 HP, and on a VFD (service factor 1.0) only 7.5 HP. For a 600°F fan the gap is larger still: the temperature factor is 0.500, so the cold start needs twice the running power.\n\nThe fix is to size the motor for the coldest start, including drive losses and the site altitude, or to specify a startup sequence (a closed damper or reduced VFD speed) that limits the cold-start load.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Altitude",
+        "Airstream",
+        "Fan",
+        "Damper",
+        "Brake Horsepower",
+        "Cold Start Horsepower"
+      ],
+      "keywords": [
+        "airstream",
+        "altitude",
+        "brake horsepower",
+        "cold start horsepower",
+        "damper",
+        "fan",
+        "horsepower"
+      ],
+      "source_links": [
+        "docs/chapters/14-fan-motors-and-enclosures/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 171
+    },
+    {
+      "id": "faq-072",
+      "category": "Common Challenges",
+      "question": "Does an explosion-proof motor make the fan safe for a flammable airstream?",
+      "answer": "No. An explosion proof motor (EXPL) is engineered so that an arc or explosion inside the motor cannot ignite a dangerous atmosphere around it. Its intended duty code is DFG, and it is chosen for the hazardous location the owner classifies under the National Electrical Code. It protects the area around the motor; it does nothing about the fan.\n\nThe fan's own airstream parts, the impeller, inlet funnel and housing, can still strike a spark if they touch. That risk is addressed by spark-resistant construction (Type A, B or C), a separate line on the order. Bearings are not allowed in the airstream of a spark-resistant fan, so a belt-driven arrangement such as Arrangement 9 keeps the motor and bearings out of the airstream too.\n\nFor example, a paint spray room exhaust where the area is classified for solvent vapor needs both an explosion-proof motor for the stated class, division and group, and spark-resistant fan construction because the vapor passes through the fan. Ask the customer for the classification in writing; it is theirs to make. ATEX jobs need a special motor.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Arrangement 9",
+        "Explosion Proof Motor",
+        "Inlet Funnel",
+        "Spark Resistant Construction"
+      ],
+      "keywords": [
+        "airstream",
+        "arrangement 9",
+        "bearing",
+        "explosion proof motor",
+        "fan",
+        "impeller",
+        "inlet funnel",
+        "spark resistant construction"
+      ],
+      "source_links": [
+        "docs/chapters/14-fan-motors-and-enclosures/index.md",
+        "docs/chapters/20-construction-classes-materials-spark-resistance/index.md"
+      ],
+      "has_example": true,
+      "word_count": 182
+    },
+    {
+      "id": "faq-073",
+      "category": "Common Challenges",
+      "question": "What is the difference between the drive service factor and the motor service factor?",
+      "answer": "They are different numbers from different documents, and confusing them is a common mistake.\n\nThe motor service factor is on the motor nameplate. It says how far above rated horsepower the motor may run: 1.15 on a 100 HP motor allows 115 HP. It drops to 1.0 when the motor runs on a VFD.\n\nThe drive service factor is a sizing multiplier from the belt drive manufacturer's table. It allows for starting loads, hours of operation and the character of the driven machine. Multiplying the motor horsepower by it gives the design horsepower used to select belts and sheaves.\n\nFor example, a belt-driven fan with a 15 hp motor running around the clock, with an illustrative drive service factor of 1.3, needs belts and sheaves for 15 × 1.3 = 19.5 hp. The belt count is design horsepower divided by the per-belt rating, rounded up. Keep the two factors on separate lines of the calculation.",
+      "bloom_level": "Remember",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Fan",
+        "Belt Drive",
+        "Sheave",
+        "Drive Service Factor",
+        "Motor Service Factor",
+        "Motor Nameplate"
+      ],
+      "keywords": [
+        "belt drive",
+        "drive service factor",
+        "fan",
+        "horsepower",
+        "motor nameplate",
+        "motor service factor",
+        "sheave"
+      ],
+      "source_links": [
+        "docs/chapters/11-drives-and-standard-fan-arrangements/index.md",
+        "docs/chapters/14-fan-motors-and-enclosures/index.md"
+      ],
+      "has_example": true,
+      "word_count": 155
+    },
+    {
+      "id": "faq-074",
+      "category": "Common Challenges",
+      "question": "A customer asked for \"inlet guide vanes.\" Which part do they mean?",
+      "answer": "On a centrifugal fan, \"inlet guide vanes\" almost always means the inlet vane flow-control accessory: a ring of adjustable radial vanes at the fan inlet that pre-spin the entering air to control airflow. FanPedia lists inlet guide vanes, vortex damper, inlet damper and radial inlet damper as other names for this device. Inlet vanes come in nested (inside the inlet funnel, for clean air) and external (for contaminated or hot air) styles, both to 600°F.\n\nGuide vanes on an axial fan are something else: fixed vanes downstream of the impeller that straighten the swirl and make a tubeaxial into a vaneaxial. Inline centrifugal and mixed flow fans have similar straightening vanes.\n\nFor example, \"vaneaxial fan, guide vanes required\" is consistent and needs nothing extra, while \"housed centrifugal fan with inlet guide vanes for capacity control\" needs an inlet vane accessory added. Because they are different parts in different catalog sections, confirm with the customer before the order is entered.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Fan Inlet",
+        "Centrifugal Fan",
+        "Axial Fan",
+        "Mixed Flow Fan",
+        "Housed Centrifugal Fan",
+        "Guide Vanes",
+        "Vaneaxial Fan",
+        "Straightening Vanes",
+        "Inlet Funnel",
+        "Flow Control",
+        "Damper",
+        "Pre-Spin"
+      ],
+      "keywords": [
+        "axial fan",
+        "centrifugal fan",
+        "damper",
+        "fan",
+        "fan inlet",
+        "flow control",
+        "guide vanes",
+        "housed centrifugal fan",
+        "impeller",
+        "inlet funnel",
+        "mixed flow fan",
+        "pre-spin"
+      ],
+      "source_links": [
+        "docs/chapters/04-centrifugal-axial-and-mixed-flow-fans/index.md",
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md"
+      ],
+      "has_example": true,
+      "word_count": 159
+    },
+    {
+      "id": "faq-075",
+      "category": "Common Challenges",
+      "question": "Why did adding neoprene pads make a fan's vibration worse?",
+      "answer": "An isolator only isolates when the fan's forcing frequency (RPM ÷ 60) is at least about 1.4 times the isolator's natural frequency. Below that ratio the isolator amplifies the force, and at a ratio of 1 the assembly resonates. Natural frequency comes from static deflection: fn ≈ 3.13 ÷ √deflection, in hertz with deflection in inches.\n\nA neoprene pad deflects only about 0.0625 in., so its natural frequency is about 12.5 Hz, roughly 750 RPM. Any fan running below about 1,060 RPM sits below the 1.4 ratio and is made worse by the pads. For example, a large fan at 600 RPM (10 Hz) on pads has a frequency ratio of 0.80 and the force is amplified about 2.8 times, while 1 in. springs on the same fan give about 89 percent isolation.\n\nCheck the frequency ratio before choosing an isolator. Pads give minimal isolation; rubber-in-shear (0.2 to 0.5 in.) gives moderate; springs (1 or 2 in.) give high. Try the Spring Isolator Deflection Calculator MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Vibration",
+        "Isolator Deflection",
+        "Spring Isolator"
+      ],
+      "keywords": [
+        "fan",
+        "isolator deflection",
+        "spring isolator",
+        "vibration"
+      ],
+      "source_links": [
+        "docs/sims/ch23-spring-isolator-deflection-calculator/index.md",
+        "docs/chapters/22-fan-bases-and-vibration-isolation/index.md"
+      ],
+      "has_example": true,
+      "word_count": 166
+    },
+    {
+      "id": "faq-076",
+      "category": "Common Challenges",
+      "question": "Why do damper blades flutter, and how is it stopped?",
+      "answer": "Blade flutter is a rapid, uneven oscillation of damper blades that are only partly open. It happens when the airflow alone is holding the blades in position. FanPedia names the cause: in low-flow conditions the velocity pressure of the airstream may only partly open automatic damper blades, and the result is flutter and possibly more noise. Over time it also wears pivots and bearings.\n\nThe cure is to stop relying on the airstream. A damper actuator, electric or pneumatic, drives the blades to a commanded position. A motorized damper with an actuator opens fully even at low flow.\n\nFor example, a gravity damper on a fan that runs long hours at low speed on a VFD will hover half open and chatter; quote a motorized damper instead. Separately, check the blade type: flat blade (Type 1) and airfoil blade (Type 2) are both offered on outlet dampers, but the parallel blade inlet box damper is Type 2 only, so a quote pairing it with flat blades is an error to catch early.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Velocity Pressure",
+        "Airstream",
+        "Fan",
+        "Bearing",
+        "Inlet Box",
+        "Damper",
+        "Outlet Damper",
+        "Inlet Box Damper",
+        "Gravity Damper",
+        "Motorized Damper",
+        "Blade Flutter",
+        "Damper Actuator"
+      ],
+      "keywords": [
+        "airstream",
+        "bearing",
+        "blade flutter",
+        "damper",
+        "damper actuator",
+        "fan",
+        "gravity damper",
+        "inlet box",
+        "inlet box damper",
+        "motorized damper",
+        "outlet damper",
+        "velocity pressure"
+      ],
+      "source_links": [
+        "docs/chapters/19-damper-details-and-duct-connections/index.md",
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md"
+      ],
+      "has_example": true,
+      "word_count": 172
+    },
+    {
+      "id": "faq-077",
+      "category": "Common Challenges",
+      "question": "Why are some performance table cells blank, and why avoid the stall region?",
+      "answer": "To the left of the peak of the pressure curve is the stall region. There the airflow through the impeller is too low for the blade angles: air separates from the blades, pockets recirculate in and out of the impeller, and pressure becomes unsteady. A fan in stall may pulse, surge, vibrate and rumble, and it wears faster. Forward curved fans have a dip in their pressure curve, and the region left of the right-hand peak is unstable.\n\nCatalog tables usually stop short of the stall region so a reader cannot pick a point inside it, which is one reason a table may have blank cells at low airflow and high pressure.\n\nFor example, on an illustrative fan whose pressure peaks at 4.9 in. wg at 4,000 CFM, a duty of 10,000 CFM at 4.0 in. wg is stable, but 3,000 CFM at about 4.85 in. wg is in stall even though the fan can technically make that pressure. Offer a smaller fan, on which the duty falls right of the peak. The same rule applies to fans in parallel: each must run right of its peak.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Stall Region",
+        "Surge",
+        "Performance Table",
+        "Fans in Parallel"
+      ],
+      "keywords": [
+        "fan",
+        "fans in parallel",
+        "impeller",
+        "performance table",
+        "stall region",
+        "surge"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": true,
+      "word_count": 187
+    },
+    {
+      "id": "faq-078",
+      "category": "Common Challenges",
+      "question": "Is \"static pressure\" on a specification the same as a gauge reading?",
+      "answer": "Not necessarily. Fan static pressure, the AMCA definition used in North American catalogs, is fan total pressure minus the outlet velocity pressure, where fan total pressure is the total pressure at the outlet minus the total pressure at the inlet. It is built from total pressures, not from one gauge reading.\n\nA gauge at the outlet reads the outlet static pressure only. It leaves out whatever the inlet ductwork has already removed on the suction side, and it ignores velocity pressure. Fan total pressure and fan static pressure also differ by the outlet velocity pressure, which depends on the outlet area.\n\nFor example, at 10,000 CFM through a 4.0 ft² outlet (velocity pressure 0.39 in. wg), a duty of 4.0 in. wg fan static pressure is 4.39 in. wg fan total pressure. A smaller fan with a 2.5 ft² outlet needs 5.0 in. wg fan total pressure for the same static work. Confirm which pressure a specification means before selecting, because mixing them up can be off by an inch of water gauge.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Static Pressure",
+        "Velocity Pressure",
+        "Total Pressure",
+        "Fan",
+        "Outlet Velocity",
+        "Fan Static Pressure",
+        "Fan Total Pressure",
+        "Outlet Velocity Pressure"
+      ],
+      "keywords": [
+        "fan",
+        "fan static pressure",
+        "fan total pressure",
+        "outlet velocity",
+        "outlet velocity pressure",
+        "static pressure",
+        "total pressure",
+        "velocity pressure"
+      ],
+      "source_links": [
+        "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
+      ],
+      "has_example": true,
+      "word_count": 173
+    },
+    {
+      "id": "faq-079",
+      "category": "Common Challenges",
+      "question": "Why does a customer's motor position get rejected on a swingout or Arrangement 9 fan?",
+      "answer": "Motor position rules follow the arrangement. The swingout arrangements carry fixed or swing-dependent rules, because the whole impeller, shaft and bearing assembly rides out on a hinged door.\n\n- Arrangement 9 and 9F (SWSI): standard is (L) for CW fans and (R) for CCW fans.\n- 9SS swingout: fixed. CW with (L) only (right swing); CCW with (R) only (left swing). A left swing 9SS must have an F2 conduit box position.\n- 9ST swingout: (R) on right swing and (L) on left swing, with the motor on a slide base above the pedestal.\n- Arrangement 10: the motor position is unique to the pedestal design, with no options.\n- 3F (DWDI): W and Z standard; consult the factory for X and Y.\n\nFor example, an order for a 9SS fan, CW rotation, motor position (R) cannot be built; the CW 9SS takes (L) only. Changing rotation changes the swing and the motor side together, so check all three on the drawing. The Motor Position Rule Checker MicroSim practices the rules.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Arrangement 9",
+        "Arrangement 10",
+        "Rotation",
+        "Motor Position",
+        "Conduit Box Position",
+        "Conduit Box",
+        "Slide Base"
+      ],
+      "keywords": [
+        "arrangement 10",
+        "arrangement 9",
+        "bearing",
+        "conduit box",
+        "conduit box position",
+        "fan",
+        "impeller",
+        "motor position",
+        "rotation",
+        "slide base"
+      ],
+      "source_links": [
+        "docs/sims/ch24-motor-position-rule-checker/index.md",
+        "docs/chapters/13-rotation-and-discharge-codes/index.md",
+        "docs/chapters/24-advanced-arrangements-and-configuration-variants/index.md"
+      ],
+      "has_example": true,
+      "word_count": 171
+    },
+    {
+      "id": "faq-080",
+      "category": "Best Practices",
+      "question": "How do I choose the right flow-control method for a fan?",
+      "answer": "Start with what the customer actually needs, because the methods answer three different needs:\n\n- Stop reverse flow when the fan is off: a gravity damper (wall, ceiling or butterfly). No power or wiring, but it needs airflow to open.\n- Set airflow once: a manual damper, for balancing.\n- Change airflow while running: an outlet damper, an inlet box damper, variable inlet vanes or speed control.\n\nFor the third need, weigh how often and how far airflow drops, what the airstream carries, and what the motor and budget allow. At 70 percent airflow, Chapter 18's illustrative comparison has an outlet damper drawing about 86 percent of design power, inlet vanes about 67 percent and speed control about 34 percent. So an outlet damper fits infrequent reduction and hot, humid or dirty air at the lowest first cost; inlet vanes fit frequent reduction on a constant-speed fan; and a VFD or EC controller fits fans that run at part load for long hours. Check the turndown range covers the process, and remember that a fixed pressure component in the system shrinks the speed-control saving. Try the Flow Control Method Selector MicroSim.",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Inlet Box",
+        "Flow Control",
+        "Damper",
+        "Outlet Damper",
+        "Inlet Box Damper",
+        "Gravity Damper",
+        "Manual Damper",
+        "Variable Inlet Vanes",
+        "Speed Control",
+        "Turndown"
+      ],
+      "keywords": [
+        "airstream",
+        "damper",
+        "fan",
+        "flow control",
+        "gravity damper",
+        "inlet box",
+        "inlet box damper",
+        "manual damper",
+        "outlet damper",
+        "speed control",
+        "turndown",
+        "variable inlet vanes"
+      ],
+      "source_links": [
+        "docs/sims/ch18-flow-control-method-selector/index.md",
+        "docs/chapters/18-inlets-outlets-and-flow-control/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": false,
+      "word_count": 191
+    },
+    {
+      "id": "faq-081",
+      "category": "Best Practices",
+      "question": "How do I choose an arrangement for a hot or dirty airstream?",
+      "answer": "Ask the arrangement questions in order: can the bearings and motor be in the airstream, is the drive belt or direct, does the assembly fit the space, and does it need isolators?\n\nFor hot, dirty, corrosive or spark-resistant duty, keep the bearings out of the airstream. There are three ways:\n\n1. Overhang the impeller so both bearings sit on a pedestal outside the housing: Arrangements 1, 8, 9 and 10.\n2. Add inlet boxes to a center hung fan so the inlet-side bearing stands outside the box: Arrangements 3SI, 3DI, 7SI and 7DI.\n3. Put the whole drive outside the air path, as plug fans do.\n\nFor example, screening a belt-driven exhaust fan for 350°F dusty air rejects Arrangement 3 SWSI (one bearing in the air) and 3 DWDI (both bearings in the air, 130°F clean air only), and keeps Arrangements 1, 9 and 10, all on FanPedia's high-temperature centrifugal list. The final choice then comes down to motor location and footprint. Note that Arrangement 9F cannot take isolators directly under the fan.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Plug Fan",
+        "Arrangement 3",
+        "Inlet Box",
+        "Arrangement 9F"
+      ],
+      "keywords": [
+        "airstream",
+        "arrangement 3",
+        "arrangement 9f",
+        "bearing",
+        "fan",
+        "impeller",
+        "inlet box",
+        "plug fan"
+      ],
+      "source_links": [
+        "docs/chapters/11-drives-and-standard-fan-arrangements/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 173
+    },
+    {
+      "id": "faq-082",
+      "category": "Best Practices",
+      "question": "How do I pick an impeller for an airstream that carries dust or material?",
+      "answer": "Ask what the material does inside the fan: does it stick, wrap, strike or pass through? Then move along the impeller line only as far as the airstream forces you, because each step from airfoil to backward curved to radial tip to radial bladed gives up efficiency for ruggedness.\n\n Airstream  Impeller \n------\n Clean air  Airfoil (highest efficiency) \n Light dust  Backward curved \n High airflow, dirty, particulate-laden gas  Radial tip \n Coarse, sticky, heavy or abrasive material  Open radial paddle \n Long, stringy or fibrous material  Material handling (back plate wool) \n Paper trim, high-impact loading  Paper handling \n Relatively clean air, fumes, light contaminants  Air handling radial \n\nForward curved impellers belong in clean air, because their shallow blade pockets collect dust.\n\nThe position in the system matters too. For example, a dust collection fan on the clean side of a filter can be backward inclined, while a fan in a cyclone application, where dust-laden air reaches the fan, points to radial bladed. The Impeller Recommender for Real Airstreams MicroSim practices the decision.",
+      "bloom_level": "Analyze",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Forward Curved Impeller",
+        "Dust Collection Fan"
+      ],
+      "keywords": [
+        "airstream",
+        "dust collection fan",
+        "fan",
+        "forward curved impeller",
+        "impeller"
+      ],
+      "source_links": [
+        "docs/sims/ch09-impeller-recommender/index.md",
+        "docs/chapters/09-impeller-construction-and-material-handling/index.md",
+        "docs/chapters/06-industrial-fans-and-application-product-lines/index.md"
+      ],
+      "has_example": true,
+      "word_count": 167
+    },
+    {
+      "id": "faq-083",
+      "category": "Best Practices",
+      "question": "Should I recommend direct drive or belt drive?",
+      "answer": "Run the fan laws before you say \"direct drive.\" Without a VFD, a direct-drive fan turns at motor speed, so the required fan speed must be close to a real motor speed (about 1,780 or 1,180 RPM for 4- and 6-pole motors on 60 Hz at full load).\n\nFor example, a selection needing 1,450 RPM coupled to a 4-pole motor at 1,780 RPM would deliver 23 percent too much air and absorb (1,780 ÷ 1,450)³ = 1.85 times the power; a 6-pole motor at 1,180 RPM would fall 19 percent short. Either a belt drive at 1,450 RPM or a direct drive with a VFD meets the duty.\n\nThen weigh the trade-offs:\n\n- Belt drive reaches any speed, and the speed can be changed later with a new sheave; FanPedia says the exact point of rating \"can be easily achieved\" on belt-driven Arrangement 9 fans. It adds belts to tension and replace.\n- Direct drive removes belts, belt dust and belt maintenance and is simple, but needs a VFD to hit an exact speed, and coupled arrangements such as 8 are longer.\n\nWrite down the reason, tied to a requirement such as space, maintenance access or turndown.",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan Speed",
+        "Fan",
+        "Direct Drive",
+        "Belt Drive",
+        "Sheave",
+        "Arrangement 9",
+        "Turndown",
+        "Fan Laws"
+      ],
+      "keywords": [
+        "arrangement 9",
+        "belt drive",
+        "direct drive",
+        "fan",
+        "fan laws",
+        "fan speed",
+        "sheave",
+        "turndown"
+      ],
+      "source_links": [
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md",
+        "docs/chapters/11-drives-and-standard-fan-arrangements/index.md"
+      ],
+      "has_example": true,
+      "word_count": 197
+    },
+    {
+      "id": "faq-084",
+      "category": "Best Practices",
+      "question": "How do I size the motor from a catalog selection?",
+      "answer": "1. Take the catalog BHP at standard air and correct it to the worst operating condition. For a hot fan that is the cold start: the BHP on the coldest, densest air at the site altitude, not the hot running BHP.\n2. Add the drive loss for a belt drive; catalog BHP excludes transmission losses.\n3. Choose the next standard NEMA motor rating at or above the result, without planning to run in the service factor.\n4. Choose the enclosure, efficiency class, intended duty and inverter-duty rating from the job conditions.\n\nFor example, a fan that needs 8.96 BHP hot at 300°F and 3,000 ft draws 12.87 BHP when it starts in 70°F air at the same altitude. With an illustrative 4 percent drive loss the cold requirement is 12.87 ÷ 0.96 = 13.41 hp, so the motor is 15 HP, not the 10 HP the hot BHP suggests. A smaller motor is justified only by a deliberate startup sequence, such as a closed damper or reduced VFD speed. Catalog 300 also calls for drives and belts rated for 150 percent of the required motor horsepower.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Horsepower",
+        "Altitude",
+        "Standard Air",
+        "Fan",
+        "Belt Drive",
+        "Damper",
+        "Transmission Losses"
+      ],
+      "keywords": [
+        "altitude",
+        "belt drive",
+        "damper",
+        "fan",
+        "horsepower",
+        "standard air",
+        "transmission losses"
+      ],
+      "source_links": [
+        "docs/chapters/26-reading-catalogs-and-performance-tables/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 186
+    },
+    {
+      "id": "faq-085",
+      "category": "Best Practices",
+      "question": "How do I interpolate between rows and columns in a performance table?",
+      "answer": "Duty points rarely land on a printed row and column. Catalog tables are spaced closely enough that straight-line interpolation is accepted practice:\n\nvalue = value₁ + (x − x₁) ÷ (x₂ − x₁) × (value₂ − value₁).\n\nDo a double interpolation as three single ones, writing each result down.\n\nFor example, on the RBA 913 table, find 4,000 CFM at 14 in. SP:\n\n1. The airflow lies between the 3,720 and 4,092 CFM rows: fraction = 280 ÷ 372 = 0.753.\n2. In the 12 in. column: 2,128 + 0.753 × (2,167 − 2,128) = 2,157 RPM, and 11.42 BHP.\n3. In the 16 in. column, at the same fraction: 2,425 RPM and 14.95 BHP.\n4. 14 in. is halfway between 12 and 16: 2,291 RPM and 13.18 BHP.\n\nThe result is Class 22, since 2,291 is at or below 2,812 RPM. When pressure columns are far apart, confirm the final speed in Fan Selector, which computes the point directly. Practice with the Performance Table Reader MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Duty Point",
+        "Performance Table",
+        "Interpolation"
+      ],
+      "keywords": [
+        "duty point",
+        "fan",
+        "interpolation",
+        "performance table"
+      ],
+      "source_links": [
+        "docs/sims/ch26-performance-table-reader/index.md",
+        "docs/chapters/26-reading-catalogs-and-performance-tables/index.md"
+      ],
+      "has_example": true,
+      "word_count": 167
+    },
+    {
+      "id": "faq-086",
+      "category": "Best Practices",
+      "question": "How do I keep system effect from costing performance at installation?",
+      "answer": "System effect is easiest to avoid on the drawing, before the duct is built:\n\n- Classify the installation as AMCA Type A, B, C or D and confirm the catalog rating applies to it.\n- Keep elbows off the inlet. Where air must turn into the fan, use an inlet box, which is designed to minimize the system effect of a 90-degree turn. Inlet losses are usually larger than outlet losses for the same fault.\n- Allow an effective duct length of straight outlet duct before the first elbow or damper, so the lopsided velocity profile leaving the scroll can even out.\n- Choose the discharge position so a forced outlet elbow turns in the same direction as the scroll.\n- Add any remaining system effect from AMCA 201 curves to the design pressure before selecting.\n\nFor example, a 24 by 30 in. outlet at 3,500 fpm has an equivalent diameter of 30.3 in. and an effective duct length of 3.5 × 30.3 = 106 in., about 8.8 ft of straight duct before the first elbow. Sort jobs by installation type in the AMCA Installation Type Sorter MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "medium",
+      "concepts": [
+        "Fan",
+        "Discharge Position",
+        "Inlet Box",
+        "Damper",
+        "System Effect",
+        "AMCA Installation Type",
+        "Effective Duct Length"
+      ],
+      "keywords": [
+        "amca installation type",
+        "damper",
+        "discharge position",
+        "effective duct length",
+        "fan",
+        "inlet box",
+        "system effect"
+      ],
+      "source_links": [
+        "docs/sims/ch25-amca-installation-type-sorter/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md"
+      ],
+      "has_example": true,
+      "word_count": 188
+    },
+    {
+      "id": "faq-087",
+      "category": "Best Practices",
+      "question": "When should two fans run in parallel, and when in series?",
+      "answer": "Add the curves, not the ratings, and let the system curve decide.\n\n- Fans in parallel draw from and discharge into a common system side by side. At any pressure their airflows add. They give redundancy and staging and help most on a flat (low-resistance) system. Each must run right of its peak pressure point, or one can take most of the flow while the other stalls, and each needs a backdraft damper if it may run alone.\n- Fans in series move the same air one after the other. At any airflow their pressures add. They help most on a steep, high-resistance system; a multi-stage blower is a series arrangement inside one housing.\n\nFor example, with an illustrative fan making 10,000 CFM at 4.0 in. wg on a steep system, a second fan in parallel adds only about 10 percent more air (about 11,000 CFM). On a flat system needing 1.0 in. wg at 10,000 CFM, the same pair in parallel reaches 20,000 CFM, more than 40 percent above the single fan's 14,000 CFM. Predict each case in the Fans in Parallel and Series Explorer MicroSim. When one parallel fan stands idle, air can flow backward through it, which is a case for an anti-backspin device.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Blower",
+        "Backdraft Damper",
+        "Damper",
+        "Anti-Backspin Device",
+        "System Curve",
+        "Peak Pressure Point",
+        "Fans in Parallel",
+        "Fans in Series"
+      ],
+      "keywords": [
+        "anti-backspin device",
+        "backdraft damper",
+        "blower",
+        "damper",
+        "fan",
+        "fans in parallel",
+        "fans in series",
+        "peak pressure point",
+        "system curve"
+      ],
+      "source_links": [
+        "docs/sims/ch25-parallel-series-explorer/index.md",
+        "docs/chapters/25-fan-laws-system-effect-and-sound/index.md",
+        "docs/chapters/23-spring-isolators-restraints-field-measurement/index.md"
+      ],
+      "has_example": true,
+      "word_count": 207
+    },
+    {
+      "id": "faq-088",
+      "category": "Best Practices",
+      "question": "How do I choose a fan base and isolators?",
+      "answer": "Fan installation decisions (support, base, isolation, connections) do not appear on the fan curve, so make them before the order. Decide first whether the fan needs isolation at all. A fan on a heavy slab in a plant, away from people and sensitive equipment, usually needs only a unitary base (channel base), built for use without isolators. Isolation earns its cost on a roof, mezzanine or other light structure, or near occupied space.\n\nIf isolation is needed:\n\n- An isolation base carries the fan, motor and drive on heavy channel, on spring or rubber-in-shear isolators, with flex connectors at the inlet and outlet.\n- An inertia base adds rebar and customer-poured concrete, typically for longer direct-drive fans, to stiffen the assembly and keep the motor, coupling, shaft and bearings aligned.\n\nThen choose deflection from the fan speed: the frequency ratio (RPM ÷ 60 divided by 3.13 ÷ √deflection) must exceed about 1.4. Twin City Fan's typical isolators deflect under 1 in., 1 in. or 2 in. For example, a 600 RPM fan needs springs; pads would amplify its vibration. Internally isolated fans, such as commercial roof ventilators, need no other isolation. The Fan Base and Isolation Selector MicroSim walks through the choice.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan Speed",
+        "Fan",
+        "Bearing",
+        "Roof Ventilator",
+        "Direct Drive",
+        "Fan Installation",
+        "Fan Base",
+        "Unitary Base",
+        "Isolation Base",
+        "Inertia Base",
+        "Vibration",
+        "Rubber-in-Shear Isolator",
+        "Fan Curve",
+        "Internally Isolated Fan"
+      ],
+      "keywords": [
+        "bearing",
+        "direct drive",
+        "fan",
+        "fan base",
+        "fan curve",
+        "fan installation",
+        "fan speed",
+        "inertia base",
+        "internally isolated fan",
+        "isolation base",
+        "roof ventilator",
+        "rubber-in-shear isolator"
+      ],
+      "source_links": [
+        "docs/sims/ch22-fan-base-isolation-selector/index.md",
+        "docs/chapters/22-fan-bases-and-vibration-isolation/index.md"
+      ],
+      "has_example": true,
+      "word_count": 202
+    },
+    {
+      "id": "faq-089",
+      "category": "Best Practices",
+      "question": "How would I build a fan selection checklist for a sales team?",
+      "answer": "Build the checklist from the decisions selection must make, so every value a later step consumes is collected up front. Chapter 27's categories are a strong starting template:\n\n Category  Values to collect \n------\n Duty  Airflow (ACFM), static pressure, actual or standard conditions, alternate duty points \n Air conditions  Normal, maximum and minimum temperature; elevation or barometric pressure; moisture \n Airstream contents  Dust type, loading, stickiness, abrasiveness; corrosive vapors; flammable gases or dusts \n Space  Footprint, height, inlet and outlet duct directions, service clearances, rigging path \n Noise  Limit, form (sound power or pressure, octave bands or A-weighted), where it applies \n Efficiency  FEG, FEI or motor efficiency requirement, operating hours \n Electrical  Voltage, phase, frequency, enclosure, hazardous classification, VFD or across-the-line \n Flow control  Turndown range, how often, damper, vanes or speed control \n Installation  Floor, mezzanine, roof or ceiling; isolation; seismic or wind \n Documents  Submittals, certified drawings, tests, schedule \n\nThe items most often missed are minimum temperature (it sets the cold start), elevation, airstream contents and the form of the noise limit. Treat the checklist as a living document: when a job reveals a requirement you did not ask for, add a row. The Fan Selection Workflow MicroSim shows which step consumes each value.",
+      "bloom_level": "Create",
+      "difficulty": "hard",
+      "concepts": [
+        "Static Pressure",
+        "Airstream",
+        "Fan",
+        "Flow Control",
+        "Damper",
+        "Speed Control",
+        "Turndown",
+        "Duty Point",
+        "Fan Selection",
+        "Fan Selection Checklist",
+        "Barometric Pressure",
+        "Octave Band",
+        "Certified Drawings"
+      ],
+      "keywords": [
+        "airstream",
+        "barometric pressure",
+        "certified drawings",
+        "damper",
+        "duty point",
+        "fan",
+        "fan selection",
+        "fan selection checklist",
+        "flow control",
+        "octave band",
+        "speed control",
+        "static pressure"
+      ],
+      "source_links": [
+        "docs/sims/ch27-fan-selection-workflow/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": false,
+      "word_count": 197
+    },
+    {
+      "id": "faq-090",
+      "category": "Best Practices",
+      "question": "How do I choose a shaft seal for a fan?",
+      "answer": "Start from the construction the airstream calls for, then from how much leakage the customer can accept:\n\n Construction  Shaft seal types FanPedia lists \n------\n Standard  Friction (standard type) \n High temperature, upgraded seal  Stuffing box or mechanical (carbon ring) \n Nominally leak-tight (Arr. 1, 8, 9)  Lip, Graphoil stuffing box, double ring mechanical; no shaft sleeve and cap \n RTO  Friction, single carbon ring, commercially available carbon ring \n AMCA A spark resistant with specialty seal  Specialty shaft seal, Monel shaft \n\nWhen gas must not escape at all, a gas purge seal is the stronger choice: a stuffing box or carbon ring seal whose lantern ring is fed with clean gas at higher pressure than the process gas so only clean gas leaks. The purge line is customer-supplied, so say so on the quote.\n\nFor example, a general exhaust fan at 90°F with no leakage requirement gets the standard friction seal, stepping up to a lip seal if the engineer later adds \"minimize leakage.\" On an RTO fan, any dampers also need stuffing boxes on their shafts.",
+      "bloom_level": "Understand",
+      "difficulty": "medium",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Shaft Sleeve",
+        "Shaft Seal",
+        "Carbon Ring Seal",
+        "Gas Purge Seal",
+        "Damper"
+      ],
+      "keywords": [
+        "airstream",
+        "carbon ring seal",
+        "damper",
+        "fan",
+        "gas purge seal",
+        "shaft seal",
+        "shaft sleeve"
+      ],
+      "source_links": [
+        "docs/chapters/16-bearings-shafts-and-shaft-seals/index.md",
+        "docs/chapters/17-bearing-details-lubrication-and-pedestals/index.md"
+      ],
+      "has_example": true,
+      "word_count": 173
+    },
+    {
+      "id": "faq-091",
+      "category": "Advanced Topics",
+      "question": "What makes a fan \"nominally leak-tight\"?",
+      "answer": "A fan generally cannot be built totally leak-tight. A nominally leak-tight fan is built to reduce leakage to a level agreed with the customer, verified by shop testing and recorded on the inspection form. The first question is therefore \"how much leakage is acceptable, and of what gas?\" rather than \"which seal?\"\n\nFanPedia's construction list closes one leak path per line:\n\n- Arrangements 1, 8 and 9 only, with a solid drive side.\n- Not recommended over 600°F; split housings not recommended, and where used they need centering plates.\n- Close bolt spacing on 3 to 4 in. centers at flanges, access doors, cover plates, inlet funnels and splits.\n- Gasketing on all connections, with double gaskets.\n- Continuous welds instead of intermittent welds.\n- A lip, Graphoil stuffing box or double carbon ring shaft seal on the shaft itself, with no shaft sleeve and cap.\n- A pipe-coupling drain with a plug, and a soap bubble test at the shop.\n\nFor example, a request for an Arrangement 4 fan with a split housing for a 350°F toxic vent fails twice: propose Arrangement 1 or 8 and avoid the split. Sort requirements in the Leak-Tight Versus RTO Requirement Sorter MicroSim.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Access Door",
+        "Split Housing",
+        "Arrangement 1",
+        "Arrangement 4",
+        "Shaft Sleeve",
+        "Shaft Seal",
+        "Inlet Funnel",
+        "Nominally Leak-Tight Fan",
+        "Gasketing",
+        "Soap Bubble Test",
+        "Centering Plate"
+      ],
+      "keywords": [
+        "access door",
+        "arrangement 1",
+        "arrangement 4",
+        "centering plate",
+        "fan",
+        "gasketing",
+        "inlet funnel",
+        "nominally leak-tight fan",
+        "shaft seal",
+        "shaft sleeve",
+        "soap bubble test",
+        "split housing"
+      ],
+      "source_links": [
+        "docs/sims/ch21-leak-tight-rto-sorter/index.md",
+        "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
+      ],
+      "has_example": true,
+      "word_count": 200
+    },
+    {
+      "id": "faq-092",
+      "category": "Advanced Topics",
+      "question": "How does RTO construction differ from leak-tight construction?",
+      "answer": "A regenerative thermal oxidizer (RTO) destroys pollutants in process exhaust by oxidizing them at high temperature, in services such as automotive paint booths, printing and paper mills. The fan sees contaminated gas, pressure swings when the flow switches, and occasional high temperature.\n\nRTO construction shares the leak-tight core: a solid drive side, close bolt spacing on 3 to 4 in. centers, a 600°F recommended limit, gasketing on all connections, centering plates on split housings, continuous and seal welds, and the soap bubble test. It differs in four ways:\n\n- Gasketing: silicone sponge and silicone caulk, but automotive jobs require an alternative to silicone.\n- Shaft seals: friction, single carbon ring, or a commercially available carbon ring or other seal.\n- Dampers, if required, must have stuffing boxes on their shafts.\n- Service conditions sales must specify: pedestal concrete requirements, how the fan base will be mounted in the field, and operation (VFD, cycling, bake-out).\n\nFor example, an automotive RTO fan with a weekly 650°F bake-out needs engineering review even though it normally runs at 300°F, because the package must be chosen for the bake-out temperature and the job exceeds the 600°F recommendation.",
+      "bloom_level": "Analyze",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Split Housing",
+        "Shaft Seal",
+        "Damper",
+        "Gasketing",
+        "Soap Bubble Test",
+        "Regenerative Thermal Oxidizer",
+        "Fan Base",
+        "Centering Plate"
+      ],
+      "keywords": [
+        "centering plate",
+        "damper",
+        "fan",
+        "fan base",
+        "gasketing",
+        "regenerative thermal oxidizer",
+        "shaft seal",
+        "soap bubble test",
+        "split housing"
+      ],
+      "source_links": [
+        "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
+      ],
+      "has_example": true,
+      "word_count": 192
+    },
+    {
+      "id": "faq-093",
+      "category": "Advanced Topics",
+      "question": "How do high-temperature fans cope with heat?",
+      "answer": "Hot fans need parts that allow growth, shed heat, or block it.\n\n- Allow growth. A shaft grows by ΔL = α × L × ΔT. A steel shaft with 60 in. between bearings, warming 300°F, grows about 0.12 in., roughly an eighth of an inch. Fixed and floating bearings let it: the fixed bearing locates the shaft and the floating bearing slides.\n- Shed heat. A shaft cooler, a cast aluminum wheel on the shaft between the housing and the inboard bearing (recommended over 300°F), dissipates heat from the shaft before it reaches the bearings, with a cooler box and cooler guard around it; high temperature grease is part of every hot package.\n- Block heat. High temperature pedestal forms such as a separated pedestal (up to a 3 in. gap, for Arrangements 1, 8 and 9F at 601°F and above), heat shields and insulated panels keep heat away from the bearings.\n\nHigh temperature construction is sold in packages by temperature band, and the bands depend on the fan family. Centrifugal Arrangements 1, 8, 9, 9F and 10 share five bands from 301 to 500°F up to 1,001°F and over; Arrangement 4 is reviewed above 300°F; the listed axial bands stop at 300°F. For example, a 450°F centrifugal Arrangement 9 fan falls in the 301 to 500°F band. Use the High Temperature Package Finder MicroSim.",
+      "bloom_level": "Apply",
+      "difficulty": "hard",
+      "concepts": [
+        "Fan",
+        "Bearing",
+        "Fan Family",
+        "Arrangement 4",
+        "Arrangement 9",
+        "Fixed Bearing",
+        "Floating Bearing",
+        "Separated Pedestal",
+        "High Temperature Construction",
+        "Shaft Cooler",
+        "Heat Shield",
+        "High Temperature Pedestal",
+        "High Temperature Package",
+        "High Temperature Grease",
+        "Cooler Guard",
+        "Cooler Box"
+      ],
+      "keywords": [
+        "arrangement 4",
+        "arrangement 9",
+        "bearing",
+        "cooler box",
+        "cooler guard",
+        "fan",
+        "fan family",
+        "fixed bearing",
+        "floating bearing",
+        "heat shield",
+        "high temperature construction",
+        "high temperature grease"
+      ],
+      "source_links": [
+        "docs/sims/ch21-high-temp-package-finder/index.md",
+        "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
+      ],
+      "has_example": true,
+      "word_count": 226
+    },
+    {
+      "id": "faq-094",
+      "category": "Advanced Topics",
+      "question": "How do I confirm a hot fan's construction can survive its temperature?",
+      "answer": "Every element on the construction line has its own temperature limit: the package band, the impeller material, a coating, the spark-resistance type, leak-tight construction, even the grease. The fan's maximum operating temperature is the lowest of them, and the selection passes only if the highest airstream temperature, including upsets, bake-outs and cleaning cycles, is at or below it.\n\nSome combinations are ruled out outright: high moisture construction cannot combine with high temperature construction; nominally leak-tight construction is not recommended over 600°F; aluminum rotating parts in Arrangement 4 high-temperature fans stop at 250°F.\n\nFor example, a fan quoted with the 301 to 500°F package, a coating rated 400°F (illustrative) and leak-tight construction (600°F) has a limit of 400°F, so a 450°F design fails; the coating, not the package, is the weak link. In Chapter 27's dryer exhaust at 500°F, the guide specification limits AMCA spark-resistant Types A and B to 250°F, which leaves Type C. Also check the fan class: the maximum safe speed is derated at temperature. Try the Construction Class Advisor MicroSim.",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Impeller",
+        "Arrangement 4",
+        "Construction Class",
+        "High Temperature Construction",
+        "Maximum Operating Temperature",
+        "High Moisture Construction",
+        "Fan Class",
+        "Maximum Safe Speed",
+        "Impeller Material"
+      ],
+      "keywords": [
+        "airstream",
+        "arrangement 4",
+        "construction class",
+        "fan",
+        "fan class",
+        "high moisture construction",
+        "high temperature construction",
+        "impeller",
+        "impeller material",
+        "maximum operating temperature",
+        "maximum safe speed"
+      ],
+      "source_links": [
+        "docs/sims/ch20-construction-class-advisor/index.md",
+        "docs/chapters/20-construction-classes-materials-spark-resistance/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 173
+    },
+    {
+      "id": "faq-095",
+      "category": "Advanced Topics",
+      "question": "How do I compare candidate fans and judge which is best?",
+      "answer": "Build a fan comparison: a side-by-side table of two or three candidates for the same duty point, listing the same attributes for each: RPM, BHP, efficiency and sound; class, materials and temperature package; arrangement and drive; accessories; and the risks each carries. Then settle the trade-offs on purpose:\n\n- efficiency against tolerance for dirty air;\n- first cost against operating cost (a larger, slower fan usually costs more to buy and less to run);\n- belt-drive flexibility against direct-drive maintenance;\n- compact arrangements against service access and isolation;\n- margin against oversizing, which pushes the fan away from its best efficiency.\n\nCheck efficiency on the right metric. A fan efficiency grade (FEG, AMCA 205) rates the fan's peak efficiency, not the selected point, so an FEG 85 fan chosen far from its peak can still waste power; the fan energy index (FEI, AMCA 208) rates the actual duty point. For example, for Chapter 27's dusty, hot dryer exhaust, the radial tip is selected, the open radial paddle is the fallback if the dust proves stickier than expected, and the backward curved wheel is rejected for the airstream. Write each reason down.",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Airstream",
+        "Fan",
+        "Direct Drive",
+        "Belt Drive",
+        "Fan Efficiency",
+        "Peak Efficiency",
+        "Duty Point",
+        "Fan Comparison",
+        "Fan Energy Index",
+        "Fan Efficiency Grade"
+      ],
+      "keywords": [
+        "airstream",
+        "belt drive",
+        "direct drive",
+        "duty point",
+        "fan",
+        "fan comparison",
+        "fan efficiency",
+        "fan efficiency grade",
+        "fan energy index",
+        "peak efficiency"
+      ],
+      "source_links": [
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 191
+    },
+    {
+      "id": "faq-096",
+      "category": "Advanced Topics",
+      "question": "How do I write a complete fan description?",
+      "answer": "A complete fan description is the compact, ordered statement of everything the factory needs to build one fan, complete when two people reading it would build the same fan. Write it in this order:\n\n1. Quantity, manufacturer, model, size and class.\n2. Arrangement and drive.\n3. Rotation and discharge, viewed from the drive side, in letter and angle form; motor position.\n4. Duty: airflow, static pressure, temperature, elevation and density.\n5. Motor: horsepower (sized for the cold start), enclosure, voltage, phase, frequency.\n6. Construction: temperature package, spark-resistance type, liners, materials.\n7. Accessories, each tied to a requirement.\n\nFor example, Chapter 27's dryer exhaust reads in part: \"Model RTF radial tip fan, Class 18, Arrangement 9, belt driven, CW THD (CW 90), motor on left side of pedestal. Duty: 20,000 ACFM at 12.0 in. wg static pressure, 500°F, sea level...\" Then check the pairs that interact: rotation against motor side, discharge against duct direction, spark-resistance type against temperature, motor against cold-start load, isolators against flex connectors. Pair it with an annotated drawing from the drive side. Assemble one in the Capstone Specification Builder MicroSim.",
+      "bloom_level": "Create",
+      "difficulty": "hard",
+      "concepts": [
+        "Horsepower",
+        "Static Pressure",
+        "Fan",
+        "Radial Tip Fan",
+        "Arrangement 9",
+        "Rotation",
+        "Motor Position",
+        "Complete Fan Description"
+      ],
+      "keywords": [
+        "arrangement 9",
+        "complete fan description",
+        "fan",
+        "horsepower",
+        "motor position",
+        "radial tip fan",
+        "rotation",
+        "static pressure"
+      ],
+      "source_links": [
+        "docs/sims/ch27-capstone-specification-builder/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 183
+    },
+    {
+      "id": "faq-097",
+      "category": "Advanced Topics",
+      "question": "How is a CSI-format fan specification structured?",
+      "answer": "A CSI format specification follows the Construction Specifications Institute's MasterFormat. Fans fall in Division 23; Twin City Fan's guide specifications use sections such as 23 34 13 (axial HVAC fans), 23 34 16 (centrifugal HVAC and industrial fans) and 23 34 23 (HVAC power ventilators). Every section has three parts:\n\n- Part 1, General: summary, reference standards (AMCA 204, 205, 210, 211 and 300; ABMA 9 and 11; NEMA MG 1; NFPA 70), submittals, quality assurance, coordination, delivery and warranty.\n- Part 2, Products: manufacturer and basis of design, the performance clause, then impeller, shaft, bearings, housing, drive, motor, construction options, accessories and source quality control.\n- Part 3, Execution: examination, installation, field quality control, adjusting and cleaning.\n\nThe performance clause must name the airflow, pressure, the air temperature and elevation (or density) they apply at, the rating standards, and any power, sound or efficiency limit. For example: \"20,000 ACFM at 12.0 in. wg static pressure with gas at 500°F at sea level (0.0414 lb/ft³).\" Start from the matching Twin City Fan guide specification on tcf.com, keeping or deleting its bracketed options, and list the submittals a reviewer needs to prove compliance.",
+      "bloom_level": "Create",
+      "difficulty": "hard",
+      "concepts": [
+        "Static Pressure",
+        "Air Temperature",
+        "Fan",
+        "Impeller",
+        "Bearing",
+        "Fan Specification",
+        "CSI Format Specification"
+      ],
+      "keywords": [
+        "air temperature",
+        "bearing",
+        "csi format specification",
+        "fan",
+        "fan specification",
+        "impeller",
+        "static pressure"
+      ],
+      "source_links": [
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 192
+    },
+    {
+      "id": "faq-098",
+      "category": "Advanced Topics",
+      "question": "How do I review a fan specification for errors?",
+      "answer": "Read every clause with the selection checklist beside it and ask two questions: can each requirement be proven, and does any clause contradict another clause or a source? Most errors are not wrong lines but pairs of right-looking lines that cannot both be true.\n\nThe common findings are:\n\n- A duty point with no air temperature or elevation.\n- A construction option that cannot meet the temperature, such as Type B spark resistance with a 500°F airstream.\n- A motor sized for the hot condition rather than the cold start.\n- A missing accessory another clause requires, such as isolators without flex connectors, or wet service without a drain.\n- Sound data in the wrong form, such as an unweighted overall level compared with an A-weighted limit.\n\nFor sound, weight each octave band and add logarithmically before comparing. For example, a fan whose eight bands add to 101.6 dB unweighted comes to 92.5 dB A-weighted, which meets a 95 dB(A) limit it appeared to fail. Practice on a draft in the Specification Error Detector MicroSim, and check the A-weighting arithmetic in the Octave Band A-Weighting Calculator MicroSim.",
+      "bloom_level": "Evaluate",
+      "difficulty": "hard",
+      "concepts": [
+        "Air Temperature",
+        "Airstream",
+        "Fan",
+        "Duty Point",
+        "Fan Specification",
+        "Octave Band"
+      ],
+      "keywords": [
+        "air temperature",
+        "airstream",
+        "duty point",
+        "fan",
+        "fan specification",
+        "octave band"
+      ],
+      "source_links": [
+        "docs/sims/ch27-specification-error-detector/index.md",
+        "docs/sims/ch27-octave-band-a-weighting/index.md",
+        "docs/chapters/27-fan-selection-and-writing-the-specification/index.md"
+      ],
+      "has_example": true,
+      "word_count": 187
+    }
+  ]
+}

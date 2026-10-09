@@ -3,7 +3,7 @@
 // Ten scenario cards (orientation, bearing type, temperature, arrangement). The learner picks one of
 // four bearing configurations and commits it; the sim then labels the shaft's drive-end and
 // non-drive-end bearings as fixed or floating and shows the rule step that decided the card.
-// Rules (FanPedia pp. 96-98): >= 301 F every type is 1 fixed + 1 floating; <= 300 F ball is 2 fixed
+// Rules (FanPedia pp. 97-99): >= 301 F every type is 1 fixed + 1 floating; <= 300 F ball is 2 fixed
 // (3SI, 7SI, 3DI, 7DI: engineering review), roller and split roller 1 fixed + 1 floating; with a
 // floating bearing, horizontal = fixed at the drive end, vertical = floating at the drive end.
 // Built on the FanPedia kit: FP.CardDeck (cards, wording, score, mastery), FD (shaft, sheave,
@@ -257,7 +257,7 @@ function draw() {
   const right = st.phase === 'summary' ? 'Results' : 'Card ' + (st.index + 1) + ' of ' + CARDS.length + ' · one attempt';
   y = K.statusLine(st.scoreLabel, right, null, { y: y - 4 });
   K.note(canvasWidth >= 560
-    ? ['Illustrative scenarios', 'Source: FanPedia pp. 92, 96–98', 'Keys: 1–4 or A–D choose, Enter commits or goes on']
+    ? ['Illustrative scenarios', 'Source: FanPedia pp. 91, 97–99', 'Keys: 1–4 or A–D choose, Enter commits or goes on']
     : ['Illustrative scenarios', 'Source: FanPedia pp. 96–98']);
 
   const top = y + 2;

@@ -1,0 +1,137 @@
+{
+  "title": "External and Nested Inlet Vanes",
+  "description": "FanPedia's industrial grade inlet vane drawings (p. 139), an external inlet vane fan and a nested inlet vane fan each beside a close-up photo, with six numbered markers, leader lines and a label column. Explore mode previews each part's name and description; quiz mode hides the labels and describes each part by its job or look, with two attempts, a hint after the first miss and mastery at 5 of 6 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "manual handle",
+    "external inlet vanes",
+    "impeller",
+    "pre-spin",
+    "nested inlet vanes",
+    "inlet funnel"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "External and nested inlet vanes and the pre-spin they create",
+    "learningObjectives": [
+      "The learner will identify the external inlet vanes, nested inlet vanes, inlet funnel, manual handle, impeller and the pre-spin arrows on FanPedia's inlet vane drawings, given each part's job or look."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "variable inlet vanes",
+      "external inlet vanes",
+      "nested inlet vanes",
+      "pre-spin",
+      "inlet funnel",
+      "impeller"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 831,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 831
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch19-inlet-vanes-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 6-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a part's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 6 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 5 of 6."
+    ],
+    "assumptions": [
+      "FanPedia p. 139 inlet vane drawings and close-up photos, with the printed labels, titles and application text removed and the photos moved beside their drawings; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawings are FanPedia's, not a specific current catalog model; the actuator option is described but not shown."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 139 (Inlet Vanes: Industrial Grade, external inlet vane and nested inlet vane): drawings, close-up photos, applications, manual handle and actuator",
+      "FanPedia p. 188 (variable inlet vanes): pre-spin and nested vane replacement",
+      "Drawing: FanPedia, Twin City Fan, p. 139"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawings first, then retrieval practice: find each part from a description of its job or look, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which vane style can be cleaned or replaced without replacing the inlet funnel?",
+      "Which way does pre-spin turn the entering air, and why does that save power?"
+    ],
+    "commonMisconceptions": [
+      "Nested and external inlet vanes suit the same airstreams.",
+      "Replacing nested vanes is as simple as replacing external vanes.",
+      "Inlet vanes save power by blocking the air like a damper."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 6'; mastery is 5 of 6 on the first attempt."
+    ]
+  },
+  "chapter": "19-damper-details-and-duct-connections"
+}

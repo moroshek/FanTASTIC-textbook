@@ -1,0 +1,141 @@
+{
+  "title": "Piezometer Ring Components",
+  "description": "FanPedia's drawing of the piezometer ring components on a fan inlet funnel (p. 158), with close-ups of the union tee, tap fittings and a coupling, and ten numbered markers, leader lines and a label column. Explore mode previews each component's name and description; quiz mode hides the labels and describes each component by its job, with two attempts, a hint after the first miss and mastery at 8 of 10 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "inlet funnel",
+    "tubing around the throat",
+    "couplings with \"t\" fittings",
+    "union tee",
+    "tubing to low pressure tap",
+    "tubing to high pressure tap",
+    "low pressure tap fitting",
+    "high pressure tap fitting",
+    "hanger clip",
+    "rivnut"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Components of a piezometer ring airflow measuring system on a fan inlet funnel",
+    "learningObjectives": [
+      "The learner will identify the ten labeled components of a piezometer ring airflow measuring system on a fan inlet funnel, given each component's function or location."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "piezometer ring",
+      "inlet funnel",
+      "flow nozzle",
+      "airflow measurement",
+      "differential pressure"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 865,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 865
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch23-piezometer-ring-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered marker is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the markers are named only 'Part n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; small components carry an offset marker with a pointer; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered marker to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 10-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay callout engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a component's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 10 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 8 of 10."
+    ],
+    "assumptions": [
+      "FanPedia p. 158 inlet funnel components drawing and close-ups, with the printed callouts, legend and captions removed; marker positions are percentages of the image."
+    ],
+    "limitations": [
+      "The drawing is FanPedia's generic inlet funnel installation, not a specific current catalog model; the plenum and housed fan mounting views of p. 159 and the pressure transmitters of p. 160 are not shown."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 158 (Piezometer Rings: Overview, inlet funnel components): drawing, component names and descriptions",
+      "FanPedia p. 160 (pressure transmitters, installation manual IM-105) and p. 191 (piezometer ring description): context",
+      "Drawing: FanPedia, Twin City Fan, p. 158"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each component from a description of its job or location, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "Which part of the fan serves as the flow nozzle?",
+      "Which tap goes to the high-pressure side of the instrument, and which goes to the low-pressure side?",
+      "Which tubing is shipped loose on funnel applications?"
+    ],
+    "commonMisconceptions": [
+      "A piezometer ring is a separate flow meter added to the duct.",
+      "Both pressures are taken in the throat of the funnel.",
+      "The ring connects to the high-pressure side of the instrument."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 10'; mastery is 8 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "23-spring-isolators-restraints-field-measurement"
+}

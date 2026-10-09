@@ -5,7 +5,8 @@
 // one attempt each; mastery is 8 of 10 on the first attempt.
 // The explore/quiz engine is FP.CalloutQuiz (../shared-libs/callout-quiz.js). This file draws
 // a cabinet-oblique line drawing of an SWSI housing with its inlet parts pulled off along the
-// shaft line (based on FanPedia p. 60, not to scale) and lays out the callouts.
+// shaft line (based on FanPedia p. 60, not to scale) and lays out the callouts. As on p. 60, the
+// wiper bar is drawn on the inner end of the inlet funnel and travels with it.
 
 (function () {
   'use strict';
@@ -209,12 +210,21 @@
     s += line(a, b, 'transparent', 20, ' stroke-linecap="round"');   // generous hit area
     return s;
   };
+  // FanPedia p. 60 draws the wiper bar as a curved fin on the inner (throat) end of the inlet
+  // funnel, so here it is pulled off with the funnel (z = -110, throat radius 34).
+  var WIPER_Z = -110, WIPER_A0 = 100, WIPER_A1 = 156, WIPER_RI = 33, WIPER_RO = 52;
+  function wiperPt(a, r) {
+    var c = P(CX, CY, WIPER_Z);
+    return [c[0] + r * Math.sin(rad(a)), c[1] - r * Math.cos(rad(a))];
+  }
   DRAW.wiper = function () {
-    var r = 66, pts = [];
-    for (var a = 112; a <= 160; a += 4) pts.push(polar(a, r));
-    var d = path(pts, false);
-    return '<path d="' + d + '" fill="none" stroke="' + C.wiper + '" stroke-width="8" stroke-linecap="round"/>' +
-      '<path d="' + d + '" fill="none" stroke="transparent" stroke-width="20" stroke-linecap="round"/>';
+    var outer = [], inner = [];
+    for (var a = WIPER_A0; a <= WIPER_A1; a += 4) {
+      outer.push(wiperPt(a, WIPER_RO));
+      inner.unshift(wiperPt(a, WIPER_RI));
+    }
+    var d = path(outer.concat(inner));
+    return el(d, C.wiper, C.edge, 1.2) + el(d, 'none', 'transparent', 12, ' stroke-linejoin="round"');
   };
   DRAW.outletFlange = function () {
     var e = 13;
@@ -298,14 +308,14 @@
   };
 
   // Paint order, back to front.
-  var ORDER = ['pedestal', 'scroll', 'side', 'cutoff', 'wiper', 'framing', 'outletFlange', 'funnel', 'collar', 'inletFlange'];
+  var ORDER = ['pedestal', 'scroll', 'side', 'cutoff', 'framing', 'outletFlange', 'funnel', 'wiper', 'collar', 'inletFlange'];
 
   // Callouts: [label x (left edge), label y (centre), anchor x, anchor y].
   function anchors() {
     var tA = polar(62, scrollR(62));
     return {
       outletFlange: [18, 34, X_OUT + 20, TOP + 6 - 0.3 * -6],
-      wiper: [560, 446, polar(136, 66)[0], polar(136, 66)[1]],
+      wiper: [560, 446, wiperPt(132, 44)[0], wiperPt(132, 44)[1]],
       funnel: [18, 166, CX - 0.85 * 175, CY + 0.3 * 175 - 62],
       collar: [18, 236, CX - 0.85 * 300 - 30, CY + 0.3 * 300 - 38],
       inletFlange: [18, 446, CX - 0.85 * 410 + 10, CY + 0.3 * 410 + 64],

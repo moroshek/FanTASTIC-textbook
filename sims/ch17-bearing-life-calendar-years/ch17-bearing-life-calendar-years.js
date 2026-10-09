@@ -101,7 +101,7 @@ const runner = new FP.ChallengeRunner({
   id: SIM_ID
 });
 
-// FanPedia p. 89 published table (the chapter's four rows), for the comparison after challenge 5
+// FanPedia p. 90 published table (the chapter's four rows), for the comparison after challenge 5
 const SCHEDULES = [[24, 7], [24, 5], [16, 5], [8, 5], [2, 5]];
 const FANPEDIA_TABLE = [
   { rating: 'L-10', hours: 40000, l10: 40000, kind: 'L-10', years: ['4.6', '6.4', '9.6', '19', '77'] },
@@ -296,8 +296,8 @@ function draw() {
       (st.phase === 'question' ? ' · ' + st.attemptLabel : '');
   y = K.statusLine(st.scoreLabel, right, null, { y: y - 4 });
   const item = st.item;
-  const notes = (!st.explore && item.illustrative) ? ['Illustrative schedule', 'Source: FanPedia p. 89']
-    : ['Source: FanPedia p. 89', '365/7 weeks per year'];
+  const notes = (!st.explore && item.illustrative) ? ['Illustrative schedule', 'Source: FanPedia p. 90']
+    : ['Source: FanPedia p. 90', '365/7 weeks per year'];
   if (canvasWidth >= 560 && !st.explore) { notes.push('Enter: check or next'); }
   K.note(notes);
 
@@ -579,7 +579,7 @@ function fitLabel(s, w, ts) {
   return short[s] || s;
 }
 
-// FanPedia p. 89 values beside the model (shown after challenge 5)
+// FanPedia p. 90 values beside the model (shown after challenge 5)
 function drawFanPediaTable(box) {
   const wide = canvasWidth >= 640;
   const ink = FP.tok('text');
@@ -588,7 +588,7 @@ function drawFanPediaTable(box) {
   textAlign(LEFT, TOP);
   textStyle(BOLD);
   textSize(wide ? 14 : 13);
-  const head = wide ? 'FanPedia p. 89 published years vs. the model (365/7 weeks a year)' : 'FanPedia p. 89 vs. model';
+  const head = wide ? 'FanPedia p. 90 published years vs. the model (365/7 weeks a year)' : 'FanPedia p. 90 vs. model';
   text(head, box.x + 10, box.y + 7);
   textStyle(NORMAL);
   const x0 = box.x + 8, x1 = box.x + box.w - 8;

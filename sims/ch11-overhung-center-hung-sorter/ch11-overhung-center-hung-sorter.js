@@ -87,8 +87,8 @@ const CARDS = [
     why: 'The impeller hangs on the motor shaft; the only bearings are inside the motor (FanPedia pp. 79, 164).' },
   { id: 7, title: 'Arrangement 7 DWDI', text: 'Direct drive; flexible coupling; pedestal carries the motor, the coupling and one bearing',
     pos: 'CH', bear: 'IN', draw: '7', imp: 200, bearings: [[122, true], [292, true]], air: [55, 305],
-    why: 'Like Arrangement 3, the impeller sits between the bearings, so the bearing on the far side of the impeller ' +
-      'sits in the inlet; only the 7DI\'s inlet boxes move the bearings out (FanPedia pp. 167–168).' },
+    why: 'Like Arrangement 3 DWDI, the impeller sits between the bearings with an inlet on each side, so both bearings ' +
+      'sit in the airstream; only the 7DI\'s inlet boxes move the bearings out (FanPedia pp. 167–168).' },
   { id: 8, title: 'Arrangement 7SI', text: 'Direct drive; single width fan with an integrated inlet box; flexible coupling',
     pos: 'CH', bear: 'OUT', draw: '7SI', imp: 210, bearings: [[60, false], [286, false]], air: [90, 250],
     why: 'The inlet box locates the bearing outside the airstream (FanPedia p. 165).' },

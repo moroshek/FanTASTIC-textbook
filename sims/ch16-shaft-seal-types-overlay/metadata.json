@@ -1,0 +1,134 @@
+{
+  "title": "Contact and Carbon Ring Shaft Seals",
+  "description": "FanPedia's exploded shaft seal drawings (pp. 149-153) with five numbered zones: the friction, V-ring and lip contact seals and the single and double carbon ring seals. Explore mode previews each drawing's name, summary and facts; quiz mode hides the names and describes each drawing, with two attempts, a hint after the first miss and mastery at 4 of 5 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "friction shaft seal",
+    "v-ring shaft seal",
+    "lip shaft seal",
+    "single carbon ring seal",
+    "double carbon ring seal"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Contact and carbon ring shaft seals",
+    "learningObjectives": [
+      "The learner will identify the friction, V-ring and lip contact seals and the single and double carbon ring seals on FanPedia's exploded drawings, given a description of each."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "shaft seal",
+      "contact seal",
+      "carbon ring seal",
+      "lantern ring",
+      "purge connection"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 823,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 823
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch16-shaft-seal-types-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered drawing is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the drawings are named only 'Drawing n' until resolved, the names are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; number chips keep a constant pixel size; the names are always in a numbered list under the drawing."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered drawing to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 5-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay grid engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a drawing's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 5 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 4 of 5."
+    ],
+    "assumptions": [
+      "FanPedia pp. 149-153 exploded views with the printed text removed, each scaled to 58 % and set in two rows on one image; zones are percentages of the image."
+    ],
+    "limitations": [
+      "Five seal types only; the small assembled views are left out, and the stuffing box seals are in the Stuffing Box Seal With Gas Purge MicroSim."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia pp. 149-153 (Shaft Seals: friction p. 149, V-ring p. 150, lip p. 151, single ring mechanical p. 152, double ring mechanical p. 153): exploded-view drawings and descriptions",
+      "Drawing: FanPedia, Twin City Fan, pp. 149-153"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "What rubs on the shaft in each contact seal?",
+      "Which seal can take a purge supply, and which part receives the purge gas?"
+    ],
+    "commonMisconceptions": [
+      "A carbon ring seal is one more rubbing contact seal.",
+      "The double carbon ring seal is a single ring seal with a spare ring.",
+      "The grease fitting on a lip seal lubricates the bearing."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 5'; mastery is 4 of 5 on the first attempt."
+    ]
+  },
+  "chapter": "16-bearings-shafts-and-shaft-seals"
+}

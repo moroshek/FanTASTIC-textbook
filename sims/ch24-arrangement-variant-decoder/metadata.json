@@ -1,6 +1,6 @@
 {
   "title": "Arrangement Variant Decoder",
-  "description": "Twelve written fan descriptions, shuffled once per session; for each the learner picks one code from a fixed list of 20 arrangement codes and presses Check (one scored attempt, mastery 10 of 12). An optional feature hint lists drive, impeller, support and motor; Retry missed practises the missed items without scoring.",
+  "description": "Twelve written fan descriptions, shuffled once per session; for each the learner picks one code from a fixed list of 22 arrangement codes and presses Check (one scored attempt, mastery 10 of 12). An optional feature hint lists drive, impeller, support and motor; Retry missed practises the missed items without scoring.",
   "creator": "Twin City Fan",
   "date": "2026-10-09",
   "subject": [
@@ -58,7 +58,7 @@
   },
   "userInterface": {
     "controls": [
-      { "type": "button", "label": "Answer list (20 codes)", "purpose": "Select one arrangement code (arrow keys move the selection)" },
+      { "type": "button", "label": "Answer list (22 codes)", "purpose": "Select one arrangement code (arrow keys move the selection)" },
       { "type": "button", "label": "Show hint / Hide hint", "purpose": "Show the description's features by category; never scored (H)" },
       { "type": "button", "label": "Check", "purpose": "Score the selected code (Enter)" },
       { "type": "button", "label": "Next item / Finish", "purpose": "Go to the next item; after item 12, show the summary (Enter)" },

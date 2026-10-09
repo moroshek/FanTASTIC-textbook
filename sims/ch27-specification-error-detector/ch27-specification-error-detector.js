@@ -40,7 +40,7 @@ const REASON_KEYS = Object.keys(REASONS);
 const CLAUSES = [
   { text: 'Fan shall deliver 20,000 CFM at 12.0 in. wg static pressure.', answer: 'a',
     why: 'Without temperature and elevation, a bidder can rate the fan at standard air and deliver a different fan.',
-    fixed: 'Fan shall deliver 20,000 CFM at 12.0 in. wg static pressure with gas at 500°F at sea level (0.0414 lb/ft³).' },
+    fixed: 'Fan shall deliver 20,000 ACFM at 12.0 in. wg static pressure with gas at 500°F at sea level (0.0414 lb/ft³).' },
   { text: 'Fan shall be Arrangement 4, direct drive, for 500°F gas.', answer: 'b',
     why: 'Arrangement 4 puts the motor on the fan shaft next to the hot housing; FanPedia notes high temperature ' +
       'may limit it and lists 1, 8, 9, 9F and 10 for high temperature.',

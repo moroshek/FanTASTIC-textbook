@@ -57,10 +57,10 @@ const TICKETS = [
     reason: 'The top band on every centrifugal and air kit page requires engineering review.' },
   { id: 6, fan: 'Arrangement 4 axial fan', app: 'warm exhaust', t: 180, fam: 'ax4', band: '151-195', review: 'yes',
     reason: 'FanPedia marks the 151-195°F axial band as requiring engineering review.' },
-  { id: 7, fan: 'Arrangement 9 axial fan', app: null, t: 240, fam: 'ax9', band: '201-250', review: 'no',
+  { id: 7, fan: 'Arrangement 9 axial fan', app: 'drying air supply', t: 240, fam: 'ax9', band: '201-250', review: 'no',
     reason: '240°F is inside the 201-250°F band offered on Arr. 9 axial fans.',
     wrongBand: { '201-300': '201-300°F is for select models only; start from the general band.' } },
-  { id: 8, fan: 'Arrangement 10 centrifugal fan', app: null, t: 520, fam: 'c1', band: '501-600', review: 'no',
+  { id: 8, fan: 'Arrangement 10 centrifugal fan', app: 'process fume exhaust', t: 520, fam: 'c1', band: '501-600', review: 'no',
     reason: '520°F is above 500°F, so it moves up to the second band.' }
 ].map(c => {
   const b = FAM[c.fam].bands.find(x => x.id === c.band);

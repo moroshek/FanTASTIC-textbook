@@ -62,14 +62,14 @@
       "Both answers must match for the designation to count as correct",
       "One scored attempt per designation, then one unscored practice try; mastery is 7 of 8 on the first attempt"
     ],
-    "assumptions": ["BC-SW and BC-DW arrangement lists are those Catalog 300 page 3 gives for the model, for every class"],
+    "assumptions": ["BC-SW and BC-DW arrangement lists are those Catalog 300 pages 2-3 and 9 give for the model, for every class (BC-DW includes Arrangement 7, listed on page 2 and described on page 9 though omitted from page 3)"],
     "limitations": ["Extracts cover four model rows only; check the current catalog for other sizes"]
   },
   "dataProvenance": {
     "status": "catalog",
     "sources": [
       "Twin City Fan Catalog 902, RB Industrial Fans (November 2017), page 13 (RB Series Availability), pages 20 and 24 (diameters, maximum RPM)",
-      "Twin City Fan Catalog 300, BC Backward Inclined Fans (April 2024), page 3 (arrangements by model), page 16 (maximum RPM)",
+      "Twin City Fan Catalog 300, BC Backward Inclined Fans (April 2024), pages 2-3 and 9 (arrangements by model), page 16 (maximum RPM)",
       "https://tcf.com/resources/product-catalogs/"
     ]
   },

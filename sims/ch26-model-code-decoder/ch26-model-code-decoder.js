@@ -3,7 +3,7 @@
 // Eight Twin City Fan designations (model, size, class, arrangement) are judged against two
 // catalog extracts: Offered or Not offered, and the class maximum RPM. Both answers must match.
 // One scored attempt per designation, then one unscored practice try. Fixed order.
-// Sources: Catalog 902 (November 2017) pp. 13, 20, 24; Catalog 300 (April 2024) pp. 3, 16.
+// Sources: Catalog 902 (November 2017) pp. 13, 20, 24; Catalog 300 (April 2024) pp. 2-3, 9, 16.
 // Needs ../shared-libs/fanpedia-core.js and fanpedia-p5.js (see main.html).
 
 const K = FP.p5;
@@ -19,7 +19,7 @@ const WIDE_DRAW_H = 625;     // the tallest layout in 684-1000 px (chapter ifram
 const PROMPT = 'Can the factory build this fan, and how fast can it run?';
 const MASTERY = 7;
 const REVIEW = 'Review "Model Code" and its worked example in the chapter, then press Start over.';
-const NOTE_FULL = ['Source: TCF Catalog 902 (Nov 2017) pp. 13, 20, 24; Catalog 300 (Apr 2024) pp. 3, 16',
+const NOTE_FULL = ['Source: TCF Catalog 902 (Nov 2017) pp. 13, 20, 24; Catalog 300 (Apr 2024) pp. 2-3, 9, 16',
   'Keys: O, N, 1–5, Enter, A, B'];
 const NOTE_SHORT = ['Source: TCF Catalogs 902, 300', 'Keys: O, N, 1–5, Enter, A, B'];
 const NONE = 'none';
@@ -45,12 +45,12 @@ const EXTRACTS = [
     [1, 'Class 32: Arr. 1, 4, 8, 9, 4VI, 9F · max 3,337 RPM'],
     [1, 'Class 45: Arr. 1, 8, 9, 9F · max 4,000 RPM']
   ] },
-  { key: 'B', title: 'Extract B: Catalog 300', sub: 'Arrangements by model (p. 3), maximum RPM (p. 16)', lines: [
+  { key: 'B', title: 'Extract B: Catalog 300', sub: 'Arrangements by model (pp. 2-3, 9), maximum RPM (p. 16)', lines: [
     [0, 'BC-SW 365', 'bold'],
     [1, 'Arrangements (all classes): 1, 3, 3F, 3SI, 4, 7SI, 8, 9, 9F, 9H, 9ST, 9SS, 10'],
     [1, 'Max RPM: Class I = 995; Class II = 1,283; Class III = 1,727; Class IV = 1,883'],
     [0, 'BC-DW 365', 'bold'],
-    [1, 'Arrangements (all classes): 3, 3F, 3DI, 7DI'],
+    [1, 'Arrangements (all classes): 3, 3F, 3DI, 7, 7DI'],
     [1, 'Max RPM: Class I = 1,015; Class II = 1,302; Class III = 1,651; Class IV = 1,883']
   ] }
 ];
@@ -72,7 +72,7 @@ const CARDS = [
   { n: 7, model: 'BC-SW 365', cls: 'Class II', arr: '9', offered: true, rpm: '1,283',
     why: 'Arrangement 9 is offered for BC-SW, and Class II size 365 runs to 1,283 RPM.' },
   { n: 8, model: 'BC-DW 365', cls: 'Class I', arr: '9', offered: false, rpm: '1,015',
-    why: 'Arrangement 9 is a single width arrangement; BC-DW is offered in 3, 3F, 3DI and 7DI.' }
+    why: 'Arrangement 9 is a single width arrangement; BC-DW is offered in 3, 3F, 3DI, 7 and 7DI.' }
 ].map(c => Object.assign({
   id: 'designation-' + c.n,
   label: c.model + ', ' + c.cls + ', Arrangement ' + c.arr,

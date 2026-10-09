@@ -20,12 +20,13 @@ const MASTERY = 10;
 const PROMPT = 'Which arrangement code matches this fan?';
 
 // Answer list, shown for every item (spec "Content"); it never changes between items.
-const CODES = ['8', '9F', '9H', '10', '3F', '4VI', '7DI', '3HS', '3HA', '3SM',
-  '3VS', '4V', '1P', '4P', '8P', '9P', '9ST', '9SS', '4SO', '9CS'];
+const CODES = ['8', '9F', '9H', '10', '3F', '4', '4VI', '7DI', '3HS', '3HA', '3SM',
+  '3VS', '4V', '1P', '4P', '8P', '9P', '9ST', '9SS', '4SO', '9SO', '9CS'];
 
 // Chapter 24 spec, "Content" table. hint: the description's features by category.
-// wrong: the spec's added messages for specific wrong codes. '4' (item 1) and '9SO' (item 12)
-// are not in the spec's answer list, so only the 4P and 9P/9F messages can appear today.
+// wrong: the spec's added messages for specific wrong codes ('4' and '4P' on item 1, '9F' on item 3,
+// '9P' on item 9, '9SO' on item 12). Arrangement 4 and the axial/inline swingout 9SO are real
+// FanPedia codes (pp. 20, 164, 173), included in the answer list so these messages can appear.
 const ITEMS = [
   { id: 1, answer: '8',
     text: 'Housed SWSI fan, overhung impeller, two bearings on a long pedestal, motor coupled to the fan shaft at the end of the pedestal',
@@ -239,7 +240,7 @@ function summaryLines() {
 // ---------- Layout ----------
 function gridCols() {
   const w = canvasWidth - 20;
-  return Math.max(4, Math.min(10, Math.floor((w + 6) / (58 + 6))));
+  return Math.max(4, Math.min(11, Math.floor((w + 5) / (52 + 5))));   // 22 codes: two rows at desktop width
 }
 
 // ---------- Drawing ----------
@@ -367,11 +368,11 @@ function positionControls() {
   const cols = gridCols();
   gridRows = Math.ceil(CODES.length / cols);
   const pitchY = 36;
-  const gw = cols * 58 + (cols - 1) * 6;
+  const gw = cols * 52 + (cols - 1) * 5;
   const gx = 10 + Math.max(0, (canvasWidth - 20 - gw) / 2);
   gridTop = drawHeight - 26 - gridRows * pitchY;
   codeButtons.forEach((b, i) => {
-    b.position(gx + (i % cols) * 64, gridTop + Math.floor(i / cols) * pitchY);
+    b.position(gx + (i % cols) * 57, gridTop + Math.floor(i / cols) * pitchY);
   });
   K.flowButtons(0, [hintButton, checkButton, nextButton, null, retryButton, startOverButton]);
 }

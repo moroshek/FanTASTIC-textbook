@@ -1,0 +1,134 @@
+{
+  "title": "Isolator Mounting Methods",
+  "description": "FanPedia's vibration isolation mounting drawings (p. 133) with five numbered zones: isolators directly under the fan, isolation rails, a mounting angle, an isolation base and isolation hangers. Explore mode previews each drawing's name, summary and facts; quiz mode hides the names and describes each mounting, with two attempts, a hint after the first miss and mastery at 4 of 5 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "directly under the fan",
+    "isolation rails",
+    "mounting angle",
+    "isolation base",
+    "isolation hangers"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Isolator mounting methods",
+    "learningObjectives": [
+      "The learner will identify the five isolator mounting methods (directly under the fan, isolation rails, mounting angle, isolation base and isolation hangers) on FanPedia's drawings, given a description of each."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "vibration isolation",
+      "vibration isolators",
+      "neoprene isolation pad",
+      "rubber-in-shear isolator",
+      "isolation base"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 824,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 824
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js",
+      "../shared-libs/fp-overlay.js",
+      "../../img/overlays/ch22-isolator-mounting-overlay.png"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "The drawing is a labelled SVG group; every numbered drawing is a focusable role=button and Tab walks them in number order; Enter or Space selects one; focus or hover previews its name and description. During the quiz the drawings are named only 'Drawing n' until resolved, labels and leader lines are hidden, and hints never name the answer. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an 'Answer' badge pair with colour. Text is 12 px or larger; markers keep a constant pixel size; the label column moves below the drawing on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: point at or select a numbered drawing to see its name and description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 5-prompt quiz with the labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Next prompt / See summary",
+        "purpose": "Go on after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practise the missed prompts (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the prompts and reset the score"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz (FP.Overlay grid engine on FP.CalloutQuiz)",
+    "equations": [],
+    "rules": [
+      "Explore mode: hover or focus previews a drawing's name and description; click, Enter or Space opens it and counts it as visited; never scored.",
+      "Quiz mode: 5 prompts in a seeded shuffle (the same order for every learner; Start over reshuffles).",
+      "Two attempts per prompt; the first wrong answer shows a hint that does not name the answer; the second reveals the answer and counts as missed.",
+      "Selecting empty space uses no attempt.",
+      "Only first-attempt answers count toward mastery; mastery is 4 of 5."
+    ],
+    "assumptions": [
+      "FanPedia p. 133 drawings with the captions removed and the six drawings rearranged into two rows; zones are percentages of the image."
+    ],
+    "limitations": [
+      "Five zones only; the two isolation rail drawings (RIS and spring versions) share one zone, and the isolator hardware itself is not named (Chapter 23 covers it)."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 133 (Vibration Isolation: Overview and Mounting): drawings and mounting method descriptions",
+      "Drawing: FanPedia, Twin City Fan, p. 133"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labelled markers on the real FanPedia drawing first, then retrieval practice: find each part from a description of its job, with a hint after the first miss and immediate correction.",
+    "keyQuestions": [
+      "What sits between the fan's foundation holes and the isolators in each method?",
+      "When is mounting directly under the fan usually ruled out?"
+    ],
+    "commonMisconceptions": [
+      "Isolators can always go directly under any fan.",
+      "Isolation rails and an isolation base are the same thing.",
+      "A mounting angle is only for looks."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 5'; mastery is 4 of 5 on the first attempt."
+    ]
+  },
+  "chapter": "22-fan-bases-and-vibration-isolation"
+}

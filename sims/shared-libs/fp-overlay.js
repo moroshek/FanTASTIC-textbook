@@ -608,10 +608,17 @@
       if (!FP.CalloutQuiz) throw new Error('FP.Overlay: load callout-quiz.js before fp-overlay.js runs mount()');
       var t = quizTables(data, lay.order), CQM = FP.CalloutQuiz.messages, noun = grid ? 'Drawing' : 'Part';
       var lower = function (c) { return Object.assign({}, c, { clickedLabel: lowerFirst(c.clickedLabel) }); };
+      var gridWrong = function (fn, c) {
+        var text = fn(Object.assign({}, c, { clickedLabel: null }));
+        return c.clickedLabel ? text.replace('✗ Not quite.', '✗ Not quite. That drawing is labeled: ' + c.clickedLabel + '.') : text;
+      };
       var msg = {
         quizAria: function (n) { return partName('', n, 'quiz', false, null, noun); },
-        retry: function (c) { return CQM.retry(lower(c)); },
-        missed: function (c) { return CQM.missed(lower(c)); },
+        // Grid labels are phrases ("Directly under the fan"), which read badly
+        // after the engine's "That is the ..."; name the drawing's label instead.
+        retry: function (c) { return grid ? gridWrong(CQM.retry, c) : CQM.retry(lower(c)); },
+        missed: function (c) { return grid ? gridWrong(CQM.missed, c) : CQM.missed(lower(c)); },
+        reviewPointer: grid ? 'Review the drawings below in Explore mode, then start over.' : CQM.reviewPointer,
         quizIntro: grid
           ? function (c) { return 'Labels are hidden. Select the numbered drawing that matches each prompt. You have ' + c.attempts + (c.attempts === 1 ? ' attempt' : ' attempts') + ' per prompt.'; }
           : function (c) { return 'Labels are hidden. Select the numbered marker on the part that matches each prompt. You have ' + c.attempts + (c.attempts === 1 ? ' attempt' : ' attempts') + ' per prompt.'; }
