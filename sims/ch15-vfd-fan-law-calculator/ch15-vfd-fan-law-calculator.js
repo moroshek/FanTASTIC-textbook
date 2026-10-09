@@ -59,8 +59,30 @@ const ITEMS = CHALLENGE_DATA.map((c, i) => {
   });
 });
 
-// Spec feedback: Correct "Correct: <value> at <f> Hz." Wrong: the challenge's "Feedback when wrong"
-// text. After the second wrong attempt the model values and the worked calculation are shown.
+// First wrong attempt: a hint per wrong value that names the slip (wrong exponent, divided instead of
+// multiplied, value left at 60 Hz) and never a ratio value, a multiplier or a model value.
+const EXP_WORD = ['unchanged', 'the ratio itself', 'the ratio squared', 'the ratio cubed'];
+const LAW = { cfm: 1, inWg: 2, bhp: 3 };
+function slipHint(f, v, item) {
+  const n = LAW[f.key], base = vfdAt(60)[f.key], r = item.m.ratio;
+  const what = f.name;
+  const rule = what + ' goes with ' + EXP_WORD[n] + ' (r' + (n > 1 ? (n === 2 ? '²' : '³') : '') + ').';
+  if (near(v, base)) return what + ' still shows the 60 Hz value; scale it to the new frequency. ' + rule;
+  for (let k = 1; k <= 3; k++) {
+    if (near(v, base / Math.pow(r, k))) return what + ': you divided by the ratio; a lower frequency means a smaller value, so multiply. ' + rule;
+  }
+  for (let k = 1; k <= 3; k++) {
+    if (k !== n && near(v, base * Math.pow(r, k))) return what + ': you used ' + EXP_WORD[k] + '. ' + rule;
+  }
+  return 'Recheck the ' + what.toLowerCase() + ' arithmetic: r = f / 60, then ' + rule.charAt(0).toLowerCase() + rule.slice(1);
+}
+function hintText(res) {
+  const v = res.value, item = res.item;
+  return FIELDS.filter(f => !near(v[f.key], item.m[f.key])).map(f => slipHint(f, v[f.key], item)).join(' ');
+}
+
+// Spec feedback: Correct "Correct: <value> at <f> Hz." First wrong: the slip hint above. After the second
+// wrong attempt the model values, the "Feedback when wrong" text and the worked calculation are shown.
 const runner = new FP.ChallengeRunner({
   items: ITEMS,
   attempts: 2,
@@ -70,8 +92,8 @@ const runner = new FP.ChallengeRunner({
   reviewPointer: 'Reread the 45 Hz worked example in "Variable Frequency Drive", then press Start over',
   messages: {
     correct: res => FP.msg.correct(res.item.answerText + ' at ' + res.item.hz + ' Hz'),
-    retry: res => FP.msg.tryAgain(res.item.wrong, res.attemptsLeft),
-    missed: res => FP.msg.missed(res.item.answerText, res.item.worked)
+    retry: res => FP.msg.tryAgain(hintText(res), res.attemptsLeft),
+    missed: res => FP.msg.missed(res.item.answerText, res.item.wrong + ' ' + res.item.worked)
   },
   id: SIM_ID
 });

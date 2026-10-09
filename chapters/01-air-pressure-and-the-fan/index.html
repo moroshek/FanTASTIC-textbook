@@ -3171,7 +3171,7 @@ Duct sizes come in inches but the equation wants square feet, so divide width ti
 <li>After the fourth challenge, free mode unlocks. The learner changes duct dimensions, shape and airflow; area, velocity and the substituted equation update immediately.</li>
 <li>When the learner increases the duct size while CFM is fixed, the sim notes once: "Airflow unchanged at Q CFM; velocity fell from V1 to V2 ft/min."</li>
 </ol>
-<p><strong>Feedback:</strong> Four challenges, fixed order, two attempts each. Correct: "Correct: model value is <value> <unit>." Incorrect: the "Feedback when wrong" text for that challenge. After a second wrong attempt the model value and worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 4" is shown. Challenges cannot be re-answered after they are revealed.</p>
+<p><strong>Feedback:</strong> Four challenges, fixed order, two attempts each. Correct: "Correct: model value is <value> <unit>." Hint after a first wrong attempt: the slip the learner's number matches (for example "You divided by 12 instead of 144. One square foot is 144 square inches."), or else the challenge's rule (challenge 1: "Convert the duct size to square feet first (W × H ÷ 144), then solve V = Q ÷ A."); the step titles are listed with the step to check marked, with no model value and no worked numbers. After the final attempt: the "Feedback when wrong" text for that challenge; the model value and worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 4" is shown. Challenges cannot be re-answered after they are revealed.</p>
 <p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box and a drawing of the 16 in × 12 in duct carrying 2,400 CFM. The question on screen is "How fast is the air moving?"</p>
 <p><strong>Chapter Anchors:</strong> 2,400 CFM; 16 in × 12 in duct; 1.333 ft²; 1,800 ft/min; 24 in × 16 in duct at 900 ft/min (prose only, reachable in free mode); divide by 144 for rectangular and use π D² ÷ 576 for round ducts.</p>
 </details>
@@ -3363,7 +3363,7 @@ A common trap is reading "2 psi" on a process sheet where the writer meant 2 in.
 <li>With all six labeled, question 7 appears. The learner enters the fan's static pressure rise.</li>
 <li>After question 7, the learner may click any point again to review its manometer; no further answers are recorded.</li>
 </ol>
-<p><strong>Feedback:</strong> Seven items, fixed order, one scored attempt each and one retry after the reveal that is not scored. Correct: "Correct: <reading> in. wg." Incorrect: the "Why" text for that point, plus the correct reading. A score "First-attempt correct: n of 7" is shown at the end.</p>
+<p><strong>Feedback:</strong> Seven items, fixed order, one scored attempt each and one unscored retry after a miss. Correct: "Correct: <reading> in. wg." Hint after a first wrong attempt: the slip the answer matches (wrong sign, the outlet reading alone, the sizes subtracted instead of the signed readings), or else the point's rule (point 2: "Suction builds as the air passes each inlet-side part. Which drops has the air used so far?"); the shutter stays closed and the reading is not shown. After the final attempt (the unscored retry, or Show answer): the "Why" text for that point, plus the correct reading, and the shutter opens. A score "First-attempt correct: n of 7" is shown at the end.</p>
 <p><strong>Starting State:</strong> The system drawing with all six points unlabeled and the manometer for point 1 hidden. The question on screen is "The air has just passed the intake louver. Is the duct above or below room pressure, and by how much?"</p>
 <p><strong>Chapter Anchors:</strong> Pressure drops: louver 0.15, filter 0.50, coil 0.75, ductwork and fittings 0.95, diffuser 0.15 in. wg. Readings −0.15, −0.65, −1.40, +1.10, +0.15, 0. Fan static pressure rise 2.50 in. wg. Static pressure is negative on the inlet side and positive on the discharge side.</p>
 </details>
@@ -3620,7 +3620,7 @@ DR = \frac{\rho}{0.075} = \frac{530}{T + 460} \times \frac{P_b}{29.92}
 <li>The learner completes challenges 2 to 4 in order. Changing the marker after a challenge is revealed does not change the recorded answer.</li>
 <li>After challenge 4, the learner moves freely; the hover readout updates and a note reminds them that CFM at a given speed does not change with density.</li>
 </ol>
-<p><strong>Feedback:</strong> Four challenges (six entries), fixed order, two attempts per entry. Correct: "Correct: <value>." Incorrect: the challenge's "Feedback when wrong" text. After two wrong attempts the model answer and calculation are shown and the entry counts as missed. A score "Entries correct: n of 6" is shown.</p>
+<p><strong>Feedback:</strong> Four challenges (six entries), fixed order, two attempts per entry. Correct: "Correct: <value>." Hint after a first wrong attempt: the rule without the number, or the slip the entry matches (the °F values divided, the 460 left out, the ratio upside down, multiplied instead of divided); for example "You left out the 460. Absolute temperature is T + 460 degrees Rankine." After the final attempt: the challenge's "Feedback when wrong" text; the model answer and calculation are shown and the entry counts as missed. A score "Entries correct: n of 6" is shown.</p>
 <p><strong>Starting State:</strong> The four curves are drawn, the marker sits at 70°F and 0 ft reading 1.000, and challenge 1 is shown with empty answer boxes. The question on screen is "A fan rated at standard air will handle 250°F air. How much pressure will it really develop?"</p>
 <p><strong>Chapter Anchors:</strong> Standard air 0.075 lb/ft³ at 70°F and sea level. Ratios 0.746 (250°F), 0.832 (5,000 ft), 0.760 (120°F at 5,000 ft), 0.500 (600°F). Corrected pressures 2.99 in. wg and 2.40 in. wg. CFM at a given speed is unchanged by density; SP and BHP scale with density ratio.</p>
 </details>
@@ -3834,7 +3834,7 @@ A common trap is quoting a fan from CFM and static pressure alone, then learning
 <li>The sim marks the placement correct or incorrect and shows the "Why" text. An incorrect card stays on screen until the learner places it in the correct bin, then the next card appears.</li>
 <li>After the tenth card, a summary lists each card, the learner's first choice and the correct bin.</li>
 </ol>
-<p><strong>Feedback:</strong> Ten cards, shuffled order, one scored attempt each, unlimited unscored retries until correct. Correct: "Correct: <bin letter>. <Why>". Incorrect: "Not quite. <Why>". The correct bin is revealed after the second wrong placement. A score "First-attempt correct: n of 10" is shown at the end.</p>
+<p><strong>Feedback:</strong> Ten cards, shuffled order, one scored attempt each, unlimited unscored retries until correct. Correct: "Correct: <bin letter>. <Why>". Hint after a first wrong attempt: "Not quite." and a question about the property to look at, never the bin (plating tank: "Think about what acid mist does to the fan's metal parts over time."); choosing Clean air for a contaminated airstream adds "Something in this air does matter to the fan or to people." After the final attempt (the second wrong placement): "Not quite. <Why>", and the correct bin is revealed. A score "First-attempt correct: n of 10" is shown at the end.</p>
 <p><strong>Starting State:</strong> Five empty bins with their definitions and the first card face up. The question on screen is "What is in this air, and why does it matter to the fan?"</p>
 <p><strong>Chapter Anchors:</strong> Five categories: clean, solids, corrosive or moisture, flammable, hazardous fumes. Hot clean air counts as clean. Ten cards. FanPedia references p. 32, pp. 4 and 6, pp. 110-116.</p>
 </details>
@@ -4048,6 +4048,8 @@ You can now take a line like "12,000 CFM at 3.0 in. wg, 1,173 RPM, 7.9 BHP, stan
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

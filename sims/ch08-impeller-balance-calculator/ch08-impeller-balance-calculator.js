@@ -64,6 +64,26 @@ function partNote(value, item) {
   return '';
 }
 
+// First wrong attempt: a hint that names the rule or the slip, never the model values.
+const near = (v, x) => x > 0 && v > 0 && Math.abs(v - x) / x <= 0.03;
+function retryHint(value, item) {
+  const j = judge(value, item);
+  const tips = [];
+  if (!j.u) {
+    if (near(value.u, item.G * item.W / item.N)) tips.push('Multiply by the 6.015 unit-conversion factor as well.');
+    else if (near(value.u, BALANCE.U_CONST * item.G * item.N / item.W)) tips.push('A heavier impeller is allowed more unbalance: W goes on top and N underneath.');
+    else if (near(value.u, BALANCE.U_CONST * item.W / (item.G * item.N))) tips.push('Multiply by the grade G; do not divide by it.');
+    else tips.push('Use U = 6.015 × G × W / N, with G in mm/s, W in lb and N in rpm.');
+    if (item.id === 'c2') tips.push('A tighter grade (a smaller G) lowers the limit.');
+  }
+  if (!j.m) {
+    if (near(value.m, value.u * item.r)) tips.push('m = U / r: divide by the correction radius, do not multiply.');
+    else if (!j.u && near(value.m, value.u / item.r)) tips.push('Your m follows from your U, so fixing U fixes m.');
+    else tips.push('The correction mass is m = U / r, with r in inches.');
+  }
+  return tips.join(' ');
+}
+
 const runner = new FP.ChallengeRunner({
   items: CHALLENGES,
   attempts: 2,
@@ -73,7 +93,7 @@ const runner = new FP.ChallengeRunner({
   check: (value, item) => { const j = judge(value, item); return j.u && j.m; },
   messages: {
     correct: res => FP.msg.OK + ' Correct: ' + res.item.answerText + '.',
-    retry: res => FP.msg.BAD + ' Not quite. ' + partNote(res.value, res.item) + res.item.wrong +
+    retry: res => FP.msg.BAD + ' Not quite. ' + partNote(res.value, res.item) + retryHint(res.value, res.item) +
       ' Try again (1 attempt left).',
     missed: res => FP.msg.BAD + ' Not quite. The answer is ' + res.item.answerText + '. ' + res.item.wrong +
       ' This one counts as missed.'

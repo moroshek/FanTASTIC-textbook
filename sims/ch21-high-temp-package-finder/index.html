@@ -4132,10 +4132,11 @@ review answer match.</p>
 "and over" bands have no upper bound. On ticket 7, 240°F lies in both Arr. 9
 axial bands; the answer is the general 201-250°F band, because 201-300°F is for
 select models only.</p>
-<p>You get two attempts per ticket. Every check says whether each half (band and
-review) is correct. A first miss reads "Check the band list for <family>
-again."; a second miss shows the answer and the reason, and the ticket counts as
-missed. A correct check reads "✓ Correct: <band>, review <yes/no>. <reason>."
+<p>You get two attempts per ticket. A first miss reads "Check the band list for <family>
+again." with a hint (for example "450°F is below the bottom of the band you
+chose") and does not mark the halves; a second miss says whether each half (band
+and review) is correct, shows the answer and the reason, and the ticket counts
+as missed. A correct check reads "✓ Correct: <band>, review <yes/no>. <reason>."
 The running line shows "Tickets correct: n of 8"; mastery is 7 of 8 correct on
 the first attempt.</p>
 <p>After each final check, the right panel opens a <strong>band chart</strong> for the family:
@@ -4328,6 +4329,8 @@ representatives and facilities staff.</p>
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

@@ -2676,7 +2676,7 @@ Notice the pattern that runs through this whole chapter: the shapes that guide a
 <li>For each of the 8 descriptions, the learner clicks the part that matches. The clicked part is marked correct or incorrect, and the feedback text appears.</li>
 <li>At the end the learner sees the score and can restart the check with labels hidden again.</li>
 </ol>
-<p><strong>Feedback:</strong> Eight descriptions, fixed order, two attempts each. Correct: "Correct: <part name>." Incorrect: the "Feedback when wrong" text for that description. After a second wrong attempt the correct part is highlighted and the item counts as missed. A running count "Parts identified: n of 8" is shown, and "Mastered" appears at 7 or more first-attempt correct answers.</p>
+<p><strong>Feedback:</strong> Eight descriptions, fixed order, two attempts each. Correct: "Correct: <part name>." Hint after a first wrong attempt (never names the correct part, nothing is highlighted): 1 "Look in front of an inlet, in the airstream: a steel frame that holds a bearing, not a motor base." 2 "Look at the discharge opening, where the duct is bolted on." 3 "Look at the outlet end of the scroll, not at the inlets." (wiper bar clicked: "The part you clicked works at an inlet; this one works at the outlet.") 4 "Look at the shaped piece that air passes through at each inlet on its way into the impeller." 5 "Look for the curved wrapper around the impeller that leads to the outlet." 6 "Look inside the inlet funnel area, not at the outlet." (cutoff clicked: "The part you clicked works at the outlet; this one works at an inlet.") 7 "Look for a flat sheet with an inlet opening cut into it." 8 "Look for structural steel that is not part of the airflow path." After the final attempt: the "Feedback when wrong" text for that description, the correct part is highlighted and the item counts as missed. A running count "Parts identified: n of 8" is shown, and "Mastered" appears at 7 or more first-attempt correct answers.</p>
 <p><strong>Starting State:</strong> The exploded DWDI housing with all eight labels visible and no infobox open. Prompt: "A DWDI housing has parts an SWSI housing does not. Click each one to see what it does."</p>
 <p><strong>Chapter Anchors:</strong> Eight labeled parts. Standard Arrangement 3 DWDI fans are for clean air with air temperatures limited to 130°F because both bearings are in the airstream.</p>
 </details>
@@ -3088,6 +3088,8 @@ You can now look at a job description, decide whether the material will stick, w
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

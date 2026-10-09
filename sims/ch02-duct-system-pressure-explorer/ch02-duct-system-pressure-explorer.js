@@ -80,7 +80,28 @@ const CHALLENGE_DATA = [
     wrong: 'Pressure goes with the square of airflow: (12,000 ÷ 10,000)² = 1.44, and 3.62 × 1.44 = 5.21 in. wg, ' +
       'not 3.62 × 1.20.' }
 ];
-const ITEMS = CHALLENGE_DATA.map(c => Object.assign({}, c, { hint: c.wrong, why: c.wrong }));
+// First wrong attempt: a hint that names the rule or the slip, never the value or the worked
+// numbers. The final miss shows the spec's "Feedback when wrong" text (why) with the answer.
+const near = (v, target, abs) => FP.check.numeric(v, target, { abs });
+const HINTS = {
+  'inlet-velocity': v => (near(v, 10000 * AREA_IN, 50) ? 'You multiplied. Velocity is airflow divided by flow area: V = Q ÷ A.'
+    : 'Velocity is airflow divided by flow area, V = Q ÷ A, with A in ft² (shown under Station 1).'),
+  'outlet-vp': v => (near(v, 3600 / 4005, 0.02) ? 'You stopped before squaring. Velocity pressure goes with the square of velocity.'
+    : 'VP = (V ÷ 4005)²: divide the velocity by 4005, then square the result.'),
+  'fan-total-pressure': v => {
+    if (near(v, 2.81 - 0.81, 0.03)) return 'Keep the inlet sign: the inlet total pressure is negative, and subtracting a negative adds.';
+    if (near(v, 2.00 - (-1.20), 0.03)) return 'That is the static pressure rise. Fan total pressure uses total pressure, TP = SP + VP, at each station.';
+    if (near(v, 2.81, 0.03)) return 'That is the outlet total pressure alone. Subtract the inlet total pressure, keeping its sign.';
+    return 'Find TP = SP + VP at each station, then FTP = TP outlet − TP inlet, keeping every sign.';
+  },
+  'air-power': v => (near(v, 10000 * 3.62, 100) ? 'You did not divide. Air power in hp is Q × FTP ÷ 6356.'
+    : near(v, 10000 * 3.62 / 33000, 0.05) ? 'With CFM and in. wg the constant is 6356, not 33,000.'
+      : 'AHP = Q × FTP ÷ 6356, with Q in CFM and FTP in in. wg.'),
+  'ftp-at-12000': v => (near(v, 3.62 * 1.2, 0.05) ? 'You scaled by the airflow ratio. In the same system, pressure goes with the square of the airflow ratio.'
+    : near(v, 3.62 * 1.728, 0.05) ? 'You cubed the ratio; that is the rule for power. Pressure goes with the square of the airflow ratio.'
+      : 'In the same system, pressure goes with the square of the airflow ratio.')
+};
+const ITEMS = CHALLENGE_DATA.map(c => Object.assign({}, c, { hint: HINTS[c.id], why: c.wrong }));
 const MASTERY = 4;
 
 const runner = new FP.ChallengeRunner({

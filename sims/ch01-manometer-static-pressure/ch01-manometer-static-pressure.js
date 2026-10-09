@@ -43,25 +43,25 @@ const RISE = r2(P4 - P3);
 // Items in the spec's fixed order. `at` is the run boundary the probe sits on
 // (after component `at`), or 'room' for the room point.
 const ITEMS = [
-  { id: 'p1', name: 'After the intake louver', at: 0, model: P1, column: 'up',
+  { id: 'p1', hint: 'Look at which side of the fan the louver is on, and use the pressure drop labeled under it.', name: 'After the intake louver', at: 0, model: P1, column: 'up',
     prompt: 'The air has just passed the intake louver. Is the duct above or below room pressure, and by how much?',
     why: 'The louver used 0.15 in. wg, so the duct is below room pressure and the room pushes the water toward the duct leg.' },
-  { id: 'p2', name: 'After the filter', at: 1, model: P2, column: 'up',
+  { id: 'p2', hint: 'Suction builds as the air passes each inlet-side part. Which drops has the air used so far?', name: 'After the filter', at: 1, model: P2, column: 'up',
     prompt: 'The air has now passed the filter as well. Is the duct above or below room pressure, and by how much?',
     why: 'Suction grows as each inlet component adds its drop: 0.15 + 0.50.' },
-  { id: 'p3', name: 'Fan inlet, after the coil', at: 2, model: P3, column: 'up',
+  { id: 'p3', hint: 'At the fan inlet the air has passed every inlet-side part. Which drops count, and which sign does the inlet side take?', name: 'Fan inlet, after the coil', at: 2, model: P3, column: 'up',
     prompt: 'The probe is at the fan inlet, just after the coil. Is the duct above or below room pressure, and by how much?',
     why: 'All three inlet-side drops add up: 0.15 + 0.50 + 0.75 = 1.40.' },
-  { id: 'p4', name: 'Fan outlet', at: 3, model: P4, column: 'down',
+  { id: 'p4', hint: 'At the fan outlet the pressure must push the air through everything still downstream. Which drops are ahead of the air?', name: 'Fan outlet', at: 3, model: P4, column: 'down',
     prompt: 'The probe is at the fan outlet. Is the duct above or below room pressure, and by how much?',
     why: 'The fan must push hard enough to overcome everything downstream: 0.95 + 0.15.' },
-  { id: 'p5', name: 'Before the diffuser', at: 4, model: P5, column: 'down',
+  { id: 'p5', hint: 'On the discharge side only the parts still ahead of the air count. What is left before the room?', name: 'Before the diffuser', at: 4, model: P5, column: 'down',
     prompt: 'The air has passed the ductwork and is about to enter the diffuser. Is the duct above or below room pressure, and by how much?',
     why: 'The ductwork has used 0.95 of the 1.10, leaving 0.15 for the diffuser.' },
-  { id: 'p6', name: 'In the room', at: 'room', model: 0, column: 'level',
+  { id: 'p6', hint: 'The manometer compares the duct leg with the room. What does it read when both legs see the same pressure?', name: 'In the room', at: 'room', model: 0, column: 'level',
     prompt: 'The duct leg is now open to the room the diffuser feeds. What does the manometer read?',
     why: 'The room is the reference; both legs see the same pressure.' },
-  { id: 'q7', name: 'Fan static pressure rise', rise: true, model: RISE, label: 'question 7',
+  { id: 'q7', hint: 'The rise is the outlet reading minus the inlet reading, with their signs. The suction on the inlet side counts.', name: 'Fan static pressure rise', rise: true, model: RISE, label: 'question 7',
     prompt: 'How much static pressure must the fan add?',
     why: 'The fan raises the air from ' + MINUS + '1.40 to +1.10: 1.10 ' + MINUS + ' (' + MINUS +
       '1.40) = 2.50 in. wg. The suction on the inlet side counts.' }
@@ -72,8 +72,14 @@ const MASTERY = 6;
 const REVIEW_POINTER = 'Review the section "Static Pressure": readings are negative (suction) on the inlet side, ' +
   'positive on the discharge side, and the fan rise is outlet minus inlet';
 
-// Spec feedback: Correct "Correct: <reading> in. wg." Incorrect: the Why text plus the correct reading.
+// Spec feedback: Correct "Correct: <reading> in. wg." A scored miss shows a hint (the item's rule plus a
+// slip note), and the shutter stays closed while the unscored retry is open. After the retry, or
+// when the learner chooses Show answer, the full text: the Why text plus the correct reading.
 function correctText(it) { return FP.msg.correct(it.answerText); }
+function hintText(it, v) {
+  const slip = slipNote(it, v);
+  return FP.msg.BAD + ' Not quite. ' + (slip || it.hint);
+}
 function wrongText(it) {
   return it.rise ? FP.msg.BAD + ' Not quite. ' + it.why
     : FP.msg.BAD + ' Not quite. ' + it.why + ' The correct reading is ' + it.answerText + '.';
@@ -82,7 +88,7 @@ function wrongText(it) {
 const runner = new FP.ChallengeRunner({
   items: ITEMS, attempts: 1, tolerance: TOL,
   noun: 'First-attempt', mastery: MASTERY, reviewPointer: REVIEW_POINTER, id: SIM_ID,
-  messages: { correct: res => correctText(res.item), missed: res => wrongText(res.item) },
+  messages: { correct: res => correctText(res.item), missed: res => hintText(res.item, res.value) },
   onUnlockExplore: enterReview
 });
 
@@ -171,7 +177,7 @@ function updateControls() {
     if (st.phase === 'question' || practiceOpen) checkButton.show(); else checkButton.hide();
     checkButton.html(resolved ? 'Retry (not scored)' : FP.msg.CHECK);
     if (resolved) nextButton.show(); else nextButton.hide();
-    nextButton.html(st.isLast ? 'Show summary' : st.index === 5 ? 'Go to question 7' : 'Next point');
+    nextButton.html(practiceOpen ? 'Show answer' : st.isLast ? 'Show summary' : st.index === 5 ? 'Go to question 7' : 'Next point');
     const open = st.phase === 'question' || practiceOpen;
     if (open) answerInput.removeAttribute('disabled'); else answerInput.attribute('disabled', '');
     signRadio.elt.querySelectorAll('input').forEach(inp => { inp.disabled = !open; });
@@ -233,18 +239,18 @@ function readAnswer(item) {
 // A diagnostic note for the common slips (shown below the spec feedback).
 function slipNote(item, v) {
   if (item.rise) {
-    if (FP.check.numeric(v, P4, TOL)) return '1.10 is the outlet reading alone. The rise also includes the 1.40 of suction on the inlet side.';
+    if (FP.check.numeric(v, P4, TOL)) return 'That is the outlet reading alone. The rise also counts the suction at the fan inlet.';
     if (FP.check.numeric(Math.abs(v), r2(P4 + P3) * -1, TOL) || FP.check.numeric(Math.abs(v), 0.30, TOL)) {
-      return 'You subtracted the sizes. Subtract the signed readings: 1.10 ' + MINUS + ' (' + MINUS + '1.40) adds the two.';
+      return 'You subtracted the sizes. Subtract the signed readings, outlet minus inlet: taking away a negative adds.';
     }
-    if (FP.check.numeric(v, -P3, TOL)) return '1.40 is only the inlet suction. The fan must also build +1.10 at its outlet.';
+    if (FP.check.numeric(v, -P3, TOL)) return 'That is only the inlet suction. The fan must also build the pressure at its outlet.';
     if (v < 0) return 'A rise is a positive number: the fan raises the pressure from inlet to outlet.';
     return '';
   }
   if (Math.abs(item.model) > 1e-9 && FP.check.numeric(-v, item.model, TOL)) {
     return item.model < 0
-      ? 'The size is right but the sign is not: on the inlet side the fan pulls the duct below room pressure, so the reading is negative (suction).'
-      : 'The size is right but the sign is not: on the discharge side the fan pushes the duct above room pressure, so the reading is positive.';
+      ? 'Check the sign: on the inlet side the fan pulls the duct below room pressure, so the reading is negative (suction).'
+      : 'Check the sign: on the discharge side the fan pushes the duct above room pressure, so the reading is positive.';
   }
   return '';
 }
@@ -274,13 +280,13 @@ function onCheck() {
   }
   if (res.status === 'ignored') return;
   infoMsg = '';
-  feedback = { kind: res.kind, text: res.message, answer: res.value, slip: res.status === 'correct' ? '' : slipNote(item, res.value) };
+  feedback = { kind: res.kind, text: res.message, answer: res.value, slip: '' };
   practice = null;
   practiceOpen = res.status === 'missed';
   answerInput.value('');
   updateControls();
-  FP.announce(res.message + ' Your answer: ' + signed(res.value, item.rise) + ' in. wg.' + (feedback.slip ? ' ' + feedback.slip : '') +
-    ' ' + runner.state().scoreLabel + '.' + (practiceOpen ? ' You may retry once; it is not scored.' : ''));
+  FP.announce(res.message + ' Your answer: ' + signed(res.value, item.rise) + ' in. wg.' +
+    ' ' + runner.state().scoreLabel + '.' + (practiceOpen ? ' You may retry once (not scored), or choose Show answer.' : ''));
   nextButton.elt.focus();
 }
 
@@ -292,7 +298,7 @@ function practiceCheck(item) {
   infoMsg = '';
   const ok = FP.check.numeric(a.value, item.model, TOL);
   const text = FP.msg.practice(ok ? correctText(item)
-    : FP.msg.BAD + ' Not quite. You entered ' + signed(a.value, item.rise) + ' in. wg; the correct reading is ' + item.answerText + '.');
+    : FP.msg.BAD + ' Not quite. You entered ' + signed(a.value, item.rise) + ' in. wg. ' + wrongText(item).replace(FP.msg.BAD + ' Not quite. ', ''));
   practice = { kind: ok ? 'ok' : 'bad', text };
   practiceOpen = false;
   FP.events.emit('answered', { source: SIM_ID, itemId: item.id, index: runner.index, value: a.value, correct: ok,
@@ -303,8 +309,20 @@ function practiceCheck(item) {
   nextButton.elt.focus();
 }
 
+// The learner skips the unscored retry: show the full explanation and open the shutter.
+function showAnswer() {
+  const item = runner.state().item;
+  practice = { kind: 'final', text: wrongText(item).replace(FP.msg.BAD + ' Not quite. ', '') };
+  practiceOpen = false;
+  infoMsg = '';
+  updateControls();
+  FP.announce(practice.text);
+  nextButton.elt.focus();
+}
+
 function onNext() {
   if (runner.state().phase !== 'resolved') return;
+  if (practiceOpen) return showAnswer();
   feedback = null; practice = null; practiceOpen = false; infoMsg = '';
   runner.next();                       // after question 7 this calls enterReview()
   const st = runner.state();
@@ -367,7 +385,11 @@ function draw() {
   drawControlLabels(st);
 }
 
-function revealed(i) { return runner.state().results[i] != null; }
+function revealed(i) {
+  const st = runner.state();
+  if (practiceOpen && !st.explore && i === st.index) return false;   // retry open: answer still hidden
+  return st.results[i] != null;
+}
 function shownIndex(st) { return st.explore ? reviewIndex : st.index; }
 
 // The supply system with its pressure drops, the six probe points and the readings found so far.
@@ -621,7 +643,8 @@ function drawQuestionText(x, y, w, h, st) {
     }
     if (feedback) {
       textSize(ts);
-      const ans = 'Your answer: ' + signed(feedback.answer, it.rise) + ' in. wg' + FP.msg.SEP + 'Correct: ' + it.answerText;
+      const ans = 'Your answer: ' + signed(feedback.answer, it.rise) + ' in. wg' +
+        (practiceOpen ? '' : FP.msg.SEP + 'Correct: ' + it.answerText);
       let hh = (K.countLines(feedback.text, w - 16) + K.countLines(ans, w - 16)) * lh + 14;
       if (feedback.slip) hh += K.countLines('▶ ' + feedback.slip, w - 16) * lh + 4;
       if (!dry) { fbPanel(x, yy - 2, w, hh, feedback.kind); }
@@ -640,11 +663,11 @@ function drawQuestionText(x, y, w, h, st) {
       textSize(ts);
       const hh = K.countLines(practice.text, w - 16) * lh + 10;
       if (!dry) fbPanel(x, yy - 2, w, hh, practice.kind);
-      noStroke(); textSize(ts); fill(FP.tok(practice.kind === 'ok' ? 'correct' : 'incorrect'));
+      noStroke(); textSize(ts); fill(FP.tok(practice.kind === 'ok' ? 'correct' : practice.kind === 'bad' ? 'incorrect' : 'text'));
       yy = K.wrapText(practice.text, x + 8, yy + 3, w - 16, lh, { dryRun: dry }) + 10;
     } else if (practiceOpen) {
       fill(FP.tok('text-muted')); textSize(ts);
-      yy = K.wrapText('Optional: enter the reading again and press Retry (not scored).', x, yy, w, lh, { dryRun: dry });
+      yy = K.wrapText('Optional: enter the reading again and press Retry (not scored), or press Show answer.', x, yy, w, lh, { dryRun: dry });
     }
     return yy - y;
   };

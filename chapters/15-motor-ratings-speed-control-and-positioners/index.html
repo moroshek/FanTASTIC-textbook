@@ -2873,7 +2873,7 @@ Notice that nothing about the motor's poles or the fan's sheaves changes on a VF
 <li>After all three challenges, free exploration unlocks: the learner changes the frequency from 20 to 60 Hz and every displayed value updates at once, along with a plot of percent airflow, percent pressure and percent power against frequency.</li>
 <li>The learner should notice that at 30 Hz airflow is still 50% while power is 12.5%.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each; on each attempt all three values are checked together. Correct: "Correct: <value> at <f> Hz." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model values and the worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each; on each attempt all three values are checked together. Correct: "Correct: <value> at <f> Hz." Hint after a first wrong attempt: each value is marked ✓ or ✗, and each wrong value gets one line that names the slip without a ratio, multiplier or model value: still the 60 Hz value ("scale it to the new frequency"), divided by the ratio instead of multiplying, or the wrong power of the ratio ("you used the ratio itself"), each followed by the rule (airflow goes with r, pressure with r², power with r³); otherwise "Recheck the <quantity> arithmetic: r = f / 60, then …". After the final attempt: the model values, the "Feedback when wrong" text for that challenge and the worked calculation are shown, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 is shown with empty answer boxes, the frequency set to 60 Hz and the base duty displayed. The prompt reads "The drive is turned down to 45 Hz. What will the fan deliver, and what will it draw?"</p>
 <p><strong>Chapter Anchors:</strong> Base duty 10,000 CFM, 2.00 in. wg, 8.0 bhp at 60 Hz. At 45 Hz: speed ratio 0.75, synchronous speed 1350 RPM, 7,500 CFM, 1.13 in. wg, 3.38 bhp. A 4-pole motor runs at 1800 RPM synchronous on 60 Hz.</p>
 </details>
@@ -3262,6 +3262,8 @@ You can now take a duty point, a plant's power and its environment, and turn the
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

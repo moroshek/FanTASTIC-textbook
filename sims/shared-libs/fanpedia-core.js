@@ -1,8 +1,8 @@
 /* fanpedia-core.js — FanPedia MicroSim kit, core (library-agnostic).
- * Version 1.2.0 (2026-10-09). Namespace: window.FP. No modules, no build step.
+ * Version 1.3.0 (2026-10-09). Namespace: window.FP. No modules, no build step.
  *
  * Provides: FP.tok, FP.fmt, FP.check, FP.msg, FP.Score, FP.rng, FP.announce,
- * FP.events, FP.embedded, FP.ui (small DOM helpers), FP.svg (✓/✗ paths), FP.ChallengeRunner,
+ * FP.events, FP.embedded, FP.autoHeight (1.3: iframe auto-height), FP.ui (small DOM helpers), FP.svg (✓/✗ paths), FP.ChallengeRunner,
  * FP.CardDeck.
  *
  * Rules: defines nothing outside FP; safe in any load order and when loaded
@@ -14,7 +14,7 @@
 (function (root) {
   'use strict';
   var FP = root.FP = root.FP || {};
-  FP.version = '1.2.0';
+  FP.version = '1.3.0';
 
   var hasDoc = typeof document !== 'undefined' && !!document.documentElement;
 
@@ -373,6 +373,151 @@
   if (FP.embedded && hasDoc) {
     // fanpedia-sim.css hides "Back to Lesson Plan" under html.fp-embedded.
     document.documentElement.classList.add('fp-embedded');
+  }
+
+  // ---------------------------------------------------------------- autoHeight (1.3)
+  // Inside an iframe the sim posts its content height to the parent page,
+  // which sizes the iframe to it (docs/js/sim-autoheight.js). Message:
+  // {type: 'fp-sim-height', height: <int px>, href: location.pathname}.
+  // The parent may ask for a resend with {type: 'fp-sim-height-request'}.
+  var AH_MSG = 'fp-sim-height', AH_REQ = 'fp-sim-height-request';
+  var AH_SKIP_TAGS = { SCRIPT: 1, STYLE: 1, LINK: 1, META: 1, TEMPLATE: 1, NOSCRIPT: 1, BR: 1 };
+  var AH_LEAF_TAGS = { svg: 1, SVG: 1, CANVAS: 1, IFRAME: 1, VIDEO: 1, IMG: 1, SELECT: 1 };
+  FP.autoHeight = {
+    MESSAGE: AH_MSG,
+    REQUEST: AH_REQ,
+    /** Content height of a document in px (integer). It does not include the
+     *  viewport, so it can shrink: the <html> box (flow content and body
+     *  margins) plus the bottom edge of any visible descendant that sticks out
+     *  of the flow (p5 controls placed with .position(), absolute panels).
+     *  Fixed elements are skipped; the walk does not enter elements that clip
+     *  their overflow, nor svg/canvas/select. Pure given doc/win-like objects. */
+    measure: function (doc, win) {
+      if (!doc || !doc.documentElement) return 0;
+      var de = doc.documentElement;
+      var sy = (win && (win.pageYOffset || win.scrollY)) || de.scrollTop || 0;
+      var gcs = win && typeof win.getComputedStyle === 'function' ? function (e) { return win.getComputedStyle(e); } : null;
+      var bottom = de.getBoundingClientRect().bottom + sy;
+      var stack = doc.body ? [doc.body] : [];
+      while (stack.length) {
+        var el = stack.pop();
+        var kids = el.children || [];
+        for (var i = 0; i < kids.length; i++) {
+          var k = kids[i];
+          if (AH_SKIP_TAGS[k.tagName]) continue;
+          var st = gcs ? gcs(k) : (k.style || {});
+          if (st.display === 'none' || st.position === 'fixed') continue;
+          var r = k.getBoundingClientRect();
+          if ((r.width > 0 || r.height > 0) && st.visibility !== 'hidden' && r.bottom + sy > bottom) bottom = r.bottom + sy;
+          var ov = st.overflowY || st.overflow || 'visible';
+          if (!AH_LEAF_TAGS[k.tagName] && (ov === 'visible' || ov === '') && k.children && k.children.length) stack.push(k);
+        }
+      }
+      return Math.max(0, Math.ceil(bottom - 0.01));   // 0.01: sub-pixel noise never adds a px
+    },
+    /** Initial sender state for decide(). */
+    initState: function () { return { last: null, sent: [], lock: null }; },
+    /** Pure send decision. Returns {send: int px | null, state}.
+     *  - sends when the height differs from the last one sent by >= 1 px (or force);
+     *  - oscillation (A -> B -> A within opts.oscMs, default 1000 ms): sends
+     *    max(A, B) once and holds it until the content measures something else;
+     *  - runaway (more than opts.maxSends, default 20, within opts.windowMs,
+     *    default 2000 ms, e.g. content sized in vh): stops sending until
+     *    reset with initState() (the sender does this when the width changes). */
+    decide: function (state, measured, now, opts) {
+      opts = opts || {};
+      var s = { last: state.last, sent: state.sent.slice(), lock: state.lock };
+      var h = Math.ceil(Number(measured));
+      var none = { send: null, state: s };
+      if (!isFinite(h) || h <= 0) return none;
+      now = Number(now) || 0;
+      var oscMs = opts.oscMs == null ? 1000 : opts.oscMs;
+      var windowMs = opts.windowMs == null ? 2000 : opts.windowMs;
+      var maxSends = opts.maxSends == null ? 20 : opts.maxSends;
+      if (s.lock === 'runaway') return none;
+      if (s.lock && s.lock.kind === 'osc') {
+        if (s.lock.values.indexOf(h) >= 0 && !opts.force) return none;
+        if (s.lock.values.indexOf(h) >= 0) return { send: s.last, state: s };
+        s.lock = null;
+      }
+      if (s.last === h && !opts.force) return none;
+      var n = s.sent.length;
+      if (!opts.force && n >= 2 && s.sent[n - 2].h === h && s.sent[n - 1].h !== h &&
+          now - s.sent[n - 2].t <= oscMs) {
+        var hi = Math.max(h, s.last);
+        s.lock = { kind: 'osc', values: [h, s.last] };
+        if (hi === s.last) return none;
+        h = hi;
+      }
+      s.sent = s.sent.filter(function (e) { return now - e.t <= windowMs; });
+      if (s.sent.length >= maxSends) { s.lock = 'runaway'; return { send: null, state: s }; }
+      s.sent.push({ h: h, t: now });
+      s.last = h;
+      return { send: h, state: s };
+    }
+  };
+
+  function startAutoHeight() {
+    if (FP._autoHeightStarted || !FP.embedded || !hasDoc || typeof window === 'undefined') return;
+    var parentWin;
+    try { parentWin = window.parent; } catch (e) { return; }
+    if (!parentWin || parentWin === window || typeof parentWin.postMessage !== 'function') return;
+    FP._autoHeightStarted = true;
+    var AH = FP.autoHeight, state = AH.initState(), timer = null, forceNext = false;
+    var width = window.innerWidth;
+    var now = function () { return Date.now(); };
+    function run() {
+      timer = null;
+      var d = AH.decide(state, AH.measure(document, window), now(), { force: forceNext });
+      forceNext = false;
+      state = d.state;
+      if (d.send != null) {
+        try { parentWin.postMessage({ type: AH_MSG, height: d.send, href: location.pathname }, '*'); }
+        catch (e) { /* parent gone: nothing to size */ }
+      }
+    }
+    // Throttle, not trailing debounce: a sim that animates its DOM keeps
+    // mutating, and a trailing debounce would then never fire.
+    function schedule(force) {
+      if (force) forceNext = true;
+      if (timer) return;
+      timer = setTimeout(function () {
+        if (typeof requestAnimationFrame === 'function') requestAnimationFrame(run); else run();
+      }, 80);
+    }
+    FP.autoHeight.update = function () { schedule(true); };
+    window.addEventListener('load', function () { schedule(); });
+    window.addEventListener('resize', function () {
+      // A width change re-lays the sim out: start over (clears any lock).
+      // A height-only resize is usually the parent applying our own height.
+      if (window.innerWidth !== width) { width = window.innerWidth; state = AH.initState(); }
+      schedule();
+    });
+    window.addEventListener('message', function (e) {
+      if (e.source === parentWin && e.data && e.data.type === AH_REQ) schedule(true);
+    });
+    if (typeof ResizeObserver === 'function') {
+      var ro = new ResizeObserver(function () { schedule(); });
+      ro.observe(document.documentElement);
+      ro.observe(document.body);
+      var main = document.querySelector('main');
+      if (main) ro.observe(main);
+    }
+    if (typeof MutationObserver === 'function') {
+      // p5 controls placed with .position() move by style without resizing
+      // the body; class/hidden toggles reveal absolutely positioned panels.
+      new MutationObserver(function () { schedule(); }).observe(document.body, {
+        childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class', 'hidden', 'open']
+      });
+    }
+    if (document.fonts && document.fonts.ready && typeof document.fonts.ready.then === 'function') {
+      document.fonts.ready.then(function () { schedule(); });
+    }
+    schedule();
+  }
+  if (FP.embedded && hasDoc) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', startAutoHeight);
+    else startAutoHeight();
   }
 
   // ---------------------------------------------------------------- DOM helpers

@@ -3351,7 +3351,7 @@ Watch out for a specification that puts the fan on springs but leaves the duct c
 <li>The learner presses Check; the sim shows the weighted bands, the model total and the verdict next to the learner's answer.</li>
 <li>After all three challenges, free mode unlocks: moving any band slider updates the weighted values, both totals and the largest contributor at once. The learner should notice that raising the 63 Hz band by 10 dB barely changes the A-weighted total, while raising the 1,000 Hz band by 10 dB changes it a lot.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: LwA = <model> dB, which <meets/exceeds> the <limit> dB limit." Incorrect: the "Feedback when wrong" text. After the second wrong attempt, the model value and the weighted band table are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: LwA = <model> dB, which <meets/exceeds> the <limit> dB limit." Hint after a first wrong attempt: "Not quite." plus the slip the typed level points to (the unweighted total; an arithmetic average; the loudest band alone; a level within 0.5 dB with the wrong meets/exceeds choice: "meets means at or below the limit"), or else the step for that challenge (1: weight each band, add as 10·log10 of the sum of 10^(L/10), look at which weighted bands are largest; 2: weight, then add logarithmically, several bands of similar level add to more than any one; 3: weight every band before adding and check how much the 63 Hz correction takes off). The hint states no weighted band, overall level or verdict, and the weighted band table stays hidden. After the final attempt: the model value, the verdict, the "Feedback when wrong" text and the weighted band table, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 with an empty answer box and the eight band levels listed, asking "What is the A-weighted overall level, and does it meet 95 dB?"</p>
 <p><strong>Chapter Anchors:</strong> Eight bands centered 63 to 8,000 Hz; corrections as listed; challenge 1 equals the chapter's worked example: 92.5 dB A-weighted, 101.6 dB unweighted, 95 dB limit, 500 and 1,000 Hz bands dominate.</p>
 </details>
@@ -3794,7 +3794,7 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 <li>The learner revises and checks again until no violations remain; the composed fan description then appears.</li>
 <li>The learner should notice that some fixes cascade: changing the arrangement to 8 forces a direct drive, which needs the VFD to meet the speed.</li>
 </ol>
-<p><strong>Feedback:</strong> Unlimited checks. Each check lists all triggered violation and advisory messages from Content. On completion: "Specification complete: ten attributes, zero conflicts, <n> checks." No answers are revealed before the learner chooses; the messages explain each conflict.</p>
+<p><strong>Feedback:</strong> Unlimited checks. Each check lists all triggered violation and advisory messages from Content. Hint after a first wrong attempt: the first time V3, V4, V7, V9 or V11 is triggered, its message is a hint that does not name the option to pick (V3: "FanPedia: 9F is not suitable for isolators directly. Which arrangement can sit on an isolation base instead?"; V4: "Arrangements 1, 9 and 9F are belt-driven here; change the drive, or choose an arrangement built for a coupled direct drive."; V7: "Stand on the drive side: which way must the wheel turn to throw air out of a top outlet blowing right, and which code names that discharge?"; V9: "Compare the package's temperature rating with the gas temperature on the application card."; V11: "Types A and B are limited to 250°F; compare that with the gas temperature."). After the final attempt: when a later check triggers the same violation again, its full Content message is shown. The other violations and the advisories show their Content message every time. On completion: "Specification complete: ten attributes, zero conflicts, <n> checks." No answers are revealed before the learner chooses; the messages explain each conflict.</p>
 <p><strong>Starting State:</strong> The application card, ten unchosen attributes with empty justification boxes, and the prompt "Build a specification that a factory could build and a reviewer could approve."</p>
 <p><strong>Chapter Anchors:</strong> 20,000 ACFM; 12.0 in. wg; 500°F; 70°F cold start; 1,450 RPM; 96.0 BHP cold; 53.0 BHP hot; 100 HP motor; CW THD; Types A and B limited to 250°F; Arrangement 9 with belt drive as the worked selection; 10 ft by 8 ft pad.</p>
 </details>
@@ -3920,6 +3920,8 @@ You started this book learning what a fan is and what CFM means, and you have ju
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

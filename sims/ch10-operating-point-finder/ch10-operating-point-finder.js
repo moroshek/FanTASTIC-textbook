@@ -37,13 +37,19 @@ function solve(R) {
 const CHALLENGE_DATA = [
   { id: 'as-designed', R: 4.0, system: 'As designed: 4.0 in. wg at 10,000 CFM.',
     wrong: 'The fan curve passes through 4.0 in. wg at 10,000 CFM, exactly where the system needs ' +
-           '4.0 in. wg, so the curves cross at the design point.' },
+           '4.0 in. wg, so the curves cross at the design point.',
+    hint: 'Read the design airflow on both curves: if the fan offers the same pressure the system needs there, ' +
+          'that is where they cross.' },
   { id: 'filters-loaded', R: 6.25, system: 'Filters loaded: 4.0 in. wg at 8,000 CFM.',
     wrong: 'A steeper system curve crosses the fan curve further left. At 8,000 CFM the fan offers ' +
-           '4.5 in. wg and the system needs 4.0, so the fan pushes on until about 8,390 CFM.' },
+           '4.5 in. wg and the system needs 4.0, so the fan pushes on until about 8,390 CFM.',
+    hint: 'A steeper system curve crosses the fan curve further left. Where the fan offers more pressure than ' +
+          'the system needs, the airflow keeps rising until the two pressures match.' },
   { id: 'resistance-overestimated', R: 2.5, system: 'Resistance overestimated: 2.5 in. wg at 10,000 CFM.',
     wrong: 'A flatter system curve crosses further right. The fan moves more air than designed, and ' +
-           'BHP rises toward its 9.5 maximum.' }
+           'BHP rises toward its 9.5 maximum.',
+    hint: 'A flatter system curve crosses further right: the fan moves more air than designed. ' +
+          'Follow both curves to the right until they meet.' }
 ];
 const PROMPT = 'Where will this fan actually run in this system?';
 const pointText = op => FP.fmt.cfm(op.q) + ' and ' + FP.fmt.inwg(op.p);
@@ -61,6 +67,19 @@ const ITEMS = CHALLENGE_DATA.map(c => {
   });
 });
 
+// First wrong attempt: the rule plus where the prediction sits, never the intersection itself.
+function retryHint(v, item) {
+  const qOk = Math.abs(v.q - item.op.q) <= 300 + 1e-9, pOk = Math.abs(v.p - item.op.p) <= 0.15 + 1e-9;
+  const onFan = Math.abs(v.p - C.pressureAt(FAN, v.q)) <= 0.15;
+  const onSys = Math.abs(v.p - C.systemPressure(C.kFromR(item.R), v.q)) <= 0.15;
+  let note = '';
+  if (qOk && !pOk) note = ' Your airflow is close; read the pressure where the two curves meet.';
+  else if (!qOk && pOk) note = ' Your pressure is close; read the airflow where the two curves meet.';
+  else if (onFan && !onSys) note = ' Your point is on the fan curve but not on the system curve; slide along the fan curve until it meets the dashed curve.';
+  else if (onSys && !onFan) note = ' Your point is on the system curve but not on the fan curve; slide along the dashed curve until it meets the fan curve.';
+  return item.hint + note;
+}
+
 const runner = new FP.ChallengeRunner({
   items: ITEMS,
   attempts: 2,
@@ -69,7 +88,7 @@ const runner = new FP.ChallengeRunner({
   reviewPointer: 'Press Start over to try the three systems again',
   messages: {
     correct: res => FP.msg.correct('the curves cross at ' + res.item.answerText),
-    retry: res => FP.msg.tryAgain(res.item.wrong, res.attemptsLeft),
+    retry: res => FP.msg.tryAgain(retryHint(res.value, res.item), res.attemptsLeft),
     missed: res => FP.msg.missed(res.item.answerText, res.item.wrong)
   },
   id: SIM_ID

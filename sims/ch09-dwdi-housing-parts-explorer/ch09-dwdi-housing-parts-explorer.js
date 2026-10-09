@@ -45,6 +45,27 @@
     { id: 'd8', prompt: 'Stiffens the housing and carries it to its mounting.', answer: 'framing',
       hint: 'Framing is the structural steel around the housing, not part of the airflow path.' }
   ];
+  // First wrong attempt: a hint that points to where or what to look for without naming the part
+  // (the spec's "Feedback when wrong" text names it, so it is kept for the final miss).
+  var RETRY_HINTS = {
+    d1: { text: 'Look in front of an inlet, in the airstream: a steel frame that holds a bearing, not a motor base.' },
+    d2: { text: 'Look at the discharge opening, where the duct is bolted on.' },
+    d3: { text: 'Look at the outlet end of the scroll, not at the inlets.',
+      wrong: { wiper: 'The part you clicked works at an inlet; this one works at the outlet.' } },
+    d4: { text: 'Look at the shaped piece that air passes through at each inlet on its way into the impeller.' },
+    d5: { text: 'Look for the curved wrapper around the impeller that leads to the outlet.' },
+    d6: { text: 'Look inside the inlet funnel area, not at the outlet.',
+      wrong: { cutoff: 'The part you clicked works at the outlet; this one works at an inlet.' } },
+    d7: { text: 'Look for a flat sheet with an inlet opening cut into it.' },
+    d8: { text: 'Look for structural steel that is not part of the airflow path.' }
+  };
+  function retryHint(c) {
+    var h = RETRY_HINTS[c.prompt.id];
+    var clicked = '';
+    PARTS.forEach(function (p) { if (p.label === c.chosenLabel) clicked = p.id; });
+    return (h.wrong && h.wrong[clicked]) || h.text;
+  }
+
   PROMPTS.forEach(function (q) {
     var p = PARTS.filter(function (x) { return x.id === q.answer; })[0];
     q.why = p.text;    // listed in the summary for missed parts
@@ -54,15 +75,18 @@
     id: SIM_ID, parts: PARTS, prompts: PROMPTS, attempts: 2, mastery: MASTERY, order: 'fixed'
   });
 
-  // Spec wording: Correct "Correct: <part name>."; Incorrect: the "Feedback when wrong" text;
-  // after a second wrong attempt the correct part is highlighted and the item counts as missed.
+  // Spec wording: Correct "Correct: <part name>."; first wrong attempt: a RETRY_HINTS hint that
+  // does not name the part; after a second wrong attempt the "Feedback when wrong" text, the
+  // correct part is highlighted and the item counts as missed.
   // Running count "Parts identified: n of 8"; "Mastered" at 7 or more first-attempt correct.
   var MSG = {
     exploreLabel: 'Explore',
     visited: function (n, N) { return 'Parts opened: ' + n + ' of ' + N; },
     quizLabel: 'Check',
     correct: function (c) { return '✓ Correct: ' + c.answerLabel + '.'; },
-    retry: function (c) { return '✗ ' + c.hint + ' Try again (1 attempt left).'; },
+    retry: function (c) {
+      return '✗ Not quite. ' + retryHint(c) + ' Try again (1 attempt left).';
+    },
     missed: function (c) {
       return '✗ ' + c.hint + ' The highlighted part is the ' + c.answerLabel.toLowerCase() + '. This one counts as missed.';
     },

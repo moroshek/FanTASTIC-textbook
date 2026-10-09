@@ -79,6 +79,29 @@ function explain(v, item) {
   return parts.join(' ');
 }
 
+// First wrong attempt: names the wrong field, the rule for it and the slip the answer shows,
+// never the model fan speed, belt count or worked sums (those come with the final miss).
+function retryHint(v, item) {
+  const r = rpmOk(v.rpm, item), b = beltsOk(v.belts, item);
+  const parts = [];
+  if (r && !b) parts.push('Your fan speed is right; the belt count is not.');
+  else if (!r && b) parts.push('Your belt count is right; the fan speed is not.');
+  else parts.push('Both the fan speed and the belt count are off.');
+  if (!r) {
+    const inverted = item.motorRpm * item.fanSheaveIn / item.motorSheaveIn;
+    if (Math.abs(v.rpm - inverted) <= RPM_TOL + 1e-9) parts.push('Your ratio is inverted: the larger sheave turns slower.');
+    else parts.push('Fan rpm = motor rpm × motor sheave ÷ fan sheave.');
+    if (item.motorSheaveIn > item.fanSheaveIn) parts.push('Here the motor sheave is the larger one.');
+  }
+  if (!b) {
+    const d = item.drive;
+    if (v.belts === Math.floor(d.beltsExact) && v.belts !== d.belts) parts.push('Round belt counts up; a partial belt cannot carry its share.');
+    else if (v.belts === d.belts + 1 && Number.isInteger(FP.models.round(d.beltsExact, 6))) parts.push('A whole-number quotient is not rounded up.');
+    else parts.push('Belts = design hp (motor hp × drive service factor) ÷ rating per belt, rounded up.');
+  }
+  return parts.join(' ');
+}
+
 const ITEMS = CHALLENGE_DATA.map((c, i) => {
   const drive = FP.models.beltDrive(c);
   const item = Object.assign({}, c, {
@@ -87,7 +110,7 @@ const ITEMS = CHALLENGE_DATA.map((c, i) => {
     prompt: PROMPT,
     answerText: FP.fmt.num(drive.fanRpm, 0) + ' rpm and ' + drive.belts + ' belt' + (drive.belts === 1 ? '' : 's'),
     check: (v, it) => rpmOk(v.rpm, it) && beltsOk(v.belts, it),
-    hint: (v, it) => explain(v, it),
+    hint: (v, it) => retryHint(v, it),
     why: (v, it) => (rpmOk(v.rpm, it) && beltsOk(v.belts, it) ? '' : explain(v, it))
   });
   return item;

@@ -2824,7 +2824,7 @@ A common trap is adding neoprene pads to a slow fan "for a little isolation." A 
 <li>After the three challenges, exploration unlocks: the learner changes speed and deflection, and the point, readouts and region label update at once.</li>
 <li>The learner should notice that at 420 RPM with 0.2 in the readout shows resonance, and that every pad setting below about 1,060 RPM lands in the amplification region.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: T = <model value>, <percent isolation or amplification>." Incorrect: the "Feedback when wrong" text. After the second wrong attempt the worked calculation is shown and the challenge counts as missed. Running count "Challenges correct: n of 3".</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: T = <model value>, <percent isolation or amplification>." Hint after a first wrong attempt: "Not quite." plus the slip the typed value points to (a negative T; the percent isolation instead of T; |r² − 1| not inverted; the − 1 dropped or added; r not squared; RPM not converted to hertz; f_n not 3.13/√δ), or else the step for that challenge (1: work in hertz, f = N/60 and f_n = 3.13/√δ, then r and T = 1/|r² − 1|; 2: a pad's f_n is much higher, recompute it for the pad; 3: find r first and note which side of 1.414 it falls on). The hint never states f, f_n, r or T, and the curve and readouts stay hidden. After the final attempt: the "Feedback when wrong" text with the worked calculation and the model value, and the challenge counts as missed. Running count "Challenges correct: n of 3".</p>
 <p><strong>Starting State:</strong> Challenge 1 shown with an empty answer box and the curve hidden. The prompt reads "What fraction of the fan's force gets through a 1 in spring at 1170 RPM?"</p>
 <p><strong>Chapter Anchors:</strong> 1170 RPM → 19.5 Hz; 600 RPM → 10 Hz; f_n = 3.13 Hz at 1 in; T = 0.026 and 97.4% isolation at 1170 RPM on 1 in springs; the four-row table at 600 RPM (pad T 2.76; RIS 0.3 in 51.5%; 1 in 89.1%; 2 in 94.8%); pad at 1170 RPM about 30%; amplification below r ≈ 1.4; pads resonate near 750 RPM and amplify below about 1,060 RPM.</p>
 </details>
@@ -3127,6 +3127,8 @@ You can now read a job, pick a unitary, isolation or inertia base, and check a d
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

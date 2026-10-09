@@ -2874,7 +2874,7 @@ It is easy to check the airstream temperature against the housing and impeller m
 <li>The sim shows correct or incorrect for each half and the reason; the next ticket unlocks.</li>
 <li>After ticket 8, the learner can enter any family and temperature from 100°F to 1,200°F in 10°F steps (default 300°F) and see the band and review flag, and should notice that the listed axial bands stop at 300°F.</li>
 </ol>
-<p><strong>Feedback:</strong> 8 tickets, fixed order, two attempts each. Correct: "Correct: <band>, review <yes/no>. <reason>." Incorrect first attempt: "Check the band list for <family> again." After a second wrong attempt the answer and reason are shown and the ticket counts as missed. Score "n of 8 correct" is shown.</p>
+<p><strong>Feedback:</strong> 8 tickets, fixed order, two attempts each. Correct: "Correct: <band>, review <yes/no>. <reason>." Hint after a first wrong attempt: "Check the band list for <family> again." plus a hint, with no band or review answer and no per-half marks: a band below or above the temperature gets "<temperature> is above the top (below the bottom) of the band you chose. Find the band whose limits contain <temperature>."; 201-300°F on ticket 7 gets "201-300°F is for select models only; start from the general band."; otherwise "Find the band whose limits contain <temperature>, then check whether this family sends that band to engineering review." The band chart stays closed. After the final attempt: each half is marked correct or incorrect, the answer and reason are shown, and the ticket counts as missed. Score "n of 8 correct" is shown.</p>
 <p><strong>Starting State:</strong> Ticket 1 shown with the band list closed and the question "Which package band covers this job?"</p>
 <p><strong>Chapter Anchors:</strong> All bands, review requirements and the 250°F aluminum limit as stated in the chapter's package table and axial paragraph; 8 tickets; mastery 7 of 8.</p>
 </details>
@@ -3252,6 +3252,8 @@ You can now take a hot, hazardous or RTO inquiry and turn it into a construction
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

@@ -3150,7 +3150,7 @@ A common trap is reading "stainless steel" on a drawing and assuming it satisfie
 <li>The learner may press Try Again, which clears only the incorrect cells and keeps the correct ones; the first-Check score is kept as the recorded score.</li>
 <li>After a second Check, or on pressing Show Answers, the full answer table and the note are revealed.</li>
 </ol>
-<p><strong>Feedback:</strong> One matrix of 18 cells in fixed row order. First Check: "You matched n of 18 cells." Correct cells are confirmed; each incorrect cell shows the "Reason shown as feedback" for its row. At 15 or more: "You can tell the three types apart part by part." Below 15: "Look at the Impeller and Inlet funnel rows first; they carry the main difference between B and C." Answers are revealed after the second Check or on request.</p>
+<p><strong>Feedback:</strong> One matrix of 18 cells in fixed row order. First Check: "You matched n of 18 cells." Correct cells are confirmed. Hint after a first wrong attempt: each row with an incorrect cell shows a hint that names the question to ask for that component (for example Inlet funnel: "Think about where the rotating impeller could first touch a stationary part in each type"), never a cell's state. After the final attempt: each row shows its "Reason shown as feedback". At 15 or more: "You can tell the three types apart part by part." Below 15: "Look at the Impeller and Inlet funnel rows first; they carry the main difference between B and C." Answers are revealed after the second Check or on request.</p>
 <p><strong>Starting State:</strong> An empty 6 × 3 matrix with the question "Which parts does each type make non-ferrous?"</p>
 <p><strong>Chapter Anchors:</strong> Six components and three types (18 cells); mastery 15 of 18; Type C steel funnel at 501°F and above; bearings are not allowed in the airstream in any type; the chapter states that Type B typically uses an aluminum impeller and an aluminum rub plate with a steel inlet cone, and that Type C typically uses an aluminum inlet funnel and an aluminum rub plate.</p>
 </details>
@@ -3522,7 +3522,7 @@ Here's a quick check for any wet or insulated job: ask the customer where the dr
 <li>The learner moves to the next inquiry, through all six in fixed order.</li>
 <li>A summary lists each inquiry, the first answer, the correct answer and the reason, and builds the construction line for inquiry 4 as an example: "601°F-800°F package; mild steel and Corten or stainless steel; insulated jacket."</li>
 </ol>
-<p><strong>Feedback:</strong> Six inquiries, fixed order, first attempt scored, one extra practice attempt per inquiry. Correct: "Recommended construction is sound." plus the reason. Incorrect: "That breaks a rule." plus the reason. After the practice attempt (or immediately if the first attempt was correct), the correct option is revealed. Final score "n of 6"; at 5 or more: "You can turn an airstream into a construction line."</p>
+<p><strong>Feedback:</strong> Six inquiries, fixed order, first attempt scored, one extra practice attempt per inquiry. Correct: "Recommended construction is sound." plus the reason. Hint after a first wrong attempt: "That breaks a rule." plus a hint chosen by the wrong option that names the rule it breaks without naming the correct option (for example inquiry 2, option A: "Check whether high moisture and high temperature construction can be used together on one fan"). After the final attempt (the practice attempt, or moving on without one): "That breaks a rule." plus the reason, and the correct option is revealed; a correct first attempt shows the reason and the correct option at once. Final score "n of 6"; at 5 or more: "You can turn an airstream into a construction line."</p>
 <p><strong>Starting State:</strong> Inquiry 1 with its tags (wet) and the four options, with the prompt "What should the construction line say?"</p>
 <p><strong>Chapter Anchors:</strong> Six inquiries; mastery 5 of 6; high moisture construction is for Arrangement 9 axial fans only and cannot be combined with high temperature construction; 220°F falls in an axial high temperature package (201°F-250°F); non-ferrous standard impeller means Type B; 700°F falls in the 601°F-800°F package; jackets can protect personnel; FGR connection on the front of the inlet box; buffer strips or bolt-on pedestal for stainless on mild steel.</p>
 </details>
@@ -3645,6 +3645,8 @@ You just learned to turn an airstream description into a construction line: mate
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

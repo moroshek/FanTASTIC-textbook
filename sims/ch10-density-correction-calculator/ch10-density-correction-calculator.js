@@ -44,23 +44,34 @@ const PROMPT_1 = 'This fan handles 200°F air at sea level. By what factor do it
   'horsepower change from the catalog?';
 const FACTOR_Q = 'What is the combined density correction factor Kd?';
 
+const near = (v, x) => Math.abs(v - x) <= 0.01;   // the factor tolerance
+
 const ITEM_DATA = [
   { id: 'job1-factor', job: 0, kind: 'factor', prompt: PROMPT_1,
     model: R(factors(200, 0).kd, 3),
     wrong: 'Use absolute temperatures: 530 ÷ (200 + 460) = 0.803. Sea level has an altitude factor of 1.000.',
-    slip: v => (Math.abs(v - 0.35) <= 0.02 ? ' Add 460 to each temperature first.' : '') },
+    hint: 'Use absolute temperatures: Kt = 530 ÷ (T + 460). Sea level has an altitude factor of 1.000.',
+    slip: v => (Math.abs(v - 0.35) <= 0.02 ? ' Add 460 to each temperature first.' : ''),
+    hintSlip: v => (near(v, 660 / 530) ? ' Hot air is lighter than standard air, so the factor is below 1: put 530 on top.' : '') },
   { id: 'job2-factor', job: 1, kind: 'factor', prompt: 'This fan handles 70°F air at a site 5,000 ft above sea level. ' + FACTOR_Q,
     model: R(factors(70, 5000).kd, 3),
-    wrong: 'At 70°F the temperature factor is 1.000; the altitude factor at 5,000 ft is 0.832.' },
+    wrong: 'At 70°F the temperature factor is 1.000; the altitude factor at 5,000 ft is 0.832.',
+    hint: 'At 70°F the temperature factor is 1.000, so Kd is the altitude factor: Ka = (1 − 6.875 × 10⁻⁶ × h)^5.2559, with h in feet.',
+    hintSlip: v => (near(v, 1 - ALT.coef * 5000) ? ' Raise (1 − 6.875 × 10⁻⁶ × h) to the 5.2559 power.'
+      : near(v, 1 / factors(70, 5000).ka) ? ' Thinner air at altitude is lighter, so the factor is below 1.' : '') },
   { id: 'job3-factor', job: 2, kind: 'factor', part: 1,
     prompt: 'A dryer exhaust fan handles 200°F air at 5,000 ft: 10,000 CFM against 3.0 in. wg actual static pressure. ' +
       'Part 1 of 2: ' + FACTOR_Q,
     model: R(factors(200, 5000).kd, 3),
-    wrong: 'Multiply the two factors: 0.803 × 0.832 = 0.668.' },
+    wrong: 'Multiply the two factors: 0.803 × 0.832 = 0.668.',
+    hint: 'Kd = Kt × Ka: multiply the temperature factor for 200°F by the altitude factor for 5,000 ft.',
+    hintSlip: v => (near(v, factors(200, 0).kt) || near(v, factors(70, 5000).ka) ? ' That is only one of the two factors.'
+      : near(v, factors(200, 0).kt + factors(70, 5000).ka) ? ' Multiply the factors; do not add them.' : '') },
   { id: 'job3-pressure', job: 2, kind: 'pressure', part: 2,
     prompt: 'Part 2 of 2: What standard-air static pressure do you look up in the catalog (in. wg)?',
     model: R(M.catalogFromActual(3.0, factors(200, 5000).kd), 2),
     wrong: 'Divide the actual pressure by the factor: 3.0 ÷ 0.668 = 4.49 in. wg. The CFM does not change.',
+    hint: 'Standard-air pressure = actual pressure ÷ Kd, using the Kd from part 1. The CFM does not change.',
     slip: v => (Math.abs(v - 2.00) <= 0.05 ? ' That multiplies by the factor; to enter a standard-air catalog, divide by it.' : '') }
 ];
 
@@ -76,6 +87,8 @@ const ITEMS = ITEM_DATA.map(d => Object.assign({}, d, {
   label: d.kind === 'pressure' ? 'challenge 3' : undefined
 }));
 const extra = (item, v) => (item.slip ? item.slip(v) : '');
+// First wrong attempt: the rule plus any slip note, never the model value or the finished sum.
+const retryHint = (item, v) => item.hint + extra(item, v) + (item.hintSlip ? item.hintSlip(v) : '');
 
 const runner = new FP.ChallengeRunner({
   items: ITEMS,
@@ -84,7 +97,7 @@ const runner = new FP.ChallengeRunner({
   mastery: ITEMS.length,
   messages: {
     correct: res => FP.msg.correct(res.item.answerText),
-    retry: res => FP.msg.tryAgain(res.item.wrong + extra(res.item, res.value), res.attemptsLeft),
+    retry: res => FP.msg.tryAgain(retryHint(res.item, res.value), res.attemptsLeft),
     missed: res => FP.msg.missed(res.item.answerText, res.item.wrong + extra(res.item, res.value))
   },
   id: SIM_ID

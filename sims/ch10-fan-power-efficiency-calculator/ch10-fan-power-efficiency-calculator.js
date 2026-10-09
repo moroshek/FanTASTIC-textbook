@@ -33,7 +33,9 @@ const CHALLENGE_DATA = [
     unit: 'BHP', decimals: 2,
     model: R(M.brakeHp(10000, 4.0, 0.70), 2),
     wrong: 'Air power is 10,000 × 4.0 ÷ 6356 = 6.29 hp; divide by 0.70 to get 8.99 BHP. ' +
-           'BHP is larger than air power.'
+           'BHP is larger than air power.',
+    hint: 'Find the air power first (CFM × in. wg ÷ 6356), then divide it by the efficiency as a decimal. ' +
+          'BHP is larger than air power.'
   },
   {
     id: 'bhp-20000-cfm',
@@ -43,7 +45,8 @@ const CHALLENGE_DATA = [
     unit: 'BHP', decimals: 2,
     model: R(M.brakeHp(20000, 6.0, 0.75), 2),
     wrong: 'Air power is 20,000 × 6.0 ÷ 6356 = 18.88 hp; divide by 0.75 to get 25.17 BHP. ' +
-           'Enter efficiency as a decimal.'
+           'Enter efficiency as a decimal.',
+    hint: 'Air power = CFM × in. wg ÷ 6356; BHP = air power ÷ efficiency. Enter efficiency as a decimal.'
   },
   {
     id: 'efficiency-5000-cfm',
@@ -52,7 +55,8 @@ const CHALLENGE_DATA = [
     q: 5000, p: 2.0, bhp: 2.5, asked: 'eff',
     unit: '%', decimals: 1, answerText: null,
     model: R(100 * M.efficiency(5000, 2.0, 2.5), 1),
-    wrong: 'Air power is 5,000 × 2.0 ÷ 6356 = 1.57 hp; 1.57 ÷ 2.5 = 0.629, or 62.9%.'
+    wrong: 'Air power is 5,000 × 2.0 ÷ 6356 = 1.57 hp; 1.57 ÷ 2.5 = 0.629, or 62.9%.',
+    hint: 'Air power = CFM × in. wg ÷ 6356; static efficiency = air power ÷ BHP, times 100 for percent.'
   }
 ];
 
@@ -70,6 +74,24 @@ function slipHint(value, item) {
     : ' Check that efficiency was entered as a decimal (0.70, not 70).';
 }
 
+// First wrong attempt: the rule plus a note for the slip the answer shows, never the model value.
+function retrySlip(value, item) {
+  if (!(value > 0)) { return ''; }
+  const near = x => Math.abs(value - x) / x <= 0.03;
+  const air = M.airPowerHp(item.q, item.p);
+  if (Math.abs(value * 100 - item.model) / item.model <= 0.05) {
+    // slipHint's percent note quotes the model (62.9), so the first attempt gets the rule only
+    return item.asked === 'eff' ? ' Give the efficiency in percent: multiply the decimal by 100.' : slipHint(value, item);
+  }
+  if (item.asked === 'bhp') {
+    if (near(air)) { return ' That is the air power; the shaft needs more than that.'; }
+    if (near(air * item.eff / 100)) { return ' You multiplied by the efficiency; divide by it instead.'; }
+    return '';
+  }
+  if (near(100 * item.bhp / air)) { return ' You divided BHP by air power; divide air power by BHP (efficiency is below 100%).'; }
+  return '';
+}
+
 const ITEMS = CHALLENGE_DATA.map(c => Object.assign({}, c, { answerText: modelText(c), why: c.wrong }));
 
 const runner = new FP.ChallengeRunner({
@@ -81,7 +103,7 @@ const runner = new FP.ChallengeRunner({
   reviewPointer: 'Press Start over to try the three challenges again',
   messages: {
     correct: res => FP.msg.correct(res.item.answerText),
-    retry: res => FP.msg.tryAgain(res.item.wrong + slipHint(res.value, res.item), res.attemptsLeft),
+    retry: res => FP.msg.tryAgain(res.item.hint + retrySlip(res.value, res.item), res.attemptsLeft),
     missed: res => FP.msg.missed(res.item.answerText, res.item.wrong + slipHint(res.value, res.item))
   },
   id: SIM_ID

@@ -3586,7 +3586,7 @@ Before you quote anything from a catalog PDF saved on your laptop, compare its c
 <li>An incorrect card returns to the deck once; the learner may reassign it, but only the first attempt is scored.</li>
 <li>After all ten cards, the learner sees the score and the list of missed cards with their reasons.</li>
 </ol>
-<p><strong>Feedback:</strong> Ten cards, shuffled, two attempts each, first attempt scored. Correct: "Correct: " plus the Why text. Incorrect: "Not quite. " plus the Why text, and the correct bin is shown after the second attempt. A running score "First-try correct: n of 10" is shown.</p>
+<p><strong>Feedback:</strong> Ten cards, shuffled, two attempts each, first attempt scored. Correct: "Correct: " plus the Why text. Hint after a first wrong attempt: "Not quite. " plus a hint about what kind of information the question asks for, which never names a section (1: a mechanical limit by size and class, not a duty point; 2: the size and type of particular parts, not how the fan is built in general; 3: a duty point turned into speed and power; 4: the 450°F airstream is what makes it special; 5: motor location depends on the configuration; 6: a damper is added to the fan, not part of its standard build; 7: add-on or part of how the standard housing is built; 8: the range a whole product line covers; 9: a physical size, drawings with tables; 10: ready-written wording, not data). After the final attempt: "Not quite. " plus the Why text and the correct bin. A running score "First-try correct: n of 10" is shown.</p>
 <p><strong>Starting State:</strong> The ten bins are shown with card 1 of the shuffled deck. The prompt reads "Which catalog section answers this question?"</p>
 <p><strong>Chapter Anchors:</strong> BC-SW size 365 Class II maximum RPM is 1,283 RPM. BC-DW airflow range is to 344,300 CFM. Catalog 300 has no printed performance tables. Mastery is 8 of 10.</p>
 </details>
@@ -4203,7 +4203,7 @@ Double interpolation looks like a lot of arithmetic the first time, and most peo
 <li>For interpolated points, the learner can open a scratch panel that shows the bracketing cells they selected and the fraction f once they enter it; the panel does not compute the answer.</li>
 <li>The overlay turns off again when the next duty point loads. After point 6 the score is shown.</li>
 </ol>
-<p><strong>Feedback:</strong> Six points, fixed order, two attempts each; the first is scored. Correct: "Correct: " followed by the row, column and class reasoning. Incorrect: names which of RPM, BHP or class is wrong and shows the "Feedback when wrong" text. After the second attempt the answer and its calculation are revealed. Score shown as "Duty points correct: n of 6".</p>
+<p><strong>Feedback:</strong> Six points, fixed order, two attempts each; the first is scored. Correct: "Correct: " followed by the row, column and class reasoning. Hint after a first wrong attempt: names which of RPM, BHP or class is wrong, then the slip the typed values point to (RPM and BHP right but the class wrong: the class comes from the RPM and the footer limits, not the pressure column; RPM and BHP from different cells; a printed value from another cell; the nearest cell instead of interpolating; for point 5, the 12 in. result only), or else the method step (direct: find the row and column, read one cell, compare the RPM with the footer; 4: interpolate between the two bracketing rows in the 12 in. column; 5: interpolate airflow in the 12 and 16 in. columns, then pressure between them; 6: interpolate between the 28 and 32 in. cells). The hint states no answer value, interpolated result or class, and the class overlay stays off until the point is resolved. After the final attempt: the answer and its calculation are revealed (the "Feedback when wrong" content in full) and the class overlay turns on. Score shown as "Duty points correct: n of 6".</p>
 <p><strong>Starting State:</strong> The grid with the class overlay off, the header and footer visible, and duty point 1 shown. The prompt reads "What speed and power does this duty need, and which class must you order?"</p>
 <p><strong>Chapter Anchors:</strong> RBA 913 values in the chapter excerpt table; 4,092 CFM at 12 in. gives 2,167 RPM and 11.72 BHP, Class 22; 4,000 CFM at 12 in. gives 2,157 RPM and 11.42 BHP; 4,000 CFM at 14 in. gives 2,291 RPM and 13.18 BHP, Class 22; 4,836 CFM at 32 in. is 3,340 RPM, Class 45; class limits 2,812, 3,337 and 4,000 RPM.</p>
 </details>
@@ -4553,6 +4553,8 @@ You took a duty point through a real Twin City Fan performance table, interpolat
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

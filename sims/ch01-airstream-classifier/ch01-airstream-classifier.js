@@ -33,29 +33,40 @@ const binById = id => BINS.find(b => b.id === id);
 
 const CARDS = [
   { short: 'Office supply air', text: 'Filtered supply air for an office floor at 70°F', answer: 'A',
-    why: 'Filtered air at room temperature carries nothing that threatens the fan or people.' },
+    why: 'Filtered air at room temperature carries nothing that threatens the fan or people.',
+    hint: 'Look at what the filter has already taken out and at the temperature. What, if anything, is left in this air to harm the fan or people?' },
   { short: 'Paper trim conveying', text: 'Air conveying paper trim away from a converting line', answer: 'B',
-    why: 'Paper trim is solid material; FanPedia lists paper handling radial impellers for this kind of duty.' },
+    why: 'Paper trim is solid material; FanPedia lists paper handling radial impellers for this kind of duty.',
+    hint: 'Ask what physically travels through the fan with this air, and what it does to an impeller.' },
   { short: 'Plating tank exhaust', text: 'Exhaust above a plating tank with acid mist', answer: 'C',
-    why: 'Acid mist corrodes metal parts in the airstream.' },
+    why: 'Acid mist corrodes metal parts in the airstream.',
+    hint: 'Think about what acid mist does to the fan\'s metal parts over time.' },
   { short: 'Dishwasher room exhaust', text: 'Exhaust from a commercial dishwasher room, saturated with water vapor', answer: 'C',
-    why: 'Heavy moisture condenses and attacks materials; the fan needs drains and suitable materials.' },
+    why: 'Heavy moisture condenses and attacks materials; the fan needs drains and suitable materials.',
+    hint: 'Think about what saturated water vapor does when it cools on the fan\'s metal parts.' },
   { short: 'Paint booth exhaust', text: 'Exhaust from a paint booth carrying solvent vapor', answer: 'D',
-    why: 'Solvent vapor is flammable, so a spark from rubbing parts could ignite it.' },
+    why: 'Solvent vapor is flammable, so a spark from rubbing parts could ignite it.',
+    hint: 'Think about the most dangerous property of solvent vapor near moving metal parts.' },
   { short: 'Lab fume hood exhaust', text: 'Exhaust from laboratory fume hoods', answer: 'E',
-    why: "Lab exhaust carries fumes hazardous to people; FanPedia's lab exhaust fans dilute it and send it up and away from the building." },
+    why: "Lab exhaust carries fumes hazardous to people; FanPedia's lab exhaust fans dilute it and send it up and away from the building.",
+    hint: 'Think about who is put at risk by this air once it leaves the hoods, and where it has to go.' },
   { short: '400°F drying oven', text: 'Recirculated air inside a 400°F drying oven, with no dust or vapor', answer: 'A',
-    why: 'High temperature alone does not make air contaminated; it calls for high-temperature construction instead.' },
+    why: 'High temperature alone does not make air contaminated; it calls for high-temperature construction instead.',
+    hint: 'The card says no dust or vapor. Does a high temperature by itself put anything into the air?' },
   { short: 'Foundry shakeout', text: 'Sand and grit from a foundry shakeout', answer: 'B',
-    why: 'Abrasive solids erode blades and housings.' },
+    why: 'Abrasive solids erode blades and housings.',
+    hint: 'Think about what sand and grit do to the blades as they pass through the fan.' },
   { short: 'Battery charging room', text: 'Exhaust from a battery charging room where hydrogen can collect', answer: 'D',
-    why: 'Hydrogen is a flammable gas, so ignition sources must be controlled.' },
+    why: 'Hydrogen is a flammable gas, so ignition sources must be controlled.',
+    hint: 'Think about what hydrogen gas does near a spark.' },
   { short: 'Outdoor make-up air', text: 'Outdoor make-up air drawn into a warehouse', answer: 'A',
-    why: 'Outdoor air with nothing added is clean air for fan selection purposes.' }
+    why: 'Outdoor air with nothing added is clean air for fan selection purposes.',
+    hint: 'Ask what, if anything, has been added to this air. A contaminant bin needs something in the air.' }
 ].map((c, i) => Object.assign({ id: 'card-' + (i + 1) }, c));
 
-// Spec feedback: Correct "Correct: <bin letter>. <Why>"; incorrect "Not quite. <Why>";
-// the correct bin is revealed after the second wrong placement (the first unscored retry).
+// Spec feedback: Correct "Correct: <bin letter>. <Why>". A first wrong placement shows a hint
+// (the property to look at, never the bin; plus a note when "Clean air" was the slip); the second
+// wrong placement (the first unscored retry) reveals the correct bin with the Why text.
 function binText(id) { const b = binById(id); return id + ' (' + b.name.toLowerCase() + ')'; }
 const deck = new FP.CardDeck({
   cards: CARDS, seed: Math.floor(Math.random() * 1e9), attempts: 1, retryMissed: false,
@@ -65,9 +76,15 @@ const deck = new FP.CardDeck({
     correct: res => FP.msg.correct(res.card.answer, res.card.why),
     missed: res => res.practiceTry
       ? FP.msg.BAD + ' Not quite. The correct bin is ' + binText(res.card.answer) + '. ' + res.card.why
-      : FP.msg.BAD + ' Not quite. ' + res.card.why
+      : FP.msg.BAD + ' Not quite. ' + firstHint(res.card, res.chosen)
   }
 });
+
+// Hint after the first wrong placement: names the property to look at, not the bin.
+function firstHint(card, chosen) {
+  const slip = chosen === 'A' && card.answer !== 'A' ? 'Something in this air does matter to the fan or to people. ' : '';
+  return slip + card.hint;
+}
 
 // Per-card display state
 let solved = false;      // placed in the correct bin (scored or practice): Next unlocks

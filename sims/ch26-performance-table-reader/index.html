@@ -4137,10 +4137,11 @@ the two results. Direct readings must match exactly (±1 RPM, ±0.01 BHP); inter
 be within ±1% of the RPM and BHP above. Class is 22 when RPM ≤ 2,812, 32 when 2,812 &lt; RPM ≤ 3,337,
 and 45 when 3,337 &lt; RPM ≤ 4,000. A duty point is correct only when all three answers are.</p>
 <p>Each point has two attempts; the first is scored. Check marks each of RPM, BHP and class with ✓ or
-✗ and then turns the <strong>class overlay</strong> on (shaded bold = Class 32, shaded italic = Class 45), so
-the first answer must come from the footer speeds. A correct answer gives the row, column and
-class reasoning; a wrong one names which answers are wrong and gives a hint; after the second
-attempt the answer and its calculation are shown. The overlay turns off when the next point
+✗. Once the point is resolved (correct, or the second attempt) the <strong>class overlay</strong> turns on
+(shaded bold = Class 32, shaded italic = Class 45), so both answers must come from the footer
+speeds. A correct answer gives the row, column and class reasoning; a first wrong attempt names
+which answers are wrong and gives a hint (the slip or the method step, never a value or the
+class); after the second attempt the answer and its calculation are shown. The overlay turns off when the next point
 loads. The score reads "Duty points correct: n of 6" (first attempts); mastery is 5 of 6. After
 point 6 the summary lists the points not right on the first attempt with their answers.</p>
 <p>The <strong>scratch panel</strong> is a notepad: click cells to pin up to four bracketing values (or move with
@@ -4323,6 +4324,8 @@ all defined in the section "Performance Tables" of
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

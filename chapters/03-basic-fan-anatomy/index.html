@@ -3475,7 +3475,7 @@ A common trap is accepting a duct layout with an elbow bolted directly to the in
 <li>The learner presses Submit. Correct cards lock in place; incorrect cards return to the pile with their feedback text shown.</li>
 <li>After the final submission, the full air path animates once from Slot 1 to Slot 8, highlighting each part as the air reaches it.</li>
 </ol>
-<p><strong>Feedback:</strong> One set of 11 placements, shuffled order, two submissions. Correct placement: the card locks and shows "Correct:" followed by its Why text. Incorrect placement: the card returns to the pile with its Why text and the misconception it reflects. After the second submission all correct positions are revealed. A score "Correct: n of 11" is shown after each submission.</p>
+<p><strong>Feedback:</strong> One set of 11 placements, shuffled order, two submissions. Correct placement: the card locks and shows "Correct:" followed by its Why text. Hint after a first wrong attempt (first submission): the card returns to the pile with a hint: the misconception it reflects, put as a question, and a question about the part, never its slot (cutoff: "The cutoff is not at the inlet. Look for it on the scroll. The cutoff is part of the scroll. Is it near the inlet or near the outlet?"). After the final attempt (second submission): the card's Why text and the misconception it reflects, and all correct positions are revealed. A score "Correct: n of 11" is shown after each submission.</p>
 <p><strong>Starting State:</strong> All 11 cards are in the pile and all slots are empty. The prompt reads "A cubic foot of air enters the inlet duct. In what order does it meet the fan's parts?"</p>
 <p><strong>Chapter Anchors:</strong> eight air-path parts and three non-air-path parts; the fan is a belt-driven SWSI centrifugal fan, Arrangement 9.</p>
 </details>
@@ -3694,7 +3694,7 @@ When you need to find the bearings on an unfamiliar fan, find the arrangement nu
 <li>The learner presses Check. The chart switches to that rating, highlights the matching schedule bar, and shows its value next to the learner's answer.</li>
 <li>After all three challenges, the learner can choose any of the five ratings. All ten bars (five L-10, five L-50) update at once. The learner should notice that every bar scales in proportion to the rating, and that the 2 h/day bar is about 17 times the 24/7 bar.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> years." Incorrect: the "Feedback when wrong" text for that challenge. After a second wrong answer the model value and calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> years." Hint after a first wrong attempt: the slip the answer matches (every day of the year counted, around-the-clock hours used, weeks instead of years, the wrong rating), or else the rule "Hours per year = hours per day × days per week × 52; then L-10 years = L-10 hours ÷ hours per year."; the bars stay hidden. After the final attempt: the "Feedback when wrong" text for that challenge; the model value and calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box. The chart shows the five schedule labels with the bars hidden. The question reads "A 40,000-hour L-10 bearing runs 16 hours a day, 5 days a week. How many years is its L-10 life?"</p>
 <p><strong>Chapter Anchors:</strong> L-10 = 40,000 h at 16 h/day, 5 days/week gives 4,160 h/year and 9.6 years; L-50 is 200,000 h and 48 years; 24/7 service is 8,736 h/year and 4.6 years; L-50 = 5 × L-10; ratings 20,000, 40,000, 60,000, 80,000 and 100,000 h.</p>
 </details>
@@ -3886,7 +3886,7 @@ Notice what the belt drive buys you: the same fan, impeller, and motor can be se
 <li>After all three challenges, free exploration unlocks. The learner changes either sheave or the motor speed; the drawing, ratio, label and fan speed update immediately.</li>
 <li>The first time the learner enlarges the fan sheave, the sim notes "Bigger fan sheave: fan speed went down."</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> RPM." Incorrect: the "Feedback when wrong" text for that challenge. After a second wrong answer the model value and calculation are revealed and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: <model value> RPM." Hint after a first wrong attempt: the slip the answer matches (the ratio inverted, the motor speed unchanged), or else the rule "Fan speed = motor speed × motor sheave ÷ fan sheave." (challenge 3 also asks whether the fan turns faster or slower than the motor); the drive stays at rest. After the final attempt: the "Feedback when wrong" text for that challenge; the model value and calculation are revealed and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box and the drive at rest. The question reads "The motor turns at 1,760 RPM with a 5.0-inch sheave driving an 8.0-inch fan sheave. How fast does the fan turn?"</p>
 <p><strong>Chapter Anchors:</strong> 1,760 RPM with a 5.0-inch motor sheave and 8.0-inch fan sheave gives a ratio of 0.625 and 1,100 RPM; a 5.4-inch motor sheave gives 1,188 RPM, about 8 percent faster. The 5.4-inch value lies on the motor sheave step grid.</p>
 </details>
@@ -4072,7 +4072,7 @@ Notice what the belt drive buys you: the same fan, impeller, and motor can be se
 <li>The learner switches to quiz mode. Labels are hidden. Each prompt appears in turn and the learner selects a part.</li>
 <li>After the tenth prompt, a summary shows which prompts were missed, with their Why text.</li>
 </ol>
-<p><strong>Feedback:</strong> Ten prompts, fixed order, two attempts each. Correct: "Correct:" followed by the Why text, and the part's label appears. Incorrect: "That is the <part selected>." followed by the Why text of the correct answer; on the second miss the correct part is highlighted and the prompt counts as missed. Score "Correct on first attempt: n of 10" is shown at the end.</p>
+<p><strong>Feedback:</strong> Ten prompts, fixed order, two attempts each. Correct: "Correct:" followed by the Why text, and the part's label appears. Hint after a first wrong attempt: "That is the <part selected>." followed by a hint that points to the correct part without naming it (prompt 1: "Look for the part that turns in the air path; the parts around it only guide the air."). After the final attempt: "That is the <part selected>." followed by the Why text of the correct answer; the correct part is highlighted and the prompt counts as missed. Score "Correct on first attempt: n of 10" is shown at the end.</p>
 <p><strong>Starting State:</strong> The exploded drawing in explore mode with all 14 labels visible and no infobox open. The prompt reads "Select any part to see what it does. When you are ready, switch to quiz mode."</p>
 <p><strong>Chapter Anchors:</strong> 14 labeled parts; Arrangement 9, belt-driven SWSI centrifugal fan; 10 quiz prompts; the bearings sit outside the airstream in Arrangement 9.</p>
 </details>
@@ -4389,6 +4389,8 @@ You can now trace the air from inlet flange to outlet flange, find the shaft and
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

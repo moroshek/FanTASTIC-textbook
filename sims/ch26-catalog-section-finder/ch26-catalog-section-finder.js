@@ -43,40 +43,52 @@ const BIN = name => BINS.findIndex(b => b.name === name);
 const CARDS = [
   { n: 1, tag: 'Max RPM', section: 'Engineering Data',
     text: 'What is the maximum RPM of a BC-SW size 365 Class II?',
+    hint: 'A maximum speed is a mechanical limit set by size and class, not a duty point. Which section tabulates limits like that?',
     why: 'Maximum RPM by size and class is engineering data (Catalog 300, page 16: 1,283 RPM).' },
   { n: 2, tag: 'Shaft, bearing', section: 'Material Specifications',
     text: 'What shaft diameter and bearing type does a BC SWSI Class I size 365 use in Arrangement 1?',
+    hint: 'This asks for the size and type of particular parts for one size and class, not how the fan is built in general.',
     why: 'Shaft and bearing sizes by size and class are in the material specifications table.' },
   { n: 3, tag: 'RPM, BHP', section: 'Performance Data',
     text: 'What RPM and BHP does an RBA 913 need for 4,092 CFM at 12 in. wg?',
+    hint: 'This is a duty point, an airflow at a pressure. Which section turns a duty point into speed and power?',
     why: 'Speed and power at a duty point are read from the performance tables (Catalog 902, page 24).' },
   { n: 4, tag: '450°F bearings', section: 'High Temperature Modifications',
     text: 'What bearing and grease does a BC-SW need at 450°F?',
+    hint: 'What makes this question special is the 450°F airstream. Find the section organised around that condition.',
     why: 'Table 1 lists bearing type and lubrication for each temperature band.' },
   { n: 5, tag: 'Motor on 9H', section: 'Arrangements',
     text: 'Where does the motor mount on an Arrangement 9H?',
+    hint: 'Where the motor sits depends on how fan, bearings and motor are configured. Which section describes each configuration?',
     why: "Each arrangement's paragraph describes the motor location." },
   { n: 6, tag: 'Damper type', section: 'Options/Accessories',
     text: 'Is an opposed blade or parallel blade outlet damper better for modulating over the full range?',
+    hint: 'A damper is something added to the fan, not part of its standard build.',
     why: 'Damper types and where to use each are described with the accessories.' },
   { n: 7, tag: 'Lifting lugs', section: 'Construction Features',
     text: 'Are lifting lugs standard on BC housings?',
+    hint: 'Ask whether the lugs are an add-on or part of how the standard housing is built.',
     why: 'Housing construction, including lifting lugs, is described in construction features.' },
   { n: 8, tag: 'BC-DW airflow', section: 'Overview',
     text: 'What is the highest airflow the BC-DW line covers?',
+    hint: 'This asks for the range a whole product line covers, not one size\'s data. Where does the catalog introduce each line?',
     why: 'The overview states the airflow and pressure range for each model (344,300 CFM for BC-DW).' },
   { n: 9, tag: 'Height, 300', section: 'Dimensions',
     text: 'How tall is a BC-SW size 300 in Arrangement 9?',
+    hint: 'This is a physical size of the assembled fan. Which section pairs drawings with tables of sizes?',
     why: 'Overall dimensions are in the dimension tables, which are not for construction.' },
   { n: 10, tag: 'Spec text', section: 'Typical Specifications',
     text: 'What paragraph can an engineer paste into a project specification for a BC-DW?',
+    hint: 'The engineer wants ready-written wording, not data. Which section holds text to copy?',
     why: 'Specification paragraphs are collected at the back of the catalog.' }
 ].map(c => Object.assign({ id: 'question-' + c.n, answer: BIN(c.section), answerText: c.section }, c));
 
-// Spec wording: Correct: + Why; Not quite. + Why; the correct bin is named after the second attempt.
+// Spec wording: Correct: + Why; a first wrong placement gets the card's hint (it never names the
+// section and the Why, which does, is held back); after the second attempt: Not quite. + Why +
+// the correct section.
 const MSG = {
   correct: res => FP.msg.OK + ' Correct: ' + res.card.why,
-  retry: res => FP.msg.BAD + ' Not quite. ' + res.card.why + ' Try again (1 attempt left, not scored).',
+  retry: res => FP.msg.BAD + ' Not quite. ' + res.card.hint + ' Try again (1 attempt left, not scored).',
   missed: res => FP.msg.BAD + ' Not quite. ' + res.card.why + ' The answer is ' + res.card.section + '.'
 };
 

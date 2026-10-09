@@ -3304,7 +3304,7 @@ U_{per} = \frac{6.015 \, G \, W}{N}
 <li>After the three challenges, free exploration unlocks: the learner changes W, N, G and r, and U, m and F update at once.</li>
 <li>The learner doubles N from 1200 to 2400 rpm with U held by the grade, and notices that F becomes four times larger while U halves.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct (both values within ±2%): "Correct: U = <value> oz·in, m = <value> oz." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model values and calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct (both values within ±2%): "Correct: U = <value> oz·in, m = <value> oz." Hint after a first wrong attempt: which value is off ("Your U is within 2%; your m is not.") and the rule for it, never the model values: "Use U = 6.015 × G × W / N, with G in mm/s, W in lb and N in rpm." / "The correction mass is m = U / r, with r in inches." Slip notes replace the rule when they apply: U without the 6.015 factor ("Multiply by the 6.015 unit-conversion factor as well."), W and N swapped ("A heavier impeller is allowed more unbalance: W goes on top and N underneath."), divided by G ("Multiply by the grade G; do not divide by it."), m = U × r ("m = U / r: divide by the correction radius, do not multiply."), m consistent with a wrong U ("Your m follows from your U, so fixing U fixes m."); challenge 2 adds "A tighter grade (a smaller G) lowers the limit." After the final attempt: the "Feedback when wrong" text for that challenge with the model values and calculation, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 with empty answer boxes and the question "How much unbalance may this 200 lb impeller keep at 1,200 rpm and grade G6.3?"</p>
 <p><strong>Chapter Anchors:</strong> The chapter's worked example uses W = 200 lb, N = 1,200 rpm, G6.3, r = 15 in and gets U = 6.32 oz·in and m = 0.42 oz; G2.5 gives 2.51 oz·in and 0.17 oz; F is about 16 lbf at 1,200 rpm, about 36 lbf at 1,800 rpm and about 65 lbf at 2,400 rpm.</p>
 </details>
@@ -3532,6 +3532,8 @@ You can now name every major impeller part, tell backward inclined from forward 
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

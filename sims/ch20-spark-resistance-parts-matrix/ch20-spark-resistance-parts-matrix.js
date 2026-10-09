@@ -3,7 +3,8 @@
 // The learner sets 18 cells (6 centrifugal fan components x Types A, B, C) to
 // Non-ferrous, Steel or Not listed, then presses Check. The first Check is the
 // recorded score (FP.Score, mastery 15 of 18); Try Again clears only the wrong
-// cells; the second Check or Show Answers reveals the answer table and note.
+// cells; a row with a wrong cell gets a hint (no answer) after the first Check;
+// the second Check or Show Answers reveals the answer table, the reasons and the note.
 // Source: FanPedia, Spark Resistant Construction, Centrifugal Fans, pp. 104-106.
 (function () {
   'use strict';
@@ -22,26 +23,32 @@
     { id: 'housing', name: 'Housing / frame',
       desc: 'The scroll and sides that enclose the impeller.',
       answers: [N, S, S],
+      hint: 'Ask which type covers every airstream part, and which types limit non-ferrous material to the impeller or to the contact points.',
       reason: 'Only Type A makes the whole airstream non-ferrous; B and C keep a steel housing.' },
     { id: 'impeller', name: 'Impeller',
       desc: 'The rotating wheel, with its welded hub.',
       answers: [N, N, S],
+      hint: 'Which type is defined by its impeller material, and which type protects only the contact points?',
       reason: 'Type B is defined by a non-ferrous impeller; Type C leaves the impeller steel.' },
     { id: 'funnel', name: 'Inlet funnel',
       desc: 'The cone that guides air into the impeller eye.',
       answers: [N, S, N],
+      hint: 'Think about where the rotating impeller could first touch a stationary part in each type, and what each pair of parts is made of.',
       reason: 'In Type B the steel inlet cone is the contact point for the aluminum impeller; in Type C the aluminum funnel is the first contact point.' },
     { id: 'rubplate', name: 'Rub plate',
       desc: 'The plate at the housing opening where the shaft passes through.',
       answers: [X, N, N],
+      hint: 'The rub plate sits where the shaft passes through the housing. Ask, type by type, whether that opening is already covered by other non-ferrous parts or needs a plate of its own on the list.',
       reason: 'Type A\'s list has no rub plate because the airstream parts are already non-ferrous; B and C use an aluminum rub plate at the shaft opening.' },
     { id: 'shaft', name: 'Shaft',
       desc: 'The steel or alloy shaft carrying the impeller.',
       answers: [S, S, S],
+      hint: 'Read each type\'s Steel Construction list as well as its Non-Ferrous list before you decide on the shaft.',
       reason: 'The shaft is steel construction in all three types.' },
     { id: 'pedestal', name: 'Pedestal',
       desc: 'The structure that carries the bearings, outside the airstream.',
       answers: [S, S, S],
+      hint: 'Is the pedestal in the airstream? Spark resistance is about the parts the air and the impeller can reach.',
       reason: 'The pedestal is outside the airstream and is steel in all three types (bolted on for Type A).' }
   ];
   const TOTAL = ROWS.length * TYPES.length;   // 18
@@ -159,7 +166,7 @@
       const good = n >= MASTERY;
       FP.ui.feedback($('feedback'), good ? 'ok' : 'bad',
         (good ? '✓ ' : '✗ ') + MSG.matched(n) + ' ' + (good ? MSG.good : MSG.review) + ' ' +
-        score.summaryLines()[1] + ' Wrong cells are marked ✗, with the reason under their row. ' +
+        score.summaryLines()[1] + ' Wrong cells are marked ✗, with a hint under their row. ' +
         'Press Try Again to fix them, or Show Answers.');
     } else {
       reveal(n);
@@ -204,7 +211,8 @@
       const b = document.createElement('b');
       b.textContent = (wrong ? '✗ ' : '') + row.name + ': ';
       td.appendChild(b);
-      td.appendChild(document.createTextNode(row.reason));
+      // First Check: a hint for each row with a wrong cell (no states named); answers: the full reason.
+      td.appendChild(document.createTextNode(answers ? row.reason : 'Hint: ' + row.hint));
     });
   }
 

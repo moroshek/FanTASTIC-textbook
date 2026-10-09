@@ -32,6 +32,7 @@ const challenges = [
     model: M.round(M.ductVelocityFpm(2400, M.ductAreaRectFt2(16, 12)), 0),        // 1,800
     duct: { shape: 'rect', w: 16, h: 12 }, flowLabel: '2,400 CFM',
     why: 'Area is (16 × 12) ÷ 144 = 1.333 ft²; V = 2,400 ÷ 1.333 = 1,800 ft/min. Did you forget to divide by 144?',
+    rule: 'Convert the duct size to square feet first (W × H ÷ 144), then solve V = Q ÷ A.',
     steps: [
       'Step 1. Convert the duct size to square feet: A = (16 × 12) ÷ 144 = 1.333 ft²',
       'Step 2. Solve for velocity: V = Q ÷ A = 2,400 ÷ 1.333 = 1,800 ft/min'
@@ -51,6 +52,7 @@ const challenges = [
     model: M.round(M.ductVelocityFpm(5000, M.ductAreaRoundFt2(24)), 0),            // 1,592
     duct: { shape: 'round', d: 24 }, flowLabel: '5,000 CFM',
     why: 'Round area is π × 24² ÷ 576 = 3.142 ft², not 24 × 24 ÷ 144; V = 5,000 ÷ 3.142 = 1,592 ft/min.',
+    rule: 'A round duct of diameter D has a flow area of π × D² ÷ 576 ft² (not D × D ÷ 144); then solve V = Q ÷ A.',
     steps: [
       'Step 1. Round duct area in square feet: A = π × 24² ÷ 576 = 3.142 ft²',
       'Step 2. Solve for velocity: V = Q ÷ A = 5,000 ÷ 3.142 = 1,592 ft/min'
@@ -71,6 +73,7 @@ const challenges = [
     model: M.round(M.ductFlowCfm(1500, M.ductAreaRectFt2(20, 10)), 0),             // 2,083
     duct: { shape: 'rect', w: 20, h: 10 }, flowLabel: '1,500 ft/min',
     why: 'Area is 200 ÷ 144 = 1.389 ft²; Q = V × A = 1,500 × 1.389 = 2,083 CFM.',
+    rule: 'Convert the duct size to square feet first (W × H ÷ 144), then airflow is Q = V × A.',
     steps: [
       'Step 1. Convert the duct size to square feet: A = (20 × 10) ÷ 144 = 1.389 ft²',
       'Step 2. Solve for airflow: Q = V × A = 1,500 × 1.389 = 2,083 CFM'
@@ -89,17 +92,25 @@ const challenges = [
     model: M.round(10000 / 2000, 2),                                               // 5.00
     duct: { shape: 'unknown' }, flowLabel: '10,000 CFM',
     why: 'A = Q ÷ V = 10,000 ÷ 2,000 = 5.00 ft². A larger area lowers the velocity further.',
+    rule: 'Rearrange Q = V × A to solve for the area, and give it in square feet.',
     steps: [
       'Step 1. Solve for area: A = Q ÷ V = 10,000 ÷ 2,000 = 5.00 ft² (a larger area lowers velocity further)'
     ],
     slips: [
-      { value: 720, step: 0, note: 'That is the area in square inches (5.00 × 144). The question asks for square feet.' },
+      { value: 720, step: 0, note: 'That is the area in square inches. The question asks for square feet (÷ 144).' },
       { value: 2000 / 10000, step: 0, note: 'You divided V by Q. Area is A = Q ÷ V.' },
       { value: 10000 * 2000, step: 0, note: 'You multiplied. Area is A = Q ÷ V.' }
     ]
   }
 ];
-challenges.forEach(c => { c.hint = c.why; });   // the spec's "Feedback when wrong" text on every wrong attempt
+// First wrong attempt: a hint (the slip the learner's number matches, or the challenge's rule),
+// never the model value or the worked numbers. The final miss shows the spec's "Feedback when
+// wrong" text (why) with the model value and the worked calculation.
+function matchSlip(c, v) { return c.slips.find(s => FP.check.numeric(v, s.value, { rel: 0.02 })) || null; }
+challenges.forEach(c => {
+  c.hint = v => { const s = matchSlip(c, v); return s ? s.note : c.rule; };
+  c.stepTitles = c.steps.map(t => t.split(':')[0]);   // "Step 1. Convert the duct size to square feet"
+});
 
 // Mastery (spec): 4 of 4 correct within +/-2%, at most two attempts each.
 const MASTERY = challenges.length;
@@ -247,15 +258,16 @@ function checkAnswer() {
   // Find the step where the learner's number departs from the worked calculation.
   let hs = -1, note = '';
   if (res.status !== 'correct') {
-    hs = c.steps.length - 1;
-    note = 'Recheck the area you used and the arithmetic in this step.';
-    for (const s of c.slips) {
-      if (FP.check.numeric(res.value, s.value, { rel: 0.02 })) { hs = s.step; note = s.note; break; }
-    }
+    const slip = matchSlip(c, res.value);
+    hs = slip ? slip.step : c.steps.length - 1;
+    note = slip ? slip.note : 'Recheck the area you used and the arithmetic in this step.';
   }
   feedback = { status: res.status, kind: res.kind, text, answer: res.value, highlightStep: hs, stepNote: note };
-  FP.announce(text + ' Your answer: ' + learnerNum(res.value) + ' ' + c.unit + '.' +
-    (hs >= 0 ? ' Your number departs at step ' + (hs + 1) + ': ' + note : '') +
+  // On a retry the hint already carries the slip note; the step list shows titles only.
+  const stepSay = hs < 0 ? '' : res.status === 'retry'
+    ? ' Check step ' + (hs + 1) + ': ' + c.stepTitles[hs] + '.'
+    : ' Your number departs at step ' + (hs + 1) + ': ' + note;
+  FP.announce(text + ' Your answer: ' + learnerNum(res.value) + ' ' + c.unit + '.' + stepSay +
     ' ' + runner.state().scoreLabel + '.');
   if (res.status === 'retry') {
     answerInput.value('');
@@ -429,17 +441,19 @@ function drawChallengeLower(c, ly, ts, dry) {
   textStyle(BOLD);
   yy = K.wrapText(fb.text, tx, yy, tw, lh, { dryRun: dry });
   textStyle(NORMAL);
-  // Learner answer beside the model value
+  // Learner answer, beside the model value once the challenge is resolved (not on a retry)
+  const retry = fb.status === 'retry';
   fill(FP.tok('text'));
   yy = K.wrapText('Your answer: ' + learnerNum(fb.answer) + ' ' + c.unit +
-    ' · Model value: ' + answerText(c), tx, yy + 4, tw, lh, { dryRun: dry }) + 6;
+    (retry ? '' : ' · Model value: ' + answerText(c)), tx, yy + 4, tw, lh, { dryRun: dry }) + 6;
 
-  // Worked calculation steps, with the departure step highlighted (▶ + outline, not colour alone)
+  // Worked calculation steps, with the departure step highlighted (▶ + outline, not colour alone).
+  // On a retry only the step titles show, so the numbers are not given away.
   for (let i = 0; i < c.steps.length; i++) {
     const hl = i === fb.highlightStep;
     const ok = fb.status === 'correct' || (fb.highlightStep >= 0 && i < fb.highlightStep);
-    const body = (hl ? '▶ ' : (ok ? FP.msg.OK + ' ' : '   ')) + c.steps[i];
-    const noteLine = 'Your number departs here: ' + fb.stepNote;
+    const body = (hl ? '▶ ' : (ok ? FP.msg.OK + ' ' : '   ')) + (retry ? c.stepTitles[i] : c.steps[i]);
+    const noteLine = retry ? 'Check this step.' : 'Your number departs here: ' + fb.stepNote;
     if (hl && !dry) {
       const h = (K.countLines(body, tw - 12) + K.countLines(noteLine, tw - 12)) * lh + 8;
       K.panel(tx - 4, yy - 3, tw + 8, h, { fill: '--fp-info-bg', stroke: '--fp-accent', weight: 2, radius: 6 });

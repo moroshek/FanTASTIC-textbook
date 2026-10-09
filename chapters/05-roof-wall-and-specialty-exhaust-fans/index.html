@@ -2879,7 +2879,7 @@ Think of the nozzle as a pump with no moving parts. Bypass air costs fan capacit
 <li>Cases 2 and 3 follow the same way. The learner should notice in case 2 that fan flow equals the hood air when bypass is zero, and in case 3 that total equals fan flow when entrainment is zero.</li>
 <li>After case 3, free exploration unlocks: the learner changes any quantity, and the fan flow, total flow and plume concentration update at once. The first time the learner doubles the entrained flow, the sim shows the before and after concentrations so the learner sees that the concentration does not halve.</li>
 </ol>
-<p><strong>Feedback:</strong> Three cases, fixed order, three values each, two attempts per value. Correct: "Correct: <value>." Incorrect, first attempt: "Not yet. Check which air passes through the impeller." Incorrect, second attempt: the "Feedback when wrong" text for that case, then the value is revealed and counted as missed. A running count "Values correct: n of 9" is shown.</p>
+<p><strong>Feedback:</strong> Three cases, fixed order, three values each, two attempts per value. Correct: "Correct: <value>." Hint after a first wrong attempt: "Not yet. Check which air passes through the impeller." (fan and total flow boxes) followed by one rule or slip line for that box, never a value or a worked sum: entrained air counted in the fan flow ("Entrained air joins at the nozzle, after the fan, so it is not fan flow."), bypass air left out ("Bypass air joins before the fan, so it passes through the impeller too." / "The bypass air leaves the stack too."), entrained air left out of the total ("Total flow also counts the entrained air that joins at the nozzle."), plume divided by the fan flow ("Dilute by the total flow leaving the stack, not by the fan flow."), plume given as a fraction ("Multiply the hood concentration by the share of hood air in the total flow."), otherwise the rule for that quantity. The diagram keeps "?" for every value not yet resolved. After the final attempt: the "Feedback when wrong" text for that case, then the value is revealed and counted as missed. A running count "Values correct: n of 9" is shown.</p>
 <p><strong>Starting State:</strong> Case 1 with empty answer boxes and the question "How much air must the fan move, and how much leaves the stack?"</p>
 <p><strong>Chapter Anchors:</strong> Worked example: 8,000 CFM contaminated at 100 ppm, 2,000 CFM bypass, 7,000 CFM entrained, fan flow 10,000 CFM, total flow 17,000 CFM, plume concentration 47.1 ppm. All values illustrative.</p>
 </details>
@@ -3132,6 +3132,8 @@ You can now tell an upblast from a downblast at a glance, explain why a plenum f
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

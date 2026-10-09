@@ -75,8 +75,18 @@ function halfText(h) {
 }
 function extraNote(card, choice) { return (card.wrongBand && card.wrongBand[choice.band]) || ''; }
 
+function bandHint(card, choice) {
+  const b = bandOf(card, choice.band), t = fmtF(card.t);
+  if (choice.band !== card.band) {
+    if (extraNote(card, choice)) return extraNote(card, choice);
+    if (b.hi != null && card.t > b.hi) return t + ' is above the top of the band you chose. Find the band whose limits contain ' + t + '.';
+    if (card.t < b.lo) return t + ' is below the bottom of the band you chose. Find the band whose limits contain ' + t + '.';
+  }
+  return 'Find the band whose limits contain ' + t + ', then check whether this family sends that band to engineering review.';
+}
+
 // Spec feedback: Correct: "Correct: <band>, review <yes/no>. <reason>." First miss: "Check the band
-// list for <family> again." Second miss: the answer and reason, and the ticket counts as missed.
+// list for <family> again." plus a hint (bandHint). Second miss: the answer and reason, and the ticket counts as missed.
 const deck = new FP.CardDeck({
   cards: TICKETS, shuffle: false, attempts: 2, retryMissed: false,
   noun: 'Tickets', mastery: MASTERY, id: SIM_ID,
@@ -84,11 +94,10 @@ const deck = new FP.CardDeck({
   reviewPointer: 'Review the band table in "High Temperature Packages", then press Start over',
   messages: {
     correct: res => FP.msg.correct(res.card.answerText, res.card.reason),
-    retry: res => {
-      const c = res.card, h = halves(c, res.chosen);
-      return FP.msg.BAD + ' Not quite: ' + halfText(h) + '. Check the band list for ' + FAM[c.fam].short + ' again.' +
-        (extraNote(c, res.chosen) ? ' ' + extraNote(c, res.chosen) : '') + ' Try again (1 attempt left).';
-    },
+    // First miss: a hint only. The halves are not marked (review is yes/no, so a mark would give it
+    // away); a wrong band gets the slip (temperature above or below the chosen band, select models).
+    retry: res => FP.msg.tryAgain('Check the band list for ' + FAM[res.card.fam].short + ' again. ' +
+      bandHint(res.card, res.chosen), res.attemptsLeft),
     missed: res => {
       const c = res.card, h = halves(c, res.chosen);
       return FP.msg.BAD + ' Not quite: ' + halfText(h) + '. The answer is ' + c.answerText + '. ' +

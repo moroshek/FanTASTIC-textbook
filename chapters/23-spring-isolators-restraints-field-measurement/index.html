@@ -2322,7 +2322,7 @@ Notice that deflection sits under a square root: doubling deflection lowers the 
 <li>After all three challenges, exploration unlocks with the default values. Changing any input updates every result at once.</li>
 <li>The learner should notice that raising n lowers deflection, that raising fan speed raises the ratio, and that a 0.25-in spring on a 300-rpm fan reaches the Amplifying status.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: δ = <model value> in." Incorrect: the "Feedback when wrong" text. After the second wrong attempt the model value and its calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: δ = <model value> in." Hint after a first wrong attempt: "Not quite." plus the slip the typed value points to (the load per isolator typed as the deflection; the weight not shared among the isolators; the division flipped; multiplied instead of divided), or else "Find the load each isolator carries first, then divide it by the spring rate k." The hint states no load or deflection, and the loaded spring and readouts stay hidden. After the final attempt: the model value and the "Feedback when wrong" text with its calculation, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 with an empty answer box, an uncompressed spring drawing, and the question "How far will each spring compress?"</p>
 <p><strong>Chapter Anchors:</strong> Worked example: 2,400 lb on four isolators at 600 lb/in gives 600 lb each, 1.00 in deflection, 3.13 Hz natural frequency; 1,180 rpm is 19.67 Hz; ratio 6.28; transmissibility 0.026; efficiency about 97.4%. Isolation begins above a ratio of 1.41. Typical deflections under 1 in, 1 in or 2 in.</p>
 </details>
@@ -2489,7 +2489,7 @@ Notice that deflection sits under a square root: doubling deflection lowers the 
 <li>An incorrect placement returns the card for a second try; the first-attempt result is what counts toward mastery.</li>
 <li>After all 11, the sim shows the first-attempt score and lists the descriptions missed with their reasons.</li>
 </ol>
-<p><strong>Feedback:</strong> 11 items in shuffled order, two attempts each. Correct: "Correct. <Why>." Incorrect: "Not quite. Look for <the feature named in Why>." After the second wrong attempt the card moves to its correct bin and the Why text is shown. Score shown: "First-attempt correct: n of 11; mastery at 9."</p>
+<p><strong>Feedback:</strong> 11 items in shuffled order, two attempts each. Correct: "Correct. <Why>." Hint after a first wrong attempt: "Not quite. Look for <the feature named in Why>.", worded so it never names the correct bin; for items 5, 7, 9 and 11 the feature is "the impeller size limit for mounting with no base", "what the housing must withstand, and how much of the spring it surrounds", "what the added frame does to the spring's travel" and "how the springs behave, and what encloses them". After the final attempt: the card moves to its correct bin and the Why text is shown. Score shown: "First-attempt correct: n of 11; mastery at 9."</p>
 <p><strong>Starting State:</strong> Ten empty labeled bins and the first card face up, with the prompt "Which hardware does this job call for?"</p>
 <p><strong>Chapter Anchors:</strong> Four spring types; five mounting styles; direct mounting usually limited to impellers of 36.5 in or less; swingout housed centrifugal fans excepted with flat pads only; two thrust restraints per fan, 180° apart.</p>
 </details>
@@ -2658,6 +2658,8 @@ You can now calculate spring deflection, name the right spring and mounting styl
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

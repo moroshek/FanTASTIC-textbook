@@ -54,10 +54,24 @@
       id: 'challenge-' + (i + 1),
       model: model, unit: 'years', decimals: 1, tolerance: TOL,
       answerText: yr(model) + ' years',
-      hint: c.wrong,
+      hint: function (v) { return lifeHint(v, c.rating, s); },
       why: function (v, item) { return FP.check.numeric(v, item.model, TOL) ? '' : item.wrong; }
     });
   });
+
+  // First wrong attempt: a hint that names the rule or the slip, never the model value or the
+  // worked numbers. The final miss shows the spec's "Feedback when wrong" text with the value.
+  const RULE = 'Hours per year = hours per day × days per week × 52; then L-10 years = L-10 hours ÷ hours per year.';
+  function lifeHint(v, rating, s) {
+    const near = function (t) { return FP.check.numeric(v, t, TOL); };
+    if (near(rating / (s.h * 365))) return 'You counted every day of the year. This fan runs ' + s.d + ' days a week: multiply by days per week and 52 weeks.';
+    if (s.d !== 7 && near(rating / (24 * 7 * 52))) return 'That is around-the-clock service. Use this schedule: ' + s.h + ' hours a day, ' + s.d + ' days a week.';
+    if (near(rating / (s.h * s.d))) return 'That is in weeks, not years. Multiply the weekly hours by 52 first.';
+    if (near(rating / s.h)) return 'That is in days, not years. Convert to hours per year first: ' + RULE;
+    if (s.d === 7 && near(rating / (s.h * 5 * 52))) return 'Around the clock means 7 days a week, not 5.';
+    if (RATINGS.some(function (r) { return r !== rating && near(r / M.annualHours(s.h, s.d)); })) return 'Check the L-10 rating in the question.';
+    return RULE;
+  }
 
   // ---------- DOM ----------
   const $ = function (id) { return document.getElementById(id); };

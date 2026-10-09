@@ -43,7 +43,29 @@ const QTY = [
   { key: 'ppm', name: 'Plume concentration', label: 'Plume (ppm)', unit: 'ppm', decimals: 1,
     model: k => R(k.m.plumePpm, 1), tolerance: { abs: 0.5 } }
 ];
-const RETRY_MSG = FP.msg.BAD + ' Not yet. Check which air passes through the impeller.';
+const RETRY_LEAD = FP.msg.BAD + ' Not yet.';
+const RETRY_FLOW = 'Check which air passes through the impeller.';
+// First-wrong hint for one box: the spec's lead line (flow boxes) plus the rule or the slip
+// for that quantity. Never a model value or a worked sum; the case's full "Feedback when wrong"
+// text comes only with the missed message.
+function retryHint(key, v, k) {
+  const fan = k.c + k.b, total = fan + k.e;
+  const near = (x, y) => Math.abs(x - y) <= 0.5 + 1e-9;
+  if (key === 'fan') {
+    if (k.e > 0 && v === fan + k.e) return 'Entrained air joins at the nozzle, after the fan, so it is not fan flow.';
+    if (k.b > 0 && v === k.c) return 'Bypass air joins before the fan, so it passes through the impeller too.';
+    return 'Fan flow is every stream that passes through the impeller.';
+  }
+  if (key === 'total') {
+    if (k.e > 0 && v === fan) return 'Total flow also counts the entrained air that joins at the nozzle.';
+    if (k.b > 0 && v === k.c + k.e) return 'The bypass air leaves the stack too.';
+    return 'Total flow is the fan flow plus the entrained air.';
+  }
+  const model = R(k.ppm * k.c / total, 1);
+  if (k.e > 0 && near(v, k.ppm * k.c / fan) && !near(model, k.ppm * k.c / fan)) return 'Dilute by the total flow leaving the stack, not by the fan flow.';
+  if (near(v, k.c / total)) return 'Multiply the hood concentration by the share of hood air in the total flow.';
+  return 'Plume concentration is the hood concentration times hood air, divided by total flow.';
+}
 
 // One ChallengeRunner per answer box: the three boxes of a case are checked together,
 // each with its own two attempts. masteryOn 'any': mastery is all nine values correct
@@ -51,11 +73,13 @@ const RETRY_MSG = FP.msg.BAD + ' Not yet. Check which air passes through the imp
 const runners = QTY.map(q => new FP.ChallengeRunner({
   items: CASES.map((k, i) => ({
     id: 'case' + (i + 1) + '-' + q.key, label: 'case ' + (i + 1), model: q.model(k), unit: q.unit,
-    decimals: q.decimals, tolerance: q.tolerance, why: '', caseText: k.wrong
+    decimals: q.decimals, tolerance: q.tolerance, why: '', caseText: k.wrong,
+    hint: v => retryHint(q.key, v, k)
   })),
   attempts: 2, noun: 'Values', mastery: CASES.length, masteryOn: 'any', id: SIM_ID + '-' + q.key,
   messages: {
-    retry: RETRY_MSG,
+    retry: r => RETRY_LEAD + (q.key === 'ppm' ? '' : ' ' + RETRY_FLOW) + ' ' + r.item.hint(r.value) +
+      ' (' + r.attemptsLeft + ' attempt left)',
     missed: r => FP.msg.BAD + ' ' + r.item.caseText + ' The answer is ' +
       FP.fmt.num(r.item.model, r.item.decimals) + ' ' + r.item.unit + '. This one counts as missed.'
   }
@@ -427,8 +451,7 @@ function drawTextPanel(x, y, w, h) {
     const retry = shown.filter(o => o.r.status === 'retry');
     const missed = shown.filter(o => o.r.status === 'missed');
     if (ok.length) list.push({ gap: 5, box: 'ok', paras: ok.map(o => ({ t: QTY[o.j].name + ': ' + o.r.message, color: FP.tok('correct') })) });
-    if (retry.length) list.push({ gap: 5, box: 'bad', paras: [{ t: retry.map(o => QTY[o.j].name).join(', ') + ': ' + RETRY_MSG +
-      ' (1 attempt left)', color: FP.tok('incorrect') }] });
+    if (retry.length) list.push({ gap: 5, box: 'bad', paras: retry.map(o => ({ t: QTY[o.j].name + ': ' + o.r.message, color: FP.tok('incorrect') })) });
     if (missed.length === 1) {
       const o = missed[0];
       list.push({ gap: 5, box: 'bad', paras: [{ t: QTY[o.j].name + ': ' + o.r.message, color: FP.tok('incorrect') }] });

@@ -40,6 +40,8 @@ const CHALLENGE_DATA = [
     unit: 'RPM', decimals: 0,
     model: R(FP.models.speedForAirflow(BASE_RPM, BASE_OP.q, 11500), 0),
     ratios: { speed: 1.15, diameter: 1.00, density: 1.00 },
+    law: { base: BASE_RPM, ratio: 11500 / BASE_OP.q, exp: 1, rule: 'Speed scales with airflow (first power).' },
+    step: 'Airflow goes with speed: scale the 1,380 RPM by the ratio of the new airflow to the old.',
     wrong: 'Airflow goes with speed: 1,380 × 11,500 ÷ 10,000 = 1,587 RPM.'
   },
   {
@@ -48,6 +50,8 @@ const CHALLENGE_DATA = [
     unit: 'BHP', decimals: 2,
     model: R(law({ speedRatio: 1.15 }).bhp, 2),
     ratios: { speed: 1.15, diameter: 1.00, density: 1.00 },
+    law: { base: BASE_OP.bhp, ratio: 1.15, exp: 3, rule: 'Power goes with speed cubed.' },
+    step: 'Power goes with speed cubed: find the speed ratio, cube it, and scale the 9.0 BHP.',
     wrong: 'Power goes with speed cubed: 9.0 × 1.15³ = 13.69 BHP, not 9.0 × 1.15.'
   },
   {
@@ -56,6 +60,8 @@ const CHALLENGE_DATA = [
     unit: 'in. wg', decimals: 2,
     model: R(law({ speedRatio: 0.80 }).inWg, 2),
     ratios: { speed: 0.80, diameter: 1.00, density: 1.00 },
+    law: { base: BASE_OP.p, ratio: 0.80, exp: 2, rule: 'Pressure goes with speed squared.' },
+    step: 'Pressure goes with speed squared: find the speed ratio, square it, and scale the 4.0 in. wg.',
     wrong: 'Pressure goes with speed squared: 4.0 × 0.8² = 2.56 in. wg.'
   },
   {
@@ -65,13 +71,31 @@ const CHALLENGE_DATA = [
     unit: 'BHP', decimals: 2,
     model: R(law({ sizeRatio: 1.12 }).bhp, 2),
     ratios: { speed: 1.00, diameter: 1.12, density: 1.00 },
+    law: { base: BASE_OP.bhp, ratio: 1.12, exp: 5, rule: 'At a fixed speed, power goes with diameter to the fifth power.' },
+    step: 'At a fixed speed, power goes with diameter to the fifth power: raise the diameter ratio to the fifth and scale the 9.0 BHP.',
     wrong: 'Power goes with diameter to the fifth power: 9.0 × 1.12⁵ = 9.0 × 1.762 = 15.86 BHP.'
   }
 ];
-// Spec feedback: correct shows only "Correct: <model answer>."; a wrong answer shows the
-// "Feedback when wrong" text (retry hint, and again with the model answer when missed).
+// Spec feedback: correct shows only "Correct: <model answer>."; a first wrong answer gets a
+// hint (slipHint: the exponent or ratio slip, else the step, with no worked numbers); the
+// "Feedback when wrong" text comes with the model answer when the challenge is missed.
+const ORD = ['', 'first', 'second', 'third', 'fourth', 'fifth'];
+function slipHint(v, it) {
+  const L = it.law;
+  const near = x => Math.abs(v - x) <= Math.abs(x) * 0.02 && Math.abs(x - it.model) > Math.abs(it.model) * 0.02;
+  if (near(L.ratio ** L.exp) || near(L.ratio)) return 'That is the scaling factor; multiply the starting value by it.';
+  for (let e = 1; e <= 5; e++) {
+    if (e !== L.exp && near(L.base * L.ratio ** e)) {
+      return 'You raised the ratio to the ' + ORD[e] + ' power. ' + L.rule;
+    }
+  }
+  for (let e = 1; e <= 5; e++) {
+    if (near(L.base / L.ratio ** e)) return 'Your ratio is upside down: use new over old, so the answer moves the same way as the change.';
+  }
+  return it.step;
+}
 const ITEMS = CHALLENGE_DATA.map(c => Object.assign({}, c, {
-  hint: c.wrong,
+  hint: slipHint,
   why: (value, item) => (FP.check.numeric(value, item.model, { rel: 0.02 }) ? '' : item.wrong)
 }));
 

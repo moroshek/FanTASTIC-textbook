@@ -35,7 +35,8 @@ const BINS = [
 const BIN_NAME = Object.fromEntries(BINS.map(b => [b.id, b.name]));
 const keyFor = i => (i === 9 ? '0' : String(i + 1));
 
-// Chapter 23 spec, "Content" table. look: the feature named in Why (retry hint);
+// Chapter 23 spec, "Content" table. look: the feature named in Why (retry hint), worded so it
+// never names the card's bin (cards 5, 7, 9, 11 point at the deciding feature instead);
 // short: chip text.
 const CARDS = [
   { id: 1, answer: 'hangers', short: 'Hangs from roof steel',
@@ -57,7 +58,7 @@ const CARDS = [
   { id: 5, answer: 'direct', short: '30-in impeller, no base',
     text: 'A fan with a 30-inch impeller (illustrative) gets springs bolted straight under the foundation holes in its own structure, with no base.',
     why: 'Direct mounting is usually limited to impellers of 36.5 in or less; 30 in qualifies.',
-    look: 'isolators under the fan\'s own foundation holes on an impeller of 36.5 in or less' },
+    look: 'the impeller size limit for mounting with no base' },
   { id: 6, answer: 'direct', short: 'Swingout on flat pads',
     text: 'A swingout housed centrifugal fan with a large impeller sits on flat pads bolted directly under its own structure.',
     why: 'Swingout housed centrifugal fans are the exception: any impeller size, flat pads only.',
@@ -65,7 +66,7 @@ const CARDS = [
   { id: 7, answer: 'seismic', short: 'Housing nearly surrounds spring',
     text: 'The spec calls for spring mounts whose housings nearly surround the entire spring so they withstand earthquake loads.',
     why: 'A housing that nearly surrounds the spring for seismic loads defines a seismic spring.',
-    look: 'a housing that nearly surrounds the spring for seismic loads' },
+    look: 'what the housing must withstand, and how much of the spring it surrounds' },
   { id: 8, answer: 'snubber', short: 'Brackets with elastomer',
     text: 'A separate device, one bracket on the base and one on the floor with elastomeric material between them, limits movement in any direction; it is used along with the isolators.',
     why: 'A snubber works with isolators as a shock absorber; the elastomer prevents metal-to-metal contact.',
@@ -73,7 +74,7 @@ const CARDS = [
   { id: 9, answer: 'restrained', short: 'Frame limits travel',
     text: 'Springs with a frame added to limit vertical and horizontal travel; no seismic requirement is stated.',
     why: 'A housing or frame that restrains vertical and/or horizontal motion defines a restrained spring.',
-    look: 'a housing or frame that restrains vertical and/or horizontal motion' },
+    look: 'what the added frame does to the spring\'s travel' },
   { id: 10, answer: 'open', short: 'Bare coil, ceiling hung',
     text: 'A bare coil spring in a formed metal surround on a ceiling hung fan; it does nothing to resist aerodynamic forces.',
     why: 'Open springs offer no restriction of aerodynamic motion; ceiling hung types sit in a formed metal surround.',
@@ -81,7 +82,7 @@ const CARDS = [
   { id: 11, answer: 'housed', short: 'Housing holds two springs',
     text: 'An enclosed housing holds two springs that act exactly like open springs.',
     why: 'Housed springs work like open springs inside an enclosed housing that can hold one or more springs.',
-    look: 'springs that work like open springs inside an enclosed housing' }
+    look: 'how the springs behave, and what encloses them' }
 ].map(c => Object.assign(c, { hint: 'Look for ' + c.look + '.' }));
 
 // Spec feedback: Correct "Correct. <Why>."; Incorrect "Not quite. Look for <feature>." (retry);

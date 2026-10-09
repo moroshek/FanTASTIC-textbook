@@ -51,12 +51,41 @@ const CHALLENGE_DATA = [
             '6 days a week. How many years of L-10 life is that?',
     wrong: '12 × 6 × 52.14 = 3,754 h per year; 100,000 ÷ 3,754 = 26.6 years.' }
 ];
+// First wrong attempt: a hint that names the slip or the step, never the model value or the
+// worked numbers (the spec's "Feedback when wrong" text, which has both, is the final-miss "why").
+const near = (x, target) => Number.isFinite(x) && target > 0 && Math.abs(x - target) <= 0.03 * target;
+function lifeHint(value, it) {
+  const rated = ratedHours(it.l10, it.rating);
+  const yearly = annualHours(it.h, it.d);
+  const years = rated / yearly;
+  const steps = 'Annual hours = hours per day × days per week × 365/7; years = rated hours ÷ annual hours.';
+  if (it.rating === 'L-50' && near(value, it.l10 / yearly)) {
+    return 'That is the L-10 life. Convert the rating to L-50 first (L-50 = 5 × L-10), then divide by the annual hours.';
+  }
+  if (near(value, years * 365 / 7)) {
+    return 'You divided by the hours in one week. Multiply the weekly hours by 365/7 weeks to get annual hours first.';
+  }
+  if (it.h !== 1 && near(value, years * it.h)) {
+    return 'You divided by operating days, not hours. ' + steps;
+  }
+  if (it.d !== 7 && near(value, years * it.d / 7)) {
+    return 'The fan does not run every day. Count only ' + it.d + ' days a week in the annual hours.';
+  }
+  if (it.h !== 24 && near(value, years * it.h / 24)) {
+    return 'The fan does not run around the clock. Use ' + it.h + ' hours a day in the annual hours.';
+  }
+  if (value > 0 && near(1 / value, years)) {
+    return 'Divide the rated hours by the annual hours, not the other way round.';
+  }
+  return (it.rating === 'L-50' ? 'Convert the L-10 rating to L-50 hours first (L-50 = 5 × L-10). ' : '') + steps;
+}
+
 const ITEMS = CHALLENGE_DATA.map(c => {
   const model = R1(lifeYears(c.l10, c.rating, c.h, c.d));   // spec Rules: rounded to 0.1 year
   return Object.assign({}, c, {
     model, unit: 'years', decimals: 1,
     answerText: FP.fmt.num(model, 1) + ' years',
-    hint: c.wrong, why: c.wrong
+    hint: lifeHint, why: c.wrong
   });
 });
 

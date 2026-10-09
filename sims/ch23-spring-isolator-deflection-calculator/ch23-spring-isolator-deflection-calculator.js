@@ -49,9 +49,23 @@ const ITEMS = CHALLENGES.map((c, i) => ({
   model: FP.models.springDeflectionIn(c.W, c.n, c.k),
   tolerance: { abs: 0.02 },
   unit: 'in.', decimals: 2,
-  hint: c.wrong,
+  hint: slipHint,
   why: c.wrong
 }));
+
+// Hint after a first wrong attempt: the slip the typed value points to, else the step. It never
+// states the load per isolator or the deflection; the spec's worked "Feedback when wrong" text
+// (c.wrong, as `why`) appears only with the answer after the second wrong attempt.
+function slipHint(v, it) {
+  const load = it.W / it.n;
+  const near = x => Math.abs(v - x) <= Math.max(0.02, Math.abs(x) * 0.02) && Math.abs(x - it.model) > 0.02;
+  if (near(load)) return 'That is the load on each isolator in pounds; divide it by the spring rate to get inches.';
+  if (near(it.W / it.k)) return 'Share the total weight among the isolators before you divide by the spring rate.';
+  if (near(it.k / load)) return 'Flip the division: deflection is the load per isolator divided by the spring rate.';
+  if (near(it.W * it.n / it.k)) return 'Divide the weight by the number of isolators; do not multiply.';
+  if (near(load * it.k) || near(it.W * it.k)) return 'Divide by the spring rate; do not multiply.';
+  return 'Find the load each isolator carries first, then divide it by the spring rate k.';
+}
 
 const runner = new FP.ChallengeRunner({
   items: ITEMS,
@@ -60,8 +74,8 @@ const runner = new FP.ChallengeRunner({
   mastery: ITEMS.length,
   reviewPointer: 'Press Start over to try the three challenges again',
   id: SIM_ID,
-  // Spec: Correct: "Correct: δ = <model value> in."; wrong answers keep the kit wording
-  // around the spec's "Feedback when wrong" text (retry hint, then the missed reveal).
+  // Spec: Correct: "Correct: δ = <model value> in."; a first wrong attempt gets the kit wording
+  // around slipHint (no numbers); the missed reveal adds the "Feedback when wrong" text.
   messages: {
     correct: res => FP.msg.OK + ' Correct: δ = ' + FP.fmt.num(res.item.model, 2) + ' in.'
   }

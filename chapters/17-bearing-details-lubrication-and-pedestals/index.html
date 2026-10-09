@@ -2464,7 +2464,7 @@ A year of continuous running is 8,760 hours, so for a 24/7 process fan just divi
 <li>The learner completes challenges 2 to 5 the same way. Challenge 3 asks for an L-50 answer from an L-10 rating, so the learner must apply the five-times rule first.</li>
 <li>After challenge 5, free exploration unlocks. The learner changes any input and the annual hours and years update immediately, with a bar comparing L-10 and L-50 years for the same bearing. The learner should notice that switching from L-10 to L-50 changes the years by exactly five times while the bearing itself is unchanged.</li>
 </ol>
-<p><strong>Feedback:</strong> Five challenges, fixed order, two attempts each. Correct: "Correct: <model answer> years." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the model answer and the worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 5" is shown.</p>
+<p><strong>Feedback:</strong> Five challenges, fixed order, two attempts each. Correct: "Correct: <model answer> years." Hint after a first wrong attempt: a hint that names the slip or the step, with no model answer and no worked numbers: forgetting the L-50 = 5 × L-10 conversion, dividing by weekly hours instead of annual hours, dividing by operating days instead of hours, counting 7 days or 24 hours when the schedule is shorter, inverting the division; otherwise the two steps (annual hours = hours per day × days per week × 365/7; years = rated hours ÷ annual hours). After the final attempt: the "Feedback when wrong" text for that challenge, with the model answer and the worked calculation, and the challenge counts as missed. A running count "Challenges correct: n of 5" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 is shown with an empty answer box. The question on screen is "A process fan runs 24 hours a day, 7 days a week on bearings rated L-10 40,000 hours. How many years until 10% of such bearings are expected to fail?"</p>
 <p><strong>Chapter Anchors:</strong> L-10 40,000 h at 24/7 is 4.6 years; L-50 is five times L-10; L-10 40,000 h has L-50 of 200,000 h; 8,760 hours in a continuous year; the chapter table's 20 year values (4 rows by 5 schedules); TCF offers L-10 20,000, 40,000, 60,000, 80,000 and 100,000 hours on some models.</p>
 </details>
@@ -2906,6 +2906,8 @@ You can now take a bearing life, housing, mount, fixed-floating layout, lubrican
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

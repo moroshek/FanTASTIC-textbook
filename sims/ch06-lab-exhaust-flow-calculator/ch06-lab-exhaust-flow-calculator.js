@@ -39,13 +39,36 @@ function fieldMarks(v, item) {
   };
 }
 
+// First-wrong hint: one rule or slip per wrong field, never a model value or a worked sum
+// (the "wrong" text with the full calculation is kept for the missed message).
+function retryHint(v, item) {
+  const f = fieldMarks(v, item), m = item.m, out = [];
+  const near = (x, y) => Math.abs(x - y) <= 1 + 1e-9;
+  if (!f.fan) {
+    if (item.e > 0 && v.fan === m.fanCfm + item.e) out.push('Fan flow: entrained air joins after the fan.');
+    else if (item.b > 0 && v.fan === item.c) out.push('Fan flow: bypass air passes through the fan too.');
+    else out.push('Fan flow: add the streams that pass through the impeller.');
+  }
+  if (!f.total) {
+    if (item.e > 0 && v.total === m.fanCfm) out.push('Total flow: count the entrained air too.');
+    else if (item.b > 0 && v.total === item.c + item.e) out.push('Total flow: count the bypass air too.');
+    else out.push('Total flow: add the entrained air to the fan flow.');
+  }
+  if (!f.share) {
+    if (m.fanCfm > 0 && !near(m.sharePct, item.c / m.fanCfm * 100) && near(v.share, item.c / m.fanCfm * 100)) out.push('Share: divide by the total flow, not the fan flow.');
+    else if (near(v.share * 100, m.sharePct)) out.push('Share: give it as a percent, not a fraction.');
+    else out.push('Share: divide contaminated air by total flow.');
+  }
+  return out.join(' ');
+}
+
 const ITEMS = CHALLENGE_DATA.map((d, i) => {
   const m = mix(d.c, d.b, d.e);
   const answerText = 'fan flow ' + cfm(m.fanCfm) + ', total flow ' + cfm(m.totalCfm) +
     ', contaminated share ' + FP.fmt.num(Math.round(m.sharePct), 0) + '%';
   return Object.assign({}, d, {
     id: 'challenge-' + (i + 1), label: 'challenge ' + (i + 1), m, answerText,
-    hint: d.wrong, why: d.wrong,
+    hint: retryHint, why: d.wrong,
     check: (v, item) => { const f = fieldMarks(v, item); return f.fan && f.total && f.share; }
   });
 });

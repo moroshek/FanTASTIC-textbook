@@ -98,9 +98,37 @@ function wrongList(p) {
   return names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] + ' are wrong';
 }
 
+// Hint after a first wrong attempt: the slip the typed values point to, else the method step.
+// It never states the answer cells' values, the interpolated results or the class; the spec's
+// "Feedback when wrong" text (item.wrong) is held back and the reveal uses item.reason.
+const STEP = {
+  direct: 'Find the row for the duty\'s airflow and the column for its static pressure, read RPM and BHP from that one cell, then compare the RPM with the footer\'s class limits.',
+  4: 'The airflow sits between two printed rows: in the 12 in. column, f = (CFM − lower row) / (upper row − lower row), then y = lower + f × (upper − lower) for RPM and for BHP.',
+  5: 'The point sits between rows and between columns: interpolate airflow in the 12 in. and the 16 in. columns first, then interpolate pressure between those two results.',
+  6: 'The pressure sits between two printed columns on this airflow row: interpolate between the 28 in. and 32 in. cells.'
+};
+const CLASS_HINT = 'RPM and BHP are right. The class comes from the RPM, not the pressure column: pick the lowest class whose footer maximum RPM is at or above it.';
+function retryHint(v, it) {
+  const p = partsFor(v, it);
+  if (p.rpm && p.bhp) return CLASS_HINT;
+  const printed = RPM.some(row => row.some(x => Math.abs(x - v.rpm) <= 1)) ||
+    BHP.some(row => row.some(x => Math.abs(x - v.bhp) <= 0.01));
+  if (it.direct) {
+    if (p.rpm && !p.bhp) return 'Take the BHP from the same cell as the RPM.';
+    if (!p.rpm && p.bhp) return 'Take the RPM from the same cell as the BHP.';
+    if (printed) return 'Those are printed values, but from another cell: check the airflow row and the pressure column.';
+    return STEP.direct;
+  }
+  if (it.n === 5 && FP.check.numeric(v.rpm, ITEMS[3].rpm, { rel: 0.01 })) {
+    return 'That is the 12 in. result; 14 in. sits between the 12 and 16 in. columns, so interpolate in both and then between them.';
+  }
+  if (printed) return 'That is a printed cell. This duty sits between printed values, so interpolate between the two bracketing cells, not the nearest one.';
+  return STEP[it.n];
+}
+
 const MSG = {
   correct: res => FP.msg.OK + ' Correct: ' + res.item.reason.charAt(0).toUpperCase() + res.item.reason.slice(1),
-  retry: res => FP.msg.BAD + ' Not quite: ' + wrongList(partsFor(res.value, res.item)) + '. ' + res.item.wrong +
+  retry: res => FP.msg.BAD + ' Not quite: ' + wrongList(partsFor(res.value, res.item)) + '. ' + retryHint(res.value, res.item) +
     ' Try again (1 attempt left).',
   missed: res => FP.msg.BAD + ' Not quite: ' + wrongList(partsFor(res.value, res.item)) + '. The answer is ' +
     res.item.answerText + ' (' + res.item.method.toLowerCase() + '): ' + res.item.reason + ' This one counts as missed.'
@@ -177,7 +205,7 @@ function setup() {
     'rows from 3,348 to 4,836 CFM and eight static pressure columns from 4 to 32 in. wg, each cell RPM and BHP. ' +
     'Six duty points appear in order. For each, type the RPM and BHP, by direct reading or linear interpolation, ' +
     'choose Class 22, 32 or 45, and press Check. Two attempts; the first is scored. The class overlay turns on ' +
-    'after Check. The score reads Duty points correct: n of 6; mastery is 5 of 6.');
+    'once the point is resolved. The score reads Duty points correct: n of 6; mastery is 5 of 6.');
   FP.announce('Duty point 1 of 6: ' + ITEMS[0].duty + '. ' + PROMPT);
 }
 
@@ -678,10 +706,12 @@ function checkAnswer() {
   lastRes = res;
   lastParts = partsFor(value, st.item);
   if (res.attempt === 1) firstTry[st.index] = res.status === 'correct';
-  checkedOnce = true;
-  overlay = true;                 // the class overlay turns on after Check
+  // The class overlay turns on once the point is resolved; after a first wrong attempt it stays
+  // off (it would show the class of the answer cell).
+  const resolved = res.status !== 'retry';
+  if (resolved) { checkedOnce = true; overlay = true; }
   updateControls();
-  FP.announce(res.message + ' ' + scoreLabel() + '. Class overlay on.');
+  FP.announce(res.message + ' ' + scoreLabel() + '.' + (resolved ? ' Class overlay on.' : ''));
   if (res.status === 'retry') rpmInput.elt.focus();
   else nextButton.elt.focus();
 }

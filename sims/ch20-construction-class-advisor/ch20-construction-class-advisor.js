@@ -31,6 +31,12 @@ const inquiries = [
       'Standard construction; steam is just air.'
     ],
     answer: 0,
+    // hint after a first wrong answer, by the option chosen: the rule it breaks, not the answer
+    hints: {
+      1: 'Near-ambient steam is a moisture problem, not a heat problem.',
+      2: 'Nothing in this airstream is explosive, and spark resistance does nothing about water.',
+      3: 'Steam condenses in the housing, so the water has to be dealt with.'
+    },
     why: 'High moisture construction is for steam or condensation in the housing and is offered on Arrangement 9 axial fans; a drain removes the water.'
   },
   {
@@ -45,6 +51,12 @@ const inquiries = [
       'Insulated jacket only.'
     ],
     answer: 1,
+    // hint after a first wrong answer, by the option chosen: the rule it breaks, not the answer
+    hints: {
+      0: 'Check whether high moisture and high temperature construction can be used together on one fan.',
+      2: 'Check 220°F against the axial high temperature package bands.',
+      3: 'A jacket alone answers neither the steam nor the temperature rule; check which constructions this fan may combine.'
+    },
     why: 'FanPedia states that high moisture construction cannot be used with high temperature construction, and 220°F falls in an axial high temperature package.'
   },
   {
@@ -59,6 +71,12 @@ const inquiries = [
       'No spark resistance needed.'
     ],
     answer: 1,
+    // hint after a first wrong answer, by the option chosen: the rule it breaks, not the answer
+    hints: {
+      0: "Type C was specified, but look at what this fan's standard impeller is already made of.",
+      2: 'Type A changes the whole airstream. Which type matches a fan whose impeller is already non-ferrous?',
+      3: 'The specification calls for spark resistance; leaving it out breaks the specification.'
+    },
     why: 'FanPedia notes that a fan with a non-ferrous impeller as standard should use Type B.'
   },
   {
@@ -73,6 +91,12 @@ const inquiries = [
       '801°F-1,000°F package.'
     ],
     answer: 2,
+    // hint after a first wrong answer, by the option chosen: the rule it breaks, not the answer
+    hints: {
+      0: 'A coating does not change the construction; 700°F needs a high temperature package.',
+      1: 'Workers can touch the housing. What protects them from a 700°F surface?',
+      3: 'Check which package band 700°F falls in.'
+    },
     why: '700°F lies in the 601°F-800°F band, and a touchable hot housing calls for insulation; jackets are also named as personnel protection.'
   },
   {
@@ -87,6 +111,12 @@ const inquiries = [
       'Weep hole only.'
     ],
     answer: 0,
+    // hint after a first wrong answer, by the option chosen: the rule it breaks, not the answer
+    hints: {
+      1: 'The returned gas is hot exhaust, not steam condensing in the housing.',
+      2: 'Nothing here is explosive. Think about where the returned gas enters the fan.',
+      3: 'A weep hole drains water; the returned exhaust needs a way into the fan.'
+    },
     why: 'Recirculated flue gas enters through an FGR connection on the front of the inlet box, and the hot gas makes an insulated inlet box appropriate.'
   },
   {
@@ -101,6 +131,12 @@ const inquiries = [
       'Aluminum pedestal welded to the housing.'
     ],
     answer: 1,
+    // hint after a first wrong answer, by the option chosen: the rule it breaks, not the answer
+    hints: {
+      0: 'The specification forbids that weld.',
+      2: 'A coating does not change how the two metals are joined.',
+      3: 'Aluminum welded to stainless is still a dissimilar-metal weld. Think about separating the metals or not welding them at all.'
+    },
     why: 'FanPedia uses buffer strips when stainless must not be welded to mild steel, and a bolt-on pedestal for dissimilar metals.'
   }
 ];
@@ -293,7 +329,10 @@ function feedbackText(idx) {
   const extra = r.revealed
     ? 'Correct recommendation: ' + letters[q.answer] + '.'
     : 'You may choose again once for practice; your first answer is the one scored.';
-  return [head, q.why, extra];
+  // Before the reveal (first answer wrong, practice attempt open): a hint naming the rule the
+  // chosen option breaks. After the practice attempt or a correct answer: the full reason.
+  const body = r.revealed ? q.why : 'Hint: ' + q.hints[r.first];
+  return [head, body, extra];
 }
 
 function finalLines(s) {

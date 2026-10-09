@@ -37,7 +37,9 @@
         'and how much does it save compared with an outlet damper?',
       answerText: CORRECT_RANK_TEXT + '; saving ' + FP.fmt.num(c.saving, 1) + ' percentage points',
       check: isRight,
-      // Spec feedback: correct shows only the answer; wrong shows the challenge's text.
+      // First wrong attempt: a hint naming the slip (no ranking, no saving, no worked numbers).
+      hint: powerHint,
+      // Spec feedback: correct shows only the answer; the final miss shows the challenge's text.
       why: function (v, item) { return isRight(v, item) ? '' : item.wrongText; }
     });
   });
@@ -54,6 +56,42 @@
     return v.order.every(function (k, i) { return k === CORRECT_ORDER[i]; }) &&
       FP.check.numeric(v.saving, item.saving, TOLERANCE);
   }
+  // Hint after a first wrong attempt. Names the rule or the slip; never states the ranking,
+  // the saving or a method's power at the challenge airflow.
+  function powerHint(v, item) {
+    const near = function (x, t) { return Math.abs(x - t) <= TOLERANCE.abs; };
+    const q = item.airflow;
+    const orderOk = v.order.every(function (k, i) { return k === CORRECT_ORDER[i]; });
+    const parts = [];
+    if (!orderOk) {
+      if (v.order[2] !== 'damper') {
+        parts.push('Check the ranking: a damper only adds resistance while the fan keeps running at full speed. ' +
+          'Where does that put its power?');
+      } else {
+        parts.push('Check the ranking: inlet vanes pre-spin the air, but slowing the fan cuts power with ' +
+          'roughly the cube of the airflow ratio.');
+      }
+    }
+    if (!FP.check.numeric(v.saving, item.saving, TOLERANCE)) {
+      const best = powerOf('speed', q), damper = powerOf('damper', q);
+      if (near(v.saving, 100 - q)) {
+        parts.push('Power does not fall in proportion to airflow: with speed control it follows the cube ' +
+          'of the airflow ratio, and the damper barely saves anything.');
+      } else if (near(v.saving, damper - powerOf('vanes', q))) {
+        parts.push('That saving is for inlet vanes. The question asks for the method with the lowest power.');
+      } else if (near(v.saving, 100 - best)) {
+        parts.push('That saving is measured from 100% design power. Measure it from the damper\'s power at ' +
+          q + '% airflow.');
+      } else if (near(v.saving, best)) {
+        parts.push('That is the best method\'s power, not its saving. Saving = damper power − best method power.');
+      } else {
+        parts.push('Saving = damper power − best method power at ' + q + '% airflow, in percentage points; ' +
+          'speed-control power ≈ 100 × (airflow ratio)³.');
+      }
+    }
+    return parts.join(' ');
+  }
+
   function methodName(key) { return METHODS.find(function (m) { return m.key === key; }).name; }
   const pct = function (v) { return FP.fmt.num(v, 1) + '%'; };
 

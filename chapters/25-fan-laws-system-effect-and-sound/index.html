@@ -3348,7 +3348,7 @@ Notice that airflow goes with speed and pressure with speed squared, so pressure
 <li>Challenges 2 to 4 repeat steps 1 and 2.</li>
 <li>After challenge 4, exploration unlocks. The learner changes any ratio and the new curve and readouts update at once. With only the speed ratio changed, the learner should notice that the operating point moves along the system curve and the efficiency readout stays at 70.0%.</li>
 </ol>
-<p><strong>Feedback:</strong> Four challenges, fixed order, two attempts each. Correct: "Correct: <model answer>." Incorrect: the "Feedback when wrong" text. After a second wrong attempt the model answer is shown and the challenge counts as missed. A running count "Challenges correct: n of 4" is shown.</p>
+<p><strong>Feedback:</strong> Four challenges, fixed order, two attempts each. Correct: "Correct: <model answer>." Hint after a first wrong attempt: "Not quite." plus the slip the typed value points to (the scaling factor typed instead of the scaled value; the ratio raised to the wrong power, followed by the law: speed with airflow, power with speed cubed, pressure with speed squared, power with diameter to the fifth; the ratio upside down), or else the step for that challenge (which law, which ratio, which starting value) with no worked numbers. The new curve and the model value stay hidden. After the final attempt: the model answer and the "Feedback when wrong" text, and the challenge counts as missed. A running count "Challenges correct: n of 4" is shown.</p>
 <p><strong>Starting State:</strong> Curve A at 1,380 RPM with the operating point at 10,000 CFM and 4.0 in. wg; challenge 1 is shown with an empty answer box. The question on screen is "The same system needs 11,500 CFM. What speed?"</p>
 <p><strong>Chapter Anchors:</strong> Curve A: 10,000 CFM, 4.0 in. wg, 9.0 BHP at 1,380 RPM, 70% static efficiency. Speed-up to 11,500 CFM: 1,587 RPM, 5.29 in. wg, 13.69 BHP. Diameter ratio 1.12: airflow × 1.405, pressure × 1.254, power × 1.762. Power at 80% speed is 0.512 of the original.</p>
 </details>
@@ -3884,6 +3884,8 @@ You can now take one fan curve and predict what happens when the speed, size or 
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

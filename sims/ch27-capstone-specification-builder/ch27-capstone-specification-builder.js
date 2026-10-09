@@ -56,29 +56,36 @@ const ATTRS = [
 const IMP = 0, ARR = 1, DRIVE = 2, ROT = 3, MOTOR = 4, TEMP = 5, SPARK = 6, ABR = 7, FLOW = 8, BASE = 9;
 
 // Violations: `attr` is where the message is listed; `when(v)` gets the chosen values (null = unchosen).
+// `hint` (only where `msg` names the option to pick): shown the first time the violation is
+// triggered; when a later check triggers it again, the full `msg` is shown.
 const VIOLATIONS = [
   { id: 'V1', attr: IMP, when: v => ['HIB', 'HAF'].includes(v[IMP]),
     msg: 'Backward curved and airfoil wheels need clean air or light dust; sticky abrasive dust builds up and erodes them.' },
   { id: 'V2', attr: ARR, when: v => v[ARR] === '4',
     msg: 'Arrangement 4 is limited at high airstream temperature; FanPedia lists 1, 8, 9, 9F and 10 for high temperature.' },
   { id: 'V3', attr: ARR, when: v => v[ARR] === '9F' && ['iso', 'springs'].includes(v[BASE]),
-    msg: 'FanPedia: 9F is not suitable for isolators directly; use Arrangement 1 on an isolation base.' },
+    msg: 'FanPedia: 9F is not suitable for isolators directly; use Arrangement 1 on an isolation base.',
+    hint: 'FanPedia: 9F is not suitable for isolators directly. Which arrangement can sit on an isolation base instead?' },
   { id: 'V4', attr: DRIVE, when: v => ['1', '9', '9F'].includes(v[ARR]) && ['direct', 'vfd'].includes(v[DRIVE]),
-    msg: 'Arrangements 1, 9 and 9F are belt-driven here; use Arrangement 8 for a coupled direct drive.' },
+    msg: 'Arrangements 1, 9 and 9F are belt-driven here; use Arrangement 8 for a coupled direct drive.',
+    hint: 'Arrangements 1, 9 and 9F are belt-driven here; change the drive, or choose an arrangement built for a coupled direct drive.' },
   { id: 'V5', attr: DRIVE, when: v => ['4', '8'].includes(v[ARR]) && v[DRIVE] === 'belt',
     msg: 'Arrangements 4 and 8 are direct drive arrangements.' },
   { id: 'V6', attr: DRIVE, when: v => v[DRIVE] === 'direct',
     msg: '1,780/1,450 = 1.23: 23% too much air and about 1.85 times the power.' },
   { id: 'V7', attr: ROT, when: v => v[ROT] != null && v[ROT] !== 'CW THD',
-    msg: 'From the drive side, a top outlet blowing right is CW THD (CW 90).' },
+    msg: 'From the drive side, a top outlet blowing right is CW THD (CW 90).',
+    hint: 'Stand on the drive side: which way must the wheel turn to throw air out of a top outlet blowing right, and which code names that discharge?' },
   { id: 'V8', attr: MOTOR, when: v => ['60', '75'].includes(v[MOTOR]),
     msg: 'The 70°F start draws 96.0 BHP; size the motor for the cold start.' },
   { id: 'V9', attr: TEMP, when: v => ['none', '300'].includes(v[TEMP]),
-    msg: 'The gas is 500°F; the 500°F tier needs high temperature grease and bearings, shaft seal and shaft cooler.' },
+    msg: 'The gas is 500°F; the 500°F tier needs high temperature grease and bearings, shaft seal and shaft cooler.',
+    hint: 'Compare the package\'s temperature rating with the gas temperature on the application card.' },
   { id: 'V10', attr: SPARK, when: v => v[SPARK] === 'none',
     msg: 'Combustible dust requires spark-resistant construction.' },
   { id: 'V11', attr: SPARK, when: v => ['A', 'B'].includes(v[SPARK]),
-    msg: 'Types A and B are limited to 250°F; use Type C.' },
+    msg: 'Types A and B are limited to 250°F; use Type C.',
+    hint: 'Types A and B are limited to 250°F; compare that with the gas temperature.' },
   { id: 'V12', attr: ABR, when: v => ['none', 'bolt'].includes(v[ABR]),
     msg: 'Abrasive dust needs a liner, and the guide specification does not accept bolt-on liners.' },
   { id: 'V13', attr: FLOW, when: v => v[FLOW] === 'none' && v[DRIVE] != null && v[DRIVE] !== 'vfd',
@@ -102,6 +109,7 @@ let checks = 0;               // Check presses (counted until completion)
 let checkedAt = null;         // values + justifications at the last check
 let lastCheck = null;         // {violations, advisories, unchosen, emptyJust, complete}
 let completedChecks = null;   // checks needed to reach completion (first time)
+const flagged = new Set();    // violation ids triggered by an earlier check (their full msg is due)
 let view = 'build';           // 'build' | 'description'
 let page = 0;
 let notice = null;            // {kind, message}
@@ -196,7 +204,8 @@ function headerLayout() {
 function rowMessages(i) {
   if (!lastCheck) return [];
   const out = [];
-  lastCheck.violations.filter(r => r.attr === i).forEach(r => out.push({ kind: 'bad', text: FP.msg.BAD + ' ' + r.msg }));
+  lastCheck.violations.filter(r => r.attr === i).forEach(r => out.push({ kind: 'bad',
+    text: FP.msg.BAD + ' ' + (lastCheck.full.has(r.id) ? r.msg : r.hint) }));
   lastCheck.advisories.filter(r => r.attr === i).forEach(r => out.push({ kind: 'info', text: 'ℹ Advisory: ' + r.msg }));
   return out;
 }
@@ -321,6 +330,8 @@ function onEdit() {
 function checkSpec() {
   checks++;
   const res = evaluate();
+  res.full = new Set(res.violations.filter(r => !r.hint || flagged.has(r.id)).map(r => r.id));
+  res.violations.forEach(r => flagged.add(r.id));
   lastCheck = res;
   checkedAt = snapshot();
   notice = null;

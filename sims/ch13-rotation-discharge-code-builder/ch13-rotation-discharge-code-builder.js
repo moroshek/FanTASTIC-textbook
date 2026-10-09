@@ -61,6 +61,7 @@ let mode = 'cards';     // 'cards' | 'practice'
 let feedback = null;    // {kind: 'ok'|'bad', message, chose} for the latest graded submission
 let notice = '';        // reminder when a submission is incomplete (not graded)
 let retryUsed = false;  // the one unscored retry on the current card
+let revealed = false;   // the current card's answer, Why and drawing are shown
 let lastPracticeKey = '';
 
 let rotSelect, dischargeSelect, submitButton, nextButton, startOverButton;
@@ -311,7 +312,7 @@ function currentView() {
     return { fan, rot: practiceRotSelect.value(), angle,
       notOffered: !C.isDischargeOffered(fan, C.dischargeByAngle(angle).code) };
   }
-  if (feedback) {
+  if (feedback && revealed) {
     const card = deck.state().card;
     return { fan: card.fan, rot: card.rot, angle: C.dischargeByCode(card.code || card.requested).angle,
       notOffered: card.code === null };
@@ -347,7 +348,7 @@ function drawDiagramPanel(px, py, pw, ph) {
     text('?', cx, cy);
     textSize(14);
     textAlign(CENTER, TOP);
-    K.wrapText('Submit to see the housing with the correct outlet.', cx, py + ph - 48, pw - 20, 18, { align: CENTER });
+    K.wrapText(placeholderText(), cx, py + ph - 48, pw - 20, 18, { align: CENTER });
     textAlign(LEFT, TOP);
     return;
   }
@@ -373,6 +374,11 @@ function drawDiagramPanel(px, py, pw, ph) {
   fill(FP.tok('text-muted'));
   K.wrapText(line2, cx, py + ph - 30, pw - 12, 16, { align: CENTER, maxLines: 2 });
   textAlign(LEFT, TOP);
+}
+
+function placeholderText() {
+  return feedback ? 'Retry, or press Show answer, to see the housing with the correct outlet.'
+    : 'Submit to see the housing with the correct outlet.';
 }
 
 // Narrow canvases: housing at the left of a short strip, both code forms beside it
@@ -403,7 +409,7 @@ function drawCompactDiagram(px, py, pw, ph) {
     text('?', cx, cy);
     textAlign(LEFT, TOP);
     textSize(13);
-    K.wrapText('Submit to see the housing with the correct outlet.', tx, py + 30, tw, 17);
+    K.wrapText(placeholderText(), tx, py + 30, tw, 17);
     return;
   }
   FD.scrollHousing(null, { x: cx, y: cy, size: s, rotation: view.rot, angle: view.angle, notOffered: view.notOffered });
@@ -453,11 +459,34 @@ function choiceText(choice) {
   return choice.disch === 'NONE' ? 'Not offered' : C.designation(choice.rot, choice.disch);
 }
 
-// Spec feedback: Correct: "Correct: <answer>."; Incorrect: the card's Why, then the answer.
+// Spec feedback: Correct: "Correct: <answer>."; Incorrect (final): the card's Why, then the answer.
 function verdictText(ok, card, scored) {
   if (ok) return FP.msg.correct(card.answerText + '.');   // spec: "Correct: <answer>."
   return FP.msg.BAD + ' Not quite. ' + card.why + ' Correct answer: ' + card.answerText + '.' +
     (scored ? ' This one counts as missed.' : '');
+}
+
+// First wrong submission: a hint that names the slip, never the code, the angle or the drawing.
+function hintText(card, choice) {
+  if (card.code === null) {
+    return 'Before you write a code, check the fan type: is this fan built in the discharge the card asks for?';
+  }
+  if (choice.disch === 'NONE') {
+    return 'Check the fan type\'s discharge list again: ' + card.fan + ' fans are offered in this direction.';
+  }
+  if (choice.rot !== card.rot) {
+    return 'Use the rotation stated on the card; the code names the rotation as seen from the drive side.';
+  }
+  const want = C.dischargeByCode(card.code).angle, got = C.dischargeByCode(choice.disch).angle;
+  if (got === 360 - want) {
+    return 'You turned the wrong way: count from straight up in the direction of rotation (' +
+      (card.rot === 'CW' ? 'clockwise' : 'counterclockwise') + ').';
+  }
+  return 'Start at straight up and turn in the direction of rotation, 45° per step, until you point the way the outlet blows.';
+}
+function hintMessage(card, choice) {
+  return FP.msg.BAD + ' Not quite. This one counts as missed. ' + hintText(card, choice) +
+    ' Try again (one unscored attempt left).';
 }
 
 function submitAnswer() {
@@ -471,11 +500,15 @@ function submitAnswer() {
   let ok;
   if (st.phase === 'choose') {
     ok = deck.place(choice).status === 'correct';   // the scored first submission
-    feedback = { kind: ok ? 'ok' : 'bad', message: verdictText(ok, card, true), chose: choiceText(choice) };
+    // a miss gets a hint only; the answer, the Why and the drawing wait for the retry (or Show answer)
+    revealed = ok;
+    feedback = { kind: ok ? 'ok' : 'bad', message: ok ? verdictText(ok, card, true) : hintMessage(card, choice),
+      chose: choiceText(choice) };
   } else {
     // the one unscored retry: checked the same way, never counted
     ok = isCorrect(card, choice);
     retryUsed = true;
+    revealed = true;
     feedback = { kind: ok ? 'ok' : 'bad', message: FP.msg.practice(verdictText(ok, card, false)), chose: choiceText(choice) };
     FP.events.emit('answered', { source: 'ch13-rotation-discharge-code-builder', itemId: card.id,
       index: st.index, value: choice, correct: ok, attempt: 2, final: true, scored: false });
@@ -492,19 +525,31 @@ function setNotice(text) {
 function nextCard() {
   const st = deck.state();
   if (mode !== 'cards' || st.phase !== 'feedback') return;
+  if (!revealed) return showAnswer();
   if (st.isLast) return enterPractice();
   deck.next();
   feedback = null;
   notice = '';
   retryUsed = false;
+  revealed = false;
   resetCardControls();
   updateControlStates();
   FP.announce('Job card ' + (deck.state().index + 1) + ' of ' + CARDS.length + '. ' + deck.state().card.desc + '.');
 }
 
+// Next after a hint: show the answer, the Why and the drawing (the unscored retry is given up)
+function showAnswer() {
+  const card = deck.state().card;
+  retryUsed = true;
+  revealed = true;
+  feedback = { kind: 'bad', message: verdictText(false, card, true), chose: feedback.chose };
+  FP.announce(feedback.message);
+  updateControlStates();
+}
+
 function practiceUnlocked() {
   const st = deck.state();
-  return mode === 'practice' || st.phase === 'summary' || (st.isLast && st.phase === 'feedback');
+  return mode === 'practice' || st.phase === 'summary' || (st.isLast && st.phase === 'feedback' && revealed);
 }
 
 // Free practice starts at the rule's defaults: SWSI, CW, 360
@@ -537,6 +582,7 @@ function startOver() {
   feedback = null;
   notice = '';
   retryUsed = false;
+  revealed = false;
   lastPracticeKey = '';
   fanTypeSelect.selected('SWSI');
   practiceRotSelect.selected('CW');
@@ -575,8 +621,9 @@ function updateControlStates() {
   K.setEnabled(nextButton, inCards && st.phase === 'feedback');
   // In free practice only Start over applies to the cards
   for (const b of [submitButton, nextButton]) { if (inCards) b.show(); else b.hide(); }
-  const nextLabel = st.isLast ? 'Start free practice' : 'Next card';
-  nextButton.html(narrow && st.isLast ? 'Free practice' : nextLabel);
+  const hinted = st.phase === 'feedback' && !revealed;
+  const nextLabel = hinted ? 'Show answer' : st.isLast ? 'Start free practice' : 'Next card';
+  nextButton.html(narrow && st.isLast && !hinted ? 'Free practice' : nextLabel);
   nextButton.attribute('aria-label', nextLabel);
   const practiceOn = practiceUnlocked();
   K.setEnabled(fanTypeSelect, practiceOn);

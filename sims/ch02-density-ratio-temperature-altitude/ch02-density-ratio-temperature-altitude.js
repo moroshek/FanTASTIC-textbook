@@ -52,9 +52,39 @@
       wrong: 'Divide by the density ratio when going from the job to the catalog: 3.00 ÷ 0.697 = 4.30 in. wg. ' +
         'Multiplying gives 2.09, which would under-select the fan.' }
   ];
+  // First wrong attempt: a hint that names the rule or the slip, never the value or the worked
+  // numbers. The final miss shows the spec's "Feedback when wrong" text (why) with the answer.
+  function near(v, target, abs) { return FP.check.numeric(v, target, { abs: abs || 0.01 }); }
+  var ABS_T = 'Use absolute temperature: DR = 530 ÷ (T + 460). Add 460 to °F before dividing.';
+  var HINTS = {
+    'dr-300-0': function (v) {
+      if (near(v, 70 / 300)) return 'You divided the °F values. ' + ABS_T;
+      if (near(v, 530 / 300)) return 'You left out the 460. Absolute temperature is T + 460 degrees Rankine.';
+      if (v > 1) return 'Hot air is lighter than standard air, so the ratio is below 1. ' + ABS_T;
+      return ABS_T;
+    },
+    'dr-70-5000': function (v) {
+      if (v > 1) return 'Air at altitude is thinner, so the ratio is below 1: divide the site barometric pressure by 29.92, not the other way round.';
+      return 'At 70°F the temperature factor is 1.000, so only altitude matters: divide the site barometric pressure by 29.92.';
+    },
+    'dr-300-5000': function (v) {
+      if (near(v, M.temperatureFactor(300))) return 'That is the temperature factor alone. Multiply it by the 5,000 ft barometric factor too.';
+      if (near(v, ELEVATIONS[2].pb / 29.92)) return 'That is the altitude factor alone. Multiply it by the temperature factor 530 ÷ (T + 460) too.';
+      return 'Both effects apply: multiply the temperature factor 530 ÷ (T + 460) by the barometric factor Pb ÷ 29.92.';
+    },
+    'dr-600-0': function (v) {
+      if (near(v, 70 / 600)) return 'You divided the °F values. ' + ABS_T;
+      if (near(v, 530 / 600)) return 'You left out the 460. Absolute temperature is T + 460 degrees Rankine.';
+      return 'Use absolute temperature: 600°F is 600 + 460 degrees Rankine.';
+    },
+    'catalog-pressure': function (v) {
+      if (near(v, 3.00 * ratio(300, ELEVATIONS[0]), 0.05)) return 'You multiplied. That would under-select the fan: going from the job to the catalog, divide by the density ratio.';
+      return 'Convert the job pressure to standard-air conditions: divide it by the density ratio at 300°F.';
+    }
+  };
   var ITEMS = CHALLENGES.map(function (c) {
     return Object.assign({}, c, {
-      prompt: c.q, hint: c.wrong, why: c.wrong,
+      prompt: c.q, hint: HINTS[c.id], why: c.wrong,
       answerText: FP.fmt.num(c.model, c.decimals) + (c.unit ? ' ' + c.unit : '')
     });
   });

@@ -25,22 +25,22 @@ const DATA_NOTE = ['Belt-driven SWSI fan, Arrangement 9 (FanPedia p. 10)',
 
 // ---------- Content (chapter specification) ----------
 const CARDS = [
-  { id: 'inlet-duct', label: 'Inlet ductwork', place: 1, why: 'Air arrives from the upstream duct.' },
-  { id: 'inlet-flange', label: 'Inlet flange (with companion flange)', place: 2,
+  { id: 'inlet-duct', hint: 'Trace the air back to where it is before it reaches the fan at all.', label: 'Inlet ductwork', place: 1, why: 'Air arrives from the upstream duct.' },
+  { id: 'inlet-flange', hint: 'This is a bolted duct connection. Which side of the fan is it on, and where on that side does the duct meet the fan?', label: 'Inlet flange (with companion flange)', place: 2,
     why: 'The bolted joint where the duct meets the fan inlet.' },
-  { id: 'inlet-funnel', label: 'Inlet funnel', place: 3, why: 'Funnels the air smoothly into the eye of the impeller.' },
-  { id: 'impeller', label: 'Impeller', place: 4,
+  { id: 'inlet-funnel', hint: 'This part feeds the impeller. Does the air meet it before or after the impeller?', label: 'Inlet funnel', place: 3, why: 'Funnels the air smoothly into the eye of the impeller.' },
+  { id: 'impeller', hint: 'Air enters the impeller at its center. Which parts must the air pass to get there?', label: 'Impeller', place: 4,
     why: 'The only part that adds energy to the air; air enters at the center and is thrown outward between the blades.' },
-  { id: 'scroll', label: 'Housing scroll', place: 5, why: 'Collects the air leaving the impeller and guides it toward the outlet.' },
-  { id: 'cutoff', label: 'Cutoff', place: 6,
+  { id: 'scroll', hint: 'Where does the air go once the impeller throws it outward from the blade tips?', label: 'Housing scroll', place: 5, why: 'Collects the air leaving the impeller and guides it toward the outlet.' },
+  { id: 'cutoff', hint: 'The cutoff is part of the scroll. Is it near the inlet or near the outlet?', label: 'Cutoff', place: 6,
     why: 'The point of the scroll closest to the impeller, just before the outlet; it separates leaving air from circling air.' },
-  { id: 'outlet-flange', label: 'Outlet flange', place: 7, why: 'The bolted joint where the fan outlet meets the downstream duct.' },
-  { id: 'outlet-duct', label: 'Outlet ductwork', place: 8, why: 'Air leaves the fan system through the downstream duct.' },
-  { id: 'shaft', label: 'Shaft', place: BIN,
+  { id: 'outlet-flange', hint: 'This is a bolted duct connection. Which side of the fan is it on, and where on that side does the fan meet the duct?', label: 'Outlet flange', place: 7, why: 'The bolted joint where the fan outlet meets the downstream duct.' },
+  { id: 'outlet-duct', hint: 'Trace the air to where it is after it has left the fan.', label: 'Outlet ductwork', place: 8, why: 'Air leaves the fan system through the downstream duct.' },
+  { id: 'shaft', hint: 'The shaft passes through the housing side. Does the air flow through it as a stage?', label: 'Shaft', place: BIN,
     why: 'It passes through the housing side to carry the impeller, but it is not a stage the air flows through.' },
-  { id: 'bearings', label: 'Bearings', place: BIN,
+  { id: 'bearings', hint: 'Does the air flow through the bearings, or are they mounted somewhere else in this arrangement?', label: 'Bearings', place: BIN,
     why: 'In an Arrangement 9 fan the bearings sit on the pedestal outside the airstream.' },
-  { id: 'motor', label: 'Motor', place: BIN,
+  { id: 'motor', hint: 'How does the motor drive this fan, and where is it mounted?', label: 'Motor', place: BIN,
     why: 'In a belt-driven Arrangement 9 fan the motor is mounted outside the housing and drives through belts.' }
 ];
 CARDS.forEach((c, i) => { c.index = i; });
@@ -52,6 +52,17 @@ const MIS = {
   outside: 'Not every part of a fan touches the air: in a belt-driven Arrangement 9 fan the bearings and motor sit outside the airstream.',
   inside: 'This part is in the air path: the air passes through it on the way from the inlet duct to the outlet duct.'
 };
+// Hint versions of the misconceptions for the first submission: they name the slip, not the slot.
+const MIS_HINT = {
+  center: 'Air does not enter the impeller at the blade tips. Where does it enter, and which part leads it there?',
+  cutoff: 'The cutoff is not at the inlet. Look for it on the scroll.',
+  outside: 'Not every part of a fan touches the air. Does the air actually flow through this part?',
+  inside: MIS.inside
+};
+function misconceptionKey(card, where) {
+  const m = misconception(card, where);
+  return Object.keys(MIS).find(k => MIS[k] === m) || null;
+}
 function misconception(card, where) {
   if (where === BIN) { return card.place === BIN ? '' : MIS.inside; }
   if (card.place === BIN) { return MIS.outside; }
@@ -219,8 +230,10 @@ function submit() {
     } else if (!last) {
       returned++;
       mark[c.id] = 'bad';
+      // First submission: a hint (the slip and the card's question), not the Why text or the slot.
+      const mk = misconceptionKey(c, where);
       msg[c.id] = FP.msg.tryAgain((where === BIN ? '' : c.label + ' does not belong in slot ' + where + '. ') +
-        c.why + ' ' + misconception(c, where), 1);
+        (mk ? MIS_HINT[mk] + ' ' : '') + c.hint, 1);
       loc[c.id] = null;                                          // back to the pile
     } else {
       mark[c.id] = 'bad';

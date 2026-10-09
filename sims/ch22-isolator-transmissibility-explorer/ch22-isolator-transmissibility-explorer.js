@@ -52,13 +52,16 @@
   const ITEMS = [
     { rpm: 1170, d: 1.0, chapterT: '0.026',
       prompt: 'Challenge 1: What fraction of the fan\'s force gets through a 1 in spring at 1170 RPM?',
-      wrong: 'f = 19.5 Hz, f_n = 3.13 Hz, r = 6.23, T = 1/(6.23² − 1) = 0.026, about 97.4% isolation.' },
+      wrong: 'f = 19.5 Hz, f_n = 3.13 Hz, r = 6.23, T = 1/(6.23² − 1) = 0.026, about 97.4% isolation.',
+      step: 'Work in hertz: f = N/60 and f_n = 3.13/√δ, then r = f/f_n and T = 1/|r² − 1|.' },
     { rpm: 1170, d: 0.0625, chapterT: '0.70',
       prompt: 'Challenge 2: The same 1170 RPM fan sits on neoprene pads (0.0625 in). What is T?',
-      wrong: 'A pad\'s f_n is 12.52 Hz, so r = 1.56 and T = 1/(1.56² − 1) = 0.70: only about 30% isolation.' },
+      wrong: 'A pad\'s f_n is 12.52 Hz, so r = 1.56 and T = 1/(1.56² − 1) = 0.70: only about 30% isolation.',
+      step: 'Same speed, but a pad deflects far less than a spring, so its f_n is much higher. Recompute f_n = 3.13/√δ for the pad, then r and T.' },
     { rpm: 600, d: 0.0625, chapterT: '2.76',
       prompt: 'Challenge 3: A slow fan at 600 RPM sits on the same neoprene pads (0.0625 in). What is T?',
-      wrong: 'r = 10/12.52 = 0.80 is below 1.414, so T = 1/|0.80² − 1| = 2.76: the pad amplifies the force.' }
+      wrong: 'r = 10/12.52 = 0.80 is below 1.414, so T = 1/|0.80² − 1| = 2.76: the pad amplifies the force.',
+      step: 'Find r = f/f_n first, then note which side of 1.414 it falls on before you compute T = 1/|r² − 1|.' }
   ].map(function (it, i) {
     const c = calc(it.rpm, it.d);
     return Object.assign(it, {
@@ -68,10 +71,33 @@
       calc: c,
       tolerance: { rel: 0.05 },
       answerText: 'T = ' + sig3(c.T),
-      hint: it.wrong,
+      hint: slipHint,
       why: it.wrong
     });
   });
+
+  // Hint after a first wrong attempt: the slip the typed value points to, else the step to
+  // work through. It never states f_n, r or T for the challenge (the worked calculation in
+  // `wrong` is shown only after the second wrong attempt).
+  function near(v, x) { return isFinite(x) && x !== 0 && Math.abs(v - x) <= Math.abs(x) * 0.05; }
+  function slipHint(v, it) {
+    const c = it.calc, r = c.r;
+    if (v < 0) return 'T is never negative: take the absolute value, T = 1/|r² − 1|.';
+    if (near(v, (1 - c.T) * 100) || near(v, 1 - c.T)) {
+      return 'That looks like the percent isolation. T is the fraction of the force that gets through: T = 1/|r² − 1|.';
+    }
+    if (near(v, Math.abs(r * r - 1))) return 'You stopped at |r² − 1|; T is its reciprocal.';
+    if (near(v, 1 / (r * r))) return 'You dropped the − 1: T = 1/|r² − 1|, not 1/r².';
+    if (near(v, 1 / (r * r + 1))) return 'Subtract 1 from r²; do not add it.';
+    if (near(v, 1 / Math.abs(r - 1))) return 'Square the frequency ratio before you subtract 1.';
+    const rRpm = c.rpm / c.fnHz;
+    if (near(v, 1 / Math.abs(rRpm * rRpm - 1))) return 'Convert the fan speed to hertz first: f = N/60.';
+    const fnLin = 3.13 / c.d, fnMul = 3.13 * Math.sqrt(c.d);
+    if (near(v, M.transmissibility(c.fHz / fnLin)) || near(v, M.transmissibility(c.fHz / fnMul))) {
+      return 'Check f_n: it is 3.13 divided by the square root of the deflection.';
+    }
+    return it.step;
+  }
 
   const runner = new FP.ChallengeRunner({
     items: ITEMS,
@@ -82,11 +108,11 @@
     reviewPointer: 'Rework the frequency ratio first, then T = 1/|r² − 1|',
     id: SIM_ID,
     // Spec wording: correct "Correct: T = <model>, <percent isolation or amplification>.";
-    // wrong: the challenge's "Feedback when wrong"; after the second wrong attempt the
-    // worked calculation is shown and the challenge counts as missed.
+    // first wrong attempt: a hint (slipHint), never the value; after the second wrong attempt
+    // the challenge's "Feedback when wrong" worked calculation is shown and it counts as missed.
     messages: {
       correct: function (res) { return '✓ Correct: T = ' + sig3(res.item.model) + ', ' + effect(res.item.calc) + '.'; },
-      retry: function (res) { return '✗ Not quite. ' + res.item.wrong + ' Try again (1 attempt left).'; },
+      retry: function (res) { return '✗ Not quite. ' + slipHint(res.value, res.item) + ' Try again (1 attempt left).'; },
       missed: function (res) {
         return '✗ Not quite. The answer is T = ' + sig3(res.item.model) + '. Worked calculation: ' + res.item.wrong + ' This one counts as missed.';
       }

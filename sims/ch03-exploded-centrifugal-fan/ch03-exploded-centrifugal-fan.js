@@ -28,16 +28,16 @@
   ];
 
   var QUIZ = [
-    { prompt: 'Select the part that adds energy to the air.', answer: 'impeller', why: 'It is the only rotating part in the air path.' },
-    { prompt: 'Select the part that funnels air smoothly into the impeller.', answer: 'funnel', why: 'The funnel shapes the inlet air; the collar and flange are duct connections.' },
-    { prompt: 'Select the part a duct slips over and is clamped to.', answer: 'collar', why: 'A collar has no bolt holes; a flanged inlet is bolted.' },
-    { prompt: 'Select the part that the downstream duct is bolted to.', answer: 'outletFlange', why: 'The outlet flange carries the bolt pattern for the discharge duct.' },
-    { prompt: 'Select the part that carries the impeller and transmits torque to it.', answer: 'shaft', why: 'The shaft and impeller form the rotor assembly.' },
-    { prompt: 'Select the parts that support and locate the shaft.', answer: 'bearings', why: 'Two bearings on the pedestal hold the shaft radially and axially.' },
-    { prompt: 'Select the part that you would change to change fan speed.', answer: 'sheave', why: 'The ratio of the motor and fan sheaves sets fan speed.' },
-    { prompt: 'Select the part that moves to tension the belts.', answer: 'slideBase', why: 'Sliding the motor away from the fan tightens the belts.' },
-    { prompt: 'Select the part also called the scroll or casing.', answer: 'housing', why: 'Side, scroll and casing are field names for the housing.' },
-    { prompt: 'Select the structure that holds the bearings and the motor slide base.', answer: 'pedestal', why: 'The pedestal is a separate support, not part of the housing.' }
+    { prompt: 'Select the part that adds energy to the air.', answer: 'impeller', hint: 'Look for the part that turns in the air path; the parts around it only guide the air.', why: 'It is the only rotating part in the air path.' },
+    { prompt: 'Select the part that funnels air smoothly into the impeller.', answer: 'funnel', hint: 'Look on the inlet side for the part that shapes the air as it enters, not a duct connection.', why: 'The funnel shapes the inlet air; the collar and flange are duct connections.' },
+    { prompt: 'Select the part a duct slips over and is clamped to.', answer: 'collar', hint: 'Look for an inlet connection with no bolt holes.', why: 'A collar has no bolt holes; a flanged inlet is bolted.' },
+    { prompt: 'Select the part that the downstream duct is bolted to.', answer: 'outletFlange', hint: 'Look on the discharge side for a connection with a bolt pattern.', why: 'The outlet flange carries the bolt pattern for the discharge duct.' },
+    { prompt: 'Select the part that carries the impeller and transmits torque to it.', answer: 'shaft', hint: 'Follow the torque from the drive to the impeller.', why: 'The shaft and impeller form the rotor assembly.' },
+    { prompt: 'Select the parts that support and locate the shaft.', answer: 'bearings', hint: 'Look at what sits on the pedestal around the shaft.', why: 'Two bearings on the pedestal hold the shaft radially and axially.' },
+    { prompt: 'Select the part that you would change to change fan speed.', answer: 'sheave', hint: 'Fan speed is set by a ratio of two diameters in the belt drive.', why: 'The ratio of the motor and fan sheaves sets fan speed.' },
+    { prompt: 'Select the part that moves to tension the belts.', answer: 'slideBase', hint: 'Belt tension comes from moving the motor. What does the motor sit on?', why: 'Sliding the motor away from the fan tightens the belts.' },
+    { prompt: 'Select the part also called the scroll or casing.', answer: 'housing', hint: 'Scroll and casing are field names for the shell that encloses the impeller and collects the air.', why: 'Side, scroll and casing are field names for the housing.' },
+    { prompt: 'Select the structure that holds the bearings and the motor slide base.', answer: 'pedestal', hint: 'Look for the support under the drive end that is separate from the housing.', why: 'The pedestal is a separate support, not part of the housing.' }
   ];
 
   var START_PROMPT = 'Select any part to see what it does. When you are ready, switch to quiz mode.';
@@ -47,12 +47,13 @@
   function lower1(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
 
   // Spec feedback wording (chapter "Feedback" rule), passed to the engine as overrides:
-  // Correct: "Correct:" + Why. Incorrect: "That is the <part selected>." + the Why of the correct
-  // answer; on the second miss the correct part is highlighted and the prompt counts as missed.
+  // Correct: "Correct:" + Why. First miss: "That is the <part selected>." + a hint that points to the
+  // right part without naming it. Second miss: the Why of the correct answer; the correct part is
+  // highlighted and the prompt counts as missed.
   var MSG = {
     correct: function (c) { return '✓ Correct: ' + c.why; },
     retry: function (c) {
-      return '✗ That is the ' + lower1(c.clickedLabel) + '. ' + c.why +
+      return '✗ That is the ' + lower1(c.clickedLabel) + '. ' + c.hint +
         ' Try again (' + c.attemptsLeft + ' attempt' + (c.attemptsLeft === 1 ? '' : 's') + ' left).';
     },
     missed: function (c) {

@@ -4120,8 +4120,9 @@ position does not change with rotation or discharge.</p>
 <p>The sim shows eight illustrative installations in a fixed order: four drive-side views, three
 inlet-side views and one text-only description. Each picture is an end view of a fan housing with
 its inlet box, a viewpoint label and an arrow showing the air entering the box. You choose one of the
-eight positions and press Check. You get two attempts: a wrong first answer shows the item's
-explanation, and a second wrong answer reveals the position and counts as missed. When an item is
+eight positions and press Check. You get two attempts: a wrong first answer gets a hint that
+names the slip (for example an inlet-side picture read without mirroring) but not the position, and a
+second wrong answer reveals the position with its explanation and counts as missed. When an item is
 resolved, the drive-side dial is drawn over the picture with the answer highlighted; an inlet-side
 picture first flips to the drive side, and a dashed outline marks where the box appeared before the
 flip.</p>
@@ -4133,7 +4134,7 @@ and the arrow keys) and switch the viewpoint. Free practice is never scored.</p>
 <li>Read installation 1, note the viewpoint label, and choose a position with the <strong>45</strong> to <strong>360</strong>
    buttons (or keys 1-8).</li>
 <li>Press <strong>Check</strong> (or Enter). A correct answer reads "✓ Correct: position <em>n</em>, <em>description</em>." A
-   wrong one reads "✗ Not quite." with the explanation; use the second attempt.</li>
+   wrong one reads "✗ Not quite." with a hint; use the second attempt.</li>
 <li>Press <strong>Next installation</strong> (or Enter) and continue through item 8, then press <strong>See score</strong>.</li>
 <li>In free practice, move the box and press <strong>View</strong> to switch between the drive side and the inlet
    side. Notice that switching the view changes 90 to 270 and 45 to 315 on the picture, while 360
@@ -4303,6 +4304,8 @@ facilities staff.</p>
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

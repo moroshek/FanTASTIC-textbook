@@ -32,13 +32,16 @@ const TOL_DB = 0.5;
 const CHALLENGE_DATA = [
   { id: 'worked-example', bands: [98, 96, 94, 90, 87, 83, 78, 72], limit: 95,
     wrong: 'Weight each band first, then add as 10·log10 of the sum of 10^(L/10); ' +
-           'the 500 and 1,000 Hz bands dominate.' },
+           'the 500 and 1,000 Hz bands dominate.',
+    step: 'Weight each band first, then add as 10·log10 of the sum of 10^(L/10); look at which weighted bands are largest.' },
   { id: 'mid-band-heavy', bands: [90, 92, 95, 97, 96, 93, 88, 82], limit: 95,
     wrong: 'After weighting, the 500 to 2,000 Hz bands sit near 94 to 96 dB each; three or ' +
-           'four bands near 95 dB add to well over 95.' },
+           'four bands near 95 dB add to well over 95.',
+    step: 'Weight each band first, then add logarithmically: several bands of similar weighted level add to more than any one of them.' },
   { id: 'low-band-heavy', bands: [105, 100, 92, 86, 82, 78, 74, 68], limit: 95,
     wrong: 'The 105 dB at 63 Hz drops to 78.8 dB after weighting; a loud low band does not ' +
-           'control an A-weighted total.' }
+           'control an A-weighted total.',
+    step: 'Apply the A-weighting correction to every band before adding; check how much the 63 Hz correction takes off the loudest band.' }
 ];
 
 const ITEMS = CHALLENGE_DATA.map((c, i) => {
@@ -51,19 +54,27 @@ const ITEMS = CHALLENGE_DATA.map((c, i) => {
     lwa, verdict, result: r,
     answerText: 'LwA = ' + FP.fmt.num(lwa, 1) + ' dB, which ' + verdict + ' the ' + c.limit + ' dB limit',
     check: (v, item) => Math.abs(v.lwa - item.lwa) <= TOL_DB + 1e-9 && v.verdict === item.verdict,
-    hint: (v, item) => diagnose(v, item) + item.wrong,
+    hint: (v, item) => diagnose(v, item) || item.step,
     why: (v, item) => (item.check(v, item) ? '' : item.wrong)
   });
 });
 
-// A short diagnosis in front of the spec's "Feedback when wrong" text (misconceptions 1 and 3).
+// Hint after a first wrong attempt (misconceptions 1 and 3): the slip the typed level points to,
+// else the challenge's step. It never states the weighted bands, the overall level or the
+// verdict; the spec's "Feedback when wrong" text (item.wrong) comes with the answer when missed.
 function diagnose(v, item) {
   const r = item.result;
-  const arith = item.bands.reduce((a, b) => a + b, 0) / item.bands.length;
+  const mean = a => a.reduce((x, y) => x + y, 0) / a.length;
+  const near = x => Math.abs(v.lwa - x) <= TOL_DB;
   const levelOk = Math.abs(v.lwa - item.lwa) <= TOL_DB + 1e-9;
-  if (levelOk) return 'Your level is within 0.5 dB, but the meets/exceeds choice is not. ';
-  if (Math.abs(v.lwa - r.unweighted) <= TOL_DB) return 'That is the unweighted total. ';
-  if (Math.abs(v.lwa - arith) <= TOL_DB) return 'That is the arithmetic average of the bands. ';
+  if (levelOk) return 'Check the meets/exceeds choice against your level: meets means at or below the limit.';
+  if (near(r.unweighted)) return 'That is the unweighted total: apply each band\'s A-weighting correction before adding.';
+  if (near(mean(item.bands)) || near(mean(r.weighted))) {
+    return 'That is an arithmetic average: decibels add as 10·log10 of the sum of 10^(L/10).';
+  }
+  if (near(Math.max(...r.weighted)) || near(Math.max(...item.bands))) {
+    return 'That is the loudest band alone: add all eight weighted bands logarithmically.';
+  }
   return '';
 }
 

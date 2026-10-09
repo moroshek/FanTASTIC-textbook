@@ -44,13 +44,23 @@ const CHALLENGE_DATA = [
       '1,160 × 9.0 / 6.0 = 1,740 RPM.' }
 ];
 const TOL = { abs: 10 };                       // ±10 RPM
-// Spec feedback: correct shows only "Correct: <model value> RPM."; a wrong answer shows the
-// "Feedback when wrong" text (retry), and again with the model value when the challenge is missed.
+// Spec feedback: correct shows only "Correct: <model value> RPM."; a first wrong answer shows a
+// hint (the rule or the slip, no fan speed and no worked numbers); the final miss shows the
+// "Feedback when wrong" text with the model value.
+const RULE = 'Fan speed = motor speed × motor sheave ÷ fan sheave.';
+function driveHint(v, c) {
+  const near = t => FP.check.numeric(v, t, TOL);
+  let slip = '';
+  if (near(c.motorRpm * c.fanIn / c.motorIn)) slip = 'You inverted the ratio. A larger fan sheave makes the fan turn slower. ';
+  else if (near(c.motorRpm)) slip = 'That is the motor speed. Unequal sheaves change the speed. ';
+  const bigger = c.motorIn > c.fanIn ? 'Here the motor sheave is the larger one: does the fan turn faster or slower than the motor? ' : '';
+  return slip + bigger + RULE;
+}
 const ITEMS = CHALLENGE_DATA.map(c => Object.assign({}, c, {
   model: FP.models.fanRpm(c.motorRpm, c.motorIn, c.fanIn),
   unit: 'RPM', decimals: 0, tolerance: TOL,
   label: 'challenge 3',
-  hint: c.wrong,
+  hint: v => driveHint(v, c),
   why: (value, item) => (FP.check.numeric(value, item.model, TOL) ? '' : item.wrong)
 }));
 

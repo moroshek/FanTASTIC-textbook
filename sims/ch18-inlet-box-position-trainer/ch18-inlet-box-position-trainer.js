@@ -48,12 +48,38 @@ const ITEMS = ITEM_DATA.map((d, i) => {
   return Object.assign({}, d, { id: i + 1, answer, answerText: 'position ' + answer + ', ' + desc(answer) });
 });
 
+// First-wrong-attempt hint: names the slip (unmirrored inlet view, left/right swap, air direction
+// read as the position) or the rule, never the correct position.
+function positionHint(card, chosen) {
+  if (card.view === 'inlet' && chosen === card.shown) {
+    return 'That is the position as read on this picture, but it is drawn from the inlet side. ' +
+      'Mirror left and right first, then read the drive-side dial.';
+  }
+  if (card.answer === 180 && chosen === 360) {
+    return 'The number names where the opening is, not the direction the air moves.';
+  }
+  if (card.view === 'drive' && chosen === 360 - card.answer) {
+    return 'Left and right are swapped. Seen from the drive side, the positions run clockwise.';
+  }
+  if (card.view === 'inlet') {
+    return 'This picture is drawn from the inlet side. Mirror it left to right, then read the drive-side dial.';
+  }
+  if (card.view === 'text') {
+    return 'Follow the air path: where must the opening be for air to enter the box that way?';
+  }
+  return 'Read where the opening is on the drive-side dial: the positions run clockwise in 45° steps.';
+}
+
 const deck = new FP.CardDeck({
   cards: ITEMS, shuffle: false, attempts: 2, retryMissed: false,
   noun: 'Positions', mastery: MASTERY,
   reviewPointer: 'Review the drive-side rule, then press Start over',
-  // Spec: correct reads "Correct: position <n>, <description>."; wrong uses the item's Why text
-  messages: { correct: res => FP.msg.correct(res.card.answerText) },
+  // Spec: correct reads "Correct: position <n>, <description>."; a first wrong answer gets a hint
+  // (no position number), the final miss gets the item's Why text with the answer
+  messages: {
+    correct: res => FP.msg.correct(res.card.answerText),
+    retry: res => FP.msg.tryAgain(positionHint(res.card, res.chosen), res.attemptsLeft)
+  },
   id: SIM_ID
 });
 

@@ -2827,7 +2827,7 @@ A common trap is adding inlet and outlet static pressures as if both were positi
 <li>For challenge 5, the airflow control moves to 12,000 CFM before the question appears, and the FTP readout is hidden until the answer is checked.</li>
 <li>After challenge 5, free exploration unlocks: the learner changes the airflow and every station value and fan value updates at once. The learner should notice that SP1 is always negative, that TP1 is always smaller in magnitude than SP1, and that doubling the airflow from 5,000 to 10,000 CFM multiplies FTP by 4 and AHP by 8.</li>
 </ol>
-<p><strong>Feedback:</strong> Five challenges, fixed order, two attempts each. Correct: "Correct: <value> <unit>." Incorrect: the "Feedback when wrong" text for that challenge. After the second wrong attempt the correct value and worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 5" is shown, counting only first-attempt answers.</p>
+<p><strong>Feedback:</strong> Five challenges, fixed order, two attempts each. Correct: "Correct: <value> <unit>." Hint after a first wrong attempt: the slip the answer matches (multiplied instead of divided, not squared, the inlet sign dropped, the static pressure rise instead of total, the airflow ratio not squared), or else the challenge's rule (challenge 3: "Find TP = SP + VP at each station, then FTP = TP outlet − TP inlet, keeping every sign."); no value and no worked numbers, and the readouts stay hidden. After the final attempt: the "Feedback when wrong" text for that challenge; the correct value and worked calculation are shown and the challenge counts as missed. A running count "Challenges correct: n of 5" is shown, counting only first-attempt answers.</p>
 <p><strong>Starting State:</strong> Airflow at 10,000 CFM, the schematic with all labels, and challenge 1 displayed with the inlet velocity readout hidden. The prompt reads "How fast is the air moving in the inlet duct?"</p>
 <p><strong>Chapter Anchors:</strong> 10,000 CFM; 24 in. × 24 in. duct, 4.00 ft², 2,500 fpm, VP 0.39 in. wg; 20 in. × 20 in. duct, 2.78 ft², 3,600 fpm, VP 0.81 in. wg; inlet SP −1.20, outlet SP +2.00; TP −0.81 and +2.81; FTP 3.62 in. wg; FSP 2.81 in. wg; air power 5.70 hp; 12,000 CFM needs FTP 5.21 in. wg and 9.84 hp; airflow ratio 1.20, pressure ratio 1.44, power ratio 1.73.</p>
 </details>
@@ -3050,7 +3050,7 @@ If density corrections feel slippery, that is normal; the hard part is rememberi
 <li>The learner opens the challenges. For each, the learner types an answer and presses Check; the chart then marks the correct point on the correct curve.</li>
 <li>After the five challenges the learner may continue exploring.</li>
 </ol>
-<p><strong>Feedback:</strong> Five challenges, fixed order, two attempts each. Correct: "Correct: <value>." Incorrect: the "Feedback when wrong" text. After the second wrong attempt the answer is shown, the point is marked and the challenge counts as missed. A score "n of 5 correct on first attempt" is shown at the end.</p>
+<p><strong>Feedback:</strong> Five challenges, fixed order, two attempts each. Correct: "Correct: <value>." Hint after a first wrong attempt: the rule without the numbers, or the slip the answer matches (the °F values divided, the 460 left out, one factor alone, multiplied instead of divided); for example "That is the temperature factor alone. Multiply it by the 5,000 ft barometric factor too." After the final attempt: the "Feedback when wrong" text; the answer is shown, the point is marked and the challenge counts as missed. A score "n of 5 correct on first attempt" is shown at the end.</p>
 <p><strong>Starting State:</strong> The sea-level curve with the marker at 70°F and a ratio of 1.000, the other three curves visible, and the question "How much lighter is 300°F air than standard air?"</p>
 <p><strong>Chapter Anchors:</strong> 0.075 lb/ft³; 70°F; 29.92 in. Hg; 530; 460; 300°F at sea level = 0.697 and 0.0523 lb/ft³; 5,000 ft = 24.89 in. Hg and 0.832; 2,500 ft = 27.31 in. Hg (0.913); 7,500 ft = 22.65 in. Hg (0.757); required 3.00 in. wg at 300°F selects at 4.30 in. wg.</p>
 </details>
@@ -3375,6 +3375,8 @@ You can now add velocity pressure to static pressure to find total pressure, wor
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       

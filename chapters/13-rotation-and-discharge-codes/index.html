@@ -2771,7 +2771,7 @@ When a customer's drawing uses one form and your order entry uses the other, wri
 <li>The learner moves to the next card; previous cards cannot be re-answered for score.</li>
 <li>After card 8, free practice unlocks: the learner chooses SWSI or DWDI, a rotation, and an angle, and the outline and code update at once. The learner should notice that switching rotation at a fixed angle mirrors the outlet left to right.</li>
 </ol>
-<p><strong>Feedback:</strong> 8 cards, fixed order, one scored attempt each, then a second unscored attempt is allowed. Correct: "Correct: <answer>." Incorrect: the "Why" text for that card, followed by the correct answer. The correct answer is revealed after the first submission. A running score "Codes correct: n of 8" is shown.</p>
+<p><strong>Feedback:</strong> 8 cards, fixed order, one scored attempt each, then a second unscored attempt is allowed. Correct: "Correct: <answer>." Hint after a first wrong attempt (the card counts as missed; no code, angle or housing drawing is shown): "Not offered" on a card whose fan offers the discharge, "Check the fan type's discharge list again: <fan> fans are offered in this direction."; a code on the DWDI "Not offered" card, "Before you write a code, check the fan type: is this fan built in the discharge the card asks for?"; the wrong rotation, "Use the rotation stated on the card; the code names the rotation as seen from the drive side."; the mirror-image angle, "You turned the wrong way: count from straight up in the direction of rotation."; any other discharge, "Start at straight up and turn in the direction of rotation, 45° per step, until you point the way the outlet blows." After the final attempt (the unscored retry, or Show answer when the learner skips it): the "Why" text for that card, followed by the correct answer, and the housing is drawn with the correct outlet. A running score "Codes correct: n of 8" is shown.</p>
 <p><strong>Starting State:</strong> Card 1 is shown with no rotation or discharge selected and the question "What code goes on the order?"</p>
 <p><strong>Chapter Anchors:</strong> Eight discharges for SWSI fans; seven for DWDI, without BAD. CW 90 blows to the right and CCW 90 to the left of an observer on the drive side. The worked example's answer is CCW BHD (CCW 270).</p>
 </details>
@@ -3197,6 +3197,8 @@ You can now turn a layout sketch into a rotation and discharge code, check the m
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/sim-autoheight.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       
