@@ -36,7 +36,7 @@
         id: 'rails', label: 'Isolation rails',
         x1: 34.5, y1: 2.2, x2: 68.8, y2: 36.0,
         summary: 'Isolators between two flat bars: the top bar bolted to the fan\'s foundation holes, the bottom bar to the floor.',
-        facts: ['Springs or RIS.', 'Shown in two versions: RIS pads and springs.'],
+        facts: ['Springs or RIS.', 'Shown in two versions: RIS pads and springs. Twin City Fan engineering says RIS is most often used here, with the fan sitting on the rails.'],
         hint: 'Top middle pair: look for purple bars running along both sides.',
         prompt: 'Which drawings put the isolators between two flat bars?'
       },
@@ -52,7 +52,7 @@
         id: 'base', label: 'Isolation base',
         x1: 15.4, y1: 50.8, x2: 44.3, y2: 98.7,
         summary: 'The fan, possibly the motor and other components, on a structural base with isolators under the base\'s mounting brackets.',
-        facts: ['Springs, RIS or pads (p. 133).', 'The base-type page (p. 131) says an isolation base requires spring or RIS isolators, so use pads only where the factory confirms them.'],
+        facts: ['Springs, RIS or neoprene pads (p. 133).', 'The base-type page (p. 131) calls for spring or RIS isolators. Twin City Fan engineering confirms neoprene pads can be used under an isolation base, though it is uncommon; springs or RIS are the usual choice.'],
         hint: 'Bottom left: the fan and the motor share one purple frame.',
         prompt: 'Which drawing carries the fan and its motor on one frame set on isolators?'
       },

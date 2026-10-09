@@ -26,7 +26,7 @@ const SCENARIOS = [
     just: '7SI ships on a unitary base as standard; unitary bases are designed for use without isolators.' },
   { n: 2, id: 's2-arr1-mezzanine', short: 'Arr. 1 on a mezzanine above offices',
     text: 'Arrangement 1 belt-driven SWSI fan with motor, on a mezzanine above offices; isolation required.', rec: 1,
-    just: 'Isolation bases give fan, motor and drive a common support and sit on spring or RIS isolators.' },
+    just: 'Isolation bases give fan, motor and drive a common support and usually sit on spring or RIS isolators.' },
   { n: 3, id: 's3-9f-springs', short: 'Spec: Arr. 9F with springs under the fan',
     text: 'Spec reads "Arrangement 9F with springs under the fan".', rec: 1,
     just: '9F is not suitable for isolators directly under the fan; FanPedia says use Arrangement 1 with a separate isolation base.' },
