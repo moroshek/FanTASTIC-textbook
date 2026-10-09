@@ -1,0 +1,113 @@
+{
+  "title": "Which Exploded View Shows This Part",
+  "description": "Twelve housing-part cards, shuffled, go into four fan-family bins (Housed Centrifugal, Tubular, Plug Fan, Centrifugal Roof Exhauster) by dragging or with the keyboard. Cards move freely until Check; the first check is scored with mastery at 10 of 12, each card then explains why, and Retry sends the incorrect cards back to the pool for unscored practice.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "exploded view",
+    "housing side plate",
+    "scroll wrapper",
+    "cutoff",
+    "straightening vanes",
+    "guide vanes",
+    "discharge cone",
+    "belt tube",
+    "mounting panel",
+    "insulation plug",
+    "roof exhauster shroud",
+    "curb cap",
+    "motor cover"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Attributing housing parts to the fan family whose FanPedia exploded view shows them",
+    "learningObjectives": [
+      "The learner will attribute twelve housing parts to the fan family whose FanPedia exploded view or housing detail shows them, using what each part does to decide."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "attribute",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "exploded view", "housing side plate", "scroll wrapper", "cutoff", "straightening vanes", "guide vanes",
+      "discharge cone", "belt tube", "mounting panel", "insulation plug", "roof exhauster shroud", "curb cap", "motor cover"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 760,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 760
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode). Keyboard path without dragging: choose a card in the Card list, then press 1-4 (0 returns it to the pool) or the bin buttons; the next pool card is selected automatically. C checks, R retries. Verdicts are announced through FP.announce (aria-live); after Check every card carries a ✓ or ✗ glyph and a solid or dashed border, and the Card list repeats the glyph. The bin button that holds the selected card shows a ✓ prefix (aria-pressed)."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "canvas", "label": "Cards and bins", "purpose": "Drag a card into a bin or back to the pool; click a card to select it and, after Check, read why; click an empty bin to move the selected card there" },
+      { "type": "select", "label": "Card", "purpose": "Choose the card to move or read (keyboard path); keys 1-4 and 0 work here too" },
+      { "type": "button", "label": "1 Housed centrifugal / 2 Tubular / 3 Plug fan / 4 Roof exhauster", "purpose": "Put the selected card in that bin (keys 1-4)" },
+      { "type": "button", "label": "0 Pool", "purpose": "Put the selected card back in the pool (key 0)" },
+      { "type": "button", "label": "Check", "purpose": "Mark every card; the first check is scored (key C)" },
+      { "type": "button", "label": "Retry", "purpose": "Send the incorrect cards back to the pool for unscored practice (key R)" },
+      { "type": "button", "label": "Start over", "purpose": "Reshuffle all 12 cards into the pool and clear the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification (card sorter)",
+    "equations": [],
+    "rules": [
+      "Each card goes in exactly one bin; cards move freely until Check, which needs all 12 cards placed.",
+      "The answer key is the family whose FanPedia exploded view (pp. 9-19) or housing detail (pp. 59-66) labels the part; for Curb Cap the p. 19 exploded view decides and the feedback notes the roof mounted axial use (p. 7).",
+      "The first check is scored: 'First check: n of 12'; mastery is 10 of 12.",
+      "Retry sends the incorrect cards back to the pool; retries are practice (not scored), unlimited, and never change the first-check score.",
+      "Start over reshuffles all 12 cards and starts a new scored first check."
+    ],
+    "assumptions": [],
+    "limitations": [
+      "Covers twelve housing parts; belt guards, access panels, nozzles and windbands are discussed in the chapter but not sorted here."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia exploded views pp. 13-19 and housing detail pages pp. 60-61, 63-64 and 66, as cited on each card"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Commit every placement before any feedback, then read each card's reason; retry only the misses as unscored practice.",
+    "keyQuestions": [
+      "Does this part belong to a scroll, a tube, a plenum wall or a roof curb?",
+      "Where does the air leave the impeller swirling, and which family needs vanes for it?"
+    ],
+    "commonMisconceptions": [
+      "Straightening vanes belong to scroll housings.",
+      "A plug fan has a scroll.",
+      "A belt tube is the same as a belt guard and appears on every belt driven fan.",
+      "Curb caps are only for centrifugal roof exhausters."
+    ],
+    "assessmentOpportunities": [
+      "First-check score shown as 'First check: n of 12'; mastery is 10 of 12 on the first check."
+    ]
+  },
+  "chapter": "07-housing-construction-and-exploded-views"
+}

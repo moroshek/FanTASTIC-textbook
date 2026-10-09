@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Damper Throttling Operating Point Explorer using Plotly</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .dte-lead { font-size: var(--fp-size-secondary); margin: 0 0 6px 0; }
+        .dte-draw { padding: 4px 6px 0 6px; }
+        .dte-plot { width: 100%; height: 360px; background: var(--fp-ctrl-bg); }
+        .dte-plot.narrow { height: 340px; }
+        .dte-draw .fp-note { margin: 2px 0 4px 0; }
+        .dte-ctrl .fp-row { margin: 6px 0; }
+        .dte-ctrl .fp-prompt { margin: 4px 0; font-weight: bold; }
+        .dte-ctrl .fp-feedback { margin: 6px 0; }
+        .dte-ctrl .fp-progress { margin: 0; }
+        .dte-step { font-size: var(--fp-size-secondary); color: var(--fp-text-muted); }
+        .dte-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; border: 0; margin: 0; padding: 0; }
+        .dte-group legend { float: left; font-weight: bold; font-size: var(--fp-size-secondary); padding: 0; margin-right: 4px; min-width: 112px; }
+        .dte-preds { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 6px 0; }
+        button.dte-opt[aria-pressed="true"]:disabled { border: 2px solid var(--fp-primary-dark); color: var(--fp-text); font-weight: bold; background: var(--fp-primary-bg); }
+        /* After Check the pick may be wrong, so it is marked "Your pick", not with a ✓. */
+        button.dte-opt[aria-pressed="true"]:disabled::before { content: "Your pick: "; content: "Your pick: " / ""; }
+        .dte-split { display: flex; gap: 8px; align-items: flex-start; }
+        .dte-split .dte-plot { flex: 1 1 auto; min-width: 0; }
+        .dte-side { flex: 0 0 222px; padding: 6px 0 0 0; }
+        .dte-side-h { font-size: var(--fp-size-secondary); font-weight: bold; margin: 0 0 2px 0; color: var(--fp-primary-dark); }
+        .dte-side-note { font-size: var(--fp-size-note); color: var(--fp-text-muted); margin: 4px 0 0 0; }
+        .dte-split.stacked { flex-direction: column; }
+        .dte-split.stacked .dte-plot { width: 100%; }
+        .dte-split.stacked .dte-side { flex: none; width: 100%; padding: 0 0 4px 0; }
+        .dte-table { border-collapse: collapse; font-size: var(--fp-size-note); margin: 2px 0; width: 100%; background: var(--fp-ctrl-bg); }
+        .dte-table th, .dte-table td { border: 1px solid var(--fp-border); padding: 2px 5px; text-align: right; white-space: nowrap; }
+        .dte-table th:first-child, .dte-table td:first-child { text-align: left; }
+        .dte-table thead th { background: var(--fp-info-bg); }
+        .dte-table tr.dte-cur td { font-weight: bold; background: var(--fp-primary-bg); }
+        .dte-table td.dte-hidden { color: var(--fp-text-muted); }
+        @media (max-width: 480px) {
+            .dte-group legend { min-width: 0; width: 100%; }
+            .dte-table th, .dte-table td { padding: 2px 4px; }
+        }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-curves.js"></script>
+    <script src="ch19-damper-throttling-explorer.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Damper Throttling Operating Point Explorer</h1>
+        <p class="dte-lead" id="lead"></p>
+
+        <section class="fp-draw dte-draw" id="drawing" aria-label="Fan curve, system curve and operating point for the current damper setting">
+            <div class="dte-split">
+                <div class="dte-plot" id="plot"></div>
+                <aside class="dte-side" aria-label="Operating points revealed so far">
+                    <h2 class="dte-side-h">Operating points</h2>
+                    <table class="dte-table" id="table">
+                        <thead><tr><th scope="col">Setting</th><th scope="col">m</th><th scope="col">CFM</th><th scope="col">SP, in. wg</th></tr></thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                    <p class="dte-side-note" id="sideNote"></p>
+                </aside>
+            </div>
+            <p class="fp-note illustrative" id="dataNote"></p>
+        </section>
+
+        <section class="fp-ctrl dte-ctrl" aria-label="Predictions">
+            <div class="fp-row">
+                <span class="fp-score" id="score"></span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="dte-step" id="stepLabel"></span>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="dte-preds">
+                <fieldset class="dte-group" id="flowGroup"><legend>Airflow will be</legend></fieldset>
+                <fieldset class="dte-group" id="pressGroup"><legend>Static pressure will be</legend></fieldset>
+            </div>
+            <div class="fp-row" id="actions">
+                <button id="close" type="button">Close damper one step</button>
+                <button id="check" type="button">Check</button>
+                <button id="reset" type="button" class="secondary" hidden>Reset</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <div id="summary" class="fp-feedback" role="status"></div>
+            <p class="fp-note" id="keys"></p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

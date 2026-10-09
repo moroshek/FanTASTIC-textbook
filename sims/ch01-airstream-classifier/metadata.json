@@ -1,0 +1,111 @@
+{
+  "title": "Airstream Classifier",
+  "description": "The learner sorts ten airstream cards into clean air or one of four contamination threats (solids, corrosives or moisture, flammables, fumes hazardous to people); the first placement is scored, a missed card stays up for unscored retries, and a summary lists every first choice beside the correct bin.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "Airstream",
+    "Contaminated airstream",
+    "Clean air",
+    "Air temperature",
+    "Spark resistance",
+    "Lab exhaust"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Classifying airstreams as clean or contaminated, and by threat",
+    "learningObjectives": [
+      "The learner will distinguish clean airstreams from contaminated ones and assign each contaminated airstream to its main threat category, with at least 8 of 10 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "distinguish",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "Airstream",
+      "In the airstream versus out of the airstream",
+      "Air temperature",
+      "Contaminated airstream"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 650,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 650
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); each card, verdict and the summary announced through FP.announce (aria-live); ✓/✗ glyphs with solid/dashed borders pair with colour; the revealed bin is marked with → on its button and an outline; bin buttons have aria-labels with the bin name; keys A-E or 1-5 place, Enter goes to the next card; focus moves to Next card after a correct placement."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "A Clean / B Solids / C Corrosive / D Flammable / E Fumes", "purpose": "Place the card in that bin (keys A-E or 1-5)" },
+      { "type": "button", "label": "Next card / Show summary", "purpose": "Go on once the card is in the correct bin (Enter)" },
+      { "type": "button", "label": "Start over / Sort again", "purpose": "New round of all ten cards in a new order, score cleared" }
+    ]
+  },
+  "simulation": {
+    "modelType": "Classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct bin",
+      "Shuffled order, seeded once per session (page load); Sort again continues the seeded sequence",
+      "The first placement is scored; a missed card takes unlimited unscored retries until it is placed correctly",
+      "The correct bin is revealed after the second wrong placement",
+      "Mastery: 8 of 10 correct on the first attempt"
+    ],
+    "assumptions": [
+      "Each airstream is classified by its main threat"
+    ],
+    "limitations": [
+      "Real airstreams can carry more than one threat; the cards are chosen to have one main threat each"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Bin definitions: Chapter 1 section 'Contaminated Airstreams'",
+      "Card 2: FanPedia p. 32 (radial bladed paper handling impeller)",
+      "Card 6: FanPedia pp. 4, 6 (lab exhaust dilution)",
+      "Card 7: Chapter 1 section 'Air Temperature' and FanPedia pp. 110-116 (high-temperature construction)",
+      "Remaining cards: general engineering knowledge"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Item-by-item classification with an immediate reason, retry to correct, and a first-choice summary",
+    "keyQuestions": [
+      "What is in this air, and why does it matter to the fan?",
+      "Is high temperature alone a contaminant?",
+      "Can an airstream be a concern even when it does not harm the fan?"
+    ],
+    "commonMisconceptions": [
+      "Hot air is contaminated air; in fact hot clean air is clean, with its own temperature concerns.",
+      "Any airstream from a factory is contaminated.",
+      "If the fan survives the airstream, the airstream is not a concern; hazardous fumes are a concern for people even when they do not harm the fan."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt correct: n of 10'; mastery is 8 of 10 on the first attempt.",
+      "Retries after a miss are practice, not evidence"
+    ]
+  },
+  "chapter": "01-air-pressure-and-the-fan"
+}

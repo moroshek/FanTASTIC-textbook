@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: fanpedia-p5.js (FP.p5)  v1.1.0
+/* FanPedia MicroSim kit: fanpedia-p5.js (FP.p5)  v1.2.0
  *
  * Layout, text and control helpers for p5.js 1.11.10 MicroSims. Extracted from
  * the six copies in ch01, ch04, ch11, ch13, ch20 and ch25 (see
@@ -475,10 +475,15 @@
   // a text field only Enter and Escape are matched (typing "1" in an answer box
   // must not press bin 1). A focused <button> gets Enter/Space natively, so
   // those are left to the browser there.
-  function match(map, k, code, target) {
+  // opts.digitsInSelect (1.1, default false): digit keys still reach the map
+  // while a <select> has focus (the select then does not type-ahead on digits,
+  // since bind() returns false for a handled key). Text inputs never let them through.
+  function match(map, k, code, target, opts) {
     var nk = normKey(k, code);
     var m = buildMap(map);
-    if (inTextField(target) && nk !== 'Enter' && nk !== 'Escape') return null;
+    var selectDigit = opts && opts.digitsInSelect && /^[0-9]$/.test(nk) &&
+      target && target.tagName && target.tagName.toUpperCase() === 'SELECT';
+    if (!selectDigit && inTextField(target) && nk !== 'Enter' && nk !== 'Escape') return null;
     if (target && target.tagName && target.tagName.toUpperCase() === 'BUTTON' && (nk === 'Enter' || nk === ' ')) return null;
     return Object.prototype.hasOwnProperty.call(m, nk) ? m[nk] : null;
   }
@@ -487,11 +492,12 @@
   //   function keyPressed() { return keys(); }
   // Handlers receive the normalised key. Returns false (p5: prevent default)
   // when a handler ran, otherwise undefined.
-  function bind(map) {
+  // bind(map, {digitsInSelect: true}): see match().
+  function bind(map, opts) {
     return function () {
       var p = P();
       var target = typeof document !== 'undefined' ? document.activeElement : null;
-      var fn = match(map, p.key, p.keyCode, target);
+      var fn = match(map, p.key, p.keyCode, target, opts);
       if (!fn) return undefined;
       fn(normKey(p.key, p.keyCode));
       return false;
@@ -525,7 +531,7 @@
   }
 
   var api = {
-    __version: '1.1.0',
+    __version: '1.2.0',
     use: use,
     tok: tok,
     layout: L,

@@ -1,0 +1,119 @@
+{
+  "title": "Impeller Balance Calculator",
+  "description": "Three illustrative challenges in which the learner calculates the permissible residual unbalance and the correction mass for an impeller, followed by free exploration of weight, speed, correction radius and balance grade with the rotating force shown at half, the selected and double speed.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "impeller balancing",
+    "residual unbalance",
+    "balance quality grade",
+    "correction mass",
+    "rotating force"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Impeller balancing: permissible residual unbalance and correction mass",
+    "learningObjectives": [
+      "The learner will calculate the permissible residual unbalance and the matching correction mass for an impeller from its weight, speed, balance grade and correction radius, to within 2% of the model value."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "impeller balancing",
+      "residual unbalance",
+      "balance quality grade G",
+      "ounce-inch",
+      "correction radius"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 640
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new challenge and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the retry message says which of the two values was within 2%; Enter checks and goes to the next challenge; every input, button, the grade menu and the sliders are reachable with Tab; controls stay inside the canvas at 320 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "U (oz·in)", "purpose": "Permissible residual unbalance for the current challenge" },
+      { "type": "input", "label": "m (oz)", "purpose": "Correction mass at radius r for the current challenge" },
+      { "type": "button", "label": "Check", "purpose": "Check both values (Enter); ±2%, two attempts" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the three challenges and the score" },
+      { "type": "select", "label": "Grade G", "options": ["G16", "G6.3", "G2.5", "G1.0"], "default": "G6.3" },
+      { "type": "slider", "label": "Weight W (lb)", "range": "20-2000", "step": 10, "default": 200 },
+      { "type": "slider", "label": "Speed N (rpm)", "range": "300-3600", "step": 50, "default": 1200 },
+      { "type": "slider", "label": "Correction radius r (in)", "range": "4-40", "step": 1, "default": 15 }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "U = 6.015 x G x W / N (oz-in; G mm/s, W lb, N rpm)",
+      "m = U / r (oz; r in)",
+      "F = 1.77 x U x (N/1000)^2 (lbf)"
+    ],
+    "rules": [
+      "Speed N is the speed used for both U and F",
+      "Values are rounded only for display (U and m two decimals, F whole lbf)",
+      "Both answers must be within +/-2% of the unrounded model value; two attempts per challenge",
+      "The half and double speed bars hold U fixed (same impeller) and are shown only within 300-3,600 rpm"
+    ],
+    "assumptions": [
+      "Formulas as given in Chapter 8, 'Impeller Balancing' (ISO 21940-11 permissible residual unbalance converted to US units)",
+      "All weights, speeds and radii are illustrative"
+    ],
+    "limitations": [
+      "Single-plane (static) view; two-plane balancing is not modeled",
+      "The grade for a real fan comes from the specification or catalog"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Formulas: Chapter 8, section 'Impeller Balancing'",
+      "Balance quality grades: ISO 21940-11 (formerly ISO 1940-1)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Practice with check (commit two numbers before the model is revealed), then guided exploration of the speed-squared force growth",
+    "keyQuestions": [
+      "Why is a heavier impeller allowed more unbalance?",
+      "Why does the force from the same unbalance quadruple at double the speed?",
+      "Which is the tighter grade, G2.5 or G6.3?"
+    ],
+    "commonMisconceptions": [
+      "A heavier impeller is allowed less unbalance",
+      "Force from unbalance grows in proportion to speed",
+      "A larger grade number means tighter balance"
+    ],
+    "assessmentOpportunities": [
+      "Running count shown as 'Challenges correct: n of 3'; mastery is 3 of 3 challenges with both values within 2% on the first attempt."
+    ]
+  },
+  "chapter": "08-centrifugal-and-axial-impeller-types"
+}

@@ -1,0 +1,88 @@
+{
+  "title": "Fan Base and Isolation Selector",
+  "description": "Scenario recommender: for seven illustrative fan installations the learner chooses one of five base or mounting recommendations and one of three justifications; both must match, with two attempts per scenario and a summary of every first answer against the correct one.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": ["unitary base", "isolation base", "inertia base", "isolator mounting methods", "internally isolated fan", "vibration isolation"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing a fan base or isolator mounting",
+    "learningObjectives": [
+      "The learner will recommend a base or mounting for a described fan installation and justify it with the FanPedia rule that governs the case."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "10-15 minutes",
+    "prerequisites": ["unitary base", "isolation base", "inertia base", "isolator mounting methods", "internally isolated fan", "flexible connectors", "Arrangements 1, 7SI, 8 and 9F"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 655,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 655
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs, written status labels and solid/dashed borders pair with colour; keys 1-5 and A-C choose, Submit takes focus once both are chosen, Enter submits and moves on; reason buttons carry the full justification in aria-label; text never below 12 px; the summary splits into two pages on narrow screens."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1-5 recommendations", "purpose": "Choose the base or mounting (keys 1-5)" },
+      { "type": "button", "label": "Reason A / B / C", "purpose": "Choose the justification (keys A-C)" },
+      { "type": "button", "label": "Submit", "purpose": "Commit both choices (Enter)" },
+      { "type": "button", "label": "Next scenario / See summary", "purpose": "Move on; in the summary on narrow screens, switch pages" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all seven scenarios and the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Exact match on both recommendation and justification.",
+      "Scenario order and the two distractor justifications per scenario are fixed by seed 22.",
+      "Two attempts per scenario; after the second wrong attempt the answer and justification are shown and the scenario counts as missed.",
+      "Mastery is 6 of 7 on the first attempt."
+    ],
+    "assumptions": ["Scenarios are illustrative."],
+    "limitations": ["Does not size isolators or select deflections (see the Isolator Transmissibility Explorer and Chapter 23)."]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": ["FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), pp. 131-133, 143, 165, 166, https://tcf.com/fanpedia/. Scenarios are illustrative."]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Commit a recommendation and its justifying rule together; the justification step separates a correct guess from a correct judgment",
+    "keyQuestions": [
+      "What should this fan sit on?",
+      "Does this installation need isolation at all?",
+      "What does the arrangement allow underneath the fan?"
+    ],
+    "commonMisconceptions": [
+      "Every fan needs isolators.",
+      "Isolators can go under any arrangement.",
+      "A unitary base can be set on springs.",
+      "An internally isolated roof ventilator needs external isolators."
+    ],
+    "assessmentOpportunities": ["Score line 'n of 7 first-attempt correct'; mastery is 6 of 7 on the first attempt."]
+  },
+  "chapter": "22-fan-bases-and-vibration-isolation"
+}

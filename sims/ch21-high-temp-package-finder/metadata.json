@@ -1,0 +1,106 @@
+{
+  "title": "High Temperature Package Finder",
+  "description": "Eight illustrative job tickets, in a fixed order: for each, the learner chooses the FanPedia high temperature package band from the band list for the ticket's fan family and marks whether engineering review is required, with two attempts per ticket and mastery at 7 of 8 on the first attempt. Each final check opens a band chart for the family; after ticket 8, Explore mode looks up the band and review flag for any family and temperature.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "high temperature package",
+    "axial high temperature package",
+    "fan arrangement",
+    "plug fan",
+    "air kit",
+    "engineering review"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "High temperature package bands by fan family",
+    "learningObjectives": [
+      "The learner will determine the FanPedia high temperature package band, and whether engineering review is required, for a stated fan family and airstream temperature, with at least 7 of 8 jobs correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "determine",
+    "duration": "10-15 minutes",
+    "prerequisites": ["high temperature package", "axial high temperature package", "fan arrangement", "plug fan", "air kit"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 587,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 587
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, notices and Explore results announced through FP.announce (aria-live); ✓/✗ glyphs per half, solid/dashed feedback borders, and dashed bars plus a 'review' tag for review bands pair with colour; native select, radio group and buttons; Y/N mark review, Enter checks or goes to the next ticket."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Band", "purpose": "The band list for the ticket's family" },
+      { "type": "radio", "label": "Engineering review required: Yes / No", "purpose": "The review half of the answer (keys Y/N)" },
+      { "type": "button", "label": "Check", "purpose": "Check the ticket (Enter)" },
+      { "type": "button", "label": "Next ticket / Explore", "purpose": "Go to the next ticket; after ticket 8, open Explore mode (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the score and return to ticket 1" },
+      { "type": "select", "label": "Family (Explore)", "purpose": "Any of the seven fan families" },
+      { "type": "slider", "label": "Temperature (Explore)", "purpose": "100°F to 1,200°F in 10°F steps, default 300°F" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "A temperature belongs to a band when lower bound <= temperature <= upper bound; 'and over' bands have no upper bound.",
+      "Review is Yes exactly when the band is listed as requiring engineering review: 1,001°F and over (centrifugal Arr. 1, 8, 9, 9F, 10, Arr. 9 plug fans, air kits), 301°F and over (centrifugal Arr. 4, Arr. 4 plug fans), 151-195°F and 196-240°F (axial Arr. 4).",
+      "Where two bands hold the temperature (axial Arr. 9, 201-250°F and 201-300°F select models), the general band is the answer; choosing 201-300°F is incorrect with the reason 'select models only; start from the general band'.",
+      "A ticket is correct only when the band and the review answer both match; two attempts per ticket; mastery 7 of 8 on the first attempt."
+    ],
+    "assumptions": [
+      "Temperatures below a family's first band are reported as 'below the first listed band'; temperatures above the listed axial bands as 'no listed band'."
+    ],
+    "limitations": [
+      "Job tickets are illustrative. Package contents vary by model; FanPedia refers to Fan Engineering Letter FE-3200 for details."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia (2021 edition), pp. 110, 111, 113, 114, 115 and 116"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Apply a lookup rule to new job tickets, family first, with immediate per-half checking and the rule shown on a band chart",
+    "keyQuestions": [
+      "Which family's band list applies to this fan?",
+      "Which band holds this temperature?",
+      "Does this band require engineering review?",
+      "Where do the listed axial bands stop?"
+    ],
+    "commonMisconceptions": [
+      "All fans share one set of temperature bands.",
+      "An Arrangement 4 centrifugal at 400°F has a standard package (it requires engineering review).",
+      "Axial packages reach the same temperatures as centrifugal packages."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 8'; mastery is 7 of 8 on the first attempt.",
+      "Missed tickets listed in Explore mode."
+    ]
+  },
+  "chapter": "21-high-temperature-leak-tight-and-rto-construction"
+}

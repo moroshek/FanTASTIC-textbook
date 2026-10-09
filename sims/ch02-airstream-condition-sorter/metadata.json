@@ -1,0 +1,112 @@
+{
+  "title": "Airstream Condition Sorter",
+  "description": "Ten shuffled application descriptions tagged with every airstream condition they present (hot, wet, corrosive, particulate-laden, explosive atmosphere) or Clean; exact-set scoring with feedback naming missing and extra tags, and an end list of missed items.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "airstream",
+    "hot airstream",
+    "wet airstream",
+    "corrosive airstream",
+    "particulate-laden airstream",
+    "explosive atmosphere"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Recognizing airstream conditions on a fan inquiry",
+    "learningObjectives": [
+      "The learner will classify ten application descriptions by every airstream condition they present (hot, wet, corrosive, particulate-laden, explosive atmosphere, or clean), matching the answer key on at least 8 of 10."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "airstream",
+      "hot airstream",
+      "wet airstream",
+      "corrosive airstream",
+      "particulate-laden airstream",
+      "explosive atmosphere"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 565,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 565
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); tags are aria-pressed toggle buttons with a ✓ prefix and heavier outline when selected; each ⓘ button has an aria-label; selections, verdicts, definitions and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; keys 1-6 toggle tags, Enter submits and goes to the next item."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Hot / Wet / Corrosive / Particulate-laden / Explosive atmosphere / Clean", "purpose": "Toggle a condition tag (keys 1-6)" },
+      { "type": "button", "label": "ⓘ", "purpose": "Show the definition of the tag beside it" },
+      { "type": "button", "label": "Submit", "purpose": "Submit the selected tags (Enter)" },
+      { "type": "button", "label": "Next item / See score", "purpose": "Go on after the verdict (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "New shuffle; later runs are practice" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Tags are multi-select; Clean clears all other tags and any other tag clears Clean",
+      "An empty selection cannot be submitted",
+      "Correct means an exact set match with the key; one attempt per item",
+      "Items shown in shuffled order; only the first run counts as evidence"
+    ],
+    "assumptions": [
+      "Descriptions are illustrative applications; temperature judgments rest on FanPedia pp. 110-116 as summarized in Chapter 2"
+    ],
+    "limitations": [
+      "Real inquiries need the material, chemical or hazard named, not just the condition"
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Tag definitions: Chapter 2, 'The Airstreams Fans Handle'",
+      "High-temperature package ranges: FanPedia pp. 110-116, as summarized in Chapter 2",
+      "Item descriptions: illustrative applications written for this sim"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Multi-select classification with immediate per-item feedback naming missing and extra tags",
+    "keyQuestions": [
+      "Which applications combine two conditions, and why?",
+      "When is warm air not a hot airstream?",
+      "Why is grain dust both particulate-laden and an explosive atmosphere?"
+    ],
+    "commonMisconceptions": [
+      "Each airstream has only one condition",
+      "Warm, humid air is 'hot'",
+      "Combustible dust is only a particulate problem",
+      "Any chemical exhaust is an explosive atmosphere"
+    ],
+    "assessmentOpportunities": [
+      "End score shown as 'Score: n of 10' (running line 'Items correct: n of 10'); mastery is 8 of 10 on the first run."
+    ]
+  },
+  "chapter": "02-airstreams-total-pressure-standard-air"
+}

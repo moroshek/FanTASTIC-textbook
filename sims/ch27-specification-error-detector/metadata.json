@@ -1,0 +1,82 @@
+{
+  "title": "Specification Error Detector",
+  "description": "The learner critiques a ten-clause draft specification for a 500°F dryer exhaust fan, marking each clause acceptable or defective with one of seven reasons; one submission reveals every clause's verdict and reason, scores n of 10, and offers the corrected specification.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["specification review", "fan specification", "airstream conditions", "arrangement selection", "spark-resistant construction", "cold start motor sizing", "octave band sound data", "flex connectors"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Reviewing a fan specification for completeness and consistency",
+    "learningObjectives": ["The learner will critique a ten-clause draft fan specification by flagging each clause as acceptable or defective and choosing the reason for each defect, with at least 9 of 10 clauses judged correctly."],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "critique",
+    "duration": "10-15 minutes",
+    "prerequisites": ["specification review", "airstream conditions", "arrangement selection", "spark-resistant construction types", "cold start motor sizing", "octave band sound data", "flex connectors", "Arrangement 9F", "certified drawings"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 839,
+    "canvasDimensions": { "width": "responsive", "height": 839 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); results announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; every clause has a labelled native drop-down; Tab and arrow keys operate everything; focus moves to Try again after submission."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Clause 1 ... 10 judgment", "purpose": "Mark the clause Acceptable or Defective with reason (a) to (g)" },
+      { "type": "button", "label": "Submit review", "purpose": "Submit all ten marks (the first submission is recorded)" },
+      { "type": "button", "label": "Try again", "purpose": "Clear the marks, keep the order and the recorded score" },
+      { "type": "button", "label": "Show corrected specification", "purpose": "Toggle the rewritten defective clauses" },
+      { "type": "button", "label": "Previous clauses / More clauses", "purpose": "Move between pages when the clauses do not all fit" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Ten clauses in fixed order; seven defective, three acceptable",
+      "Each defective clause has exactly one correct reason; a defective clause with the wrong reason counts as incorrect",
+      "Score = clauses judged correctly out of 10 on the first submission; mastery when score >= 9"
+    ],
+    "assumptions": ["Application values are the chapter's illustrative dryer exhaust example"],
+    "limitations": ["One correct reason per clause; real reviews may name several"]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "FanPedia pp. 110, 166, 171, 187 (clauses 2, 9, 10)",
+      "Twin City Fan Model RTF guide specification, Section 23 34 16, tcf.com Product Specifications in CSI format (clauses 3, 6, 7, 8)",
+      "Chapter 27 illustrative worked example (clauses 1, 5 and the application card)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Whole-form critique",
+    "teachingStrategy": "Apply review criteria to a realistic artifact and name the criterion for each defect",
+    "keyQuestions": ["Could a reviewer prove from the submittal that this requirement is met?", "Which two clauses cannot both be true?"],
+    "commonMisconceptions": [
+      "A clause that sounds technical is complete",
+      "Spark-resistant Types A and B work at any temperature",
+      "The motor is sized for the hot operating point",
+      "An overall dBA value is the sound data a specification asks for"
+    ],
+    "assessmentOpportunities": ["First-submission score shown as 'n of 10 clauses judged correctly'; mastery is 9 of 10 on the first submission."]
+  },
+  "chapter": "27-fan-selection-and-writing-the-specification"
+}

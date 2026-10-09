@@ -1,0 +1,116 @@
+{
+  "title": "Bearing Life to Calendar Years",
+  "description": "Five challenges convert L-10 and L-50 bearing ratings to calendar years for stated duty schedules, showing annual operating hours, the model answer and the learner's answer side by side; Explore mode then varies the rating and schedule and compares the model with FanPedia's published table.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "L-10 bearing life",
+    "L-50 bearing life",
+    "bearing life",
+    "duty schedule",
+    "annual operating hours"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Converting L-10 and L-50 bearing life to calendar years",
+    "learningObjectives": [
+      "The learner will calculate the expected calendar life in years of an L-10 or L-50 bearing rating for a stated daily and weekly duty schedule, to within 2% of the model value."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "bearing life as a statistical estimate",
+      "L-10 bearing life",
+      "L-50 bearing life",
+      "L-50 = 5 x L-10 conversion",
+      "years formula"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 685,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 685
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts with the annual hours, model answer and learner answer, each new challenge, the end-of-challenge summary and Explore-mode readouts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the L-10 and L-50 bars differ by a hatch pattern and a bold label as well as colour; Enter checks and goes to the next challenge; the answer box, buttons, rating selector and sliders are reachable with Tab."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Your answer", "purpose": "Type the expected life in years" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter); 2% tolerance, two attempts" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all five challenges and the score" },
+      { "type": "select", "label": "Rating shown", "options": ["L-10", "L-50"], "default": "L-10" },
+      { "type": "slider", "label": "L-10 rating", "range": "20,000-100,000 hours", "step": 20000, "default": 40000 },
+      { "type": "slider", "label": "Hours per day", "range": "1-24", "step": 1, "default": 24 },
+      { "type": "slider", "label": "Days per week", "range": "1-7", "step": 1, "default": 7 }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "Annual hours = hours per day x days per week x 365/7",
+      "Years = rated hours / annual hours",
+      "L-50 hours = 5 x L-10 hours"
+    ],
+    "rules": [
+      "Model answers are rounded to 0.1 year",
+      "An answer is correct when |answer - model| <= 0.02 x model; two attempts per challenge",
+      "Switching between L-10 and L-50 changes the hours and years shown; the underlying L-10 rating is unchanged",
+      "Annual hours are never zero because both schedule minimums are 1"
+    ],
+    "assumptions": [
+      "A year is 365/7 weeks (Chapter 17); FanPedia's published table mixes this with a 52-week year"
+    ],
+    "limitations": [
+      "Bearing life is a statistical estimate for a population at a stated speed and load; it does not predict when one bearing will fail",
+      "Lubrication, contamination, misalignment and temperature can shorten real life well below the rating"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Source: FanPedia p. 89 (Bearings: Bearing Life Overview), L-10 and L-50 definitions, L-50 = 5 x L-10, available L-10 ratings and the published year tables, retrieved 2026-10-08",
+      "Challenge 5 schedule (12 h/day, 6 days/week) is illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Practice with check (commit a number before the result is revealed), then guided exploration",
+    "keyQuestions": [
+      "Why do the same bearings last 4.6 years on one fan and 19.2 years on another?",
+      "Why can an L-50 of 200,000 hours and an L-10 of 40,000 hours describe the same bearing?"
+    ],
+    "commonMisconceptions": [
+      "L-50 is a better or longer-lived bearing than L-10",
+      "L-10 hours equal calendar hours regardless of how many hours a day the fan runs",
+      "L-10 is the time at which every bearing fails"
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown at the end; mastery is 4 of 5 within 2% of the model value on the first attempt."
+    ]
+  },
+  "chapter": "17-bearing-details-lubrication-and-pedestals"
+}

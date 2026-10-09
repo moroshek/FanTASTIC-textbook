@@ -1,0 +1,115 @@
+{
+  "title": "Airflow Path Explorer",
+  "description": "Seven fan configurations drawn side on with the shaft horizontal. For each one the learner predicts the direction air leaves the impeller and the direction it leaves the fan, commits both, then watches an airflow animation that marks each prediction and explains the path. Fixed order, one attempt per prediction, mastery at 12 of 14.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "fan family",
+    "centrifugal fan",
+    "axial fan",
+    "mixed flow fan",
+    "scroll housing",
+    "plenum fan",
+    "tubular housing",
+    "guide vanes",
+    "straightening vanes",
+    "inline centrifugal fan"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Airflow direction through centrifugal, axial and mixed flow fans",
+    "learningObjectives": [
+      "The learner will classify seven fan configurations by the direction air leaves the impeller and the direction air leaves the fan, relative to the fan shaft."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "impeller", "fan shaft", "fan housing", "fan family", "centrifugal fan", "axial fan", "mixed flow fan",
+      "scroll housing", "unhoused centrifugal fan", "plenum fan", "tubular housing", "guide vanes",
+      "straightening vanes", "inline centrifugal fan"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 670,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 670
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); the two predictions are native select lists with aria-labels; verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed panel borders pair with colour; result arrows carry text tags and dash patterns; Enter commits or goes on, R replays; prefers-reduced-motion skips the particle animation and shows the result arrows."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Impeller exit", "purpose": "Predict the direction air leaves the impeller" },
+      { "type": "select", "label": "Fan exit", "purpose": "Predict the direction air leaves the fan" },
+      { "type": "button", "label": "Commit predictions", "purpose": "Lock both predictions and play the airflow (Enter)" },
+      { "type": "button", "label": "Next fan / Show summary", "purpose": "Go to the next configuration (Enter)" },
+      { "type": "button", "label": "Replay animation", "purpose": "Replay the current airflow animation (R); never scored" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the score and go back to fan 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Seven configurations in the fixed order 1 to 7.",
+      "The animation plays only after both predictions are committed; a committed prediction cannot be changed.",
+      "One attempt per prediction; 14 predictions; mastery is 12 of 14.",
+      "Replay is unlimited and never scored."
+    ],
+    "assumptions": [
+      "Side views with the shaft horizontal and air entering from the left (from both sides for the DWDI fan).",
+      "Swirl is shown as particles rotating about the shaft (projected as an up-and-down motion with changing size)."
+    ],
+    "limitations": [
+      "Schematic drawings, not specific Twin City Fan models; animation speed and particle counts are illustrative."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia pp. 4-7 (fan types): airflow paths",
+      "FanPedia p. 186: axial versus centrifugal impellers",
+      "FanPedia pp. 15-17 (exploded views): guide vane and straightening vane locations"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Commit two predictions before the animation, then compare them with a slowed view of the real path; separating impeller exit from fan exit shows that the housing and vanes decide where air finally leaves.",
+    "keyQuestions": [
+      "Which way does air leave this impeller?",
+      "What does the housing or the vane section do to that air before it leaves the fan?"
+    ],
+    "commonMisconceptions": [
+      "A fan in a round, straight-through tube must be an axial fan.",
+      "Air leaves a centrifugal fan in the same direction it leaves the impeller in every case.",
+      "Guide vanes add pressure by speeding the air up.",
+      "A mixed flow fan discharges at a diagonal out of the fan."
+    ],
+    "assessmentOpportunities": [
+      "Running count 'Predictions correct: n of 14' (one attempt each, so all first attempts); mastery is 12 of 14."
+    ]
+  },
+  "chapter": "04-centrifugal-axial-and-mixed-flow-fans"
+}

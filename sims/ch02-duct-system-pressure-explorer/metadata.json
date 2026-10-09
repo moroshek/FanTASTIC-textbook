@@ -1,0 +1,128 @@
+{
+  "title": "Duct System Pressure Explorer",
+  "description": "Five calculation challenges on an illustrative exhaust system (inlet velocity, outlet velocity pressure, fan total pressure, air power, and pressure at 20% more airflow), each with its target readout hidden until checked, followed by free exploration of the airflow with live station and fan values.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "airflow continuity equation",
+    "velocity pressure",
+    "total pressure",
+    "fan total pressure",
+    "fan static pressure",
+    "air power",
+    "system resistance relation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Velocity pressure, total pressure, fan pressure rise and air power in a duct system",
+    "learningObjectives": [
+      "The learner will calculate duct velocity, velocity pressure, total pressure, fan total pressure and air power for a simple exhaust duct system, to within the tolerances stated in Feedback."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "airflow continuity equation",
+      "feet per minute",
+      "velocity pressure",
+      "velocity pressure equation",
+      "static pressure",
+      "total pressure",
+      "fan total pressure",
+      "fan static pressure",
+      "air power",
+      "duct system",
+      "system resistance relation"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 675,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 675
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new challenge, definitions and the end summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; hidden readouts show '?'; Enter checks and goes to the next challenge; schematic definitions also reachable from the 'Definition of…' select; the answer box, buttons, select and slider are reachable with Tab."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Your answer", "purpose": "Type one number for the current challenge" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter); two attempts" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all five challenges and the score" },
+      { "type": "select", "label": "Definition of…", "purpose": "Show the definition of a schematic label (same as clicking it)" },
+      { "type": "slider", "label": "Airflow", "range": "4,000-14,000 CFM", "step": 500, "default": 10000, "purpose": "Explore mode only, after challenge 5" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "V = Q / A (A1 = 4.00 ft², A2 = 2.78 ft²)",
+      "VP = (V / 4005)^2",
+      "TP1 = -0.81 x (Q / 10,000)^2; TP2 = +2.81 x (Q / 10,000)^2",
+      "SP = TP - VP",
+      "FTP = TP2 - TP1; FSP = FTP - VP2",
+      "AHP = Q x FTP / 6356"
+    ],
+    "rules": [
+      "Airflow 4,000-14,000 CFM, step 500, default 10,000",
+      "Velocities shown to 10 fpm, pressures to 0.01 in. wg, air power to 0.01 hp, from unrounded intermediates",
+      "Challenge tolerances: ±25 fpm, ±0.02, ±0.03, ±0.05 hp, ±0.05 in. wg around the spec answers 2,500, 0.81, 3.62, 5.70, 5.21",
+      "Two attempts per challenge; the target readout is hidden until the challenge resolves"
+    ],
+    "assumptions": [
+      "Standard air, 0.075 lb/ft³, throughout",
+      "Illustrative system whose total pressures follow the system resistance relation from the 10,000 CFM worked example"
+    ],
+    "limitations": [
+      "No fixed (non-square-law) pressure component in the system",
+      "Velocity is the average across each duct section"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Chapter 2 sections 'Velocity Pressure', 'Pressure Rise and Air Power' and 'The Duct System' (worked examples at 10,000 and 12,000 CFM)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Practice with check: the target readout stays hidden until the learner commits a number, then guided exploration of the airflow",
+    "keyQuestions": [
+      "Why does subtracting a negative inlet total pressure add to the fan's pressure rise?",
+      "Why does a 30% smaller duct roughly double the velocity pressure?",
+      "Why does 20% more airflow need 44% more pressure and 73% more air power?"
+    ],
+    "commonMisconceptions": [
+      "Inlet static pressure is added as a positive number",
+      "Velocity pressure is proportional to velocity rather than velocity squared",
+      "A 20 percent airflow increase needs only 20 percent more pressure",
+      "Static pressure always falls in the direction of flow"
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'Challenges correct: n of 5'; mastery is 4 of 5 on the first attempt."
+    ]
+  },
+  "chapter": "02-airstreams-total-pressure-standard-air"
+}

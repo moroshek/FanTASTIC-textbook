@@ -1,0 +1,136 @@
+{
+  "title": "Inlet Box Position Dial",
+  "description": "The learner moves an inlet box around a drive-side fan view to learn the eight FanPedia positions, then sets the position for eight duct approaches with hints, the correct position and the reason as feedback.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "inlet box",
+    "inlet box position",
+    "viewed from the drive side",
+    "rotation"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Inlet box positions seen from the drive side",
+    "learningObjectives": [
+      "The learner will use the drive-side inlet box angle convention to set the correct inlet box position for eight duct-approach descriptions, with at least 7 of 8 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "use",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "inlet box",
+      "inlet box position",
+      "viewed from the drive side",
+      "inlet box position numbers and descriptions",
+      "inlet box angle versus discharge angle"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 600,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 600
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-codes.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; Left/Right arrow keys move the box; Enter checks and goes to the next duct; every box move is announced."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "⟲ Counterclockwise / Clockwise ⟳",
+        "purpose": "Move the box one position (Left/Right arrow); clicking the drawing also moves it"
+      },
+      {
+        "type": "button",
+        "label": "CW / CCW",
+        "purpose": "Explore: drawn fan rotation"
+      },
+      {
+        "type": "button",
+        "label": "Start challenge",
+        "purpose": "Start (or resume) the eight ducts"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Check the box position (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Next duct",
+        "purpose": "Next duct; See results after duct 8 (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Run the eight ducts again"
+      },
+      {
+        "type": "button",
+        "label": "Explore mode",
+        "purpose": "Back to free exploration after the challenge"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Positions 45..360 clockwise from the top as seen from the drive side; 360 is the top",
+      "The position does not depend on rotation",
+      "Correct only when the position equals the answer; two attempts; first attempt counts; mastery 7 of 8"
+    ],
+    "assumptions": [
+      "Housing drawn with a top horizontal discharge"
+    ],
+    "limitations": [
+      "Schematic end view; the box may pass behind the outlet"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 144 (Inlet Boxes: Positions, Inlet Box Positions Determined From Drive Side)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Explore the fixed clock of positions, then place the box for described ducts and read the number on Check",
+    "keyQuestions": [
+      "Which positions share a description?",
+      "Where does the duct arrive, and what is that position's number?"
+    ],
+    "commonMisconceptions": [
+      "The inlet box angle counts in the direction of rotation",
+      "The description alone identifies one position",
+      "The inlet box angle is read from the inlet side"
+    ],
+    "assessmentOpportunities": [
+      "Running line 'Correct on first attempt: n of 8'; mastery is 7 of 8 on the first attempt."
+    ]
+  },
+  "chapter": "12-discharge-positions-and-rotation"
+}

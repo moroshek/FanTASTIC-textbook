@@ -1,0 +1,92 @@
+{
+  "title": "Fan-to-Duct Connection Chooser",
+  "description": "Scenario recommender: for eight illustrative job descriptions in a fixed order, the learner selects one of seven connection and inlet box options (bolted flange, slip connection, flexible connector, tube adapter and rubber sleeve, bolt-on inlet box, free-standing inlet box, inlet box horn) and submits it once; definitions can be opened at any time, feedback gives the deciding fact, and a summary lists every answer beside the accepted answers.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["bolted flange connection", "slip connection", "flexible connector", "tube adapter and sleeve", "ASA pipe flange bolt pattern", "bolt-on inlet box", "free-standing inlet box", "inlet box horn"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Connecting a fan to its ductwork",
+    "learningObjectives": [
+      "The learner will use the support, alignment, temperature and pressure facts in a job description to choose the inlet box style or fan-to-duct connection that fits it, with at least 7 of 8 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "use",
+    "duration": "10-15 minutes",
+    "prerequisites": ["bolted flange connection", "slip connection", "flexible connector", "tube adapter and sleeve", "125# ASA pipe flange bolt pattern", "bolt-on inlet box", "free-standing inlet box", "inlet box horn"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 564,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 564
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); job text, selections, definitions, verdicts and the summary are announced through FP.announce (aria-live); options are native aria-pressed toggle buttons; ✓/✗ glyphs and solid/dashed borders pair with colour; keys 1-7 select an option, D opens its definition, Enter submits and then goes to the next job."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1-7 options", "purpose": "Select a connection or inlet box option for the current job (keys 1-7)" },
+      { "type": "button", "label": "Definition", "purpose": "Open or hide the definition of the selected option (D); exploration, not scored" },
+      { "type": "button", "label": "Submit", "purpose": "Lock in the selected option; the first submission is scored (Enter)" },
+      { "type": "button", "label": "Next", "purpose": "Go to the next job; after job 8, See summary (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear all answers and the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Tube adapter sleeve acceptable when pressure <= 5 psi and temperature <= 180°F; otherwise not acceptable",
+      "An answer is correct when it is any entry in the job's Accepted answers (job 2 accepts slip connection or flexible connector)",
+      "Each job is scored on its first submission only; mastery is 7 of 8",
+      "Jobs appear in the fixed order of the chapter's Content table, so jobs 3 and 4 are back to back"
+    ],
+    "assumptions": ["Job 4's pipe flange is a 125# ASA flange of the same nominal size as the blower outlet"],
+    "limitations": ["Job descriptions are illustrative scenarios, not specific orders"]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia, pp. 67, 126, 127, 131, 132, 141, 142, 143, 187, 194",
+      "Chapter 19 section \"Connecting the Fan to the Duct\""
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Find the deciding fact (isolation, separate support, a temperature limit, intersecting airflows) in a job description and act on it",
+    "keyQuestions": [
+      "How should this fan connect?",
+      "Which fact in the job description decides the connection?"
+    ],
+    "commonMisconceptions": [
+      "A rubber sleeve connector can be used at any temperature.",
+      "A bolted joint is fine on a spring-isolated fan.",
+      "Any detached inlet box is supported by the fan.",
+      "A horn is a sound-control device."
+    ],
+    "assessmentOpportunities": [
+      "Running count 'Correct: n of 8'; mastery is 7 of 8 correct on the first attempt; the summary reads 'Mastery: 7 or more of 8' or 'Review the sections on the items you missed.' Opening definitions is exploration, not evidence."
+    ]
+  },
+  "chapter": "19-damper-details-and-duct-connections"
+}

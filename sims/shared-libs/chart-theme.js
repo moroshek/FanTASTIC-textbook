@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: chart-theme.js (FP.chart)  v1.0.0
+/* FanPedia MicroSim kit: chart-theme.js (FP.chart)  v1.1.0
  *
  * One look for Chart.js 4.4.4 and Plotly 2.35.0 charts: Arial 12-14 px, grid
  * #e6edf4, the §4.1 series palette with a dash pattern AND a marker shape per
@@ -124,6 +124,21 @@
     }
   };
 
+  // Legend box height for a chart (Chart.js scriptable option, context
+  // {chart}): 0 when every dataset is a line or scatter, else undefined
+  // (Chart.js then uses the font size: a filled square-ish box).
+  var LINE_TYPES = { line: true, scatter: true };
+  function legendBoxHeight(ctx) {
+    var chart = ctx && ctx.chart;
+    if (!chart || !chart.config) return 0;
+    var base = chart.config.type;
+    var ds = (chart.data && chart.data.datasets) || (chart.config.data && chart.config.data.datasets) || [];
+    for (var i = 0; i < ds.length; i++) {
+      if (!LINE_TYPES[(ds[i] && ds[i].type) || base]) return undefined;
+    }
+    return (ds.length || LINE_TYPES[base]) ? 0 : undefined;
+  }
+
   // Sets Chart.js global defaults once and registers the fpNote plugin.
   function chartjs(Chart) {
     if (!Chart || !Chart.defaults) return Chart;
@@ -146,7 +161,11 @@
     lg.labels.font = { size: 12 };
     lg.labels.usePointStyle = false;
     lg.labels.boxWidth = 30;
-    lg.labels.boxHeight = 0;     // a line sample, so the dash pattern shows
+    // Line and scatter datasets get a line sample (height 0), so the dash
+    // pattern shows; a chart with any bar/pie/other dataset keeps Chart.js's
+    // filled box (1.1: before, boxHeight 0 for every chart left bars with an
+    // invisible legend swatch). Scriptable; a chart's own boxHeight wins.
+    lg.labels.boxHeight = legendBoxHeight;
     var tt = d.plugins.tooltip;
     tt.titleFont = { size: 13, weight: 'bold' };
     tt.bodyFont = { size: 13 };
@@ -301,7 +320,7 @@
   };
 
   FP.chart = {
-    __version: '1.0.0',
+    __version: '1.1.0',
     FONT: FONT,
     GRID: GRID,
     AXIS: AXIS,
@@ -317,6 +336,7 @@
     chartjsScale: chartjsScale,
     chartjsTooltip: chartjsTooltip,
     notePlugin: notePlugin,
+    legendBoxHeight: legendBoxHeight,
     plotlyLayout: plotlyLayout,
     plotlyTrace: plotlyTrace,
     plotlyConfig: plotlyConfig,

@@ -1,0 +1,85 @@
+{
+  "title": "Octave Band A-Weighting Calculator",
+  "description": "Three fixed challenges in which the learner calculates the overall A-weighted sound power level of an eight-band fan spectrum and judges it against a 95 dB limit, followed by a free mode with eight band sliders and a limit slider that update the weighted bands, both totals and the largest contributor.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["octave band sound data", "sound power level", "A-weighting", "logarithmic addition", "noise limits"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Comparing octave band sound data with an A-weighted limit",
+    "learningObjectives": ["The learner will calculate the overall A-weighted sound power level from eight octave band levels and judge it against a limit, to within ±0.5 dB."],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": ["octave band", "sound power level", "A-weighting", "logarithmic addition", "noise limit"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 795,
+    "canvasDimensions": { "width": "responsive", "height": 795 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; unweighted bars are outlines and weighted bars are filled; Enter checks and advances, M/E pick the verdict, sliders and radios work with Tab and arrow keys."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "LwA (dB)", "purpose": "The learner's overall A-weighted level" },
+      { "type": "radio", "label": "Meets / Exceeds", "purpose": "The learner's verdict against the limit (M / E keys)" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter)" },
+      { "type": "button", "label": "Next challenge", "purpose": "Go to the next challenge, or start free mode after challenge 3 (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the challenges and the score" },
+      { "type": "button", "label": "Reset bands", "purpose": "Free mode: return the sliders to challenge 1 and a 95 dB limit" },
+      { "type": "slider", "label": "63 Hz ... 8,000 Hz", "purpose": "Free mode: band sound power level, 50 to 110 dB, step 1" },
+      { "type": "slider", "label": "Limit", "purpose": "Free mode: A-weighted limit, 70 to 110 dB, step 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": ["Weighted band = Lw + A", "LwA = 10 log10(Σ 10^(weighted/10))", "Unweighted overall = 10 log10(Σ 10^(Lw/10))"],
+    "rules": [
+      "Correct when |entered − model LwA (0.1 dB)| <= 0.5 dB and the meets/exceeds verdict is right",
+      "Meets when LwA <= limit; exceeds when LwA > limit",
+      "Largest contributor = highest weighted band; ties go to the lower frequency"
+    ],
+    "assumptions": ["IEC 61672 octave-band A-weighting corrections", "All spectra illustrative"],
+    "limitations": ["Sound power only; no conversion to sound pressure at a listener"]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "A-weighting corrections: IEC 61672 octave-band values",
+      "Eight-band requirement: Twin City Fan Model RTF guide specification, Section 23 34 16 (tcf.com, Product Specifications in CSI format)",
+      "Challenge 1: Chapter 27 worked example"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Commit a number and a verdict before the reveal, then explore band by band",
+    "keyQuestions": ["Which bands control the A-weighted total?", "Why can an unweighted total not be compared with an A-weighted limit?"],
+    "commonMisconceptions": [
+      "The overall level is the arithmetic average or sum of the band levels",
+      "The loudest unweighted band controls the A-weighted total",
+      "An unweighted overall level can be compared with an A-weighted limit"
+    ],
+    "assessmentOpportunities": ["First-attempt score shown as 'Challenges correct: n of 3'; mastery is 3 of 3 on the first attempt."]
+  },
+  "chapter": "27-fan-selection-and-writing-the-specification"
+}

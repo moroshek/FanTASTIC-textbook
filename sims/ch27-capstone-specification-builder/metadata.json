@@ -1,0 +1,85 @@
+{
+  "title": "Capstone Specification Builder",
+  "description": "The learner composes the dryer exhaust fan specification by choosing ten attributes and writing a justification for each; every Check lists all triggered violations and advisories beside their attributes, and with zero violations the sim composes the complete fan description with the justifications.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["capstone fan specification", "impeller selection", "arrangement selection", "drive selection", "construction selection", "cold start motor sizing", "accessory selection", "complete fan description", "specification review"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Composing a consistent fan specification",
+    "learningObjectives": ["The learner will compose a complete, internally consistent fan specification for the dryer exhaust application by choosing all ten attributes and writing a one-sentence justification for each, finishing with zero rule violations."],
+    "bloomsTaxonomy": "Create",
+    "bloomVerb": "compose",
+    "duration": "15-20 minutes",
+    "prerequisites": ["impeller selection", "arrangement selection", "drive selection", "construction selection", "cold start motor sizing", "accessory selection", "complete fan description", "specification review"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 840,
+    "canvasDimensions": { "width": "responsive", "height": 840 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); check results announced through FP.announce (aria-live); ✗/✓/ℹ glyphs and dashed borders pair with colour; every drop-down and justification box is labelled; the composed description is a read-only textarea that takes focus on completion."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "1 ... 10 attribute option", "purpose": "Choose the option for each attribute" },
+      { "type": "input", "label": "1 ... 10 justification", "purpose": "One-sentence justification for each attribute" },
+      { "type": "button", "label": "Check specification", "purpose": "Evaluate all violations and advisories (unlimited)" },
+      { "type": "button", "label": "Show fan description / Back to attributes", "purpose": "Switch between the form and the composed description after completion" },
+      { "type": "button", "label": "Copy description", "purpose": "Copy the composed description and justifications" },
+      { "type": "button", "label": "Previous attributes / More attributes", "purpose": "Move between pages when the rows do not all fit" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "V1-V15 violation conditions from the spec, evaluated together on every Check; each blocks completion",
+      "A1-A4 advisories shown, never blocking",
+      "Completion: ten attributes chosen, ten non-empty justifications, zero violations",
+      "Check presses are counted until completion"
+    ],
+    "assumptions": ["Application values, 1,450 RPM, 96.0 BHP cold and 53.0 BHP hot are the chapter's illustrative worked example"],
+    "limitations": ["Justifications are recorded, not judged", "The composed description fixes motor enclosure and power supply as in the worked example"]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "FanPedia pp. 110, 162, 165, 166, 171, 187",
+      "Twin City Fan Model RTF guide specification, Section 23 34 16 (tcf.com, Product Specifications in CSI format)",
+      "Chapter 12 discharge table; Chapter 9 impeller selection; Chapter 27 illustrative worked example"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Learner assembles the whole design; rule checks expose conflicts between decisions so the learner revises rather than receives the design",
+    "keyQuestions": ["Which decisions constrain each other?", "What source decides each attribute?"],
+    "commonMisconceptions": [
+      "The most efficient impeller is always the right one",
+      "Any arrangement works if the motor is large enough",
+      "Spark resistance of any type works at any temperature",
+      "A damper or VFD is optional when the process needs turndown",
+      "Isolators can be added without flex connectors"
+    ],
+    "assessmentOpportunities": ["Completion with zero violations; number of checks to completion and the justifications recorded (FP.events 'answered' per check, 'completed' at completion)."]
+  },
+  "chapter": "27-fan-selection-and-writing-the-specification"
+}

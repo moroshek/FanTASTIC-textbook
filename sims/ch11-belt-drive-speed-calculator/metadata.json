@@ -1,0 +1,95 @@
+{
+  "title": "Belt Drive Speed Calculator",
+  "description": "The learner types the fan speed and belt count for four illustrative V-belt fan drives and gets the worked calculation back, then explores how sheave sizes, motor speed, service factor and per-belt rating change fan speed, belt speed and belt count.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["belt drive", "sheave", "pitch diameter", "V-belt", "belt speed", "drive service factor", "design horsepower"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Belt drives: fan speed, belt speed and belt count",
+    "learningObjectives": ["The learner will calculate the fan speed, belt speed and required belt count of a V-belt fan drive from the motor speed, the two sheave pitch diameters, the motor horsepower and the drive service factor, with fan speed within ±5 rpm and belt count exact."],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": ["belt drive", "sheave", "pitch diameter", "motor sheave", "fan sheave", "V-belt", "belt speed", "drive service factor", "design horsepower"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 740,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 740
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; Enter checks and goes to the next challenge; every slider is labelled and moves with the arrow keys; sheave rotation stops under prefers-reduced-motion."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Fan speed (rpm)", "purpose": "The learner's fan speed" },
+      { "type": "input", "label": "Belts", "purpose": "The learner's belt count" },
+      { "type": "button", "label": "Check", "purpose": "Check both answers (Enter)" },
+      { "type": "button", "label": "Next challenge", "purpose": "Go to the next drive; Start exploring after drive 4 (Enter)" },
+      { "type": "button", "label": "Reset to defaults", "purpose": "Explore mode: return the sliders to drive 1's values" },
+      { "type": "button", "label": "Start over", "purpose": "Reset every challenge and the score" },
+      { "type": "slider", "label": "Motor speed", "purpose": "860 to 3,540 rpm, step 10 (Explore mode)" },
+      { "type": "slider", "label": "Motor sheave", "purpose": "3.0 to 12.0 in, step 0.2 (Explore mode)" },
+      { "type": "slider", "label": "Fan sheave", "purpose": "3.0 to 24.0 in, step 0.2 (Explore mode)" },
+      { "type": "slider", "label": "Motor power", "purpose": "1 to 100 hp, step 0.5 (Explore mode)" },
+      { "type": "slider", "label": "Drive service factor", "purpose": "1.0 to 1.8, step 0.1 (Explore mode)" },
+      { "type": "slider", "label": "Rating per belt", "purpose": "1.0 to 20.0 hp per belt, step 0.5 (Explore mode)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "fan rpm = motor rpm × motor sheave ÷ fan sheave",
+      "belt speed (ft/min) = π × motor sheave (in) × motor rpm ÷ 12",
+      "design hp = motor hp × drive service factor",
+      "belts = ceiling(design hp ÷ rating per belt); a whole-number quotient is not rounded up"
+    ],
+    "rules": [
+      "Fan rpm is correct when |entered − model| ≤ 5 rpm; belt count is correct only when equal",
+      "The two answers are judged separately; a challenge is fully correct when both are right",
+      "Belt speed above 6,500 ft/min shows a note to check the drive manufacturer's limits"
+    ],
+    "assumptions": ["Pitch diameters, no belt slip"],
+    "limitations": ["Motor speeds, per-belt ratings and service factors are illustrative; real selections use the drive manufacturer's current tables"]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": ["Chapter 11 \"Sheave\", \"V-Belt\" and \"Drive Service Factor\" sections; motor service factor contrast from FanPedia p. 69"]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Commit two numbers per drive, get the worked calculation as feedback, then explore the inverse diameter relationship with sliders",
+    "keyQuestions": ["How fast will the fan turn, and how many belts does this drive need?"],
+    "commonMisconceptions": [
+      "A larger fan sheave makes the fan run faster",
+      "The speed ratio equals the diameter ratio the same way up (fan/motor)",
+      "A belt count of 3.25 rounds down to 3",
+      "The motor's nameplate service factor is the drive service factor"
+    ],
+    "assessmentOpportunities": ["Running line 'Challenges fully correct: n of 4'; mastery is 4 of 4 drives with both answers right on the first attempt."]
+  },
+  "chapter": "11-drives-and-standard-fan-arrangements"
+}

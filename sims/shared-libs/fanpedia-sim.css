@@ -1,5 +1,5 @@
 /* fanpedia-sim.css — FanPedia MicroSim kit, base styles and design tokens.
- * Version 1.1.0 (2026-10-08). Load first in <head>, before any library.
+ * Version 1.2.0 (2026-10-09). Load first in <head>, before any library.
  * Tokens: review §4.1 (contrast measured on white). Class prefix: fp-.
  * Element rules use :where() (zero specificity) so a sim's own CSS always wins.
  * API reference: templates/microsim/kit-docs/core.md (not published).
@@ -93,7 +93,8 @@ main > canvas { display: block; }
   background: #ffffff; color: var(--fp-primary-dark); border-color: var(--fp-primary);
 }
 :where(.fp-btn.secondary, button.secondary, .fp-btn-secondary):hover { background: var(--fp-primary-bg); }
-/* choice: bins and options; .selected is marked by a thicker outline and a check, not colour alone */
+/* choice: bins and options; .selected is marked by a thicker outline and a neutral "▸",
+   not colour alone. ✓ and ✗ are kept for correct / incorrect verdicts only. */
 :where(.fp-btn.choice, button.choice) {
   background: #ffffff; color: var(--fp-text); border-color: var(--fp-border);
 }
@@ -107,7 +108,7 @@ main > canvas { display: block; }
   background: var(--fp-primary-bg); color: var(--fp-primary-dark);
   border: 2px solid var(--fp-primary); font-weight: bold;
 }
-:where(.fp-btn.choice.selected, button.choice.selected, .fp-btn[aria-pressed="true"], button[aria-pressed="true"])::before { content: "✓ "; content: "✓ " / ""; }
+:where(.fp-btn.choice.selected, button.choice.selected, .fp-btn[aria-pressed="true"], button[aria-pressed="true"])::before { content: "▸ "; content: "▸ " / ""; }
 /* Hover on a toggle: the generic :hover above (dark fill) would put dark text on
    a dark fill. Toggles keep their light fill and dark text; the border darkens. */
 :where(.fp-btn[aria-pressed="false"], button[aria-pressed="false"]):hover { background: var(--fp-primary-bg); color: var(--fp-primary-dark); border-color: var(--fp-primary-dark); }

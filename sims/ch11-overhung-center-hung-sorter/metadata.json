@@ -1,0 +1,83 @@
+{
+  "title": "Overhung or Center Hung Sorter",
+  "description": "The learner sorts twelve described fan arrangements by impeller position and bearing location and gets the reason plus a side-view schematic with the airstream shaded after each card.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["overhung impeller", "center hung impeller", "bearing pedestal", "airstream", "fan arrangement", "inlet box"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Impeller position and bearing location by arrangement",
+    "learningObjectives": ["The learner will classify twelve fan arrangements as overhung or center hung and state whether each arrangement's bearings sit in or out of the airstream, from a one-line description of each arrangement."],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": ["overhung impeller", "center hung impeller", "bearing pedestal", "airstream", "SWSI", "DWDI", "inlet box", "direct drive", "belt drive", "shaft coupling"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 640
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; option buttons use aria-pressed with a ✓ prefix; keys 1-2 impeller, 3-5 bearings, Enter checks or goes to the next card."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Overhung / Center hung", "purpose": "Impeller position (keys 1, 2)" },
+      { "type": "button", "label": "All out of airstream / At least one in airstream / No fan bearings", "purpose": "Bearing location (keys 3, 4, 5)" },
+      { "type": "button", "label": "Check", "purpose": "Check the card once both choices are made (Enter)" },
+      { "type": "button", "label": "Next card", "purpose": "Next card; See results after card 12 (Enter)" },
+      { "type": "button", "label": "Retry missed", "purpose": "Practice round over the missed cards (not scored)" },
+      { "type": "button", "label": "Start over", "purpose": "New shuffled round, score cleared" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "A card is correct only when both the impeller position and the bearing location match",
+      "No partial credit; the feedback names the wrong field",
+      "Cards 6 (Arrangement 4) and 10 (Arrangement 8) marked center hung add the direct-drive note"
+    ],
+    "assumptions": ["Standard (non-inlet-box) single width fans draw air through the inlet on the side away from the drive"],
+    "limitations": ["Schematics are simplified side views, not Twin City Fan drawings"]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": ["FanPedia p. 30 (impeller orientation), p. 79 (shaft overview), pp. 162–168 (arrangement technical descriptions)"]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Two-way classification from a description, with the schematic as feedback linking geometry to bearing exposure",
+    "keyQuestions": ["Where is the impeller, and where are the bearings?"],
+    "commonMisconceptions": [
+      "Direct drive means center hung",
+      "Arrangement 4 has fan bearings in the airstream",
+      "Every Arrangement 3 has its bearings out of the airstream",
+      "Center hung fans always have a bearing in the airstream, even with inlet boxes"
+    ],
+    "assessmentOpportunities": ["Running line 'Correct: n of 12'; mastery is 10 of 12 on the first attempt."]
+  },
+  "chapter": "11-drives-and-standard-fan-arrangements"
+}

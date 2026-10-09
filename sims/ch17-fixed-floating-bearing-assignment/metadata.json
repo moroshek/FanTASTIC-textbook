@@ -1,0 +1,111 @@
+{
+  "title": "Fixed or Floating Bearing Assignment",
+  "description": "Ten scenario cards ask which bearing configuration a fan needs; after each commit the sim marks the drive-end and non-drive-end bearings fixed or floating on a shaft drawing and names the FanPedia rule step that decided the card.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "fixed bearing",
+    "floating bearing",
+    "fixed-floating bearing rules",
+    "drive end bearing",
+    "non-drive end bearing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Assigning fixed and floating bearings",
+    "learningObjectives": [
+      "The learner will apply the fixed-floating bearing rules to assign the correct bearing configuration to ten fan scenarios defined by mounting orientation, bearing type, operating temperature and arrangement, with at least 8 of 10 correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "drive end bearing",
+      "non-drive end bearing",
+      "fixed bearing",
+      "floating bearing",
+      "ball, roller and split roller bearing types",
+      "horizontal and vertical mounting",
+      "fixed-floating bearing rules"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 660,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); selections, verdicts with the fixed/floating result for each bearing, each new card and the summary announced through FP.announce (aria-live); ✓/✗ glyphs, bold text and solid/dashed borders pair with colour; the choice buttons are aria-pressed toggles; keys 1-4 or A-D choose, Enter commits and goes on; every button is reachable with Tab."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "A / B / C / D", "purpose": "Choose a bearing configuration (keys 1-4 or A-D)" },
+      { "type": "button", "label": "Commit", "purpose": "Lock in the chosen configuration (Enter); one attempt" },
+      { "type": "button", "label": "Next card / See results", "purpose": "Go to the next card or the summary (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all ten cards and the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Step 1: operating temperature >= 301 F gives one fixed and one floating bearing; go to step 3",
+      "Step 2: <= 300 F ball bearings give A (two fixed), except Arrangements 3SI, 7SI, 3DI and 7DI, which give D (engineering review); roller and split roller give one fixed and one floating",
+      "Step 3: with a floating bearing, horizontal mount gives B (fixed at the drive end) and vertical mount gives C (floating at the drive end)"
+    ],
+    "assumptions": [
+      "Scenario temperatures are illustrative"
+    ],
+    "limitations": [
+      "FanPedia states these rules as guidelines; the straddle-arrangement footnote is an engineering review item, not a lookup",
+      "The shaft drawing is schematic; vertical fans are drawn with the drive end at the top"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Source: FanPedia pp. 96-98 (Bearings: Fixed & Floating Bearings), retrieved 2026-10-08",
+      "Source: FanPedia p. 92 (drive end and non-drive end bearings), retrieved 2026-10-08",
+      "Scenario cards are illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Apply a decision procedure to new cases, commit, then see the physical layout and the deciding rule step",
+    "keyQuestions": [
+      "When does a fan need a floating bearing at all?",
+      "Why does the floating bearing move to the drive end on a vertical fan?"
+    ],
+    "commonMisconceptions": [
+      "Every fan needs a floating bearing",
+      "The fixed bearing is always on the drive end, regardless of orientation",
+      "Temperature does not matter for ball bearings",
+      "The 300 F cutoff applies the same way to straddle arrangements with ball bearings"
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Cards correct: n of 10'; mastery is 8 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "17-bearing-details-lubrication-and-pedestals"
+}

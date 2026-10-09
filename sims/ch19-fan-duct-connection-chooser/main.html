@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Fan-to-Duct Connection Chooser using p5.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        /* A locked answer keeps a visible outline; its marker is a pointer, not a ✓, because it may be wrong. */
+        button.fdcc-opt[aria-pressed="true"]:disabled { border: 2px solid var(--fp-primary-dark); color: var(--fp-text); font-weight: bold; background: var(--fp-primary-bg); }
+        button.fdcc-opt[aria-pressed="true"]:disabled::before { content: "\25B8  "; content: "\25B8  " / ""; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/fanpedia-p5.js"></script>
+    <script src="ch19-fan-duct-connection-chooser.js"></script>
+</head>
+<body>
+    <main></main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

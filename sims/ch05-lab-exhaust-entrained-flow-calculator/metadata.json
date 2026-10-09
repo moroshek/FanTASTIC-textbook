@@ -1,0 +1,123 @@
+{
+  "title": "Lab Exhaust Entrained Flow Calculator",
+  "description": "Learners calculate the fan flow, total flow and plume concentration of a laboratory exhaust fan for three illustrative cases, with two attempts per value and a flow diagram that fills in as each value is settled. Explore mode then lets them change the contaminated, bypass and entrained flows and the hood concentration, and shows that doubling entrained flow does not halve the plume concentration.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "entrained flow",
+    "bypass flow",
+    "fan flow",
+    "total flow",
+    "plume concentration",
+    "laboratory exhaust fan"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Entrained flow and plume dilution in laboratory exhaust",
+    "learningObjectives": [
+      "The learner will calculate the fan flow, total flow and plume concentration of a laboratory exhaust fan from its contaminated, bypass and entrained flows, with flows exact and concentration within 0.5 ppm."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "contaminated air",
+      "bypass flow",
+      "fan flow",
+      "entrained flow",
+      "total flow",
+      "concentration in ppm"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 705,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 705
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, case changes and the doubling note announced through FP.announce (aria-live); ✓/✗ glyphs beside each box and solid/dashed feedback borders pair with colour; native inputs, buttons and sliders; Enter in an answer box checks, Enter again goes to the next case."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Fan flow (CFM)", "purpose": "The learner's fan flow" },
+      { "type": "input", "label": "Total flow (CFM)", "purpose": "The learner's total flow" },
+      { "type": "input", "label": "Plume (ppm)", "purpose": "The learner's plume concentration" },
+      { "type": "button", "label": "Check", "purpose": "Check every open value at once (Enter); two attempts per value" },
+      { "type": "button", "label": "Next case / Start exploring", "purpose": "Go to the next case, or unlock Explore mode after case 3 (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the score and return to case 1" },
+      { "type": "slider", "label": "Contaminated air", "purpose": "2,000 to 20,000 CFM in steps of 500, default 8,000 (Explore mode)" },
+      { "type": "slider", "label": "Bypass flow", "purpose": "0 to 10,000 CFM in steps of 500, default 2,000 (Explore mode)" },
+      { "type": "slider", "label": "Entrained flow", "purpose": "0 to 20,000 CFM in steps of 500, default 7,000 (Explore mode)" },
+      { "type": "slider", "label": "Hood concentration", "purpose": "10 to 500 ppm in steps of 10, default 100 (Explore mode)" },
+      { "type": "button", "label": "Case 1 values", "purpose": "Reset the sliders to the defaults (Explore mode)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "Q_fan = Q_contaminated + Q_bypass",
+      "Q_total = Q_fan + Q_entrained",
+      "C_plume = C_hood × Q_contaminated / Q_total"
+    ],
+    "rules": [
+      "Flows are correct when they equal the model value exactly.",
+      "The model plume concentration is rounded to 0.1 ppm; an answer within ±0.5 ppm of it is correct.",
+      "Two attempts per value; three cases in a fixed order; mastery is all nine values correct."
+    ],
+    "assumptions": [
+      "All values are illustrative; real entrainment is a catalog-rated value for a specific model and nozzle.",
+      "Contaminant amount is conserved, so concentration falls in proportion to the added air."
+    ],
+    "limitations": [
+      "Does not model plume rise, wind, stack height or discharge velocity."
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Source: FanPedia PDF pp. 4 and 6 (flow definitions: bypass air plenum, entrained flow through the nozzle or windband)",
+      "Chapter 5 worked example (case 1); all numeric values illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Committed calculations with a check and a revealed explanation, separating fan flow from total flow in every case, followed by free exploration",
+    "keyQuestions": [
+      "Which air passes through the impeller?",
+      "Why is the fan selected for fan flow, not total flow?",
+      "Why does doubling entrained flow not halve the plume concentration?"
+    ],
+    "commonMisconceptions": [
+      "The fan must be sized for the total flow, including entrained air.",
+      "Entrained air passes through the impeller.",
+      "Bypass air and entrained air dilute in different ways, so only one of them reduces plume concentration.",
+      "Doubling the entrained flow halves the plume concentration."
+    ],
+    "assessmentOpportunities": [
+      "Running count shown as 'Values correct: n of 9'; mastery is all nine values correct with at most two attempts each."
+    ]
+  },
+  "chapter": "05-roof-wall-and-specialty-exhaust-fans"
+}

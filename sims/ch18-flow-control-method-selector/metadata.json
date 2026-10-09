@@ -1,0 +1,108 @@
+{
+  "title": "Flow Control Method Selector",
+  "description": "Ten shuffled job cards ask for the best flow-control or backdraft device and the deciding job condition; device and condition are marked separately, wrong devices get misconception hints, and a summary reviews every card.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "gravity damper",
+    "manual damper",
+    "motorized damper",
+    "parallel blade outlet damper",
+    "opposed blade outlet damper",
+    "inlet box damper",
+    "variable inlet vanes",
+    "speed control",
+    "EC motor speed controller"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing a flow-control or backdraft device",
+    "learningObjectives": [
+      "The learner will recommend the flow-control or backdraft device that best fits each of ten job descriptions and justify the choice by naming the deciding job condition, scoring at least 8 of 10."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "gravity damper", "butterfly gravity damper", "manual damper", "motorized damper",
+      "parallel blade outlet damper", "opposed blade outlet damper", "inlet box damper",
+      "external inlet vanes", "variable inlet vanes", "speed control", "variable frequency drive",
+      "EC motor speed controller", "turndown", "blade flutter"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 600,
+    "canvasDimensions": { "width": "responsive", "height": 600 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); device choice with the three conditions read aloud, separate device and condition verdicts, each new card, the summary and each reviewed card announced through FP.announce (aria-live); ✓/✗/½ glyphs and solid/dashed borders pair with colour; native selects and buttons reachable with Tab; Enter checks and goes on."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Device", "purpose": "Choose one of ten devices (A-J)" },
+      { "type": "select", "label": "Condition", "purpose": "Choose the deciding condition from three; appears after a device is chosen" },
+      { "type": "button", "label": "Check", "purpose": "Check both selections (Enter); two attempts" },
+      { "type": "button", "label": "Next card / See summary", "purpose": "Go on after a card is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "New shuffled round with the score cleared" },
+      { "type": "select", "label": "Review card", "purpose": "Summary: show the reason for any card" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct device and one correct deciding condition",
+      "The three conditions on a card are shown in a shuffled order; the device is chosen before the conditions appear",
+      "A card scores only when both selections are right on the first attempt",
+      "Wrong-device hints: A, B or C on a card that needs control while running; I on card 5; E on card 6 or F on card 5; otherwise the card's Why text"
+    ],
+    "assumptions": ["Job cards are illustrative"],
+    "limitations": ["Real selections weigh cost, controls and the existing equipment together; each card isolates one deciding condition"]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Source: FanPedia pp. 181-183 (gravity, manual, motorized, outlet and inlet box dampers), retrieved 2026-10-08",
+      "Source: FanPedia pp. 139 and 188 (external inlet vanes), p. 68 (EC motors), p. 70 (GridPoint EC motor controller), retrieved 2026-10-08",
+      "Cube relation for speed control: standard fan law (Chapter 25)",
+      "Job cards 1-10 are illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Recommend and justify: pair each device choice with the deciding condition, with hints targeted to the wrong answer",
+    "keyQuestions": [
+      "Does this job stop backflow, set airflow once, or change airflow while the fan runs?",
+      "Why is speed control not always the right answer?"
+    ],
+    "commonMisconceptions": [
+      "Any damper can control airflow during operation",
+      "Speed control is always the right answer",
+      "Parallel and opposed blade dampers are interchangeable",
+      "An outlet damper saves about as much power as inlet vanes",
+      "A gravity damper works at any airflow"
+    ],
+    "assessmentOpportunities": [
+      "Running score 'Recommendations correct: n of 10' counts first-attempt cards with both selections right; mastery is 8 of 10."
+    ]
+  },
+  "chapter": "18-inlets-outlets-and-flow-control"
+}

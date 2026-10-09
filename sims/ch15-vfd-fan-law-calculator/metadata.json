@@ -1,0 +1,115 @@
+{
+  "title": "VFD Frequency and Fan Law Calculator",
+  "description": "A fan selected for 10,000 CFM at 2.00 in. wg and 8.0 bhp on 60 Hz power (illustrative) runs on a VFD. For 45, 30 and 50 Hz the learner predicts airflow, static pressure and brake horsepower (each within 2% of the fan-law model, two attempts); Explore mode then sweeps 20 to 60 Hz with a plot of percent airflow, pressure and power.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "variable frequency drive",
+    "synchronous motor speed",
+    "fan laws",
+    "airflow",
+    "static pressure",
+    "brake horsepower"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Fan performance at reduced VFD frequency",
+    "learningObjectives": [
+      "The learner will calculate the airflow, static pressure and brake horsepower of a belt-driven fan at a reduced VFD frequency, using the fan laws with the frequency ratio as the speed ratio, to within 2% of the model values."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "variable frequency drive", "synchronous motor speed", "poles", "frequency",
+      "airflow (CFM)", "static pressure (in. wg)", "brake horsepower", "fan laws"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 660,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, per-value marks and slider readouts are announced through FP.announce (aria-live); ✓/✗ glyphs, solid/dashed input borders and solid/dashed feedback borders pair with colour; plot series differ by dash pattern and marker shape; Enter checks and goes on; the slider takes arrow keys."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Airflow (CFM)", "purpose": "Predicted airflow at the challenge frequency" },
+      { "type": "input", "label": "Static pressure (in. wg)", "purpose": "Predicted static pressure" },
+      { "type": "input", "label": "Brake horsepower (bhp)", "purpose": "Predicted brake horsepower" },
+      { "type": "button", "label": "Check", "purpose": "Check all three values (Enter)" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Go on after a challenge resolves (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the challenges and the score" },
+      { "type": "slider", "label": "Frequency", "purpose": "Explore mode: drive frequency 20 to 60 Hz, step 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "r = f / 60",
+      "synchronous speed = 120 × f / 4 RPM",
+      "Q = 10,000 × r CFM",
+      "P = 2.00 × r² in. wg",
+      "H = 8.0 × r³ bhp"
+    ],
+    "rules": [
+      "A prediction is correct when |prediction − model| <= 0.02 × model; all three values are checked together.",
+      "Three challenges (45, 30, 50 Hz), fixed order, two attempts each; after the second wrong attempt the model values and worked calculation are shown and the challenge counts as missed.",
+      "Display: airflow to 1 CFM, pressure to 0.01 in. wg, power to 0.01 bhp."
+    ],
+    "assumptions": [
+      "The system curve passes through zero (no fixed system pressure).",
+      "Speed ratio equals frequency ratio; slip and drive losses are ignored."
+    ],
+    "limitations": [
+      "Frequencies above 60 Hz are not offered; a speed increase must start with the fan's maximum safe speed in the current catalog."
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Base duty: Chapter 15 'Variable Frequency Drive' worked example (illustrative values)",
+      "Synchronous speed formula and 1800 RPM at 4 poles, 60 Hz: FanPedia p. 71",
+      "Fan laws: standard fan engineering, Chapter 15 and Chapter 25"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Predict then reveal: a committed three-value prediction per challenge with ratio-based hints, then free exploration of the square and cube curves.",
+    "keyQuestions": [
+      "At 30 Hz, what share of the airflow and what share of the power remain?",
+      "Why does a 25% cut in speed cut power by more than half?"
+    ],
+    "commonMisconceptions": [
+      "Power falls in the same proportion as frequency.",
+      "Pressure is unchanged by a speed change.",
+      "The VFD changes the motor's number of poles or the sheave ratio."
+    ],
+    "assessmentOpportunities": [
+      "Running line 'Challenges correct: n of 3'; mastery is all three challenges (nine values) correct within two attempts."
+    ]
+  },
+  "chapter": "15-motor-ratings-speed-control-and-positioners"
+}

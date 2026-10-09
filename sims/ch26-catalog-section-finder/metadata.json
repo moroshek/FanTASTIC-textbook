@@ -1,0 +1,90 @@
+{
+  "title": "Catalog Section Finder",
+  "description": "Card sorter: the learner assigns ten customer questions to the ten sections of a Twin City Fan product catalog (Catalog 300 order plus Catalog 902's performance data) and gets reason-based feedback; two attempts per card, first attempt scored, with a summary of first-try misses.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["product catalog", "catalog structure", "engineering data", "material specifications", "performance data", "typical specifications"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Finding answers in a Twin City Fan product catalog",
+    "learningObjectives": [
+      "The learner will classify ten customer questions by the Twin City Fan catalog section that answers them, getting at least 8 of 10 right on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": ["product catalog", "catalog structure", "engineering data", "material specifications", "performance data", "typical specifications"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 638,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 638
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); card text, verdicts and the summary are announced through FP.announce (aria-live); each section button's aria-label carries the section description; ✓/✗ glyphs and solid/dashed borders pair with colour on the feedback panel and the chips; keys 1-9 and 0 assign the card, Enter goes to the next card or starts over."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1-9, 0 catalog sections", "purpose": "Assign the face-up question to that section (keys 1-9, 0); hover or focus shows the section description" },
+      { "type": "button", "label": "Next card", "purpose": "Turn up the next card; on the last card, Show summary (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reshuffle all ten cards and clear the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct section; each section is correct for exactly one card",
+      "Two attempts per card; only the first is scored",
+      "The correct section is named after the second attempt",
+      "Mastery is 8 of 10 correct on the first attempt"
+    ],
+    "assumptions": ["Section order follows Catalog 300; Performance Data is the section Catalog 902 adds"],
+    "limitations": ["Other Twin City Fan catalogs may group or title sections differently"]
+  },
+  "dataProvenance": {
+    "status": "catalog",
+    "sources": [
+      "Twin City Fan Catalog 300, BC Backward Inclined Fans (April 2024), pages 2-3, 4, 5, 6-9, 10-12, 16, 17, dimensions, 50-51",
+      "Twin City Fan Catalog 902, RB Industrial Fans (November 2017), performance data from page 20 (RBA 913, page 24)",
+      "https://tcf.com/resources/product-catalogs/"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Classify realistic questions by the kind of answer they need, committing each card before feedback",
+    "keyQuestions": [
+      "Which catalog section answers this question?",
+      "Is this a can-it-be-built, how-will-it-perform or what-will-it-look-like question?"
+    ],
+    "commonMisconceptions": [
+      "Every catalog has printed performance tables.",
+      "Maximum speed is found in the performance tables rather than in engineering data.",
+      "Dimension pages can be used for construction."
+    ],
+    "assessmentOpportunities": [
+      "Running score 'First-try correct: n of 10'; mastery is 8 of 10 on the first attempt; the summary lists first-try misses with reasons."
+    ]
+  },
+  "chapter": "26-reading-catalogs-and-performance-tables"
+}

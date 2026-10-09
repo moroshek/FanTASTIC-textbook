@@ -1,0 +1,108 @@
+{
+  "title": "Isolation Hardware Sorter",
+  "description": "Eleven job-site descriptions, dealt in a shuffled order, are placed in ten bins: open, housed, restrained and seismic spring isolators, snubber, thrust restraint, isolation hangers, isolators directly under the fan, isolation rails and isolator mounting angle. Two attempts per card with a 'look for' hint; mastery is 9 of 11 on the first attempt, and the summary lists the missed descriptions with their reasons.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "open spring isolator",
+    "housed spring isolator",
+    "restrained spring isolator",
+    "seismic spring isolator",
+    "snubber",
+    "thrust restraint",
+    "ceiling hung isolation",
+    "direct mounted isolators",
+    "isolation rails",
+    "isolator mounting angle"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Isolation hardware: spring types, motion limiters and mounting styles",
+    "learningObjectives": [
+      "The learner will classify eleven job-site descriptions by the isolation hardware FanPedia calls for, with at least 9 of 11 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "open, housed, restrained and seismic spring isolators", "ceiling hung isolation", "direct mounted isolators",
+      "isolation rails", "isolator mounting angle", "snubber", "thrust restraint"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 685,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 685
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); placements and verdicts announced through FP.announce (aria-live); ✓/✗ glyphs, solid/dashed chip, bin and feedback borders pair with colour; a wrongly chosen bin is disabled and its aria-label says 'not this one'; keys 1-9 and 0 place the card, Enter goes to the next card; focus moves to Next card after a verdict."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1-9, 0: the ten bins", "purpose": "Place the face-up card in that bin (keys 1-9 and 0)" },
+      { "type": "button", "label": "Next card / Finish", "purpose": "Turn up the next card; after card 11, show the summary (Enter)" },
+      { "type": "button", "label": "More missed", "purpose": "Summary only: turn the page of the missed list when it does not fit" },
+      { "type": "button", "label": "Start over", "purpose": "Deal all eleven cards again in a new order and clear the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each description has exactly one correct bin; bins can receive more than one description (items 5 and 6 share a bin).",
+      "Cards are dealt in a shuffled order; two attempts per card; no partial credit.",
+      "A wrong first placement returns the card with a 'Look for <feature>' hint; a second wrong placement moves it to its correct bin and shows the reason.",
+      "Mastery is 9 of 11 correct on the first attempt."
+    ],
+    "assumptions": [],
+    "limitations": [
+      "The 30-inch impeller in item 5 is illustrative.",
+      "Real specifications may combine several of these items on one fan."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia, pp. 133-135 and 196-197"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Classify realistic job descriptions by the one feature that names the hardware (enclosure, direction of support, where brackets attach)",
+    "keyQuestions": [
+      "What encloses the spring, and does it limit motion?",
+      "Does the fan stand on the floor or hang from structure?",
+      "Which device limits motion instead of isolating?"
+    ],
+    "commonMisconceptions": [
+      "A snubber and a seismic spring are the same device.",
+      "Any spring restrains a fan against airflow forces (open springs do not).",
+      "Every fan can sit on isolators bolted directly under it."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 11'; mastery is 9 of 11 on the first attempt.",
+      "Summary list of descriptions missed on the first attempt, with their correct bins and reasons."
+    ]
+  },
+  "chapter": "23-spring-isolators-restraints-field-measurement"
+}

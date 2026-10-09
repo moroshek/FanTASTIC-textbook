@@ -1,0 +1,93 @@
+{
+  "title": "Model Code Decoder",
+  "description": "Designation decoder: for eight Twin City Fan designations (model, size, class, arrangement) the learner decides Offered or Not offered and picks the class maximum RPM from Catalog 902 and Catalog 300 extracts; both answers must match, one scored attempt plus one unscored practice try.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["model code", "fan size", "fan class", "arrangement", "maximum RPM"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Checking a fan designation against catalog availability and maximum speed",
+    "learningObjectives": [
+      "The learner will interpret a Twin City Fan designation (model code, size, class, arrangement) by judging whether it is offered and reading its class maximum RPM from catalog extracts, for at least 7 of 8 designations."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "interpret",
+    "duration": "10-15 minutes",
+    "prerequisites": ["model code", "fan size", "fan class", "arrangement", "maximum RPM"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 670,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 670
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); designations, verdicts and the summary are announced through FP.announce (aria-live); answer buttons are aria-pressed toggles and extract buttons carry aria-expanded; each answer is marked with ✓ right / ✗ wrong text and the feedback panel pairs ✓/✗ with solid/dashed borders; keys O, N, 1-5, Enter, A, B."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Offered / Not offered", "purpose": "First answer (keys O, N)" },
+      { "type": "button", "label": "Maximum RPM values and none", "purpose": "Second answer: the class maximum RPM from that model's row, or none (keys 1-5)" },
+      { "type": "button", "label": "Extract A: Catalog 902 / Extract B: Catalog 300", "purpose": "Open or collapse a catalog extract (keys A, B)" },
+      { "type": "button", "label": "Check / Practice try", "purpose": "Score the two answers; after a miss, one unscored practice try (Enter)" },
+      { "type": "button", "label": "Next designation", "purpose": "Go to the next designation; after the eighth, Show summary (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Back to designation 1 with the score cleared" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Offered when the arrangement appears in the list for that model, size and class; Not offered otherwise, including when the class is not built for that size",
+      "The class maximum RPM answer is the value in the extract for that class, or none when the class is not built",
+      "Both answers must match for the designation to count as correct",
+      "One scored attempt per designation, then one unscored practice try; mastery is 7 of 8 on the first attempt"
+    ],
+    "assumptions": ["BC-SW and BC-DW arrangement lists are those Catalog 300 page 3 gives for the model, for every class"],
+    "limitations": ["Extracts cover four model rows only; check the current catalog for other sizes"]
+  },
+  "dataProvenance": {
+    "status": "catalog",
+    "sources": [
+      "Twin City Fan Catalog 902, RB Industrial Fans (November 2017), page 13 (RB Series Availability), pages 20 and 24 (diameters, maximum RPM)",
+      "Twin City Fan Catalog 300, BC Backward Inclined Fans (April 2024), page 3 (arrangements by model), page 16 (maximum RPM)",
+      "https://tcf.com/resources/product-catalogs/"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Designation decoder",
+    "teachingStrategy": "Cross-reference availability and maximum-speed tables for realistic designations, with feedback that names the wrong part",
+    "keyQuestions": [
+      "Can the factory build this fan, and how fast can it run?",
+      "Is this arrangement in the list for this model, size and class?"
+    ],
+    "commonMisconceptions": [
+      "If a size is offered in a class and an arrangement is offered in the line, every combination is offered.",
+      "A direct-drive arrangement is available in every class.",
+      "A size number means the same diameter in every model."
+    ],
+    "assessmentOpportunities": [
+      "Score 'Designations correct: n of 8'; mastery is 7 of 8 on the first attempt; the summary lists missed designations with their answers."
+    ]
+  },
+  "chapter": "26-reading-catalogs-and-performance-tables"
+}

@@ -1,0 +1,126 @@
+{
+  "title": "Ventilation Job Matcher",
+  "description": "Learners recommend one of twelve product lines for each of twelve illustrative building ventilation jobs and name the deciding factor (air contents, discharge path, mounting location or occupant exposure). Both choices are marked with the reason after each commit, and a summary lists every job, the learner's choice and the correct choice, grouped by deciding factor.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "kitchen exhaust fan",
+    "smoke and heat exhaust fan",
+    "fiberglass fan",
+    "mancooler",
+    "downblast discharge",
+    "entrained flow",
+    "plenum fan",
+    "cabinet ventilator",
+    "gravity relief ventilator",
+    "square inline centrifugal fan",
+    "centrifugal wall exhauster",
+    "tubeaxial fan"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Matching building ventilation jobs to product lines",
+    "learningObjectives": [
+      "The learner will recommend the product line that fits each of twelve building ventilation jobs, judged by the air contents, discharge path, mounting location and occupant exposure described in the job."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "15 minutes",
+    "prerequisites": [
+      "housed centrifugal fan",
+      "plenum fan",
+      "square inline centrifugal fan",
+      "tubeaxial fan",
+      "upblast discharge",
+      "downblast discharge",
+      "centrifugal wall exhauster",
+      "gravity relief ventilator",
+      "cabinet ventilator",
+      "kitchen exhaust fan",
+      "smoke and heat exhaust fan",
+      "fiberglass fan",
+      "mancooler",
+      "entrained flow"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 670,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 670
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts and summaries announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour in the feedback and the product line list; native select and buttons; keys 1-4 choose the factor, Enter commits or goes on."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Product line", "purpose": "One of the twelve product lines (clicking the on-canvas list does the same)" },
+      { "type": "button", "label": "Air contents / Discharge path / Mounting location / Occupant exposure", "purpose": "The deciding factor (keys 1-4)" },
+      { "type": "button", "label": "Commit", "purpose": "Commit both choices (Enter); one attempt per card" },
+      { "type": "button", "label": "Next card / Show summary", "purpose": "Go to the next card, or to the summary after card 12 (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear both scores and repeat the twelve cards in the session's order" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Twelve cards, shuffled once per session; each has exactly one correct product line and one correct deciding factor.",
+      "Product line and deciding factor are scored separately; mastery uses product lines only (10 of 12 on the first attempt).",
+      "One attempt per card, no re-answering; the correct answers are revealed after each commit."
+    ],
+    "assumptions": [
+      "Job cards are illustrative scenarios written for chapter 5."
+    ],
+    "limitations": [
+      "Does not size or select a model; the current catalog page for the chosen line supplies sizes and ratings."
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "tcf.com product category pages (kitchen listing, smoke and heat ratings, fiberglass, mancoolers, ceiling and cabinet ventilators, gravity relief ventilators)",
+      "Source: FanPedia PDF p. 5 (upblast and downblast paths), p. 6 (square inline), pp. 4 and 6 (entrained flow), p. 170 (Arrangement 4 plenum fans)",
+      "Job cards: illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Judge each job against four criteria and name the deciding one, so a correct guess for the wrong reason is caught",
+    "keyQuestions": [
+      "What is in the air?",
+      "Where must the air go, and where can the fan sit?",
+      "Are people standing in the airflow?"
+    ],
+    "commonMisconceptions": [
+      "Any roof exhauster can handle any exhaust air.",
+      "A smoke exhaust job only needs a large ordinary fan.",
+      "Stainless steel is the only answer for corrosive air.",
+      "A mancooler is an exhaust fan.",
+      "Every relief opening needs a powered fan."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'Product lines correct: n of 12'; mastery is 10 of 12 product lines on the first attempt. 'Reasons correct: n of 12' is shown separately."
+    ]
+  },
+  "chapter": "05-roof-wall-and-specialty-exhaust-fans"
+}

@@ -1,0 +1,119 @@
+{
+  "title": "Density Ratio by Temperature and Altitude",
+  "description": "Density ratio curves for 0, 2,500, 5,000 and 7,500 ft against airstream temperature (0-1,000°F) with a movable marker, followed by five challenges that ask for a density ratio or a standard-air catalog pressure before the chart marks the point.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "standard air",
+    "barometric pressure",
+    "air density",
+    "density ratio",
+    "hot airstream"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Correcting fan performance for temperature and altitude with the density ratio",
+    "learningObjectives": [
+      "The learner will calculate the air density ratio for a given airstream temperature and site elevation, to within ±0.01, and use it to convert a required pressure into a standard-air catalog pressure."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "standard air",
+      "barometric pressure",
+      "air density",
+      "density ratio",
+      "hot airstream"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Plotly",
+    "frameworkVersion": "2.35.0",
+    "version": "1.0",
+    "canvasHeight": 880,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 880
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.plot.ly/plotly-2.35.0.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Native range input, select, text input and buttons; the marker readout is a live text line under the chart; verdicts and each new challenge announced through FP.announce (aria-live); ✓/✗ glyphs, circle/square marks and solid/dashed borders pair with colour; the four curves differ by dash pattern as well as colour; Enter checks and goes to the next challenge."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "slider", "label": "Temperature marker", "range": "0-1,000°F", "step": 10, "default": 70 },
+      { "type": "select", "label": "Elevation", "options": ["0 ft", "2,500 ft", "5,000 ft", "7,500 ft"], "default": "0 ft" },
+      { "type": "button", "label": "Start challenges", "purpose": "Begin the five challenges" },
+      { "type": "input", "label": "Density ratio / Pressure", "purpose": "Type the answer to the current challenge" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter); two attempts" },
+      { "type": "button", "label": "Next challenge / See score", "purpose": "Advance after a challenge resolves (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the marks and the score and repeat the challenges" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "density ratio = (Pb / 29.92) x (530 / (T + 460))",
+      "density = 0.075 x density ratio (lb/ft³)",
+      "catalog pressure = required pressure / density ratio"
+    ],
+    "rules": [
+      "Elevations 0, 2,500, 5,000, 7,500 ft at 29.92, 27.31, 24.89, 22.65 in. Hg",
+      "Temperature marker 0-1,000°F, step 10, default 70",
+      "Ratios shown to three decimals; density to four",
+      "Density ratio answers correct within ±0.01, pressure within ±0.05 in. wg; two attempts",
+      "Marker, elevation and hover readouts locked while a challenge is open"
+    ],
+    "assumptions": [
+      "Dry air; barometric pressure from the standard atmosphere at each elevation"
+    ],
+    "limitations": [
+      "Humidity and weather changes in barometric pressure are ignored",
+      "Only the four tabulated elevations are offered"
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Density ratio equation and the 0.075 lb/ft³ standard: Chapter 2, 'Standard Air'",
+      "Barometric pressures: Chapter 2 elevation table, computed from the standard atmosphere",
+      "Challenge 5: Chapter 2, 300°F oven exhaust worked example"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Explore the shape of the correction, then calculate values the chart confirms only after the answer is committed",
+    "keyQuestions": [
+      "Why must °F be converted to °R (add 460) before dividing?",
+      "Why is the ratio at 600°F exactly half the ratio at 70°F?",
+      "Going from the job to the catalog, do you multiply or divide by the density ratio?"
+    ],
+    "commonMisconceptions": [
+      "Temperature in °F can be used directly in the ratio without adding 460",
+      "Hot air raises the pressure a fan develops",
+      "To find the catalog pressure, multiply the required pressure by the density ratio",
+      "Altitude and temperature corrections cannot be combined"
+    ],
+    "assessmentOpportunities": [
+      "End score shown as 'n of 5 correct on first attempt'; mastery is 4 of 5 on the first attempt."
+    ]
+  },
+  "chapter": "02-airstreams-total-pressure-standard-air"
+}

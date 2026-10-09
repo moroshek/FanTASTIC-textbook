@@ -1,0 +1,143 @@
+{
+  "title": "Rotating Assembly Callout Map",
+  "description": "Schematic side cross-section of an overhung (Arrangement 1 style) fan with ten rotating-assembly callouts. Explore mode opens what each part does; quiz mode hides the labels and shows the ten job descriptions in shuffled order, two attempts each, then reports the first-try score against a mastery level of 8 of 10. Schematic, not to scale.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "rotating assembly",
+    "shaft keyway",
+    "shaft turndown",
+    "shaft sleeve",
+    "shaft locking collar",
+    "shaft seal",
+    "pillow block bearing",
+    "bearing seal",
+    "bearing positioner",
+    "bearing vibration sensor"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of an overhung fan's rotating assembly",
+    "learningObjectives": [
+      "The learner will identify ten parts of an overhung fan's rotating assembly, given a one-sentence description of each part's job."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "rotating assembly",
+      "overhung impeller",
+      "shaft keyway",
+      "shaft turndown",
+      "shaft sleeve",
+      "shaft locking collar",
+      "pillow block bearing",
+      "drive end",
+      "shaft seal",
+      "bearing positioner",
+      "vibration sensor tap"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 790,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 790
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Every part is a focusable role=button; Tab walks the parts from the shaft sleeve to the keyway, Enter or Space selects one, and after an answer focus moves to Next, so Enter goes on. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an \"Answer\" badge pair with colour. During the quiz part names are hidden from screen readers too until revealed. When the drawing is narrower than about 650 px the callouts switch to numbers with a key list."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Explore",
+        "purpose": "Explore mode: click a part to read its description (never scored)"
+      },
+      {
+        "type": "button",
+        "label": "Quiz",
+        "purpose": "Start the 10-description quiz with labels hidden"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Clear visited parts and the quiz, and return to explore mode"
+      },
+      {
+        "type": "button",
+        "label": "Next description / See summary",
+        "purpose": "Go to the next description after an answer (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Start over (summary)",
+        "purpose": "Retake the quiz with a new shuffle"
+      },
+      {
+        "type": "button",
+        "label": "Back to explore",
+        "purpose": "Return to explore mode from the summary"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with identification quiz",
+    "equations": [],
+    "rules": [
+      "Explore mode: clicking a callout shows its description; any number of clicks; never scored.",
+      "Quiz mode: the 10 descriptions appear once each in shuffled order; two attempts each; a click on the matching part is correct.",
+      "A first wrong click names the clicked part and its job; a second wrong click highlights the answer and the item counts as missed.",
+      "Clicking a non-callout area does nothing and uses no attempt.",
+      "Running count 'Correct on first try: n of 10'; mastery is 8 of 10 on the first attempt; Start over reshuffles."
+    ],
+    "assumptions": [
+      "Overhung (Arrangement 1 style) layout: impeller outboard of both bearings, sheave on the drive end."
+    ],
+    "limitations": [
+      "Schematic, not to scale, not a specific Twin City Fan model. The bearing seal callout marks the inboard bearing's seals; the drive end bearing has them too."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia (Twin City Fan, 2021): shaft p. 79; keyways and turndowns p. 80; turndown locations p. 81; shaft collar and sleeve p. 129; drive end and inboard bearing names p. 91; bearing seals p. 100; vibration sensor tap p. 101; bearing positioner p. 102 and p. 176",
+      "Chapter 16 spec 'Content' table: callout labels and infobox texts"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labeled callouts first, then retrieval practice: name each part from its job with the labels hidden, with immediate correction.",
+    "keyQuestions": [
+      "Which seal keeps air in the housing, and which keeps dirt out of the bearing?",
+      "Which bearing is nearer the sheave?"
+    ],
+    "commonMisconceptions": [
+      "The shaft sleeve is a bearing part.",
+      "The shaft locking collar and a bearing's locking collar are the same part.",
+      "The shaft seal keeps grease in the bearing."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 10'; mastery is 8 of 10 on the first attempt; running line 'Correct on first try: n of 10'."
+    ]
+  },
+  "chapter": "16-bearings-shafts-and-shaft-seals"
+}

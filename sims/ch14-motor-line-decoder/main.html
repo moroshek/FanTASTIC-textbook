@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Motor Line Decoder using HTML</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        /* Sim-specific layout (prefix mld-): the motor line on top, the question below. */
+        .mld-app { padding: 6px var(--fp-margin) 0 var(--fp-margin); }
+        .mld-app .fp-title { margin-bottom: 4px; }
+        .mld-draw { padding: 8px 10px 6px 10px; }
+        .mld-line-label { font-size: var(--fp-size-note); color: var(--fp-text-muted); margin: 0 0 4px 0; }
+        .mld-line { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px 6px; margin: 0; padding: 0; list-style: none; }
+        .mld-field { min-width: 0; display: flex; flex-direction: column; align-items: stretch; }
+        .mld-chip { font-family: var(--fp-font); font-size: 15px; font-weight: bold; padding: 6px 4px; border-radius: 6px;
+            border: 2px solid var(--fp-border); background: #ffffff; color: var(--fp-text); text-align: center; white-space: nowrap; line-height: 1.2; }
+        button.mld-chip { cursor: pointer; }
+        button.mld-chip:hover { background: var(--fp-primary-bg); color: var(--fp-text); border-color: var(--fp-primary); }
+        .mld-chip.mld-cur { border-color: var(--fp-primary); background: var(--fp-primary-bg); box-shadow: 0 3px 0 var(--fp-accent); }
+        .mld-chip.mld-cur::before { content: "▸ "; content: "▸ " / ""; color: var(--fp-primary); }
+        .mld-chip.mld-seen { border-color: var(--fp-primary); border-width: 3px; }
+        .mld-meaning { font-size: 12.5px; line-height: 1.25; color: var(--fp-text); text-align: center; margin-top: 3px; min-height: 2.5em; }
+        .mld-meaning.ok::before { content: "✓ "; content: "✓ " / ""; color: var(--fp-correct); font-weight: bold; }
+        .mld-meaning.bad::before { content: "✗ "; content: "✗ " / ""; color: var(--fp-incorrect); font-weight: bold; }
+        .mld-explore { margin: 6px 0 0 0; font-size: var(--fp-size-secondary); }
+        .mld-ctrl .fp-row { margin: 6px 0; }
+        .mld-ctrl .fp-prompt { margin: 6px 0 4px 0; font-size: 16px; }
+        .mld-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 6px 0; }
+        .mld-choices button { text-align: left; white-space: normal; min-height: 38px; font-size: var(--fp-size-body); }
+        .mld-choices button.mld-ok, .mld-choices button.mld-ok:disabled { background: var(--fp-correct-bg); color: var(--fp-correct); border: 2px solid var(--fp-correct); opacity: 1; font-weight: bold; }
+        .mld-choices button.mld-bad, .mld-choices button.mld-bad:disabled { background: var(--fp-incorrect-bg); color: var(--fp-incorrect); border: 2px dashed var(--fp-incorrect); opacity: 1; font-weight: bold; }
+        .mld-choices button.mld-ok::before { content: "✓ "; content: "✓ " / ""; }
+        .mld-choices button.mld-bad::before { content: "✗ "; content: "✗ " / ""; }
+        .mld-ctrl .fp-feedback { margin: 6px 0; }
+        @media (max-width: 600px) {
+            .mld-chip { font-size: 14px; padding: 5px 2px; white-space: normal; }
+            .mld-meaning { font-size: 12px; }
+            .mld-choices { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="ch14-motor-line-decoder.js" defer></script>
+</head>
+<body>
+    <main class="fp-app mld-app">
+        <h1 class="fp-title">Motor Line Decoder</h1>
+        <section class="fp-draw mld-draw" id="drawing" aria-label="The motor line, field by field">
+            <p class="mld-line-label">Motor line: 50 HP, 1800 RPM, IN, P, 3 Phase, 60 Frequency, 460 Volt, SD, TEFC, 326T</p>
+            <ol class="mld-line" id="line" aria-label="Fields of the motor line"></ol>
+            <p class="mld-explore" id="explore" hidden></p>
+            <p class="fp-note" id="dataNote">Source: FanPedia pp. 71–74 (motor line and field meanings) · distractor meanings are illustrative, not real codes</p>
+        </section>
+        <section class="fp-ctrl mld-ctrl" aria-label="Activity">
+            <div class="fp-row"><span class="fp-score" id="score">First-try correct: 0 of 10</span></div>
+            <div id="progress" class="fp-progress" aria-label="Progress"></div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="mld-choices" id="choices" role="group" aria-label="Meanings"></div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <div class="fp-row">
+                <button id="nextBtn" type="button" hidden>Next field</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+            </div>
+            <p class="fp-note">Keyboard: <kbd>1</kbd>–<kbd>4</kbd> pick a meaning; <kbd>Enter</kbd> goes to the next field. Answered fields in the line are buttons that reopen their explanation.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

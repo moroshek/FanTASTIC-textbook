@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: fan-drawings.js (FD)  v1.0.0
+/* FanPedia MicroSim kit: fan-drawings.js (FD)  v1.1.0
  *
  * Shared p5.js drawings of fans, parts, ducts and arrows, so a motor or a
  * scroll housing looks the same in every chapter.
@@ -980,7 +980,8 @@
    * vanes (straightening vanes downstream, default false), drive 'direct' (motor in
    * the tube, default) | 'belt' (motor outside on top with a belt tube) | 'none',
    * t (seconds: blades flicker as they turn and air animates), labels, highlight
-   * ('blades' | 'motor' | 'vanes' | 'tube').
+   * ('blades' | 'motor' | 'vanes' | 'tube'), arrows (1.1: false hides the airflow
+   * arrows; default true).
    */
   function axialFan(p, o) {
     p = P(p);
@@ -1048,7 +1049,7 @@
     }
     p.pop();
     // air arrows through the fan
-    var ya = [cy - h * 0.3, cy + h * 0.3];
+    var ya = o.arrows === false ? [] : [cy - h * 0.3, cy + h * 0.3];
     ya.forEach(function (yy) {
       airflowArrow(p, { x1: right ? x - w * 0.12 : x + w * 1.12, y1: yy, x2: right ? x + w * 0.18 : x + w * 0.82, y2: yy, t: o.t });
       airflowArrow(p, { x1: right ? x + w * 0.9 : x + w * 0.1, y1: yy, x2: right ? x + w * 1.14 : x - w * 0.14, y2: yy, t: o.t });
@@ -1069,7 +1070,10 @@
    * Options: x, y, w, h (box), motorIn, fanIn (pitch diameters, inches), motorRpm,
    * t (seconds; omit for a still drawing), slow (display slow-down factor, default 60),
    * maxIn (inches for the box height; default max(motorIn, fanIn) * 1.15),
-   * labels (diameters and speeds under each sheave, default true), highlight ('motor' | 'fan').
+   * labels (diameters and speeds under each sheave, default true), highlight ('motor' | 'fan'),
+   * showFanRpm (1.1: false leaves the fan speed off the labels, e.g. while the learner
+   * has to work it out; default true), diameterDecimals (1.1: e.g. 1 -> "5.0 in";
+   * default: the number as given, "5 in").
    * Returns {fanRpm, motorCenter, fanCenter, scale}.
    */
   function sheavePair(p, o) {
@@ -1111,13 +1115,14 @@
     if (o.labels !== false) {
       p.noStroke(); p.fill(pal.text); p.textAlign(p.CENTER, p.TOP); p.textSize(14);
       var ly = cy + Math.max(rm, rf) + 8;
-      var long = p.textWidth('Motor sheave ' + mIn + ' in') < (fx - mx) - 12;
-      p.text((long ? 'Motor sheave ' : 'Motor ') + mIn + ' in', mx, ly);
-      p.text((long ? 'Fan sheave ' : 'Fan ') + fIn + ' in', fx, ly);
+      var dIn = function (d) { return (o.diameterDecimals != null ? Number(d).toFixed(o.diameterDecimals) : d) + ' in'; };
+      var long = p.textWidth('Motor sheave ' + dIn(mIn)) < (fx - mx) - 12;
+      p.text((long ? 'Motor sheave ' : 'Motor ') + dIn(mIn), mx, ly);
+      p.text((long ? 'Fan sheave ' : 'Fan ') + dIn(fIn), fx, ly);
       if (o.motorRpm != null) {
         p.fill(pal.muted);
         p.text(Math.round(o.motorRpm).toLocaleString('en-US') + ' RPM', mx, ly + 18);
-        p.text(Math.round(fanRpm).toLocaleString('en-US') + ' RPM', fx, ly + 18);
+        if (o.showFanRpm !== false) p.text(Math.round(fanRpm).toLocaleString('en-US') + ' RPM', fx, ly + 18);
       }
     }
     p.pop();
@@ -1172,7 +1177,7 @@
 
   // ------------------------------------------------------------------ export
   var api = {
-    __version: '1.0.0',
+    __version: '1.1.0',
     SIDE: SIDE, RUN_TYPES: RUN_TYPES, ARRANGEMENT_CODES: Object.keys(ARR),
     palette: palette, refreshPalette: refreshPalette, FALLBACK: FALLBACK, TOKENS: TOKENS,
     frame: frame, frameAt: frameAt,

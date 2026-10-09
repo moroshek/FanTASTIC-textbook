@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Follow the Airflow Through a Centrifugal Fan using p5.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        /* Cards: selected = heavy indigo outline and a pointer, never colour alone. */
+        button.hfa-card { white-space: normal; text-align: left; line-height: 1.2; }
+        button.hfa-card[aria-pressed="true"] { outline: 3px solid var(--fp-primary); outline-offset: 1px; font-weight: bold; }
+        button.hfa-card[aria-pressed="true"]::before { content: "▸ "; content: "▸ " / ""; }
+        button.hfa-card.hfa-placed { background: var(--fp-primary-bg); border-color: var(--fp-primary); }
+        button.hfa-card.hfa-ok { background: var(--fp-correct-bg); border: 2px solid var(--fp-correct); color: var(--fp-correct); }
+        button.hfa-card.hfa-bad { background: var(--fp-incorrect-bg); border: 2px dashed var(--fp-incorrect); color: var(--fp-incorrect); }
+        /* Numbered slot buttons on the drawing */
+        button.hfa-slot { border-radius: 50%; padding: 0; min-height: 0; font-weight: bold; font-size: 15px;
+                          background: #ffffff; color: var(--fp-primary-dark); border: 2px dashed var(--fp-primary); }
+        button.hfa-slot:hover { background: var(--fp-primary-bg); color: var(--fp-primary-dark); }
+        button.hfa-slot.hfa-filled { background: var(--fp-primary); color: #ffffff; border: 2px solid var(--fp-primary-dark); }
+        button.hfa-slot.hfa-ok { background: var(--fp-correct-bg); color: var(--fp-correct); border: 2px solid var(--fp-correct); }
+        button.hfa-slot.hfa-bad { background: var(--fp-incorrect-bg); color: var(--fp-incorrect); border: 2px dashed var(--fp-incorrect); }
+        button.hfa-slot:disabled { opacity: 1; }
+        button.hfa-bin { background: #ffffff; color: var(--fp-text); border: 2px dashed var(--fp-text-muted); }
+        button.hfa-bin:hover { background: var(--fp-info-bg); color: var(--fp-text); }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/fanpedia-p5.js"></script>
+    <script src="../shared-libs/fan-drawings.js"></script>
+    <script src="ch03-follow-the-airflow.js"></script>
+</head>
+<body>
+    <main></main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Isolator Transmissibility Explorer using Plotly</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .ite-draw { padding: 4px 6px 0 6px; }
+        .ite-plot { width: 100%; height: 360px; background: var(--fp-ctrl-bg); }
+        .ite-plot.narrow { height: 300px; }
+        .ite-readout { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--fp-size-secondary); margin: 6px 4px; }
+        .ite-readout span b { font-weight: bold; }
+        .ite-status { font-weight: bold; }
+        .ite-inputs { margin: 4px 4px 6px 4px; }
+        .ite-inputs input[type=range] { flex: 1 1 180px; min-width: 150px; max-width: 360px; }
+        .ite-inputs select { max-width: 240px; }
+        .ite-inputs b { min-width: 76px; }
+        .ite-answer { width: 110px; }
+        .ite-ctrl .fp-progress { margin: 0; }
+        .ite-summary div { margin: 2px 0; }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-models.js"></script>
+    <script src="ch22-isolator-transmissibility-explorer.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Isolator Transmissibility Explorer</h1>
+
+        <section class="fp-draw ite-draw" id="drawing" aria-label="Transmissibility versus frequency ratio chart">
+            <div class="ite-plot" id="plot" role="img" aria-label="Transmissibility T on a log scale against frequency ratio r from 0 to 10, with the amplification region below r = 1.414, the resonance line at r = 1 and the isolation region above. The curve and the operating point appear after you check an answer; the readout below gives the same values in text."></div>
+            <div class="ite-readout" id="readout" aria-live="polite"></div>
+            <div class="fp-row ite-inputs">
+                <label for="speed">Fan speed</label>
+                <input type="range" id="speed" min="300" max="3600" step="30" value="1170">
+                <b id="speedVal">1,170 RPM</b>
+                <label for="defl">Deflection</label>
+                <select id="defl"></select>
+            </div>
+        </section>
+        <p class="fp-note" id="dataNote"><span class="illustrative">Illustrative fan speeds</span> · Deflections: FanPedia p. 134 · Undamped model: f = N/60, f<sub>n</sub> = 3.13/√δ, T = 1/|r² − 1|</p>
+
+        <section class="fp-ctrl ite-ctrl" aria-label="Challenges">
+            <div class="fp-row">
+                <span class="fp-score" id="score">Challenges correct: 0 of 3</span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="fp-attempt" id="attempt">Attempt 1 of 2</span>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="fp-row" id="answerRow">
+                <label for="answer">Transmissibility T</label>
+                <input id="answer" class="ite-answer" type="text" inputmode="decimal" autocomplete="off">
+                <button id="check" type="button">Check</button>
+                <button id="next" type="button" hidden>Next challenge</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <div id="summary" class="fp-feedback final ite-summary" role="status"></div>
+            <p class="fp-note">Keyboard: Enter checks your answer, then goes to the next challenge. In Explore mode the arrow keys move the speed slider (30 RPM steps) and change the deflection.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{
+  "title": "Fans in Parallel and Series Explorer",
+  "description": "Three committed predictions about two fans in parallel or in series on a steep and a flat system, followed by an interactive Plotly chart of illustrative Curve A, its parallel and series combinations, both system curves, the operating points and a readout table.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "fans in parallel",
+    "fans in series",
+    "fan curve",
+    "system curve",
+    "operating point",
+    "peak pressure point",
+    "stall region"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Fans in parallel and in series",
+    "learningObjectives": [
+      "The learner will compare one fan, two fans in parallel and two fans in series on a steep and a flat system curve, correctly predicting which combination delivers more airflow on each system."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "compare",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "fan curve",
+      "system curve",
+      "operating point",
+      "fans in parallel",
+      "fans in series",
+      "peak pressure point",
+      "stall region"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Plotly",
+    "frameworkVersion": "2.35.0",
+    "version": "1.0",
+    "canvasHeight": 786,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 786
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.plot.ly/plotly-2.35.0.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-curves.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Native buttons with aria-pressed toggles; verdicts, each new prediction, the reveal and every Explore change announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; curves differ by dash pattern and weight as well as colour; operating points also listed in an HTML table with the current cell marked ▸; keys 1-3, Enter, S/F and O/P/R."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Parallel / Series / About 10% / About 50% / About 100%", "purpose": "Commit a prediction (keys 1-3), one attempt each" },
+      { "type": "button", "label": "Next prediction / Reveal the curves", "purpose": "Go on after a prediction (Enter)" },
+      { "type": "button", "label": "Steep / Flat", "purpose": "Explore mode: choose the system curve (keys S, F)" },
+      { "type": "button", "label": "One fan / Parallel / Series", "purpose": "Explore mode: choose the configuration (keys O, P, R)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the predictions and return to prediction 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model (combined fan curves and operating points)",
+    "equations": [
+      "System: P = R x (Q / 10,000)^2 with R = 4.0 (steep) or 1.0 (flat) in. wg",
+      "Parallel: P2(Q) = P1(Q / 2)",
+      "Series: P2(Q) = 2 x P1(Q)"
+    ],
+    "rules": [
+      "Curve A linearly interpolated; extended along the 14,000-16,000 CFM segment to zero pressure",
+      "Operating point: 1 CFM search for the smallest |combined pressure - system pressure|, only where each fan's airflow >= 4,000 CFM",
+      "Operating points rounded to 10 CFM and 0.01 in. wg",
+      "Three predictions, fixed order, one attempt each; mastery 3 of 3"
+    ],
+    "assumptions": [
+      "Two identical fans, each on Curve A (illustrative, 1,380 RPM, standard air)",
+      "System curves pass through zero (no fixed pressure component)"
+    ],
+    "limitations": [
+      "Illustrative curve, not a catalog rating",
+      "Ignores duct losses between fans, backdraft dampers and unequal sharing between parallel fans"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Curve A: illustrative curve from Chapter 10, 'The Fan Curve' section (not a Twin City Fan published rating)",
+      "Combining rules and systems: Chapter 25, 'Fans in Parallel and in Series'"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Commit predictions before the reveal, then compare configurations across two system curves",
+    "keyQuestions": [
+      "On a steep system, which pair moves more air?",
+      "On a flat system, which pair moves more air?",
+      "Why does a second parallel fan add only about 10% on the steep system?"
+    ],
+    "commonMisconceptions": [
+      "Two fans in parallel deliver twice the airflow",
+      "Series fans are only useful for pressure and never increase airflow",
+      "The better combination is a property of the fans rather than of the system"
+    ],
+    "assessmentOpportunities": [
+      "Score shown as 'Predictions correct: n of 3'; mastery is 3 of 3 on the first attempt."
+    ]
+  },
+  "chapter": "25-fan-laws-system-effect-and-sound"
+}

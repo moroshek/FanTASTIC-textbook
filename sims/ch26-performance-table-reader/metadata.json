@@ -1,0 +1,94 @@
+{
+  "title": "Performance Table Reader",
+  "description": "Numeric challenge sequence on the Twin City Fan RBA 913 performance table excerpt (Catalog 902, page 24): for six duty points the learner types RPM and BHP by direct reading or linear interpolation and picks the fan class; each answer is marked, then a class overlay shows the shading.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["performance table", "performance table header", "outlet velocity", "class shading", "interpolation"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Reading and interpolating a catalog performance table",
+    "learningObjectives": [
+      "The learner will use an excerpt of the RBA 913 performance table to find the RPM and BHP for a duty point, by direct reading or linear interpolation within ±1%, and to name the fan class the point requires."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "use",
+    "duration": "10-15 minutes",
+    "prerequisites": ["performance table", "performance table header", "outlet velocity", "class shading", "interpolation"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 707,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 707
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); duty points, verdicts, cell values under the keyboard cursor and the summary are announced through FP.announce (aria-live); RPM, BHP and class each get a ✓/✗ mark; the class overlay uses shading plus bold (Class 32) or italic (Class 45) as in the catalog; feedback pairs ✓/✗ with solid/dashed borders; Enter checks and advances, arrow keys and S move and pin a grid cursor."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "RPM", "purpose": "Your fan speed for the duty point" },
+      { "type": "input", "label": "BHP", "purpose": "Your brake horsepower for the duty point" },
+      { "type": "button", "label": "Class 22 / Class 32 / Class 45", "purpose": "The class the duty point requires" },
+      { "type": "button", "label": "Check", "purpose": "Mark RPM, BHP and class, then turn the class overlay on (Enter)" },
+      { "type": "button", "label": "Next duty point", "purpose": "Load the next point and turn the overlay off; after point 6, Show summary (Enter)" },
+      { "type": "button", "label": "Class overlay", "purpose": "Show or hide class shading; available after Check and after the summary" },
+      { "type": "button", "label": "Scratch panel", "purpose": "Pin bracketing cells and type your fraction f (not scored, never computes the answer)" },
+      { "type": "button", "label": "Start over", "purpose": "Back to duty point 1 with the score cleared" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": ["y = y1 + (x − x1) / (x2 − x1) × (y2 − y1)", "Class 22: RPM ≤ 2,812; Class 32: 2,812 < RPM ≤ 3,337; Class 45: 3,337 < RPM ≤ 4,000"],
+    "rules": [
+      "Double interpolation interpolates airflow within each bracketing pressure column first, then pressure between the two results",
+      "Direct readings must match exactly (±1 RPM, ±0.01 BHP); interpolated answers within ±1%",
+      "A duty point is correct only when RPM, BHP and class are all correct",
+      "Two attempts per point, first scored; mastery is 5 of 6"
+    ],
+    "assumptions": ["Standard air; installation type B and D; BHP excludes transmission losses and appurtenance effects, as the catalog footer states"],
+    "limitations": ["Excerpt only (3,348-4,836 CFM, 4-32 in. SP); straight-line interpolation is an approximation, confirm in Fan Selector before quoting"]
+  },
+  "dataProvenance": {
+    "status": "catalog",
+    "sources": [
+      "Twin City Fan Catalog 902, RB Industrial Fans (November 2017), page 24, RBA 913",
+      "https://tcf.com/wp-content/uploads/2018/06/RBO-RBR-RBA-RBW-RBP-Industrial-Fans-Catalog-902.pdf"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Compute RPM and BHP and commit a class before feedback; the class overlay is revealed only after Check",
+    "keyQuestions": [
+      "What speed and power does this duty need, and which class must you order?",
+      "Which two cells bracket this duty point?"
+    ],
+    "commonMisconceptions": [
+      "The class is decided by the static pressure column alone.",
+      "Interpolation can use the nearest cell instead of the two bracketing cells.",
+      "A duty point between two pressure columns can be interpolated in one step."
+    ],
+    "assessmentOpportunities": [
+      "Score 'Duty points correct: n of 6' (first attempts); mastery is 5 of 6; the summary lists points not right on the first attempt with their answers."
+    ]
+  },
+  "chapter": "26-reading-catalogs-and-performance-tables"
+}

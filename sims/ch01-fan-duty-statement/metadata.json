@@ -1,0 +1,108 @@
+{
+  "title": "Anatomy of a Fan Duty Statement",
+  "description": "The learner clicks the six parts of an illustrative fan duty statement (12,000 CFM at 3.0 in. wg static pressure, 1,173 RPM, 7.9 BHP, at 0.075 lb/ft³, clean air) to read what each tells, then names each highlighted part in a shuffled one-attempt quiz.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "Duty statement",
+    "Airflow volume",
+    "Static pressure",
+    "Fan speed",
+    "Brake horsepower",
+    "Air density",
+    "Airstream"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "The six parts of a fan duty statement",
+    "learningObjectives": [
+      "The learner will identify each of the six parts of a fan duty statement by its quantity and unit, with at least 5 of 6 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "5-10 minutes",
+    "prerequisites": [
+      "Airflow volume and cubic feet per minute",
+      "Static pressure and inches of water gauge",
+      "Fan speed and RPM",
+      "Brake horsepower",
+      "Air density and standard air",
+      "Airstream"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 720,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 720
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Segments are focusable buttons (role=button) with aria-labels; quiz hides the names from screen readers until revealed; verdicts and prompts announced through FP.announce (aria-live); ✓/✗/→ glyphs and solid/dashed borders pair with colour; keys 1-6 pick a name; focus moves to Next prompt after an answer."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Explore", "purpose": "Explore mode: click segments to open their callouts" },
+      { "type": "button", "label": "Quiz", "purpose": "Start the shuffled six-part quiz" },
+      { "type": "segment", "label": "Duty statement parts", "purpose": "Six clickable segments of the rating line (Enter or Space)" },
+      { "type": "button", "label": "1-6 quantity names", "purpose": "Choose the name of the highlighted segment (keys 1-6)" },
+      { "type": "button", "label": "Next prompt / See summary", "purpose": "Advance after an answer" },
+      { "type": "button", "label": "Start over / Back to explore", "purpose": "New quiz, or return to Explore mode, from the summary" }
+    ]
+  },
+  "simulation": {
+    "modelType": "Labeled infographic with a matching quiz",
+    "equations": [],
+    "rules": [
+      "Each segment has exactly one correct quantity name; each name is used once",
+      "Quiz order shuffled with a seed chosen once per session",
+      "One scored attempt per segment; the answer is revealed after it",
+      "Mastery: 5 of 6 correct on the first attempt"
+    ],
+    "assumptions": [],
+    "limitations": [
+      "The duty statement combines values from two worked examples and is illustrative, not a catalog selection"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Chapter 1 worked examples 'From Duty Point to Motor' (12,000 CFM, 3.0 in. wg, 7.9 BHP, 10 hp, 79 percent) and 'Setting a Belt-Driven Fan's Speed' (1,760 RPM, 6 in and 9 in sheaves, 1,173 RPM)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labeled parts with callouts, then retrieve the names without support",
+    "keyQuestions": [
+      "What does each number in a duty statement tell you?",
+      "Why can a duty statement without a density or an airstream not be checked against a catalog?"
+    ],
+    "commonMisconceptions": [
+      "BHP is the motor nameplate size.",
+      "The static pressure is a property of the fan alone rather than the resistance of the system at that airflow.",
+      "The density can be left off because every catalog uses standard air."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'Correct on first attempt: n of 6'; mastery is 5 of 6 on the first attempt.",
+      "Explore mode is not evidence of mastery"
+    ]
+  },
+  "chapter": "01-air-pressure-and-the-fan"
+}

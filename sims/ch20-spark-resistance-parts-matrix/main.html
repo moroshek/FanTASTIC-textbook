@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Spark Resistance Parts Matrix using html</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .srpm-draw { padding: 8px 10px; }
+        .srpm-q { margin: 0 0 6px 0; }
+        .srpm-table { width: 100%; border-collapse: separate; border-spacing: 4px; table-layout: fixed; }
+        .srpm-table th { font-size: var(--fp-size-secondary); text-align: center; color: var(--fp-text); padding: 2px; }
+        .srpm-table th.srpm-comp { text-align: left; width: 26%; }
+        .srpm-table td { vertical-align: middle; padding: 3px; border-radius: 6px; border: 2px solid transparent; }
+        .srpm-table td.srpm-cell { background: #ffffff; border: 1px solid var(--fp-border); text-align: center; }
+        .srpm-table select { width: 100%; padding: 3px 2px; }
+        .srpm-rowbtn { width: 100%; text-align: left; padding: 4px 6px; font-weight: bold; }
+        .srpm-rowbtn::after { content: " ▾"; content: " ▾" / ""; font-weight: normal; }
+        .srpm-rowbtn[aria-expanded="true"]::after { content: " ▴"; content: " ▴" / ""; }
+        .srpm-desc { font-size: var(--fp-size-secondary); background: var(--fp-primary-bg); border-radius: 6px; padding: 5px 8px; margin: 0 0 4px 0; min-height: 1.4em; }
+        .srpm-reason td { font-size: var(--fp-size-secondary); padding: 4px 8px; }
+        .srpm-table select:disabled { color: var(--fp-text); background: #ffffff; opacity: 1; }
+        .srpm-reason td { background: #ffffff; border: 1px solid var(--fp-border); color: var(--fp-text); }
+        .srpm-reason td b { color: var(--fp-incorrect); }
+        .srpm-reason.srpm-all td b { color: var(--fp-text); }
+        .srpm-table td.srpm-cell.ok { background: var(--fp-correct-bg); border: 2px solid var(--fp-correct); }
+        .srpm-table td.srpm-cell.bad { background: var(--fp-incorrect-bg); border: 2px dashed var(--fp-incorrect); }
+        .srpm-mark { display: block; font-size: 13px; font-weight: bold; margin-top: 2px; line-height: 1.25; }
+        .srpm-mark.ok { color: var(--fp-correct); }
+        .srpm-mark.bad { color: var(--fp-incorrect); }
+        .srpm-mark.ans { color: var(--fp-text); font-weight: normal; }
+        .srpm-note { margin: 6px 0 0 0; }
+        @media (max-width: 480px) {
+            .srpm-draw { padding: 6px 4px; }
+            .srpm-table { border-spacing: 2px; }
+            .srpm-table td { padding: 2px; }
+            .srpm-table th.srpm-comp { width: 23%; }
+            .srpm-table select { font-size: 12px; padding: 2px 11px 2px 3px; -webkit-appearance: none; appearance: none;
+                background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0h8L4 5z' fill='%23263238'/%3E%3C/svg%3E") no-repeat right 3px center; }
+            .srpm-rowbtn { padding: 3px 4px; font-size: 12px; }
+            .srpm-mark { font-size: 12px; }
+        }
+    </style>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="ch20-spark-resistance-parts-matrix.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Spark Resistance Parts Matrix</h1>
+
+        <section class="fp-draw srpm-draw" id="drawing" aria-label="Parts matrix: six centrifugal fan components by spark-resistant Types A, B and C">
+            <p class="fp-prompt srpm-q" id="question">Which parts does each type make non-ferrous?</p>
+            <p class="srpm-desc" id="desc" aria-live="polite">Open a component name to read what it is.</p>
+            <table class="srpm-table" id="matrix">
+                <caption class="sr-only">Set each cell to Non-ferrous, Steel or Not listed</caption>
+                <thead>
+                    <tr><th scope="col" class="srpm-comp">Component</th><th scope="col">Type A</th><th scope="col">Type B</th><th scope="col">Type C</th></tr>
+                </thead>
+                <tbody id="rows"></tbody>
+            </table>
+            <p class="fp-note srpm-note" id="answerNote" hidden></p>
+        </section>
+        <p class="fp-note" id="dataNote">Source: FanPedia, Spark Resistant Construction, Centrifugal Fans, pp. 104-106</p>
+
+        <section class="fp-ctrl" aria-label="Activity">
+            <div class="fp-row">
+                <span class="fp-score" id="score">Cells set: 0 of 18</span>
+                <span class="fp-attempt" id="attempt">Check 1 of 2</span>
+            </div>
+            <div class="fp-row">
+                <button id="check" type="button">Check</button>
+                <button id="tryAgain" type="button" hidden>Try Again</button>
+                <button id="showAnswers" type="button" class="secondary" hidden>Show Answers</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+                <span class="fp-attempt" id="remaining" aria-live="polite"></span>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <p class="fp-note">Keyboard: Tab to a cell, then use the arrow keys (or type S for Steel, N for Non-ferrous or Not listed); Enter on a component name opens its description.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

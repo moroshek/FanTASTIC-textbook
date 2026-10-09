@@ -1,0 +1,125 @@
+{
+  "title": "Axial Airflow and Hub Position Configurator",
+  "description": "Eight axial fan orders in which the learner commits a hub position and a hub bore before the fan is drawn and animated, followed by a free model that switches the airflow code between PM and MP and reverses the rotation.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "axial impeller",
+    "blade leading edge",
+    "hub on intake side",
+    "hub on discharge side",
+    "reversible impeller",
+    "standard bore hub",
+    "reverse bore hub"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Axial airflow codes, hub position and hub bore",
+    "learningObjectives": [
+      "The learner will apply FanPedia's axial airflow rules to state the hub position and hub bore for an axial fan order, given its airflow code or air path, with at least 7 of 8 orders correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "axial impeller",
+      "blade leading edge",
+      "airflow = PM",
+      "airflow = MP",
+      "hub on intake side",
+      "hub on discharge side",
+      "standard bore hub",
+      "reverse bore hub",
+      "reversible impeller",
+      "rotation viewed from the discharge side"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 587,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 587
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); every verdict, new order and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; chosen answers are marked with aria-pressed, a ✓ and a heavier outline; keys I/D (hub side), S/R (bore) and Enter (check, next); every control is reachable with Tab; controls stay inside the canvas at 320 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Intake side / Discharge side", "purpose": "Choose the hub position (keys I, D)" },
+      { "type": "button", "label": "Standard bore / Reverse bore", "purpose": "Choose the hub bore (keys S, R)" },
+      { "type": "button", "label": "Check", "purpose": "Check the order (Enter); one scored attempt" },
+      { "type": "button", "label": "Next order / Open free model", "purpose": "Advance after an order is checked (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Restart all eight orders and clear the score" },
+      { "type": "select", "label": "Airflow", "purpose": "Free model: PM or MP" },
+      { "type": "select", "label": "Rotation", "purpose": "Free model: correct for the impeller or reversed" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "PM gives hub on intake side and reverse bore hub",
+      "MP gives hub on discharge side and standard bore hub",
+      "Impeller hand (left or right) and pitch type (fixed or adjustable) do not change hub position or bore",
+      "Reversible impeller: standard flow = MP, reverse flow = PM",
+      "Correct rotation: air enters at the leading edges and leaves at the discharge; reversed rotation: no airflow in the intended direction",
+      "Rotation is always labeled as viewed from the discharge side",
+      "An order is correct only when both answers match; one attempt per order; mastery 7 of 8 on the first attempt"
+    ],
+    "assumptions": [
+      "Direct-drive axial fan drawn with the motor at the left of the tube and the impeller at the right",
+      "The hub boss is drawn on the impeller face away from the motor, which faces the intake for PM and the discharge for MP"
+    ],
+    "limitations": [
+      "The rotation arrow means 'correct for the impeller' or 'reversed'; the impeller hand, and so the actual CW or CCW direction, is not modeled",
+      "Schematic drawing, not a specific Twin City Fan model"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia PDF pp. 36-40: airflow codes PM and MP, 'aka' hub names, leading edge, rotation viewing side, wrong-rotation note",
+      "FanPedia PDF p. 41: reversible impeller standard and reverse flow",
+      "FanPedia PDF pp. 42-43: standard bore hub with MP and reverse bore hub with PM, left and right hand, adjustable and fixed cast impellers"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Designation decoder",
+    "teachingStrategy": "Apply a rule set to new orders with a committed, checked answer; animate the air path only after the answer, then explore the model freely",
+    "keyQuestions": [
+      "Which part does the air meet first in PM, and in MP?",
+      "Why does a reversible impeller have two hub positions?",
+      "What happens to the airflow when an axial impeller turns the wrong way?"
+    ],
+    "commonMisconceptions": [
+      "'Hub on intake' means the motor is on the intake side",
+      "PM and MP are rotation codes rather than airflow codes",
+      "A reversible impeller has a fixed hub position",
+      "Running an axial impeller backward simply gives less airflow in the same direction"
+    ],
+    "assessmentOpportunities": [
+      "Running count shown as 'Orders correct: n of 8'; mastery is 7 of 8 orders on the first attempt."
+    ]
+  },
+  "chapter": "08-centrifugal-and-axial-impeller-types"
+}

@@ -1,0 +1,111 @@
+{
+  "title": "Arrangement Variant Decoder",
+  "description": "Twelve written fan descriptions, shuffled once per session; for each the learner picks one code from a fixed list of 20 arrangement codes and presses Check (one scored attempt, mastery 10 of 12). An optional feature hint lists drive, impeller, support and motor; Retry missed practises the missed items without scoring.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "arrangement variants",
+    "overhung and center hung impellers",
+    "direct drive and belt drive",
+    "slide base",
+    "adjustable motor base",
+    "plenum fan",
+    "pedestal plug fan",
+    "swingout fan",
+    "clamshell fan"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Arrangement variant codes: motor location, support and access features",
+    "learningObjectives": [
+      "The learner will differentiate twelve arrangement variants by naming the arrangement code that matches a written description of a fan's drive, motor location, support and access features."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "differentiate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "overhung and center hung impellers", "direct drive and belt drive", "bearing pedestal", "slide base",
+      "adjustable motor base", "plug fan", "pedestal plug", "plenum fan", "swingout and clamshell construction"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 545,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 545
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); selections, hints and verdicts announced through FP.announce (aria-live); ✓/✗/→ glyphs on the code buttons and solid/dashed feedback borders pair with colour; the answer list is one Tab stop with arrow-key navigation; Enter checks or goes on; H toggles the hint."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Answer list (20 codes)", "purpose": "Select one arrangement code (arrow keys move the selection)" },
+      { "type": "button", "label": "Show hint / Hide hint", "purpose": "Show the description's features by category; never scored (H)" },
+      { "type": "button", "label": "Check", "purpose": "Score the selected code (Enter)" },
+      { "type": "button", "label": "Next item / Finish", "purpose": "Go to the next item; after item 12, show the summary (Enter)" },
+      { "type": "button", "label": "Retry missed", "purpose": "Summary only: practise the missed items, not scored" },
+      { "type": "button", "label": "Start over", "purpose": "Run all twelve items again in the session's order and clear the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "One code per item; exact match with the spec's Correct code column.",
+      "Item order is shuffled once per session; Start over keeps that order.",
+      "The answer list never changes between items.",
+      "One scored attempt per item; hints are not scored; Retry missed rounds are not scored.",
+      "Mastery is 10 of 12 correct on the first attempt."
+    ],
+    "assumptions": [],
+    "limitations": [
+      "Descriptions are short summaries; real drawings carry more detail."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia, pp. 20-28 (arrangement drawings) and pp. 163-173 (technical descriptions)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Designation decoder",
+    "teachingStrategy": "Differentiate near-identical codes by the one feature that separates them (motor location, support or door type)",
+    "keyQuestions": [
+      "Is the impeller on the motor shaft or on its own fan shaft?",
+      "Where is the motor: on the pedestal, on a frame, inside the pedestal, or separate?",
+      "What holds the fan up: wall, pedestal at grade, inlet flange?",
+      "When the door opens, does the rotor move or only the casing?"
+    ],
+    "commonMisconceptions": [
+      "Any direct drive fan is Arrangement 4.",
+      "The P suffix changes the drive.",
+      "Swingout and clamshell are the same construction.",
+      "9F is the right fix whenever a large motor needs isolators."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 12'; mastery is 10 of 12 on the first attempt.",
+      "Summary list of missed items with the correct code and the code chosen."
+    ]
+  },
+  "chapter": "24-advanced-arrangements-and-configuration-variants"
+}

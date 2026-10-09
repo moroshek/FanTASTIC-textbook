@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Density Ratio by Temperature and Altitude using Plotly</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .drt-lead { font-size: var(--fp-size-secondary); margin: 0 0 6px 0; font-weight: bold; }
+        .drt-draw { padding: 4px 6px 4px 6px; }
+        .drt-plot { width: 100%; height: 360px; background: var(--fp-ctrl-bg); }
+        .drt-plot.narrow { height: 270px; }
+        .drt-readout { margin: 4px 2px; }
+        .drt-draw .fp-row { margin: 4px 0; }
+        .drt-group { display: inline-flex; align-items: center; gap: 8px; flex-wrap: nowrap; }
+        .drt-temp { width: 200px; max-width: 40vw; }
+        .drt-tval { min-width: 4.2em; display: inline-block; font-weight: bold; }
+        .drt-draw .fp-note { margin: 2px 0 0 0; }
+        .drt-ctrl .fp-row { margin: 6px 0; }
+        .drt-ctrl .fp-prompt { margin: 4px 0; }
+        .drt-ctrl .fp-feedback { margin: 6px 0; }
+        .drt-answer { width: 90px; }
+        .drt-qnum { font-size: var(--fp-size-secondary); color: var(--fp-text-muted); }
+        #start, #startOver { margin-left: auto; }
+    </style>
+    <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-models.js"></script>
+    <script src="ch02-density-ratio-temperature-altitude.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Density Ratio by Temperature and Altitude</h1>
+        <p class="drt-lead" id="lead">How much lighter is 300°F air than standard air?</p>
+
+        <section class="fp-draw drt-draw" id="drawing" aria-label="Density ratio against airstream temperature for four site elevations">
+            <div class="drt-plot" id="plot"></div>
+            <p class="drt-readout" id="readout" role="status" aria-live="polite"></p>
+            <div class="fp-row">
+                <span class="drt-group">
+                    <label for="temp">Temperature marker</label>
+                    <input id="temp" class="drt-temp" type="range" min="0" max="1000" step="10" value="70">
+                    <span class="drt-tval" id="tempValue">70°F</span>
+                </span>
+                <span class="drt-group">
+                    <label for="elev">Elevation</label>
+                    <select id="elev"></select>
+                </span>
+            </div>
+            <p class="fp-note" id="dataNote"></p>
+        </section>
+
+        <section class="fp-ctrl drt-ctrl" aria-label="Challenges">
+            <div class="fp-row">
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="drt-qnum" id="qnum"></span>
+                <button id="start" type="button">Start challenges</button>
+                <button id="startOver" type="button" class="secondary" hidden>Start over</button>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="fp-row" id="answerRow">
+                <label for="answer" id="answerLabel">Your answer</label>
+                <input id="answer" class="drt-answer" type="text" inputmode="decimal" autocomplete="off">
+                <span id="unit"></span>
+                <button id="check" type="button">Check</button>
+                <button id="next" type="button" hidden>Next challenge</button>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <p class="fp-note" id="keys"></p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "title": "Split Housing Selector",
+  "description": "Eight illustrative centrifugal fan situations, one at a time. The learner commits a recommendation (horizontal, three-way, Mohawk pie, standard pie or no split), then picks one of four FanPedia justifications; a situation counts only when both match. One attempt each, mastery 6 of 8, and a summary table of every answer beside the correct one.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "split housing",
+    "horizontal split housing",
+    "three-way split housing",
+    "pie split housing",
+    "Mohawk pie split",
+    "standard pie split",
+    "nominally leak-tight construction"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing a split housing for a centrifugal fan",
+    "learningObjectives": [
+      "The learner will recommend a horizontal, three-way, Mohawk pie, standard pie or no split housing for eight described centrifugal fan situations, justifying each choice with a FanPedia rule."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "split housing", "horizontal split housing", "three-way split housing", "pie split housing",
+      "Mohawk and standard pie styles", "attached inlet box", "double width fan", "nominally leak-tight construction"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 672,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 672
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed feedback borders pair with colour; the locked recommendation and the chosen reason show a ✓ prefix and bold outline (aria-pressed). Keys 1-5 choose the split, A-D the reason, Enter goes to the next situation; focus moves to the reason buttons after a split is locked and to Next after a reason."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Horizontal / Three-way / Pie, Mohawk / Pie, standard / No split", "purpose": "Commit the recommendation for this situation (keys 1-5); the choice locks" },
+      { "type": "button", "label": "A / B / C / D", "purpose": "Pick the justification (keys A-D)" },
+      { "type": "button", "label": "Next situation / See summary", "purpose": "Go on after the feedback (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear every answer and the score and return to situation 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table (scenario recommender with justification)",
+    "equations": [],
+    "rules": [
+      "One recommendation (locked) and one justification per situation; a situation counts correct only when both match the table.",
+      "Justification options for situation n: its own justification plus those of the next three rows after n (wrapping past row 8 to row 1) whose recommendation differs from row n's, shown in shuffled order.",
+      "Situations 3, 4, 5 and 7 all involve a pie split; the style is decided only by the facts in each situation text.",
+      "8 situations in fixed order, one attempt each; running count 'Situations correct: n of 8'; mastery 6 of 8 on the first attempt."
+    ],
+    "assumptions": [
+      "The situations are illustrative."
+    ],
+    "limitations": [
+      "Covers the three FanPedia split types for centrifugal fans only; gasketing and centering-plate details for leak-tight splits are in Chapter 21."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia pp. 156-157 and 194: split housing types, Mohawk and standard styles, size 807, three-way drafting time",
+      "FanPedia pp. 164 and 168: Arrangements 3SI, 7SI and 7DI include a pie split",
+      "FanPedia p. 120: split housings not recommended for nominally leak-tight construction"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Commit a recommendation, then defend it by choosing the rule that supports it; feedback separates a wrong split from a right split with the wrong reason.",
+    "keyQuestions": [
+      "Does the situation need shipping in sections, passage through an opening, or impeller removal?",
+      "Which facts rule out the Mohawk pie split?",
+      "When should no split be offered at all?"
+    ],
+    "commonMisconceptions": [
+      "Any split will let the impeller out without touching the ductwork.",
+      "The Mohawk pie split works on any fan.",
+      "Adding a split is always harmless.",
+      "A horizontal split is only for maintenance, never shipping."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 8'; mastery is 6 of 8 situations with both the recommendation and the justification correct."
+    ]
+  },
+  "chapter": "07-housing-construction-and-exploded-views"
+}

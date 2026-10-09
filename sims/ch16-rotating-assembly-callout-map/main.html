@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Rotating Assembly Callout Map using html</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        /* Sim-specific styles (prefix rac-). Colours come from the kit's --fp-* tokens. */
+        main.rac-app { max-width: 820px; margin: 0 auto; padding: 6px 8px 4px; }
+        .rac-draw { position: relative; border-radius: var(--fp-radius); }
+        .rac-draw svg { width: 100%; height: auto; display: block; touch-action: manipulation; }
+        .rac-draw .fp-note { margin: 0; padding: 0 8px 3px; }
+        .rac-lbl { pointer-events: none; }
+        .rac-lbl rect { fill: #ffffff; stroke: var(--fp-text-muted); stroke-width: 1; }
+        .rac-lbl text { font-size: 17px; fill: var(--fp-text); font-family: var(--fp-font); }
+        .rac-lbl line { stroke: var(--fp-text-muted); stroke-width: 1.2; }
+        .rac-lbl circle { fill: var(--fp-text-muted); }
+        .rac-lbl.fp-cq-label-visited rect { fill: var(--fp-primary-bg); stroke: var(--fp-primary); }
+        .rac-lbl.fp-cq-label-selected rect { fill: var(--fp-primary-bg); stroke: var(--fp-primary); stroke-width: 2.5; }
+        .rac-lbl.fp-cq-label-selected text { font-weight: bold; }
+        /* Narrow drawings: numbered callouts plus a key list, so callout text never drops below 12 px. */
+        .rac-lbl .rac-num { display: none; }
+        .rac-narrow .rac-lbl .rac-full { display: none; }
+        .rac-narrow .rac-lbl .rac-num { display: inline; font-size: 30px; font-weight: bold; }
+        .rac-key { display: none; margin: 4px 0 0; padding: 0; list-style: none; font-size: 14px; }
+        .rac-narrow .rac-key { display: flex; flex-wrap: wrap; gap: 2px 12px; }
+        .rac-key li.fp-cq-label-hidden { visibility: hidden; }
+        .rac-key li.fp-cq-label-selected { font-weight: bold; color: var(--fp-primary-dark); }
+        .rac-key b { display: inline-block; min-width: 1.4em; }
+        .rac-keys { margin: 4px 0 0 0; }
+    </style>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/callout-quiz.js"></script>
+    <script src="ch16-rotating-assembly-callout-map.js" defer></script>
+</head>
+<body>
+    <main class="fp-app rac-app">
+        <h1 class="fp-title">Rotating Assembly Callout Map</h1>
+        <section class="fp-draw rac-draw" id="drawing" aria-label="Schematic side cross-section of an overhung, Arrangement 1 style centrifugal fan: impeller in the housing, shaft through the drive-side wall, two pillow block bearings on a pedestal and a drive sheave. Select a part.">
+            <!-- the SVG drawing is built by the sim -->
+            <ol class="rac-key" id="key" aria-label="Callout key"></ol>
+            <p class="fp-note illustrative" id="dataNote">Schematic, not to scale · Overhung (Arrangement 1 style) fan · Based on FanPedia pp. 79-81, 91, 100-102 and 129</p>
+        </section>
+        <p class="fp-note rac-keys">Keyboard: Tab moves between parts and buttons; Enter or Space selects a part; after an answer, Enter goes to the next description.</p>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

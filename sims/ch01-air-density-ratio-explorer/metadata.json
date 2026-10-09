@@ -1,0 +1,120 @@
+{
+  "title": "Air Density Ratio Explorer",
+  "description": "The learner calculates the density ratio for four temperature and altitude conditions and uses it to correct static pressure between catalog and job conditions (multiply to predict, divide to select), checking each answer against density ratio curves for 0, 2,000, 5,000 and 8,000 ft.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "Air density",
+    "Standard air",
+    "Density ratio",
+    "Air temperature",
+    "Altitude",
+    "Static pressure correction"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Density ratio and the correction of fan static pressure for temperature and altitude",
+    "learningObjectives": [
+      "The learner will calculate the density ratio for a stated air temperature and site altitude, and use it to correct a static pressure between catalog and job conditions, to within ±0.005 on the ratio and ±0.03 in. wg on the pressure."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Air density and standard air (70°F, sea level, 0.075 lb/ft³)",
+      "Density ratio",
+      "Air temperature and altitude",
+      "Absolute pressure",
+      "Static pressure",
+      "The two correction rules"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Chart.js",
+    "frameworkVersion": "4.4.4",
+    "version": "1.0",
+    "canvasHeight": 1030,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 1030
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Chart canvas has role=img and an aria-label; verdicts go to role=status feedback boxes and FP.announce (aria-live); the marker readout is aria-live; ✓/✗ glyphs, solid/dashed borders and progress chips pair with colour; each curve has its own colour, dash pattern and point shape; Enter checks and goes to the next challenge; arrow keys move the sliders."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "slider", "label": "Air temperature", "purpose": "−20 to 600°F, step 10, default 70; moves the marker" },
+      { "type": "slider", "label": "Site altitude", "purpose": "0 to 10,000 ft, step 500, default 0; moves the marker" },
+      { "type": "input", "label": "Density ratio", "purpose": "The learner's ratio, 3 decimals (Enter checks)" },
+      { "type": "input", "label": "Actual static pressure / Catalog SP to select at", "purpose": "The corrected pressure in in. wg (challenges 1 and 2)" },
+      { "type": "button", "label": "Check", "purpose": "Check the open entries" },
+      { "type": "button", "label": "Next challenge / Show summary", "purpose": "Advance after the challenge's entries are settled (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all six entries, the score and the marker" }
+    ]
+  },
+  "simulation": {
+    "modelType": "Numeric model (FP.models.densityRatio)",
+    "equations": [
+      "DR = (530 / (T + 460)) x (Pb / 29.92)",
+      "Pb / 29.92 = (1 - 6.8754e-6 x h)^5.2559",
+      "Density = 0.075 x DR lb/ft^3",
+      "Actual SP = catalog SP x DR",
+      "Catalog SP for selection = required actual SP / DR"
+    ],
+    "rules": [
+      "Ratio correct when |answer - model| <= 0.005; pressure when |answer - model| <= 0.03 in. wg (unrounded model)",
+      "Two attempts per entry; an empty or non-numeric entry does not use an attempt",
+      "Ratios displayed to 3 decimals, pressures to 2, density to 4",
+      "Mastery: 6 of 6 entries correct within two attempts each"
+    ],
+    "assumptions": [
+      "Dry air; altitude sets the barometric pressure through the standard atmosphere"
+    ],
+    "limitations": [
+      "Numeric ratio readouts are hidden until challenge 4 is finished, so the chart is a sanity check and not an answer key"
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Equation and challenge values: Chapter 1 sections 'Air Density', 'Air Temperature' and 'Altitude'",
+      "Catalog pressures in challenges 1 and 2: illustrative values, labeled so in the sim"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Estimate from the curve, calculate, check with rule-specific feedback, then explore the shape of the relationship",
+    "keyQuestions": [
+      "Why must temperature be absolute (T + 460) in the density ratio?",
+      "When do you multiply by the density ratio and when do you divide?",
+      "Does a fan move less CFM in thin air?"
+    ],
+    "commonMisconceptions": [
+      "Hot air or high altitude reduces the CFM a fan moves at a given speed; in fact CFM is unchanged and pressure and power fall.",
+      "The temperature correction can be done in °F directly (70 ÷ 250) instead of absolute degrees.",
+      "To select a fan for thin air you multiply the required pressure by the density ratio, when you must divide."
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Entries correct: n of 6'; mastery is 6 of 6 correct within two attempts each.",
+      "Explore mode is not evidence of mastery"
+    ]
+  },
+  "chapter": "01-air-pressure-and-the-fan"
+}

@@ -1,0 +1,151 @@
+{
+  "title": "Follow the Airflow Through a Centrifugal Fan",
+  "description": "Place eleven part cards along the air path of a belt-driven Arrangement 9 SWSI centrifugal fan: eight into numbered slots 1 to 8 in airflow order and three into 'Not in the air path'. Two submissions; correct cards lock, wrong ones return with feedback, and the air path animates at the end.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "fan housing",
+    "housing scroll",
+    "cutoff",
+    "impeller",
+    "inlet funnel",
+    "inlet flange",
+    "outlet flange",
+    "fan shaft",
+    "bearing",
+    "fan motor"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "The air path through a centrifugal fan",
+    "learningObjectives": [
+      "The learner will list, in airflow order, the eight parts that air passes through in a ducted, belt-driven SWSI centrifugal fan, and set aside the three parts that stay out of the air path."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "list",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "fan housing",
+      "housing scroll",
+      "cutoff",
+      "impeller",
+      "inlet funnel",
+      "inlet flange",
+      "outlet flange",
+      "ductwork",
+      "shaft",
+      "bearing",
+      "motor"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 820,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 820
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); every placement, verdict and summary announced through FP.announce (aria-live); cards, the eight numbered slots and the bin are native buttons reachable with Tab; keys 1-8 place the selected card in a slot, 0 or N in 'Not in the air path', P back to the pile, Escape deselects; ✓/✗ glyphs with solid/dashed borders pair with colour; the selected card has a heavy outline and a ▸ marker."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Card (x11)",
+        "purpose": "Select a part card; select a placed card to read its feedback"
+      },
+      {
+        "type": "button",
+        "label": "Slot 1-8",
+        "purpose": "Place the selected card in that air-path slot (an occupied slot returns its card to the pile)"
+      },
+      {
+        "type": "button",
+        "label": "Not in the air path",
+        "purpose": "Place the selected card in the bin"
+      },
+      {
+        "type": "button",
+        "label": "Back to pile",
+        "purpose": "Return the selected placed card to the pile"
+      },
+      {
+        "type": "button",
+        "label": "Submit",
+        "purpose": "Check all 11 placements (two submissions)"
+      },
+      {
+        "type": "button",
+        "label": "Replay airflow",
+        "purpose": "Animate the air path again after the final submission"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the cards and clear the score"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification (ordered placement against a rule table)",
+    "equations": [],
+    "rules": [
+      "Eleven cards, eight numbered slots, one bin; each slot holds one card, the bin any number.",
+      "A submission is accepted only when all 11 cards are placed.",
+      "Correct cards lock; on submission 1 wrong cards return to the pile with their Why text and the misconception they reflect; after submission 2 every correct position is revealed.",
+      "Mastery: all 11 cards correct within two submissions."
+    ],
+    "assumptions": [
+      "Belt-driven SWSI centrifugal fan, Arrangement 9, ducted on both sides."
+    ],
+    "limitations": [
+      "Schematic side view; the scroll and cutoff are marked on the housing rather than drawn in a drive-side view."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia, page 10 (exploded view, belt-driven centrifugal fan, Arrangement 9)",
+      "FanPedia, page 60 (SWSI housing construction)",
+      "FanPedia, pages 30, 174 and 175 (overhung pedestal layout, bearings out of the airstream, motor slide base)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Workflow placement",
+    "teachingStrategy": "Retrieval practice: order the parts by the path of the air, with distractors that do not touch the air",
+    "keyQuestions": [
+      "Where does the air enter the impeller?",
+      "Which part separates the air that is leaving from the air that is still circling?",
+      "Which parts of an Arrangement 9 fan never touch the air?"
+    ],
+    "commonMisconceptions": [
+      "Air enters the impeller at the blade tips (it enters at the center, through the inlet funnel).",
+      "The cutoff is at the inlet (it is just upstream of the outlet).",
+      "Every part of a fan touches the air (in a belt-driven Arrangement 9 fan the bearings and motor sit outside the airstream)."
+    ],
+    "assessmentOpportunities": [
+      "'Cards correct: n of 11' after each submission; mastery is all 11 cards correct within two submissions."
+    ]
+  },
+  "chapter": "03-basic-fan-anatomy"
+}

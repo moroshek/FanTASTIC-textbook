@@ -1,0 +1,136 @@
+{
+  "title": "Bearing Life in Years by Operating Schedule",
+  "description": "Type the L-10 bearing life in years for three rating-and-schedule challenges before a bar chart reveals it, then choose any of the five L-10 ratings and compare L-10 and L-50 years across five operating schedules.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "bearing",
+    "bearing life",
+    "L-10 life",
+    "L-50 life",
+    "operating schedule"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Converting L-10 and L-50 bearing life from hours to years",
+    "learningObjectives": [
+      "The learner will calculate the L-10 and L-50 bearing life in years from a rated L-10 life in hours and an operating schedule, to within 0.1 year."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "bearing",
+      "L-10 life",
+      "L-50 life",
+      "operating schedule"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Chart.js",
+    "frameworkVersion": "4.4.4",
+    "version": "1.0",
+    "canvasHeight": 838,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 838
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Chart canvas has an aria-label; verdicts and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; progress chips use glyphs; L-10 bars are solid and L-50 bars are light with a heavy outline, and every bar carries its value as text; Enter checks and goes to the next challenge; the rating menu works with the arrow keys."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "input",
+        "label": "L-10 life (years)",
+        "purpose": "Type the L-10 life in years for the current challenge"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Check the answer (Enter); ±0.1 year, two attempts"
+      },
+      {
+        "type": "button",
+        "label": "Next challenge / Start exploring",
+        "purpose": "Advance after a challenge is resolved (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reset the three challenges and the score"
+      },
+      {
+        "type": "select",
+        "label": "L-10 rating",
+        "options": [
+          "20,000 h",
+          "40,000 h",
+          "60,000 h",
+          "80,000 h",
+          "100,000 h"
+        ],
+        "default": "40,000 h"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model (hours to calendar years)",
+    "equations": [
+      "Hours per year = hours per day x days per week x 52",
+      "L-10 years = L-10 hours / hours per year",
+      "L-50 hours = 5 x L-10 hours; L-50 years = L-50 hours / hours per year"
+    ],
+    "rules": [
+      "Answers are judged within ±0.1 year of the unrounded model value.",
+      "Years are displayed to 0.1 year.",
+      "Ratings and schedules are limited to the five listed values each."
+    ],
+    "assumptions": [
+      "52 operating weeks per year, as in Chapter 3 and FanPedia page 90."
+    ],
+    "limitations": [
+      "L-10 and L-50 are statistical lives of a bearing population, not the life of any one bearing."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia, page 90 (L-10 and L-50 definitions, L-50 = 5 x L-10, TCF ratings, example values for 40,000 h and 20,000 h)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Predict then reveal: commit a number, then read it on the chart",
+    "keyQuestions": [
+      "Why does the same bearing last 4.6 years for one customer and 9.6 for another?",
+      "How many times longer is L-50 than L-10?"
+    ],
+    "commonMisconceptions": [
+      "L-10 life is the life of every bearing (it is when 10 percent are expected to have failed).",
+      "L-50 life is twice L-10 (it is five times L-10).",
+      "A bearing rated in hours lasts the same number of years for every customer (years depend on the schedule)."
+    ],
+    "assessmentOpportunities": [
+      "'Challenges correct: n of 3' running score; mastery is 3 of 3 on the first attempt."
+    ]
+  },
+  "chapter": "03-basic-fan-anatomy"
+}

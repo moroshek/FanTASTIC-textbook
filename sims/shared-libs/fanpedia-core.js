@@ -1,5 +1,5 @@
 /* fanpedia-core.js — FanPedia MicroSim kit, core (library-agnostic).
- * Version 1.1.0 (2026-10-08). Namespace: window.FP. No modules, no build step.
+ * Version 1.2.0 (2026-10-09). Namespace: window.FP. No modules, no build step.
  *
  * Provides: FP.tok, FP.fmt, FP.check, FP.msg, FP.Score, FP.rng, FP.announce,
  * FP.events, FP.embedded, FP.ui (small DOM helpers), FP.svg (✓/✗ paths), FP.ChallengeRunner,
@@ -14,7 +14,7 @@
 (function (root) {
   'use strict';
   var FP = root.FP = root.FP || {};
-  FP.version = '1.1.0';
+  FP.version = '1.2.0';
 
   var hasDoc = typeof document !== 'undefined' && !!document.documentElement;
 
@@ -170,6 +170,13 @@
     practice: function (text) { return 'Practice (not scored): ' + text; },
     /** "<Noun> correct: n of N" */
     score: function (noun, n, total) { return (noun || 'Items') + ' correct: ' + n + ' of ' + total; },
+    /** 1.2: "Correct: n of N" (no noun) */
+    scoreBare: function (n, total) { return 'Correct: ' + n + ' of ' + total; },
+    /** 1.2: "<Noun> correct on the first attempt: n of N"; noun null/'' ->
+     *  "Correct on the first attempt: n of N" */
+    scoreFirst: function (noun, n, total) {
+      return (noun ? noun + ' correct' : 'Correct') + ' on the first attempt: ' + n + ' of ' + total;
+    },
     /** "Attempt 1 of 2" */
     attempt: function (i, n) { return 'Attempt ' + i + ' of ' + n; },
     /** "First-attempt score: n of N" */
@@ -197,17 +204,22 @@
   };
 
   // ---------------------------------------------------------------- score
-  /** new FP.Score({total | items, mastery, noun, masteryOn}). Tracks
-   *  resolved-correct (any attempt) for the running line and first-attempt
-   *  correct for the summary and mastery. mastery defaults to total.
-   *  masteryOn: 'first' (default, first-attempt correct counts) or 'any'
-   *  (correct on any attempt counts). */
+  /** new FP.Score({total | items, mastery, noun, masteryOn, scoreLabel, bareLabel}).
+   *  Tracks resolved-correct (any attempt) for the running line and
+   *  first-attempt correct for the summary and mastery. mastery defaults to
+   *  total. masteryOn: 'first' (default, first-attempt correct counts) or
+   *  'any' (correct on any attempt counts).
+   *  1.2 label options (running line only): scoreLabel 'correct' (default) or
+   *  'first' (count first-attempt correct: "<Noun> correct on the first
+   *  attempt: n of N"); bareLabel: true drops the noun ("Correct: n of N"). */
   function Score(opts) {
     opts = opts || {};
     this.total = opts.items ? opts.items.length : (opts.total || 0);
     this.mastery = opts.mastery == null ? this.total : opts.mastery;
     this.noun = opts.noun || 'Items';
     this.masteryOn = opts.masteryOn === 'any' ? 'any' : 'first';
+    this.scoreLabel = opts.scoreLabel === 'first' ? 'first' : 'correct';
+    this.bareLabel = !!opts.bareLabel;
     this.reset();
   }
   Score.prototype.reset = function () {
@@ -238,14 +250,22 @@
     return this.masteryOn === 'any' ? this.correct() : this.firstAttempt();
   };
   Score.prototype.mastered = function () { return this.masteryCount() >= this.mastery; };
-  /** "<Noun> correct: n of N" */
-  Score.prototype.label = function () { return FP.msg.score(this.noun, this.correct(), this.total); };
+  /** The running line: "<Noun> correct: n of N" by default; see the
+   *  scoreLabel / bareLabel options. */
+  Score.prototype.label = function () {
+    if (this.scoreLabel === 'first') return FP.msg.scoreFirst(this.bareLabel ? '' : this.noun, this.firstAttempt(), this.total);
+    return this.correctLabel();
+  };
+  /** "<Noun> correct: n of N" (or "Correct: n of N" with bareLabel), whatever scoreLabel says. */
+  Score.prototype.correctLabel = function () {
+    return this.bareLabel ? FP.msg.scoreBare(this.correct(), this.total) : FP.msg.score(this.noun, this.correct(), this.total);
+  };
   /** [first-attempt line, mastery line]; with masteryOn 'any' the first line
    *  is the score line ("<Noun> correct: n of N"). */
   Score.prototype.summaryLines = function (pointer) {
     var any = this.masteryOn === 'any';
     return [
-      any ? this.label() : FP.msg.firstAttempt(this.firstAttempt(), this.total),
+      any ? this.correctLabel() : FP.msg.firstAttempt(this.firstAttempt(), this.total),
       this.mastered() ? FP.msg.masteryReached(this.mastery, this.total)
         : FP.msg.masteryNeeds(this.mastery, this.total, pointer, any ? 'any' : undefined)
     ];
@@ -454,7 +474,8 @@
   // ---------------------------------------------------------------- ChallengeRunner
   /** Pattern A/E state machine (no UI).
    *  new FP.ChallengeRunner({items, attempts: 2, tolerance: {rel: 0.02}, noun,
-   *    mastery, masteryOn: 'first', messages, explore: true, check, id,
+   *    mastery, masteryOn: 'first', scoreLabel: 'correct', bareLabel: false,
+   *    messages, explore: true, check, id,
    *    onChange, onUnlockExplore, onComplete})
    *  item: {id, prompt, model (number) | answer (any), tolerance, unit, decimals,
    *         answerText, why, hint (string | fn(value, item))}. */
@@ -464,7 +485,7 @@
     this.attempts = this.opts.attempts || 2;
     this.tolerance = this.opts.tolerance || { rel: 0.02 };
     this.score = new Score({ total: this.items.length, mastery: this.opts.mastery, masteryOn: this.opts.masteryOn,
-      noun: this.opts.noun || 'Challenges' });
+      noun: this.opts.noun || 'Challenges', scoreLabel: this.opts.scoreLabel, bareLabel: this.opts.bareLabel });
     this.restart(true);
   }
   ChallengeRunner.prototype.restart = function (silent) {
@@ -580,6 +601,7 @@
       attemptLabel: FP.msg.attempt(Math.min(this.used + 1, this.attempts), this.attempts),
       isLast: this.index === this.items.length - 1,
       results: this.results.slice(), scoreLabel: this.score.label(), last: this.last,
+      correct: this.score.correct(), firstAttempt: this.score.firstAttempt(),
       exploreLabel: this.explore ? FP.msg.EXPLORE : FP.msg.exploreLocked(lastLabel)
     };
   };
@@ -588,7 +610,8 @@
   // ---------------------------------------------------------------- CardDeck
   /** Pattern B/C/D/F/G state machine (no UI).
    *  new FP.CardDeck({cards, shuffle: true, seed, attempts: 1, retryMissed: true,
-   *    noun: 'Cards', mastery, masteryOn: 'first', messages, practiceTry: false,
+   *    noun: 'Cards', mastery, masteryOn: 'first', scoreLabel: 'correct',
+   *    bareLabel: false, messages, practiceTry: false,
    *    check, label, id, onChange, onComplete})
    *  practiceTry: true allows one unscored try after a card locks as missed;
    *  'always' also after a correct lock; a number sets the tries per card.
@@ -599,7 +622,7 @@
     this.attempts = this.opts.attempts || 1;
     this.rng = this.opts.seed != null ? FP.rng.seeded(this.opts.seed) : Math.random;
     this.score = new Score({ total: this.cards.length, mastery: this.opts.mastery, masteryOn: this.opts.masteryOn,
-      noun: this.opts.noun || 'Cards' });
+      noun: this.opts.noun || 'Cards', scoreLabel: this.opts.scoreLabel, bareLabel: this.opts.bareLabel });
     this.round = 0;
     this._start(this.cards.slice(), false);
     this.round = 1;
@@ -607,16 +630,23 @@
   CardDeck.prototype._order = function (list) {
     return (this.opts.shuffle === false && this.opts.seed == null) ? list : FP.rng.shuffle(list, this.rng);
   };
-  CardDeck.prototype._start = function (list, practice) {
+  // Public read-only fields (kept for the sims that read them): order (cards
+  // of the current round, in play order), placements (locked placements of
+  // the current round). Prefer getOrder() / getPlacements() / placement(id).
+  CardDeck.prototype._start = function (list, practice, kind) {
     this.order = this._order(list);
-    this.practice = practice;          // a retry-missed round: not scored
+    this.practice = practice;          // a retry-missed or practice round: not scored
+    this.practiceKind = practice ? (kind || 'missed') : null;   // 'missed' | 'all'
     this.index = 0;
     this.used = 0;
     this.practiceUsed = 0;             // unscored practice tries on the locked card
     this.phase = this.order.length ? 'choose' : 'summary';   // choose | feedback | summary
     this.placements = [];              // {card, chosen, correct, attempts}
     this.last = null;
-    if (!practice) this.score.reset();
+    if (!practice) {
+      this.score.reset();
+      this.scoredPlacements = this.placements;   // kept through later practice rounds
+    }
   };
   CardDeck.prototype.card = function () { return this.order[this.index]; };
   CardDeck.prototype.answerText = function (card) {
@@ -717,12 +747,36 @@
     call(this.opts.onChange, this.state());
     return true;
   };
-  /** Missed placements of the current round: [{card, chosen, answer, why}]. */
-  CardDeck.prototype.misses = function () {
+  CardDeck.prototype._missList = function (placements) {
     var self = this;
-    return this.placements.filter(function (p) { return !p.correct; }).map(function (p) {
+    return (placements || []).filter(function (p) { return !p.correct; }).map(function (p) {
       return { card: p.card, chosen: p.chosen, answer: self.answerText(p.card), why: p.card.why };
     });
+  };
+  /** Missed placements of the last SCORED round: [{card, chosen, answer, why}].
+   *  1.2: unchanged by a Retry-missed or practice round (before 1.2 it
+   *  returned the practice round's misses after retryMissed()). */
+  CardDeck.prototype.misses = function () { return this._missList(this.scoredPlacements); };
+  /** 1.2: misses of the current practice round ([] in a scored round). */
+  CardDeck.prototype.practiceMisses = function () { return this.practice ? this._missList(this.placements) : []; };
+  /** 1.2: misses of the current round, scored or practice (what retryMissed() replays). */
+  CardDeck.prototype.roundMisses = function () { return this._missList(this.placements); };
+  /** 1.2: the cards of the current round in play order (a copy). */
+  CardDeck.prototype.getOrder = function () { return this.order.slice(); };
+  /** 1.2: locked placements [{card, chosen, correct, attempts, practiceTries?}]
+   *  of the current round (a copy); {scored: true} gives the last scored round's. */
+  CardDeck.prototype.getPlacements = function (o) {
+    return ((o && o.scored) ? this.scoredPlacements : this.placements).slice();
+  };
+  /** 1.2: the current round's placement of a card (by id or card object), or null.
+   *  {scored: true} looks in the last scored round instead. */
+  CardDeck.prototype.placement = function (idOrCard, o) {
+    var list = (o && o.scored) ? this.scoredPlacements : this.placements;
+    for (var i = list.length - 1; i >= 0; i--) {
+      var c = list[i].card;
+      if (c === idOrCard || (c.id != null && c.id === idOrCard)) return list[i];
+    }
+    return null;
   };
   CardDeck.prototype.summary = function (pointer) {
     return {
@@ -733,23 +787,40 @@
       masteryOn: this.score.masteryOn,
       mastered: this.score.mastered(),
       practice: this.practice,
+      practiceKind: this.practiceKind,
       lines: this.score.summaryLines(pointer != null ? pointer : this.opts.reviewPointer),
-      misses: this.misses(),
-      canRetryMissed: this.opts.retryMissed !== false && this.misses().length > 0
+      misses: this.misses(),                 // the last scored round's (1.2)
+      practiceMisses: this.practiceMisses(), // 1.2: the current practice round's
+      canRetryMissed: this.opts.retryMissed !== false && this.roundMisses().length > 0
     };
   };
-  /** Practice round over the cards missed this round; the score is kept. */
+  /** Practice round over the cards missed this round (the scored round, or
+   *  the practice round just finished); the score is kept. */
   CardDeck.prototype.retryMissed = function () {
     if (this.phase !== 'summary' || this.opts.retryMissed === false) return false;
-    var missed = this.misses().map(function (m) { return m.card; });
+    var missed = this.roundMisses().map(function (m) { return m.card; });
     if (!missed.length) return false;
-    this._start(missed, true);
+    this._start(missed, true, 'missed');
     call(this.opts.onChange, this.state());
     return true;
   };
+  /** 1.2: an unscored round over every card (reshuffled like newRound), from
+   *  any phase. Messages get the "Practice (not scored): " prefix, answered
+   *  events carry scored: false, and the score and misses() are kept. */
+  CardDeck.prototype.practiceRound = function (seed) {
+    if (seed != null) this.rng = FP.rng.seeded(seed);
+    this._start(this.cards.slice(), true, 'all');
+    call(this.opts.onChange, this.state());
+    return this;
+  };
   /** Start over with every card, reshuffled. newRound(seed) reseeds the order;
-   *  without a seed a seeded deck continues its own deterministic stream. */
+   *  without a seed a seeded deck continues its own deterministic stream.
+   *  1.2: newRound({seed, scored: false}) starts a practiceRound instead. */
   CardDeck.prototype.newRound = function (seed) {
+    if (seed !== null && typeof seed === 'object') {
+      if (seed.scored === false) return this.practiceRound(seed.seed);
+      seed = seed.seed;
+    }
     if (seed != null) this.rng = FP.rng.seeded(seed);
     this.round++;
     this._start(this.cards.slice(), false);
@@ -758,12 +829,13 @@
   };
   CardDeck.prototype.state = function () {
     return {
-      phase: this.phase, practice: this.practice, round: this.round, index: this.index,
+      phase: this.phase, practice: this.practice, practiceKind: this.practiceKind, round: this.round, index: this.index,
       count: this.order.length, card: this.card(),
       attempt: Math.min(this.used + 1, this.attempts), attempts: this.attempts,
       attemptLabel: FP.msg.attempt(Math.min(this.used + 1, this.attempts), this.attempts),
       isLast: this.index === this.order.length - 1, last: this.last,
       scoreLabel: this.score.label(), canPractice: this.canPractice(),
+      correct: this.score.correct(), firstAttempt: this.score.firstAttempt(),
       results: this.order.map(function (c, i) {
         var p = this.placements[i];
         return p ? (p.correct ? 'correct' : 'missed') : null;

@@ -1,0 +1,95 @@
+{
+  "title": "Inlet Box Position Trainer",
+  "description": "Eight installations, drawn from the drive side, from the inlet side or described in text, ask for the inlet box position; resolved items show the drive-side dial, inlet-side pictures flip to the drive side, and free practice moves the box and switches viewpoints.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "inlet box",
+    "inlet box position",
+    "drive side",
+    "inlet side"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Inlet box positions read from the drive side",
+    "learningObjectives": [
+      "The learner will apply the drive-side viewing convention to assign the correct inlet box position (45, 90, 135, 180, 225, 270, 315 or 360) to eight described or pictured installations, including views drawn from the inlet side."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10 minutes",
+    "prerequisites": ["inlet box", "inlet box position", "drive side", "inlet side"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 645,
+    "canvasDimensions": { "width": "responsive", "height": 645 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-codes.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); each item, selection, verdict, the summary and every free-practice position announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; position buttons and the view toggle are aria-pressed toggles; keys 1-8 choose, Enter checks and goes on, arrow keys turn and V switches the view in free practice; the flip animation is skipped when prefers-reduced-motion is set."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "45 ... 360", "purpose": "Choose a position (keys 1-8)" },
+      { "type": "button", "label": "Check", "purpose": "Check the position (Enter); two attempts" },
+      { "type": "button", "label": "Next installation / See score", "purpose": "Go on after an item is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all eight items and the score" },
+      { "type": "button", "label": "Turn (left / right)", "purpose": "Free practice: move the box 45 degrees (arrow keys); the box can also be dragged" },
+      { "type": "button", "label": "View: drive side / inlet side", "purpose": "Free practice: switch the viewpoint (V)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": ["Drive-side position = 360 - p for an inlet-side reading p (0 written 360)"],
+    "rules": [
+      "Positions are 45, 90, 135, 180, 225, 270, 315 and 360 only",
+      "Drive-side view: the position is the dial angle of the opening, clockwise from the top, with the top written 360",
+      "A text-only item is judged by where the opening must be for the stated air path"
+    ],
+    "assumptions": ["Installations are illustrative; the housing outlet is drawn clear of the box and its rotation is not shown, because position does not depend on rotation"],
+    "limitations": ["End views are schematic"]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Source: FanPedia p. 144 (Inlet Box Position Descriptions; Inlet Box Positions Determined from Drive Side), retrieved 2026-10-08",
+      "Installations 1-8 are illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Designation decoder",
+    "teachingStrategy": "Apply one rule to new cases, mixing drive-side and inlet-side views so the mirror step must be applied",
+    "keyQuestions": [
+      "Which side is this picture drawn from?",
+      "Why do 180 and 360 read the same from both sides?"
+    ],
+    "commonMisconceptions": [
+      "The position can be read from whichever side the viewer stands on",
+      "45 and 315 (and 135 and 225) are interchangeable",
+      "Position 180 means the box faces up because air moves upward"
+    ],
+    "assessmentOpportunities": [
+      "Running score 'Positions correct: n of 8' counts first-attempt answers; mastery is 7 of 8."
+    ]
+  },
+  "chapter": "18-inlets-outlets-and-flow-control"
+}

@@ -1,0 +1,98 @@
+{
+  "title": "Damper Throttling Operating Point Explorer",
+  "description": "Predict-then-reveal Plotly chart: the learner closes an outlet damper in five fixed steps and, before each new system curve appears, predicts whether airflow and static pressure rise, fall or stay the same; the sim then draws the new system curve and operating point beside the previous one, gives reason-based feedback, and ends with a score, a mastery line and an unscored explore mode.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["damper throttling", "outlet damper", "system curve", "fan curve", "operating point", "resistance multiplier"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Damper throttling and the operating point",
+    "learningObjectives": [
+      "The learner will interpret how closing an outlet damper moves a fan's operating point along its fan curve, predicting the direction of change in airflow and static pressure before each new damper setting is revealed."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "interpret",
+    "duration": "10-15 minutes",
+    "prerequisites": ["fan curve", "system curve", "operating point", "damper throttling", "resistance multiplier m"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Plotly",
+    "frameworkVersion": "2.35.0",
+    "version": "1.0",
+    "canvasHeight": 906,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 906
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.plot.ly/plotly-2.35.0.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-curves.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Chart region has an aria-label and every revealed operating point is also listed in an HTML table; predictions are aria-pressed toggle buttons in labelled fieldsets; verdicts and the summary are announced through FP.announce (aria-live); feedback uses ✓/✗ glyphs with solid/dashed borders; curves differ by colour and dash pattern; the operating point is a diamond and the previous one an open circle. Keys 1-3 choose airflow higher/lower/same, 4-6 static pressure higher/lower/same, Enter closes the damper one step or checks."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Close damper one step", "purpose": "Move to the next damper setting; in the challenge, opens the prediction for that step (Enter)" },
+      { "type": "button", "label": "Higher / Lower / Same (airflow)", "purpose": "Predict the direction of the airflow change (keys 1-3)" },
+      { "type": "button", "label": "Higher / Lower / Same (static pressure)", "purpose": "Predict the direction of the static pressure change (keys 4-6)" },
+      { "type": "button", "label": "Check", "purpose": "Lock the prediction pair and reveal the new system curve and operating point (Enter)" },
+      { "type": "button", "label": "Reset", "purpose": "After Step 5: return to wide open and step freely without predictions" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the score and restart the five-step challenge" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "Fan curve: P_fan(Q) = 6.0 − (Q / 10,000)² in. wg",
+      "System curve: P_sys(Q) = 5.0 × m × (Q / 10,000)² in. wg",
+      "Operating point: Q = 10,000 × √(6.0 / (1 + 5.0m)); P = 6.0 − 6.0 / (1 + 5.0m)"
+    ],
+    "rules": [
+      "m takes 1.0, 1.5, 2.0, 3.0, 4.0, 6.0 in that order and never decreases during the challenge",
+      "Airflow rounded to the nearest 1 CFM and pressure to 0.01 in. wg, halves rounded up",
+      "A prediction pair is correct only when airflow is lower and static pressure is higher",
+      "Five steps, fixed order, one scored attempt each; mastery is 5 of 5"
+    ],
+    "assumptions": ["Fixed fan speed; system curve passes through zero flow at zero pressure"],
+    "limitations": ["Illustrative curves, not a catalog fan; real fan curves are read from the catalog"]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "All curves and values are illustrative, computed from the chapter 19 spec Rules",
+      "Qualitative behaviour (operating point moves to the left of the rating point; horsepower savings usually much less than other methods): FanPedia: The Fan & Blower Encyclopedia, pp. 182-183"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Committed prediction before each reveal, with consecutive operating points kept visible for comparison",
+    "keyQuestions": [
+      "If you close the damper one step, where will the fan operate?",
+      "Why does static pressure rise when the damper closes?",
+      "Why does airflow fall by much less than the resistance multiplier rises?"
+    ],
+    "commonMisconceptions": [
+      "Closing a damper lowers the pressure the fan produces.",
+      "Closing a damper changes the fan curve.",
+      "Airflow falls in proportion to how far the damper is closed."
+    ],
+    "assessmentOpportunities": [
+      "Running score 'Predictions correct: n of 5'; mastery is 5 of 5 steps with both directions correct (one attempt per step). Viewing the chart after the reveal is exploration, not evidence."
+    ]
+  },
+  "chapter": "19-damper-details-and-duct-connections"
+}

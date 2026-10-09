@@ -1,0 +1,115 @@
+{
+  "title": "Fan Power and Efficiency Calculator",
+  "description": "Three challenges that ask for brake horsepower or static efficiency from airflow, fan static pressure and one other quantity, followed by free exploration of airflow, pressure and efficiency with live air power and BHP readouts and power bars.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "brake horsepower",
+    "fan efficiency",
+    "air power",
+    "fan static pressure",
+    "fan performance"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Brake horsepower and static efficiency",
+    "learningObjectives": [
+      "The learner will calculate a fan's brake horsepower or static efficiency from its airflow volume, fan static pressure and one of the other two quantities, to within 2% of the model value."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "airflow volume",
+      "fan static pressure",
+      "air power",
+      "brake horsepower",
+      "static efficiency"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 640
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new challenge and the end-of-challenge summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the losses part of the BHP bar is hatched as well as coloured; Enter checks and goes to the next challenge; every button, the answer box and the sliders are reachable with Tab."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Your answer", "purpose": "Type the BHP (challenges 1-2) or static efficiency in percent (challenge 3)" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter); 2% tolerance, two attempts" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the three challenges and the score" },
+      { "type": "slider", "label": "Airflow volume Q", "range": "1,000-50,000 CFM", "step": 500, "default": 10000 },
+      { "type": "slider", "label": "Fan static pressure", "range": "0.5-15.0 in. wg", "step": 0.1, "default": 4.0 },
+      { "type": "slider", "label": "Static efficiency", "range": "40-90%", "step": 1, "default": 70 }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "Air power (hp) = Q x FSP / 6356",
+      "BHP = air power / (static efficiency / 100)",
+      "Static efficiency (%) = 100 x air power / BHP"
+    ],
+    "rules": [
+      "Model answers rounded to two decimals for hp and one decimal for percent",
+      "Correct when |answer - model| / model <= 0.02; two attempts per challenge",
+      "A blank or non-numeric answer is not graded; the learner is asked to enter a number",
+      "An answer about 100 times too small adds a reminder to enter efficiency as a decimal (challenges 1-2) or in percent (challenge 3)"
+    ],
+    "assumptions": [
+      "US fan units: CFM, in. wg, horsepower",
+      "BHP is shaft power before belt, sheave and motor losses"
+    ],
+    "limitations": [
+      "Challenge duties are illustrative, not catalog ratings"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Equations and the constant 6,356: standard US-unit fan engineering (Chapter 10, 'Brake Horsepower and Fan Efficiency')",
+      "Challenge duties: illustrative; challenge 1 matches the chapter's worked example"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Practice with check (commit a number before the model value is revealed), then guided exploration",
+    "keyQuestions": [
+      "Why is BHP always larger than air power?",
+      "How much more power does the same duty need at 50% static efficiency than at 70%?"
+    ],
+    "commonMisconceptions": [
+      "BHP equals air power",
+      "Efficiency entered as a whole number (70 instead of 0.70)",
+      "A less efficient fan needs less power because it does less work"
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Challenges correct: n of 3'; mastery is 3 of 3 within 2% of the model value on the first attempt."
+    ]
+  },
+  "chapter": "10-fan-performance-curves-and-ratings"
+}

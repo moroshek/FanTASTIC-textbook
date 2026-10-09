@@ -1,0 +1,90 @@
+{
+  "title": "Isolator Transmissibility Explorer",
+  "description": "Three calculation challenges (two attempts, ±5%): the learner types the transmissibility of an undamped isolator for a stated fan speed and static deflection, then sees the operating point and their answer on the T versus frequency-ratio curve; afterwards Explore mode varies speed and deflection with live readouts of f, fn, r, T and percent isolation.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["vibration isolation", "forcing frequency", "natural frequency", "frequency ratio", "transmissibility", "percent isolation", "static deflection", "resonance"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Isolator transmissibility and percent isolation",
+    "learningObjectives": [
+      "The learner will calculate the transmissibility of an undamped isolator from the fan speed and the isolator's static deflection, to within 5% of the model value."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": ["forcing frequency", "natural frequency", "frequency ratio", "transmissibility", "percent isolation", "static deflection", "resonance"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Plotly",
+    "frameworkVersion": "2.35.0",
+    "version": "1.0",
+    "canvasHeight": 870,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 870
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.plot.ly/plotly-2.35.0.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Plot container has role=img and an aria-label; every plotted value is also in a polite live text readout with a ▲/▼ region label; the model point (square) and the learner's answer (open diamond) differ in shape and are labelled; verdicts announced through FP.announce; Enter checks and moves on; native range and select controls in Explore mode."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "text", "label": "Transmissibility T", "purpose": "Type the calculated T (Enter checks)" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer against the model (±5%)" },
+      { "type": "button", "label": "Next challenge / Finish", "purpose": "Move on after a challenge ends" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the challenges, the score and Explore mode" },
+      { "type": "slider", "label": "Fan speed", "purpose": "300-3,600 RPM in 30 RPM steps (Explore mode)" },
+      { "type": "select", "label": "Deflection", "purpose": "0.0625, 0.2, 0.3, 0.5, 1.0 or 2.0 in (Explore mode)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": ["f = N / 60", "f_n = 3.13 / sqrt(delta)", "r = f / f_n", "T = 1 / |r^2 - 1|", "percent isolation = (1 - T) x 100"],
+    "rules": [
+      "Answers within ±5% of the unrounded model T are correct; two attempts per challenge.",
+      "When T > 1 the readout shows 'amplified ×T' instead of a negative percentage.",
+      "When |r - 1| < 0.05 the readout shows 'at or near resonance' and the plotted T is capped at 10.",
+      "Display values are rounded to 3 significant figures.",
+      "Mastery is 3 of 3 on the first attempt."
+    ],
+    "assumptions": ["Undamped single-degree-of-freedom isolator on a rigid floor; fan speeds are illustrative."],
+    "limitations": ["Real isolators have damping, which limits T at resonance; a flexible roof or mezzanine is not rigid."]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": ["FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), p. 134 (isolator deflections), https://tcf.com/fanpedia/", "Standard undamped single-degree-of-freedom model; fan speeds illustrative."]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Commit a calculated value before the curve is revealed, then explore the parameter space",
+    "keyQuestions": [
+      "What fraction of the fan's force gets through a 1 in spring at 1170 RPM?",
+      "Why does the same pad isolate a fast fan and amplify a slow one?",
+      "What happens to the natural frequency when the deflection doubles?"
+    ],
+    "commonMisconceptions": [
+      "Any isolator reduces transmitted force.",
+      "An isolator that works on one fan works on any fan.",
+      "Doubling deflection halves the natural frequency."
+    ],
+    "assessmentOpportunities": ["First-attempt score shown as 'First-attempt score: n of 3'; mastery is 3 of 3 on the first attempt."]
+  },
+  "chapter": "22-fan-bases-and-vibration-isolation"
+}

@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: callout-quiz.js  (FP.CalloutQuiz)  version 2
+/* FanPedia MicroSim kit: callout-quiz.js  (FP.CalloutQuiz)  version 3
  *
  * Explore-then-quiz engine for labeled diagrams (review pattern D), extracted from
  * ch03-exploded-centrifugal-fan (build/choose/answer/showSummary).
@@ -23,7 +23,7 @@
 (function (G) {
   'use strict';
   var FP = G.FP = G.FP || {};
-  var VERSION = 2;
+  var VERSION = 3;
   if (FP.CalloutQuiz && FP.CalloutQuiz.version >= VERSION) {
     if (typeof module !== 'undefined' && module.exports) module.exports = FP.CalloutQuiz;
     return;
@@ -65,7 +65,12 @@
     visited: function (n, N) { return 'Visited ' + n + ' of ' + N; },
     progress: function (k, N) { return 'Prompt ' + k + ' of ' + N; },
     answered: function (k, N) { return 'Answered ' + k + ' of ' + N; },
-    score: function (noun, n, N) { return noun + ' correct: ' + n + ' of ' + N; },
+    // score(noun, n, N, counts): n follows opts.scoreLabel; counts = {correct,
+    // firstAttempt, total} (v3) so an override can show either count. noun is
+    // '' with opts.bareLabel.
+    score: function (noun, n, N) { return (noun ? noun + ' correct' : 'Correct') + ': ' + n + ' of ' + N; },
+    // v3, opts.scoreLabel 'first' with the default score message.
+    scoreFirst: function (noun, n, N) { return (noun ? noun + ' correct' : 'Correct') + ' on the first attempt: ' + n + ' of ' + N; },
     attempt: function (a, A) { return 'Attempt ' + a + ' of ' + A; },
     correct: function (c) { return '✓ Correct: ' + c.answerLabel + '.' + sentence(c.why); },
     retry: function (c) {
@@ -512,6 +517,22 @@
     return e;
   }
 
+  // The running score line (pure; used by mount). Default: "<Noun> correct: n of N",
+  // correct on any attempt. o = {msg, noun='Parts', scoreLabel: 'correct' | 'first',
+  // bareLabel}. 'first' counts first-attempt correct; bareLabel drops the noun.
+  // msg.score receives (noun, n, N, {correct, firstAttempt, total}).
+  function scoreLine(state, o) {
+    o = o || {};
+    var msg = o.msg || MSG;
+    var N = state.prompts.length;
+    var counts = { correct: state.correctCount(), firstAttempt: state.score(), total: N };
+    var first = o.scoreLabel === 'first';
+    var nn = o.bareLabel ? '' : (o.noun || 'Parts');
+    var n = first ? counts.firstAttempt : counts.correct;
+    if (first && msg.score === MSG.score) return (msg.scoreFirst || MSG.scoreFirst)(nn, n, N, counts);
+    return msg.score(nn, n, N, counts);
+  }
+
   function mount(opts) {
     var doc = opts.document || G.document;
     var root = typeof opts.root === 'string' ? doc.querySelector(opts.root) : opts.root;
@@ -806,13 +827,14 @@
       ui.btnExplore.disabled = !state.exploreAvailable();
       var N = state.prompts.length;
       if (m === 'explore') ui.status.textContent = msg.visited(state.visitedCount(), state.parts.length);
-      else if (m === 'summary') ui.status.textContent = msg.score(noun, state.correctCount(), N);
+      else if (m === 'summary') ui.status.textContent = scoreText();
       else if (m === 'practice') ui.status.textContent = msg.practicePrefix + msg.progress(state.pos + 1, state.practiceQueue.length);
       else {
         var prog = state.order === 'free' ? msg.answered(state.answeredCount(), N) : msg.progress(state.pos + 1, N);
-        ui.status.textContent = prog + ' · ' + msg.score(noun, state.correctCount(), N);
+        ui.status.textContent = prog + ' · ' + scoreText();
       }
     }
+    function scoreText() { return scoreLine(state, { msg: msg, noun: noun, scoreLabel: opts.scoreLabel, bareLabel: opts.bareLabel }); }
 
     function renderPrompt() {
       var p = ui.prompt;
@@ -931,6 +953,7 @@
 
   var CalloutQuiz = {
     version: VERSION,
+    scoreLine: scoreLine,
     State: State,
     mount: mount,
     messages: MSG,

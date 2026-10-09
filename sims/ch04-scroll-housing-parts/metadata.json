@@ -1,0 +1,112 @@
+{
+  "title": "Parts of a Centrifugal Scroll Housing",
+  "description": "Drawing of a single width, single inlet housed centrifugal fan seen from the inlet side, with a cut-away side sheet and an inset section through the inlet. Explore mode outlines ten parts, shows each name on hover and opens an infobox on click; quiz mode hides the labels, names the ten parts in a shuffled order and asks the learner to click each one, with two attempts per part and mastery at 9 of 10 on the first attempt. Based on FanPedia pp. 59-60, not to scale.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "scroll housing",
+    "housing scroll",
+    "housing side",
+    "cutoff",
+    "wiper bar",
+    "inlet funnel",
+    "inlet collar",
+    "inlet flange",
+    "outlet flange",
+    "framing",
+    "pedestal"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of a single width, single inlet (SWSI) centrifugal scroll housing",
+    "learningObjectives": [
+      "The learner will identify the ten named parts of a single width, single inlet centrifugal scroll housing on a drawing of the fan."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "scroll housing", "housing scroll", "housing side", "cutoff", "wiper bar", "inlet funnel",
+      "inlet collar", "inlet flange", "outlet (discharge) flange", "framing", "pedestal"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 775,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 775
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Every part is a focusable role=button; Tab walks the parts in callout order, Enter or Space selects one, and after an answer focus moves to Next part, so Enter goes on. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an \"Answer\" badge pair with colour; parts answered correctly keep a solid outline and their label. During the quiz part names are hidden from screen readers too until revealed. When the drawing is narrower than about 640 px the callouts switch to numbers with a key list, so callout text stays at 12 px or more."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Explore", "purpose": "Explore mode: hover for a part's name, click to open its infobox (never scored)" },
+      { "type": "button", "label": "Quiz", "purpose": "Start the 10-part locate quiz with labels hidden" },
+      { "type": "button", "label": "Next part / See summary", "purpose": "Go to the next part after an answer (Enter)" },
+      { "type": "button", "label": "Retake quiz", "purpose": "Reshuffle the parts and reset the score (summary)" },
+      { "type": "button", "label": "Back to explore", "purpose": "Return to explore mode from the summary" }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with locate quiz",
+    "equations": [],
+    "rules": [
+      "Explore mode: hovering a part highlights it and shows its name; clicking opens its infobox; never scored.",
+      "Quiz mode: the 10 parts are named once each in a shuffled order with the prompt 'Click the <part name>.'",
+      "Two attempts per part; a click is correct when it lands on the named part; clicking empty space uses no attempt.",
+      "A part answered correctly keeps its label and a solid outline for the rest of the quiz.",
+      "After a second wrong attempt the correct part is highlighted with its infobox text and counts as missed.",
+      "Only first-attempt answers count; mastery is 9 of 10; Retake quiz reshuffles and resets the score."
+    ],
+    "assumptions": [
+      "Cabinet-oblique view from the inlet side with part of the inlet-side sheet cut away; the inlet funnel, collar and flange are picked in an inset section through the inlet."
+    ],
+    "limitations": [
+      "Simplified illustration, not to scale and not a specific Twin City Fan model."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 60 (SWSI centrifugal housing construction drawing): part names and positions",
+      "FanPedia p. 59 (housing features): wiper bar description",
+      "Chapter 4, section 'Scroll Housings': cutoff and velocity-to-static-pressure explanation (standard fan engineering)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Explore labeled hotspots first, then retrieval practice: locate each named part on the unlabeled drawing, with a second attempt and immediate correction.",
+    "keyQuestions": [
+      "Where does the scroll pass closest to the impeller, and what does that point do?",
+      "Which inlet part connects to the duct, and which one guides air into the impeller eye?"
+    ],
+    "commonMisconceptions": [
+      "The scroll housing is only a protective cover.",
+      "The cutoff and the outlet flange are the same thing.",
+      "The inlet collar and the inlet funnel are the same part."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt correct: n of 10'; mastery is 9 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "04-centrifugal-axial-and-mixed-flow-fans"
+}

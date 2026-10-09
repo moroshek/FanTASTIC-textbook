@@ -1,0 +1,99 @@
+{
+  "title": "Lab Exhaust Flow Calculator",
+  "description": "Three lab exhaust challenges: from given contaminated, bypass and entrained flows, type the fan flow, total flow and contaminated share, then see every stream on a stack diagram. Explore mode adds sliders for the three given flows.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["contaminated air", "bypass flow", "bypass air plenum", "entrained flow", "fan flow", "lab exhaust total flow", "plume dilution"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Lab exhaust fan flow, total flow and plume dilution",
+    "learningObjectives": [
+      "The learner will calculate the fan flow, the lab exhaust total flow and the contaminated share of the plume from given contaminated, bypass and entrained flows, matching the model values exactly on at least 3 of 3 challenges."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": ["contaminated air", "bypass flow", "bypass air plenum", "entrained flow", "fan flow", "lab exhaust total flow", "plume dilution"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
+    "canvasDimensions": { "width": "responsive", "height": 640 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); per-value verdicts, feedback, each new challenge and the Explore summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; streams are labelled by name and value, and fresh-air streams are dashed; Enter checks and goes on; answer boxes, buttons and sliders are reachable with Tab."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Fan flow (CFM)", "purpose": "Contaminated + bypass" },
+      { "type": "input", "label": "Total flow (CFM)", "purpose": "Fan flow + entrained" },
+      { "type": "input", "label": "Share (%)", "purpose": "Contaminated share of the plume, within 1 percentage point" },
+      { "type": "button", "label": "Check", "purpose": "Check all three values (Enter); two attempts" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge resolves (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the three challenges and the score" },
+      { "type": "slider", "label": "Contaminated air", "range": "0-20,000 CFM", "step": 500, "default": 8000 },
+      { "type": "slider", "label": "Bypass flow", "range": "0-10,000 CFM", "step": 500, "default": 2000 },
+      { "type": "slider", "label": "Entrained flow", "range": "0-30,000 CFM", "step": 500, "default": 10000 }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "Q_fan = Q_contaminated + Q_bypass",
+      "Q_total = Q_fan + Q_entrained",
+      "share = Q_contaminated / Q_total x 100"
+    ],
+    "rules": [
+      "Flows must equal the model values exactly; the share is correct within 1 percentage point",
+      "Two attempts per challenge; a challenge is correct only when all three values are correct",
+      "Share is 'not defined' and no plume is drawn when the total flow is 0",
+      "Explore mode notes once that fan flow stays constant when contaminated air falls and bypass rises by the same amount"
+    ],
+    "assumptions": ["Entrained flow is treated as an independent input for practice"],
+    "limitations": ["In a real fan, entrained flow depends on the fan flow and nozzle design and comes from the manufacturer's rating"]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Stream names and joining order: FanPedia pp. 4 and 6 (lab exhaust diagrams) and p. 138 (bypass dampers)",
+      "All flow values illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Commit numbers before the diagram fills in, then explore the same relationships with sliders",
+    "keyQuestions": [
+      "Which streams pass through the impeller?",
+      "Why is the fan selected on contaminated plus bypass flow?",
+      "How does the bypass damper keep fan flow steady as sashes close?"
+    ],
+    "commonMisconceptions": [
+      "Entrained air passes through the fan, so the fan must be sized for total flow",
+      "Bypass air is wasted air that does not help dilution",
+      "When fume hood exhaust drops, the fan flow must drop too"
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Challenges correct: n of 3'; mastery is 3 of 3 with all three values correct on the first attempt."
+    ]
+  },
+  "chapter": "06-industrial-fans-and-application-product-lines"
+}

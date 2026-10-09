@@ -1,0 +1,115 @@
+{
+  "title": "Motor Enclosure Selector",
+  "description": "Learners recommend a motor enclosure (ODP, TEFC, TEAO, TENV or explosion proof) for ten illustrative fan jobs. The first choice on each job is scored; wrong choices are crossed out and the learner keeps choosing until reaching an accepted enclosure, which reveals the reason. Five reference cards show each enclosure's cooling path and FanPedia's IP and duty mappings; a summary lists each first choice beside the accepted answer.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "motor enclosure",
+    "ODP motor",
+    "TEFC motor",
+    "TEAO motor",
+    "TENV motor",
+    "explosion proof motor",
+    "IP rating",
+    "intended duty"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing a motor enclosure for a fan job",
+    "learningObjectives": [
+      "The learner will recommend a motor enclosure (ODP, TEFC, TEAO, TENV or EXPL) for each of ten described fan jobs, with at least 8 of 10 first-attempt choices falling in the accepted set."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "motor enclosure",
+      "ODP, TEFC, TEAO, TENV and explosion proof motors",
+      "intended duty (GD, SD, IEEE 841, IEEE 45, DFG)",
+      "IP rating",
+      "hazardous location"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 545,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 545
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, job changes and opened cards announced through FP.announce (aria-live); ✓/✗ glyphs on feedback and buttons, solid/dashed feedback borders pair with colour; keys 1-5 choose, C steps through the cards, Enter goes to the next job; focus moves to Next job after a correct choice and to the first enclosure on a new job; layout stacks below 560 px down to 320 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "ODP / TEFC / TEAO / TENV / EXPL", "purpose": "Recommend an enclosure (keys 1-5); a wrong choice is crossed out and disabled" },
+      { "type": "select", "label": "Card", "purpose": "Open one of the five enclosure reference cards, or close it (C steps through)" },
+      { "type": "button", "label": "Next job / Show summary", "purpose": "Advances once an accepted enclosure is reached (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clears the score and returns to job 1 with the cards closed" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "One choice per job from the five enclosures; the first choice is correct when it is in the job's accepted set.",
+      "Job 1 accepts ODP and TEFC; choosing TEFC adds 'ODP would also have been acceptable here.'",
+      "Later choices continue until an accepted enclosure is reached and never change the score.",
+      "Mastery is 8 or more of 10 correct on the first attempt."
+    ],
+    "assumptions": [
+      "Jobs are illustrative scenarios.",
+      "The motor sketches are schematic, not to scale."
+    ],
+    "limitations": [
+      "Does not cover NEC class, division and group selection, ATEX motors, or catalog availability of a given enclosure and frame."
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Source: FanPedia p. 73 (Motor Specifications: Enclosure and Intended Duty)",
+      "Jobs 1, 2, 6 and 9 follow the worked examples in Chapter 14 'Motor Enclosures'",
+      "Jobs: illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Committed first choice with reasoned feedback, retry until correct, reference cards for exploration, end-of-round summary",
+    "keyQuestions": [
+      "Is the area classified as hazardous?",
+      "What is in the air around the motor?",
+      "Does the motor have its own fan, rely on the fan's airstream, or have no fan at all?"
+    ],
+    "commonMisconceptions": [
+      "ODP is fine anywhere indoors, even in dirty or wet air.",
+      "An explosion-proof motor is needed whenever the air is dirty.",
+      "A TEAO motor cools itself the way a TEFC motor does.",
+      "IP55 always means explosion proof.",
+      "TENV is simply a better TEFC with no downside."
+    ],
+    "assessmentOpportunities": [
+      "First-try score shown as 'First-try correct: n of 10'; mastery is 8 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "14-fan-motors-and-enclosures"
+}

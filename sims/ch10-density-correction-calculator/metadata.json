@@ -1,0 +1,120 @@
+{
+  "title": "Density Correction Calculator",
+  "description": "Three challenge jobs in which the learner calculates the combined temperature and altitude density correction factor and converts an actual static pressure to the standard-air catalog pressure, followed by free exploration of temperature, elevation, pressure and catalog BHP.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "density correction factor",
+    "temperature correction",
+    "altitude correction",
+    "standard air",
+    "fan performance"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Density, temperature and altitude corrections",
+    "learningObjectives": [
+      "The learner will calculate the combined density correction factor for a stated air temperature and site elevation, and use it to convert an actual static pressure to the standard-air pressure used for catalog selection, to within ±0.01 on the factor and ±0.05 in. wg on the pressure."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "standard air",
+      "density correction factor",
+      "temperature correction",
+      "altitude correction",
+      "degrees Rankine"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 640
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new part or job and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; Enter checks and goes to the next part; every button, the answer box and the four sliders are reachable with Tab."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Your answer", "purpose": "Type the combined factor, or the standard-air pressure for job 3 part 2" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter); ±0.01 on a factor, ±0.05 in. wg on a pressure; two attempts" },
+      { "type": "button", "label": "Next challenge / Next: part 2 / Start exploring", "purpose": "Advance after an answer is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the three jobs and the score" },
+      { "type": "slider", "label": "Air temperature at fan inlet", "range": "0-800°F", "step": 10, "default": 70 },
+      { "type": "slider", "label": "Site elevation", "range": "0-10,000 ft", "step": 500, "default": 0 },
+      { "type": "slider", "label": "Actual static pressure", "range": "0.5-15.0 in. wg", "step": 0.1, "default": 3.0 },
+      { "type": "slider", "label": "Catalog BHP at the standard-air point", "range": "1.0-200.0 BHP", "step": 0.5, "default": 11.0 }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "Kt = 530 / (T + 460)",
+      "Ka = (1 - 6.875e-6 x h)^5.2559",
+      "Kd = Kt x Ka",
+      "Standard-air pressure = actual pressure / Kd",
+      "Actual BHP = catalog BHP x Kd"
+    ],
+    "rules": [
+      "Factors rounded to three decimals, pressures to two",
+      "A factor is correct when |answer - model| <= 0.01; a pressure when |answer - model| <= 0.05; two attempts per answer",
+      "Job 3 asks for the factor, then the standard-air pressure; it counts as correct only when both parts are",
+      "A job-1 factor near 0.35 adds 'Add 460 to each temperature first.'; a job-3 pressure near 2.00 adds the divide-not-multiply reminder"
+    ],
+    "assumptions": [
+      "Standard air is 0.075 lb/ft³ at 70°F and 29.92 in. Hg (sea level)",
+      "Dry air; humidity is ignored",
+      "Fan at fixed speed: airflow volume (CFM) does not change with density"
+    ],
+    "limitations": [
+      "Challenge jobs and the 11.0 BHP default are illustrative values",
+      "The standard-atmosphere altitude factor is used, not a measured barometer reading"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Equations: standard engineering (Chapter 10, 'Density Corrections')",
+      "Job 3 and the 11.0 BHP default: Chapter 10 worked example 'A Hot Fan at Altitude'"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Practice with check on each step (commit the factor, then the pressure), then guided exploration",
+    "keyQuestions": [
+      "Why does the catalog pressure grow when the job air is hot or thin?",
+      "Which value is divided by Kd and which is multiplied?"
+    ],
+    "commonMisconceptions": [
+      "The fan moves less CFM in hot or thin air at the same speed",
+      "The actual pressure is multiplied by the factor to get the catalog pressure",
+      "Temperature in °F can be used directly in the ratio"
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Challenges correct: n of 3'; mastery is 3 of 3 jobs fully correct on the first attempt."
+    ]
+  },
+  "chapter": "10-fan-performance-curves-and-ratings"
+}

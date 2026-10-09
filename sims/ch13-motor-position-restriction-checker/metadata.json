@@ -1,0 +1,114 @@
+{
+  "title": "Motor Position Restriction Checker",
+  "description": "Learners judge ten illustrative order lines (arrangement, rotation, discharge and motor position) as Allowed, Not allowed or Height check needed, using FanPedia's motor position restrictions for SWSI Arrangements 1, 3 and 3F and the Arrangement 9SS swingout pairing. Each verdict gets the reason, a highlighted rule-card row and a marked drive-side sketch; a summary sets each verdict beside the correct one.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "motor position restrictions",
+    "motor positions W, X, Y, Z",
+    "motor positions (L) and (R)",
+    "Arrangement 9SS swingout",
+    "clockwise rotation (CW)",
+    "counterclockwise rotation (CCW)",
+    "discharge letter codes"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Motor position restrictions for centrifugal fans",
+    "learningObjectives": [
+      "The learner will judge whether each proposed combination of arrangement, rotation, discharge and motor position can be ordered as written, using the FanPedia restriction rules."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "judge",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "arrangement",
+      "CW and CCW rotation",
+      "discharge letter codes",
+      "motor positions W, X, Y and Z",
+      "motor positions (L) and (R)",
+      "swingout arrangement 9SS",
+      "motor position restrictions"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 716,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 716
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fan-codes.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Inline SVG sketch labelled by its text caption; verdicts and line changes announced through FP.announce (aria-live); ✓/✗ glyphs, solid/dashed feedback borders and dashed ✗ or ↕ motor boxes pair with colour; keys 1-3 pick a verdict, Enter submits or goes to the next line, R toggles the rule card; the layout stacks below 600 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1 · Allowed / 2 · Not allowed / 3 · Height check needed", "purpose": "Pick a verdict (keys 1-3; Enter on a focused verdict picks and submits)" },
+      { "type": "button", "label": "Submit verdict", "purpose": "Scores the verdict for the line (Enter); one scored attempt per line" },
+      { "type": "button", "label": "Next line / Show summary", "purpose": "Advances to the next order line (Enter); after line 10 shows the summary table" },
+      { "type": "button", "label": "Start over", "purpose": "Clears the score and returns to line 1 with the rule card closed" },
+      { "type": "details", "label": "Reference rule card", "purpose": "Opens the restriction table at any time (R); the deciding row is highlighted after each verdict" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "SWSI Arrangements 1, 3 and 3F: BHD forbids Z for CW and W for CCW; TAD forbids W for CW and Z for CCW (motor interferes with the outlet opening).",
+      "THD needs a height check for CW with W and CCW with Z (motor may not fit below the discharge; an Arrangement 1 pedestal can be lengthened).",
+      "Arrangement 9SS is built CW with (L) or CCW with (R) only.",
+      "Every other line is Allowed."
+    ],
+    "assumptions": [
+      "Order lines are illustrative scenarios.",
+      "The drive-side sketch is schematic, not to scale; W and Z are drawn beside the housing, X and Y beyond them, as in the kit's motor-position drawing."
+    ],
+    "limitations": [
+      "Covers only the restrictions FanPedia lists for SWSI Arrangements 1, 3 and 3F and the 9SS pairing; other arrangements, K mounts and conduit box rules are not judged."
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Source: FanPedia PDF pp. 162-163 (motor position restrictions, Arrangements 1, 3, 3F)",
+      "Source: FanPedia PDF pp. 53, 166 (Arrangement 9SS swingout pairing)",
+      "Order lines: illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Committed verdicts with reasoned feedback, a highlighted rule and a marked sketch after each line, then a side-by-side review",
+    "keyQuestions": [
+      "Which position does BHD forbid for a CW fan, and which for a CCW fan?",
+      "When is THD a height check rather than a forbidden position?",
+      "Which pairings can an Arrangement 9SS fan be built in?"
+    ],
+    "commonMisconceptions": [
+      "A restriction on a position holds for both rotations.",
+      "The THD restriction forbids the position outright instead of calling for a height check.",
+      "Arrangement 9SS lets the buyer choose either side for the motor."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'Verdicts correct: n of 10'; mastery is 9 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "13-rotation-and-discharge-codes"
+}

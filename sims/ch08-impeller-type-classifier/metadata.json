@@ -1,0 +1,118 @@
+{
+  "title": "Impeller Type Classifier",
+  "description": "Ten written impeller descriptions, shuffled, each sorted once into one of six bins (backward inclined, forward curved, mixed flow, axial fixed pitch, axial adjustable pitch, axial reversible), with feedback, a first-attempt score and an unscored review pile.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "centrifugal impeller",
+    "axial impeller",
+    "mixed flow impeller",
+    "backward inclined impeller",
+    "forward curved impeller",
+    "fixed pitch impeller",
+    "adjustable pitch impeller",
+    "fiberglass axial impeller",
+    "reversible impeller"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Identifying impeller types",
+    "learningObjectives": [
+      "The learner will classify written descriptions of impellers into the impeller types named in this chapter, with at least 8 of 10 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "centrifugal impeller",
+      "axial impeller",
+      "mixed flow impeller",
+      "backward inclined impeller",
+      "forward curved impeller",
+      "single width single inlet",
+      "fixed pitch impeller",
+      "adjustable pitch impeller",
+      "fiberglass axial impeller",
+      "reversible impeller"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 660,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); every verdict, new card and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour on the card and on every placed chip; keys 1-6 place the card and Enter goes to the next; every button is reachable with Tab; bin buttons wrap inside the canvas at 320 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Six bin buttons", "purpose": "Place the card (keys 1-6); one scored placement" },
+      { "type": "button", "label": "Next card / Show summary", "purpose": "Advance after a placement (Enter)" },
+      { "type": "button", "label": "Redo review pile", "purpose": "Place the misplaced cards again, not scored" },
+      { "type": "button", "label": "Start over", "purpose": "Reshuffle all ten cards and clear the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct bin",
+      "Cards are judged on the first placement only for the score",
+      "Ten cards in shuffled order; the review pile does not change the score",
+      "Mastery 8 of 10 on the first attempt"
+    ],
+    "assumptions": [],
+    "limitations": [
+      "Written descriptions only; no photographs",
+      "Only the impeller types covered in Chapter 8 are bins; airfoil, backward curved and radial types are in Chapter 9"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia PDF p. 31: centrifugal impeller captions",
+      "FanPedia PDF pp. 6 and 32: mixed flow impeller",
+      "FanPedia PDF pp. 33-35: axial impeller types marked fixed or adjustable; fixed pitch cast or fabricated",
+      "FanPedia PDF p. 41: reversible impeller standard and reverse flow"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Classify new descriptions by defining features, committing to a bin before feedback, with an unscored review pile",
+    "keyQuestions": [
+      "Where does the air go: outward, straight through, or partway?",
+      "Do the blade tips point with rotation or trail it?",
+      "Can the blade angle be reset, and does the impeller run in two flow modes?"
+    ],
+    "commonMisconceptions": [
+      "Many narrow blades always means forward curved",
+      "Any impeller in a tubular housing is axial",
+      "Adjustable pitch means the blades can be changed while the fan runs",
+      "Fiberglass impellers are always fixed pitch"
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 10'; mastery is 8 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "08-centrifugal-and-axial-impeller-types"
+}

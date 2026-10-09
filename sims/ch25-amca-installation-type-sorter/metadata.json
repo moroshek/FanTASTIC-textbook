@@ -1,0 +1,113 @@
+{
+  "title": "AMCA Installation Type Sorter",
+  "description": "Eight illustrative fan installations, shuffled: the learner answers whether each side is ducted, places the description in the Type A, B, C or D bin and commits it, then sees the Why text, a schematic of the correct answer and, at the end, the bins with their correct contents.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "AMCA installation type",
+    "free inlet",
+    "ducted inlet",
+    "free outlet",
+    "ducted outlet",
+    "system effect"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "AMCA installation types A, B, C and D",
+    "learningObjectives": [
+      "The learner will classify fan installations into AMCA installation types A, B, C and D from a description of what is connected to the fan's inlet and outlet, with at least 7 of 8 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "AMCA installation type",
+      "free inlet",
+      "ducted inlet",
+      "free outlet",
+      "ducted outlet",
+      "system effect"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 595,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 595
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); each description, every verdict and the end summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; Yes/No answers are native radio groups with aria-labels; keys A-D choose a bin and Enter commits or goes on; focus moves to Next after a commit and to Start over at the end; controls stay inside the canvas at 320 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "radio", "label": "Inlet ducted?", "purpose": "Predict whether the inlet is ducted (No, free / Yes, ducted)" },
+      { "type": "radio", "label": "Outlet ducted?", "purpose": "Predict whether the outlet is ducted (No, free / Yes, ducted)" },
+      { "type": "button", "label": "Type A / Type B / Type C / Type D", "purpose": "Choose the bin (keys A-D)" },
+      { "type": "button", "label": "Commit", "purpose": "Commit the bin (Enter); the first commit is scored, one unscored commit after a miss" },
+      { "type": "button", "label": "Next description / See the bins", "purpose": "Go on after a commit (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reshuffle the eight descriptions and clear the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Inlet ducted No / outlet ducted No = Type A; No / Yes = Type B; Yes / No = Type C; Yes / Yes = Type D",
+      "A cabinet, plenum or room is open space, not a duct",
+      "One scored commit per description; after a miss one unscored practice commit",
+      "Mastery: 7 of 8 correct on the first attempt"
+    ],
+    "assumptions": [
+      "Installation types follow the four types of the AMCA 210 test standard"
+    ],
+    "limitations": [
+      "The descriptions are illustrative installations, not specific jobs",
+      "The sim classifies the installation only; it does not size the system effect"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Installation type definitions: AMCA 210 test standard (standard engineering knowledge), as stated in Chapter 25",
+      "Descriptions: illustrative installations written for Chapter 25 from fan types in Chapters 5, 6 and 18"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Predict each side (free or ducted) before committing a bin; immediate feedback with the reason; end review of the bins",
+    "keyQuestions": [
+      "Is the inlet ducted?",
+      "Is the outlet ducted?",
+      "Does the catalog rating's installation type match the job's?"
+    ],
+    "commonMisconceptions": [
+      "The installation type depends on the fan type rather than on the connections",
+      "A short connection to a plenum or cabinet counts as a ducted side",
+      "Exhaust fans are always Type C"
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Correct on first try: n of 8'; mastery is 7 of 8 on the first attempt."
+    ]
+  },
+  "chapter": "25-fan-laws-system-effect-and-sound"
+}

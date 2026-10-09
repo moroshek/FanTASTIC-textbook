@@ -1,4 +1,4 @@
-/* FanPedia MicroSim kit: fan-curves.js (FP.curves)  v1.0.0
+/* FanPedia MicroSim kit: fan-curves.js (FP.curves)  v1.1.0
  *
  * Illustrative fan curves and the math around them: linear interpolation,
  * the system curve P = kQ^2, the operating-point solver, parallel and series
@@ -109,43 +109,93 @@
   }
 
   // ---- Operating point ----
+  // The default upper end of the search. A curve object: its last airflow
+  // (the table is not extended). A function: its own `qMax` (FP.curves.parallel
+  // and series set it to the single-fan curve's last airflow x the fans in
+  // parallel), else 16,000 CFM; then doubled while the fan still makes more
+  // pressure than the system there, since the crossing lies further right
+  // (capped at 2^21 CFM).
+  function defaultQMax(fan, f, k) {
+    if (typeof fan !== 'function') return fan.q[fan.q.length - 1];
+    var q = typeof fan.qMax === 'number' && isFinite(fan.qMax) && fan.qMax > 0 ? fan.qMax : 16000;
+    while (q < 2097152 && f(q) - systemPressure(k, q) > 0) q *= 2;
+    return q;
+  }
+
   // Searches q in `step` CFM increments from qMin to qMax and returns the q
   // where |fan pressure - system pressure| is smallest (the spec rule for
-  // ch10-operating-point-finder and ch25-parallel-series). Ties keep the lower q.
-  // Returns {q, p, pSystem, diff, bhp, stall}; bhp and stall only for curve objects.
+  // ch10-operating-point-finder and ch25-parallel-series: their anchors, e.g.
+  // 12,300 CFM for the steep series pair, come from this 1 CFM search). Ties
+  // keep the lower q.
+  // When fan minus system changes sign within one step of that q, the exact
+  // crossing is also found by bisection and returned as `exact: {q, p}`.
+  // With opts.refine === true, q / p / pSystem / bhp / stall are taken at the
+  // exact crossing instead (for a spec that states a closed form: P = 5.625
+  // rounds to 5.63, where the whole-CFM point gives 5.62497 -> 5.62).
+  // Returns {q, p, pSystem, diff, exact, bhp, stall}; bhp and stall only for
+  // curve objects; exact is null when there is no sign change (no crossing).
   function operatingPoint(fan, k, opts) {
     opts = opts || {};
     var f = pressureFn(fan, opts.extrapolate ? { extrapolate: true } : null);
     var step = opts.step || 1;
     var qMin = opts.qMin != null ? opts.qMin : 0;
-    var qMax = opts.qMax != null ? opts.qMax :
-      (typeof fan === 'function' ? 16000 : fan.q[fan.q.length - 1]);
+    var qMax = opts.qMax != null ? opts.qMax : defaultQMax(fan, f, k);
+    var g = function (q) { return f(q) - systemPressure(k, q); };
     var best = null;
     for (var q = qMin; q <= qMax + 1e-9; q += step) {
-      var d = Math.abs(f(q) - systemPressure(k, q));
+      var d = Math.abs(g(q));
       if (best === null || d < best.diff) best = { q: q, diff: d };
     }
-    var out = { q: best.q, p: f(best.q), pSystem: systemPressure(k, best.q), diff: best.diff };
+    var exact = crossing(g, best.q, step, qMin, qMax);
+    var qOut = opts.refine === true && exact !== null ? exact : best.q;
+    var out = { q: qOut, p: f(qOut), pSystem: systemPressure(k, qOut), diff: Math.abs(g(qOut)),
+      exact: exact === null ? null : { q: exact, p: f(exact) } };
     if (typeof fan !== 'function') {
-      if (fan.bhp) out.bhp = bhpAt(fan, best.q);
-      out.stall = isStall(fan, best.q);
+      if (fan.bhp) out.bhp = bhpAt(fan, qOut);
+      out.stall = isStall(fan, qOut);
     }
     return out;
+  }
+  // Bisection on g within one step either side of q0; null without a sign change.
+  function crossing(g, q0, step, qMin, qMax) {
+    var g0 = g(q0);
+    if (g0 === 0) return q0;
+    var lo = null, hi = null;
+    if (q0 + step <= qMax + 1e-9 && g0 * g(q0 + step) <= 0) { lo = q0; hi = q0 + step; }
+    else if (q0 - step >= qMin - 1e-9 && g0 * g(q0 - step) <= 0) { lo = q0 - step; hi = q0; }
+    if (lo === null) return null;
+    var glo = g(lo);
+    for (var i = 0; i < 80 && hi - lo > 1e-10 * Math.max(1, Math.abs(hi)); i++) {
+      var mid = (lo + hi) / 2, gm = g(mid);
+      if (gm === 0) return mid;
+      if (glo * gm < 0) hi = mid; else { lo = mid; glo = gm; }
+    }
+    return (lo + hi) / 2;
   }
 
   // ---- Fans in parallel and in series (ch25 rules) ----
   // Parallel: pressure at total airflow Q equals single-fan pressure at Q / n.
   // Series: pressure at Q equals n x single-fan pressure at Q.
   // The single-fan curve is extended past its last point (ch25 rule).
+  // The returned function carries `qMax`, its airflow extent, which
+  // operatingPoint uses as the default search range.
+  function curveQMax(curve) {
+    if (typeof curve === 'function') return typeof curve.qMax === 'number' ? curve.qMax : 16000;
+    return curve.q[curve.q.length - 1];
+  }
   function parallel(curve, n) {
     n = n || 2;
     var f = pressureFn(curve, { extrapolate: true });
-    return function (q) { return f(q / n); };
+    var fn = function (q) { return f(q / n); };
+    fn.qMax = curveQMax(curve) * n;      // operatingPoint's default search range
+    return fn;
   }
   function series(curve, n) {
     n = n || 2;
     var f = pressureFn(curve, { extrapolate: true });
-    return function (q) { return n * f(q); };
+    var fn = function (q) { return n * f(q); };
+    fn.qMax = curveQMax(curve);
+    return fn;
   }
 
   // ---- Fan laws (ch25-fan-law-calculator.js L227-238) ----
@@ -192,7 +242,7 @@
   }
 
   FP.curves = {
-    __version: '1.0.0',
+    __version: '1.1.0',
     ILLUSTRATIVE_NOTE: 'Illustrative data, standard air, one fixed speed per fan',
     CFM: Object.freeze(CFM),
     A: A,

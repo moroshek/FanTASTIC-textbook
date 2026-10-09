@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>DWDI Housing Parts Explorer using html</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        /* Sim-specific styles (prefix dhp-). Colours come from the kit's --fp-* tokens. */
+        main.dhp-app { max-width: 820px; margin: 0 auto; padding: 6px 8px 4px; }
+        .dhp-draw { position: relative; border-radius: var(--fp-radius); }
+        .dhp-draw svg { width: 100%; height: auto; display: block; touch-action: manipulation; }
+        .dhp-draw .fp-note { margin: 0; padding: 0 8px 3px; }
+        /* Hotspot outlines: every part is outlined (dashed) so the learner can see what is clickable. */
+        .dhp-hot { fill: transparent; stroke: var(--fp-primary); stroke-width: 1.4; stroke-dasharray: 5 4; opacity: 0.75; }
+        .dhp-found .dhp-hot { stroke-dasharray: none; stroke-width: 2.2; opacity: 1; }
+        .dhp-lbl { pointer-events: none; }
+        .dhp-lbl rect { fill: #ffffff; stroke: var(--fp-text-muted); stroke-width: 1; }
+        .dhp-lbl text { font-size: 17px; fill: var(--fp-text); font-family: var(--fp-font); }
+        .dhp-lbl line { stroke: var(--fp-text-muted); stroke-width: 1.2; }
+        .dhp-lbl circle { fill: var(--fp-text-muted); }
+        .dhp-lbl.fp-cq-label-visited rect { fill: var(--fp-primary-bg); stroke: var(--fp-primary); }
+        .dhp-lbl.fp-cq-label-selected rect { fill: var(--fp-primary-bg); stroke: var(--fp-primary); stroke-width: 2.5; }
+        .dhp-lbl.fp-cq-label-selected text { font-weight: bold; }
+        .dhp-cap { font-size: 15px; fill: var(--fp-text-muted); font-family: var(--fp-font); }
+        .dhp-cap-b { font-weight: bold; fill: var(--fp-text); }
+        /* Narrow drawings: numbered callouts plus a key list, so callout text never drops below 12 px. */
+        .dhp-lbl .dhp-num { display: none; }
+        .dhp-narrow .dhp-lbl .dhp-full { display: none; }
+        .dhp-narrow .dhp-lbl .dhp-num { display: inline; font-size: 30px; font-weight: bold; }
+        .dhp-narrow-only { display: none; }
+        .dhp-narrow .dhp-wide { display: none; }
+        .dhp-narrow .dhp-narrow-only { display: inline; font-size: 30px; }
+        .dhp-key { margin: 4px 0 0; padding: 0 6px; list-style: none; font-size: 14px; display: flex; flex-wrap: wrap; gap: 2px 14px; }
+        .dhp-key li { color: var(--fp-text-muted); }
+        .dhp-key li::after { content: " (not opened)"; font-size: 13px; }
+        .dhp-key li.fp-cq-label-visited { color: var(--fp-text); }
+        .dhp-key li.fp-cq-label-visited::after { content: " ✓ opened"; color: var(--fp-primary-dark); font-weight: bold; }
+        .dhp-quiz .dhp-key li::after, .dhp-summary .dhp-key li::after { content: ""; }
+        .dhp-key li.fp-cq-label-selected { font-weight: bold; color: var(--fp-primary-dark); }
+        .dhp-key b { display: inline-block; min-width: 1.4em; }
+        .dhp-keyhead { margin: 4px 6px 0; font-size: 14px; font-weight: bold; }
+        .dhp-keys { margin: 4px 0 0 0; }
+    </style>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/callout-quiz.js"></script>
+    <script src="ch09-dwdi-housing-parts-explorer.js" defer></script>
+</head>
+<body>
+    <main class="fp-app dhp-app">
+        <h1 class="fp-title">DWDI Housing Parts Explorer</h1>
+        <section class="fp-draw dhp-draw" id="drawing" aria-label="Exploded view of a double width, double inlet centrifugal fan housing: the housing in the middle, with the wiper bar, inlet funnel and bearing structural support pulled away from each inlet along the shaft line, and the setback outlet flange lifted off the outlet. Select a part.">
+            <!-- the SVG drawing is built by the sim -->
+            <p class="dhp-keyhead" id="keyHead">Parts opened: 0 of 8</p>
+            <ol class="dhp-key" id="key" aria-label="Parts and whether each has been opened"></ol>
+            <p class="fp-note illustrative" id="dataNote">Simplified exploded view, not to scale · Based on FanPedia p. 61 (DWDI housing construction)</p>
+        </section>
+        <p class="fp-note dhp-keys">Keyboard: Tab moves between parts and buttons; Enter or Space selects a part; after an answer, Enter goes to the next description.</p>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

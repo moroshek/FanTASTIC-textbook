@@ -1,0 +1,120 @@
+{
+  "title": "Roof and Wall Exhaust Path Explorer",
+  "description": "Learners predict the discharge path of seven roof and wall ventilation units from schematic cutaways with the discharge hidden, then see the true path drawn with airflow arrows and the reason. Parts are clickable for definitions, a yes/no question asks whether a gravity relief ventilator needs a fan, and a summary table reopens any unit without changing the score.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "upblast discharge",
+    "downblast discharge",
+    "hooded roof exhauster",
+    "louvered roof exhauster",
+    "low profile roof ventilator",
+    "centrifugal wall exhauster",
+    "gravity relief ventilator",
+    "roof curb",
+    "gravity damper"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Discharge paths of roof and wall ventilation units",
+    "learningObjectives": [
+      "The learner will classify seven roof and wall ventilation configurations by the path the exhaust air takes as it leaves the unit, given a cutaway of each unit with its discharge hidden."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "upblast discharge",
+      "downblast discharge",
+      "hooded roof exhauster",
+      "louvered roof exhauster",
+      "low profile roof ventilator",
+      "centrifugal wall exhauster",
+      "gravity relief ventilator",
+      "roof curb",
+      "gravity damper"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 650,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 650
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, part definitions and summaries announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed feedback borders pair with colour; selected parts get an accent outline plus a name tag; every canvas part is also reachable from the Read a part list; keys 1-3 choose, Enter commits or goes on."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Straight up / Up, then down and out / Straight out from the wall", "purpose": "Choose the predicted discharge path (keys 1-3); Yes and No for the gravity question" },
+      { "type": "button", "label": "Commit", "purpose": "Commit the prediction (Enter); one attempt per unit" },
+      { "type": "button", "label": "Next unit / Gravity question / Show summary", "purpose": "Go to the next unit, the gravity question or the summary (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the score and repeat the seven units in the session's order" },
+      { "type": "select", "label": "Read a part", "purpose": "Show a part's definition and highlight it (not scored); clicking the cutaway does the same" },
+      { "type": "select", "label": "Review", "purpose": "After the summary, reopen any unit's cutaway and path without changing the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Seven path items, shuffled once per session, then the gravity question.",
+      "Upblast and side wall configurations move air in a straight line; downblast, louvered and hooded configurations move it up, then down and outward (FanPedia p. 5).",
+      "The cutaway hides the discharge arrows until the learner commits; the correct path is revealed after every commit.",
+      "One attempt per item, no re-answering. Mastery: 6 of 7 paths plus the gravity question, on first attempts."
+    ],
+    "assumptions": [
+      "Cutaways are schematic and not to scale; they show only the parts named in the chapter spec."
+    ],
+    "limitations": [
+      "Does not show product-specific construction such as motor-out-of-airstream tubes, belt drives or curb sizes; check the current catalog for a product line."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Source: FanPedia PDF p. 5 (airflow paths of upblast, side wall, downblast, louvered and hooded configurations)",
+      "Source: FanPedia PDF p. 19 (roof exhauster part names), p. 181 (butterfly gravity damper)",
+      "tcf.com Roof Ventilators and Gravity Relief Ventilators product pages (low profile units, gravity relief units)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Commit a prediction from the unit's construction, then compare it with the revealed airflow path and the reason",
+    "keyQuestions": [
+      "Which part above the impeller decides where the air goes?",
+      "Why do the hooded, louvered and downblast units share one path?",
+      "What moves the air through a gravity relief ventilator?"
+    ],
+    "commonMisconceptions": [
+      "Every roof exhauster blows air straight up.",
+      "A hood or louvers change the fan type inside the unit.",
+      "Downblast units are suitable for any exhaust because the air still leaves the building.",
+      "A gravity relief ventilator contains a small fan."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'Paths correct: n of 7'; mastery is 6 of 7 paths plus the gravity question, on first attempts."
+    ]
+  },
+  "chapter": "05-roof-wall-and-specialty-exhaust-fans"
+}

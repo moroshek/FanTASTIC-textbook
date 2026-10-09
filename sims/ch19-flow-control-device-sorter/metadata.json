@@ -1,0 +1,90 @@
+{
+  "title": "Flow Control Device Sorter",
+  "description": "Card sorter: the learner places eight illustrative field situations into seven bins (ceiling and wall type gravity dampers, blast gate, slide gate damper, nested inlet vanes, lab exhaust isolation and bypass dampers) and gets immediate reason-based feedback; a missed card moves to its correct bin, and a Try again round reshuffles all eight for unscored practice.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["gravity damper", "blast gate", "slide gate damper", "nested inlet vanes", "pre-spin", "lab exhaust isolation damper", "lab exhaust bypass damper"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing dampers and inlet vanes for field situations",
+    "learningObjectives": [
+      "The learner will classify eight field situations by the damper or vane device that fits each one, with at least 7 of 8 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": ["ceiling type gravity damper", "wall type gravity damper", "blast gate", "slide gate damper", "nested inlet vanes", "pre-spin", "lab exhaust isolation damper", "lab exhaust bypass damper"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 566,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 566
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, card text and the summary are announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour on the feedback panel and the placed-card chips; the seven bins are native buttons with full aria-labels; keys 1-7 place the card, Enter goes to the next card or starts a practice round."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1-7 device bins", "purpose": "Place the face-up situation card in that device's bin (keys 1-7)" },
+      { "type": "button", "label": "Next card", "purpose": "Turn up the next card; on the last card, Show summary (Enter)" },
+      { "type": "button", "label": "Try again", "purpose": "After all 8 are placed: reshuffle all 8 cards for an unscored practice round (Enter)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct bin; Blast gate is correct for cards 3 and 4, every other bin for exactly one card",
+      "A card is scored on the first bin it is placed in; it then locks",
+      "A missed card moves to its correct bin, marked as missed",
+      "Mastery is 7 of 8 correct on the first attempt; Try again rounds are not scored"
+    ],
+    "assumptions": ["Lab exhaust isolation and bypass damper duties follow standard lab exhaust practice, as the chapter states"],
+    "limitations": ["Situation cards are illustrative scenarios, not specific orders"]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia, pp. 125, 127, 136, 138, 139, 180, 181, 188, 192",
+      "Chapter 19 sections on gravity dampers, blast gates and slide gate dampers, lab exhaust dampers, and nested inlet vanes and pre-spin"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Classification of realistic order situations by each device's defining feature, with immediate reason-based feedback",
+    "keyQuestions": [
+      "Which device fits this situation?",
+      "Which detail in the situation rules out the other devices?"
+    ],
+    "commonMisconceptions": [
+      "Ceiling and wall gravity dampers are interchangeable.",
+      "A slide gate is the shutoff device for any pressure blower.",
+      "Nested and external inlet vanes suit the same airstreams.",
+      "Isolation and bypass dampers on a lab fan do the same job."
+    ],
+    "assessmentOpportunities": [
+      "Running count 'Correct: n of 8'; mastery is 7 of 8 correct on the first attempt; the summary reads 'Mastery: 7 or more of 8' or 'Review the sections on the devices you missed, then try again.'"
+    ]
+  },
+  "chapter": "19-damper-details-and-duct-connections"
+}

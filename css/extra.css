@@ -22,8 +22,11 @@
 
   /* Iframe styles */
   iframe {
-    width: 100%;
+    width: calc(100% - 4px);
     border: solid 2px blue;
+    /* Material sets border-box on everything; content-box keeps the border
+       outside the height attribute, so a sim gets its full stated height. */
+    box-sizing: content-box;
   }
 
   /* if a div with <div class="upper-alpha"> wraps a list, then number A.B.C.D etc */

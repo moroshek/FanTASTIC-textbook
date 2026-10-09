@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Bearing Life in Years by Operating Schedule using Chart.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .bly-chart { position: relative; height: 300px; background: #ffffff; }
+        .bly-head { padding: 4px 8px 0 8px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px;
+                    align-items: baseline; margin: 0 0 4px 0; }
+        .bly-head b { font-size: var(--fp-size-heading, 17px); }
+        .bly-status .fp-progress { margin: 0; }
+        .bly-answer input { width: 90px; }
+        .bly-compare { font-weight: bold; min-height: 1.3em; margin: 4px 0; }
+        .bly-explore { border-top: 1px solid var(--fp-border); margin-top: 6px; padding-top: 6px; }
+        .bly-readout { font-size: var(--fp-size-secondary, 14px); min-height: 2.6em; margin: 4px 0; }
+        .bly-summary div + div { margin-top: 2px; }
+        @media (max-width: 480px) { .bly-chart { height: 250px; } }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-models.js"></script>
+    <script src="ch03-bearing-life-years.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Bearing Life in Years by Operating Schedule</h1>
+
+        <section class="fp-draw" id="drawing" aria-label="Bearing life in years by operating schedule, bar chart">
+            <div class="bly-head">
+                <b id="ratingLabel">L-10 rating: 40,000 h</b>
+                <span class="fp-attempt" id="chartState">Bars appear after you check your answer.</span>
+            </div>
+            <div class="bly-chart">
+                <canvas id="chart" role="img" aria-label="Bar chart of L-10 and L-50 bearing life in years for five operating schedules. The bars are hidden until you check a challenge."></canvas>
+            </div>
+        </section>
+        <p class="fp-note" id="dataNote">Source: FanPedia, page 90 (L-10 and L-50 ratings) · 52-week year · Log scale: each gridline is 10 times the one below</p>
+
+        <section class="fp-ctrl" aria-label="Activity">
+            <div class="fp-row bly-status">
+                <span class="fp-score" id="score">Challenges correct: 0 of 3</span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="fp-attempt" id="attempt">Attempt 1 of 2</span>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <div class="fp-row bly-answer">
+                <label for="answer" class="bly-ask">L-10 life (years)</label>
+                <input id="answer" class="bly-ask" type="text" inputmode="decimal" autocomplete="off">
+                <button id="check" type="button">Check</button>
+                <button id="next" type="button" hidden>Next challenge</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <p class="bly-compare" id="compare"></p>
+            <div id="summary" class="fp-feedback final bly-summary" role="status"></div>
+            <div class="bly-explore">
+                <div class="fp-row">
+                    <label for="rating">L-10 rating</label>
+                    <select id="rating" disabled></select>
+                    <span class="fp-attempt" id="exploreState"></span>
+                </div>
+                <div class="bly-readout" id="readout" aria-live="polite"></div>
+            </div>
+            <p class="fp-note">Keyboard: Enter checks your answer, then goes to the next challenge. Tab reaches the rating menu after challenge 3; the arrow keys change it.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Air Density Ratio Explorer using Chart.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .dre-chart { position: relative; height: 290px; background: #ffffff; }
+        .dre-settings { margin: 6px 0 0 0; }
+        .dre-settings label { font-weight: bold; white-space: nowrap; }
+        .dre-settings input[type=range] { width: 190px; max-width: 42vw; vertical-align: middle; }
+        .dre-settings output { min-width: 64px; display: inline-block; }
+        .dre-readout { font-size: var(--fp-size-secondary); min-height: 38px; margin: 2px 0 0 0; }
+        .dre-situation { font-weight: bold; margin: 4px 0; }
+        .dre-ref { font-size: 13px; margin: 4px 0; }
+        .dre-ref summary { cursor: pointer; font-weight: bold; color: var(--fp-primary-dark); }
+        .dre-ref-grid { display: grid; grid-template-columns: repeat(6, auto); gap: 2px 12px; margin: 4px 0 0 0; justify-content: start; }
+        .dre-entry label { min-width: 190px; font-weight: bold; }
+        .dre-entry input { width: 90px; }
+        .dre-entry .dre-mark { font-weight: bold; min-width: 90px; }
+        .dre-entry .dre-mark.ok { color: var(--fp-correct); }
+        .dre-entry .dre-mark.bad { color: var(--fp-incorrect); }
+        .dre-summary ul { margin: 4px 0 0 0; padding-left: 20px; }
+        @media (max-width: 480px) {
+            .dre-ref-grid { grid-template-columns: repeat(4, auto); }
+            .dre-chart { height: 250px; }
+            .dre-entry label { min-width: 0; }
+            .dre-entry input { width: 76px; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="../shared-libs/fan-models.js"></script>
+    <script src="ch01-air-density-ratio-explorer.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Air Density Ratio Explorer</h1>
+
+        <section class="fp-draw" id="drawing" aria-label="Density ratio versus air temperature chart">
+            <div class="dre-chart">
+                <canvas id="chart" role="img" aria-label="Density ratio against air temperature from minus 20 to 600 degrees F, one falling curve for each site altitude: 0, 2,000, 5,000 and 8,000 ft, plus a marker at your temperature and altitude setting."></canvas>
+            </div>
+            <div class="fp-row dre-settings">
+                <label for="temp">Air temperature</label>
+                <input type="range" id="temp" min="-20" max="600" step="10" value="70">
+                <output id="tempVal" for="temp">70°F</output>
+                <label for="alt">Site altitude</label>
+                <input type="range" id="alt" min="0" max="10000" step="500" value="0">
+                <output id="altVal" for="alt">0 ft</output>
+            </div>
+            <p class="dre-readout" id="readout" aria-live="polite"></p>
+        </section>
+        <p class="fp-note illustrative" id="dataNote">Curves from DR = 530 ÷ (T + 460) × (1 − 6.8754 × 10⁻⁶ × h)^5.2559 · Catalog pressures in challenges 1 and 2 are illustrative values</p>
+
+        <section class="fp-ctrl" aria-label="Activity">
+            <div class="fp-row">
+                <span class="fp-score" id="score">Entries correct: 0 of 6</span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+                <span class="fp-attempt" id="attempt">Attempt 1 of 2</span>
+            </div>
+            <p class="fp-prompt" id="prompt"></p>
+            <p class="dre-situation" id="situation"></p>
+            <details class="dre-ref" id="ref" open>
+                <summary>Altitude pressure ratios (P<sub>b</sub> ÷ 29.92)</summary>
+                <div class="dre-ref-grid" id="refGrid"></div>
+            </details>
+            <div class="dre-answers" id="answers">
+                <div class="fp-row dre-entry">
+                    <label for="dr" id="drLabel">Density ratio</label>
+                    <input id="dr" type="text" inputmode="decimal" autocomplete="off">
+                    <span class="dre-mark" id="drMark"></span>
+                </div>
+                <div class="fp-row dre-entry" id="spRow">
+                    <label for="sp" id="spLabel">Actual static pressure</label>
+                    <input id="sp" type="text" inputmode="decimal" autocomplete="off">
+                    <span>in. wg</span>
+                    <span class="dre-mark" id="spMark"></span>
+                </div>
+            </div>
+            <div class="fp-row">
+                <button id="check" type="button">Check</button>
+                <button id="next" type="button" hidden>Next challenge</button>
+                <button id="startOver" type="button" class="secondary">Start over</button>
+            </div>
+            <div id="fbRatio" class="fp-feedback" role="status"></div>
+            <div id="fbPressure" class="fp-feedback" role="status"></div>
+            <div id="summary" class="fp-feedback final dre-summary" role="status"></div>
+            <p class="fp-note" id="exploreState"></p>
+            <p class="fp-note">Keyboard: Tab between controls; Enter in an answer box checks it, then Enter goes to the next challenge; arrow keys move a focused slider.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

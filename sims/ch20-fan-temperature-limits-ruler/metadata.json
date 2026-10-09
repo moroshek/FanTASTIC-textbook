@@ -1,0 +1,87 @@
+{
+  "title": "Fan Temperature Limits Ruler",
+  "description": "Horizontal range chart of twelve FanPedia temperature limits on a 0-1,200°F axis with a movable temperature marker that lists the active limits, followed by five fixed multiple-choice questions (one attempt each) that move the marker to the question's temperature, highlight the deciding row and give the reason.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["high temperature construction", "temperature package", "maximum operating temperature", "aluminum construction", "shaft cooler", "high temperature grease", "spark resistant Type C", "nominally leak-tight construction"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Temperature limits of fan packages, materials and constructions",
+    "learningObjectives": [
+      "The learner will use FanPedia's temperature limits to decide, for five stated fans and design temperatures, which package, material or construction rule applies, answering at least 4 of 5 correctly."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "use",
+    "duration": "10-15 minutes",
+    "prerequisites": ["high temperature construction", "temperature package", "maximum operating temperature", "aluminum construction", "shaft cooler", "high temperature grease", "spark resistant Type C", "nominally leak-tight construction"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "Chart.js",
+    "frameworkVersion": "4.4.4",
+    "version": "1.0",
+    "canvasHeight": 1100,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 1100
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/chart-theme.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Chart canvas has an aria-label; the active limits are also listed in a polite live text readout; active rows carry a ✓ and bold label, the deciding row a ▶ and a heavy outline, so colour is never the only cue; the marker is a native range input with aria-valuetext; options are native buttons (keys 1-4), Enter submits and moves on; verdicts announced through FP.announce."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "slider", "label": "Temperature marker", "purpose": "Move the marker from 0 to 1,200°F in 10°F steps (exploration)" },
+      { "type": "button", "label": "Options 1-4", "purpose": "Choose an answer (keys 1-4)" },
+      { "type": "button", "label": "Submit", "purpose": "Commit the answer (Enter)" },
+      { "type": "button", "label": "Next question / See summary", "purpose": "Move on after the feedback" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the questions, the score and the marker" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "A row is active when T lies in its range; 'to' ranges include both ends, 'over 275' means T > 275, 'over 300' means T > 300, open-ended rows have no upper bound.",
+      "Marker: min 0, max 1,200, step 10, default 70°F.",
+      "Five questions, fixed order, one attempt each; the correct option is revealed after each answer.",
+      "Mastery is 4 of 5 on the first attempt."
+    ],
+    "assumptions": ["Question temperatures are illustrative design points."],
+    "limitations": ["Shows the chapter's twelve limits; coatings, leak-tight levels other than nominal and axial packages beyond row 3 are not drawn."]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": ["FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), pp. 106, 110, 111, 114, 116, 120, 192, https://tcf.com/fanpedia/", "Question temperatures are illustrative."]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Explore overlapping limits on one scale, then commit an answer per scenario and confirm it on the chart",
+    "keyQuestions": [
+      "Move the marker to your job's temperature. Which limits does it cross?",
+      "Why do the aluminum limits for Arr. 4 centrifugal fans and axial impellers differ?",
+      "Which limits besides the package switch on at 320°F and at 550°F?"
+    ],
+    "commonMisconceptions": [
+      "One aluminum limit applies to every fan type.",
+      "A temperature exactly at a boundary belongs to the lower band in every case.",
+      "If the package fits, nothing else needs checking."
+    ],
+    "assessmentOpportunities": ["Running score 'Questions correct: n of 5'; mastery is 4 of 5 on the first attempt."]
+  },
+  "chapter": "20-construction-classes-materials-spark-resistance"
+}

@@ -1,0 +1,161 @@
+{
+  "title": "Discharge Position Explorer",
+  "description": "The learner explores how rotation, discharge angle and viewpoint redraw an SWSI housing, then names the rotation and discharge position of ten drive-side and inlet-side drawings with hints and reasons as feedback.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "discharge position",
+    "discharge angle",
+    "rotation",
+    "viewed from the drive side",
+    "up blast",
+    "top horizontal",
+    "bottom horizontal",
+    "down blast",
+    "angular discharge"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Naming rotation and discharge position from the drive side",
+    "learningObjectives": [
+      "The learner will apply the drive-side viewing rule and the discharge-angle convention to name the rotation and discharge position of ten SWSI centrifugal housing drawings, with at least 8 of 10 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "drive side",
+      "viewed from the drive side",
+      "rotation",
+      "discharge position",
+      "discharge angle",
+      "position names and abbreviations",
+      "mirror image of an opposite-side view"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 640,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 640
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-codes.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; option buttons use aria-pressed with a ✓ prefix; Enter checks and goes to the next drawing; the angle slider moves with the arrow keys."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "CW / CCW",
+        "purpose": "Explore: drawn rotation; challenge: your rotation"
+      },
+      {
+        "type": "button",
+        "label": "− 45° / + 45°",
+        "purpose": "Explore: step the discharge angle"
+      },
+      {
+        "type": "slider",
+        "label": "Discharge angle",
+        "purpose": "Explore: 45 to 360 in 45-degree steps"
+      },
+      {
+        "type": "button",
+        "label": "Drive side / Inlet side",
+        "purpose": "Explore: viewpoint"
+      },
+      {
+        "type": "button",
+        "label": "Start challenge",
+        "purpose": "Start (or resume) the ten drawings"
+      },
+      {
+        "type": "button",
+        "label": "UBD … BAU",
+        "purpose": "Challenge: your discharge abbreviation"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Check the drawing (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Next drawing",
+        "purpose": "Next drawing; See results after drawing 10 (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Run the ten drawings again"
+      },
+      {
+        "type": "button",
+        "label": "Explore mode",
+        "purpose": "Back to free exploration after the challenge"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [
+      "theta = N (CW), 360 − N (CCW)",
+      "outlet location = theta − 90 (CW), theta + 90 (CCW)",
+      "inlet-side view: d → 360 − d, arrow reversed"
+    ],
+    "rules": [
+      "An answer is correct only when rotation and abbreviation both match",
+      "Two attempts; only first-attempt answers count; mastery 8 of 10"
+    ],
+    "assumptions": [
+      "SWSI housing; FanPedia drive-side convention"
+    ],
+    "limitations": [
+      "Schematic housing drawings, not to scale"
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia pp. 46–47 (SWSI Centrifugal Fans, Rotation View From Drive Side)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Explore the mapping first, then name ten judged drawings including mirrored inlet-side views",
+    "keyQuestions": [
+      "What rotation and discharge does this fan have, seen from the drive side?"
+    ],
+    "commonMisconceptions": [
+      "The rotation seen from the inlet side is the fan's rotation",
+      "The discharge angle is a fixed compass bearing that ignores rotation",
+      "Upblast and downblast housings are the same for both rotations",
+      "\"Top Horizontal\" alone tells you which way the air goes"
+    ],
+    "assessmentOpportunities": [
+      "Running line 'Correct on first attempt: n of 10'; mastery is 8 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "12-discharge-positions-and-rotation"
+}

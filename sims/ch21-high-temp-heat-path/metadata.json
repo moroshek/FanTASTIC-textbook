@@ -1,0 +1,113 @@
+{
+  "title": "High Temperature Fan Heat Path",
+  "description": "Two illustrative side views of high temperature fans with ten labeled parts. For each part the learner commits a job (Block, Shed or Allow) before its description is revealed, in any order, one attempt each, with mastery at 8 of 10 correct on the first attempt. After the quiz the drawing can be filtered by job and every description reread in Explore mode.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "thermal expansion",
+    "shaft cooler",
+    "cooler box",
+    "insulation pins",
+    "recess cone",
+    "insulated plug",
+    "high temperature pedestal",
+    "separated pedestal",
+    "heat shield",
+    "fixed and floating bearings"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "How high temperature fan parts block heat, shed heat or allow thermal growth",
+    "learningObjectives": [
+      "The learner will classify ten high temperature fan parts by whether each one blocks heat, sheds heat, or allows thermal growth, with at least 8 of 10 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "thermal expansion", "fixed and floating bearings", "shaft cooler", "cooler box", "insulation pins",
+      "recess cone", "insulated plug", "high temperature pedestal", "separated pedestal", "heat shield"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 848,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 848
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Every part is a focusable role=button (Tab walks them in label order 1-10, then Enter or Space); keys 1-3 choose Block, Shed or Allow; after an answer focus moves to Next part. Verdicts and prompts are announced through FP.announce (aria-live), and the incorrect verdict names the right job. ✓/✗ glyphs, part badges and solid/dashed label borders pair with colour. Below 560 px the labels shrink to their part numbers in a larger font; the prompt and infobox name the part."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1. Block / 2. Shed / 3. Allow", "purpose": "Commit the job of the highlighted part (keys 1-3)" },
+      { "type": "button", "label": "Next part / See summary", "purpose": "Go to the next unanswered part (Enter)" },
+      { "type": "button", "label": "Quiz / Start over", "purpose": "Clear every answer and start the ten parts again" },
+      { "type": "button", "label": "Explore / Back to explore", "purpose": "After the quiz: select a part to reread its description (never scored)" },
+      { "type": "button", "label": "Show: All parts / Block / Shed / Allow", "purpose": "After the quiz: fade every part that does not do the chosen job" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each of the 10 parts takes one answer (Block, Shed or Allow); correctness is an exact match with the spec's Job column.",
+      "Parts may be answered in any order; an answered part cannot be re-answered.",
+      "The description is shown only after the answer is committed.",
+      "Score: n of 10 correct; mastery is 8 of 10 correct on the first attempt.",
+      "Part 10 (fixed bearing) is scored Allow because fixing one end sends all growth toward the floating bearing."
+    ],
+    "assumptions": [
+      "One generic belt-driven fan drawing combines features FanPedia shows on different pedestal forms (high temp angle, separated pedestal gap, motor heat shield) so that all eight parts appear together."
+    ],
+    "limitations": [
+      "Illustrative drawings, not to scale and not a specific Twin City Fan model.",
+      "The quiz opens with the shaft cooler selected; any other part can be selected instead."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia: The Fan & Blower Encyclopedia, pp. 85, 90, 110-113 and 192",
+      "Chapter 17 of this book (fixed and floating bearings)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Predict then reveal: the learner classifies each part's job before its description is shown, then filters the drawing by job",
+    "keyQuestions": [
+      "Does this part block heat, shed heat, or allow growth?",
+      "Why is a cooler box left uninsulated?",
+      "Why does a hot fan need one fixed and one floating bearing?",
+      "Which parts deal with the shaft heat path, and which with the pedestal?"
+    ],
+    "commonMisconceptions": [
+      "A cooler box is an insulated enclosure (it is deliberately left uninsulated so the cooler can shed heat).",
+      "Insulation pins are themselves insulation (they hold the insulation that blocks heat).",
+      "Every high temperature part is about keeping heat out (the floating bearing instead lets the shaft grow)."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 10'; mastery is 8 of 10 on the first attempt.",
+      "Summary list of missed parts with their jobs and descriptions."
+    ]
+  },
+  "chapter": "21-high-temperature-leak-tight-and-rto-construction"
+}

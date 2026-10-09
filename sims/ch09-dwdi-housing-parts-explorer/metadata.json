@@ -1,0 +1,108 @@
+{
+  "title": "DWDI Housing Parts Explorer",
+  "description": "Exploded view of a double width, double inlet centrifugal fan housing with eight labeled parts. The explore phase opens an infobox for each part and ticks it off in a list; the check phase hides the labels and shows eight function descriptions in a fixed order, two attempts each, with mastery at 7 of 8 on the first attempt. Based on FanPedia p. 61, not to scale.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "double width double inlet",
+    "housing side",
+    "housing scroll",
+    "cutoff",
+    "wiper bar",
+    "inlet funnel",
+    "bearing structural support",
+    "setback outlet flange",
+    "framing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Parts of a double width, double inlet (DWDI) centrifugal fan housing",
+    "learningObjectives": [
+      "The learner will identify the eight labeled parts of a double width double inlet housing from a description of each part's job, with at least 7 of 8 correct."
+    ],
+    "bloomsTaxonomy": "Remember",
+    "bloomVerb": "identify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "double width double inlet", "impeller", "bearing", "inlet funnel", "housing scroll", "housing side",
+      "cutoff", "wiper bar", "framing", "bearing structural support", "setback outlet flange"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 856,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 856
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/callout-quiz.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Every part is a focusable role=button (the paired parts have two elements each); Tab walks the parts, Enter or Space selects one, and after an answer focus moves to Next description. Verdicts and prompts are announced through FP.announce (aria-live). ✓/✗ glyphs, solid/dashed borders and an \"Answer\" badge pair with colour; the parts list marks opened parts with text. During the check part names are hidden from screen readers too until revealed. Narrow drawings use numbered callouts that match the numbered list, so text stays at 12 px or more."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Explore", "purpose": "Explore phase: click a part to open its infobox (never scored)" },
+      { "type": "button", "label": "Check", "purpose": "Start the eight-description check with labels hidden (also skips ahead)" },
+      { "type": "button", "label": "Next description / See summary", "purpose": "Go to the next description after an answer (Enter)" },
+      { "type": "button", "label": "Restart check", "purpose": "Run the check again from description 1 with the score reset (summary)" },
+      { "type": "button", "label": "Back to explore", "purpose": "Return to the explore phase from the summary" }
+    ]
+  },
+  "simulation": {
+    "modelType": "labeled diagram with identification check",
+    "equations": [],
+    "rules": [
+      "Explore phase: all labels visible; clicking a part opens its infobox and ticks it off in the list; never scored.",
+      "Check phase: eight descriptions in a fixed order; two attempts each; a click on either copy of a paired part (wiper bar, inlet funnel, bearing structural support) counts as that part.",
+      "A wrong attempt shows the spec's 'Feedback when wrong' text; after a second wrong attempt the correct part is highlighted and the description counts as missed.",
+      "Running count 'Parts identified: n of 8'; 'Mastered' appears at 7 or more first-attempt correct answers."
+    ],
+    "assumptions": [
+      "Cabinet-oblique exploded view with the paired inlet parts pulled away along the shaft line and the outlet flange lifted off the outlet."
+    ],
+    "limitations": [
+      "Simplified illustration, not to scale and not a specific Twin City Fan model."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 61 (Housing Construction, Centrifugal Fans (DWDI)): part list and layout",
+      "FanPedia pp. 59 and 188: wiper bar and inlet funnel wording",
+      "FanPedia p. 167 (Arrangement 3 DWDI): bearings in the airstream"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Labeled diagram quiz",
+    "teachingStrategy": "Pair each label with its job in the explore phase, then retrieve the part from the job alone with the labels hidden, with targeted feedback for each confusion.",
+    "keyQuestions": [
+      "Which parts does a DWDI housing have two of, and why?",
+      "Which part puts the bearings in the airstream?"
+    ],
+    "commonMisconceptions": [
+      "The bearing structural support is part of the motor base.",
+      "The cutoff and the wiper bar are the same part.",
+      "A DWDI fan has one inlet funnel, like an SWSI fan."
+    ],
+    "assessmentOpportunities": [
+      "Running count 'Parts identified: n of 8'; mastery is 7 of 8 on the first attempt."
+    ]
+  },
+  "chapter": "09-impeller-construction-and-material-handling"
+}

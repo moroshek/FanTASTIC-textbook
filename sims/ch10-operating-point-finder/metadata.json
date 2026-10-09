@@ -1,0 +1,118 @@
+{
+  "title": "Operating Point Finder",
+  "description": "Three challenges in which the learner predicts where illustrative fan Curve A crosses a duct system curve, followed by free exploration of the system resistance with a live operating point, BHP and stall-region flag.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "operating point",
+    "system curve",
+    "system resistance",
+    "fan curve",
+    "stall region",
+    "brake horsepower"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Fan curve, system curve and the operating point",
+    "learningObjectives": [
+      "The learner will solve for the operating point of an illustrative fan in a stated duct system by predicting where the fan curve and system curve intersect, to within ±300 CFM and ±0.15 in. wg."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "solve",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "fan curve",
+      "system resistance",
+      "system curve",
+      "operating point",
+      "stall region",
+      "brake horsepower"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 605,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 605
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-curves.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts with the operating-point readouts, each new challenge and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; fan and system curves differ by dash as well as colour; the stall region is hatched and labelled; predictions can be typed (Tab, Enter) as well as clicked on the chart."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Predicted airflow (CFM)", "purpose": "Type the predicted operating airflow" },
+      { "type": "input", "label": "Predicted pressure (in. wg)", "purpose": "Type the predicted operating pressure" },
+      { "type": "canvas-click", "label": "Chart", "purpose": "Click to place a prediction (fills both boxes, snapped to 10 CFM and 0.01 in. wg)" },
+      { "type": "button", "label": "Check", "purpose": "Check the prediction (Enter); ±300 CFM and ±0.15 in. wg, two attempts" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Advance after a challenge is resolved (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset the three challenges and the score" },
+      { "type": "slider", "label": "System resistance at 10,000 CFM", "range": "1.0-35.0 in. wg", "step": 0.1, "default": 4.0 }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model (piecewise-linear fan curve intersected with a square-law system curve)",
+    "equations": [
+      "System pressure P = R x (Q / 10,000)^2",
+      "Operating point: the airflow in 1 CFM steps from 0 to 16,000 CFM where |fan pressure - system pressure| is smallest"
+    ],
+    "rules": [
+      "Fan pressure and BHP between table points are linearly interpolated",
+      "Readouts: airflow to the nearest 10 CFM, pressure to two decimals, BHP to one decimal",
+      "An operating point below 4,000 CFM is flagged 'In the stall region: select a different fan.'",
+      "A prediction is correct when |predicted CFM - model CFM| <= 300 and |predicted pressure - model pressure| <= 0.15; two attempts per challenge"
+    ],
+    "assumptions": [
+      "Curve A is illustrative (Chapter 10), standard air, one fixed speed",
+      "The system curve has no fixed-pressure component and passes through zero"
+    ],
+    "limitations": [
+      "One fan at one speed; speed changes are covered by the Fan Law Calculator (Chapter 25)",
+      "System effect is not included"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Curve A: illustrative fan curve table in Chapter 10, 'The Fan Curve' (not a Twin City Fan published rating)",
+      "Challenge systems and model intersections: Chapter 10, 'The Operating Point'",
+      "Square law for system resistance: standard fan engineering"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Commit a predicted intersection before it is drawn, then explore how the system curve moves the operating point",
+    "keyQuestions": [
+      "Why does a loaded filter move the operating point left rather than right?",
+      "At what system resistance does this fan start to operate in its stall region?"
+    ],
+    "commonMisconceptions": [
+      "A fan always delivers its rated airflow, whatever the system",
+      "A dirtier, more resistant system makes the fan move more air",
+      "The system curve is a straight line"
+    ],
+    "assessmentOpportunities": [
+      "Running score shown as 'Challenges correct: n of 3'; mastery is 3 of 3 predictions within ±300 CFM and ±0.15 in. wg on the first attempt."
+    ]
+  },
+  "chapter": "10-fan-performance-curves-and-ratings"
+}

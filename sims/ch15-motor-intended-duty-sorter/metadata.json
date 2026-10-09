@@ -1,0 +1,109 @@
+{
+  "title": "Motor Intended Duty Sorter",
+  "description": "Eight illustrative fan inquiries, one at a time in a fixed order. The learner judges which motor intended duty each needs (GD, SD, IEEE 841, DFG or Washdown), commits it with Check and gets the correct duty and FanPedia's reason at once; a summary lists every case and reports mastery (7 of 8 on the first attempt).",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "motor intended duty",
+    "general duty",
+    "severe duty motor",
+    "IEEE 841",
+    "hazardous location motor",
+    "DFG",
+    "washdown duty"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing a motor's intended duty from the environment and the customer's specification",
+    "learningObjectives": [
+      "The learner will judge which motor intended duty (GD, SD, IEEE 841, DFG or Washdown) an application requires, given a short description of the motor's environment and the customer's specification, with at least 7 of 8 cases correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "judge",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "motor intended duty", "general duty", "severe duty motor", "IEEE 841",
+      "hazardous location motor", "DFG", "washdown duty"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 600,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 600
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, bin definitions and the summary are announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the chosen bin is outlined and its button is aria-pressed; keys 1-5 choose a bin, D opens all definitions, Enter checks and goes on."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "1 GD ... 5 Washdown", "purpose": "Choose a duty bin and open its definition (keys 1-5)" },
+      { "type": "button", "label": "Check", "purpose": "Commit the chosen bin (Enter); one attempt per case" },
+      { "type": "button", "label": "Next case / Finish", "purpose": "Go to the next case or the summary (Enter)" },
+      { "type": "button", "label": "Open all definitions", "purpose": "Open or close all five bin definitions (D)" },
+      { "type": "button", "label": "Show cases 5-8", "purpose": "Narrow screens: turn the summary page" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the score and start again at case 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each case has exactly one correct bin.",
+      "A case that names IEEE 841 is always IEEE 841; a severe case that does not name IEEE 841 is always SD.",
+      "Only an owner's NEC area classification makes a location hazardous; such a case is DFG.",
+      "Normal, clean and cool air around the motor is GD; food applications that are washed down are Washdown.",
+      "Eight cases in a fixed order, one attempt each; the correct answer is revealed after each Check."
+    ],
+    "assumptions": [
+      "No case is both severe and hazardous."
+    ],
+    "limitations": [
+      "The cases are illustrative. Enclosure (ODP, TEFC, EXPL, TENV) is not scored, although it must agree with the duty on a real order."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 73 (Motor Specifications, Intended Duty and Enclosure): bin definitions and rules",
+      "Chapter 15 sections 'Motor Intended Duty', 'Severe Duty Motor' and 'Hazardous Location Motor'",
+      "NEC class, division and group labels in cases 4 and 6 are standard NEC terms; the cases are illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Judgment against stated criteria: one committed answer per case, immediate criterion-based feedback, and a full case-by-case summary.",
+    "keyQuestions": [
+      "Does the customer's specification name IEEE 841?",
+      "Has the owner classified the area under the NEC?"
+    ],
+    "commonMisconceptions": [
+      "Any severe environment calls for IEEE 841.",
+      "A dusty or dirty environment is automatically a hazardous location.",
+      "General duty is acceptable anywhere the motor has a TEFC enclosure."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 8'; mastery is 7 of 8 on the first attempt."
+    ]
+  },
+  "chapter": "15-motor-ratings-speed-control-and-positioners"
+}

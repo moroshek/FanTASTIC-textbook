@@ -1,0 +1,135 @@
+{
+  "title": "Which Housing Feature Does the Job?",
+  "description": "Classify twelve job-site requests by the housing feature or opening accessory that meets each one, choosing from four options per request, with hints after a first wrong try, a summary of every request and a Retry missed practice round.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "welded housing",
+    "bolted housing",
+    "split housing",
+    "access door",
+    "inspection port",
+    "inlet collar",
+    "inlet flange",
+    "outlet flange",
+    "bird and safety screens",
+    "backdraft damper",
+    "stack cap"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Housing features and opening accessories",
+    "learningObjectives": [
+      "The learner will classify 12 job-site requests by the housing feature or opening accessory that meets each one, choosing from four options per request."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "welded housing",
+      "bolted housing",
+      "split housing",
+      "access door",
+      "inspection port",
+      "inlet collar",
+      "inlet flange",
+      "outlet flange",
+      "companion flange",
+      "bird screen",
+      "safety screen",
+      "backdraft damper",
+      "gravity damper",
+      "stack cap",
+      "hood"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 600,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 600
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new request and the summary announced through FP.announce (aria-live); options are native buttons; keys 1-4 choose, Enter goes to the next request; ✓/✗ glyphs with solid/dashed borders pair with colour; the summary list is a focusable, scrollable region."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Options 1-4",
+        "purpose": "Commit an option for the current request (keys 1-4)"
+      },
+      {
+        "type": "button",
+        "label": "Next request / See summary",
+        "purpose": "Advance after a request is resolved (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Retry missed",
+        "purpose": "Practice round over the missed requests (not scored)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reset all twelve requests and the score"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification (rule table)",
+    "equations": [],
+    "rules": [
+      "Twelve requests in a fixed order, four options each in the listed order, one correct option per request.",
+      "Two attempts; a wrong first try shows a hint naming the job of the correct feature; a second miss reveals the answer with its Why text.",
+      "Mastery: 10 of 12 on the first attempt."
+    ],
+    "assumptions": [],
+    "limitations": []
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia, pages 7, 8, 18, 19, 59, 117, 120, 125, 156, 157, 180, 181 and 194 (feature definitions, through this chapter's sections)",
+      "Requests are illustrative job-site wording written for this chapter"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Classification with near-miss distractors that share a location or a word with the right answer",
+    "keyQuestions": [
+      "What is the difference between a bird screen and a safety screen?",
+      "When does a backdraft damper act?"
+    ],
+    "commonMisconceptions": [
+      "Bird screens and safety screens are interchangeable.",
+      "An inspection port allows cleaning and impeller removal (it allows viewing only).",
+      "A collar and a flange are the same connection.",
+      "A backdraft damper controls airflow while the fan runs (it only stops reverse flow when the fan is off).",
+      "A split housing is only for maintenance (it is also used for shipping and tight openings)."
+    ],
+    "assessmentOpportunities": [
+      "'Requests correct: n of 12' running score; the summary shows the first-attempt score; mastery is 10 of 12 on the first attempt."
+    ]
+  },
+  "chapter": "03-basic-fan-anatomy"
+}

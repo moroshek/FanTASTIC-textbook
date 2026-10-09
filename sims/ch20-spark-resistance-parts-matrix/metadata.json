@@ -1,0 +1,87 @@
+{
+  "title": "Spark Resistance Parts Matrix",
+  "description": "Whole-matrix prediction: the learner sets 18 cells (six centrifugal fan components by spark-resistant Types A, B and C) to Non-ferrous, Steel or Not listed, checks them against FanPedia's component lists, sees each wrong row's reason, may fix the wrong cells once, and gets the full answer table and note.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["spark resistant construction", "Type A", "Type B", "Type C", "non-ferrous material", "rub plate", "inlet funnel"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Spark resistant construction Types A, B and C on centrifugal fans",
+    "learningObjectives": [
+      "The learner will differentiate spark-resistant Types A, B and C on a centrifugal fan by predicting, for six fan components, whether each type makes the component non-ferrous, leaves it steel, or does not list it, with at least 15 of 18 cells correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Analyze",
+    "bloomVerb": "differentiate",
+    "duration": "10-15 minutes",
+    "prerequisites": ["spark resistant construction", "Types A, B and C", "non-ferrous material", "rub plate", "inlet funnel", "pedestal"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 1170,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 1170
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Native table with row and column headers; every cell is a labelled <select> (\"Impeller, Type C\"); the verdict is added to each cell's label after Check; verdicts announced through FP.announce (aria-live); ✓/✗ text and solid/dashed borders pair with colour; component descriptions open from keyboard-reachable buttons with aria-expanded; text never below 12 px."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "18 matrix cells", "purpose": "Set each component/type cell to Non-ferrous, Steel or Not listed" },
+      { "type": "button", "label": "Component name", "purpose": "Show what the component is (exploration)" },
+      { "type": "button", "label": "Check", "purpose": "Score the matrix; available only when all 18 cells are set" },
+      { "type": "button", "label": "Try Again", "purpose": "Clear only the wrong cells for a second, unscored Check" },
+      { "type": "button", "label": "Show Answers", "purpose": "Reveal the answer table, every reason and the note" },
+      { "type": "button", "label": "Start over", "purpose": "Clear the matrix and the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Each cell has exactly one correct state from the answer table (FanPedia pp. 104-106).",
+      "All cells start empty; Check is available only when all 18 are set.",
+      "Score = cells matching the answer table on the first Check; mastery 15 of 18.",
+      "Try Again clears only the incorrect cells; the second Check is not scored.",
+      "Answers, reasons and the note are revealed after the second Check or on Show Answers."
+    ],
+    "assumptions": ["Centrifugal fans only; axial, radial bladed and pressure blower Type C parts differ (FanPedia pp. 107-109)."],
+    "limitations": ["Six representative components; FanPedia's lists include further parts such as set screws and shaft seals."]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": ["FanPedia: The Fan & Blower Encyclopedia (Twin City Fan), Spark Resistant Construction, Centrifugal Fans, pp. 104-106, https://tcf.com/fanpedia/"]
+  },
+  "pedagogical": {
+    "interactionPattern": "Whole-form critique",
+    "teachingStrategy": "Commit a prediction for every cell, check the whole matrix at once, read the reason for each wrong row, then repair",
+    "keyQuestions": [
+      "Which parts does each type make non-ferrous?",
+      "Why does Type A's list have no rub plate?",
+      "Which two rows carry the main difference between Types B and C?"
+    ],
+    "commonMisconceptions": [
+      "Type C makes the impeller non-ferrous.",
+      "Type B makes the whole airstream non-ferrous.",
+      "Spark-resistant construction makes the shaft non-ferrous."
+    ],
+    "assessmentOpportunities": ["First-Check score shown as 'First Check: n of 18 cells (recorded)'; mastery is 15 of 18 on the first Check."]
+  },
+  "chapter": "20-construction-classes-materials-spark-resistance"
+}

@@ -1,0 +1,124 @@
+{
+  "title": "Spring Isolator Deflection Calculator",
+  "description": "Three challenges ask for the static deflection of equally loaded spring isolators from total weight, isolator count and spring rate (±0.02 in, two attempts each, mastery 3 of 3 on the first attempt); the loaded spring is then drawn to scale with its natural frequency and isolation results, and Explore mode unlocks weight, count, spring rate and fan speed sliders.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "spring isolator",
+    "static deflection",
+    "spring rate",
+    "natural frequency",
+    "running frequency",
+    "frequency ratio",
+    "transmissibility"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Static deflection and isolation of spring isolators",
+    "learningObjectives": [
+      "The learner will calculate the static deflection of equally loaded spring isolators from total weight, isolator count and spring rate, to within 0.02 in."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "spring isolator", "static deflection", "spring rate", "natural frequency", "running frequency",
+      "frequency ratio", "transmissibility"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 700,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 700
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts and the derived natural frequency announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the status line uses words and a ▲ mark, not colour alone; Enter checks or goes to the next challenge; sliders are native range inputs with aria-labels."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "input", "label": "Your answer (in.)", "purpose": "Type the static deflection for the current challenge" },
+      { "type": "button", "label": "Check", "purpose": "Check the answer (Enter)" },
+      { "type": "button", "label": "Next challenge / Start exploring", "purpose": "Go to the next challenge; after challenge 3, unlock Explore mode (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "Return to challenge 1 and clear the score" },
+      { "type": "slider", "label": "Total weight W", "purpose": "400-8,000 lb in 100 lb steps (Explore mode)" },
+      { "type": "slider", "label": "Number of isolators n", "purpose": "4, 6 or 8 (Explore mode)" },
+      { "type": "slider", "label": "Spring rate k (each)", "purpose": "100-3,000 lb/in in 50 lb/in steps (Explore mode)" },
+      { "type": "slider", "label": "Fan speed", "purpose": "300-3,600 rpm in 10 rpm steps (Explore mode)" }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model",
+    "equations": [
+      "load per isolator = W / n",
+      "δ = (W / n) / k",
+      "fn = 3.13 / √δ",
+      "f = rpm / 60",
+      "r = f / fn",
+      "T = 1 / |r² − 1|",
+      "isolation efficiency = (1 − T) × 100%"
+    ],
+    "rules": [
+      "r > 1.41: status Isolating, efficiency shown.",
+      "r <= 1.41 and |r − 1| > 0.02: status Amplifying: springs too stiff for this speed, efficiency none.",
+      "|r − 1| <= 0.02: status Resonance, T shown as very large.",
+      "δ > 2.00 in: note that higher deflection requires engineering review (FanPedia p. 134).",
+      "An answer within ±0.02 in of the model deflection is correct; two attempts per challenge."
+    ],
+    "assumptions": [
+      "The load is shared equally by the isolators.",
+      "Undamped spring and mass; g = 386 in/s² gives the 3.13 constant."
+    ],
+    "limitations": [
+      "Real bases load corners unequally; suppliers then choose a spring per corner.",
+      "The spring drawing uses an illustrative 4-inch free height; deflections above 3.4 in are drawn at that limit and labelled off scale."
+    ]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Illustrative challenge values",
+      "FanPedia: The Fan & Blower Encyclopedia, p. 134 (typical spring deflections)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Commit a calculated deflection before the reveal, then explore how every input moves deflection, natural frequency and isolation",
+    "keyQuestions": [
+      "How much load does each isolator carry?",
+      "How far does a spring compress under that load?",
+      "Is the fan running fast enough above the springs' natural frequency to be isolated?"
+    ],
+    "commonMisconceptions": [
+      "Doubling deflection halves the natural frequency (it divides it by 1.41).",
+      "Any spring isolates, whatever the fan speed (below a ratio of 1.41 the springs amplify).",
+      "Adding isolators adds deflection (more isolators share the load, so each deflects less)."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 3'; mastery is 3 of 3 on the first attempt.",
+      "Running line 'Challenges correct: n of 3'."
+    ]
+  },
+  "chapter": "23-spring-isolators-restraints-field-measurement"
+}

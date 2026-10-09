@@ -1,0 +1,130 @@
+{
+  "title": "Impeller Recommender for Real Airstreams",
+  "description": "Ten shuffled job cards describing real airstreams, each placed in one of seven impeller bins (HAF, HIB, RTF, RBA, RBO, RBW, RBP). Two attempts per card: a wrong first try asks what the material does, a wrong second try shows the best fit and the catalog reason. Mastery is 8 of 10 correct on the first try; the summary lists each card's first choice and best fit.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "airfoil impeller",
+    "backward curved impeller",
+    "high efficiency centrifugal fan",
+    "radial tip impeller",
+    "radial bladed impeller",
+    "air handling impeller",
+    "open radial paddle impeller",
+    "material handling impeller",
+    "paper handling impeller"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Matching centrifugal impeller types to clean and dirty airstreams",
+    "learningObjectives": [
+      "The learner will recommend one of seven impeller types for each of ten airstream descriptions, judged against Twin City Fan's catalog application statements, with at least 8 of 10 correct."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "airfoil impeller",
+      "backward curved impeller",
+      "high efficiency centrifugal fan",
+      "radial tip impeller",
+      "radial bladed impeller",
+      "air handling impeller",
+      "open radial paddle impeller",
+      "material handling impeller",
+      "paper handling impeller"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 660,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); bin buttons carry aria-labels with the full name and description; verdicts announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed card borders pair with colour; keys 1-7 place, Enter next, D toggles the bin descriptions; focus moves to Next card after a final verdict."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "Airfoil (HAF) ... Paper handling (RBP)",
+        "purpose": "Seven bins: recommend that impeller for the card (keys 1-7)"
+      },
+      {
+        "type": "button",
+        "label": "Next card / Show summary",
+        "purpose": "Go to the next card (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Bin descriptions",
+        "purpose": "Show or hide all seven bin descriptions (D)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reshuffle the cards and reset the score"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "One bin per card; a card is correct only in the bin from the spec's 'Correct impeller' column.",
+      "Cards 1 and 2, 4 and 5, and 9 and 10 share a bin; the learner is not told how many cards belong in each bin.",
+      "Two attempts per card; only the first try counts toward the score and mastery (8 of 10)."
+    ],
+    "assumptions": [
+      "Job settings such as 'process tank' and 'stamping line' are illustrative wrappers around the catalog statements."
+    ],
+    "limitations": [
+      "Real selections come from the catalog performance tables and the application engineer; this sorter covers impeller type only."
+    ]
+  },
+  "dataProvenance": {
+    "status": "catalog",
+    "sources": [
+      "Source: tcf.com product pages (Radial Bladed Fans: RBA, RBO, RBW, RBP; Radial Tip & High Efficiency Fans: RTF, HAF, HIB), retrieved 2026-10-08",
+      "FanPedia pp. 31-32: impeller types"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Commit a recommendation for each realistic job, then see the catalog reasoning; the retry prompt builds the 'what does the material do' habit.",
+    "keyQuestions": [
+      "Does the material stick, wrap, strike or pass through?",
+      "Is the efficiency of a clean-air wheel worth the risk on this airstream?"
+    ],
+    "commonMisconceptions": [
+      "The most efficient impeller is always the best choice.",
+      "Any radial bladed impeller handles any dirty airstream.",
+      "Paper shreddings and corrugated trim need the same impeller.",
+      "Radial tip fans are only for clean air."
+    ],
+    "assessmentOpportunities": [
+      "First-try score shown as 'Recommendations correct on first try: n of 10'; mastery is 8 of 10 on the first try."
+    ]
+  },
+  "chapter": "09-impeller-construction-and-material-handling"
+}

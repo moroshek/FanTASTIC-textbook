@@ -1,0 +1,152 @@
+{
+  "title": "Belt Drive Speed Calculator",
+  "description": "Calculate the fan speed of three belt drives from the motor speed and the two sheave pitch diameters before the drive turns, then change the motor speed and either sheave to see the ratio, label and fan speed update.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "drive train",
+    "belt drive",
+    "sheave",
+    "V-belt",
+    "pitch diameter",
+    "direct drive"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Belt drive speed ratio",
+    "learningObjectives": [
+      "The learner will calculate the fan shaft speed of a belt drive from the motor speed and the two sheave pitch diameters, to within ±10 RPM."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "calculate",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "drive train",
+      "sheave",
+      "V-belt",
+      "pitch diameter",
+      "motor speed",
+      "direct drive",
+      "belt drive"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 715,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 715
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-models.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, each new challenge and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; Enter checks and goes to the next challenge; the answer box, every button, the motor speed menu and both sliders are reachable with Tab; the arrow keys move a focused slider."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "input",
+        "label": "Your answer",
+        "purpose": "Type the fan speed in RPM"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Check the answer (Enter); ±10 RPM, two attempts"
+      },
+      {
+        "type": "button",
+        "label": "Next challenge / Start exploring",
+        "purpose": "Advance after a challenge is resolved (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Reset the three challenges and the score"
+      },
+      {
+        "type": "select",
+        "label": "Motor speed",
+        "options": [
+          "1,160 RPM",
+          "1,760 RPM",
+          "3,500 RPM"
+        ],
+        "default": "1,760 RPM"
+      },
+      {
+        "type": "slider",
+        "label": "Motor sheave pitch diameter",
+        "range": "3.0-12.0 in",
+        "step": 0.2,
+        "default": 5.0
+      },
+      {
+        "type": "slider",
+        "label": "Fan sheave pitch diameter",
+        "range": "4.0-24.0 in",
+        "step": 0.2,
+        "default": 8.0
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "numeric model (belt drive kinematics)",
+    "equations": [
+      "N_fan = N_motor x D_motor / D_fan"
+    ],
+    "rules": [
+      "Fan speed rounded to the nearest 1 RPM; answers judged within ±10 RPM of the model value.",
+      "Ratio label: fan slower than motor (ratio < 1.000), fan same as motor (= 1.000), fan faster than motor (> 1.000).",
+      "Range covered: 145 RPM (1,160 x 3.0 / 24.0) to 10,500 RPM (3,500 x 12.0 / 4.0)."
+    ],
+    "assumptions": [
+      "Pitch diameters; belt slip is not modeled."
+    ],
+    "limitations": [
+      "Illustrative nominal motor speeds; real drives lose a little speed to belt slip."
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Standard belt-drive kinematics, ignoring belt slip",
+      "FanPedia, page 173 (a sheave change reaches the exact point of rating)"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Numeric challenge sequence",
+    "teachingStrategy": "Commit a number, then watch the drive run; free exploration confronts sheave-size misconceptions",
+    "keyQuestions": [
+      "What happens to fan speed when the fan sheave gets bigger?",
+      "Can a belt drive make the fan turn faster than the motor?"
+    ],
+    "commonMisconceptions": [
+      "A larger fan sheave makes the fan turn faster (it makes it turn slower).",
+      "A belt drive always slows the fan down (a larger motor sheave makes the fan faster than the motor).",
+      "Fan speed depends on the difference between the sheave sizes rather than their ratio."
+    ],
+    "assessmentOpportunities": [
+      "'Challenges correct: n of 3' running score; mastery is 3 of 3 on the first attempt."
+    ]
+  },
+  "chapter": "03-basic-fan-anatomy"
+}

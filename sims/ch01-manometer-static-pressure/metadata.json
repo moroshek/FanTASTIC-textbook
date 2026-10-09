@@ -1,0 +1,117 @@
+{
+  "title": "Reading Static Pressure with a Manometer",
+  "description": "The learner reads a U-tube manometer at six points of a supply system (louver, filter, coil, fan, ductwork, diffuser, room) as signed static pressures in in. wg, predicting each before the water levels are revealed, then works out the fan's static pressure rise of 2.50 in. wg.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "Static pressure",
+    "Manometer",
+    "Inches of water gauge",
+    "Suction",
+    "Pressure drop",
+    "Fan static pressure rise"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Reading static pressure with a U-tube manometer",
+    "learningObjectives": [
+      "The learner will interpret U-tube manometer readings taken at six points in a supply system as signed static pressures in inches of water gauge, and infer the fan's static pressure rise, with at least 6 of 7 answers correct."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "interpret",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "Air pressure, atmospheric pressure and gauge pressure",
+      "Suction",
+      "Inches of water gauge",
+      "Manometer",
+      "Static pressure and pressure drop"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 660,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js",
+      "../shared-libs/fan-drawings.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, slip notes, prompts and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed feedback borders pair with colour; readings carry an explicit + or − sign; the sign is a native radio group (arrow keys); Enter checks and then goes to the next point; keys 1-7 choose a point in Review mode."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "radio", "label": "Sign", "purpose": "+ above room or − below room (not shown for question 7)" },
+      { "type": "input", "label": "Reading", "purpose": "Size of the reading in in. wg; a typed + or − sign also sets the sign" },
+      { "type": "button", "label": "Check / Retry (not scored)", "purpose": "Check the reading (Enter); after a miss, one unscored retry" },
+      { "type": "button", "label": "Next point / Go to question 7 / Show summary", "purpose": "Advance after an answer (Enter)" },
+      { "type": "select", "label": "Review", "purpose": "Choose a point to review after question 7 (keys 1-7 or a click on a point also work)" },
+      { "type": "button", "label": "Start over", "purpose": "Reset all seven items and the score" }
+    ]
+  },
+  "simulation": {
+    "modelType": "Rule table with a derived pressure profile",
+    "equations": [
+      "Reading after an inlet-side part = previous reading − its pressure drop",
+      "Fan outlet reading = sum of the discharge-side drops",
+      "Fan static pressure rise = outlet reading − inlet reading",
+      "Level difference (in.) = |reading| (in. wg)"
+    ],
+    "rules": [
+      "Correct when the sign matches and |entered − correct| <= 0.05 in. wg; 0 at point 6 is correct with or without a sign",
+      "Seven items in fixed order, one scored attempt each, one unscored retry after a miss",
+      "A nonzero reading with no sign, or an entry that is not a number, does not use the attempt",
+      "Mastery: 6 of 7 correct on the first attempt"
+    ],
+    "assumptions": [
+      "Equal air velocity at the fan inlet and outlet (the chapter's simple subtraction)",
+      "Water-filled U-tube; each leg moves by half the reading"
+    ],
+    "limitations": [
+      "Static pressure only; velocity pressure and total pressure are in Chapter 2"
+    ]
+  },
+  "dataProvenance": {
+    "status": "illustrative",
+    "sources": [
+      "Chapter 1 section 'Static Pressure', worked example 'Adding Up a System's Resistance' (illustrative values; the sim labels them 'Illustrative values')"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Predict then reveal",
+    "teachingStrategy": "Committed prediction at each measurement point, then the instrument reading and the reason side by side; the profile builds up on the system drawing",
+    "keyQuestions": [
+      "Is the duct above or below room pressure at this point, and by how much?",
+      "Which manometer leg does the water move on when the duct is under suction?",
+      "Why does the fan's pressure rise include the suction on its inlet side?"
+    ],
+    "commonMisconceptions": [
+      "Static pressure is always positive.",
+      "The water rises on the side connected to the duct when the duct is pressurized; in fact it is pushed down on that side.",
+      "The fan's pressure rise equals the outlet reading alone, ignoring the suction on the inlet side."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt correct: n of 7'; mastery is 6 of 7 on the first attempt.",
+      "The unscored retry and Review mode are not evidence of mastery"
+    ]
+  },
+  "chapter": "01-air-pressure-and-the-fan"
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <meta name="schema" content="https://dmccreary.github.io/intelligent-textbooks/ns/microsim/v1">
+    <title>Fan Temperature Limits Ruler using Chart.js</title>
+    <link rel="stylesheet" href="../shared-libs/fanpedia-sim.css">
+    <style>
+        .ftlr-chart { position: relative; height: 400px; background: #ffffff; }
+        .ftlr-marker { border-top: 1px solid var(--fp-border); padding: 4px 10px 6px 10px; background: #ffffff; }
+        .ftlr-marker input[type=range] { flex: 1 1 220px; min-width: 160px; max-width: 520px; }
+        .ftlr-marker b { min-width: 64px; }
+        .ftlr-readout { font-size: var(--fp-size-secondary); margin: 2px 0 0 0; min-height: 2.8em; }
+        .ftlr-q { margin: 4px 0 6px 0; }
+        .ftlr-opts { display: flex; flex-direction: column; align-items: stretch; gap: 6px; margin: 6px 0; }
+        .ftlr-opts button { text-align: left; }
+        .ftlr-opts button.ftlr-right { border: 2px solid var(--fp-correct); background: var(--fp-correct-bg); color: var(--fp-correct); font-weight: bold; }
+        .ftlr-opts button.ftlr-wrong { border: 2px dashed var(--fp-incorrect); background: var(--fp-incorrect-bg); color: var(--fp-incorrect); font-weight: bold; }
+        .ftlr-opts button.ftlr-right::before, .ftlr-opts button.ftlr-wrong::before { content: none; }
+        .ftlr-summary ol { margin: 4px 0 0 0; padding-left: 22px; }
+        .ftlr-summary li { margin: 3px 0; }
+        @media (max-width: 480px) {
+            .ftlr-chart { height: 440px; }
+            .ftlr-marker { padding: 4px 6px; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="../shared-libs/fanpedia-core.js"></script>
+    <script src="../shared-libs/chart-theme.js"></script>
+    <script src="ch20-fan-temperature-limits-ruler.js" defer></script>
+</head>
+<body>
+    <main class="fp-app">
+        <h1 class="fp-title">Fan Temperature Limits Ruler</h1>
+
+        <section class="fp-draw" id="drawing" aria-label="Temperature limits range chart">
+            <div class="ftlr-chart">
+                <canvas id="chart" role="img" aria-label="Horizontal range chart of twelve FanPedia temperature limits on a 0 to 1,200 degree Fahrenheit axis, with a movable temperature marker. The active limits are listed in the text below the chart."></canvas>
+            </div>
+            <div class="ftlr-marker">
+                <div class="fp-row">
+                    <label for="temp">Temperature marker</label>
+                    <input type="range" id="temp" min="0" max="1200" step="10" value="70">
+                    <b id="tempVal">70°F</b>
+                </div>
+                <p class="ftlr-readout" id="readout" aria-live="polite"></p>
+            </div>
+        </section>
+        <p class="fp-note" id="dataNote"><span class="illustrative">Illustrative design temperatures</span> · Limits: FanPedia pp. 106, 110, 111, 114, 116, 120, 192 · Hover or tap a bar for its full label, range and source</p>
+
+        <section class="fp-ctrl" aria-label="Questions">
+            <div class="fp-row">
+                <span class="fp-score" id="score">Questions correct: 0 of 5</span>
+                <div id="progress" class="fp-progress" aria-label="Progress"></div>
+            </div>
+            <p class="fp-prompt" id="prompt">Move the marker to your job's temperature. Which limits does it cross?</p>
+            <div id="quiz">
+                <p class="ftlr-q" id="question"></p>
+                <div class="ftlr-opts" id="options" role="group" aria-label="Options"></div>
+                <div class="fp-row">
+                    <button id="submit" type="button">Submit</button>
+                    <button id="next" type="button" hidden>Next question</button>
+                    <button id="startOver" type="button" class="secondary">Start over</button>
+                </div>
+            </div>
+            <div id="feedback" class="fp-feedback" role="status"></div>
+            <div id="summary" class="fp-feedback final ftlr-summary" role="status"></div>
+            <p class="fp-note">Keyboard: arrow keys move the temperature marker; keys 1-4 choose an option; Enter submits, then goes to the next question; Tab reaches every control.</p>
+        </section>
+    </main>
+    <a class="fp-back" href=".">Back to Lesson Plan</a>
+</body>
+</html>

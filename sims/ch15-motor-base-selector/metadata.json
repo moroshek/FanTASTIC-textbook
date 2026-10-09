@@ -1,0 +1,141 @@
+{
+  "title": "Motor Base Selector",
+  "description": "Eight illustrative belt-driven fan cases, in a fixed order, each giving the motor frame, the fan type and arrangement and sometimes the industry. The learner chooses one of five motor base styles and commits it with Check; the correct base and FanPedia's rule appear at once, a reference table of frame ranges and typical mountings opens at any time, and a summary reports mastery (7 of 8 on the first attempt).",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "motor base",
+    "slide base",
+    "heavy-duty slide rails",
+    "pivot motor base",
+    "automotive pivot base",
+    "post mount motor base",
+    "pivot/bolted adjustable base",
+    "NEMA frame size"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Choosing a motor base style for a belt-driven fan",
+    "learningObjectives": [
+      "The learner will apply FanPedia's motor base frame ranges and typical mountings to choose the motor base style for a belt-driven fan, given the motor frame, the fan type and arrangement, and the industry, with at least 7 of 8 cases correct."
+    ],
+    "bloomsTaxonomy": "Apply",
+    "bloomVerb": "apply",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "motor base",
+      "slide base",
+      "heavy-duty slide rails",
+      "pivot motor base",
+      "automotive pivot base",
+      "post mount motor base",
+      "pivot/bolted adjustable base",
+      "NEMA frame size",
+      "fan arrangement"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 600,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 600
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, the reference table and the summary are announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; the chosen base is outlined and its button is aria-pressed; keys 1-5 choose a base, R opens, pages or closes the reference table, Enter checks and goes on."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "1 NEMA slide ... 5 Pivot/bolted",
+        "purpose": "Choose a base style (keys 1-5)"
+      },
+      {
+        "type": "button",
+        "label": "Check",
+        "purpose": "Commit the chosen base (Enter); one attempt per case"
+      },
+      {
+        "type": "button",
+        "label": "Next case / Finish",
+        "purpose": "Go to the next case or the summary (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Reference table / More rows",
+        "purpose": "Open, page or close the frame-range and mounting table (R)"
+      },
+      {
+        "type": "button",
+        "label": "Show cases 5-8",
+        "purpose": "Narrow screens: turn the summary page"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Clear the score and start again at case 1"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "rule table",
+    "equations": [],
+    "rules": [
+      "Frame number comparisons use the numeric part of the frame designation (326T is 326).",
+      "NEMA type slide base: 48 <= frame <= 445. Standard post mount: 48 <= frame <= 215. Pivot/bolted adjustable base: 254 <= frame <= 445.",
+      "Heavy-duty slide rails: 440, 500 or 5000 series; a 440-series frame above 445 has only this choice.",
+      "Automotive pivot base: Arrangement 9SS, or an automotive application that specifies it.",
+      "Eight cases in a fixed order, one attempt each; the correct base is revealed after each Check."
+    ],
+    "assumptions": [
+      "Each case has exactly one correct base."
+    ],
+    "limitations": [
+      "The cases are illustrative. Bolt-on mounts for tubeaxial, vaneaxial and centaxial Arrangement 9 fans (48 to 286 frame) are not among the five choices."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia p. 76 (Slide Bases/Rails), p. 77 (Automotive Pivot), p. 78 (Adjustable Bases): frame ranges and typical mountings",
+      "FanPedia p. 74: the 5008S special size",
+      "Chapter 15, 'Mounting the Motor on a Belt-Driven Fan'; the cases are illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Procedure practice: frame range, then arrangement, then industry, on eight varied cases with one committed answer each and rule-based feedback.",
+    "keyQuestions": [
+      "Which base styles does this motor frame allow?",
+      "Is the fan's arrangement on that base's mounting list?"
+    ],
+    "commonMisconceptions": [
+      "Any motor up to 449T fits a NEMA slide base.",
+      "Post mount and pivot/bolted bases are interchangeable.",
+      "Automotive pivot bases can use any motor position."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 8'; mastery is 7 of 8 on the first attempt."
+    ]
+  },
+  "chapter": "15-motor-ratings-speed-control-and-positioners"
+}

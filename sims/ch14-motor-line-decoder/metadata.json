@@ -1,0 +1,112 @@
+{
+  "title": "Motor Line Decoder",
+  "description": "Learners interpret each of the ten fields of the motor line '50 HP, 1800 RPM, IN, P, 3 Phase, 60 Frequency, 460 Volt, SD, TEFC, 326T', picking one of four meanings before the explanation is revealed. The decoded meaning stays under each field, misconception picks get a one-line note, and the whole line ends decoded with the first-try score.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": [
+    "motor nameplate",
+    "synchronous speed",
+    "induction motor",
+    "motor efficiency class",
+    "intended duty",
+    "motor enclosure",
+    "NEMA frame size"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Reading a fan motor specification line",
+    "learningObjectives": [
+      "The learner will interpret each of the ten fields of a Twin City Fan motor specification line, choosing the correct meaning for at least 8 of 10 fields on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "interpret",
+    "duration": "10 minutes",
+    "prerequisites": [
+      "horsepower",
+      "synchronous speed and poles",
+      "induction and EC technology",
+      "efficiency class",
+      "phase, frequency and voltage",
+      "intended duty",
+      "motor enclosure",
+      "NEMA frame size and frame letters"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "html",
+    "frameworkVersion": "n/a",
+    "version": "1.0",
+    "canvasHeight": 660,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 660
+    },
+    "responsive": true,
+    "dependencies": [
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "Native buttons for every meaning and answered field; verdicts, field changes and reopened explanations announced through FP.announce (aria-live); ✓/✗ glyphs, solid/dashed borders and the ▸ current-field marker pair with colour; keys 1-4 pick, Enter goes to the next field; focus moves to Next field after a pick and to the first meaning on a new field."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "button", "label": "Four meanings (1-4)", "purpose": "Pick the meaning of the highlighted field; one scored pick per field" },
+      { "type": "button", "label": "Next field / Show decoded line", "purpose": "Advances to the next field (Enter); after field 10 shows the decoded line and score" },
+      { "type": "button", "label": "Answered field in the line", "purpose": "Reopens that field's explanation (exploration, not scored)" },
+      { "type": "button", "label": "Start over", "purpose": "Clears the score and returns to field 1" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": ["Ns = 120 f / p (120 × 60 / 4 = 1800 RPM)", "kW = HP × 0.7457", "Shaft height = first two frame digits / 4 (in.)"],
+    "rules": [
+      "Ten fields in fixed order; each shows four choices in a fixed shuffled order.",
+      "A first pick is correct when it equals the field's meaning; the score counts first picks only.",
+      "Mastery is 8 or more of 10 correct on the first attempt."
+    ],
+    "assumptions": [
+      "Distractor meanings are illustrative and are not real codes."
+    ],
+    "limitations": [
+      "Decodes one example line; it does not cover EC lines, IEC frames or other duty codes in depth."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "Source: FanPedia p. 71 (typical motor specification line and field categories)",
+      "Source: FanPedia pp. 72-74 (efficiency, enclosure and duty, frame letters)",
+      "Shaft-height rule: standard NEMA relationship for foot-mounted frames from 143T up"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Designation decoder",
+    "teachingStrategy": "Predict each field's meaning, then reveal the explanation; the decoded line accumulates field by field",
+    "keyQuestions": [
+      "Why is 1800 RPM not the motor's running speed?",
+      "Which field is efficiency, and which is phase?",
+      "What does the T in 326T tell you, and what is the shaft height?"
+    ],
+    "commonMisconceptions": [
+      "1800 RPM is the exact running speed.",
+      "P means phase.",
+      "SD means standard duty.",
+      "T in 326T means TEFC.",
+      "60 Frequency is a speed."
+    ],
+    "assessmentOpportunities": [
+      "First-try score shown as 'First-try correct: n of 10'; mastery is 8 of 10 on the first attempt."
+    ]
+  },
+  "chapter": "14-fan-motors-and-enclosures"
+}

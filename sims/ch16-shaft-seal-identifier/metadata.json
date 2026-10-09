@@ -1,0 +1,139 @@
+{
+  "title": "Shaft Seal Identifier",
+  "description": "Explore FanPedia's seven shaft seal types, in three families, each with a reference infobox and a schematic cross-section; then classify twelve shuffled cards (parts, materials or order-line names) into the seven bins with two attempts each. The correct bin's infobox opens after every answer; mastery is 10 of 12 on the first attempt.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-09",
+  "subject": [
+    "shaft seal",
+    "friction shaft seal",
+    "V-ring shaft seal",
+    "lip shaft seal",
+    "carbon ring seal",
+    "lantern ring",
+    "stuffing box seal",
+    "stuffing box with gas purge",
+    "Graphoil",
+    "carbon yarn packing"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Identifying FanPedia's seven shaft seal types",
+    "learningObjectives": [
+      "The learner will classify a fan shaft seal into one of seven FanPedia seal types from a description of its parts, materials or order-line name, with at least 10 of 12 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Understand",
+    "bloomVerb": "classify",
+    "duration": "10-15 minutes",
+    "prerequisites": [
+      "shaft seal",
+      "friction shaft seal",
+      "V-ring (axial) shaft seal",
+      "lip shaft seal",
+      "carbon ring seal (single and double)",
+      "lantern ring",
+      "purge",
+      "stuffing box seal",
+      "stuffing box with gas purge",
+      "Graphoil",
+      "carbon yarn packing"
+    ],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 760,
+    "canvasDimensions": {
+      "width": "responsive",
+      "height": 760
+    },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, infoboxes and the summary are announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour, and a wrong first pick gets a dashed outline; each bin button's aria-label says whether it opens the infobox or commits the card; keys 1-7 press a bin, Enter starts the quiz and goes on."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      {
+        "type": "button",
+        "label": "1 Friction ... 7 Box + purge",
+        "purpose": "Explore: open the bin's infobox; quiz: commit the card to the bin (keys 1-7)"
+      },
+      {
+        "type": "button",
+        "label": "Start the quiz",
+        "purpose": "Leave explore mode and deal the twelve cards (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Next card / Finish",
+        "purpose": "Go to the next card or the summary (Enter)"
+      },
+      {
+        "type": "button",
+        "label": "Summary / More results",
+        "purpose": "After the quiz: return to the summary from a bin, or page it on narrow screens"
+      },
+      {
+        "type": "button",
+        "label": "Start over",
+        "purpose": "Deal the twelve cards again in a new shuffle and clear the score"
+      }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Each card has exactly one correct bin.",
+      "A card is committed by pressing a bin; a wrong first attempt allows one more commit; score counts first-attempt correct answers only.",
+      "12 cards, shuffled, two attempts each; after each answer the correct bin's infobox opens.",
+      "Mastery is 10 of 12 on the first attempt; the mastery message reads 'You can identify FanPedia's seven shaft seal types from their parts.'"
+    ],
+    "assumptions": [
+      "Seven seal types in three families: contact (friction, V-ring, lip), carbon ring (single, double), stuffing box (plain, with gas purge)."
+    ],
+    "limitations": [
+      "Cross-sections are schematic and not to scale; exact construction varies by seal vendor."
+    ]
+  },
+  "dataProvenance": {
+    "status": "fanpedia",
+    "sources": [
+      "FanPedia (Twin City Fan, 2021), Shaft Seals pp. 149-155",
+      "Card wording written for Chapter 16 from those pages"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Card sorter",
+    "teachingStrategy": "Explore the seven types with cross-sections, then classify unfamiliar descriptions with committed answers; feedback names the identifying part and opens the reference infobox.",
+    "keyQuestions": [
+      "What touches the shaft?",
+      "Is there a lantern ring and a purge hole?"
+    ],
+    "commonMisconceptions": [
+      "Any seal with a purge is a carbon ring seal.",
+      "A lip shaft seal and a bearing lip seal are the same part.",
+      "'Labyrinth' always means a bearing seal.",
+      "Single and double carbon ring seals differ only in size."
+    ],
+    "assessmentOpportunities": [
+      "First-attempt score shown as 'First-attempt score: n of 12'; mastery is 10 of 12 on the first attempt; running line 'First-try correct: n of 12'."
+    ]
+  },
+  "chapter": "16-bearings-shafts-and-shaft-seals"
+}

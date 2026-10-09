@@ -1,0 +1,90 @@
+{
+  "title": "Industrial Product Line Matcher",
+  "description": "Thirteen illustrative jobs in shuffled order: recommend one of 13 industrial and application product lines (one scored attempt), then choose the feature that decides the job from three options (scored separately). The summary lists missed jobs with their reasons.",
+  "creator": "Twin City Fan",
+  "date": "2026-10-08",
+  "subject": ["plug fan", "vaneaxial fan", "roof mounted panel fan", "radial bladed fan", "radial tip fan", "pressure blower", "utility set", "duct fan", "filtered supply fan", "air kit", "paint booth exhaust fan", "dust collection fan", "inline lab exhaust fan"],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "Copyright 2026 Twin City Fan. All rights reserved.",
+  "educational": {
+    "audience": "Adult professional development: new application engineers, sales staff, representatives and facilities staff",
+    "subjectArea": "Fans and blowers",
+    "topic": "Matching industrial jobs to product lines",
+    "learningObjectives": [
+      "The learner will recommend the product line that best fits each of 13 industrial job descriptions, justifying the choice by the deciding feature, with at least 10 of 13 correct on the first attempt."
+    ],
+    "bloomsTaxonomy": "Evaluate",
+    "bloomVerb": "recommend",
+    "duration": "15-20 minutes",
+    "prerequisites": ["plug fan", "vaneaxial fan", "roof mounted panel fan", "radial bladed fan", "radial tip fan", "pressure blower", "utility set", "duct fan", "filtered supply fan", "air kit", "paint booth exhaust fan", "dust collection fan", "inline lab exhaust fan"],
+    "standards": []
+  },
+  "technical": {
+    "framework": "p5.js",
+    "frameworkVersion": "1.11.10",
+    "version": "1.0",
+    "canvasHeight": 610,
+    "canvasDimensions": { "width": "responsive", "height": 610 },
+    "responsive": true,
+    "dependencies": [
+      "https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js",
+      "../shared-libs/fanpedia-sim.css",
+      "../shared-libs/fanpedia-core.js",
+      "../shared-libs/fanpedia-p5.js"
+    ],
+    "accessibility": {
+      "hasAltText": true,
+      "keyboardNavigable": true,
+      "notes": "describe() text (fallback mode); verdicts, the feature options, each new job and the summary announced through FP.announce (aria-live); ✓/✗ glyphs and solid/dashed borders pair with colour; native select for the 13 lines; keys 1-3 choose a feature and Enter checks and goes on; focus moves to Check after a choice and to Next after a check."
+    }
+  },
+  "userInterface": {
+    "controls": [
+      { "type": "select", "label": "Product line", "purpose": "Choose one of 13 product lines" },
+      { "type": "button", "label": "Check line / Check feature", "purpose": "Check the current step (Enter); one scored attempt each" },
+      { "type": "button", "label": "Feature options 1-3", "purpose": "Choose the deciding feature (keys 1-3)" },
+      { "type": "button", "label": "Next job / See summary", "purpose": "Advance after both steps are checked (Enter)" },
+      { "type": "button", "label": "Start over", "purpose": "New scored round in a new order" }
+    ]
+  },
+  "simulation": {
+    "modelType": "classification",
+    "equations": [],
+    "rules": [
+      "Exactly one product line is correct per job; one scored attempt",
+      "The three feature options are the correct feature and two distractors, shuffled; one scored attempt",
+      "The line is checked first; the feature question appears after it",
+      "Mastery counts lines only: 10 of 13 on the first attempt"
+    ],
+    "assumptions": ["Jobs are illustrative"],
+    "limitations": ["Recommends a product line only; sizing and options come from the current catalog"]
+  },
+  "dataProvenance": {
+    "status": "mixed",
+    "sources": [
+      "Product line definitions: Chapter 6, drawing on FanPedia pp. 4-8, 31-32, 62, 83, 115, 123, 138, 167, 171-172 and current tcf.com product and application pages",
+      "Jobs: illustrative"
+    ]
+  },
+  "pedagogical": {
+    "interactionPattern": "Scenario recommender",
+    "teachingStrategy": "Recommend from a job description, then justify with the deciding feature rather than keyword matching",
+    "keyQuestions": [
+      "Does the material pass through the fan, or is the fan on the clean side of a filter?",
+      "Is the job high pressure at low volume, or large volume at moderate pressure?",
+      "Who supplies the enclosure?"
+    ],
+    "commonMisconceptions": [
+      "Any dirty-air job takes a radial bladed fan, even on the clean side of a filter",
+      "An air kit is a complete fan with housing and supports",
+      "Pressure blowers are chosen for large airflow",
+      "Plug fans and plenum fans are the same thing"
+    ],
+    "assessmentOpportunities": [
+      "Running scores 'Lines correct: n of 13' and 'Features correct: n of 13'; mastery is 10 of 13 lines on the first attempt."
+    ]
+  },
+  "chapter": "06-industrial-fans-and-application-product-lines"
+}
