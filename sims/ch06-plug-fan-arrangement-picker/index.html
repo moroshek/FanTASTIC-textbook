@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,16 +4949,16 @@ p5.js editor, add the kit files (<code>fanpedia-sim.css</code>, <code>fanpedia-c
 <a href="https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/fanpedia-core.js"><code>../shared-libs/</code></a>,
 or their published URLs) to the editor's <code>index.html</code> before pasting the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A plug fan is an unhoused centrifugal fan mounted through the wall of a plenum: the impeller
-sits inside with the process air, and the mounting panel keeps the motor and drive outside.
-FanPedia defines seven plug fan arrangements (pp. 170–172) and this sim offers all of them. Not every model is built in every one: the current catalogs list 1P, 9, 9P, 4 and 8P for all four plug lines, plus 4P on the BEPL and BFPL, and none lists a plain Arrangement 8. They differ on two questions: is the
-fan direct drive or belt driven, and does the customer's wall carry the fan, or does it stand on
+<p>A <abbr tabindex="0" title="An unhoused centrifugal fan mounted on a panel fastened to the outside of a plenum wall, with the impeller inside the plenum.">plug fan</abbr> is an <abbr tabindex="0" title="A centrifugal fan whose impeller runs without a scroll housing, discharging radially in all directions into a surrounding plenum or cabinet.">unhoused centrifugal fan</abbr> mounted through the wall of a plenum: the impeller
+sits inside with the process air, and the <abbr tabindex="0" title="The flat plate of a plug fan that fastens it to the outside of the customer's plenum wall, with the impeller inside.">mounting panel</abbr> keeps the motor and drive outside.
+FanPedia defines seven <abbr tabindex="0" title="The set of standard arrangements describing how a plug fan, with impeller inside the enclosure and drive outside, is supported and driven; seven are listed: 1P, 4, 4P, 8, 8P, 9, and 9P.">plug fan arrangements</abbr> (pp. 170–172) and this sim offers all of them. Not every model is built in every one: the current catalogs list 1P, 9, 9P, 4 and 8P for all four plug lines, plus 4P on the BEPL and BFPL, and none lists a plain <abbr tabindex="0" title="A direct drive, overhung fan in which the Arrangement 1 bearing pedestal is extended to carry the motor, joined to the fan shaft by a flexible coupling.">Arrangement 8</abbr>. They differ on two questions: is the
+fan <abbr tabindex="0" title="A drive method in which the impeller is mounted on, or coupled to, the motor shaft so the fan runs at motor speed.">direct drive</abbr> or belt driven, and does the customer's wall carry the fan, or does it stand on
 grade? The "P" suffix marks the same arrangement mounted to grade.</p>
 <p>The sim gives you nine illustrative jobs in a fixed order. For each one you choose one
 arrangement and press <strong>Check</strong>; there is one scored attempt per job. The decision rules are:</p>
 <ol>
-<li><strong>Drive:</strong> direct drive or belt drive, from the job description.</li>
-<li><strong>Temperature:</strong> with direct drive and a hot airstream, Arrangement 4/4P is excluded (the
+<li><strong>Drive:</strong> direct drive or <abbr tabindex="0" title="A drive method in which sheaves on the motor and fan shafts, connected by V-belts, let the fan run at a speed different from the motor's.">belt drive</abbr>, from the job description.</li>
+<li><strong>Temperature:</strong> with direct drive and a <abbr tabindex="0" title="An airstream whose temperature is high enough to change fan performance or to call for construction beyond the standard catalog build.">hot airstream</abbr>, <abbr tabindex="0" title="A direct drive fan with the impeller mounted on the motor shaft and the motor on a pedestal, having no fan shaft or fan bearings.">Arrangement 4</abbr>/4P is excluded (the
    impeller would sit on the motor shaft), so 8/8P is used.</li>
 <li><strong>Support:</strong> if the wall is not sufficient, or the job states a low-vibration requirement,
    use the P version; otherwise the wall-mounted version. For belt drive on grade, a motor on its
@@ -5000,7 +5064,7 @@ facilities staff.</p>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Plug fan, plenum fan and mounting panel (Chapter 6, "Plug Fans: The Impeller Goes In, the Drive
+<li>Plug fan, <abbr tabindex="0" title="An unhoused centrifugal fan that runs inside an air-filled space within a structure and pressurizes that space, which then distributes air to its outlets.">plenum fan</abbr> and mounting panel (Chapter 6, "Plug Fans: The Impeller Goes In, the Drive
   Stays Out")</li>
 <li>Arrangement, direct drive, belt drive and grade (Chapter 6; arrangements in full in Chapter 11)</li>
 </ul>
@@ -5032,7 +5096,7 @@ facilities staff.</p>
 </ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">FanPedia: The Fan &amp; Blower Encyclopedia (PDF)</a> - Technical Descriptions of plug fan Arrangements 1P, 4, 4P, 8, 8P, 9 and 9P (pp. 170–172) and the belt-driven plug fan exploded view (p. 14).</li>
+<li><a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">FanPedia: The Fan &amp; Blower Encyclopedia (PDF)</a> - Technical Descriptions of plug fan Arrangements 1P, 4, 4P, 8, 8P, 9 and 9P (pp. 170–172) and the belt-driven plug fan <abbr tabindex="0" title="A drawing of an assembly with its parts pulled apart along their assembly lines so each part is visible and labeled.">exploded view</abbr> (p. 14).</li>
 <li><a href="https://www.tcf.com/">Twin City Fan</a> - current plug fan catalog pages (BEPL, BFPL, AFPL, BCPL) with mounting panel, temperature and pedestal options.</li>
 <li><a href="https://www.tcf.com/wp-content/uploads/2018/06/BEPL-High-Efficiency-Plug-Fans-Catalog-355.pdf">BEPL High Efficiency Plug Fans Catalog 355 (PDF)</a> and <a href="https://www.tcf.com/wp-content/uploads/2021/12/BCPL-AFPL-Plug-Fans-Catalog-350.pdf">BCPL AFPL Plug Fans Catalog 350 (PDF)</a> - Twin City Fan, April 2024 - arrangements available per plug fan line.</li>
 <li><a href="https://tcf.com/fanpedia/">FanPedia online</a> - Twin City Fan's reference on fan types and arrangements.</li>
@@ -5134,7 +5198,7 @@ facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

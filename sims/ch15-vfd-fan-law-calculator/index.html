@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,22 +4949,22 @@ p5.js editor, add the kit files (<code>fanpedia-sim.css</code>, <code>fanpedia-c
 <a href="https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/fanpedia-core.js"><code>../shared-libs/</code></a>,
 or their published URLs) to the editor's <code>index.html</code> before pasting the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A variable frequency drive (VFD) changes the supply frequency, and with it the
-motor's synchronous speed and the fan speed. On a fixed system the fan laws
+<p>A <abbr tabindex="0" title="An electronic controller, abbreviated VFD, that converts fixed-frequency AC power to adjustable-frequency power, changing induction motor speed in proportion.">variable frequency drive</abbr> (VFD) changes the supply frequency, and with it the
+motor's synchronous speed and the fan speed. On a fixed system the <abbr tabindex="0" title="Proportionality rules predicting how a fan's airflow, pressure, and power change with speed, size, or air density for geometrically similar fans at the same point of rating.">fan laws</abbr>
 then set the new airflow, pressure and power, with the frequency ratio as the
 speed ratio. This MicroSim uses the base duty of the chapter's worked example
-(illustrative values): 10,000 CFM at 2.00 in. wg static pressure, 8.0 bhp, on
+(illustrative values): 10,000 <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr> at 2.00 in. wg <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr>, 8.0 bhp, on
 60 Hz power with a 4-pole motor.</p>
 <p>The model, with r = f / 60:</p>
 <ul>
 <li>Synchronous speed = 120 × f / 4 RPM</li>
 <li>Airflow = 10,000 × r CFM</li>
 <li>Static pressure = 2.00 × r² in. wg</li>
-<li>Brake horsepower = 8.0 × r³ bhp</li>
+<li><abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">Brake horsepower</abbr> = 8.0 × r³ bhp</li>
 </ul>
 <p>It ignores motor slip, drive losses and any fixed system pressure. Frequencies
 above 60 Hz are not offered: running a fan above 60 Hz starts with checking its
-maximum safe speed in the current catalog.</p>
+<abbr tabindex="0" title="The highest RPM at which the manufacturer allows a particular fan size and construction to operate, set by rotating-part strength, critical speed, and bearing limits.">maximum safe speed</abbr> in the current catalog.</p>
 <table>
 <thead>
 <tr>
@@ -5009,7 +5073,7 @@ representatives and facilities staff.</p>
   shows the r³ curve far below the r line.</li>
 <li><strong>Pressure is unchanged by a speed change.</strong> The pressure box is checked
   against 2.00 × r², and the plot shows the r² curve.</li>
-<li><strong>The VFD changes the motor's poles or the sheave ratio.</strong> The formula card
+<li><strong>The VFD changes the motor's poles or the <abbr tabindex="0" title="A grooved pulley mounted on the motor shaft or the fan shaft that carries the drive belts, fastened with or without a bushing; the motor-shaft one is the drive pulley and the fan-shaft one the driven pulley.">sheave</abbr> ratio.</strong> The formula card
   states that only f changes; the synchronous speed in the readout follows
   120 × f / 4 with the same 4 poles.</li>
 </ul>
@@ -5026,7 +5090,7 @@ representatives and facilities staff.</p>
 <ol>
 <li><a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">FanPedia: The Fan &amp; Blower Encyclopedia (PDF)</a> - Twin City Fan &amp; Blower; p. 71 (synchronous speeds by poles and frequency) and p. 170 (the VFD as a way to change fan performance in the field).</li>
 <li><a href="https://tcf.com/fanpedia/">FanPedia online</a> - Twin City Fan &amp; Blower's online version of the encyclopedia.</li>
-<li><a href="../../chapters/15-motor-ratings-speed-control-and-positioners/">Chapter 15: Motor Ratings, Speed Control and Positioners</a> - the sections "Synchronous Motor Speed" and "Variable Frequency Drive", with the 45 Hz worked example.</li>
+<li><a href="../../chapters/15-motor-ratings-speed-control-and-positioners/">Chapter 15: Motor Ratings, Speed Control and Positioners</a> - the sections "<abbr tabindex="0" title="The speed of the rotating magnetic field in an induction motor, set by supply frequency and number of poles: 120 times frequency divided by poles.">Synchronous Motor Speed</abbr>" and "Variable Frequency Drive", with the 45 Hz worked example.</li>
 <li><a href="../../chapters/25-fan-laws-system-effect-and-sound/">Chapter 25: Fan Laws, System Effect and Sound</a> - the fan laws in full.</li>
 <li><a href="https://en.wikipedia.org/wiki/Variable-frequency_drive">Variable-frequency drive (Wikipedia)</a> - background on how a VFD sets motor speed.</li>
 </ol>
@@ -5127,7 +5191,7 @@ representatives and facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

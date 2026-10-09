@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4881,7 +4945,7 @@
 <p><a class="md-button md-button--primary" href="main.html">Run the Reading Static Pressure with a Manometer MicroSim Fullscreen</a></p>
 <p>To run this sketch in the <a href="https://editor.p5js.org/">p5.js editor</a>, first add the kit files it uses (<code>fanpedia-sim.css</code>, <code>fanpedia-core.js</code>, <code>fanpedia-p5.js</code> and <code>fan-drawings.js</code> from <code>../shared-libs/</code>, or their published URLs under <code>https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/</code>) to the editor's <code>index.html</code>, then paste <code>ch01-manometer-static-pressure.js</code> as the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A U-tube manometer has one leg connected to the duct and one leg open to the room. The difference between the two water levels, in inches, is the static pressure in inches of water gauge (in. wg). When the duct is above room pressure, the water is pushed down on the duct leg. When the duct is below room pressure (suction), the room pushes the water up the duct leg.</p>
+<p>A U-tube manometer has one leg connected to the duct and one leg open to the room. The difference between the two water levels, in inches, is the <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> in <abbr tabindex="0" title="The unit used to state fan and duct pressures, abbreviated in. wg, equal to the pressure that supports a column of water one inch high in a manometer.">inches of water gauge</abbr> (in. wg). When the duct is above room pressure, the water is pushed down on the duct leg. When the duct is below room pressure (suction), the room pushes the water up the duct leg.</p>
 <p>The sim draws the supply system from the chapter's worked example "Adding Up a System's Resistance": intake louver, filter, coil, fan, ductwork, diffuser and room, with each part's pressure drop. You step through six measurement points in order. At each one the manometer's water levels are hidden behind a shutter. You choose a sign and type the size of the reading, then press <strong>Check</strong>. The shutter opens to show both water levels on a ruler, and the reading is labeled on the system drawing, so the pressure profile builds up across the system.</p>
 <table>
 <thead>
@@ -4976,7 +5040,7 @@
 <ul>
 <li>Static pressure is always positive: points 1 to 3 are negative, and the sim names a right-size, wrong-sign answer.</li>
 <li>The water rises on the duct leg when the duct is pressurized: the revealed manometer shows the water pushed down on the duct leg at points 4 and 5, and the caption says which way it moved.</li>
-<li>The fan's pressure rise is the outlet reading alone: question 7 recognizes 1.10 and explains that the inlet suction counts too.</li>
+<li>The fan's <abbr tabindex="0" title="The increase in pressure a fan produces between its inlet and its outlet, stated as fan total pressure or fan static pressure.">pressure rise</abbr> is the outlet reading alone: question 7 recognizes 1.10 and explains that the inlet suction counts too.</li>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
 <ul>
@@ -5087,7 +5151,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

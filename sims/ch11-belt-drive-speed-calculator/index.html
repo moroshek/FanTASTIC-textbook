@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,16 +4949,16 @@
 or their published URLs, to the editor's <code>index.html</code> before pasting
 <code>ch11-belt-drive-speed-calculator.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>This calculator puts the three belt drive formulas from
+<p>This calculator puts the three <abbr tabindex="0" title="A drive method in which sheaves on the motor and fan shafts, connected by V-belts, let the fan run at a speed different from the motor's.">belt drive</abbr> formulas from
 <a href="../../chapters/11-drives-and-standard-fan-arrangements/">Chapter 11</a> side by side:</p>
 <ul>
-<li>Fan speed: fan rpm = motor rpm × motor sheave pitch diameter ÷ fan sheave pitch diameter</li>
+<li>Fan speed: fan rpm = motor rpm × motor <abbr tabindex="0" title="A grooved pulley mounted on the motor shaft or the fan shaft that carries the drive belts, fastened with or without a bushing; the motor-shaft one is the drive pulley and the fan-shaft one the driven pulley.">sheave</abbr> pitch diameter ÷ fan sheave pitch diameter</li>
 <li>Belt speed: V (ft/min) = π × motor sheave pitch diameter (in) × motor rpm ÷ 12</li>
-<li>Belt count: design hp = motor hp × drive service factor; belts = design hp ÷ rating per belt,
+<li>Belt count: design hp = motor hp × <abbr tabindex="0" title="A multiplier of at least 1.0 applied to motor power to allow for starting loads, daily hours, and the driven machine, giving the design horsepower for selecting belts and sheaves.">drive service factor</abbr>; belts = design hp ÷ rating per belt,
   rounded up to a whole belt (a whole-number quotient is not rounded up)</li>
 </ul>
 <p>The motor sheave and the fan sheave are drawn to scale relative to each other and joined by a
-V-belt. Once a drive is checked, each sheave turns at its own computed speed, so the larger sheave
+<abbr tabindex="0" title="A drive belt with a trapezoidal cross section that wedges into the matching V-shaped groove of a sheave.">V-belt</abbr>. Once a drive is checked, each sheave turns at its own computed speed, so the larger sheave
 visibly turns slower. The outputs panel lists the fan speed, the speed ratio (motor rpm ÷ fan rpm),
 the belt speed, the design horsepower and the belts required.</p>
 <p>The sim starts with four challenge drives, in this order:</p>
@@ -5058,7 +5122,7 @@ facilities staff who have read the "Belt Drive" section of Chapter 11.</p>
 <li><a href="https://en.wikipedia.org/wiki/Pulley">Pulley</a> - how pulley (sheave) diameters set the speed
    ratio of a belt drive.</li>
 <li><a href="https://tcf.com/fanpedia/">FanPedia: The Fan &amp; Blower Encyclopedia</a> - Twin City Fan's reference
-   on fan drives, arrangements and the motor service factor (p. 69).</li>
+   on fan drives, arrangements and the <abbr tabindex="0" title="The multiplier above rated horsepower at which a motor may be continuously used.">motor service factor</abbr> (p. 69).</li>
 </ol>
 
 
@@ -5157,7 +5221,7 @@ facilities staff who have read the "Belt Drive" section of Chapter 11.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

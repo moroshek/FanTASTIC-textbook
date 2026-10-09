@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,7 +4949,7 @@
 or their published URLs, to the editor's <code>index.html</code> before pasting
 <code>ch08-axial-airflow-hub-configurator.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>An axial fan order has to say which way the air goes, and that one choice fixes two more
+<p>An <abbr tabindex="0" title="A fan in which air enters and leaves the impeller parallel to the shaft, with swirl added by the rotating blades.">axial fan</abbr> order has to say which way the air goes, and that one choice fixes two more
 words on the order. FanPedia gives each airflow code an alternative name based on where the
 hub faces, and its left hand and right hand pages pair each code with a hub bore (FanPedia
 PDF pp. 36–43):</p>
@@ -4914,7 +4978,7 @@ PDF pp. 36–43):</p>
 </tbody>
 </table>
 <p>Impeller hand (left or right) and pitch type (fixed or adjustable) do not change the rule. A
-reversible impeller runs standard flow as MP and reverse flow as PM (FanPedia PDF p. 41).</p>
+<abbr tabindex="0" title="An axial impeller designed to move air in either direction along the shaft, with standard flow (MP) and reverse flow (PM) modes.">reversible impeller</abbr> runs standard flow as MP and reverse flow as PM (FanPedia PDF p. 41).</p>
 <p>The sim shows a side view of a direct-drive axial fan with the motor at the left of the tube
 and the impeller at the right. For each of eight orders, in a fixed order, you choose the hub
 position and the hub bore and press <strong>Check</strong>. Until you do, the fan is drawn without its hub
@@ -4990,7 +5054,7 @@ Mastery is 7 of 8 orders correct on the first attempt. There is no retry of a si
 air enters at the leading edges and leaves at the discharge. With the rotation reversed, the
 intended airflow arrow is crossed out and the sim reads "Wrong rotation: no airflow in the
 proper direction (FanPedia note 2)." Rotation is always labeled as viewed from the discharge
-side. The rotation arrow is a symbol for "as the impeller needs" or "reversed"; the actual
+side. The <abbr tabindex="0" title="A curved arrow marked on drawings and on the fan housing showing the required direction of impeller rotation.">rotation arrow</abbr> is a symbol for "as the impeller needs" or "reversed"; the actual
 direction depends on the impeller hand, which this sim does not set.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
@@ -5030,9 +5094,9 @@ facilities staff.</p>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Axial impeller and blade leading edge (Chapter 8)</li>
-<li>Airflow = PM and airflow = MP; hub on intake side and hub on discharge side (Chapter 8)</li>
-<li>Standard bore hub and reverse bore hub; reversible impeller (Chapter 8)</li>
+<li>Axial impeller and <abbr tabindex="0" title="The edge of an impeller blade that meets the incoming air first.">blade leading edge</abbr> (Chapter 8)</li>
+<li>Airflow = PM and airflow = MP; <abbr tabindex="0" title="An axial impeller orientation in which the hub faces the incoming air and air passes through the impeller before the motor (PM airflow).">hub on intake side</abbr> and <abbr tabindex="0" title="An axial impeller orientation in which the hub faces the leaving air and air passes over the motor before the impeller (MP airflow).">hub on discharge side</abbr> (Chapter 8)</li>
+<li>Standard bore hub and <abbr tabindex="0" title="An axial impeller hub bored from the opposite face so the impeller can be mounted facing the other way on the shaft, paired with PM airflow.">reverse bore hub</abbr>; reversible impeller (Chapter 8)</li>
 <li>Rotation viewed from the discharge side (Chapter 8)</li>
 </ul>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
@@ -5053,7 +5117,7 @@ facilities staff.</p>
   rotation is a separate setting in the free model.</li>
 <li>A reversible impeller has a fixed hub position: orders 5 and 6 give the same impeller two
   answers, one for each flow mode.</li>
-<li>Running an axial impeller backward gives less airflow in the same direction: the free model
+<li>Running an <abbr tabindex="0" title="An impeller whose blades, attached to a central hub, move air parallel to the shaft from the leading edges straight through.">axial impeller</abbr> backward gives less airflow in the same direction: the free model
   shows no airflow in the proper direction, as FanPedia's note says.</li>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
@@ -5068,7 +5132,7 @@ facilities staff.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">FanPedia: The Fan &amp; Blower Encyclopedia (PDF)</a> - pp. 36–43 give the axial airflow codes, the "aka" hub names, the reversible impeller modes and the standard and reverse bore hubs.</li>
-<li><a href="https://tcf.com/fanpedia/">FanPedia online</a> - Twin City Fan's reference on fan types, arrangements and axial fan configuration.</li>
+<li><a href="https://tcf.com/fanpedia/">FanPedia online</a> - Twin City Fan's reference on fan types, arrangements and <abbr tabindex="0" title="The code stating how an inline, mixed flow, or axial fan is oriented and supported and what brackets, cap, or hood it carries.">axial fan configuration</abbr>.</li>
 <li><a href="https://en.wikipedia.org/wiki/Axial_fan_design">Axial fan design (Wikipedia)</a> - background on axial impellers, blades and hubs.</li>
 </ol>
 
@@ -5168,7 +5232,7 @@ facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

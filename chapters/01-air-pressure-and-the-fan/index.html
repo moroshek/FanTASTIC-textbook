@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -273,6 +275,68 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         
@@ -400,7 +464,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -422,14 +486,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -470,7 +534,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -492,14 +556,14 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3299,7 +3363,7 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
 <h2 id="why-this-chapter-comes-first">Why This Chapter Comes First<a class="headerlink" href="#why-this-chapter-comes-first" title="Permanent link">&para;</a></h2>
-<p>Every fan order, catalog page and specification in this book reduces to a short sentence: <em>move this much air, against this much resistance, at these conditions, without the air destroying the fan.</em> Before you can read that sentence on a performance table or write it in a submittal, you need the handful of quantities it is built from: airflow volume in cubic feet per minute, air velocity, pressure in inches of water gauge, fan speed in revolutions per minute, horsepower, and the density of the air itself. This chapter defines each one, shows how they connect, and works a realistic number for every idea so you can check a catalog value instead of just copying it.</p>
+<p>Every fan order, catalog page and specification in this book reduces to a short sentence: <em>move this much air, against this much resistance, at these conditions, without the air destroying the fan.</em> Before you can read that sentence on a <abbr tabindex="0" title="A grid in a product catalog giving, for one model and size at standard air, the RPM and BHP needed for each combination of airflow and static pressure.">performance table</abbr> or write it in a submittal, you need the handful of quantities it is built from: <abbr tabindex="0" title="The volume of air passing a point in a fan or duct system per unit of time, stated in the United States as cubic feet each minute.">airflow volume</abbr> in <abbr tabindex="0" title="The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">cubic feet per minute</abbr>, air velocity, pressure in <abbr tabindex="0" title="The unit used to state fan and duct pressures, abbreviated in. wg, equal to the pressure that supports a column of water one inch high in a manometer.">inches of water gauge</abbr>, fan speed in revolutions per minute, horsepower, and the density of the air itself. This chapter defines each one, shows how they connect, and works a realistic number for every idea so you can check a catalog value instead of just copying it.</p>
 <div class="admonition mascot-welcome">
 <p class="admonition-title">Meet Breeze</p>
 <p><img alt="Breeze the hummingbird waving hello" class="mascot-admonition-img" src="../../img/mascot/welcome.png" />
@@ -3413,23 +3477,23 @@ Think of a fan as a machine that keeps lifting and throwing a steady stream of m
 </tbody>
 </table>
 <h4 id="worked-example-which-parts-sit-in-a-300f-airstream">Worked Example: Which Parts Sit in a 300°F Airstream?<a class="headerlink" href="#worked-example-which-parts-sit-in-a-300f-airstream" title="Permanent link">&para;</a></h4>
-<p>A customer needs a belt-driven centrifugal fan to exhaust 300°F air from a curing oven. Compare two arrangements described in FanPedia's technical descriptions:</p>
+<p>A customer needs a belt-driven <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr> to exhaust 300°F air from a curing oven. Compare two arrangements described in FanPedia's technical descriptions:</p>
 <ul>
-<li><strong>Arrangement 1, single width, single inlet:</strong> the impeller is overhung on the end of the shaft, and "the two fan bearings are mounted on the bearing pedestal, out of the airstream," which FanPedia says makes the arrangement suited to high-temperature or contaminated air (FanPedia, p. 162).</li>
-<li><strong>Arrangement 3, double width, double inlet:</strong> the impeller is mounted between the bearings, and "both bearings are located in the airstream," so standard double width, double inlet fans should be used for clean air with air temperatures limited to 130°F (FanPedia, p. 167).</li>
+<li><strong><abbr tabindex="0" title="An overhung impeller fan with both bearings on a pedestal and the motor mounted separately on the floor or a fan base, usually belt driven.">Arrangement 1</abbr>, single width, single inlet:</strong> the impeller is overhung on the end of the shaft, and "the two fan bearings are mounted on the bearing pedestal, out of the airstream," which FanPedia says makes the arrangement suited to high-temperature or contaminated air (FanPedia, p. 162).</li>
+<li><strong><abbr tabindex="0" title="A center hung impeller fan with one bearing on each side of the impeller supported by the housing, and the motor mounted separately on the floor or fan base.">Arrangement 3</abbr>, double width, double inlet:</strong> the impeller is mounted between the bearings, and "both bearings are located in the airstream," so standard double width, double inlet fans should be used for clean air with air temperatures limited to 130°F (FanPedia, p. 167).</li>
 </ul>
 <p>Trace the airstream: in Arrangement 3 the 300°F air flows directly past both bearings, which is well above the 130°F limit for the standard design. In Arrangement 1 the hot air stays inside the housing while the bearings sit outside on the pedestal. Arrangement 1 is the natural starting point for this job. Arrangements themselves are the subject of <a href="../11-drives-and-standard-fan-arrangements/">Chapter 11</a>; the point here is that you cannot pick one until you know what is in the airstream.</p>
 <h2 id="the-fan">The Fan<a class="headerlink" href="#the-fan" title="Permanent link">&para;</a></h2>
-<p>A <strong>fan</strong> is a machine that moves air by turning a bladed wheel, the <strong>impeller</strong>, inside or in front of a housing. The rotating blades push on the air, raise its pressure slightly and send it on its way. A motor turns the impeller either directly (the impeller is mounted on the motor shaft) or through belts and pulleys. FanPedia describes the main families by the path the air takes: housed centrifugal fans draw air in along the shaft and discharge it "at a right angle to the fan shaft," while axial and inline fans "move air straight through the fan with a rotating impeller" (FanPedia, pp. 4, 6-7). <a href="../03-basic-fan-anatomy/">Chapter 3</a> names every part, and <a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4</a> compares the families.</p>
+<p>A <strong>fan</strong> is a machine that moves air by turning a bladed wheel, the <strong>impeller</strong>, inside or in front of a housing. The rotating blades push on the air, raise its pressure slightly and send it on its way. A motor turns the impeller either directly (the impeller is mounted on the motor shaft) or through belts and pulleys. FanPedia describes the main families by the path the air takes: <abbr tabindex="0" title="A centrifugal fan whose impeller turns inside a scroll housing that collects the air and discharges it through a single outlet at a right angle to the shaft.">housed centrifugal fans</abbr> draw air in along the shaft and discharge it "at a right angle to the fan shaft," while axial and inline fans "move air straight through the fan with a rotating impeller" (FanPedia, pp. 4, 6-7). <a href="../03-basic-fan-anatomy/">Chapter 3</a> names every part, and <a href="../04-centrifugal-axial-and-mixed-flow-fans/">Chapter 4</a> compares the families.</p>
 <p>What separates a fan from a compressor is how <em>little</em> it raises the pressure. Atmospheric pressure at sea level is about 14.7 pounds per square inch, and a fan adds only a small fraction to that. Because the air is squeezed so little, it barely changes volume passing through, and for most work you can treat the cubic feet per minute entering a fan as equal to the cubic feet per minute leaving it.</p>
 <h4 id="worked-example-how-big-is-a-fans-pressure-rise">Worked Example: How Big Is a Fan's Pressure Rise?<a class="headerlink" href="#worked-example-how-big-is-a-fans-pressure-rise" title="Permanent link">&para;</a></h4>
 <p>A heavy-duty industrial fan develops 10 inches of water gauge (a unit defined in the pressure section below; atmospheric pressure is about 407 of these units).</p>
 <ol>
-<li>Pressure rise as a fraction of atmospheric pressure: <span class="arithmatex">\( 10 \div 407 = 0.025 \)</span>, or about 2.5 percent.</li>
+<li><abbr tabindex="0" title="The increase in pressure a fan produces between its inlet and its outlet, stated as fan total pressure or fan static pressure.">Pressure rise</abbr> as a fraction of atmospheric pressure: <span class="arithmatex">\( 10 \div 407 = 0.025 \)</span>, or about 2.5 percent.</li>
 <li>The air's volume therefore shrinks by only about 2.5 percent through the fan; at a typical HVAC pressure of 2 inches of water gauge, about 0.5 percent.</li>
 <li>Conclusion: in catalog work the fan's inlet and outlet airflow are taken as the same number, and the fan is rated by the airflow at its inlet.</li>
 </ol>
-<p>Every fan rating states what the fan delivers in a fixed set of quantities: airflow, pressure, speed, power and the air density the rating assumes. The sections that follow define each one, and the chapter closes with an interactive duty statement that puts them back together.</p>
+<p>Every fan rating states what the fan delivers in a fixed set of quantities: airflow, pressure, speed, power and the <abbr tabindex="0" title="The mass of air in one cubic foot, stated in pounds per cubic foot (lb/ft³); 0.075 lb/ft³ at standard conditions.">air density</abbr> the rating assumes. The sections that follow define each one, and the chapter closes with an interactive duty statement that puts them back together.</p>
 <h2 id="airflow-volume-and-cubic-feet-per-minute">Airflow Volume and Cubic Feet Per Minute<a class="headerlink" href="#airflow-volume-and-cubic-feet-per-minute" title="Permanent link">&para;</a></h2>
 <p><strong>Airflow volume</strong> is the volume of air a fan moves in a unit of time. It is a <em>rate</em>: not "how much air is in the duct" but "how much air passes a point each minute." In the United States the unit is <strong>cubic feet per minute</strong>, abbreviated <strong>CFM</strong>. One CFM is one cubic foot of air passing a point every minute. The machine-shop example above needed 2,400 CFM; a large industrial exhaust fan may move several hundred thousand CFM.</p>
 <p>Airflow volume is not the same as the <em>amount</em> of air in pounds. A cubic foot of hot air weighs less than a cubic foot of cool air, so the same CFM carries different masses at different temperatures. The connection is the mass flow equation below; air density, its key ingredient, gets its own section later in this chapter.</p>
@@ -3452,7 +3516,7 @@ Think of a fan as a machine that keeps lifting and throwing a steady stream of m
 </ol>
 <p>This is why fan catalogs and specifications always state CFM <em>at a stated condition</em>. Fan airflow is rated as the actual volume at the fan inlet, at the density of the air actually entering the fan. When a specification lists CFM without a temperature and elevation, ask for them before selecting anything.</p>
 <h2 id="air-velocity">Air Velocity<a class="headerlink" href="#air-velocity" title="Permanent link">&para;</a></h2>
-<p><strong>Air velocity</strong> is how fast the air is moving at a point, in feet per minute. Velocity and airflow volume are linked by the area the air passes through: the same CFM moves slowly through a large duct and quickly through a small one. Velocity matters because fast air is noisy, costs pressure to push through ducts, and can carry dust that slow air would drop. <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> turns this relationship into the continuity equation and shows how velocity creates its own pressure; here we need only the basic calculation.</p>
+<p><strong>Air velocity</strong> is how fast the air is moving at a point, in <abbr tabindex="0" title="The fan-industry unit of air velocity, abbreviated fpm, giving the distance in feet that air travels in one minute.">feet per minute</abbr>. Velocity and airflow volume are linked by the area the air passes through: the same CFM moves slowly through a large duct and quickly through a small one. Velocity matters because fast air is noisy, costs pressure to push through ducts, and can carry dust that slow air would drop. <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> turns this relationship into the continuity equation and shows how velocity creates its own pressure; here we need only the basic calculation.</p>
 <h4 id="airflow-velocity-and-area">Airflow, Velocity and Area<a class="headerlink" href="#airflow-velocity-and-area" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 Q = V \times A
@@ -3642,7 +3706,7 @@ Duct sizes come in inches but the equation wants square feet, so divide width ti
 </tbody>
 </table>
 <h4 id="worked-example-the-force-behind-a-small-number">Worked Example: The Force Behind a Small Number<a class="headerlink" href="#worked-example-the-force-behind-a-small-number" title="Permanent link">&para;</a></h4>
-<p>A 4 ft by 4 ft access door on an air-handling unit sits on a section running at +2.0 in. wg.</p>
+<p>A 4 ft by 4 ft <abbr tabindex="0" title="A removable or hinged cover over an opening in a fan housing, large enough for inspection, cleaning, or service of the impeller and interior.">access door</abbr> on an air-handling unit sits on a section running at +2.0 in. wg.</p>
 <ol>
 <li>Convert to pounds per square foot: <span class="arithmatex">\( 2.0 \times 5.2 = 10.4 \)</span> lb/ft².</li>
 <li>Multiply by the door area: <span class="arithmatex">\( 10.4 \times 16 = 166 \)</span> pounds pushing the door outward.</li>
@@ -3655,7 +3719,7 @@ Duct sizes come in inches but the equation wants square feet, so divide width ti
 A common trap is reading "2 psi" on a process sheet where the writer meant 2 in. wg, or the reverse; the two differ by a factor of 27.7, and a fan selected at the wrong one is useless. Whenever a pressure has no unit or an unusual one, confirm it with the customer and restate it in inches of water gauge on the quote.</p>
 </div>
 <h2 id="static-pressure">Static Pressure<a class="headerlink" href="#static-pressure" title="Permanent link">&para;</a></h2>
-<p><strong>Static pressure</strong> (SP) is the pressure air exerts equally in all directions on the walls of a duct or housing, independent of whether the air is moving. It is the "squeezing" pressure, and it is the one a manometer reads when its tube is connected flush to the side of the duct, perpendicular to the flow. Moving air also has a second pressure associated with its speed, called velocity pressure; <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> defines it and adds the two into total pressure.</p>
+<p><strong><abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">Static pressure</abbr></strong> (SP) is the pressure air exerts equally in all directions on the walls of a duct or housing, independent of whether the air is moving. It is the "squeezing" pressure, and it is the one a manometer reads when its tube is connected flush to the side of the duct, perpendicular to the flow. Moving air also has a second pressure associated with its speed, called <abbr tabindex="0" title="The pressure that a moving airstream would produce if brought to rest, representing the kinetic energy of the air.">velocity pressure</abbr>; <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> defines it and adds the two into <abbr tabindex="0" title="The sum of static pressure and velocity pressure at a point in an airstream, representing all of the energy the air carries there.">total pressure</abbr>.</p>
 <p>For catalog work, static pressure is the main way to describe <strong>resistance</strong>. Every filter, coil, damper, grille, hood and length of duct takes away some static pressure as the air passes through it; that loss is its <strong>pressure drop</strong>. The fan must develop enough static pressure to make up all those drops at the required airflow. When a specification says "12,000 CFM at 3.0 in. wg SP," the 3.0 is the system's total resistance that the fan must overcome. Static pressure is negative (suction) on the inlet side of the fan and positive on the discharge side.</p>
 <h4 id="worked-example-adding-up-a-systems-resistance">Worked Example: Adding Up a System's Resistance<a class="headerlink" href="#worked-example-adding-up-a-systems-resistance" title="Permanent link">&para;</a></h4>
 <p>A supply system draws outdoor air through a louver, a filter and a coil, then pushes it through ductwork to a diffuser. The design engineer lists these pressure drops at the design airflow (illustrative values):</p>
@@ -3706,7 +3770,7 @@ A common trap is reading "2 psi" on a process sheet where the writer meant 2 in.
 <li>Discharge-side drops: <span class="arithmatex">\( 0.95 + 0.15 = 1.10 \)</span> in. wg, so the fan outlet must be at +1.10 in. wg to push the air out into the room.</li>
 <li>The fan must raise the static pressure from −1.40 to +1.10: <span class="arithmatex">\( 1.10 - (-1.40) = 2.50 \)</span> in. wg.</li>
 </ol>
-<p>This simple subtraction treats the air velocity at the fan inlet and outlet as equal; the exact definition of fan static pressure, which accounts for velocity pressure, is in <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>. The sim below lets you read each of these points on a manometer.</p>
+<p>This simple subtraction treats the air velocity at the fan inlet and outlet as equal; the exact definition of <abbr tabindex="0" title="Fan total pressure minus fan outlet velocity pressure, the AMCA pressure most catalog tables use; abbreviated FSP.">fan static pressure</abbr>, which accounts for velocity pressure, is in <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>. The sim below lets you read each of these points on a manometer.</p>
 <h4 id="diagram-reading-static-pressure-with-a-manometer">Diagram: Reading Static Pressure with a Manometer<a class="headerlink" href="#diagram-reading-static-pressure-with-a-manometer" title="Permanent link">&para;</a></h4>
 <iframe src="../../sims/ch01-manometer-static-pressure/main.html" width="100%" height="662px" scrolling="no"></iframe>
 <p><a href="../../sims/ch01-manometer-static-pressure/main.html">Run Reading Static Pressure with a Manometer Fullscreen</a></p>
@@ -3797,8 +3861,8 @@ A common trap is reading "2 psi" on a process sheet where the writer meant 2 in.
 <p><strong>Chapter Anchors:</strong> Pressure drops: louver 0.15, filter 0.50, coil 0.75, ductwork and fittings 0.95, diffuser 0.15 in. wg. Readings −0.15, −0.65, −1.40, +1.10, +0.15, 0. Fan static pressure rise 2.50 in. wg. Static pressure is negative on the inlet side and positive on the discharge side.</p>
 </details>
 <h2 id="fan-speed">Fan Speed<a class="headerlink" href="#fan-speed" title="Permanent link">&para;</a></h2>
-<p><strong>Fan speed</strong> is how fast the impeller turns, in <strong>revolutions per minute (RPM)</strong>. It is the single most powerful lever on a fan's performance: at a given size, turning the impeller faster moves more air and develops more pressure, at the cost of much more power and noise. The fan laws in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> quantify this; for now it is enough to know that airflow rises in proportion to speed, pressure with the square of speed, and power with the cube.</p>
-<p>How the fan gets its speed depends on the drive. In a <strong>direct drive</strong> fan the impeller is on the motor shaft, so the fan runs at motor speed. AC induction motors run near a <strong>synchronous speed</strong> set by the power frequency and the motor's number of poles, and slightly below it under load. FanPedia lists the typical values, organized here by frequency.</p>
+<p><strong>Fan speed</strong> is how fast the impeller turns, in <strong>revolutions per minute (RPM)</strong>. It is the single most powerful lever on a fan's performance: at a given size, turning the impeller faster moves more air and develops more pressure, at the cost of much more power and noise. The <abbr tabindex="0" title="Proportionality rules predicting how a fan's airflow, pressure, and power change with speed, size, or air density for geometrically similar fans at the same point of rating.">fan laws</abbr> in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> quantify this; for now it is enough to know that airflow rises in proportion to speed, pressure with the square of speed, and power with the cube.</p>
+<p>How the fan gets its speed depends on the drive. In a <strong><abbr tabindex="0" title="A drive method in which the impeller is mounted on, or coupled to, the motor shaft so the fan runs at motor speed.">direct drive</abbr></strong> fan the impeller is on the motor shaft, so the fan runs at motor speed. AC <abbr tabindex="0" title="An AC motor in which rotor current is induced by the magnetic field of the stator winding, needing no brushes or slip rings.">induction motors</abbr> run near a <strong>synchronous speed</strong> set by the power frequency and the motor's number of poles, and slightly below it under load. FanPedia lists the typical values, organized here by frequency.</p>
 <table>
 <thead>
 <tr>
@@ -3825,7 +3889,7 @@ A common trap is reading "2 psi" on a process sheet where the writer meant 2 in.
 </tr>
 </tbody>
 </table>
-<p>FanPedia adds that "actual nominal motor speeds vary by motor HP and manufacturer" (FanPedia, p. 71). A motor listed as "1800 RPM" typically turns a little under that under load, which is why catalog direct-drive speeds sit slightly below these round numbers. A <strong>belt drive</strong> fan uses pulleys, called sheaves, of different diameters so the fan can run at any speed the job requires, not just the four motor speeds. A variable frequency drive can also change a motor's speed electrically; <a href="../15-motor-ratings-speed-control-and-positioners/">Chapter 15</a> covers speed control.</p>
+<p>FanPedia adds that "actual nominal motor speeds vary by motor HP and manufacturer" (FanPedia, p. 71). A motor listed as "1800 RPM" typically turns a little under that under load, which is why catalog direct-drive speeds sit slightly below these round numbers. A <strong><abbr tabindex="0" title="A drive method in which sheaves on the motor and fan shafts, connected by V-belts, let the fan run at a speed different from the motor's.">belt drive</abbr></strong> fan uses pulleys, called <abbr tabindex="0" title="A grooved pulley mounted on the motor shaft or the fan shaft that carries the drive belts, fastened with or without a bushing; the motor-shaft one is the drive pulley and the fan-shaft one the driven pulley.">sheaves</abbr>, of different diameters so the fan can run at any speed the job requires, not just the four motor speeds. A <abbr tabindex="0" title="An electronic controller, abbreviated VFD, that converts fixed-frequency AC power to adjustable-frequency power, changing induction motor speed in proportion.">variable frequency drive</abbr> can also change a motor's speed electrically; <a href="../15-motor-ratings-speed-control-and-positioners/">Chapter 15</a> covers <abbr tabindex="0" title="A flow-control method that reduces airflow by slowing the impeller, using the least power of any method.">speed control</abbr>.</p>
 <h4 id="belt-drive-speed-ratio">Belt Drive Speed Ratio<a class="headerlink" href="#belt-drive-speed-ratio" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 N_{fan} = N_{motor} \times \frac{D_{motor}}{D_{fan}}
@@ -3837,7 +3901,7 @@ N_{fan} = N_{motor} \times \frac{D_{motor}}{D_{fan}}
 <li><span class="arithmatex">\( D_{motor} \)</span> is the pitch diameter of the motor sheave in inches</li>
 <li><span class="arithmatex">\( D_{fan} \)</span> is the pitch diameter of the fan sheave in inches</li>
 </ul>
-<p>The speed of the blade tips, not just the RPM, governs the stress in an impeller, because a larger wheel at the same RPM has faster tips. <strong>Tip speed</strong> is the distance around the impeller times the revolutions per minute.</p>
+<p>The speed of the blade tips, not just the RPM, governs the stress in an impeller, because a larger wheel at the same RPM has faster tips. <strong><abbr tabindex="0" title="The linear speed of the outermost point of the impeller blades, in feet per minute, set by impeller diameter and rotating speed.">Tip speed</abbr></strong> is the distance around the impeller times the revolutions per minute.</p>
 <h4 id="impeller-tip-speed">Impeller Tip Speed<a class="headerlink" href="#impeller-tip-speed" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 V_{tip} = \frac{\pi \times D \times N}{12}
@@ -3855,15 +3919,15 @@ V_{tip} = \frac{\pi \times D \times N}{12}
 <li>Tip speed: <span class="arithmatex">\( \pi \times 36.5 \times 1{,}173 \div 12 = 11{,}210 \)</span> feet per minute, roughly 127 miles per hour at the blade tips.</li>
 <li>To speed the fan up by about 10 percent, the motor sheave could be enlarged to 6.6 in: <span class="arithmatex">\( 1{,}760 \times 6.6 \div 9 = 1{,}291 \)</span> RPM. That would also raise power by roughly a third (<span class="arithmatex">\( 1.1^3 = 1.33 \)</span>), so the motor must be rechecked.</li>
 </ol>
-<p>Every fan design has a maximum safe operating speed, and higher fan classes allow higher speeds; <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> explains fan class and maximum safe speed. A speed change on a job site is therefore never "just a sheave swap": check the class limit and the motor load first.</p>
+<p>Every fan design has a maximum safe operating speed, and higher fan classes allow higher speeds; <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> explains <abbr tabindex="0" title="A grouping of centrifugal fans by the pressure they are built to handle, which sets each size's maximum safe speed. AMCA Standard 99-2408 defines Classes I to IV (outlet velocity and static pressure limits).">fan class</abbr> and <abbr tabindex="0" title="The highest RPM at which the manufacturer allows a particular fan size and construction to operate, set by rotating-part strength, critical speed, and bearing limits.">maximum safe speed</abbr>. A speed change on a job site is therefore never "just a sheave swap": check the class limit and the motor load first.</p>
 <h2 id="horsepower">Horsepower<a class="headerlink" href="#horsepower" title="Permanent link">&para;</a></h2>
 <p><strong>Horsepower (hp)</strong> is a unit of power, the rate of doing work. One horsepower equals 33,000 foot-pounds of work per minute, or 0.7457 kilowatt. FanPedia's motor pages give the conversion directly: "kW = HP x .7457" (FanPedia, p. 71). In fan work three different horsepowers appear, and mixing them up is a frequent source of confusion:</p>
 <ul>
 <li><strong>Air horsepower</strong> is the useful power delivered to the air: airflow times pressure, converted to horsepower.</li>
-<li><strong>Brake horsepower (BHP)</strong> is the power that must be delivered to the fan shaft. It is larger than air horsepower because no fan is perfectly efficient; this is the number in a catalog performance table.</li>
+<li><strong><abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">Brake horsepower</abbr> (BHP)</strong> is the power that must be delivered to the fan shaft. It is larger than air horsepower because no fan is perfectly efficient; this is the number in a catalog performance table.</li>
 <li><strong>Motor horsepower</strong> is the nameplate rating of the motor chosen to supply the brake horsepower, picked from a ladder of standard sizes.</li>
 </ul>
-<p>The constant 6356 in the equation below comes from the unit definitions: one horsepower is 33,000 ft·lb/min, and one inch of water gauge is about 5.19 lb/ft², so <span class="arithmatex">\( 33{,}000 \div 5.19 \approx 6{,}356 \)</span>. Static efficiency, the ratio of air horsepower (based on static pressure) to brake horsepower, is treated fully in <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>.</p>
+<p>The constant 6356 in the equation below comes from the unit definitions: one horsepower is 33,000 ft·lb/min, and one inch of water gauge is about 5.19 lb/ft², so <span class="arithmatex">\( 33{,}000 \div 5.19 \approx 6{,}356 \)</span>. <abbr tabindex="0" title="Fan efficiency computed from air power based on fan static pressure, divided by brake horsepower.">Static efficiency</abbr>, the ratio of air horsepower (based on static pressure) to brake horsepower, is treated fully in <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a>.</p>
 <h4 id="brake-horsepower-from-airflow-and-static-pressure">Brake Horsepower from Airflow and Static Pressure<a class="headerlink" href="#brake-horsepower-from-airflow-and-static-pressure" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[
 BHP = \frac{Q \times SP}{6356 \times \eta_s}
@@ -3924,7 +3988,7 @@ BHP = \frac{Q \times SP}{6356 \times \eta_s}
 </ol>
 <p>A 7-1/2 hp motor would be overloaded at 7.9 BHP, and a 20 hp motor would run at under 40 percent load, below the range where motor efficiency holds up. Motor selection rules, including service factor and cold starts, are in <a href="../14-fan-motors-and-enclosures/">Chapter 14</a> and <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>.</p>
 <h2 id="air-density">Air Density<a class="headerlink" href="#air-density" title="Permanent link">&para;</a></h2>
-<p><strong>Air density</strong> is the mass of air in one cubic foot, in pounds per cubic foot (lb/ft³). Every number so far has quietly assumed air at 70°F and sea level, where it weighs 0.075 lb/ft³. That reference condition is called <strong>standard air</strong>, and fan catalogs publish their tables at standard air; <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> gives its full definition. Real jobs are hotter, colder or higher, and the air's density changes with them.</p>
+<p><strong>Air density</strong> is the mass of air in one cubic foot, in pounds per cubic foot (lb/ft³). Every number so far has quietly assumed air at 70°F and sea level, where it weighs 0.075 lb/ft³. That reference condition is called <strong><abbr tabindex="0" title="The reference air condition used to rate fans: air with a density of 0.075 lb/ft³, very nearly that of dry air at 70°F and 29.92 in. Hg barometric pressure.">standard air</abbr></strong>, and fan catalogs publish their tables at standard air; <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a> gives its full definition. Real jobs are hotter, colder or higher, and the air's density changes with them.</p>
 <p>Two things set the density of dry air: its <strong>temperature</strong> and its <strong>absolute pressure</strong>, which on a job site is set mostly by <strong>altitude</strong>. Hot air is thinner because its molecules spread out; air at high elevation is thinner because there is less atmosphere above it pressing down. Engineers express the effect as a <strong>density ratio</strong>, the actual density divided by standard density.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">A Fan Moves Volume, Not Weight</p>
@@ -3962,7 +4026,7 @@ DR = \frac{\rho}{0.075} = \frac{530}{T + 460} \times \frac{P_b}{29.92}
 <strong>Learning Objective:</strong> The learner will calculate the density ratio for a stated air temperature and site altitude, and use it to correct a static pressure between catalog and job conditions, to within ±0.005 on the ratio and ±0.03 in. wg on the pressure.</p>
 <p><strong>Prerequisites:</strong> air density, standard air (70°F, sea level, 0.075 lb/ft³), density ratio, air temperature, altitude, absolute pressure, static pressure, the two correction rules (all defined in the section "Air Density" above).</p>
 <p><strong>Evidence of Mastery:</strong> For four fixed challenges the learner types the density ratio, and for challenges 1 and 2 also the corrected static pressure, before the answer is revealed. A ratio is correct within ±0.005; a pressure within ±0.03 in. wg. Mastery is all six entries correct within two attempts each. Hovering over the curves and moving the temperature and altitude settings is exploration, not evidence.</p>
-<p><strong>Misconceptions:</strong> (1) Hot air or high altitude reduces the CFM a fan moves at a given speed; in fact CFM is unchanged and pressure and power fall. (2) The temperature correction can be done in °F directly (70 ÷ 250) instead of absolute degrees. (3) To select a fan for thin air you multiply the required pressure by the density ratio, when you must divide.</p>
+<p><strong>Misconceptions:</strong> (1) Hot air or high altitude reduces the CFM a fan moves at a given speed; in fact CFM is unchanged and pressure and power fall. (2) The <abbr tabindex="0" title="The density correction factor for an air temperature other than 70°F, computed from absolute temperatures in degrees Rankine.">temperature correction</abbr> can be done in °F directly (70 ÷ 250) instead of absolute degrees. (3) To select a fan for thin air you multiply the required pressure by the density ratio, when you must divide.</p>
 <p><strong>Instructional Rationale:</strong> Applying a correction is a procedural skill that needs practice with checking. The chart makes the shape of the relationship visible (density falls steadily with both temperature and altitude) so the learner can sanity-check each calculated ratio against the curve before committing an answer.</p>
 <p><strong>Content:</strong></p>
 <p>Chart: density ratio (vertical axis, 0.40 to 1.25) against air temperature (horizontal axis, −20°F to 600°F), one curve for each of four site altitudes: 0 ft, 2,000 ft, 5,000 ft and 8,000 ft. Hovering a point shows temperature, altitude, density ratio (3 decimals) and density in lb/ft³ (4 decimals). A movable marker shows the learner's current temperature and altitude setting.</p>
@@ -4116,9 +4180,9 @@ DR = \frac{\rho}{0.075} = \frac{530}{T + 460} \times \frac{P_b}{29.92}
 <li>Brake horsepower: also multiplied by 0.746, so the fan draws about a quarter less power when hot.</li>
 </ol>
 <p>The fourth step has a catch. When the same fan starts up cold, at perhaps 70°F, it handles air at a density ratio of 1.000 and draws the full standard-air horsepower, about one third more than its hot running load. A motor sized only for the hot condition can overload on every cold start. That cold-start horsepower is part of the motor check in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>.</p>
-<p>On the materials side, the temperature limits are written into component descriptions throughout FanPedia. Standard double width, double inlet fans with bearings in the airstream are limited to clean air at 130°F (FanPedia, p. 167). Nested inlet vanes are rated for clean airstreams up to 600°F (FanPedia, p. 139). Even the airflow-measuring piezometer ring changes material with temperature: nylon tubing up to 180°F and copper tubing above 180°F (FanPedia, p. 158). Every one of those choices begins with the same question: how hot is the airstream?</p>
+<p>On the materials side, the temperature limits are written into component descriptions throughout FanPedia. Standard double width, double inlet fans with bearings in the airstream are limited to clean air at 130°F (FanPedia, p. 167). <abbr tabindex="0" title="Variable inlet vanes built into the inlet funnel rather than a separate housing, applied to clean airstreams up to 600°F.">Nested inlet vanes</abbr> are rated for clean airstreams up to 600°F (FanPedia, p. 139). Even the airflow-measuring <abbr tabindex="0" title="Tubing around the throat of a fan's inlet funnel that, with a tap on the funnel face, measures the pressure drop used to calculate airflow.">piezometer ring</abbr> changes material with temperature: nylon tubing up to 180°F and copper tubing above 180°F (FanPedia, p. 158). Every one of those choices begins with the same question: how hot is the airstream?</p>
 <h2 id="altitude">Altitude<a class="headerlink" href="#altitude" title="Permanent link">&para;</a></h2>
-<p><strong>Altitude</strong> is the elevation of the job site above sea level, in feet. As elevation rises, the atmosphere above the site is thinner, so barometric pressure falls, and with it the density of the air entering the fan. At 5,000 ft, for example, the pressure ratio is 0.832, so even air at 70°F weighs only about 83 percent of what it does at sea level. A fan at a mountain site behaves exactly as if it were handling warm air: same CFM at a given speed, less pressure and less power.</p>
+<p><strong>Altitude</strong> is the elevation of the job site above sea level, in feet. As elevation rises, the atmosphere above the site is thinner, so <abbr tabindex="0" title="The absolute pressure of the atmosphere at a location, stated in inches of mercury and equal to 29.92 in. Hg at sea level under standard conditions.">barometric pressure</abbr> falls, and with it the density of the air entering the fan. At 5,000 ft, for example, the pressure ratio is 0.832, so even air at 70°F weighs only about 83 percent of what it does at sea level. A fan at a mountain site behaves exactly as if it were handling warm air: same CFM at a given speed, less pressure and less power.</p>
 <h4 id="worked-example-selecting-a-fan-for-a-5000-ft-site">Worked Example: Selecting a Fan for a 5,000 ft Site<a class="headerlink" href="#worked-example-selecting-a-fan-for-a-5000-ft-site" title="Permanent link">&para;</a></h4>
 <p>A plant at 5,000 ft elevation needs 2.0 in. wg of actual static pressure from an exhaust fan handling 70°F air.</p>
 <ol>
@@ -4134,12 +4198,12 @@ DR = \frac{\rho}{0.075} = \frac{530}{T + 460} \times \frac{P_b}{29.92}
 If multiplying here and dividing there feels slippery, that's normal; nearly everyone flips the rule at least once. Anchor it to the one thing you already know for sure, that thin air makes a fan weaker, so a selection for thin air must look up a <em>higher</em> catalog pressure, then work the challenges in the density explorer until the direction is automatic.</p>
 </div>
 <h2 id="contaminated-airstreams">Contaminated Airstreams<a class="headerlink" href="#contaminated-airstreams" title="Permanent link">&para;</a></h2>
-<p>A <strong>contaminated airstream</strong> is an airstream that carries something other than clean air: solid particles such as dust, fibers, chips or grit; liquid droplets or moisture; corrosive gases or mists; flammable vapors or dusts; or fumes hazardous to people. Clean air at an extreme temperature is not, by itself, contaminated, although it raises its own construction questions. Contamination matters because the fan's internal parts are <em>in</em> the airstream: solids erode blades and build up on them until the impeller is out of balance, corrosives eat the metal, moisture collects in the housing, and a spark in a flammable atmosphere can start a fire.</p>
+<p>A <strong><abbr tabindex="0" title="An airstream that carries something other than clean air, such as particles, droplets, corrosive gases, flammable vapors or dusts, or hazardous fumes.">contaminated airstream</abbr></strong> is an airstream that carries something other than clean air: solid particles such as dust, fibers, chips or grit; liquid droplets or moisture; corrosive gases or mists; flammable vapors or dusts; or fumes hazardous to people. Clean air at an extreme temperature is not, by itself, contaminated, although it raises its own construction questions. Contamination matters because the fan's internal parts are <em>in</em> the airstream: solids erode blades and build up on them until the impeller is out of balance, corrosives eat the metal, moisture collects in the housing, and a spark in a flammable atmosphere can start a fire.</p>
 <p>FanPedia shows several ways the industry responds, and each points to a later chapter:</p>
 <ul>
-<li><strong>Impeller design.</strong> Radial bladed impellers come in paddle, material handling and paper handling versions built for air carrying material (FanPedia, p. 32); see <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</li>
+<li><strong>Impeller design.</strong> <abbr tabindex="0" title="A centrifugal impeller with flat blades pointing straight out from the hub along radii, with no backward or forward lean.">Radial bladed impellers</abbr> come in paddle, material handling and paper handling versions built for air carrying material (FanPedia, p. 32); see <a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>.</li>
 <li><strong>Arrangement.</strong> Arrangement 1 keeps both bearings on the pedestal, out of the airstream, and FanPedia names it for contaminated air applications (FanPedia, p. 162).</li>
-<li><strong>Accessories.</strong> External inlet vanes are described as "used for contaminated airstreams," while nested inlet vanes, which sit inside the inlet funnel, are for clean airstreams (FanPedia, p. 139); see <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a>.</li>
+<li><strong>Accessories.</strong> <abbr tabindex="0" title="Variable inlet vanes built in their own housing and bolted to the fan inlet, suited to contaminated or high-temperature airstreams up to 600°F.">External inlet vanes</abbr> are described as "used for contaminated airstreams," while nested inlet vanes, which sit inside the <abbr tabindex="0" title="The aerodynamically shaped piece, flanged to mount on the housing, that guides air smoothly into the impeller; also called an inlet cone, funnel, or inlet bell.">inlet funnel</abbr>, are for clean airstreams (FanPedia, p. 139); see <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a>.</li>
 <li><strong>Discharge and dilution.</strong> Lab exhaust fans "dilute contaminated air by drawing in fresh outside air" and send it "up and away from the building" (FanPedia, pp. 4, 6).</li>
 <li><strong>Construction.</strong> Flammable atmospheres call for spark-resistant construction; see <a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a>.</li>
 </ul>
@@ -4254,7 +4318,7 @@ A common trap is quoting a fan from CFM and static pressure alone, then learning
 </tr>
 </tbody>
 </table>
-<p><strong>Provenance:</strong> Bin definitions from the chapter section "Contaminated Airstreams". Card 2 rationale: FanPedia p. 32 (radial bladed paper handling impeller). Card 6 rationale: FanPedia pp. 4, 6 (lab exhaust dilution). Card 7: chapter section "Air Temperature" and FanPedia pp. 110-116 (high-temperature construction). Remaining cards are general engineering knowledge.</p>
+<p><strong>Provenance:</strong> Bin definitions from the chapter section "Contaminated Airstreams". Card 2 rationale: FanPedia p. 32 (radial bladed <abbr tabindex="0" title="A material handling impeller made extra rugged for high-impact loading, with a full back plate, trapezoidal gussets, and a paper deflector cone over the hub face.">paper handling impeller</abbr>). Card 6 rationale: FanPedia pp. 4, 6 (lab exhaust dilution). Card 7: chapter section "Air Temperature" and FanPedia pp. 110-116 (high-temperature construction). Remaining cards are general engineering knowledge.</p>
 <p><strong>Rules:</strong> Each card has exactly one correct bin, given in the table. Cards are shown one at a time in a shuffled order, seeded per session. A placement is scored on the first attempt only.</p>
 <p><strong>Learner Activity:</strong></p>
 <ol>
@@ -4287,7 +4351,7 @@ A common trap is quoting a fan from CFM and static pressure alone, then learning
 <strong>Learning Objective:</strong> The learner will identify each of the six parts of a fan duty statement by its quantity and unit, with at least 5 of 6 correct on the first attempt.</p>
 <p><strong>Prerequisites:</strong> airflow volume, cubic feet per minute, static pressure, inches of water gauge, fan speed, RPM, brake horsepower, air density, standard air, airstream (all defined earlier in this chapter).</p>
 <p><strong>Evidence of Mastery:</strong> In quiz mode the learner matches each of the six highlighted segments of the duty statement to one of six quantity names. A match is correct when it agrees with the Content table. Mastery is at least 5 of 6 correct on the first attempt. Clicking segments in explore mode to read their callouts is exploration, not evidence.</p>
-<p><strong>Misconceptions:</strong> (1) BHP is the motor nameplate size. (2) The static pressure is a property of the fan alone rather than the resistance of the system at that airflow. (3) The density can be left off because every catalog uses standard air.</p>
+<p><strong>Misconceptions:</strong> (1) BHP is the <abbr tabindex="0" title="The metal plate fixed to a motor frame that identifies its manufacturer, serial number, and technical characteristics.">motor nameplate</abbr> size. (2) The static pressure is a property of the fan alone rather than the resistance of the system at that airflow. (3) The density can be left off because every catalog uses standard air.</p>
 <p><strong>Instructional Rationale:</strong> Recognizing the parts of a real rating line is a Remember-level skill; a labeled picture with clickable callouts followed by a short matching check lets the learner first see each part with its meaning and then retrieve the names without support.</p>
 <p><strong>Content:</strong></p>
 <p>The duty statement shown: "12,000 CFM at 3.0 in. wg static pressure, 1,173 RPM, 7.9 BHP, at 0.075 lb/ft³ (70°F, sea level), clean air."</p>
@@ -4340,7 +4404,7 @@ A common trap is quoting a fan from CFM and static pressure alone, then learning
 </tbody>
 </table>
 <p>Quiz mode presents the six quantity names as choices for each segment.</p>
-<p><strong>Provenance:</strong> All values from this chapter's worked examples: "From Duty Point to Motor" (12,000 CFM, 3.0 in. wg, 7.9 BHP, 10 hp, 79 percent) and "Setting a Belt-Driven Fan's Speed" (1,760 RPM, 6 in and 9 in sheaves, 1,173 RPM). The combination is illustrative and the infographic labels it "illustrative duty statement, not a catalog selection".</p>
+<p><strong>Provenance:</strong> All values from this chapter's worked examples: "From <abbr tabindex="0" title="The airflow and pressure, at a stated air density, that a specification requires a fan to deliver.">Duty Point</abbr> to Motor" (12,000 CFM, 3.0 in. wg, 7.9 BHP, 10 hp, 79 percent) and "Setting a Belt-Driven Fan's Speed" (1,760 RPM, 6 in and 9 in sheaves, 1,173 RPM). The combination is illustrative and the infographic labels it "illustrative duty statement, not a catalog selection".</p>
 <p><strong>Rules:</strong> Each segment has exactly one correct quantity name. Each name is used once. In quiz mode, segments are asked in a shuffled order, seeded per session.</p>
 <p><strong>Learner Activity:</strong></p>
 <ol>
@@ -4362,7 +4426,7 @@ A common trap is quoting a fan from CFM and static pressure alone, then learning
 <li><strong>Air velocity</strong>, in feet per minute, equals CFM divided by flow area in square feet: 2,400 CFM in a 16 in by 12 in duct moves at 1,800 feet per minute.</li>
 <li><strong>Air pressure</strong> in fan work is gauge pressure, measured relative to the atmosphere: positive on the discharge side, negative (suction) on the inlet side.</li>
 <li><strong>Inches of water gauge</strong> is the fan industry's pressure unit: 27.7 in. wg equals 1 psi, and 1 in. wg is 5.2 lb/ft².</li>
-<li><strong>Static pressure</strong> describes system resistance. The fan must make up every component's pressure drop; in the worked example it raises static pressure from −1.40 to +1.10 in. wg, a 2.50 in. wg rise.</li>
+<li><strong>Static pressure</strong> describes <abbr tabindex="0" title="The pressure needed to push a given airflow through everything connected to a fan, rising with the square of airflow.">system resistance</abbr>. The fan must make up every component's pressure drop; in the worked example it raises static pressure from −1.40 to +1.10 in. wg, a 2.50 in. wg rise.</li>
 <li><strong>Fan speed</strong> in RPM comes from the motor's synchronous speed (3600, 1800, 1200 or 900 at 60 Hz) in direct drive, or from the sheave ratio in belt drive. Airflow rises with speed, pressure with its square, and power with its cube.</li>
 <li><strong>Horsepower</strong> is power: brake horsepower is what the fan shaft needs, and the motor is the next standard size above it, ideally loaded between 50 and 100 percent.</li>
 <li><strong>Air density</strong> at standard conditions is 0.075 lb/ft³. At a fixed speed, CFM stays the same while static pressure and horsepower scale with the density ratio.</li>
@@ -4372,7 +4436,7 @@ A common trap is quoting a fan from CFM and static pressure alone, then learning
 <div class="admonition mascot-celebration">
 <p class="admonition-title">You Can Read a Duty Statement</p>
 <p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
-You can now take a line like "12,000 CFM at 3.0 in. wg, 1,173 RPM, 7.9 BHP, standard air" and say what every number means, check the horsepower and the velocity yourself, and correct the pressure for a hot airstream or a high-altitude site. That vocabulary is the foundation for every chapter that follows.</p>
+You can now take a line like "12,000 CFM at 3.0 in. wg, 1,173 RPM, 7.9 BHP, standard air" and say what every number means, check the horsepower and the velocity yourself, and correct the pressure for a <abbr tabindex="0" title="An airstream whose temperature is high enough to change fan performance or to call for construction beyond the standard catalog build.">hot airstream</abbr> or a high-altitude site. That vocabulary is the foundation for every chapter that follows.</p>
 </div>
 <p><a href="references/">See Annotated References</a></p>
 
@@ -4472,7 +4536,7 @@ You can now take a line like "12,000 CFM at 3.0 in. wg, 1,173 RPM, 7.9 BHP, stan
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

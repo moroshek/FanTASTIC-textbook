@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -273,6 +275,68 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         
@@ -400,7 +464,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -422,14 +486,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -529,7 +593,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -551,14 +615,14 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3167,11 +3231,11 @@
 Every fan inquiry eventually asks two questions: how hard does the fan have to push, and what exactly is it pushing? This chapter gives you the vocabulary to answer both in the terms a catalog and a specification use. By the end you will be able to turn a job-site description into air conditions an application engineer can select from. Let's follow the airflow.</p>
 </div>
 <h2 id="where-this-chapter-picks-up">Where This Chapter Picks Up<a class="headerlink" href="#where-this-chapter-picks-up" title="Permanent link">&para;</a></h2>
-<p>Chapter 1 described air with four measurements: airflow volume in cubic feet per minute (CFM), air velocity, static pressure in inches of water gauge (in. wg), and air density. Those are enough to say what a fan delivers, but not enough to read a performance table or write an order. A catalog rating also assumes a particular air condition, and a real job almost never matches it exactly. And the air itself may be hot, wet, corrosive, dusty or flammable, any one of which changes how the fan has to be built.</p>
-<p>The chapter is in two halves. The first half finishes the pressure story: it adds velocity pressure to static pressure to get total pressure, shows how a fan's pressure rise and air power follow, and places the fan inside the duct system it serves. The second half covers barometric pressure and standard air, then the five airstream conditions that appear on almost every industrial inquiry.</p>
+<p>Chapter 1 described air with four measurements: <abbr tabindex="0" title="The volume of air passing a point in a fan or duct system per unit of time, stated in the United States as cubic feet each minute.">airflow volume</abbr> in <abbr tabindex="0" title="The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">cubic feet per minute</abbr> (CFM), air velocity, <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> in <abbr tabindex="0" title="The unit used to state fan and duct pressures, abbreviated in. wg, equal to the pressure that supports a column of water one inch high in a manometer.">inches of water gauge</abbr> (in. wg), and <abbr tabindex="0" title="The mass of air in one cubic foot, stated in pounds per cubic foot (lb/ft³); 0.075 lb/ft³ at standard conditions.">air density</abbr>. Those are enough to say what a fan delivers, but not enough to read a <abbr tabindex="0" title="A grid in a product catalog giving, for one model and size at standard air, the RPM and BHP needed for each combination of airflow and static pressure.">performance table</abbr> or write an order. A catalog rating also assumes a particular air condition, and a real job almost never matches it exactly. And the air itself may be hot, wet, corrosive, dusty or flammable, any one of which changes how the fan has to be built.</p>
+<p>The chapter is in two halves. The first half finishes the pressure story: it adds <abbr tabindex="0" title="The pressure that a moving airstream would produce if brought to rest, representing the kinetic energy of the air.">velocity pressure</abbr> to static pressure to get <abbr tabindex="0" title="The sum of static pressure and velocity pressure at a point in an airstream, representing all of the energy the air carries there.">total pressure</abbr>, shows how a fan's <abbr tabindex="0" title="The increase in pressure a fan produces between its inlet and its outlet, stated as fan total pressure or fan static pressure.">pressure rise</abbr> and <abbr tabindex="0" title="The rate at which a fan delivers energy to the air, calculated from airflow and fan total pressure before internal losses.">air power</abbr> follow, and places the fan inside the duct system it serves. The second half covers <abbr tabindex="0" title="The absolute pressure of the atmosphere at a location, stated in inches of mercury and equal to 29.92 in. Hg at sea level under standard conditions.">barometric pressure</abbr> and <abbr tabindex="0" title="The reference air condition used to rate fans: air with a density of 0.075 lb/ft³, very nearly that of dry air at 70°F and 29.92 in. Hg barometric pressure.">standard air</abbr>, then the five <abbr tabindex="0" title="Everything about the gas a fan moves except its quantity: temperature range, elevation, moisture, and contents such as dust or flammable vapors.">airstream conditions</abbr> that appear on almost every industrial inquiry.</p>
 <h2 id="velocity-area-and-continuity">Velocity, Area and Continuity<a class="headerlink" href="#velocity-area-and-continuity" title="Permanent link">&para;</a></h2>
-<p>Air velocity in the fan industry is stated in <strong>feet per minute (fpm)</strong>: the distance, in feet, that air travels along a duct or through an opening in one minute. Fpm pairs with CFM, which also uses minutes, so no unit conversion is needed between them. One fpm is 1/60 of a foot per second. Typical values range from a few hundred fpm across a filter bank, to 1,500–3,000 fpm in ventilation ductwork, to 4,000 fpm or more in ducts that carry dust.</p>
-<p>Velocity, area and airflow are tied together by the <strong>airflow continuity equation</strong>. Air that enters one end of a duct with no branches or leaks must come out the other end, so the volume flowing past every cross-section is the same. Multiplying the cross-sectional area by the average velocity gives the airflow.</p>
+<p>Air velocity in the fan industry is stated in <strong><abbr tabindex="0" title="The fan-industry unit of air velocity, abbreviated fpm, giving the distance in feet that air travels in one minute.">feet per minute</abbr> (fpm)</strong>: the distance, in feet, that air travels along a duct or through an opening in one minute. Fpm pairs with CFM, which also uses minutes, so no unit conversion is needed between them. One fpm is 1/60 of a foot per second. Typical values range from a few hundred fpm across a filter bank, to 1,500–3,000 fpm in ventilation ductwork, to 4,000 fpm or more in ducts that carry dust.</p>
+<p>Velocity, area and airflow are tied together by the <strong><abbr tabindex="0" title="The relation stating that airflow equals cross-sectional area times average velocity, constant along a duct without branches or leaks.">airflow continuity equation</abbr></strong>. Air that enters one end of a duct with no branches or leaks must come out the other end, so the volume flowing past every cross-section is the same. Multiplying the cross-sectional area by the average velocity gives the airflow.</p>
 <h4 id="airflow-continuity-equation">Airflow Continuity Equation<a class="headerlink" href="#airflow-continuity-equation" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ Q = A \times V \]</div>
 <p>where:</p>
@@ -3185,7 +3249,7 @@ Every fan inquiry eventually asks two questions: how hard does the fan have to p
 <p>Moving air carries kinetic energy, and that energy can be measured as a pressure. <strong>Velocity pressure (VP)</strong> is the pressure that would be produced if a moving airstream were brought to a stop. You can feel it by holding your hand flat against a strong wind: the push on your palm is velocity pressure being recovered. Velocity pressure is measured in in. wg, the same unit as static pressure, and it is always positive in the direction the air is moving.</p>
 <p>Static pressure and velocity pressure answer different questions. Static pressure is the bursting or collapsing pressure that pushes outward or inward on the duct walls in every direction, and it is what overcomes the resistance of filters, coils, dampers and duct friction. Velocity pressure exists only because the air is moving, and it acts only in the direction of motion. A Pitot tube inserted into a duct, facing upstream, senses both; a side-wall tap senses static pressure alone. The difference between the two readings is the velocity pressure.</p>
 <h3 id="the-velocity-pressure-equation">The Velocity Pressure Equation<a class="headerlink" href="#the-velocity-pressure-equation" title="Permanent link">&para;</a></h3>
-<p>The <strong>velocity pressure equation</strong> converts between velocity and velocity pressure. For standard air (defined later in this chapter as air with a density of 0.075 lb/ft³), it takes a form every application engineer memorizes:</p>
+<p>The <strong><abbr tabindex="0" title="The equation converting between air velocity and velocity pressure; for standard air, velocity in fpm equals 4,005 times the square root of velocity pressure in in. wg.">velocity pressure equation</abbr></strong> converts between velocity and velocity pressure. For standard air (defined later in this chapter as air with a density of 0.075 lb/ft³), it takes a form every application engineer memorizes:</p>
 <h4 id="velocity-pressure-equation-standard-air">Velocity Pressure Equation (Standard Air)<a class="headerlink" href="#velocity-pressure-equation-standard-air" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ VP = \left( \frac{V}{4005} \right)^2 \qquad \text{or} \qquad V = 4005\sqrt{VP} \]</div>
 <p>where:</p>
@@ -3226,7 +3290,7 @@ At standard air, 4,005 fpm is exactly 1.00 in. wg of velocity pressure, so 2,000
 Think of total pressure as the air's energy budget, with static and velocity pressure as two accounts it can move money between. A duct reducer moves energy from the static account to the velocity account; an expansion moves some of it back. Only the fan makes a deposit; every fitting and filter makes a withdrawal.</p>
 </div>
 <h2 id="pressure-rise-and-air-power">Pressure Rise and Air Power<a class="headerlink" href="#pressure-rise-and-air-power" title="Permanent link">&para;</a></h2>
-<p>The <strong>pressure rise</strong> of a fan is the increase in pressure the fan produces between its inlet and its outlet. The most complete measure is <strong>fan total pressure (FTP)</strong>: the total pressure at the outlet minus the total pressure at the inlet. Catalogs more often list <strong>fan static pressure (FSP)</strong>, which by industry convention is the fan total pressure minus the velocity pressure at the fan outlet. <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> shows how both appear on a performance curve; here the point is that both describe the same pressure rise, measured two ways.</p>
+<p>The <strong>pressure rise</strong> of a fan is the increase in pressure the fan produces between its inlet and its outlet. The most complete measure is <strong><abbr tabindex="0" title="The rise in total pressure across a fan: total pressure at the outlet minus total pressure at the inlet; abbreviated FTP.">fan total pressure</abbr> (FTP)</strong>: the total pressure at the outlet minus the total pressure at the inlet. Catalogs more often list <strong><abbr tabindex="0" title="Fan total pressure minus fan outlet velocity pressure, the AMCA pressure most catalog tables use; abbreviated FSP.">fan static pressure</abbr> (FSP)</strong>, which by industry convention is the fan total pressure minus the velocity pressure at the fan outlet. <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> shows how both appear on a performance curve; here the point is that both describe the same pressure rise, measured two ways.</p>
 <h4 id="fan-pressure-rise">Fan Pressure Rise<a class="headerlink" href="#fan-pressure-rise" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ FTP = TP_{\text{outlet}} - TP_{\text{inlet}} \qquad FSP = FTP - VP_{\text{outlet}} \]</div>
 <p>where:</p>
@@ -3236,7 +3300,7 @@ Think of total pressure as the air's energy budget, with static and velocity pre
 <li><span class="arithmatex">\( TP_{\text{outlet}} \)</span> and <span class="arithmatex">\( TP_{\text{inlet}} \)</span> are the total pressures measured at the fan outlet and inlet</li>
 <li><span class="arithmatex">\( VP_{\text{outlet}} \)</span> is the velocity pressure at the fan outlet</li>
 </ul>
-<p><strong>Air power</strong> is the rate at which the fan delivers energy to the air: the useful output of the fan, before any losses inside the fan, bearings or drive. In U.S. units it is calculated in horsepower from airflow and fan total pressure. The shaft power a fan draws, its brake horsepower, is always larger than its air power; the ratio of the two is the fan's total efficiency, which Chapter 10 covers.</p>
+<p><strong>Air power</strong> is the rate at which the fan delivers energy to the air: the useful output of the fan, before any losses inside the fan, bearings or drive. In U.S. units it is calculated in horsepower from airflow and fan total pressure. The shaft power a fan draws, its <abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">brake horsepower</abbr>, is always larger than its air power; the ratio of the two is the fan's total efficiency, which Chapter 10 covers.</p>
 <h4 id="air-power">Air Power<a class="headerlink" href="#air-power" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ AHP = \frac{Q \times FTP}{6356} \]</div>
 <p>where:</p>
@@ -3287,7 +3351,7 @@ A common trap is adding inlet and outlet static pressures as if both were positi
 </div>
 <h2 id="the-duct-system">The Duct System<a class="headerlink" href="#the-duct-system" title="Permanent link">&para;</a></h2>
 <p>A fan never works alone. The <strong>duct system</strong> is everything the air passes through on its way to and from the fan: hoods, grilles, louvers, filters, coils, dampers, elbows, transitions, straight duct runs and the final discharge, together with the fan's own inlet and outlet connections. A system can be very short (a wall fan with a louver) or very long (a dust-collection network with dozens of hoods). The duct system is the reason a fan must produce pressure at all: every component takes away some total pressure, and the fan must put back exactly as much as the system uses at the airflow being moved.</p>
-<p>Duct-system resistance depends on velocity, and velocity depends on airflow. Friction and fitting losses scale with velocity pressure, which scales with the square of velocity. The result is the most useful rule in system work: <strong>for a fixed duct system, the pressure required rises with the square of the airflow.</strong></p>
+<p>Duct-<abbr tabindex="0" title="The pressure needed to push a given airflow through everything connected to a fan, rising with the square of airflow.">system resistance</abbr> depends on velocity, and velocity depends on airflow. Friction and fitting losses scale with velocity pressure, which scales with the square of velocity. The result is the most useful rule in system work: <strong>for a fixed duct system, the pressure required rises with the square of the airflow.</strong></p>
 <h4 id="system-resistance-relation">System Resistance Relation<a class="headerlink" href="#system-resistance-relation" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ \frac{P_2}{P_1} = \left( \frac{Q_2}{Q_1} \right)^2 \]</div>
 <p>where:</p>
@@ -3295,7 +3359,7 @@ A common trap is adding inlet and outlet static pressures as if both were positi
 <li><span class="arithmatex">\( P_1 \)</span> is the pressure the system requires at airflow <span class="arithmatex">\( Q_1 \)</span>, in in. wg</li>
 <li><span class="arithmatex">\( P_2 \)</span> is the pressure the system requires at airflow <span class="arithmatex">\( Q_2 \)</span>, in in. wg</li>
 </ul>
-<p>Plotting that relation for every airflow gives the system curve. <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> lays it over the fan curve to find the operating point, and <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> covers the "system effect" losses caused by poor inlet and outlet connections. Duct-system design itself is outside the scope of this book; what the book needs from it is the airflow and the pressure the system requires, stated at the actual air conditions.</p>
+<p>Plotting that relation for every airflow gives the <abbr tabindex="0" title="A parabola-shaped graph of one duct system's resistance against airflow, starting at zero pressure at zero airflow.">system curve</abbr>. <a href="../10-fan-performance-curves-and-ratings/">Chapter 10</a> lays it over the <abbr tabindex="0" title="A graph of one fan's pressure, power, and often efficiency against airflow at one speed and one air density.">fan curve</abbr> to find the <abbr tabindex="0" title="The single airflow and pressure at which a fan actually runs in a system, where its fan curve intersects the system curve.">operating point</abbr>, and <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a> covers the "<abbr tabindex="0" title="The loss of fan performance caused by the way a fan is connected to its system, expressed as an added pressure loss the selection must account for.">system effect</abbr>" losses caused by poor inlet and outlet connections. Duct-system design itself is outside the scope of this book; what the book needs from it is the airflow and the pressure the system requires, stated at the actual air conditions.</p>
 <p><strong>Worked example: a requested airflow increase.</strong> The plant running the exhaust system from the previous example wants 20 percent more airflow, 12,000 CFM, through the same ductwork.</p>
 <ol>
 <li>Airflow ratio: <span class="arithmatex">\( 12{,}000 / 10{,}000 = 1.20 \)</span>.</li>
@@ -3407,7 +3471,7 @@ A common trap is adding inlet and outlet static pressures as if both were positi
 <p><strong>Chapter Anchors:</strong> 10,000 CFM; 24 in. × 24 in. duct, 4.00 ft², 2,500 fpm, VP 0.39 in. wg; 20 in. × 20 in. duct, 2.78 ft², 3,600 fpm, VP 0.81 in. wg; inlet SP −1.20, outlet SP +2.00; TP −0.81 and +2.81; FTP 3.62 in. wg; FSP 2.81 in. wg; air power 5.70 hp; 12,000 CFM needs FTP 5.21 in. wg and 9.84 hp; airflow ratio 1.20, pressure ratio 1.44, power ratio 1.73.</p>
 </details>
 <h2 id="fans-and-blowers">Fans and Blowers<a class="headerlink" href="#fans-and-blowers" title="Permanent link">&para;</a></h2>
-<p>The word <strong>blower</strong> appears on nameplates, catalogs and company names, including Twin City Fan &amp; Blower, so a new engineer needs to know what it signals. In everyday use, "blower" means a fan built to produce comparatively high pressure, usually a centrifugal design. Twin City Fan's current catalog describes its pressure blowers as "ideal for applications requiring high pressures at relatively low volumes of air," with performance that stays stable through the operating range and can be turned down to zero flow with a discharge damper. FanPedia notes that pressure blowers have narrower housings and impeller widths than standard centrifugal fans (FanPedia p. 4).</p>
+<p>The word <strong>blower</strong> appears on nameplates, catalogs and company names, including Twin City Fan &amp; Blower, so a new engineer needs to know what it signals. In everyday use, "blower" means a fan built to produce comparatively high pressure, usually a centrifugal design. Twin City Fan's current catalog describes its <abbr tabindex="0" title="A housed centrifugal fan with narrow housing and impeller widths, built to produce high pressure at relatively low airflow.">pressure blowers</abbr> as "ideal for applications requiring high pressures at relatively low volumes of air," with performance that stays stable through the operating range and can be turned down to zero flow with a discharge damper. FanPedia notes that pressure blowers have narrower housings and impeller widths than standard <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fans</abbr> (FanPedia p. 4).</p>
 <p>Engineering standards draw the line more precisely, using the <strong>pressure ratio</strong>: the absolute pressure at the outlet divided by the absolute pressure at the inlet. The commonly cited ASME definitions are:</p>
 <ul>
 <li><strong>Fan:</strong> pressure ratio up to 1.11</li>
@@ -3477,7 +3541,7 @@ A common trap is adding inlet and outlet static pressures as if both were positi
 <li><span class="arithmatex">\( T \)</span> is the actual air temperature, in °F</li>
 <li>530 is 70°F expressed in absolute degrees Rankine (70 + 460)</li>
 </ul>
-<p>Three rules follow from the fact that a fan moves a fixed <em>volume</em> at a fixed speed. At the same speed, airflow (CFM) does not change with density. Pressure changes in direct proportion to the density ratio. Brake horsepower also changes in direct proportion to the density ratio. The worked examples in the barometric pressure section above and the hot airstream section below both apply these rules; the table below collects them in one place.</p>
+<p>Three rules follow from the fact that a fan moves a fixed <em>volume</em> at a fixed speed. At the same speed, airflow (CFM) does not change with density. Pressure changes in direct proportion to the density ratio. Brake horsepower also changes in direct proportion to the density ratio. The worked examples in the barometric pressure section above and the <abbr tabindex="0" title="An airstream whose temperature is high enough to change fan performance or to call for construction beyond the standard catalog build.">hot airstream</abbr> section below both apply these rules; the table below collects them in one place.</p>
 <table>
 <thead>
 <tr>
@@ -3510,7 +3574,7 @@ A common trap is adding inlet and outlet static pressures as if both were positi
 If density corrections feel slippery, that is normal; the hard part is remembering which way to apply the ratio, not the arithmetic. Use one rule: going from the catalog to the job, multiply by the density ratio; going from the job's required pressure back to the catalog, divide by it. Try it on the 5,000-foot example above until both directions feel automatic.</p>
 </div>
 <h2 id="the-airstreams-fans-handle">The Airstreams Fans Handle<a class="headerlink" href="#the-airstreams-fans-handle" title="Permanent link">&para;</a></h2>
-<p>Chapter 1 introduced the <strong>airstream</strong>, the air or gas mixture that actually passes through the fan, and the idea of a contaminated airstream. Specifications go further and name the specific condition, because each condition points toward specific construction, materials, arrangements and accessories. Five conditions cover nearly every industrial inquiry: hot, wet, corrosive, particulate-laden and explosive. An airstream can have more than one of them at once, and a good inquiry form asks about each separately. The construction details are covered in later chapters; this section teaches you to recognize each condition and to ask the right questions about it.</p>
+<p>Chapter 1 introduced the <strong>airstream</strong>, the air or gas mixture that actually passes through the fan, and the idea of a <abbr tabindex="0" title="An airstream that carries something other than clean air, such as particles, droplets, corrosive gases, flammable vapors or dusts, or hazardous fumes.">contaminated airstream</abbr>. Specifications go further and name the specific condition, because each condition points toward specific construction, materials, arrangements and accessories. Five conditions cover nearly every industrial inquiry: hot, wet, corrosive, particulate-laden and explosive. An airstream can have more than one of them at once, and a good inquiry form asks about each separately. The construction details are covered in later chapters; this section teaches you to recognize each condition and to ask the right questions about it.</p>
 <h3 id="hot-airstreams">Hot Airstreams<a class="headerlink" href="#hot-airstreams" title="Permanent link">&para;</a></h3>
 <p>A <strong>hot airstream</strong> is one whose temperature is high enough to change the fan's performance or to call for construction beyond the standard catalog build. There is no single threshold temperature, because the limit depends on the fan design. FanPedia's high-temperature pages show where special construction begins for different designs (FanPedia pp. 110–116):</p>
 <table>
@@ -3539,14 +3603,14 @@ If density corrections feel slippery, that is normal; the hard part is rememberi
 </tr>
 </tbody>
 </table>
-<p>Other limits show up in the technical descriptions. A standard double-width, double-inlet fan in Arrangement 3 has both bearings in the airstream and is limited to clean air at 130°F (FanPedia p. 167). Arrangement 1 keeps the bearings on a pedestal outside the airstream, "which makes them ideal for high temperature or contaminated air applications" (FanPedia p. 162), while for an Arrangement 4 plug fan, with the impeller on the motor shaft, "high airstream temperatures may limit the use of this arrangement" (FanPedia p. 171). High-temperature construction adds features such as shaft coolers, heat shields, insulation, high-temperature grease and fixed-and-floating bearings; <a href="../21-high-temperature-leak-tight-and-rto-construction/">Chapter 21</a> covers them.</p>
+<p>Other limits show up in the technical descriptions. A standard double-width, double-inlet fan in <abbr tabindex="0" title="A center hung impeller fan with one bearing on each side of the impeller supported by the housing, and the motor mounted separately on the floor or fan base.">Arrangement 3</abbr> has both bearings in the airstream and is limited to clean air at 130°F (FanPedia p. 167). <abbr tabindex="0" title="An overhung impeller fan with both bearings on a pedestal and the motor mounted separately on the floor or a fan base, usually belt driven.">Arrangement 1</abbr> keeps the bearings on a pedestal outside the airstream, "which makes them ideal for high temperature or contaminated air applications" (FanPedia p. 162), while for an <abbr tabindex="0" title="A direct drive fan with the impeller mounted on the motor shaft and the motor on a pedestal, having no fan shaft or fan bearings.">Arrangement 4</abbr> <abbr tabindex="0" title="An unhoused centrifugal fan mounted on a panel fastened to the outside of a plenum wall, with the impeller inside the plenum.">plug fan</abbr>, with the impeller on the motor shaft, "high airstream temperatures may limit the use of this arrangement" (FanPedia p. 171). High-temperature construction adds features such as <abbr tabindex="0" title="A cast aluminum part mounted on the shaft between the shaft seal and the bearings that dissipates heat conducted along the shaft from the airstream.">shaft coolers</abbr>, <abbr tabindex="0" title="A plate mounted between a hot surface and a component it protects so heat from the housing does not reach that component directly.">heat shields</abbr>, insulation, high-temperature grease and fixed-and-<abbr tabindex="0" title="The bearing that supports a shaft radially but lets it move axially so the shaft can grow or shrink with temperature; also called the expansion bearing.">floating bearings</abbr>; <a href="../21-high-temperature-leak-tight-and-rto-construction/">Chapter 21</a> covers them.</p>
 <p>Hot air also changes performance, through density. Hot air is lighter, so a fan running at the same speed develops less pressure and draws less power in service than its standard-air catalog rating shows.</p>
 <p><strong>Worked example: selecting a fan for a 300°F oven exhaust at sea level.</strong> The duct system needs 3.00 in. wg static pressure at the operating temperature of 300°F.</p>
 <ol>
 <li>Density ratio: <span class="arithmatex">\( \dfrac{29.92}{29.92} \times \dfrac{530}{300 + 460} = \dfrac{530}{760} = 0.697 \)</span>. The actual density is <span class="arithmatex">\( 0.075 \times 0.697 = 0.0523 \)</span> lb/ft³.</li>
 <li>Catalog (standard-air) pressure to select at: <span class="arithmatex">\( 3.00 / 0.697 = 4.30 \)</span> in. wg, at the required CFM.</li>
 <li>Suppose the catalog shows 10.0 bhp at that point (an illustrative value). The operating power at 300°F is <span class="arithmatex">\( 10.0 \times 0.697 = 6.97 \)</span> bhp.</li>
-<li>The catch: when the oven starts cold, the air is near 70°F and the fan draws the full 10.0 bhp until the air heats up. A motor sized only for the 6.97 bhp hot condition would be overloaded at every cold start. The order must state both the operating temperature and whether the fan must start and run on cold air, so the motor can be sized for cold start or protected by a damper or speed control.</li>
+<li>The catch: when the oven starts cold, the air is near 70°F and the fan draws the full 10.0 bhp until the air heats up. A motor sized only for the 6.97 bhp hot condition would be overloaded at every cold start. The order must state both the operating temperature and whether the fan must start and run on cold air, so the motor can be sized for cold start or protected by a damper or <abbr tabindex="0" title="A flow-control method that reduces airflow by slowing the impeller, using the least power of any method.">speed control</abbr>.</li>
 </ol>
 <p>The density ratio grows smaller as temperature rises and altitude increases. The chart below plots it, so you can read the correction for any combination before you calculate it.</p>
 <h4 id="diagram-density-ratio-by-temperature-and-altitude">Diagram: Density Ratio by Temperature and Altitude<a class="headerlink" href="#diagram-density-ratio-by-temperature-and-altitude" title="Permanent link">&para;</a></h4>
@@ -3563,7 +3627,7 @@ If density corrections feel slippery, that is normal; the hard part is rememberi
 <strong>Learning Objective:</strong> The learner will calculate the air density ratio for a given airstream temperature and site elevation, to within ±0.01, and use it to convert a required pressure into a standard-air catalog pressure.</p>
 <p><strong>Prerequisites:</strong> standard air, barometric pressure, air density, density ratio, hot airstream, the rule that pressure and power scale with the density ratio (defined in the sections "Barometric Pressure", "Standard Air" and "Hot Airstreams" above).</p>
 <p><strong>Evidence of Mastery:</strong> The learner answers five challenges by typing a value before the chart marks the point. A density ratio answer is correct within ±0.01; a pressure answer is correct within ±0.05 in. wg. Mastery is at least 4 of 5 correct on the first attempt. Hovering curves and moving the temperature marker is exploration, not evidence.</p>
-<p><strong>Misconceptions:</strong> (1) Temperature in °F can be used directly in the ratio without adding 460. (2) Hot air raises the pressure a fan develops. (3) To find the catalog pressure, multiply the required pressure by the density ratio instead of dividing. (4) Altitude and temperature corrections cannot be combined.</p>
+<p><strong>Misconceptions:</strong> (1) Temperature in °F can be used directly in the ratio without adding 460. (2) Hot air raises the pressure a fan develops. (3) To find the catalog pressure, multiply the required pressure by the density ratio instead of dividing. (4) Altitude and <abbr tabindex="0" title="The density correction factor for an air temperature other than 70°F, computed from absolute temperatures in degrees Rankine.">temperature corrections</abbr> cannot be combined.</p>
 <p><strong>Instructional Rationale:</strong> The chart makes the shape of the correction visible (steep at moderate temperatures, flattening at high ones; each altitude curve a fixed fraction of the sea-level curve), and the challenges then require the learner to compute values the chart can confirm, so the learner practices the calculation rather than reading answers off the plot.</p>
 <p><strong>Content:</strong></p>
 <ul>
@@ -3630,22 +3694,22 @@ If density corrections feel slippery, that is normal; the hard part is rememberi
 <p><strong>Chapter Anchors:</strong> 0.075 lb/ft³; 70°F; 29.92 in. Hg; 530; 460; 300°F at sea level = 0.697 and 0.0523 lb/ft³; 5,000 ft = 24.89 in. Hg and 0.832; 2,500 ft = 27.31 in. Hg (0.913); 7,500 ft = 22.65 in. Hg (0.757); required 3.00 in. wg at 300°F selects at 4.30 in. wg.</p>
 </details>
 <h3 id="wet-airstreams">Wet Airstreams<a class="headerlink" href="#wet-airstreams" title="Permanent link">&para;</a></h3>
-<p>A <strong>wet airstream</strong> carries enough water vapor, mist or steam that liquid water can condense and collect inside the fan. Typical sources are dishwashing and laundry exhaust, swimming-pool exhaust, cooling and washing processes, and any process that vents steam. Water vapor changes air density only slightly, so the main concern is not performance but what the water does to the fan: it pools in the housing, attacks steel and coatings, and can reach motors and bearings.</p>
+<p>A <strong><abbr tabindex="0" title="An airstream carrying enough water vapor, mist, or steam that liquid water can condense and collect inside the fan.">wet airstream</abbr></strong> carries enough water vapor, mist or steam that liquid water can condense and collect inside the fan. Typical sources are dishwashing and laundry exhaust, swimming-pool exhaust, cooling and washing processes, and any process that vents steam. Water vapor changes air density only slightly, so the main concern is not performance but what the water does to the fan: it pools in the housing, attacks steel and coatings, and can reach motors and bearings.</p>
 <p>FanPedia lists several provisions for wet service:</p>
 <ul>
-<li><strong>Drains and weep holes.</strong> Fan housings typically need an opening at the lowest point for draining moisture; most come standard with a weep hole, and a drain (a half-coupling pipe welded to the scroll, with an optional plug or valve) can be added. Inlet boxes may also get drains (FanPedia p. 147).</li>
-<li><strong>High moisture construction</strong>, used "in applications where steam or condensation may collect in the fan housing." It applies to Arrangement 9 axial fans only and cannot be combined with high temperature construction (FanPedia p. 122).</li>
-<li><strong>Motor enclosure.</strong> An open drip-proof (ODP) motor "should not be used in dirty and wet atmospheres"; a totally enclosed motor is the usual choice (FanPedia p. 73).</li>
+<li><strong>Drains and <abbr tabindex="0" title="A small open hole at the lowest point of a fan housing that drains wash water before painting and moisture after installation.">weep holes</abbr>.</strong> Fan housings typically need an opening at the lowest point for draining moisture; most come standard with a weep hole, and a drain (a half-coupling pipe welded to the scroll, with an optional plug or valve) can be added. Inlet boxes may also get drains (FanPedia p. 147).</li>
+<li><strong><abbr tabindex="0" title="A modification for Arrangement 9 axial fans that seals the path between a wet airstream and the drive where steam or condensation may collect.">High moisture construction</abbr></strong>, used "in applications where steam or condensation may collect in the fan housing." It applies to <abbr tabindex="0" title="A belt driven, overhung fan with the motor on a slide base on the side of the fan's bearing pedestal, shipped as one assembly.">Arrangement 9</abbr> <abbr tabindex="0" title="A fan in which air enters and leaves the impeller parallel to the shaft, with swirl added by the rotating blades.">axial fans</abbr> only and cannot be combined with <abbr tabindex="0" title="Special construction for fans whose airstream is hot enough to weaken materials, expand parts, and overheat bearings.">high temperature construction</abbr> (FanPedia p. 122).</li>
+<li><strong><abbr tabindex="0" title="The casing style around a motor's internal parts, which determines how the motor rejects heat and how well its windings are protected.">Motor enclosure</abbr>.</strong> An open drip-proof (<abbr tabindex="0" title="ODP Motor: An open drip proof motor whose internal fan blows surrounding air directly across the windings, with openings shielded from dripping water.">ODP</abbr>) motor "should not be used in dirty and wet atmospheres"; a totally enclosed motor is the usual choice (FanPedia p. 73).</li>
 </ul>
 <p><strong>Worked example: reading a wet-service inquiry.</strong> A customer asks for an exhaust fan for a commercial laundry: warm, steam-laden air, ducted to the roof, with the fan mounted in the duct at its low point. Work through it the way an application engineer would:</p>
 <ol>
-<li>Will liquid collect in the fan? Yes: the fan sits at the duct's low point and the air is near saturation. Specify a housing drain at the lowest point, piped to a floor drain, rather than relying on a weep hole.</li>
+<li>Will liquid collect in the fan? Yes: the fan sits at the duct's low point and the air is near saturation. Specify a <abbr tabindex="0" title="A pipe connection at the lowest point of a fan housing that lets collected moisture be piped away or closed with a plug or valve.">housing drain</abbr> at the lowest point, piped to a floor drain, rather than relying on a weep hole.</li>
 <li>Does the air pass over the motor? If the design puts the motor in the airstream, choose an arrangement that moves it out, or a totally enclosed motor; never ODP.</li>
 <li>Is the moisture carrying anything else? Laundry exhaust also carries lint, which makes the airstream particulate-laden as well (see below). Note both conditions on the order.</li>
 </ol>
 <h3 id="corrosive-airstreams">Corrosive Airstreams<a class="headerlink" href="#corrosive-airstreams" title="Permanent link">&para;</a></h3>
-<p>A <strong>corrosive airstream</strong> contains gases, vapors or mists that chemically attack the fan's materials: acids, alkalis, chlorine, solvents and similar compounds, often made worse by moisture and heat. Mild steel, the standard material, can lose metal quickly in such service. The defense is material selection: coatings, stainless steel (SST) or fiberglass-reinforced plastic (FRP). Twin City Fan's current catalog states that its fiberglass fans "are specifically designed for the exhaust of moisture-laden, corrosive or chemically contaminated air" and that FRP "offers a more economical solution compared to stainless steel or other exotic alloys."</p>
-<p>Mixing materials needs care. FanPedia lists buffer strips for use "when customer specifies that corrosion resistant (i.e. stainless steel) housing may not be welded to a mild steel pedestal" (FanPedia p. 85). Motors near corrosive air may call for a Severe Duty or chemical-duty motor (FanPedia p. 73).</p>
+<p>A <strong><abbr tabindex="0" title="An airstream containing gases, vapors, or mists that chemically attack fan materials, such as acids, alkalis, chlorine, or solvents.">corrosive airstream</abbr></strong> contains gases, vapors or mists that chemically attack the fan's materials: acids, alkalis, chlorine, solvents and similar compounds, often made worse by moisture and heat. Mild steel, the standard material, can lose metal quickly in such service. The defense is material selection: coatings, stainless steel (SST) or fiberglass-reinforced plastic (FRP). Twin City Fan's current catalog states that its <abbr tabindex="0" title="A fan whose housing, and often impeller, is molded from fiberglass-reinforced plastic so it can handle moist, corrosive, or chemically contaminated air.">fiberglass fans</abbr> "are specifically designed for the exhaust of moisture-laden, corrosive or chemically contaminated air" and that FRP "offers a more economical solution compared to stainless steel or other exotic alloys."</p>
+<p>Mixing materials needs care. FanPedia lists <abbr tabindex="0" title="A strip placed between a corrosion-resistant housing and a mild steel pedestal when the two may not be welded together.">buffer strips</abbr> for use "when customer specifies that corrosion resistant (i.e. stainless steel) housing may not be welded to a mild steel pedestal" (FanPedia p. 85). Motors near corrosive air may call for a Severe Duty or chemical-duty motor (FanPedia p. 73).</p>
 <p><strong>Worked example: choosing a material path.</strong> An inquiry reads: "Exhaust from a chemical storage room; chlorine-bearing air; room temperature; humid." Before any material can be chosen, the application engineer needs four facts:</p>
 <table>
 <thead>
@@ -3675,7 +3739,7 @@ If density corrections feel slippery, that is normal; the hard part is rememberi
 </table>
 <p>For this inquiry, humid, chlorine-bearing air at room temperature points first toward the fiberglass fan line, with stainless steel as the alternative if the catalog's FRP limits or the customer's standard rule it out. The final choice is confirmed against the current catalog, not against a general rule.</p>
 <h3 id="particulate-laden-airstreams">Particulate-Laden Airstreams<a class="headerlink" href="#particulate-laden-airstreams" title="Permanent link">&para;</a></h3>
-<p>A <strong>particulate-laden airstream</strong> carries solid material: dust, grit, chips, fibers, lint, paper trim or granular product. Particles cause two problems. They wear (erode) blades and housings, and they build up on surfaces, which unbalances the impeller and causes vibration. Fibrous and stringy material can also wrap around impeller parts. Particulate service therefore pushes toward rugged impellers, wear-resistant construction and bearings kept out of the airstream. FanPedia shows radial-bladed impellers designed for this work, including the open paddle impeller, the material handling impeller (wool) and the paper handling impeller (FanPedia p. 32), and taconite bearing seals "designed for dirty or abrasive environments" (FanPedia p. 100). Twin City Fan's current catalog offers pressure blowers "to meet clean or particulate-laden airstream applications."</p>
+<p>A <strong><abbr tabindex="0" title="An airstream carrying solid material such as dust, grit, chips, fibers, lint, or granular product that can erode or build up on fan parts.">particulate-laden airstream</abbr></strong> carries solid material: dust, grit, chips, fibers, lint, paper trim or granular product. Particles cause two problems. They wear (erode) blades and housings, and they build up on surfaces, which unbalances the impeller and causes vibration. Fibrous and stringy material can also wrap around impeller parts. Particulate service therefore pushes toward rugged impellers, wear-resistant construction and bearings kept out of the airstream. FanPedia shows radial-bladed impellers designed for this work, including the open paddle impeller, the <abbr tabindex="0" title="An open radial impeller with a full back plate, designed to convey long, stringy, or fibrous solids without the material hanging up on or wrapping around the blades and spiders.">material handling impeller</abbr> (wool) and the <abbr tabindex="0" title="A material handling impeller made extra rugged for high-impact loading, with a full back plate, trapezoidal gussets, and a paper deflector cone over the hub face.">paper handling impeller</abbr> (FanPedia p. 32), and taconite <abbr tabindex="0" title="A seal built into the bearing housing around the shaft that keeps foreign material out and lubricant in, separate from the fan's shaft seal.">bearing seals</abbr> "designed for dirty or abrasive environments" (FanPedia p. 100). Twin City Fan's current catalog offers pressure blowers "to meet clean or particulate-laden airstream applications."</p>
 <p>Ducts that carry material must keep the air moving fast enough that particles stay suspended instead of settling and plugging the duct. That minimum is the <strong>conveying velocity</strong>, and for many dusts it is on the order of 3,500–4,500 fpm (a general industrial ventilation range; the right value depends on the material).</p>
 <p><strong>Worked example: airflow for a dust-collection branch.</strong> An 8 in. round duct must carry dust at 4,000 fpm (illustrative).</p>
 <ol>
@@ -3685,10 +3749,10 @@ If density corrections feel slippery, that is normal; the hard part is rememberi
 </ol>
 <p>That velocity pressure, about 1 in. wg in every branch, is lost at every hood entry and recovered nowhere. This is why dust-collection fans run at higher pressures than ventilation fans of the same airflow, and why the airstream description must say what the material is, not just "dusty."</p>
 <h3 id="explosive-atmospheres">Explosive Atmospheres<a class="headerlink" href="#explosive-atmospheres" title="Permanent link">&para;</a></h3>
-<p>An <strong>explosive atmosphere</strong> is air that contains flammable gases, vapors, mists or combustible dusts in concentrations that a spark or hot surface could ignite. Solvent vapors, fuel vapors and fine grain, wood or metal dust are common examples. A fan in such service must not become the ignition source: a steel impeller rubbing a steel inlet can throw sparks. Twin City Fan addresses this with <strong>spark-resistant construction</strong> in three types, summarized here from FanPedia (p. 193):</p>
+<p>An <strong><abbr tabindex="0" title="Air containing flammable gases, vapors, mists, or combustible dusts in concentrations that a spark or hot surface could ignite.">explosive atmosphere</abbr></strong> is air that contains flammable gases, vapors, mists or combustible dusts in concentrations that a spark or hot surface could ignite. Solvent vapors, fuel vapors and fine grain, wood or metal dust are common examples. A fan in such service must not become the ignition source: a steel impeller rubbing a steel inlet can throw sparks. Twin City Fan addresses this with <strong>spark-resistant construction</strong> in three types, summarized here from FanPedia (p. 193):</p>
 <ul>
 <li><strong>Type A</strong>, the highest degree of spark resistance: all fan components in the airstream are non-ferrous, assembled to reduce the possibility of contact between stationary and rotating parts.</li>
-<li><strong>Type B</strong>: the impeller is non-ferrous, typically aluminum with an aluminum rub plate, and the airstream parts are assembled to reduce the possibility of contact.</li>
+<li><strong>Type B</strong>: the impeller is non-ferrous, typically aluminum with an aluminum <abbr tabindex="0" title="A non-ferrous plate, typically aluminum, at the housing opening where the shaft passes through, protecting against steel shaft-to-housing contact; also called a striker or spark plate.">rub plate</abbr>, and the airstream parts are assembled to reduce the possibility of contact.</li>
 <li><strong>Type C</strong>, a minimal level: only reduces possible contact between rotating and stationary parts, typically with an aluminum inlet cone and an aluminum rub plate where the shaft passes through the housing.</li>
 </ul>
 <p>Spark resistance concerns the fan's airstream parts. The motor is a separate decision: an explosion-proof (EXPL) motor is designed so that an internal arc or explosion cannot ignite a surrounding atmosphere of flammable dust or gas, and its rating is specified under the National Electrical Code by class, division and group (FanPedia p. 73). <a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a> treats the spark-resistant types in detail, including what each one does not protect against.</p>
@@ -3837,7 +3901,7 @@ You can now add velocity pressure to static pressure to find total pressure, wor
 <li>Velocity in fpm, area in ft² and airflow in CFM are linked by continuity, <span class="arithmatex">\( Q = A \times V \)</span>; for the same airflow, a smaller duct means higher velocity.</li>
 <li>Velocity pressure is the pressure of moving air brought to rest. At standard air, <span class="arithmatex">\( VP = (V/4005)^2 \)</span>: 4,005 fpm is 1.00 in. wg, and doubling velocity quadruples VP.</li>
 <li>Total pressure is <span class="arithmatex">\( SP + VP \)</span>. On a fan's inlet side, SP is negative; keep the sign when you subtract.</li>
-<li>A fan's pressure rise is fan total pressure, <span class="arithmatex">\( TP_{\text{outlet}} - TP_{\text{inlet}} \)</span>; fan static pressure is FTP minus the outlet velocity pressure. Air power is <span class="arithmatex">\( Q \times FTP / 6356 \)</span>.</li>
+<li>A fan's pressure rise is fan total pressure, <span class="arithmatex">\( TP_{\text{outlet}} - TP_{\text{inlet}} \)</span>; fan static pressure is FTP minus the <abbr tabindex="0" title="The velocity pressure corresponding to a fan's outlet velocity, expressing the kinetic energy of the leaving air in in. wg.">outlet velocity pressure</abbr>. Air power is <span class="arithmatex">\( Q \times FTP / 6356 \)</span>.</li>
 <li>In a fixed duct system, pressure rises with the square of airflow and air power with its cube, so a 20 percent airflow increase needs 44 percent more pressure.</li>
 <li>"Blower" usually signals a high-pressure fan; by the ASME pressure-ratio definition, many pressure blowers are still fans. State airflow and pressure, not the word.</li>
 <li>Barometric pressure is 29.92 in. Hg (about 407 in. wg) at sea level and falls with altitude; air density falls with it.</li>
@@ -3943,7 +4007,7 @@ You can now add velocity pressure to static pressure to find total pressure, wor
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

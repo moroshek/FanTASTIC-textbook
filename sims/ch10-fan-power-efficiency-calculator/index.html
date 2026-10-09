@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,14 +4949,14 @@
 published URLs, to the editor's <code>index.html</code> before pasting
 <code>ch10-fan-power-efficiency-calculator.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>This calculator practices the power equations from the section "Brake Horsepower and Fan
+<p>This calculator practices the power equations from the section "<abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">Brake Horsepower</abbr> and Fan
 Efficiency" in <a href="../../chapters/10-fan-performance-curves-and-ratings/">Chapter 10</a>:</p>
 <ul>
-<li>Static air power (hp) = Q × FSP ÷ 6356</li>
-<li>BHP = air power ÷ (static efficiency ÷ 100)</li>
+<li>Static <abbr tabindex="0" title="The rate at which a fan delivers energy to the air, calculated from airflow and fan total pressure before internal losses.">air power</abbr> (hp) = Q × <abbr tabindex="0" title="Fan Static Pressure: Fan total pressure minus fan outlet velocity pressure, the AMCA pressure most catalog tables use; abbreviated FSP.">FSP</abbr> ÷ 6356</li>
+<li>BHP = air power ÷ (<abbr tabindex="0" title="Fan efficiency computed from air power based on fan static pressure, divided by brake horsepower.">static efficiency</abbr> ÷ 100)</li>
 <li>Static efficiency (%) = 100 × air power ÷ BHP</li>
 </ul>
-<p>where Q is the airflow volume in CFM and FSP is the fan static pressure in in. wg. The sim starts
+<p>where Q is the <abbr tabindex="0" title="The volume of air passing a point in a fan or duct system per unit of time, stated in the United States as cubic feet each minute.">airflow volume</abbr> in <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr> and FSP is the <abbr tabindex="0" title="Fan total pressure minus fan outlet velocity pressure, the AMCA pressure most catalog tables use; abbreviated FSP.">fan static pressure</abbr> in in. wg. The sim starts
 with three challenge duties, in this fixed order. All three are illustrative values; challenge 1 is
 the chapter's worked example.</p>
 <table>
@@ -4965,7 +5029,7 @@ fan static pressure and one of the other two quantities, to within 2% of the mod
 Apply, verb: calculate).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Adult professional development: new application engineers, sales staff, representatives and
-facilities staff who have read the section "Brake Horsepower and Fan Efficiency" in Chapter 10.</p>
+facilities staff who have read the section "Brake Horsepower and <abbr tabindex="0" title="The ratio of air power to brake horsepower, calculated on either a static pressure or a total pressure basis.">Fan Efficiency</abbr>" in Chapter 10.</p>
 <h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
@@ -4997,7 +5061,7 @@ facilities staff who have read the section "Brake Horsepower and Fan Efficiency"
   end the sim shows "First-attempt score: n of 3" and the mastery line; mastery is 3 of 3 on the
   first attempt.</li>
 <li>Moving the sliders in Explore mode is not evidence of mastery. Ask the learner why a fan selected
-  far from its peak efficiency costs money twice (a larger motor and a larger electric bill).</li>
+  far from its <abbr tabindex="0" title="The highest efficiency on a fan's efficiency curve, together with the airflow and pressure where it occurs.">peak efficiency</abbr> costs money twice (a larger motor and a larger electric bill).</li>
 </ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
@@ -5105,7 +5169,7 @@ facilities staff who have read the section "Brake Horsepower and Fan Efficiency"
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

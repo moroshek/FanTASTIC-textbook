@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4941,14 +5005,14 @@ p5.js editor, add the kit files (<code>fanpedia-sim.css</code>, <code>fanpedia-c
 <a href="https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/fanpedia-core.js"><code>../shared-libs/</code></a>,
 or their published URLs) to the editor's <code>index.html</code> before pasting the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A centrifugal fan's rotation and discharge code tells the factory which way the
+<p>A <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr>'s <abbr tabindex="0" title="A short designation stating both a centrifugal fan's rotation and its outlet direction, written as a name or as an angle.">rotation and discharge code</abbr> tells the factory which way the
 wheel turns and where the outlet points, both as seen by an observer on the
-drive side. The code can be written in letter form (CW THD) or angle form
+drive side. The code can be written in letter form (<abbr tabindex="0" title="Clockwise Rotation: Impeller rotation, abbreviated CW, that an observer on the drive side sees turning the same way as clock hands.">CW</abbr> THD) or angle form
 (CW 90). This MicroSim gives you eight job cards, in a fixed order, each
 describing a fan and its outlet in words. For each card you choose a rotation
 and one of the eight discharge letter codes, or "Not offered", and submit.</p>
 <p>After every submission the sim draws the drive-side outline of the housing with
-the outlet in the answer's direction, a rotation arrow, a small dial showing
+the outlet in the answer's direction, a <abbr tabindex="0" title="A curved arrow marked on drawings and on the fan housing showing the required direction of impeller rotation.">rotation arrow</abbr>, a small dial showing
 the angle measured from straight up in the direction of rotation, and both code
 forms. The first submission on each card is scored; one unscored retry follows.
 A correct submission reads "✓ Correct: <answer>."; an incorrect one shows the
@@ -4956,8 +5020,8 @@ card's reason followed by the correct answer. The running score reads "Codes
 correct: n of 8", and mastery is 7 of 8 on the first attempt.</p>
 <p>After card 8, free practice (the sim's Explore mode, never scored) unlocks
 and the summary shows your first-attempt score, the mastery line and any
-missed cards. Choose SWSI or DWDI, a rotation, and a
-discharge angle from 45° to 360° in 45° steps, and the outline and code update
+missed cards. Choose <abbr tabindex="0" title="Single Width Single Inlet: A centrifugal impeller and housing configuration, abbreviated SWSI, that takes air in through one side only, with one back plate, one shroud, and one inlet.">SWSI</abbr> or <abbr tabindex="0" title="Double Width Double Inlet: A centrifugal configuration, abbreviated DWDI, using an impeller equivalent to two single width impellers back to back on one hub, with an inlet on each side of a wider housing.">DWDI</abbr>, a rotation, and a
+<abbr tabindex="0" title="The number of degrees from the upblast position to the actual outlet direction, measured in the direction of rotation in 45-degree steps.">discharge angle</abbr> from 45° to 360° in 45° steps, and the outline and code update
 at once. On a DWDI fan, 225° (Bottom Angular Down) shows "Not offered on DWDI".</p>
 <p>The job cards are illustrative scenarios. Discharge names, letter codes, angle
 forms and the DWDI discharge list come from FanPedia (PDF pp. 46–49) and
@@ -4965,7 +5029,7 @@ forms and the DWDI discharge list come from FanPedia (PDF pp. 46–49) and
 <h3 id="the-rule-the-sim-uses">The rule the sim uses<a class="headerlink" href="#the-rule-the-sim-uses" title="Permanent link">&para;</a></h3>
 <p>Start with the outlet pointing straight up (360°) and turn it through the
 discharge angle in the direction of rotation: clockwise for CW,
-counterclockwise for CCW.</p>
+counterclockwise for <abbr tabindex="0" title="Counterclockwise Rotation: Impeller rotation, abbreviated CCW, that an observer on the drive side sees turning opposite to clock hands.">CCW</abbr>.</p>
 <table>
 <thead>
 <tr>
@@ -5056,7 +5120,7 @@ specify or order centrifugal fans.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <p>Drive side, clockwise (CW) and counterclockwise (CCW) rotation, discharge
 position, discharge angle, SWSI and DWDI fans, Bottom Angular Down discharge,
-and DWDI discharge limits, all covered in
+and <abbr tabindex="0" title="The restriction that a double width, double inlet centrifugal fan is offered in seven discharge positions, omitting bottom angular down.">DWDI discharge limits</abbr>, all covered in
 <a href="../../chapters/13-rotation-and-discharge-codes/">Chapter 13</a>.</p>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5084,7 +5148,7 @@ and DWDI discharge limits, all covered in
 </ul>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Twin City Fan &amp; Blower. <em>FanPedia: The Fan &amp; Blower Encyclopedia</em>, pp. 46–49 (discharge positions, rotation and DWDI discharges). <a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">PDF</a></li>
+<li>Twin City Fan &amp; Blower. <em>FanPedia: The Fan &amp; Blower Encyclopedia</em>, pp. 46–49 (<abbr tabindex="0" title="The direction in which air leaves a centrifugal fan's housing outlet, described from the drive side.">discharge positions</abbr>, rotation and DWDI discharges). <a href="https://tcf.com/wp-content/uploads/2018/06/FanPedia-The-Fan-Blower-Encyclopedia-by-Twin-City-Fan.pdf">PDF</a></li>
 <li>Twin City Fan &amp; Blower. <a href="https://tcf.com/fanpedia/">FanPedia online</a>.</li>
 <li>AMCA International. <em>ANSI/AMCA Standard 99, Standards Handbook</em> (designation for rotation and discharge of centrifugal fans). <a href="https://www.amca.org/">AMCA</a></li>
 </ol>
@@ -5185,7 +5249,7 @@ and DWDI discharge limits, all covered in
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

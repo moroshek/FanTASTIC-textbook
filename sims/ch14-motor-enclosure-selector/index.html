@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,11 +4949,11 @@ p5.js editor, add the kit files (<code>fanpedia-sim.css</code>, <code>fanpedia-c
 <a href="https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/fanpedia-core.js"><code>../shared-libs/</code></a>,
 or their published URLs) to the editor's <code>index.html</code> before pasting the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A motor enclosure decides how the motor gets rid of its heat and how well its
+<p>A <abbr tabindex="0" title="The casing style around a motor's internal parts, which determines how the motor rejects heat and how well its windings are protected.">motor enclosure</abbr> decides how the motor gets rid of its heat and how well its
 windings are protected from the air around it. FanPedia (page 73) lists five
-enclosures used by Twin City Fan: open drip proof (ODP), totally enclosed fan
-cooled (TEFC), totally enclosed air over (TEAO), totally enclosed
-non-ventilated (TENV) and explosion proof (EXPL).</p>
+enclosures used by Twin City Fan: open drip proof (<abbr tabindex="0" title="ODP Motor: An open drip proof motor whose internal fan blows surrounding air directly across the windings, with openings shielded from dripping water.">ODP</abbr>), totally enclosed fan
+cooled (<abbr tabindex="0" title="TEFC Motor: A totally enclosed fan cooled motor with sealed windings and an external fan that blows air over the ribbed outer frame.">TEFC</abbr>), totally enclosed air over (<abbr tabindex="0" title="TEAO Motor: A totally enclosed air over motor with no cooling fan of its own, relying on the fan's airstream for cooling.">TEAO</abbr>), totally enclosed
+non-ventilated (<abbr tabindex="0" title="TENV Motor: A totally enclosed non-ventilated motor with no cooling fan, dissipating heat through its frame alone.">TENV</abbr>) and explosion proof (EXPL).</p>
 <p>This MicroSim shows ten illustrative fan jobs in a fixed order. For each job you
 recommend one enclosure. Your <strong>first choice</strong> on each job is the scored one:</p>
 <ul>
@@ -5000,7 +5064,7 @@ representatives and facilities staff.</p>
 <p>10–15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Motor enclosure; ODP, TEFC, TEAO, TENV and explosion proof motors</li>
+<li>Motor enclosure; ODP, TEFC, TEAO, TENV and <abbr tabindex="0" title="A motor with external cooling like a TEFC motor whose internal parts are engineered so an arc or explosion inside cannot ignite a surrounding flammable gas or dust atmosphere.">explosion proof motors</abbr></li>
 <li>Intended duty (GD, SD, IEEE 841, IEEE 45, DFG) and IP ratings</li>
 <li>Hazardous locations, from <a href="../../chapters/14-fan-motors-and-enclosures/">Chapter 14</a></li>
 </ul>
@@ -5014,7 +5078,7 @@ representatives and facilities staff.</p>
 <ul>
 <li>ODP is fine anywhere indoors, even in dirty or wet air: jobs 1, 2 and 10 separate clean, dry air from wet and dirty air.</li>
 <li>An explosion-proof motor is needed whenever the air is dirty: job 2 is dirty but not classified, so it is TEFC.</li>
-<li>A TEAO motor cools itself the way a TEFC motor does: the TEAO card shows no fan of its own, only the fan's airstream (jobs 3 and 4).</li>
+<li>A <abbr tabindex="0" title="A totally enclosed air over motor with no cooling fan of its own, relying on the fan's airstream for cooling.">TEAO motor</abbr> cools itself the way a <abbr tabindex="0" title="A totally enclosed fan cooled motor with sealed windings and an external fan that blows air over the ribbed outer frame.">TEFC motor</abbr> does: the TEAO card shows no fan of its own, only the fan's airstream (jobs 3 and 4).</li>
 <li>IP55 always means explosion proof: job 9 maps IP55 to TEFC in a non-hazardous area.</li>
 <li>TENV is simply a better TEFC with no downside: job 5 states the cost, a hotter motor in a larger frame.</li>
 </ul>
@@ -5127,7 +5191,7 @@ representatives and facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

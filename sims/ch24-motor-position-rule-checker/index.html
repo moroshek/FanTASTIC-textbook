@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,7 +4949,7 @@ p5.js editor, add the kit files (<code>fanpedia-sim.css</code>, <code>fanpedia-c
 <a href="https://moroshek.github.io/FanTASTIC-textbook/sims/shared-libs/fanpedia-core.js"><code>../shared-libs/</code></a>,
 or their published URLs) to the editor's <code>index.html</code> before pasting the sketch.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>An order desk checks every motor position before a fan is released. This
+<p>An order desk checks every <abbr tabindex="0" title="The location of a belt-drive motor relative to the fan, read from the drive side for centrifugal fans.">motor position</abbr> before a fan is released. This
 MicroSim shows ten order lines, in a fixed order (pedestal arrangements, then
 swingout, then plenum and inline). For each line you give a verdict:</p>
 <ul>
@@ -4893,7 +4957,7 @@ swingout, then plenum and inline). For each line you give a verdict:</p>
 <li><strong>Allowed with condition</strong>: a FanPedia option tied to a stated condition.</li>
 <li><strong>Not allowed</strong>: a pairing FanPedia excludes ("only", "must", "no options",
   or a position not shown for that mount). For these you also choose the fix:
-  change motor to (L) or (R), change to the F2 conduit box, change to Top Center
+  change motor to (L) or (R), change to the F2 <abbr tabindex="0" title="The motor's power connection point: a small enclosure on the frame where conduit-run supply wiring joins the motor leads.">conduit box</abbr>, change to Top Center
   (TC), remove the motor position, or choose a position from G, H, A, B or C.</li>
 </ul>
 <table>
@@ -5015,9 +5079,9 @@ representatives and facilities staff.</p>
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Drive side, CW and CCW rotation (Chapter 12)</li>
-<li>Motor positions L and R, the standard motor position rule, swing side and
-  the swingout motor position rule (Chapter 24)</li>
+<li>Drive side, <abbr tabindex="0" title="Clockwise Rotation: Impeller rotation, abbreviated CW, that an observer on the drive side sees turning the same way as clock hands.">CW</abbr> and <abbr tabindex="0" title="Counterclockwise Rotation: Impeller rotation, abbreviated CCW, that an observer on the drive side sees turning opposite to clock hands.">CCW</abbr> rotation (Chapter 12)</li>
+<li><abbr tabindex="0" title="The two sides, left or right as seen from the drive side, of a bearing pedestal or fan frame on which a fan-carried belt-drive motor can hang.">Motor positions L and R</abbr>, the <abbr tabindex="0" title="FanPedia's default pairing of motor side with rotation on pedestal-mounted motors: clockwise fans take position L and counterclockwise fans take position R.">standard motor position rule</abbr>, swing side and
+  the <abbr tabindex="0" title="The rule tying motor position to the swing side of an Arrangement 9ST and to both rotation and swing side of an Arrangement 9SS.">swingout motor position rule</abbr> (Chapter 24)</li>
 <li>Conduit boxes F1 and F2, plenum positions S, O and TC, and inline motor
   positions A to H (Chapters 13 and 24)</li>
 </ul>
@@ -5036,7 +5100,7 @@ representatives and facilities staff.</p>
 <li><strong>A 9SS can take either motor position on either swing.</strong> Lines 4 and 5 are
   not allowed: right swing is CW (L) only, and left swing needs the F2 conduit
   box.</li>
-<li><strong>Arrangement 10 has a motor position to choose.</strong> Line 7's fix is to remove
+<li><strong><abbr tabindex="0" title="A belt driven, overhung fan with the motor mounted inside the bearing pedestal, more compact than Arrangement 9.">Arrangement 10</abbr> has a motor position to choose.</strong> Line 7's fix is to remove
   the motor position.</li>
 <li><strong>A floor mounted inline fan can take any of A to H.</strong> Line 9's sketch shows
   D, E and F blocked by the floor supports.</li>
@@ -5153,7 +5217,7 @@ representatives and facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

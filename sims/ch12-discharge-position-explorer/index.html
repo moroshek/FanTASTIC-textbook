@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,12 +4949,12 @@
 or their published URLs, to the editor's <code>index.html</code> before pasting
 <code>ch12-discharge-position-explorer.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A centrifugal fan's rotation and discharge are always named as seen from the <strong>drive side</strong>
-(<a href="../../chapters/12-discharge-positions-and-rotation/">Chapter 12</a>). The discharge angle N
+<p>A <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr>'s rotation and discharge are always named as seen from the <strong>drive side</strong>
+(<a href="../../chapters/12-discharge-positions-and-rotation/">Chapter 12</a>). The <abbr tabindex="0" title="The number of degrees from the upblast position to the actual outlet direction, measured in the direction of rotation in 45-degree steps.">discharge angle</abbr> N
 counts from upblast (360) in the direction of rotation, in 45° steps, so the direction the air
-leaves, measured clockwise from straight up as seen from the drive side, is θ = N for a CW fan and
-θ = 360 − N for a CCW fan. A view from the inlet side is the mirror image: the drawing flips left to
-right and the rotation arrow appears reversed, but the name does not change.</p>
+leaves, measured clockwise from straight up as seen from the drive side, is θ = N for a <abbr tabindex="0" title="Clockwise Rotation: Impeller rotation, abbreviated CW, that an observer on the drive side sees turning the same way as clock hands.">CW</abbr> fan and
+θ = 360 − N for a <abbr tabindex="0" title="Counterclockwise Rotation: Impeller rotation, abbreviated CCW, that an observer on the drive side sees turning opposite to clock hands.">CCW</abbr> fan. A view from the inlet side is the mirror image: the drawing flips left to
+right and the <abbr tabindex="0" title="A curved arrow marked on drawings and on the fan housing showing the required direction of impeller rotation.">rotation arrow</abbr> appears reversed, but the name does not change.</p>
 <p>The sim opens in <strong>Explore mode</strong>. Set the rotation (CW or CCW), step the discharge angle from 45 to
 360, and switch the viewpoint between the drive side and the inlet side. The housing redraws with its
 rotation arrow and outlet, and the panel shows the abbreviation and full name, the designation
@@ -4935,7 +4999,7 @@ left of the drawing.</p>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
 <p>The learner will apply the drive-side viewing rule and the discharge-angle convention to name the
-rotation and discharge position of ten SWSI centrifugal housing drawings, with at least 8 of 10
+rotation and <abbr tabindex="0" title="The direction in which air leaves a centrifugal fan's housing outlet, described from the drive side.">discharge position</abbr> of ten <abbr tabindex="0" title="Single Width Single Inlet: A centrifugal impeller and housing configuration, abbreviated SWSI, that takes air in through one side only, with one back plate, one shroud, and one inlet.">SWSI</abbr> centrifugal housing drawings, with at least 8 of 10
 correct on the first attempt (Bloom: Apply, verb: apply).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Adult professional development: new application engineers, sales staff, representatives and
@@ -5081,7 +5145,7 @@ and "Discharge Angle" sections of Chapter 12.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

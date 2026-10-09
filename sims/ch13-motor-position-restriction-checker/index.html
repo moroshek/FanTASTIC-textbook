@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4880,12 +4944,12 @@
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Motor Position Restriction Checker MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>A centrifugal fan's motor can sit in one of the AMCA floor positions W, X, Y or
-Z, but not every position works with every discharge. On SWSI Arrangements 1, 3
+<p>A <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr>'s motor can sit in one of the AMCA floor positions W, X, Y or
+Z, but not every position works with every discharge. On <abbr tabindex="0" title="Single Width Single Inlet: A centrifugal impeller and housing configuration, abbreviated SWSI, that takes air in through one side only, with one back plate, one shroud, and one inlet.">SWSI</abbr> Arrangements 1, 3
 and 3F, FanPedia forbids the position where the motor would block the outlet
 opening (BHD and TAD discharges) and calls for a height check where the motor
-may not fit below a Top Horizontal outlet (THD). Arrangement 9SS swingout fans
-have only two buildable pairings: CW with (L) and CCW with (R).</p>
+may not fit below a Top Horizontal outlet (THD). Arrangement 9SS <abbr tabindex="0" title="A fan whose impeller, shaft, and bearing assembly is mounted on a large hinged door so it swings out of the housing for cleaning and inspection.">swingout fans</abbr>
+have only two buildable pairings: <abbr tabindex="0" title="Clockwise Rotation: Impeller rotation, abbreviated CW, that an observer on the drive side sees turning the same way as clock hands.">CW</abbr> with (L) and <abbr tabindex="0" title="Counterclockwise Rotation: Impeller rotation, abbreviated CCW, that an observer on the drive side sees turning opposite to clock hands.">CCW</abbr> with (R).</p>
 <p>This MicroSim shows ten order lines in a fixed order. For each line you choose
 one verdict, <strong>Allowed</strong>, <strong>Not allowed</strong> or <strong>Height check needed</strong>, and
 submit it. Each line has one scored attempt. After you submit, the sim:</p>
@@ -4944,7 +5008,7 @@ changes the score.</p>
 lines are illustrative.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Read the order line: arrangement, rotation, discharge and motor position.</li>
+<li>Read the order line: arrangement, rotation, discharge and <abbr tabindex="0" title="The location of a belt-drive motor relative to the fan, read from the drive side for centrifugal fans.">motor position</abbr>.</li>
 <li>Pick a verdict (click it or press 1, 2 or 3), then press <strong>Submit verdict</strong>.</li>
 <li>Read the feedback, compare the highlighted rule-card row and the sketch, and press <strong>Next line</strong>.</li>
 <li>After line 10, press <strong>Show summary</strong> to see your verdicts beside the correct ones. Press <strong>Start over</strong> at any time to clear the score and return to line 1.</li>
@@ -4974,7 +5038,7 @@ representatives and order-entry staff.</p>
 <li>CW and CCW rotation, seen from the drive side</li>
 <li>Discharge letter codes (BHD, TAD, THD, UBD)</li>
 <li>Motor positions W, X, Y and Z, and (L) and (R)</li>
-<li>Motor position restrictions, from <a href="../../chapters/13-rotation-and-discharge-codes/">Chapter 13</a></li>
+<li><abbr tabindex="0" title="The combinations of rotation, discharge, and motor position that cannot be built or need checking because the motor would block the outlet or not fit.">Motor position restrictions</abbr>, from <a href="../../chapters/13-rotation-and-discharge-codes/">Chapter 13</a></li>
 </ul>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5096,7 +5160,7 @@ representatives and order-entry staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

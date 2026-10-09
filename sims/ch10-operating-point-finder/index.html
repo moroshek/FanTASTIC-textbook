@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4886,13 +4950,13 @@ URLs, to the editor's <code>index.html</code> before pasting <code>ch10-operatin
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>The chart shows Curve A, the illustrative backward inclined fan from
 <a href="../../chapters/10-fan-performance-curves-and-ratings/">Chapter 10</a> at one fixed speed and
-standard air (solid indigo line, straight segments between the table points), and a duct system
+<abbr tabindex="0" title="The reference air condition used to rate fans: air with a density of 0.075 lb/ft³, very nearly that of dry air at 70°F and 29.92 in. Hg barometric pressure.">standard air</abbr> (solid indigo line, straight segments between the table points), and a duct system
 curve (dashed orange parabola):</p>
 <ul>
-<li>System curve: P = R × (Q ÷ 10,000)², where R is the system resistance in in. wg at 10,000 CFM.</li>
-<li>Operating point: the airflow, searched in 1 CFM steps from 0 to 16,000 CFM, where the fan
+<li><abbr tabindex="0" title="A parabola-shaped graph of one duct system's resistance against airflow, starting at zero pressure at zero airflow.">System curve</abbr>: P = R × (Q ÷ 10,000)², where R is the <abbr tabindex="0" title="The pressure needed to push a given airflow through everything connected to a fan, rising with the square of airflow.">system resistance</abbr> in in. wg at 10,000 <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr>.</li>
+<li><abbr tabindex="0" title="The single airflow and pressure at which a fan actually runs in a system, where its fan curve intersects the system curve.">Operating point</abbr>: the airflow, searched in 1 CFM steps from 0 to 16,000 CFM, where the fan
   pressure and the system pressure are closest.</li>
-<li>The hatched band left of 4,000 CFM is Curve A's stall region (left of its pressure peak).</li>
+<li>The hatched band left of 4,000 CFM is Curve A's <abbr tabindex="0" title="The part of a fan curve to the left of the pressure peak, where airflow separates from the blades and performance becomes unsteady.">stall region</abbr> (left of its pressure peak).</li>
 </ul>
 <p>For each of three challenge systems, you predict the operating point before it is drawn. The
 systems come from the chapter section "The Operating Point":</p>
@@ -4929,7 +4993,7 @@ systems come from the chapter section "The Operating Point":</p>
 <p>A prediction is correct when its airflow is within ±300 CFM and its pressure within ±0.15 in. wg
 of the model intersection. You get two attempts per challenge; after the second wrong attempt the
 intersection is revealed and the challenge counts as missed. Each reveal marks the operating point
-(orange diamond) and shows the operating airflow (nearest 10 CFM), pressure (two decimals), BHP
+(orange diamond) and shows the operating airflow (nearest 10 CFM), pressure (two decimals), <abbr tabindex="0" title="Brake Horsepower: The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">BHP</abbr>
 (one decimal, interpolated from the table) and whether the point is in the stall region.</p>
 <p>Mastery is 3 of 3 on the first attempt. After challenge 3, Explore mode unlocks a slider for the
 system resistance at 10,000 CFM (1.0 to 35.0 in. wg). The system curve, the operating point and the
@@ -4951,7 +5015,7 @@ flags "In the stall region: select a different fan." Explore mode is never score
 <p><strong>Keyboard:</strong> Tab reaches the two prediction boxes, every button and the slider. Enter checks the
 prediction, and Enter again goes to the next challenge; the arrow keys move the focused slider.
 Clicking the chart is optional; typing gives the same result.</p>
-<p><strong>Data label:</strong> "Illustrative fan curve · Curve A, standard air, one fixed speed", at the bottom
+<p><strong>Data label:</strong> "Illustrative <abbr tabindex="0" title="A graph of one fan's pressure, power, and often efficiency against airflow at one speed and one air density.">fan curve</abbr> · Curve A, standard air, one fixed speed", at the bottom
 left of the drawing.</p>
 <h2 id="iframe-embed-code">Iframe Embed Code<a class="headerlink" href="#iframe-embed-code" title="Permanent link">&para;</a></h2>
 <p>You can add this MicroSim to any web page by adding this to your HTML:</p>
@@ -4976,7 +5040,7 @@ point in Chapter 10.</p>
 <li>Fan curve and stall region</li>
 <li>System resistance and the system curve (square law)</li>
 <li>Operating point</li>
-<li>Brake horsepower</li>
+<li><abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">Brake horsepower</abbr></li>
 </ul>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5012,7 +5076,7 @@ point in Chapter 10.</p>
 <li><a href="https://en.wikipedia.org/wiki/Affinity_laws">Affinity laws</a> - Wikipedia overview of how fan
    curves move with speed, the other way to move an operating point.</li>
 <li><a href="https://tcf.com/fanpedia/">FanPedia: The Fan &amp; Blower Encyclopedia</a> - Twin City Fan's reference
-   on fan curves, system resistance and flow control.</li>
+   on fan curves, system resistance and <abbr tabindex="0" title="Any means of changing the airflow a fan delivers while the system runs, such as dampers, variable inlet vanes, or speed control.">flow control</abbr>.</li>
 </ol>
 
 
@@ -5111,7 +5175,7 @@ point in Chapter 10.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

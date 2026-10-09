@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4880,8 +4944,8 @@
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Flow Control Power Comparator MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>Three common ways to turn a fan down are an outlet damper, variable inlet vanes and speed control. All three reduce airflow, but they need very different shaft power to do it. This MicroSim plots shaft power (% of design) against airflow (% of design) from 50% to 100% for the three methods and asks you to predict their order before you see the curves.</p>
-<p>All three curves are labeled <strong>illustrative</strong>. The speed-control curve is the ideal fan-law relation, power = 100 × (airflow / 100)³, for a system curve that passes through zero. The outlet-damper and inlet-vane values are illustrative values written for this chapter to show the typical ordering; they are not Twin City Fan test data. FanPedia supports the ordering: outlet damper horsepower savings are "usually much less than other methods" (FanPedia p. 182), and inlet box dampers and inlet vanes save horsepower at reduced loads by pre-spinning the air (FanPedia pp. 145, 183, 188). Values between table rows are found by straight-line interpolation. Real speed control has small drive losses, and a system with fixed static pressure saves less than the ideal cube value.</p>
+<p>Three common ways to turn a fan down are an <abbr tabindex="0" title="A damper mounted on a fan discharge that controls airflow by adding resistance, typically the least expensive flow-control option.">outlet damper</abbr>, <abbr tabindex="0" title="A ring of adjustable radial vanes at a fan inlet that, when partly closed, pre-spin entering air to control flow; also called inlet guide vanes or a vortex damper.">variable inlet vanes</abbr> and <abbr tabindex="0" title="A flow-control method that reduces airflow by slowing the impeller, using the least power of any method.">speed control</abbr>. All three reduce airflow, but they need very different shaft power to do it. This MicroSim plots shaft power (% of design) against airflow (% of design) from 50% to 100% for the three methods and asks you to predict their order before you see the curves.</p>
+<p>All three curves are labeled <strong>illustrative</strong>. The speed-control curve is the ideal fan-law relation, power = 100 × (airflow / 100)³, for a <abbr tabindex="0" title="A parabola-shaped graph of one duct system's resistance against airflow, starting at zero pressure at zero airflow.">system curve</abbr> that passes through zero. The outlet-damper and inlet-vane values are illustrative values written for this chapter to show the typical ordering; they are not Twin City Fan test data. FanPedia supports the ordering: outlet damper horsepower savings are "usually much less than other methods" (FanPedia p. 182), and <abbr tabindex="0" title="A parallel blade damper mounted in an inlet box that, when partly closed, pre-spins air in the direction of impeller rotation to save power at reduced loads.">inlet box dampers</abbr> and inlet vanes save horsepower at reduced loads by pre-spinning the air (FanPedia pp. 145, 183, 188). Values between table rows are found by straight-line interpolation. Real speed control has small drive losses, and a system with fixed <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> saves less than the ideal cube value.</p>
 <table>
 <thead>
 <tr>
@@ -4955,14 +5019,14 @@
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Flow control</li>
-<li>Operating point</li>
-<li>Fan curve</li>
+<li><abbr tabindex="0" title="Any means of changing the airflow a fan delivers while the system runs, such as dampers, variable inlet vanes, or speed control.">Flow control</abbr></li>
+<li><abbr tabindex="0" title="The single airflow and pressure at which a fan actually runs in a system, where its fan curve intersects the system curve.">Operating point</abbr></li>
+<li><abbr tabindex="0" title="A graph of one fan's pressure, power, and often efficiency against airflow at one speed and one air density.">Fan curve</abbr></li>
 <li>System curve</li>
 <li>Outlet damper</li>
 <li>Variable inlet vanes</li>
 <li>Speed control</li>
-<li>Brake horsepower</li>
+<li><abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">Brake horsepower</abbr></li>
 </ul>
 <p>These are defined in Chapter 18's "What Flow Control Means" section and in Chapter 10.</p>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
@@ -5117,7 +5181,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

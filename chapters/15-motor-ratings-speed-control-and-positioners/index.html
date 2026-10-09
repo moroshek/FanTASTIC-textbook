@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -273,6 +275,68 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         
@@ -400,7 +464,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -422,14 +486,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1296,7 +1360,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_16" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_16" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1318,14 +1382,14 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_4_16" id="__nav_4_16_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5_16" id="__nav_5_16_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_16_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_16">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_16_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3129,7 +3193,7 @@ A motor line on an order is short, but every field on it decides whether the fan
 </tbody>
 </table>
 <h2 id="synchronous-motor-speed">Synchronous Motor Speed<a class="headerlink" href="#synchronous-motor-speed" title="Permanent link">&para;</a></h2>
-<p>An induction motor's stator windings create a magnetic field that rotates around the motor. The speed of that rotating field is the <strong>synchronous motor speed</strong>, and it depends on only two things: the frequency of the power supply in hertz (Hz, cycles per second) and the number of magnetic poles wound into the stator. Poles always come in pairs, so a motor has 2, 4, 6 or 8 poles, and so on.</p>
+<p>An <abbr tabindex="0" title="An AC motor in which rotor current is induced by the magnetic field of the stator winding, needing no brushes or slip rings.">induction motor</abbr>'s stator windings create a magnetic field that rotates around the motor. The speed of that rotating field is the <strong><abbr tabindex="0" title="The speed of the rotating magnetic field in an induction motor, set by supply frequency and number of poles: 120 times frequency divided by poles.">synchronous motor speed</abbr></strong>, and it depends on only two things: the frequency of the power supply in hertz (Hz, cycles per second) and the number of magnetic poles wound into the stator. Poles always come in pairs, so a motor has 2, 4, 6 or 8 poles, and so on.</p>
 <div class="arithmatex">\[
 n_s = \frac{120 \times f}{p}
 \]</div>
@@ -3173,7 +3237,7 @@ n_s = \frac{120 \times f}{p}
 </table>
 <p>The rotor of an induction motor always turns a little slower than its field. That small difference, called slip, is what induces current in the rotor and produces torque. This is why a motor ordered as "1800 RPM" shows a somewhat lower full-load speed on its nameplate, and FanPedia notes that actual nominal motor speeds vary by motor horsepower and manufacturer. On an order, the motor speed is stated as the synchronous speed; the fan selection uses the actual operating speed.</p>
 <h2 id="motor-voltage-and-phase">Motor Voltage and Phase<a class="headerlink" href="#motor-voltage-and-phase" title="Permanent link">&para;</a></h2>
-<p>The electric power line of a motor specification has three parts. <strong>Phase</strong> is single phase (one alternating voltage, common in small commercial equipment) or three phase (three alternating voltages offset in time, the standard for industrial motors). <strong>Frequency</strong> is 60 Hz in North America and 50 Hz in much of the rest of the world. <strong>Voltage</strong> is the nominal supply voltage at the motor terminals. The fan industry generally uses AC power for induction motors, and DC power for EC motors and some light commercial accessories and damper motors (FanPedia p. 72).</p>
+<p>The electric power line of a motor specification has three parts. <strong>Phase</strong> is single phase (one alternating voltage, common in small commercial equipment) or three phase (three alternating voltages offset in time, the standard for industrial motors). <strong>Frequency</strong> is 60 Hz in North America and 50 Hz in much of the rest of the world. <strong>Voltage</strong> is the nominal supply voltage at the motor terminals. The fan industry generally uses AC power for induction motors, and DC power for <abbr tabindex="0" title="An electronically commutated motor that uses an on-board rectifier and controller to run its windings, with speed set by its own controller or a 0-10 V signal.">EC motors</abbr> and some light commercial accessories and damper motors (FanPedia p. 72).</p>
 <p>FanPedia lists the common combinations (FanPedia p. 72):</p>
 <table>
 <thead>
@@ -3229,9 +3293,9 @@ It is tempting to write "230/460 V" on an order and let the field decide, but a 
 <li><strong>Standard Efficiency</strong>, which compares to NEMA High Efficiency (and to IEC IE2)</li>
 <li><strong>Premium Efficiency</strong>, which compares to NEMA Premium Efficiency (and to IEC IE3)</li>
 </ul>
-<p>A <strong>premium efficiency motor</strong> is therefore the "P" in the example line: a motor built with more and better active material (copper, electrical steel) so that less of its input becomes heat. FanPedia also notes that IE1 is the IEC standard-efficiency level and that IE4 (super premium) is a future designation not currently used.</p>
-<p>Efficiency also depends on how heavily the motor is loaded. FanPedia states that most motors are designed to run at 50% to 100% of rated load, that maximum efficiency is usually near 75% of rated load, and that efficiency drops sharply below about 50% load. A 10 HP motor therefore has an acceptable load range of 5 to 10 HP, with peak efficiency near 7.5 HP (FanPedia p. 72). An oversized premium motor running at 30% load can waste more energy than a correctly sized standard motor.</p>
-<p><strong>Worked example: what does "P" buy?</strong> A belt-driven fan needs 20 brake horsepower (bhp) at its duty point and runs 6,000 hours a year. The selection uses a 25 HP motor, so the motor runs at <span class="arithmatex">\( 20 / 25 = 80\% \)</span> load, inside the 50% to 100% band and close to the peak-efficiency point. For this illustration, assume the standard efficiency motor is 92.4% efficient at this load and the premium motor is 93.6% (illustrative values; real values come from the motor data sheet).</p>
+<p>A <strong><abbr tabindex="0" title="A motor built with more and better active material, such as copper and electrical steel, so less of its input becomes heat; comparable to NEMA Premium and IEC IE3.">premium efficiency motor</abbr></strong> is therefore the "P" in the example line: a motor built with more and better active material (copper, electrical steel) so that less of its input becomes heat. FanPedia also notes that IE1 is the IEC standard-efficiency level and that IE4 (super premium) is a future designation not currently used.</p>
+<p>Efficiency also depends on how heavily the motor is loaded. FanPedia states that most motors are designed to run at 50% to 100% of rated load, that maximum efficiency is usually near 75% of rated load, and that efficiency drops sharply below about 50% load. A 10 HP motor therefore has an acceptable load range of 5 to 10 HP, with <abbr tabindex="0" title="The highest efficiency on a fan's efficiency curve, together with the airflow and pressure where it occurs.">peak efficiency</abbr> near 7.5 HP (FanPedia p. 72). An oversized premium motor running at 30% load can waste more energy than a correctly sized standard motor.</p>
+<p><strong>Worked example: what does "P" buy?</strong> A belt-driven fan needs 20 <abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">brake horsepower</abbr> (bhp) at its <abbr tabindex="0" title="The airflow and pressure, at a stated air density, that a specification requires a fan to deliver.">duty point</abbr> and runs 6,000 hours a year. The selection uses a 25 HP motor, so the motor runs at <span class="arithmatex">\( 20 / 25 = 80\% \)</span> load, inside the 50% to 100% band and close to the peak-efficiency point. For this illustration, assume the standard efficiency motor is 92.4% efficient at this load and the premium motor is 93.6% (illustrative values; real values come from the motor data sheet).</p>
 <ol>
 <li>Convert the shaft power to kilowatts: <span class="arithmatex">\( 20 \times 0.7457 = 14.91 \)</span> kW.</li>
 <li>Electrical input, standard motor: <span class="arithmatex">\( 14.91 / 0.924 = 16.14 \)</span> kW.</li>
@@ -3243,24 +3307,24 @@ It is tempting to write "230/460 V" on an order and let the field decide, but a 
 <h2 id="heat-temperature-rise-thermal-protection-and-winding-rtds">Heat: Temperature Rise, Thermal Protection and Winding RTDs<a class="headerlink" href="#heat-temperature-rise-thermal-protection-and-winding-rtds" title="Permanent link">&para;</a></h2>
 <p>Every watt a motor loses becomes heat in its windings, and heat is what ages motor insulation. Three related ideas describe and control that heat.</p>
 <h3 id="motor-temperature-rise">Motor Temperature Rise<a class="headerlink" href="#motor-temperature-rise" title="Permanent link">&para;</a></h3>
-<p><strong>Motor temperature rise</strong> is the change in temperature from the ambient air around the motor to the motor's steady-state operating temperature (FanPedia p. 69). The rise is a property of the motor design and its load; the ambient is a property of the site. Add them and you get the winding temperature, which must stay within the limit of the insulation class from Chapter 14. FanPedia notes that the typical fan motor is built with Class F insulation but rated for a Class B temperature rise. The motor therefore runs cooler than its insulation could tolerate, and that margin is what lets it survive a hot day, a dirty cooling fan, or a period on the service factor. When a motor sits in a hot location, the ambient temperature rating (the maximum allowable temperature around the motor) has to be checked along with the rise.</p>
+<p><strong><abbr tabindex="0" title="The change in temperature from the ambient air around a motor to its steady-state operating temperature.">Motor temperature rise</abbr></strong> is the change in temperature from the ambient air around the motor to the motor's steady-state operating temperature (FanPedia p. 69). The rise is a property of the motor design and its load; the ambient is a property of the site. Add them and you get the winding temperature, which must stay within the limit of the <abbr tabindex="0" title="A letter (A, B, F, or H) rating how hot a motor's winding insulation may run continuously, with later letters allowing higher temperatures.">insulation class</abbr> from Chapter 14. FanPedia notes that the typical fan motor is built with Class F insulation but rated for a Class B temperature rise. The motor therefore runs cooler than its insulation could tolerate, and that margin is what lets it survive a hot day, a dirty cooling fan, or a period on the service factor. When a motor sits in a hot location, the ambient temperature rating (the maximum allowable temperature around the motor) has to be checked along with the rise.</p>
 <h3 id="motor-thermal-protection">Motor Thermal Protection<a class="headerlink" href="#motor-thermal-protection" title="Permanent link">&para;</a></h3>
-<p><strong>Motor thermal protection</strong> is a device built into the motor that responds to winding temperature. FanPedia lists thermistors and thermostats as the common choices and says they protect the motor against locked-rotor conditions, continuous overload and high ambient temperature (FanPedia p. 75). A thermostat is a switch that opens at a set temperature; a thermistor is a resistor whose resistance changes sharply at a set temperature and is read by a relay. Either one gives the control circuit a signal to shut the motor down before the insulation is damaged. Do not confuse thermal protection with a space heater (also called a strip heater), which warms an idle motor to prevent condensation.</p>
+<p><strong><abbr tabindex="0" title="A device built into a motor, such as a thermostat or thermistor, that responds to winding temperature and signals shutdown before insulation damage.">Motor thermal protection</abbr></strong> is a device built into the motor that responds to winding temperature. FanPedia lists thermistors and thermostats as the common choices and says they protect the motor against locked-rotor conditions, continuous overload and high ambient temperature (FanPedia p. 75). A thermostat is a switch that opens at a set temperature; a thermistor is a resistor whose resistance changes sharply at a set temperature and is read by a relay. Either one gives the control circuit a signal to shut the motor down before the insulation is damaged. Do not confuse thermal protection with a space heater (also called a strip heater), which warms an idle motor to prevent condensation.</p>
 <h3 id="motor-winding-rtd">Motor Winding RTD<a class="headerlink" href="#motor-winding-rtd" title="Permanent link">&para;</a></h3>
-<p>A <strong>motor winding RTD</strong> is a resistance temperature detector embedded in the motor windings to sense their heat rise (FanPedia p. 75). Where a thermostat or thermistor answers a yes-or-no question (too hot or not), an RTD reports a continuous temperature, because its electrical resistance changes in a known way with temperature. Plants with monitoring systems use winding RTDs to trend motor temperature, alarm at one value and trip at a higher one. RTDs are also available for motor bearings, and Chapter 16 covers bearing RTDs on the fan itself. Winding RTDs are a motor modification, so they must be called out on the order; they are more common on large induction motors in process plants.</p>
+<p>A <strong><abbr tabindex="0" title="A resistance temperature detector embedded in a motor's windings that reports continuous winding temperature.">motor winding RTD</abbr></strong> is a resistance temperature detector embedded in the motor windings to sense their heat rise (FanPedia p. 75). Where a thermostat or thermistor answers a yes-or-no question (too hot or not), an RTD reports a continuous temperature, because its electrical resistance changes in a known way with temperature. Plants with monitoring systems use winding RTDs to trend motor temperature, alarm at one value and trip at a higher one. RTDs are also available for motor bearings, and Chapter 16 covers bearing RTDs on the fan itself. Winding RTDs are a motor modification, so they must be called out on the order; they are more common on large induction motors in process plants.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Match the Device to the Plant's Control System</p>
 <p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
 Before choosing between thermostats, thermistors and winding RTDs, ask one question: "What will this signal be wired to?" A plant with a monitoring system wants RTDs it can trend; a simple starter circuit only needs a switch that opens.</p>
 </div>
 <h2 id="motor-intended-duty">Motor Intended Duty<a class="headerlink" href="#motor-intended-duty" title="Permanent link">&para;</a></h2>
-<p><strong>Motor intended duty</strong> describes the operating conditions a motor is built for, based on its surrounding environment (FanPedia p. 71). It is the "SD" in the example line, and it is separate from the enclosure: the enclosure says how the motor is sealed and cooled, while the intended duty says how well the whole motor (paint, seals, hardware, bearings, conduit box) stands up to its surroundings. FanPedia lists these duty designations (FanPedia p. 73):</p>
+<p><strong><abbr tabindex="0" title="A designation of the operating conditions a motor is built for based on its surrounding environment, separate from its enclosure.">Motor intended duty</abbr></strong> describes the operating conditions a motor is built for, based on its surrounding environment (FanPedia p. 71). It is the "SD" in the example line, and it is separate from the enclosure: the enclosure says how the motor is sealed and cooled, while the intended duty says how well the whole motor (paint, seals, hardware, bearings, <abbr tabindex="0" title="The motor's power connection point: a small enclosure on the frame where conduit-run supply wiring joins the motor leads.">conduit box</abbr>) stands up to its surroundings. FanPedia lists these duty designations (FanPedia p. 73):</p>
 <ul>
 <li><strong>GD (General Duty):</strong> general purpose motors used where the air around the motor is normal, clean and cool.</li>
-<li><strong>SD (Severe Duty):</strong> used where a severe duty motor is needed but IEEE 841 motors are not specified. Also called Mil/Chem duty or chemical duty.</li>
+<li><strong>SD (Severe Duty):</strong> used where a <abbr tabindex="0" title="A motor built to keep running in moisture, chemical fumes, dust, washdown, or outdoor exposure where a general duty motor would fail early.">severe duty motor</abbr> is needed but IEEE 841 motors are not specified. Also called Mil/Chem duty or chemical duty.</li>
 <li><strong>IEEE 841:</strong> an industry standard for severe duty motors begun in 1986, used in process industries.</li>
 <li><strong>DFG:</strong> explosion proof enclosure motors used in hazardous locations.</li>
-<li><strong>Special basis:</strong> IEEE 45 motors for marine applications and washdown duty motors for food applications. IEEE 45 is not a motor-manufacturing standard: it is the IEEE series <em>Recommended Practice for Electrical Installations on Shipboard</em>, and Twin City Fan describes the resulting option as "IEEE 45 marine-duty motors for both above deck and below deck installations" (<a href="https://www.tcf.com/industries/marine/">tcf.com marine page</a>). Motor makers sell "IEEE 45 marine duty" motors as TEFC, usually IP56, with severe-duty construction. Because the ship's design practice itself recommends IEEE 841 motors for 10 to 500 hp (IEEE Std 45.1-2017, 13.2), a marine motor often carries IEEE 841 features too. Confirm the exact motor build and enclosure with Twin City Fan when a marine specification is involved.</li>
+<li><strong>Special basis:</strong> IEEE 45 motors for marine applications and washdown duty motors for food applications. IEEE 45 is not a motor-manufacturing standard: it is the IEEE series <em>Recommended Practice for Electrical Installations on Shipboard</em>, and Twin City Fan describes the resulting option as "IEEE 45 marine-duty motors for both above deck and below deck installations" (<a href="https://www.tcf.com/industries/marine/">tcf.com marine page</a>). Motor makers sell "IEEE 45 marine duty" motors as <abbr tabindex="0" title="TEFC Motor: A totally enclosed fan cooled motor with sealed windings and an external fan that blows air over the ribbed outer frame.">TEFC</abbr>, usually IP56, with severe-duty construction. Because the ship's design practice itself recommends IEEE 841 motors for 10 to 500 hp (IEEE Std 45.1-2017, 13.2), a marine motor often carries IEEE 841 features too. Confirm the exact motor build and enclosure with Twin City Fan when a marine specification is involved.</li>
 </ul>
 <p>Enclosure and duty have to agree. The motor specifications page pairs them (FanPedia p. 73); the NEMA side of that table is summarized below.</p>
 <table>
@@ -3291,7 +3355,7 @@ Before choosing between thermostats, thermistors and winding RTDs, ask one quest
 </table>
 <p><strong>Worked example: choosing the duty.</strong> Three inquiries arrive in one week.</p>
 <ol>
-<li>A school's air handler fan; the motor sits in a clean, cool mechanical room. Normal, clean, cool air is the definition of general duty, so the motor is <strong>GD</strong>, and an ODP or TEFC enclosure both fit.</li>
+<li>A school's air handler fan; the motor sits in a clean, cool mechanical room. Normal, clean, cool air is the definition of general duty, so the motor is <strong>GD</strong>, and an <abbr tabindex="0" title="ODP Motor: An open drip proof motor whose internal fan blows surrounding air directly across the windings, with openings shielded from dripping water.">ODP</abbr> or TEFC enclosure both fit.</li>
 <li>A chemical plant asks for a "chem duty" motor on a scrubber exhaust fan; its specification does not mention IEEE 841. Chemical duty is one of the names FanPedia gives for <strong>SD</strong>, so the motor is TEFC, SD.</li>
 <li>A refinery specification calls for "IEEE 841 motors on all rotating equipment." The duty is <strong>IEEE 841</strong>, which forces a TEFC (IP56) enclosure. Quoting a plain SD motor here would not meet the specification, even though both are severe duty.</li>
 </ol>
@@ -3308,15 +3372,15 @@ Before choosing between thermostats, thermistors and winding RTDs, ask one quest
 <p>In this case the specification reads "TEFC, severe duty, premium efficiency," so the motor line is: TEFC, SD, P. Had the same plant's corporate standard required IEEE 841, the answer would change even though the air did not.</p>
 <h2 id="hazardous-location-motor">Hazardous Location Motor<a class="headerlink" href="#hazardous-location-motor" title="Permanent link">&para;</a></h2>
 <p>A <strong>hazardous location</strong> is an area where flammable gases or vapors, or combustible dusts, may be present in amounts that can ignite. The U.S. National Electrical Code (NEC) classifies these areas by class (Class I for gases and vapors, Class II for dusts), by division (whether the hazard is present in normal operation or only under abnormal conditions) and by group (the specific family of gas or dust). The plant owner, not the fan supplier, determines the classification of each area.</p>
-<p>A <strong>hazardous location motor</strong> is a motor built and labeled for one of those classifications. In FanPedia's terms it is a <strong>DFG</strong> motor with an explosion proof (EXPL) enclosure: the internal portion of the motor is engineered to keep a motor arc or explosion from igniting a surrounding atmosphere that contains flammable dust or gas, while an external fan cools it (FanPedia p. 73). FanPedia names Groups D (gases), F and G (dusts) as the groups commonly used at Twin City Fan, and directs readers to the NEC for the full list of gases and dusts and their class and division ratings. Applications under the European ATEX directive require a special motor.</p>
+<p>A <strong><abbr tabindex="0" title="A motor built and labeled for a hazardous location classification, in FanPedia's terms a DFG motor with an explosion proof enclosure.">hazardous location motor</abbr></strong> is a motor built and labeled for one of those classifications. In FanPedia's terms it is a <strong>DFG</strong> motor with an explosion proof (EXPL) enclosure: the internal portion of the motor is engineered to keep a motor arc or explosion from igniting a surrounding atmosphere that contains flammable dust or gas, while an external fan cools it (FanPedia p. 73). FanPedia names Groups D (gases), F and G (dusts) as the groups commonly used at Twin City Fan, and directs readers to the NEC for the full list of gases and dusts and their class and division ratings. Applications under the European ATEX directive require a special motor.</p>
 <p><strong>Worked example: reading the classification onto the order.</strong> A food plant requests a fan for a room the owner's drawings mark as Class II, Division 1, Group G (combustible food dust).</p>
 <ol>
 <li>The area is hazardous, so the motor must be a hazardous location motor: enclosure EXPL, duty DFG.</li>
-<li>The motor nameplate must carry the same class, division and group the owner gave: Class II, Division 1, Group G. Copy those values from the owner's documents onto the order; do not choose them yourself.</li>
+<li>The <abbr tabindex="0" title="The metal plate fixed to a motor frame that identifies its manufacturer, serial number, and technical characteristics.">motor nameplate</abbr> must carry the same class, division and group the owner gave: Class II, Division 1, Group G. Copy those values from the owner's documents onto the order; do not choose them yourself.</li>
 <li>The motor is only part of the answer. The fan also needs a review for spark-resistant construction, covered in <a href="../20-construction-classes-materials-spark-resistance/">Chapter 20</a>.</li>
 </ol>
 <div class="admonition mascot-warning">
-<p class="admonition-title">An Explosion Proof Motor Does Not Make a Spark-Proof Fan</p>
+<p class="admonition-title">An <abbr tabindex="0" title="A motor with external cooling like a TEFC motor whose internal parts are engineered so an arc or explosion inside cannot ignite a surrounding flammable gas or dust atmosphere.">Explosion Proof Motor</abbr> Does Not Make a Spark-Proof Fan</p>
 <p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
 A common mistake is to order a DFG motor and assume the fan is now safe for the hazardous area. The motor rating covers the motor's own arcs and heat; a rubbing impeller or a dragging belt can still strike a spark. Treat the motor classification and the fan's spark-resistant construction as two separate lines that both need an answer.</p>
 </div>
@@ -3444,26 +3508,26 @@ A common mistake is to order a DFG motor and assume the fan is now safe for the 
 <p><strong>Chapter Anchors:</strong> The chapter names five duty bins: GD, SD, IEEE 841, DFG and Washdown. IEEE 841 began in 1986. SD is used where IEEE 841 is not specified. FanPedia lists Groups D, F and G as common at Twin City Fan.</p>
 </details>
 <h2 id="variable-frequency-drive">Variable Frequency Drive<a class="headerlink" href="#variable-frequency-drive" title="Permanent link">&para;</a></h2>
-<p>A <strong>variable frequency drive</strong> (VFD) is an electronic controller placed between the power supply and an induction motor. It converts fixed-frequency AC power into AC power at a frequency it can adjust, typically from a small fraction of line frequency up to line frequency. Because synchronous speed is set by frequency, changing the frequency changes the motor speed in direct proportion, and with it the fan speed. On a belt-driven fan the sheaves still set the ratio between motor and fan speed; the VFD changes both together.</p>
-<p>FanPedia treats the VFD as one of the two usual ways to change fan performance in the field, alongside variable inlet vanes (FanPedia p. 170). Chapter 18 covers the mechanical flow-control devices; this section covers what the VFD does to the fan.</p>
+<p>A <strong><abbr tabindex="0" title="An electronic controller, abbreviated VFD, that converts fixed-frequency AC power to adjustable-frequency power, changing induction motor speed in proportion.">variable frequency drive</abbr></strong> (VFD) is an electronic controller placed between the power supply and an induction motor. It converts fixed-frequency AC power into AC power at a frequency it can adjust, typically from a small fraction of line frequency up to line frequency. Because synchronous speed is set by frequency, changing the frequency changes the motor speed in direct proportion, and with it the fan speed. On a belt-driven fan the <abbr tabindex="0" title="A grooved pulley mounted on the motor shaft or the fan shaft that carries the drive belts, fastened with or without a bushing; the motor-shaft one is the drive pulley and the fan-shaft one the driven pulley.">sheaves</abbr> still set the ratio between motor and fan speed; the VFD changes both together.</p>
+<p>FanPedia treats the VFD as one of the two usual ways to change fan performance in the field, alongside <abbr tabindex="0" title="A ring of adjustable radial vanes at a fan inlet that, when partly closed, pre-spin entering air to control flow; also called inlet guide vanes or a vortex damper.">variable inlet vanes</abbr> (FanPedia p. 170). Chapter 18 covers the mechanical flow-control devices; this section covers what the VFD does to the fan.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">Frequency Is the Speed Knob</p>
 <p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
-Notice that nothing about the motor's poles or the fan's sheaves changes on a VFD. The drive moves the one variable in <span class="arithmatex">\( n_s = 120 f / p \)</span> that the plant normally treats as fixed, and the fan laws do the rest.</p>
+Notice that nothing about the motor's poles or the fan's sheaves changes on a VFD. The drive moves the one variable in <span class="arithmatex">\( n_s = 120 f / p \)</span> that the plant normally treats as fixed, and the <abbr tabindex="0" title="Proportionality rules predicting how a fan's airflow, pressure, and power change with speed, size, or air density for geometrically similar fans at the same point of rating.">fan laws</abbr> do the rest.</p>
 </div>
 <p>The fan laws (developed fully in <a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>) say how a fan's performance changes with speed on a fixed system. With <span class="arithmatex">\( N \)</span> the fan speed and the subscripts 1 and 2 for the old and new conditions:</p>
 <div class="arithmatex">\[
 \frac{Q_2}{Q_1} = \frac{N_2}{N_1} \qquad \frac{P_2}{P_1} = \left(\frac{N_2}{N_1}\right)^2 \qquad \frac{H_2}{H_1} = \left(\frac{N_2}{N_1}\right)^3
 \]</div>
-<p>where <span class="arithmatex">\( Q \)</span> is airflow (CFM), <span class="arithmatex">\( P \)</span> is pressure (in. wg) and <span class="arithmatex">\( H \)</span> is brake horsepower. On a VFD, the speed ratio equals the frequency ratio, <span class="arithmatex">\( N_2 / N_1 = f_2 / f_1 \)</span>.</p>
-<p><strong>Worked example: turning a fan down to 45 Hz.</strong> A belt-driven fan is selected for 10,000 CFM at 2.00 in. wg static pressure, needing 8.0 bhp at full speed on 60 Hz power (illustrative values). The owner wants to run it at reduced airflow overnight, and the VFD is set to 45 Hz.</p>
+<p>where <span class="arithmatex">\( Q \)</span> is airflow (<abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr>), <span class="arithmatex">\( P \)</span> is pressure (in. wg) and <span class="arithmatex">\( H \)</span> is brake horsepower. On a VFD, the speed ratio equals the frequency ratio, <span class="arithmatex">\( N_2 / N_1 = f_2 / f_1 \)</span>.</p>
+<p><strong>Worked example: turning a fan down to 45 Hz.</strong> A belt-driven fan is selected for 10,000 CFM at 2.00 in. wg <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr>, needing 8.0 bhp at full speed on 60 Hz power (illustrative values). The owner wants to run it at reduced airflow overnight, and the VFD is set to 45 Hz.</p>
 <ol>
 <li>Speed ratio: <span class="arithmatex">\( 45 / 60 = 0.75 \)</span>. A 4-pole motor's synchronous speed drops from 1800 to 1350 RPM, and the fan speed drops by the same 25%.</li>
 <li>Airflow: <span class="arithmatex">\( 10{,}000 \times 0.75 = 7{,}500 \)</span> CFM.</li>
 <li>Static pressure: <span class="arithmatex">\( 2.00 \times 0.75^2 = 2.00 \times 0.5625 = 1.13 \)</span> in. wg.</li>
 <li>Brake horsepower: <span class="arithmatex">\( 8.0 \times 0.75^3 = 8.0 \times 0.4219 = 3.38 \)</span> bhp.</li>
 </ol>
-<p>A 25% cut in airflow cuts the fan's power by more than half. That cube relationship is the reason VFDs are so common on fans that spend long hours below full flow. Two limits keep the example honest. The fan laws assume the system resistance follows the fan along a system curve that passes through zero, so a system with a fixed pressure requirement will not fall off this steeply. And a VFD can drive a motor above 60 Hz, but the fan must never be run above the maximum safe speed listed in the current catalog; any speed increase starts with that check.</p>
+<p>A 25% cut in airflow cuts the fan's power by more than half. That cube relationship is the reason VFDs are so common on fans that spend long hours below full flow. Two limits keep the example honest. The fan laws assume the <abbr tabindex="0" title="The pressure needed to push a given airflow through everything connected to a fan, rising with the square of airflow.">system resistance</abbr> follows the fan along a <abbr tabindex="0" title="A parabola-shaped graph of one duct system's resistance against airflow, starting at zero pressure at zero airflow.">system curve</abbr> that passes through zero, so a system with a fixed pressure requirement will not fall off this steeply. And a VFD can drive a motor above 60 Hz, but the fan must never be run above the <abbr tabindex="0" title="The highest RPM at which the manufacturer allows a particular fan size and construction to operate, set by rotating-part strength, critical speed, and bearing limits.">maximum safe speed</abbr> listed in the current catalog; any speed increase starts with that check.</p>
 <p>The calculator below lets you test these relationships at other frequencies before you see the answers.</p>
 <h4 id="diagram-vfd-frequency-and-fan-law-calculator">Diagram: VFD Frequency and Fan Law Calculator<a class="headerlink" href="#diagram-vfd-frequency-and-fan-law-calculator" title="Permanent link">&para;</a></h4>
 <iframe src="../../sims/ch15-vfd-fan-law-calculator/main.html" width="100%" height="662px" scrolling="no"></iframe>
@@ -3560,35 +3624,35 @@ Notice that nothing about the motor's poles or the fan's sheaves changes on a VF
 <p><strong>Chapter Anchors:</strong> Base duty 10,000 CFM, 2.00 in. wg, 8.0 bhp at 60 Hz. At 45 Hz: speed ratio 0.75, synchronous speed 1350 RPM, 7,500 CFM, 1.13 in. wg, 3.38 bhp. A 4-pole motor runs at 1800 RPM synchronous on 60 Hz.</p>
 </details>
 <h2 id="inverter-duty-motor">Inverter-Duty Motor<a class="headerlink" href="#inverter-duty-motor" title="Permanent link">&para;</a></h2>
-<p>A VFD does not produce a smooth sine wave. It builds its output from rapid switched voltage pulses, and those pulses can stress motor insulation with voltage spikes and can induce currents in the motor shaft that discharge through the bearings. An <strong>inverter-duty motor</strong> is an induction motor designed and rated for operation on a VFD (the drive's output stage is called an inverter), with insulation and construction meant to withstand that power. The governing reference is NEMA MG-1 Part 31, which FanPedia cites when it notes that precautions may be needed to eliminate or reduce shaft currents imposed on a motor by a VFD (FanPedia p. 72).</p>
-<p>FanPedia lists the motor modifications that address shaft currents: insulated bearings, whose outer race is coated with insulating material, and a shaft grounding ring, internal or external, that gives the induced charge a path to ground around the bearings (FanPedia p. 75; see also Chapter 14). FanPedia also notes that a common service factor for a motor operated on a VFD is 1.0 (FanPedia p. 69), so the service factor margin should not be counted on when a fan runs on a drive.</p>
-<p><strong>Worked example: will a TEFC motor stay cool at low speed?</strong> A TEFC motor is cooled by an external fan on its own shaft, so when the VFD slows the motor, the cooling air slows too. Take the fan from the previous example and turn the drive down to 30 Hz.</p>
+<p>A VFD does not produce a smooth sine wave. It builds its output from rapid switched voltage pulses, and those pulses can stress motor insulation with voltage spikes and can induce currents in the motor shaft that discharge through the bearings. An <strong><abbr tabindex="0" title="An induction motor designed and rated for operation on a variable frequency drive, with insulation and construction that withstand its switched voltage pulses.">inverter-duty motor</abbr></strong> is an induction motor designed and rated for operation on a VFD (the drive's output stage is called an inverter), with insulation and construction meant to withstand that power. The governing reference is NEMA MG-1 Part 31, which FanPedia cites when it notes that precautions may be needed to eliminate or reduce shaft currents imposed on a motor by a VFD (FanPedia p. 72).</p>
+<p>FanPedia lists the motor modifications that address shaft currents: <abbr tabindex="0" title="A bearing whose outer race is coated with electrically insulating material so shaft current cannot pass through it to the frame.">insulated bearings</abbr>, whose outer race is coated with insulating material, and a <abbr tabindex="0" title="A ring of conductive fibers around a motor shaft that gives VFD-induced shaft voltages a low-resistance path to ground, bypassing the bearings.">shaft grounding ring</abbr>, internal or external, that gives the induced charge a path to ground around the bearings (FanPedia p. 75; see also Chapter 14). FanPedia also notes that a common service factor for a motor operated on a VFD is 1.0 (FanPedia p. 69), so the service factor margin should not be counted on when a fan runs on a drive.</p>
+<p><strong>Worked example: will a <abbr tabindex="0" title="A totally enclosed fan cooled motor with sealed windings and an external fan that blows air over the ribbed outer frame.">TEFC motor</abbr> stay cool at low speed?</strong> A TEFC motor is cooled by an external fan on its own shaft, so when the VFD slows the motor, the cooling air slows too. Take the fan from the previous example and turn the drive down to 30 Hz.</p>
 <ol>
 <li>Speed ratio: <span class="arithmatex">\( 30 / 60 = 0.5 \)</span>. The motor's cooling fan moves roughly half its normal air.</li>
 <li>Fan load: <span class="arithmatex">\( 0.5^3 = 0.125 \)</span>, so the motor delivers about 12.5% of its full-speed power.</li>
-<li>Because fan load falls with the cube of speed while cooling falls roughly in proportion to speed, a centrifugal fan's motor generally runs with less heat to remove than it has cooling for, even at low speed.</li>
+<li>Because fan load falls with the cube of speed while cooling falls roughly in proportion to speed, a <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr>'s motor generally runs with less heat to remove than it has cooling for, even at low speed.</li>
 </ol>
 <p>The conclusion is not that any motor will do. It is that, for a fan, the main reasons to order an inverter-duty motor are the drive's voltage spikes and shaft currents, not low-speed heating; the heating case is more serious for loads that keep their torque at low speed. On the order, state that the motor will run on a VFD, request an inverter-duty rating, and decide with the customer whether insulated bearings or a shaft grounding ring are needed.</p>
 <h2 id="mounting-the-motor-on-a-belt-driven-fan">Mounting the Motor on a Belt-Driven Fan<a class="headerlink" href="#mounting-the-motor-on-a-belt-driven-fan" title="Permanent link">&para;</a></h2>
-<p>A <strong>motor base</strong> is the structure that mounts the motor to the fan or to the fan base on a belt-driven fan. FanPedia describes it as the means for positioning the motor and adjusting belt tension during installation and maintenance, and lists the styles used depending on fan design and industry requirements: slide base or slide rails, post mount, bolt-on and various pivot styles (FanPedia p. 189). Belt tension is set by changing the center distance between the motor sheave and the fan sheave, so every style below is, at heart, a way to move the motor a controlled distance and then lock it in place.</p>
+<p>A <strong><abbr tabindex="0" title="The structure that supports a motor on a fan or its base and, on a belt drive, lets the motor move to set belt tension and alignment.">motor base</abbr></strong> is the structure that mounts the motor to the fan or to the <abbr tabindex="0" title="A structural frame that supports a fan, usually with its motor and drive, as one rigid, aligned assembly.">fan base</abbr> on a belt-driven fan. FanPedia describes it as the means for positioning the motor and adjusting belt tension during installation and maintenance, and lists the styles used depending on fan design and industry requirements: <abbr tabindex="0" title="A motor base in which the motor plate slides along a fixed base, moved by an adjusting screw to set belt tension.">slide base</abbr> or slide rails, post mount, bolt-on and various pivot styles (FanPedia p. 189). Belt tension is set by changing the center distance between the motor sheave and the fan sheave, so every style below is, at heart, a way to move the motor a controlled distance and then lock it in place.</p>
 <h3 id="slide-base">Slide Base<a class="headerlink" href="#slide-base" title="Permanent link">&para;</a></h3>
 <p>A <strong>slide base</strong> is a motor base in which the motor bolts to a plate or frame that slides along a fixed base, with an adjusting screw that pushes the motor away from or toward the fan to set belt tension. FanPedia distinguishes two forms (FanPedia p. 76):</p>
 <ul>
-<li><strong>NEMA type slide base</strong>, used on small to large motors from 48 to 445 frame. It mounts on the fan base or on the fan pedestal. Typical mounting: Arrangements 1 and 3 (floor mounted or on a fan base); Arrangements 9, 9F, 9H and 9ST; plenum fans in Arrangements 1, 3, 3HS, 3VS and 3SM; and pedestal plug fans in Arrangements 1P and 9P.</li>
-<li><strong>Heavy-duty slide rails</strong>, two rails per motor, used on large to very large motors in the 440, 500 and 5000 frame series. They mount on a base, or on the pedestal for Arrangement 9H only.</li>
+<li><strong>NEMA type slide base</strong>, used on small to large motors from 48 to 445 frame. It mounts on the fan base or on the <abbr tabindex="0" title="The steel structure that supports a fan's bearings, shaft, and often motor, providing the stability needed for balance and vibration limits.">fan pedestal</abbr>. Typical mounting: Arrangements 1 and 3 (floor mounted or on a fan base); Arrangements 9, 9F, 9H and 9ST; <abbr tabindex="0" title="An unhoused centrifugal fan that runs inside an air-filled space within a structure and pressurizes that space, which then distributes air to its outlets.">plenum fans</abbr> in Arrangements 1, 3, 3HS, 3VS and 3SM; and pedestal <abbr tabindex="0" title="An unhoused centrifugal fan mounted on a panel fastened to the outside of a plenum wall, with the impeller inside the plenum.">plug fans</abbr> in Arrangements 1P and 9P.</li>
+<li><strong>Heavy-duty slide rails</strong>, two rails per motor, used on large to very large motors in the 440, 500 and 5000 frame series. They mount on a base, or on the pedestal for <abbr tabindex="0" title="An Arrangement 9 with the pedestal extended on one side so the motor mounts horizontally beside it, on a slide base, rails, or pivot base.">Arrangement 9H</abbr> only.</li>
 </ul>
-<p>On some Arrangement 9 fans, Unistrut channels on the pedestal give the slide base a wider range of belt center adjustment (FanPedia pp. 76 and 85).</p>
-<p><strong>Worked example: the motor from the FanPedia line.</strong> The example motor is a 50 HP, 326T frame. Suppose it drives an Arrangement 9 housed centrifugal fan.</p>
+<p>On some <abbr tabindex="0" title="A belt driven, overhung fan with the motor on a slide base on the side of the fan's bearing pedestal, shipped as one assembly.">Arrangement 9</abbr> fans, Unistrut channels on the pedestal give the slide base a wider range of belt center adjustment (FanPedia pp. 76 and 85).</p>
+<p><strong>Worked example: the motor from the FanPedia line.</strong> The example motor is a 50 HP, 326T frame. Suppose it drives an Arrangement 9 <abbr tabindex="0" title="A centrifugal fan whose impeller turns inside a scroll housing that collects the air and discharges it through a single outlet at a right angle to the shaft.">housed centrifugal fan</abbr>.</p>
 <ol>
 <li>Check the frame against the NEMA slide base range: 326 lies between 48 and 445, so the NEMA type slide base fits.</li>
 <li>Check the arrangement: Arrangement 9 is on the slide base's typical mounting list.</li>
 <li>Result: NEMA type slide base on the pedestal.</li>
 </ol>
-<p>Now change the motor to a 5008S frame (one of FanPedia's large-horsepower special sizes, FanPedia p. 74) on an Arrangement 1 fan. The 5000 series is outside the NEMA slide base range, so the answer becomes heavy-duty slide rails on the base. A 449T motor lands in the same place: it is a 440-series frame but above the 445 limit of the NEMA slide base.</p>
+<p>Now change the motor to a 5008S frame (one of FanPedia's large-horsepower special sizes, FanPedia p. 74) on an <abbr tabindex="0" title="An overhung impeller fan with both bearings on a pedestal and the motor mounted separately on the floor or a fan base, usually belt driven.">Arrangement 1</abbr> fan. The 5000 series is outside the NEMA slide base range, so the answer becomes heavy-duty slide rails on the base. A 449T motor lands in the same place: it is a 440-series frame but above the 445 limit of the NEMA slide base.</p>
 <h3 id="pivot-motor-base">Pivot Motor Base<a class="headerlink" href="#pivot-motor-base" title="Permanent link">&para;</a></h3>
-<p>A <strong>pivot motor base</strong> carries the motor on a plate hinged at one edge, so the motor swings about the pivot point and belt tension is set by the swing rather than a straight slide. FanPedia's <strong>automotive pivot bases</strong> are used mostly in automotive applications, on Arrangement 9H pedestals, Arrangement 9SS swingout fans and, specially mounted on a fan base, Arrangement 3 (FanPedia p. 77). Because the pivot must sit on the correct side of the motor, motor location is restricted by rotation: for Arrangements 9H and 9SS, clockwise rotation goes with motor position L and counterclockwise with R; for Arrangement 3, clockwise goes with motor position Z and counterclockwise with W. Motor positions and rotation are covered in <a href="../12-discharge-positions-and-rotation/">Chapter 12</a>. A separate pivot/bolted adjustable base is used on larger motors, 254 to 445 frame, on tubular centrifugal and axial Arrangement 9 fans, plenum Arrangements 3HA and 3VA, and plug fan Arrangement 9 (FanPedia p. 78).</p>
+<p>A <strong><abbr tabindex="0" title="A motor base with the motor on a plate hinged at one edge, so belt tension is set by swinging the motor about the pivot.">pivot motor base</abbr></strong> carries the motor on a plate hinged at one edge, so the motor swings about the pivot point and belt tension is set by the swing rather than a straight slide. FanPedia's <strong>automotive pivot bases</strong> are used mostly in automotive applications, on Arrangement 9H pedestals, Arrangement 9SS <abbr tabindex="0" title="A fan whose impeller, shaft, and bearing assembly is mounted on a large hinged door so it swings out of the housing for cleaning and inspection.">swingout fans</abbr> and, specially mounted on a fan base, <abbr tabindex="0" title="A center hung impeller fan with one bearing on each side of the impeller supported by the housing, and the motor mounted separately on the floor or fan base.">Arrangement 3</abbr> (FanPedia p. 77). Because the pivot must sit on the correct side of the motor, motor location is restricted by rotation: for Arrangements 9H and 9SS, <abbr tabindex="0" title="Impeller rotation, abbreviated CW, that an observer on the drive side sees turning the same way as clock hands.">clockwise rotation</abbr> goes with <abbr tabindex="0" title="The location of a belt-drive motor relative to the fan, read from the drive side for centrifugal fans.">motor position</abbr> L and counterclockwise with R; for Arrangement 3, clockwise goes with motor position Z and counterclockwise with W. Motor positions and rotation are covered in <a href="../12-discharge-positions-and-rotation/">Chapter 12</a>. A separate pivot/bolted adjustable base is used on larger motors, 254 to 445 frame, on tubular centrifugal and axial Arrangement 9 fans, plenum Arrangements 3HA and 3VA, and plug fan Arrangement 9 (FanPedia p. 78).</p>
 <h3 id="post-mount-motor-base">Post Mount Motor Base<a class="headerlink" href="#post-mount-motor-base" title="Permanent link">&para;</a></h3>
-<p>A <strong>post mount motor base</strong> is an adjustable base in which the motor plate is carried on posts, typically threaded, so the motor can be moved along the posts to tension the belts. FanPedia's <strong>standard post mount</strong> is used on small motors, 48 to 215 frame, in a saddle mount or flat mount version, on the same fan types as the pivot/bolted design: tubular centrifugal and axial Arrangement 9, plenum Arrangements 3HA and 3VA, and plug fan Arrangement 9 (FanPedia p. 78). The two are a matched pair split by frame size: post mount up to 215 frame, pivot/bolted from 254 to 445. For tubeaxial, vaneaxial and centaxial Arrangement 9 fans, FanPedia also shows a bolt-on mount for 48 to 286 frame motors in a saddle mount.</p>
+<p>A <strong><abbr tabindex="0" title="An adjustable motor base whose motor plate rides on threaded posts so the motor can be moved to tension the belts, used on small motors.">post mount motor base</abbr></strong> is an adjustable base in which the motor plate is carried on posts, typically threaded, so the motor can be moved along the posts to tension the belts. FanPedia's <strong>standard post mount</strong> is used on small motors, 48 to 215 frame, in a saddle mount or flat mount version, on the same fan types as the pivot/bolted design: tubular centrifugal and axial Arrangement 9, plenum Arrangements 3HA and 3VA, and plug fan Arrangement 9 (FanPedia p. 78). The two are a matched pair split by frame size: post mount up to 215 frame, pivot/bolted from 254 to 445. For tubeaxial, vaneaxial and centaxial Arrangement 9 fans, FanPedia also shows a bolt-on mount for 48 to 286 frame motors in a saddle mount.</p>
 <p>The table below gathers the base styles from these three subsections by frame range.</p>
 <table>
 <thead>
@@ -3643,7 +3707,7 @@ Notice that nothing about the motor's poles or the fan's sheaves changes on a VF
 <strong>Bloom Level:</strong> Apply<br/>
 <strong>Bloom Verb:</strong> apply<br/>
 <strong>Learning Objective:</strong> The learner will apply FanPedia's motor base frame ranges and typical mountings to choose the motor base style for a belt-driven fan, given the motor frame, the fan type and arrangement, and the industry, with at least 7 of 8 cases correct.</p>
-<p><strong>Prerequisites:</strong> motor base, slide base, heavy-duty slide rails, pivot motor base, automotive pivot base, post mount motor base, pivot/bolted adjustable base, NEMA frame size, fan arrangement (defined in "Mounting the Motor on a Belt-Driven Fan" above and in Chapters 11 and 14).</p>
+<p><strong>Prerequisites:</strong> motor base, slide base, heavy-duty slide rails, pivot motor base, automotive pivot base, post mount motor base, pivot/bolted adjustable base, <abbr tabindex="0" title="A standardized designation of a motor's mounting dimensions, with letters after the number (such as T, C, S, U, TC) describing the frame type.">NEMA frame size</abbr>, <abbr tabindex="0" title="A standard numbered description of how a fan's drive, impeller, bearings, and motor are put together.">fan arrangement</abbr> (defined in "Mounting the Motor on a Belt-Driven Fan" above and in Chapters 11 and 14).</p>
 <p><strong>Evidence of Mastery:</strong> For each of 8 cases the learner selects one of five base styles and commits it with Check. A selection is correct when it matches the "Correct base" column in Content. Mastery is 7 of 8 correct on the first attempt. Opening the reference table is exploration, not evidence.</p>
 <p><strong>Misconceptions:</strong> (1) Any motor up to 449T fits a NEMA slide base, when the NEMA slide base stops at 445 frame. (2) Post mount and pivot/bolted bases are interchangeable, when they are split by frame size (48 to 215 versus 254 to 445). (3) Automotive pivot bases can use any motor position, when rotation restricts motor location.</p>
 <p><strong>Instructional Rationale:</strong> Choosing a base is a procedure: check frame range, then arrangement, then industry. Eight committed cases with rule-based feedback make the learner run that procedure on varied inputs, which is Apply-level practice.</p>
@@ -3761,12 +3825,12 @@ Notice that nothing about the motor's poles or the fan's sheaves changes on a VF
 <p><strong>Chapter Anchors:</strong> NEMA type slide base 48 to 445 frame. Heavy-duty slide rails for 440, 500 and 5000 frame series. Standard post mount 48 to 215 frame. Pivot/bolted adjustable base 254 to 445 frame. Arrangements 9H and 9SS: clockwise with motor position L. The chapter's worked example uses a 326T motor on Arrangement 9 (NEMA slide base) and a 5008S motor on Arrangement 1 (heavy-duty slide rails), and notes that a 449T motor needs heavy-duty slide rails.</p>
 </details>
 <h2 id="motor-positioners">Motor Positioners<a class="headerlink" href="#motor-positioners" title="Permanent link">&para;</a></h2>
-<p>A motor base sets belt tension, but the motor also has to be aligned: its shaft square to the drive and, on a coupled or sheave drive, in line with the mating shaft. A <strong>motor positioner</strong> is a threaded jacking screw mounted next to the motor that pushes the motor a controlled distance so it can be aligned. FanPedia also calls it a motor alignment jacking screw, defines the basic motor positioner as providing horizontal adjustment of the motor position in one direction (FanPedia p. 190), and lists positioners among the pedestal accessories used next to bearings or motors to aid alignment during assembly and testing (FanPedia p. 130). The bearing positioner in Chapter 16 is the same idea applied to fan bearings.</p>
+<p>A motor base sets belt tension, but the motor also has to be aligned: its shaft square to the drive and, on a coupled or sheave drive, in line with the mating shaft. A <strong><abbr tabindex="0" title="A threaded jacking screw mounted beside a motor that pushes it a controlled distance for alignment, providing horizontal adjustment in one direction.">motor positioner</abbr></strong> is a threaded jacking screw mounted next to the motor that pushes the motor a controlled distance so it can be aligned. FanPedia also calls it a motor alignment jacking screw, defines the basic motor positioner as providing horizontal adjustment of the motor position in one direction (FanPedia p. 190), and lists positioners among the pedestal accessories used next to bearings or motors to aid alignment during assembly and testing (FanPedia p. 130). The <abbr tabindex="0" title="A threaded bolt in a bracket on each side of a fan bearing that pushes the bearing housing in small steps to fine-tune its location; also called a bearing alignment jacking screw.">bearing positioner</abbr> in Chapter 16 is the same idea applied to fan bearings.</p>
 <p>FanPedia defines three more variants, each adding one direction of adjustment (FanPedia pp. 148 and 190):</p>
 <ul>
-<li>A <strong>bi-directional positioner</strong> provides horizontal adjustment of the motor position in both directions of the horizontal plane, so the motor can be moved along and across the base.</li>
-<li><strong>Vertical jack screws</strong> thread through the motor feet, which the motor vendor drills and taps. Turning them lifts the motor so shims can be set under its feet to correct height and angle. The vertical jack screws are removed after the motor is shimmed.</li>
-<li>A <strong>tri-directional positioner</strong> combines horizontal positioners with vertical jack screws, giving adjustment in both horizontal directions and vertically. Because it uses vertical jack screws, its motor feet are also drilled and tapped by the vendor, and those screws are likewise removed after shimming.</li>
+<li>A <strong><abbr tabindex="0" title="A motor positioner that provides horizontal adjustment in both directions of the horizontal plane, along and across the base.">bi-directional positioner</abbr></strong> provides horizontal adjustment of the motor position in both directions of the horizontal plane, so the motor can be moved along and across the base.</li>
+<li><strong><abbr tabindex="0" title="Screws threaded through drilled and tapped motor feet that lift the motor so shims can be set, removed after shimming.">Vertical jack screws</abbr></strong> thread through the motor feet, which the motor vendor drills and taps. Turning them lifts the motor so shims can be set under its feet to correct height and angle. The vertical jack screws are removed after the motor is shimmed.</li>
+<li>A <strong><abbr tabindex="0" title="A motor positioner combining horizontal positioners with vertical jack screws, giving adjustment horizontally and vertically.">tri-directional positioner</abbr></strong> combines horizontal positioners with vertical jack screws, giving adjustment in both horizontal directions and vertically. Because it uses vertical jack screws, its motor feet are also drilled and tapped by the vendor, and those screws are likewise removed after shimming.</li>
 </ul>
 <p>The comparison below restates the four from the list above side by side.</p>
 <table>
@@ -3815,7 +3879,7 @@ Tri-directional positioners and vertical jack screws need motor feet that the mo
 <p><strong>Worked example: a complete motor description.</strong> A paper mill needs an Arrangement 9 housed centrifugal fan for a process exhaust. The selection calls for 21 bhp at the fan, and the fan will run on a VFD supplied by the mill. The mill's standard requires IEEE 841 motors, premium efficiency and winding RTDs, on 460 V, three-phase, 60 Hz power. The area is not classified hazardous.</p>
 <ol>
 <li><strong>Power:</strong> 21 bhp needs a 25 HP motor; the motor runs near 84% load, inside FanPedia's 50% to 100% band. Because the motor is on a VFD, do not count on a service factor above 1.0.</li>
-<li><strong>Speed:</strong> a 4-pole motor, 1800 RPM synchronous on 60 Hz; the belt drive sets the fan speed.</li>
+<li><strong>Speed:</strong> a 4-pole motor, 1800 RPM synchronous on 60 Hz; the <abbr tabindex="0" title="A drive method in which sheaves on the motor and fan shafts, connected by V-belts, let the fan run at a speed different from the motor's.">belt drive</abbr> sets the fan speed.</li>
 <li><strong>Technology and efficiency:</strong> induction, premium efficiency (IN, P).</li>
 <li><strong>Electric power:</strong> 3 phase, 60 Hz, 460 V, a single stated voltage.</li>
 <li><strong>Duty and enclosure:</strong> IEEE 841, which requires TEFC (IP56).</li>
@@ -3939,7 +4003,7 @@ You can now take a duty point, a plant's power and its environment, and turn the
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

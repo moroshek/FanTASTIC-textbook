@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4886,14 +4950,14 @@ or their published URLs, to the editor's <code>index.html</code> before pasting
 <code>ch17-fixed-floating-bearing-assignment.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>A shaft grows as it warms. If both bearings clamp it axially, the growth becomes an axial load
-that shortens bearing life, so FanPedia (pp. 97-99) lets only one bearing locate the shaft: the
+that shortens <abbr tabindex="0" title="A statistical estimate of how long bearings will run before failing from metal fatigue, based on bearing geometry, load, and speed.">bearing life</abbr>, so FanPedia (pp. 97-99) lets only one bearing locate the shaft: the
 <strong>fixed</strong> bearing. The <strong>floating</strong> bearing carries the shaft radially but lets its outer ring slide
 axially in the housing. This MicroSim applies the rules from
 <a href="../../chapters/17-bearing-details-lubrication-and-pedestals/">Chapter 17</a> in their
 decision order:</p>
 <ol>
-<li>At 301°F and above, every bearing type uses one fixed and one floating bearing. Go to step 3.</li>
-<li>At 300°F and below, ball bearings use two fixed bearings (A), except on Arrangements 3SI, 7SI,
+<li>At 301°F and above, every bearing type uses one fixed and one <abbr tabindex="0" title="The bearing that supports a shaft radially but lets it move axially so the shaft can grow or shrink with temperature; also called the expansion bearing.">floating bearing</abbr>. Go to step 3.</li>
+<li>At 300°F and below, <abbr tabindex="0" title="A rolling bearing that uses steel balls as its rolling elements, giving smooth, low-friction motion.">ball bearings</abbr> use two <abbr tabindex="0" title="The bearing that holds a shaft in axial position relative to the housing; also called the non-expansion, thrust, or locating bearing.">fixed bearings</abbr> (A), except on Arrangements 3SI, 7SI,
    3DI and 7DI, where FanPedia's footnote says one fixed and one floating may be required (D,
    engineering review). Roller and split roller bearings use one fixed and one floating.</li>
 <li>With a floating bearing, a horizontal mount puts the fixed bearing at the drive end (B) and a
@@ -4904,13 +4968,13 @@ bearing type and operating temperature. You choose one of four configurations: A
 bearings; B, fixed at the drive end and floating at the non-drive end; C, floating at the drive end
 and fixed at the non-drive end; D, flag for engineering review. The cards come in a fixed order,
 with one attempt each. After you commit, the sim draws the shaft (horizontal or vertical, as the
-card says) with its sheave or coupling, impeller and two pillow blocks, labels the drive-end and
+card says) with its <abbr tabindex="0" title="A grooved pulley mounted on the motor shaft or the fan shaft that carries the drive belts, fastened with or without a bushing; the motor-shaft one is the drive pulley and the fan-shaft one the driven pulley.">sheave</abbr> or coupling, impeller and two pillow blocks, labels the drive-end and
 non-drive-end bearings, marks each one fixed (clamped between locating rings) or floating (double
 arrow along the shaft), and names the rule step that decided the card.</p>
 <p>Mastery is 8 of 10 cards correct on the first (and only) attempt. After card 10 the sim shows the
 score, whether mastery was reached, and each missed card with the rule step that decided it.</p>
 <p>The shaft drawing is a schematic: a vertical fan is drawn with its drive end at the top, and the
-impeller sits between the bearings on Arrangement 3 family fans and outboard of them on
+impeller sits between the bearings on <abbr tabindex="0" title="A center hung impeller fan with one bearing on each side of the impeller supported by the housing, and the motor mounted separately on the floor or fan base.">Arrangement 3</abbr> family fans and outboard of them on
 Arrangements 1, 8 and 9.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
@@ -4936,7 +5000,7 @@ the drawing.</p>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>The learner will apply the fixed-floating bearing rules to assign the correct bearing configuration
+<p>The learner will apply the <abbr tabindex="0" title="FanPedia's guidelines for where the fixed bearing goes and whether a floating bearing is needed.">fixed-floating bearing rules</abbr> to assign the correct bearing configuration
 to ten fan scenarios defined by mounting orientation, bearing type, operating temperature and
 arrangement, with at least 8 of 10 correct (Bloom: Apply, verb: apply).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
@@ -5085,7 +5149,7 @@ facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

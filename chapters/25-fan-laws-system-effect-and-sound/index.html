@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -273,6 +275,68 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../about/" class="md-nav__link">
         
@@ -400,7 +464,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -422,14 +486,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1886,7 +1950,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_26" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_26" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1908,14 +1972,14 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_4_26" id="__nav_4_26_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5_26" id="__nav_5_26_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_26_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_26">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_26_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_26">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3484,19 +3548,19 @@ Sooner or later a customer calls and asks, "What if we speed it up?", "Why is it
 </tbody>
 </table>
 <h2 id="landmarks-on-the-fan-curve">Landmarks on the Fan Curve<a class="headerlink" href="#landmarks-on-the-fan-curve" title="Permanent link">&para;</a></h2>
-<p>Three points on any fan curve have names, and they show up in specifications, field reports and customer questions.</p>
-<p><strong>Shutoff pressure</strong> is the static pressure a fan develops at zero airflow, when the inlet or outlet is completely blocked. Curve A's shutoff pressure is 4.6 in. wg. Shutoff is not a zero-power condition: Curve A still absorbs 4.0 BHP at zero flow, and all of it goes into churning and heating the trapped air. Shutoff pressure tells a duct designer the most pressure the fan can ever put on the ductwork at that speed, which matters when a damper slams shut on a light-gauge duct or a sealed enclosure.</p>
-<p><strong>Free delivery</strong> is the opposite end of the curve: the airflow a fan moves when it discharges against zero static pressure, with nothing connected to resist it. Extending Curve A's last two rows to zero pressure puts free delivery at about 16,500 CFM. Because static pressure is zero there, static efficiency is also zero, even though the fan is moving the most air it can. Free delivery is a useful ceiling for a propeller fan in an open wall, but a ducted fan never runs there, and a catalog CFM quoted "at free delivery" says nothing about performance against a real system.</p>
-<p>The <strong>peak pressure point</strong> is the highest static pressure on the curve and the airflow at which it occurs. On Curve A it is 4.9 in. wg at 4,000 CFM. The peak pressure point is the boundary of the stall region from Chapter 10: to its right the pressure falls steadily as airflow rises, and the fan is stable; to its left the curve is flat or rising and the fan is not. On a forward curved fan, with its mid-curve dip, the boundary is the right-hand peak.</p>
-<p>Operating to the left of the peak can produce <strong>surge</strong>: an unstable, cycling condition in which airflow and pressure oscillate instead of settling at one operating point. Where a system curve crosses a fan curve that is flat or rising, a small drop in flow raises the fan's pressure no further, so the fan and the air volume stored in the ductwork trade pressure back and forth. The symptoms are a rhythmic pulsing or "breathing" of the ductwork, a rumbling noise, fluctuating motor amps and vibration. The remedy is to move the operating point right of the peak: a smaller fan, a slower speed, less system resistance, or a bleed of air through a bypass.</p>
+<p>Three points on any <abbr tabindex="0" title="A graph of one fan's pressure, power, and often efficiency against airflow at one speed and one air density.">fan curve</abbr> have names, and they show up in specifications, field reports and customer questions.</p>
+<p><strong><abbr tabindex="0" title="The static pressure a fan develops at zero airflow, with the inlet or outlet completely blocked.">Shutoff pressure</abbr></strong> is the <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> a fan develops at zero airflow, when the inlet or outlet is completely blocked. Curve A's shutoff pressure is 4.6 in. wg. Shutoff is not a zero-power condition: Curve A still absorbs 4.0 <abbr tabindex="0" title="Brake Horsepower: The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">BHP</abbr> at zero flow, and all of it goes into churning and heating the trapped air. Shutoff pressure tells a duct designer the most pressure the fan can ever put on the ductwork at that speed, which matters when a damper slams shut on a light-gauge duct or a sealed enclosure.</p>
+<p><strong><abbr tabindex="0" title="The airflow a fan moves when discharging against zero static pressure, with nothing connected to resist it.">Free delivery</abbr></strong> is the opposite end of the curve: the airflow a fan moves when it discharges against zero static pressure, with nothing connected to resist it. Extending Curve A's last two rows to zero pressure puts free delivery at about 16,500 <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr>. Because static pressure is zero there, <abbr tabindex="0" title="Fan efficiency computed from air power based on fan static pressure, divided by brake horsepower.">static efficiency</abbr> is also zero, even though the fan is moving the most air it can. Free delivery is a useful ceiling for a propeller fan in an open wall, but a ducted fan never runs there, and a catalog CFM quoted "at free delivery" says nothing about performance against a real system.</p>
+<p>The <strong><abbr tabindex="0" title="The highest static pressure on a fan curve and the airflow at which it occurs, marking the boundary of the stall region.">peak pressure point</abbr></strong> is the highest static pressure on the curve and the airflow at which it occurs. On Curve A it is 4.9 in. wg at 4,000 CFM. The peak pressure point is the boundary of the <abbr tabindex="0" title="The part of a fan curve to the left of the pressure peak, where airflow separates from the blades and performance becomes unsteady.">stall region</abbr> from Chapter 10: to its right the pressure falls steadily as airflow rises, and the fan is stable; to its left the curve is flat or rising and the fan is not. On a forward curved fan, with its mid-curve dip, the boundary is the right-hand peak.</p>
+<p>Operating to the left of the peak can produce <strong>surge</strong>: an unstable, cycling condition in which airflow and pressure oscillate instead of settling at one <abbr tabindex="0" title="The single airflow and pressure at which a fan actually runs in a system, where its fan curve intersects the system curve.">operating point</abbr>. Where a <abbr tabindex="0" title="A parabola-shaped graph of one duct system's resistance against airflow, starting at zero pressure at zero airflow.">system curve</abbr> crosses a fan curve that is flat or rising, a small drop in flow raises the fan's pressure no further, so the fan and the air volume stored in the ductwork trade pressure back and forth. The symptoms are a rhythmic pulsing or "breathing" of the ductwork, a rumbling noise, fluctuating motor amps and vibration. The remedy is to move the operating point right of the peak: a smaller fan, a slower speed, less <abbr tabindex="0" title="The pressure needed to push a given airflow through everything connected to a fan, rising with the square of airflow.">system resistance</abbr>, or a bleed of air through a bypass.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">A Damper Can Push a Good Fan Into Surge</p>
 <p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
-A common trap is checking the selection only at the design point. An outlet damper throttled hard at low load moves the operating point left along the fan curve, and it can cross the peak pressure point. Check the lowest airflow the process will ask for, and if it falls left of the peak, use speed control or inlet vanes for that range instead of the damper.</p>
+A common trap is checking the selection only at the design point. An <abbr tabindex="0" title="A damper mounted on a fan discharge that controls airflow by adding resistance, typically the least expensive flow-control option.">outlet damper</abbr> throttled hard at low load moves the operating point left along the fan curve, and it can cross the peak pressure point. Check the lowest airflow the process will ask for, and if it falls left of the peak, use <abbr tabindex="0" title="A flow-control method that reduces airflow by slowing the impeller, using the least power of any method.">speed control</abbr> or inlet vanes for that range instead of the damper.</p>
 </div>
 <h2 id="efficiency-on-the-curve">Efficiency on the Curve<a class="headerlink" href="#efficiency-on-the-curve" title="Permanent link">&para;</a></h2>
 <h3 id="the-fan-power-equation">The Fan Power Equation<a class="headerlink" href="#the-fan-power-equation" title="Permanent link">&para;</a></h3>
-<p>Chapter 10 built brake horsepower from air power. Written in one line, that relation is the <strong>fan power equation</strong>: the shaft power a fan needs equals its airflow times its pressure, divided by a units constant and by its efficiency.</p>
+<p>Chapter 10 built <abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">brake horsepower</abbr> from <abbr tabindex="0" title="The rate at which a fan delivers energy to the air, calculated from airflow and fan total pressure before internal losses.">air power</abbr>. Written in one line, that relation is the <strong><abbr tabindex="0" title="The relation stating that a fan's shaft power equals airflow times pressure divided by a units constant and by efficiency.">fan power equation</abbr></strong>: the shaft power a fan needs equals its airflow times its pressure, divided by a units constant and by its efficiency.</p>
 <h4 id="fan-power-equation">Fan Power Equation<a class="headerlink" href="#fan-power-equation" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ BHP = \frac{Q \times P}{6356 \times \eta} \]</div>
 <p>where:</p>
@@ -3504,12 +3568,12 @@ A common trap is checking the selection only at the design point. An outlet damp
 <li><span class="arithmatex">\( BHP \)</span> is brake horsepower at the fan shaft</li>
 <li><span class="arithmatex">\( Q \)</span> is airflow in CFM at fan inlet density</li>
 <li><span class="arithmatex">\( P \)</span> is fan pressure in in. wg (static or total)</li>
-<li><span class="arithmatex">\( \eta \)</span> is the matching efficiency (static with static pressure, total with total pressure), as a decimal</li>
+<li><span class="arithmatex">\( \eta \)</span> is the matching efficiency (static with static pressure, total with <abbr tabindex="0" title="The sum of static pressure and velocity pressure at a point in an airstream, representing all of the energy the air carries there.">total pressure</abbr>), as a decimal</li>
 <li>6356 converts CFM × in. wg to horsepower</li>
 </ul>
 <p>The equation runs in any direction. Given BHP from a catalog, it yields efficiency; given an efficiency target, it yields the BHP to expect.</p>
 <h3 id="static-efficiency">Static Efficiency<a class="headerlink" href="#static-efficiency" title="Permanent link">&para;</a></h3>
-<p><strong>Static efficiency</strong> is the fan's air power based on fan static pressure divided by its brake horsepower. Rearranging the fan power equation gives it directly.</p>
+<p><strong>Static efficiency</strong> is the fan's air power based on <abbr tabindex="0" title="Fan total pressure minus fan outlet velocity pressure, the AMCA pressure most catalog tables use; abbreviated FSP.">fan static pressure</abbr> divided by its brake horsepower. Rearranging the fan power equation gives it directly.</p>
 <h4 id="static-efficiency_1">Static Efficiency<a class="headerlink" href="#static-efficiency_1" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ \eta_s = \frac{Q \times P_{sf}}{6356 \times BHP} \]</div>
 <p>where:</p>
@@ -3517,9 +3581,9 @@ A common trap is checking the selection only at the design point. An outlet damp
 <li><span class="arithmatex">\( \eta_s \)</span> is static efficiency, as a decimal</li>
 <li><span class="arithmatex">\( P_{sf} \)</span> is fan static pressure in in. wg</li>
 </ul>
-<p>Static efficiency is always lower than total efficiency at the same point, because fan static pressure leaves out the outlet velocity pressure the fan has also produced. Specifications for ducted fans usually state static efficiency because the duty is stated in static pressure, and catalog performance tables give BHP so the reader can compute it.</p>
+<p>Static efficiency is always lower than total efficiency at the same point, because fan static pressure leaves out the <abbr tabindex="0" title="The velocity pressure corresponding to a fan's outlet velocity, expressing the kinetic energy of the leaving air in in. wg.">outlet velocity pressure</abbr> the fan has also produced. Specifications for ducted fans usually state static efficiency because the duty is stated in static pressure, and catalog <abbr tabindex="0" title="A grid in a product catalog giving, for one model and size at standard air, the RPM and BHP needed for each combination of airflow and static pressure.">performance tables</abbr> give BHP so the reader can compute it.</p>
 <h4 id="worked-example-two-fans-for-the-same-duty">Worked Example: Two Fans for the Same Duty<a class="headerlink" href="#worked-example-two-fans-for-the-same-duty" title="Permanent link">&para;</a></h4>
-<p>A plant needs 20,000 CFM at 5.0 in. wg fan static pressure, standard air, running 6,000 hours a year. Two candidate selections (illustrative) meet the duty. Fan X absorbs 21.5 BHP; Fan Y absorbs 24.0 BHP.</p>
+<p>A plant needs 20,000 CFM at 5.0 in. wg fan static pressure, <abbr tabindex="0" title="The reference air condition used to rate fans: air with a density of 0.075 lb/ft³, very nearly that of dry air at 70°F and 29.92 in. Hg barometric pressure.">standard air</abbr>, running 6,000 hours a year. Two candidate selections (illustrative) meet the duty. Fan X absorbs 21.5 BHP; Fan Y absorbs 24.0 BHP.</p>
 <ol>
 <li><strong>Fan X:</strong> <span class="arithmatex">\( \eta_s = 20{,}000 \times 5.0 / (6356 \times 21.5) = 100{,}000 / 136{,}654 = 0.732 \)</span>, or 73.2%.</li>
 <li><strong>Fan Y:</strong> <span class="arithmatex">\( \eta_s = 100{,}000 / (6356 \times 24.0) = 100{,}000 / 152{,}544 = 0.656 \)</span>, or 65.6%.</li>
@@ -3528,17 +3592,17 @@ A common trap is checking the selection only at the design point. An outlet damp
 </ol>
 <p>A 7.6-point efficiency gap is worth more over the fan's life than a modest difference in purchase price. The comparison is fair only because both fans were evaluated at the same duty with the same pressure basis; comparing Fan X's static efficiency with Fan Y's total efficiency would be meaningless.</p>
 <h3 id="the-efficiency-curve">The Efficiency Curve<a class="headerlink" href="#the-efficiency-curve" title="Permanent link">&para;</a></h3>
-<p>The <strong>efficiency curve</strong> is a plot of a fan's efficiency against airflow at one speed, drawn on the same airflow axis as the pressure and BHP curves. Curve A's static efficiency column traces its shape: zero at shutoff (no airflow), rising to a broad top, then falling back to zero at free delivery (no static pressure). Every fan's static efficiency curve has this hump, because static efficiency is zero at both ends of the pressure curve by definition. What differs between fan types is how high the hump rises and how wide it is. The efficiency curve turns "can this fan do the duty?" into "how well will it do it?", which is the question that drives operating cost.</p>
+<p>The <strong><abbr tabindex="0" title="A plot of a fan's efficiency against airflow at one speed, drawn on the same airflow axis as the pressure and power curves.">efficiency curve</abbr></strong> is a plot of a fan's efficiency against airflow at one speed, drawn on the same airflow axis as the pressure and BHP curves. Curve A's static efficiency column traces its shape: zero at shutoff (no airflow), rising to a broad top, then falling back to zero at free delivery (no static pressure). Every fan's static efficiency curve has this hump, because static efficiency is zero at both ends of the pressure curve by definition. What differs between fan types is how high the hump rises and how wide it is. The efficiency curve turns "can this fan do the duty?" into "how well will it do it?", which is the question that drives operating cost.</p>
 <h3 id="peak-efficiency">Peak Efficiency<a class="headerlink" href="#peak-efficiency" title="Permanent link">&para;</a></h3>
-<p><strong>Peak efficiency</strong> is the highest efficiency on a fan's efficiency curve, and the airflow and pressure where it occurs. Curve A peaks at about 70% static efficiency between 8,000 and 10,000 CFM. Selecting at or near peak efficiency is the single best way to keep both power and noise down, since a fan running well off its peak wastes energy as turbulence. Peak efficiency is a property of the fan design at a given point of rating, not of one operating speed, which the fan laws below will make clear.</p>
+<p><strong><abbr tabindex="0" title="The highest efficiency on a fan's efficiency curve, together with the airflow and pressure where it occurs.">Peak efficiency</abbr></strong> is the highest efficiency on a fan's efficiency curve, and the airflow and pressure where it occurs. Curve A peaks at about 70% static efficiency between 8,000 and 10,000 CFM. Selecting at or near peak efficiency is the single best way to keep both power and noise down, since a fan running well off its peak wastes energy as turbulence. Peak efficiency is a property of the fan design at a given point of rating, not of one operating speed, which the <abbr tabindex="0" title="Proportionality rules predicting how a fan's airflow, pressure, and power change with speed, size, or air density for geometrically similar fans at the same point of rating.">fan laws</abbr> below will make clear.</p>
 <h4 id="worked-example-same-duty-different-position-on-the-curve">Worked Example: Same Duty, Different Position on the Curve<a class="headerlink" href="#worked-example-same-duty-different-position-on-the-curve" title="Permanent link">&para;</a></h4>
 <p>A customer needs 12,000 CFM at 3.2 in. wg. Curve A at 1,380 RPM passes exactly through that point, so it "meets the duty," but its static efficiency there is 64% and it absorbs 9.5 BHP. The duty sits to the right of the efficiency peak.</p>
 <p>Now consider the next larger size of the same design, selected so that 12,000 CFM at 3.2 in. wg falls at its peak of 70% (illustrative). Its BHP from the fan power equation is:</p>
 <div class="arithmatex">\[ BHP = \frac{12{,}000 \times 3.2}{6356 \times 0.70} = \frac{38{,}400}{4{,}449} = 8.63 \text{ BHP} \]</div>
-<p>The larger fan saves about 0.87 BHP, roughly 9%, at the same airflow and pressure. It also turns slower, which usually means less noise and longer bearing life. Against that, it costs more and takes more space. Peak efficiency does not decide the selection on its own, but a selection far from peak should always prompt the question, "Why not the next size?"</p>
+<p>The larger fan saves about 0.87 BHP, roughly 9%, at the same airflow and pressure. It also turns slower, which usually means less noise and longer <abbr tabindex="0" title="A statistical estimate of how long bearings will run before failing from metal fatigue, based on bearing geometry, load, and speed.">bearing life</abbr>. Against that, it costs more and takes more space. Peak efficiency does not decide the selection on its own, but a selection far from peak should always prompt the question, "Why not the next size?"</p>
 <h2 id="the-fan-laws">The Fan Laws<a class="headerlink" href="#the-fan-laws" title="Permanent link">&para;</a></h2>
 <h3 id="what-the-fan-laws-say">What the Fan Laws Say<a class="headerlink" href="#what-the-fan-laws-say" title="Permanent link">&para;</a></h3>
-<p>The <strong>fan laws</strong> are a set of proportionality rules that predict how a fan's airflow, pressure and power change when its speed, its size or the air density changes. They hold for geometrically similar fans (the same design scaled up or down, or the same fan at a different speed) operating at the same point of rating, meaning the same relative position on their curves. Under those conditions the efficiency does not change, so every point on a fan curve maps to a point on the new curve.</p>
+<p>The <strong>fan laws</strong> are a set of proportionality rules that predict how a fan's airflow, pressure and power change when its speed, its size or the <abbr tabindex="0" title="The mass of air in one cubic foot, stated in pounds per cubic foot (lb/ft³); 0.075 lb/ft³ at standard conditions.">air density</abbr> changes. They hold for geometrically similar fans (the same design scaled up or down, or the same fan at a different speed) operating at the same point of rating, meaning the same relative position on their curves. Under those conditions the efficiency does not change, so every point on a fan curve maps to a point on the new curve.</p>
 <h4 id="fan-laws">Fan Laws<a class="headerlink" href="#fan-laws" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ \frac{Q_2}{Q_1} = \frac{N_2}{N_1} \left( \frac{D_2}{D_1} \right)^3 \]</div>
 <div class="arithmatex">\[ \frac{P_2}{P_1} = \left( \frac{N_2}{N_1} \right)^2 \left( \frac{D_2}{D_1} \right)^2 \frac{\rho_2}{\rho_1} \]</div>
@@ -3552,15 +3616,15 @@ A common trap is checking the selection only at the design point. An outlet damp
 <li>subscript 1 is the known condition and subscript 2 the new one</li>
 </ul>
 <p>For one fan at one density, the diameter and density ratios are 1 and the laws shrink to three short rules that are worth memorizing. <strong>Airflow varies directly with speed</strong>: each revolution sweeps the same volume, so 10% more speed moves 10% more air.</p>
-<p><strong>Pressure varies as speed squared.</strong> Pressure developed by an impeller is proportional to the square of its tip speed, the same velocity-squared relation behind velocity pressure in <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a>. A 10% speed increase raises pressure by <span class="arithmatex">\( 1.1^2 = 1.21 \)</span>, or 21%. The same rule explains why system resistance rises with airflow squared: the system curve through zero and the fan law for pressure are the same parabola.</p>
-<p><strong>Power varies with speed cubed.</strong> Power is airflow times pressure, so it carries one power of speed from airflow and two from pressure. A 10% speed increase raises BHP by <span class="arithmatex">\( 1.1^3 = 1.331 \)</span>, or 33%; a 20% speed reduction cuts it to <span class="arithmatex">\( 0.8^3 = 0.512 \)</span>, or about half; half speed needs one-eighth the power. This is the relationship behind the power savings of speed control in <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a>, and also the reason a modest speed-up can overload a motor that was comfortably sized.</p>
+<p><strong><abbr tabindex="0" title="The fan law stating that a fan's pressure changes in proportion to the square of the speed ratio.">Pressure varies as speed squared</abbr>.</strong> Pressure developed by an impeller is proportional to the square of its <abbr tabindex="0" title="The linear speed of the outermost point of the impeller blades, in feet per minute, set by impeller diameter and rotating speed.">tip speed</abbr>, the same velocity-squared relation behind <abbr tabindex="0" title="The pressure that a moving airstream would produce if brought to rest, representing the kinetic energy of the air.">velocity pressure</abbr> in <a href="../02-airstreams-total-pressure-standard-air/">Chapter 2</a>. A 10% speed increase raises pressure by <span class="arithmatex">\( 1.1^2 = 1.21 \)</span>, or 21%. The same rule explains why system resistance rises with airflow squared: the system curve through zero and the fan law for pressure are the same parabola.</p>
+<p><strong><abbr tabindex="0" title="The fan law stating that brake horsepower changes in proportion to the cube of the speed ratio.">Power varies with speed cubed</abbr>.</strong> Power is airflow times pressure, so it carries one power of speed from airflow and two from pressure. A 10% speed increase raises BHP by <span class="arithmatex">\( 1.1^3 = 1.331 \)</span>, or 33%; a 20% speed reduction cuts it to <span class="arithmatex">\( 0.8^3 = 0.512 \)</span>, or about half; half speed needs one-eighth the power. This is the relationship behind the power savings of speed control in <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a>, and also the reason a modest speed-up can overload a motor that was comfortably sized.</p>
 <div class="admonition mascot-thinking">
 <p class="admonition-title">The Fan Laws Slide Along the System Curve</p>
 <p><img alt="Breeze thinking" class="mascot-admonition-img" src="../../img/mascot/thinking.png" />
 Notice that airflow goes with speed and pressure with speed squared, so pressure goes with airflow squared: exactly the shape of a system curve through zero. When you change a fan's speed on a pure-resistance system, the operating point slides along the system curve and stays at the same efficiency. That is why the fan laws work so well for speed changes and why they need care when the system has a fixed pressure component.</p>
 </div>
 <h3 id="speed-change-calculation">Speed Change Calculation<a class="headerlink" href="#speed-change-calculation" title="Permanent link">&para;</a></h3>
-<p>A <strong>speed change calculation</strong> applies the fan laws to find the new speed, pressure and power when a fan on the same system must deliver a different airflow. It is the most common fan-law job: a building gets a new zone, a process adds a hood, or a test-and-balance report says the fan is short.</p>
+<p>A <strong><abbr tabindex="0" title="An application of the fan laws that finds the new speed, pressure, and power when a fan on the same system must deliver a different airflow.">speed change calculation</abbr></strong> applies the fan laws to find the new speed, pressure and power when a fan on the same system must deliver a different airflow. It is the most common fan-law job: a building gets a new zone, a process adds a hood, or a test-and-balance report says the fan is short.</p>
 <h4 id="worked-example-speeding-up-for-more-air">Worked Example: Speeding Up for More Air<a class="headerlink" href="#worked-example-speeding-up-for-more-air" title="Permanent link">&para;</a></h4>
 <p>Curve A runs at 1,380 RPM, delivering 10,000 CFM at 4.0 in. wg and 9.0 BHP. The system has no fixed pressure component (its curve passes through zero). The owner wants 11,500 CFM through the same system.</p>
 <ol>
@@ -3568,11 +3632,11 @@ Notice that airflow goes with speed and pressure with speed squared, so pressure
 <li><strong>New speed.</strong> <span class="arithmatex">\( N_2 = 1{,}380 \times 1.15 = 1{,}587 \)</span> RPM.</li>
 <li><strong>New pressure.</strong> <span class="arithmatex">\( P_2 = 4.0 \times 1.15^2 = 4.0 \times 1.3225 = 5.29 \)</span> in. wg. This is also the system's resistance at 11,500 CFM, as it must be.</li>
 <li><strong>New power.</strong> <span class="arithmatex">\( BHP_2 = 9.0 \times 1.15^3 = 9.0 \times 1.521 = 13.69 \)</span> BHP.</li>
-<li><strong>Checks.</strong> A 15% airflow increase needs 52% more power, so the 10 hp motor is now overloaded and a 15 hp motor is required. The new speed must also be below the maximum safe speed for the fan's class from Chapter 10, and the drive must be resized for the new sheave ratio.</li>
+<li><strong>Checks.</strong> A 15% airflow increase needs 52% more power, so the 10 hp motor is now overloaded and a 15 hp motor is required. The new speed must also be below the <abbr tabindex="0" title="The highest RPM at which the manufacturer allows a particular fan size and construction to operate, set by rotating-part strength, critical speed, and bearing limits.">maximum safe speed</abbr> for the fan's class from Chapter 10, and the drive must be resized for the new <abbr tabindex="0" title="A grooved pulley mounted on the motor shaft or the fan shaft that carries the drive belts, fastened with or without a bushing; the motor-shaft one is the drive pulley and the fan-shaft one the driven pulley.">sheave</abbr> ratio.</li>
 </ol>
 <p>The efficiency at the new point is still 70%: <span class="arithmatex">\( 11{,}500 \times 5.29 / (6356 \times 13.69) = 0.699 \)</span>. The calculation took five lines and a calculator, which is why the fan laws are the first tool to reach for when a customer asks "what if?"</p>
 <h3 id="size-change-calculation">Size Change Calculation<a class="headerlink" href="#size-change-calculation" title="Permanent link">&para;</a></h3>
-<p>A <strong>size change calculation</strong> applies the fan laws to the next larger or smaller size of a geometrically similar fan. At the same speed, airflow scales with the cube of the diameter ratio, pressure with its square and power with its fifth power. If the next size up has a diameter 1.12 times larger (illustrative), then at the same RPM it moves <span class="arithmatex">\( 1.12^3 = 1.405 \)</span> times the airflow at <span class="arithmatex">\( 1.12^2 = 1.254 \)</span> times the pressure and absorbs <span class="arithmatex">\( 1.12^5 = 1.762 \)</span> times the power. Size changes are usually paired with a lower speed, so the larger fan meets the same duty more slowly and more efficiently. Real product lines are not always perfectly similar from size to size, so for an order the catalog or selection software for the actual size governs; the fan laws give the estimate.</p>
+<p>A <strong><abbr tabindex="0" title="An application of the fan laws to a geometrically similar fan of another size, with airflow scaling by the diameter ratio cubed, pressure squared, and power to the fifth power.">size change calculation</abbr></strong> applies the fan laws to the next larger or smaller size of a geometrically similar fan. At the same speed, airflow scales with the cube of the diameter ratio, pressure with its square and power with its fifth power. If the next size up has a diameter 1.12 times larger (illustrative), then at the same RPM it moves <span class="arithmatex">\( 1.12^3 = 1.405 \)</span> times the airflow at <span class="arithmatex">\( 1.12^2 = 1.254 \)</span> times the pressure and absorbs <span class="arithmatex">\( 1.12^5 = 1.762 \)</span> times the power. Size changes are usually paired with a lower speed, so the larger fan meets the same duty more slowly and more efficiently. Real product lines are not always perfectly similar from size to size, so for an order the catalog or selection software for the actual size governs; the fan laws give the estimate.</p>
 <p>Before using the calculator below, note that it works entirely in ratios: enter the change in speed, diameter or density and it applies the three fan laws to Curve A.</p>
 <h4 id="diagram-fan-law-calculator">Diagram: Fan Law Calculator<a class="headerlink" href="#diagram-fan-law-calculator" title="Permanent link">&para;</a></h4>
 <iframe src="../../sims/ch25-fan-law-calculator/main.html" width="100%" height="642px" scrolling="no"></iframe>
@@ -3586,7 +3650,7 @@ Notice that airflow goes with speed and pressure with speed squared, so pressure
 <strong>Bloom Level:</strong> Apply<br/>
 <strong>Bloom Verb:</strong> solve<br/>
 <strong>Learning Objective:</strong> The learner will solve fan-law problems for a new speed, pressure or brake horsepower after a change in speed, impeller diameter or air density, to within 2% of the model value.</p>
-<p><strong>Prerequisites:</strong> fan laws, speed change calculation, size change calculation, fan curve, system curve, static efficiency, density correction factor (defined in "The Fan Laws" section above and in Chapter 10).</p>
+<p><strong>Prerequisites:</strong> fan laws, speed change calculation, size change calculation, fan curve, system curve, static efficiency, <abbr tabindex="0" title="The ratio of actual air density to standard air density, used to convert between catalog and job values of pressure and power.">density correction factor</abbr> (defined in "The Fan Laws" section above and in Chapter 10).</p>
 <p><strong>Evidence of Mastery:</strong> Four challenges, each answered by typing one number before the result is revealed. An answer is correct when |answer − model| ÷ model &lt;= 0.02. Mastery is 4 of 4. Moving the ratio controls during exploration is not evidence.</p>
 <p><strong>Misconceptions:</strong> (1) Power rises in proportion to speed. (2) Doubling the diameter doubles the airflow. (3) Changing speed changes the fan's efficiency on a pure-resistance system. (4) Hotter, lighter air changes the CFM a fan moves.</p>
 <p><strong>Instructional Rationale:</strong> Apply-level calculation needs practice with a check, so the learner commits a number before the redrawn curve and readouts appear. Free exploration afterward lets the learner watch the operating point slide along the system curve at constant efficiency, which confronts misconception 3.</p>
@@ -3726,14 +3790,14 @@ Notice that airflow goes with speed and pressure with speed squared, so pressure
 <p><strong>Chapter Anchors:</strong> Curve A: 10,000 CFM, 4.0 in. wg, 9.0 BHP at 1,380 RPM, 70% static efficiency. Speed-up to 11,500 CFM: 1,587 RPM, 5.29 in. wg, 13.69 BHP. Diameter ratio 1.12: airflow × 1.405, pressure × 1.254, power × 1.762. Power at 80% speed is 0.512 of the original.</p>
 </details>
 <h3 id="cold-start-horsepower">Cold Start Horsepower<a class="headerlink" href="#cold-start-horsepower" title="Permanent link">&para;</a></h3>
-<p>The density term in the fan laws matters most for hot fans. <strong>Cold start horsepower</strong> is the brake horsepower a fan selected for hot air absorbs when it starts and runs on cold, denser air before the airstream reaches its operating temperature. At the same speed the fan moves the same CFM, but BHP rises in proportion to density. Chapter 10's oven exhaust fan absorbs 3.7 BHP on 200°F air; on 70°F air at start-up it absorbs the full standard-air value of 4.6 BHP, about 24% more, and on 0°F air it would absorb <span class="arithmatex">\( 4.6 \times 1.152 = 5.3 \)</span> BHP. For high-temperature fans the gap is larger: a fan running on 600°F air has a temperature factor of 0.500, so its cold start horsepower is twice its running horsepower. The motor must be sized for the cold start condition, or the start-up must be managed with a damper, inlet vanes or speed control, a choice developed in <a href="../27-fan-selection-and-writing-the-specification/">Chapter 27</a>.</p>
+<p>The density term in the fan laws matters most for hot fans. <strong><abbr tabindex="0" title="The brake horsepower a fan selected for hot air absorbs when it starts and runs on cold, denser air before the airstream reaches operating temperature.">Cold start horsepower</abbr></strong> is the brake horsepower a fan selected for hot air absorbs when it starts and runs on cold, denser air before the airstream reaches its operating temperature. At the same speed the fan moves the same CFM, but BHP rises in proportion to density. Chapter 10's oven exhaust fan absorbs 3.7 BHP on 200°F air; on 70°F air at start-up it absorbs the full standard-air value of 4.6 BHP, about 24% more, and on 0°F air it would absorb <span class="arithmatex">\( 4.6 \times 1.152 = 5.3 \)</span> BHP. For high-temperature fans the gap is larger: a fan running on 600°F air has a temperature factor of 0.500, so its cold start horsepower is twice its running horsepower. The motor must be sized for the cold start condition, or the start-up must be managed with a damper, inlet vanes or speed control, a choice developed in <a href="../27-fan-selection-and-writing-the-specification/">Chapter 27</a>.</p>
 <div class="admonition mascot-tip">
 <p class="admonition-title">Sanity-Check Any Fan-Law Answer With the Exponents</p>
 <p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
 Here's a quick self-check: for a speed change, the pressure ratio must equal the airflow ratio squared and the power ratio must equal the airflow ratio cubed. If 15% more air came out with less than 50% more power, an exponent is wrong somewhere.</p>
 </div>
 <h3 id="specific-speed">Specific Speed<a class="headerlink" href="#specific-speed" title="Permanent link">&para;</a></h3>
-<p><strong>Specific speed</strong> is a single number that characterizes a fan design by combining its speed, airflow and pressure at the point of rating, usually the peak efficiency point.</p>
+<p><strong><abbr tabindex="0" title="A single number that characterizes a fan design by combining its speed, airflow, and pressure at the point of rating, usually peak efficiency.">Specific speed</abbr></strong> is a single number that characterizes a fan design by combining its speed, airflow and pressure at the point of rating, usually the peak efficiency point.</p>
 <h4 id="specific-speed_1">Specific Speed<a class="headerlink" href="#specific-speed_1" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ N_s = \frac{N \sqrt{Q}}{P^{3/4}} \]</div>
 <p>where:</p>
@@ -3741,10 +3805,10 @@ Here's a quick self-check: for a speed change, the pressure ratio must equal the
 <li><span class="arithmatex">\( N_s \)</span> is specific speed (in the units used; not dimensionless as written)</li>
 <li><span class="arithmatex">\( N \)</span> is speed in RPM, <span class="arithmatex">\( Q \)</span> is airflow in CFM and <span class="arithmatex">\( P \)</span> is pressure in in. wg</li>
 </ul>
-<p>Because the fan laws leave it unchanged when speed or size changes, specific speed belongs to the design, not to one fan. Curve A at its rated point gives <span class="arithmatex">\( 1{,}380 \times \sqrt{10{,}000} / 4.0^{0.75} \approx 48{,}800 \)</span>. Low specific speeds suit high-pressure, low-flow duties, the territory of radial and narrow centrifugal impellers; high specific speeds suit high-flow, low-pressure duties, the territory of axial fans. Values compare only when computed in the same units and pressure basis.</p>
+<p>Because the fan laws leave it unchanged when speed or size changes, specific speed belongs to the design, not to one fan. Curve A at its rated point gives <span class="arithmatex">\( 1{,}380 \times \sqrt{10{,}000} / 4.0^{0.75} \approx 48{,}800 \)</span>. Low specific speeds suit high-pressure, low-flow duties, the territory of radial and narrow <abbr tabindex="0" title="An impeller that draws air in along the shaft axis and throws it outward at a right angle to the shaft off the blade tips.">centrifugal impellers</abbr>; high specific speeds suit high-flow, low-pressure duties, the territory of <abbr tabindex="0" title="A fan in which air enters and leaves the impeller parallel to the shaft, with swirl added by the rotating blades.">axial fans</abbr>. Values compare only when computed in the same units and pressure basis.</p>
 <h2 id="where-to-select-duty-point-and-fan-energy-index">Where to Select: Duty Point and Fan Energy Index<a class="headerlink" href="#where-to-select-duty-point-and-fan-energy-index" title="Permanent link">&para;</a></h2>
 <h3 id="duty-point">Duty Point<a class="headerlink" href="#duty-point" title="Permanent link">&para;</a></h3>
-<p>The <strong>duty point</strong> is the airflow and pressure, at a stated air density, that a specification requires the fan to deliver: for example, "10,000 CFM at 4.0 in. wg fan static pressure, standard air." It is the customer's target. The operating point from Chapter 10 is what actually happens where the fan and system curves cross, and the selection point is the catalog speed and BHP at which the fan meets the duty. On a good job all three coincide. When they do not, the gap usually traces to a missing density correction, a system resistance estimated wrong, or system effect, which this chapter covers next. The duty point is also where efficiency requirements are judged.</p>
+<p>The <strong><abbr tabindex="0" title="The airflow and pressure, at a stated air density, that a specification requires a fan to deliver.">duty point</abbr></strong> is the airflow and pressure, at a stated air density, that a specification requires the fan to deliver: for example, "10,000 CFM at 4.0 in. wg fan static pressure, standard air." It is the customer's target. The operating point from Chapter 10 is what actually happens where the fan and system curves cross, and the selection point is the catalog speed and BHP at which the fan meets the duty. On a good job all three coincide. When they do not, the gap usually traces to a missing density correction, a system resistance estimated wrong, or <abbr tabindex="0" title="The loss of fan performance caused by the way a fan is connected to its system, expressed as an added pressure loss the selection must account for.">system effect</abbr>, which this chapter covers next. The duty point is also where <abbr tabindex="0" title="A project's rules on fan energy use, such as a minimum efficiency rating, selection near peak efficiency, a motor efficiency standard, or a BHP cap.">efficiency requirements</abbr> are judged.</p>
 <h4 id="worked-example-restoring-the-duty-point-after-system-effect">Worked Example: Restoring the Duty Point After System Effect<a class="headerlink" href="#worked-example-restoring-the-duty-point-after-system-effect" title="Permanent link">&para;</a></h4>
 <p>Chapter 10 left Curve A short of air: an elbow on its inlet added an illustrative 0.5 in. wg of system effect at 10,000 CFM, so the effective system curve passes through 4.5 in. wg at 10,000 CFM, and the fan at 1,380 RPM settles at about 9,560 CFM and 4.11 in. wg, absorbing about 8.80 BHP. The duty point is still 10,000 CFM. The fan laws find the fix.</p>
 <ol>
@@ -3752,11 +3816,11 @@ Here's a quick self-check: for a speed change, the pressure ratio must equal the
 <li><strong>New speed.</strong> <span class="arithmatex">\( 1{,}380 \times 1.046 = 1{,}444 \)</span> RPM.</li>
 <li><strong>Pressure check.</strong> <span class="arithmatex">\( 4.11 \times 1.046^2 = 4.50 \)</span> in. wg, matching the effective system curve at 10,000 CFM.</li>
 <li><strong>Power.</strong> <span class="arithmatex">\( 8.80 \times 1.046^3 = 10.08 \)</span> BHP.</li>
-<li><strong>Motor.</strong> 10.08 BHP is above a 10 hp nameplate. Service factor is margin, not capacity (<a href="../14-fan-motors-and-enclosures/">Chapter 14</a>), so the motor goes to 15 hp, or the elbow is replaced with an inlet box or straight duct and the original 1,380 RPM and 10 hp stand.</li>
+<li><strong>Motor.</strong> 10.08 BHP is above a 10 hp nameplate. Service factor is margin, not capacity (<a href="../14-fan-motors-and-enclosures/">Chapter 14</a>), so the motor goes to 15 hp, or the elbow is replaced with an <abbr tabindex="0" title="A sheet-metal enclosure on a fan inlet that receives air from the side, at an angle, or from above or below and turns it into the inlet with minimal loss.">inlet box</abbr> or straight duct and the original 1,380 RPM and 10 hp stand.</li>
 </ol>
 <p>The 9,560 CFM point sits at about 70% efficiency on Curve A, so the speeded-up fan still operates at peak efficiency. The cost of the elbow is about 1.1 BHP, around 12% more power, every hour the fan runs.</p>
 <h3 id="fan-energy-index">Fan Energy Index<a class="headerlink" href="#fan-energy-index" title="Permanent link">&para;</a></h3>
-<p>Efficiency at the duty point is now regulated. The <strong>Fan Energy Index (FEI)</strong> is the ratio of the electrical input power of a reference fan to the electrical input power of the actual fan, both delivering the same airflow and pressure. It is defined in AMCA Standard 208. The reference fan's power comes from a formula based only on the duty's airflow and pressure, so it is the same for every manufacturer.</p>
+<p>Efficiency at the duty point is now regulated. The <strong><abbr tabindex="0" title="The ratio, defined in AMCA Standard 208, of a reference fan's electrical input power to the actual fan's input power at the same airflow and pressure; abbreviated FEI.">Fan Energy Index</abbr> (FEI)</strong> is the ratio of the electrical input power of a reference fan to the electrical input power of the actual fan, both delivering the same airflow and pressure. It is defined in AMCA Standard 208. The reference fan's power comes from a formula based only on the duty's airflow and pressure, so it is the same for every manufacturer.</p>
 <h4 id="fan-energy-index_1">Fan Energy Index<a class="headerlink" href="#fan-energy-index_1" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ FEI = \frac{FEP_{ref}}{FEP_{act}} \]</div>
 <p>where:</p>
@@ -3764,7 +3828,7 @@ Here's a quick self-check: for a speed change, the pressure ratio must equal the
 <li><span class="arithmatex">\( FEP_{ref} \)</span> is the fan electrical input power of the reference fan at the duty point, in kW</li>
 <li><span class="arithmatex">\( FEP_{act} \)</span> is the fan electrical input power of the actual fan at the same duty point, in kW, including motor, drive and any speed-control losses</li>
 </ul>
-<p>An FEI of 1.00 means the fan uses exactly the reference power; above 1.00 it uses less, below 1.00 it uses more. Because FEI is calculated at a duty point, one fan model has a different FEI at every point on its curve. Energy codes and standards, including ASHRAE Standard 90.1 and several state regulations, set minimum FEI values at the design point, so FEI is now part of many specifications. The older Fan Efficiency Grade, which rated a fan by its peak efficiency alone, is covered in Chapter 27.</p>
+<p>An FEI of 1.00 means the fan uses exactly the reference power; above 1.00 it uses less, below 1.00 it uses more. Because FEI is calculated at a duty point, one fan model has a different FEI at every point on its curve. Energy codes and standards, including ASHRAE Standard 90.1 and several state regulations, set minimum FEI values at the design point, so FEI is now part of many specifications. The older <abbr tabindex="0" title="An AMCA Standard 205 label classifying a fan's peak total efficiency, adjusted for impeller diameter, into bands such as FEG 67 to FEG 85; abbreviated FEG.">Fan Efficiency Grade</abbr>, which rated a fan by its peak efficiency alone, is covered in Chapter 27.</p>
 <h4 id="worked-example-same-fan-two-duty-points">Worked Example: Same Fan, Two Duty Points<a class="headerlink" href="#worked-example-same-fan-two-duty-points" title="Permanent link">&para;</a></h4>
 <p>Curve A is driven by a belt with 97% efficiency and a motor with 93% efficiency (illustrative). The reference powers below are illustrative values of the kind selection software reports from the AMCA 208 formula.</p>
 <table>
@@ -3807,19 +3871,19 @@ Here's a quick self-check: for a speed change, the pressure ratio must equal the
 <h2 id="system-effect-in-detail">System Effect in Detail<a class="headerlink" href="#system-effect-in-detail" title="Permanent link">&para;</a></h2>
 <p>Chapter 10 introduced <strong>system effect</strong> as the loss of fan performance caused by the way a fan is connected to its system, and its values come from AMCA Publication 201, <em>Fans and Systems</em>. This section separates the inlet and outlet cases and adds the vocabulary AMCA uses to rate and correct for them.</p>
 <h3 id="amca-installation-type">AMCA Installation Type<a class="headerlink" href="#amca-installation-type" title="Permanent link">&para;</a></h3>
-<p>A fan's catalog rating depends on whether ducts were connected to its inlet and outlet during the test, because a duct changes how air approaches and leaves the impeller. The AMCA 210 test standard therefore defines four <strong>AMCA installation types</strong>, by whether each side of the fan is free (open to the surroundings) or ducted:</p>
+<p>A fan's catalog rating depends on whether ducts were connected to its inlet and outlet during the test, because a duct changes how air approaches and leaves the impeller. The AMCA 210 test standard therefore defines four <strong><abbr tabindex="0" title="One of four test configurations defined by AMCA 210 by whether the fan inlet and outlet are free or ducted: Type A, B, C, or D.">AMCA installation types</abbr></strong>, by whether each side of the fan is free (open to the surroundings) or ducted:</p>
 <ul>
 <li><strong>Type A:</strong> free inlet, free outlet</li>
 <li><strong>Type B:</strong> free inlet, ducted outlet</li>
 <li><strong>Type C:</strong> ducted inlet, free outlet</li>
 <li><strong>Type D:</strong> ducted inlet, ducted outlet</li>
 </ul>
-<p>A certified catalog rating states which installation type it applies to. Applying a rating made for one type to a job installed as another is a common source of field shortfall: a fan rated with a ducted outlet but installed discharging straight into a plenum loses the benefit of the outlet duct, and that loss is an outlet system effect. The installation type is part of the duty statement, just as density is.</p>
+<p>A certified catalog rating states which installation type it applies to. Applying a rating made for one type to a job installed as another is a common source of field shortfall: a fan rated with a ducted outlet but installed discharging straight into a plenum loses the benefit of the outlet duct, and that loss is an <abbr tabindex="0" title="Loss of fan performance caused by the outlet connection, such as a missing or short outlet duct, a close elbow or damper, or an abrupt expansion.">outlet system effect</abbr>. The installation type is part of the duty statement, just as density is.</p>
 <h4 id="worked-example-classify-the-job-then-check-the-rating">Worked Example: Classify the Job, Then Check the Rating<a class="headerlink" href="#worked-example-classify-the-job-then-check-the-rating" title="Permanent link">&para;</a></h4>
 <p>An outside sales engineer is quoting four fans on one project and must confirm each rating basis:</p>
 <ol>
 <li><strong>A plug (plenum) fan in an air handler cabinet.</strong> It draws from the open cabinet and discharges into the cabinet: free inlet, free outlet, <strong>Type A</strong>.</li>
-<li><strong>A centrifugal fan with an open inlet funnel in an equipment room, discharging into a supply duct.</strong> Free inlet, ducted outlet, <strong>Type B</strong>.</li>
+<li><strong>A <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr> with an open <abbr tabindex="0" title="The aerodynamically shaped piece, flanged to mount on the housing, that guides air smoothly into the impeller; also called an inlet cone, funnel, or inlet bell.">inlet funnel</abbr> in an equipment room, discharging into a supply duct.</strong> Free inlet, ducted outlet, <strong>Type B</strong>.</li>
 <li><strong>A roof upblast exhaust fan connected to a kitchen exhaust duct from below, discharging to atmosphere.</strong> Ducted inlet, free outlet, <strong>Type C</strong>.</li>
 <li><strong>An inline fan in the middle of a duct run.</strong> Ducted on both sides, <strong>Type D</strong>.</li>
 </ol>
@@ -3914,12 +3978,12 @@ Here's a quick self-check: for a speed change, the pressure ratio must equal the
 </ol>
 <p><strong>Feedback:</strong> 8 descriptions, shuffled order, one committed answer each counted for the score; after an incorrect answer the learner may move the item once more, but only the first answer counts. Correct: "Correct: Type <letter>. <Why>." Incorrect: "Not quite. <Why>" followed by the correct letter. A running count "Correct on first try: n of 8" is shown.</p>
 <p><strong>Starting State:</strong> Four empty bins with their definitions and the first description shown, with the question "Is each side of this fan free or ducted?"</p>
-<p><strong>Chapter Anchors:</strong> The chapter's worked example classifies a plug fan in an air handler as Type A, a centrifugal fan with an open inlet funnel and a supply duct as Type B, a roof upblast exhaust fan on a kitchen duct as Type C, and an inline fan as Type D. The sorter has 8 items; mastery is 7 of 8.</p>
+<p><strong>Chapter Anchors:</strong> The chapter's worked example classifies a <abbr tabindex="0" title="An unhoused centrifugal fan mounted on a panel fastened to the outside of a plenum wall, with the impeller inside the plenum.">plug fan</abbr> in an air handler as Type A, a centrifugal fan with an open inlet funnel and a supply duct as Type B, a roof upblast exhaust fan on a kitchen duct as Type C, and an inline fan as Type D. The sorter has 8 items; mastery is 7 of 8.</p>
 </details>
 <h3 id="inlet-system-effect">Inlet System Effect<a class="headerlink" href="#inlet-system-effect" title="Permanent link">&para;</a></h3>
-<p><strong>Inlet system effect</strong> is the loss of fan performance caused by conditions at the fan inlet that keep air from entering the impeller smoothly and evenly. The impeller is designed for air arriving straight and uniform; anything else makes some blades work harder than others. The common causes are an elbow bolted directly to the inlet, which crowds air to one side; a plenum wall or obstruction too close to an open inlet; and swirl, or prerotation, in the incoming air. Swirl in the direction of impeller rotation reduces airflow and pressure much as an inlet vane does; swirl against rotation raises power. Inlet losses are usually larger than outlet losses for the same fault. FanPedia's answer to the elbow case is the inlet box, which "is designed to minimize the system effect of a 90 degree turn into the fan" (FanPedia p. 187).</p>
+<p><strong><abbr tabindex="0" title="Loss of fan performance caused by inlet conditions that keep air from entering the impeller smoothly and evenly.">Inlet system effect</abbr></strong> is the loss of fan performance caused by conditions at the fan inlet that keep air from entering the impeller smoothly and evenly. The impeller is designed for air arriving straight and uniform; anything else makes some blades work harder than others. The common causes are an elbow bolted directly to the inlet, which crowds air to one side; a plenum wall or obstruction too close to an open inlet; and swirl, or prerotation, in the incoming air. Swirl in the direction of impeller rotation reduces airflow and pressure much as an inlet vane does; swirl against rotation raises power. Inlet losses are usually larger than outlet losses for the same fault. FanPedia's answer to the elbow case is the inlet box, which "is designed to minimize the system effect of a 90 degree turn into the fan" (FanPedia p. 187).</p>
 <h3 id="effective-duct-length">Effective Duct Length<a class="headerlink" href="#effective-duct-length" title="Permanent link">&para;</a></h3>
-<p>Air leaves a centrifugal fan outlet with a lopsided velocity profile, fastest along the outer wall of the scroll. It needs a length of straight duct to even out. <strong>Effective duct length</strong> is the length of straight outlet duct needed for that profile to become uniform, which AMCA 201 defines from the outlet velocity and the duct's equivalent diameter.</p>
+<p>Air leaves a centrifugal fan outlet with a lopsided velocity profile, fastest along the outer wall of the scroll. It needs a length of straight duct to even out. <strong><abbr tabindex="0" title="The length of straight outlet duct, defined in AMCA 201 from outlet velocity and duct equivalent diameter, needed for a fan's outlet velocity profile to become uniform.">Effective duct length</abbr></strong> is the length of straight outlet duct needed for that profile to become uniform, which AMCA 201 defines from the <abbr tabindex="0" title="The average speed of air leaving a fan, in feet per minute, equal to airflow volume divided by outlet area.">outlet velocity</abbr> and the duct's equivalent diameter.</p>
 <h4 id="effective-duct-length_1">Effective Duct Length<a class="headerlink" href="#effective-duct-length_1" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ L_e = D_e \left( 2.5 + \frac{V - 2{,}500}{1{,}000} \right) \text{ for } V &gt; 2{,}500 \text{ fpm}, \qquad L_e = 2.5\,D_e \text{ for } V \le 2{,}500 \text{ fpm} \]</div>
 <p>where:</p>
@@ -3930,21 +3994,21 @@ Here's a quick self-check: for a speed change, the pressure ratio must equal the
 </ul>
 <p>For a 24 × 30 in. outlet at 3,500 fpm, <span class="arithmatex">\( D_e = \sqrt{4 \times 24 \times 30 / \pi} = 30.3 \)</span> in., and <span class="arithmatex">\( L_e = 3.5 \times 30.3 = 106 \)</span> in., about 8.8 ft of straight duct before the first elbow.</p>
 <h3 id="outlet-system-effect">Outlet System Effect<a class="headerlink" href="#outlet-system-effect" title="Permanent link">&para;</a></h3>
-<p><strong>Outlet system effect</strong> is the loss of fan performance caused by the outlet connection: no outlet duct, an outlet duct shorter than the effective duct length, an elbow or damper too close to the outlet, or an abrupt expansion. Its size depends on how much of the effective duct length is present and on the outlet velocity, so a high-velocity fan with an elbow right at the outlet pays the most. An elbow placed after a full effective duct length adds only its ordinary duct loss; the same elbow bolted to the outlet adds a system effect on top. Where the outlet orientation forces a turn, choosing the discharge position so the elbow turns in the same direction as the scroll (<a href="../12-discharge-positions-and-rotation/">Chapter 12</a>) reduces the loss.</p>
+<p><strong>Outlet system effect</strong> is the loss of fan performance caused by the outlet connection: no outlet duct, an outlet duct shorter than the effective duct length, an elbow or damper too close to the outlet, or an abrupt expansion. Its size depends on how much of the effective duct length is present and on the outlet velocity, so a high-velocity fan with an elbow right at the outlet pays the most. An elbow placed after a full effective duct length adds only its ordinary duct loss; the same elbow bolted to the outlet adds a system effect on top. Where the outlet orientation forces a turn, choosing the <abbr tabindex="0" title="The direction in which air leaves a centrifugal fan's housing outlet, described from the drive side.">discharge position</abbr> so the elbow turns in the same direction as the scroll (<a href="../12-discharge-positions-and-rotation/">Chapter 12</a>) reduces the loss.</p>
 <h3 id="system-effect-curve">System Effect Curve<a class="headerlink" href="#system-effect-curve" title="Permanent link">&para;</a></h3>
-<p>A <strong>system effect curve</strong> is a chart in AMCA 201 that gives system effect, in in. wg, against the velocity at the fan inlet or outlet. AMCA 201 presents a family of these curves, identified by letter, and tables that assign a curve to each connection: a given elbow at a given distance from the inlet, an outlet duct of a given fraction of the effective duct length, and so on. Because system effect is a velocity pressure loss, each curve rises with velocity squared. The procedure is to identify each faulty connection, look up its curve, read the system effect at the job's velocity, and add the result to the design pressure, as in the worked example above. Adding system effect to the designer's system curve produces the effective system curve the fan actually works against.</p>
+<p>A <strong><abbr tabindex="0" title="A lettered chart in AMCA 201 giving system effect in in. wg against velocity at the fan inlet or outlet for a given connection.">system effect curve</abbr></strong> is a chart in AMCA 201 that gives system effect, in in. wg, against the velocity at the fan inlet or outlet. AMCA 201 presents a family of these curves, identified by letter, and tables that assign a curve to each connection: a given elbow at a given distance from the inlet, an outlet duct of a given fraction of the effective duct length, and so on. Because system effect is a velocity pressure loss, each curve rises with velocity squared. The procedure is to identify each faulty connection, look up its curve, read the system effect at the job's velocity, and add the result to the design pressure, as in the worked example above. Adding system effect to the designer's system curve produces the effective system curve the fan actually works against.</p>
 <div class="admonition mascot-encourage">
 <p class="admonition-title">System Effect Takes a Second Pass</p>
 <p><img alt="Breeze encouraging" class="mascot-admonition-img" src="../../img/mascot/encouraging.png" />
 If the inlet cases, outlet cases, effective duct length and lettered curves feel like a lot, that's normal; most people need to work one real job before the tables make sense. Start with the two questions you already know, "What is on the inlet?" and "What is on the outlet?", and look up only what is actually there.</p>
 </div>
 <h2 id="controlling-flow-efficiently">Controlling Flow Efficiently<a class="headerlink" href="#controlling-flow-efficiently" title="Permanent link">&para;</a></h2>
-<p><strong>Flow control efficiency</strong> describes how much of the possible power saving a flow-control method delivers when airflow is reduced. <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a> compared the three methods at 70% airflow with illustrative values: an outlet damper needs about 86% of design power, variable inlet vanes about 67% and speed control about 34%. The damper is least efficient because it throws away pressure the fan has already made; FanPedia notes that outlet damper horsepower savings are "usually much less than other methods" (FanPedia p. 182).</p>
+<p><strong><abbr tabindex="0" title="A measure of how much of the possible power saving a flow-control method delivers when airflow is reduced.">Flow control efficiency</abbr></strong> describes how much of the possible power saving a flow-control method delivers when airflow is reduced. <a href="../18-inlets-outlets-and-flow-control/">Chapter 18</a> compared the three methods at 70% airflow with illustrative values: an outlet damper needs about 86% of design power, <abbr tabindex="0" title="A ring of adjustable radial vanes at a fan inlet that, when partly closed, pre-spin entering air to control flow; also called inlet guide vanes or a vortex damper.">variable inlet vanes</abbr> about 67% and speed control about 34%. The damper is least efficient because it throws away pressure the fan has already made; FanPedia notes that outlet damper horsepower savings are "usually much less than other methods" (FanPedia p. 182).</p>
 <p>The 34% figure is the ideal cube law, and it holds only when the system curve passes through zero. Many systems have a fixed pressure component: a VAV system holding duct static pressure for its terminal units, or a process that must overcome a fixed back-pressure. Suppose 1.5 in. wg of a 4.0 in. wg design must be held at every flow. At 70% airflow the system needs <span class="arithmatex">\( 1.5 + 2.5 \times 0.7^2 = 2.73 \)</span> in. wg, not <span class="arithmatex">\( 4.0 \times 0.7^2 = 1.96 \)</span> in. wg, so air power falls to <span class="arithmatex">\( 0.7 \times 2.73 / 4.0 = 48\% \)</span> of design rather than 34%. Speed control still wins, but by less, and the fan's efficiency shifts as the slowed curve crosses the system curve at a new relative position. Drive and motor losses at low load reduce the saving further.</p>
 <h2 id="fans-in-parallel-and-in-series">Fans in Parallel and in Series<a class="headerlink" href="#fans-in-parallel-and-in-series" title="Permanent link">&para;</a></h2>
 <p>Two fans can be combined to serve one system, and the combination is predicted by adding their curves, not their ratings.</p>
-<p><strong>Fans in parallel</strong> draw from and discharge into a common system side by side. At any pressure, their airflows add: the combined curve is found by doubling the airflow of each point of a single fan's curve. Parallel fans give redundancy and staging, and they add the most air when the system is flat (low resistance). On a steep system the second fan adds little, because more airflow costs a great deal more pressure. Parallel fans must each operate right of the peak pressure point, or one fan can take most of the flow while the other stalls, a form of the surge problem described above, and each needs a backdraft damper if it may run alone.</p>
-<p><strong>Fans in series</strong> move the same air one after the other, outlet of one to inlet of the next. At any airflow, their pressures add: the combined curve is found by doubling the pressure of each point of a single fan's curve. Series fans suit steep, high-resistance systems. A multi-stage blower is a series arrangement inside one housing.</p>
+<p><strong><abbr tabindex="0" title="Two or more fans drawing from and discharging into a common system side by side, whose airflows add at any given pressure.">Fans in parallel</abbr></strong> draw from and discharge into a common system side by side. At any pressure, their airflows add: the combined curve is found by doubling the airflow of each point of a single fan's curve. Parallel fans give redundancy and staging, and they add the most air when the system is flat (low resistance). On a steep system the second fan adds little, because more airflow costs a great deal more pressure. Parallel fans must each operate right of the peak pressure point, or one fan can take most of the flow while the other stalls, a form of the surge problem described above, and each needs a <abbr tabindex="0" title="A damper that opens to let air flow out through a fan in the normal direction and closes to stop reverse flow when the fan stops.">backdraft damper</abbr> if it may run alone.</p>
+<p><strong><abbr tabindex="0" title="Two or more fans that move the same air one after another, whose pressures add at any given airflow.">Fans in series</abbr></strong> move the same air one after the other, outlet of one to inlet of the next. At any airflow, their pressures add: the combined curve is found by doubling the pressure of each point of a single fan's curve. Series fans suit steep, high-resistance systems. A multi-stage blower is a series arrangement inside one housing.</p>
 <p>The table below shows Curve A combined two ways on two illustrative systems: the steep design system from Chapter 10 (4.0 in. wg at 10,000 CFM) and a flat system needing only 1.0 in. wg at 10,000 CFM.</p>
 <table>
 <thead>
@@ -4065,9 +4129,9 @@ Think of the system curve as a referee. Parallel fans double the airflow at each
 <p><strong>Chapter Anchors:</strong> Steep system: one fan 10,000 CFM at 4.0 in. wg; parallel about 11,000 CFM at 4.8 in. wg; series about 12,300 CFM at 6.0 in. wg. Flat system: one fan about 14,000 CFM at 2.0 in. wg; parallel 20,000 CFM at 4.0 in. wg; series about 15,100 CFM at 2.3 in. wg. A second parallel fan adds about 10% on the steep system and over 40% on the flat one.</p>
 </details>
 <h2 id="sound-pressure-and-octave-bands">Sound Pressure and Octave Bands<a class="headerlink" href="#sound-pressure-and-octave-bands" title="Permanent link">&para;</a></h2>
-<p>Chapter 10 described fan sound by its <strong>sound power level</strong>, the total acoustic power a fan radiates, independent of where it is installed. A listener, a microphone or a property-line noise ordinance does not hear sound power. They respond to sound pressure.</p>
+<p>Chapter 10 described fan sound by its <strong><abbr tabindex="0" title="The total acoustic power a fan radiates, in decibels relative to 10⁻¹² watt, independent of room or distance; abbreviated Lw.">sound power level</abbr></strong>, the total acoustic power a fan radiates, independent of where it is installed. A listener, a microphone or a property-line noise ordinance does not hear sound power. They respond to sound pressure.</p>
 <h3 id="sound-pressure-level">Sound Pressure Level<a class="headerlink" href="#sound-pressure-level" title="Permanent link">&para;</a></h3>
-<p><strong>Sound pressure level</strong> (Lp) is the magnitude of the pressure fluctuations of sound at one location, expressed in decibels relative to a reference pressure of 20 micropascals, roughly the threshold of human hearing.</p>
+<p><strong><abbr tabindex="0" title="The magnitude of sound pressure fluctuations at one location, in decibels relative to 20 micropascals; abbreviated Lp.">Sound pressure level</abbr></strong> (Lp) is the magnitude of the pressure fluctuations of sound at one location, expressed in <abbr tabindex="0" title="A unit equal to ten times the base-10 logarithm of the ratio of a quantity to a fixed reference quantity, used for sound levels; abbreviated dB.">decibels</abbr> relative to a reference pressure of 20 micropascals, roughly the threshold of human hearing.</p>
 <h4 id="sound-pressure-level_1">Sound Pressure Level<a class="headerlink" href="#sound-pressure-level_1" title="Permanent link">&para;</a></h4>
 <div class="arithmatex">\[ L_p = 20 \log_{10} \left( \frac{p}{20 \times 10^{-6}} \right) \]</div>
 <p>where:</p>
@@ -4079,7 +4143,7 @@ Think of the system curve as a referee. Parallel fans double the airflow at each
 <div class="admonition mascot-tip">
 <p class="admonition-title">Ask Three Questions About Any Noise Limit</p>
 <p><img alt="Breeze giving a tip" class="mascot-admonition-img" src="../../img/mascot/tip.png" />
-Want to save yourself an hour of rework? When a specification says "85 dB," ask: sound power or sound pressure, at what distance and in what setting, and overall or by octave band. The answers decide whether the catalog data can show compliance at all.</p>
+Want to save yourself an hour of rework? When a specification says "85 dB," ask: sound power or sound pressure, at what distance and in what setting, and overall or by <abbr tabindex="0" title="A range of frequencies whose upper limit is twice its lower limit, identified by its center frequency.">octave band</abbr>. The answers decide whether the catalog data can show compliance at all.</p>
 </div>
 <h3 id="octave-band">Octave Band<a class="headerlink" href="#octave-band" title="Permanent link">&para;</a></h3>
 <p>Fan sound is not one tone but a spread of frequencies, and its effect depends on where the energy falls: low-frequency rumble passes through walls and silencers more easily, while the ear is most sensitive in the middle range. An <strong>octave band</strong> is a range of frequencies whose upper limit is twice its lower limit, identified by its center frequency. Fan sound data is published in eight octave bands:</p>
@@ -4134,7 +4198,7 @@ Want to save yourself an hour of rework? When a specification says "85 dB," ask:
 </tr>
 </tbody>
 </table>
-<p>Chapter 10's 10-blade impeller at 1,770 RPM has a blade pass frequency of 295 Hz, which falls in the 250 Hz band, so that band will usually stand out in the fan's data. Octave band data lets an acoustical engineer choose a silencer that attacks the right frequencies; a single overall number, such as an A-weighted level that discounts low frequencies to match the ear, cannot. Reading octave band sound data in a submittal is part of <a href="../27-fan-selection-and-writing-the-specification/">Chapter 27</a>.</p>
+<p>Chapter 10's 10-blade impeller at 1,770 RPM has a <abbr tabindex="0" title="The rate at which impeller blades pass a fixed point such as the cutoff, equal to fan speed in revolutions per second times the number of blades; abbreviated BPF.">blade pass frequency</abbr> of 295 Hz, which falls in the 250 Hz band, so that band will usually stand out in the fan's data. Octave band data lets an acoustical engineer choose a silencer that attacks the right frequencies; a single overall number, such as an A-weighted level that discounts low frequencies to match the ear, cannot. Reading <abbr tabindex="0" title="A fan's sound power level reported separately in each of eight octave bands centered from 63 to 8,000 Hz.">octave band sound data</abbr> in a submittal is part of <a href="../27-fan-selection-and-writing-the-specification/">Chapter 27</a>.</p>
 <div class="admonition mascot-celebration">
 <p class="admonition-title">You Can Predict a Fan's Next Move</p>
 <p><img alt="Breeze celebrating" class="mascot-admonition-img" src="../../img/mascot/celebration.png" />
@@ -4150,7 +4214,7 @@ You can now take one fan curve and predict what happens when the speed, size or 
 <li><strong>Cold start horsepower</strong> is the BHP on cold, dense air; a 600°F fan absorbs twice its running power at a 70°F start.</li>
 <li><strong>Duty point and FEI:</strong> the duty point is what the specification requires; FEI compares the fan's electrical input power with a reference fan at that point, and the same fan can pass at one duty point and fail at another.</li>
 <li><strong>System effect:</strong> classify the job by AMCA installation type (A, B, C, D), allow an effective duct length of straight outlet duct, keep elbows off the inlet, and add any system effect from AMCA 201 curves to the design pressure.</li>
-<li><strong>Flow control:</strong> speed control saves the most power, but less than the ideal cube law when the system has a fixed pressure component.</li>
+<li><strong><abbr tabindex="0" title="Any means of changing the airflow a fan delivers while the system runs, such as dampers, variable inlet vanes, or speed control.">Flow control</abbr>:</strong> speed control saves the most power, but less than the ideal cube law when the system has a fixed pressure component.</li>
 <li><strong>Combining fans:</strong> parallel fans add airflow at the same pressure and help most on flat systems; series fans add pressure at the same airflow and help most on steep systems.</li>
 <li><strong>Sound:</strong> sound power belongs to the fan; sound pressure depends on distance and surroundings. Fan sound data comes in eight octave bands from 63 to 8,000 Hz.</li>
 </ul>
@@ -4252,7 +4316,7 @@ You can now take one fan curve and predict what happens when the speed, size or 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

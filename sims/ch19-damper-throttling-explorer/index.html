@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4880,16 +4944,16 @@
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Damper Throttling Operating Point Explorer MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>The chart shows one illustrative fan curve and the system curve it works against. Damper
+<p>The chart shows one illustrative <abbr tabindex="0" title="A graph of one fan's pressure, power, and often efficiency against airflow at one speed and one air density.">fan curve</abbr> and the <abbr tabindex="0" title="A parabola-shaped graph of one duct system's resistance against airflow, starting at zero pressure at zero airflow.">system curve</abbr> it works against. Damper
 throttling multiplies the system's resistance coefficient by a factor m, so the system curve
 becomes steeper each time the damper closes:</p>
 <ul>
 <li>Fan curve: P = 6.0 − (Q / 10,000)² in. wg</li>
 <li>System curve: P = 5.0 × m × (Q / 10,000)² in. wg</li>
-<li>Operating point: Q = 10,000 × √(6.0 / (1 + 5.0m)) and P = 6.0 − 6.0 / (1 + 5.0m)</li>
+<li><abbr tabindex="0" title="The single airflow and pressure at which a fan actually runs in a system, where its fan curve intersects the system curve.">Operating point</abbr>: Q = 10,000 × √(6.0 / (1 + 5.0m)) and P = 6.0 − 6.0 / (1 + 5.0m)</li>
 </ul>
 <p>The damper closes in five fixed steps. Before each new system curve is drawn, the learner
-predicts whether airflow will be higher, lower or the same, and whether static pressure will be
+predicts whether airflow will be higher, lower or the same, and whether <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> will be
 higher, lower or the same. Pressing <strong>Check</strong> locks the pair, draws the new system curve and its
 operating point, and keeps the previous system curve (dotted grey) and the previous operating
 point (open circle) on the chart for comparison. A table beside the chart lists every operating
@@ -4951,7 +5015,7 @@ only 56%. <strong>Reset</strong> then returns to wide open for unscored stepping
 Fan published ratings; real fan curves are read from the catalog.</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Read the wide-open operating point: 10,000 CFM at 5.00 in. wg.</li>
+<li>Read the wide-open operating point: 10,000 <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr> at 5.00 in. wg.</li>
 <li>Press <strong>Close damper one step</strong>. Choose <strong>Higher</strong>, <strong>Lower</strong> or <strong>Same</strong> for airflow and for
    static pressure, then press <strong>Check</strong>.</li>
 <li>Read the feedback and compare the new operating point (diamond) with the previous one (open
@@ -4974,7 +5038,7 @@ the bottom left of the chart.</p>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>The learner will interpret how closing an outlet damper moves a fan's operating point along its
+<p>The learner will interpret how closing an <abbr tabindex="0" title="A damper mounted on a fan discharge that controls airflow by adding resistance, typically the least expensive flow-control option.">outlet damper</abbr> moves a fan's operating point along its
 fan curve, predicting the direction of change in airflow and static pressure before each new
 damper setting is revealed (Bloom: Understand, verb: interpret).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
@@ -4985,7 +5049,7 @@ facilities staff.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fan curve, system curve and operating point (<a href="../../chapters/10-fan-performance-curves-and-ratings/">Chapter 10</a>)</li>
-<li>Damper throttling and the resistance multiplier m (section "Damper Throttling" of
+<li><abbr tabindex="0" title="Controlling a fan's airflow by partly closing a damper to add system resistance, moving the operating point left on the fan curve.">Damper throttling</abbr> and the resistance multiplier m (section "Damper Throttling" of
   <a href="../../chapters/19-damper-details-and-duct-connections/">Chapter 19</a>)</li>
 </ul>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
@@ -4993,7 +5057,7 @@ facilities staff.</p>
 <li><strong>Predictions</strong> (6 min): Work through the five closing steps. Before pressing <strong>Check</strong>, say
    out loud why the new intersection must sit where you predict.</li>
 <li><strong>Review</strong> (4 min): Read the table from Wide open to Step 5. Compare the change in m with the
-   change in airflow, and notice that pressure rises by less than 1 in. wg in total.</li>
+   change in airflow, and notice that <abbr tabindex="0" title="The increase in pressure a fan produces between its inlet and its outlet, stated as fan total pressure or fan static pressure.">pressure rises</abbr> by less than 1 in. wg in total.</li>
 <li><strong>Explore</strong> (3 min): Press <strong>Reset</strong> and step through again, watching only the fan curve. Ask:
    did the fan curve ever move?</li>
 </ol>
@@ -5124,7 +5188,7 @@ facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

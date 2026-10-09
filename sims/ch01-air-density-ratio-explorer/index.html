@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4880,11 +4944,11 @@
 
 <p><a class="md-button md-button--primary" href="main.html">Run the Air Density Ratio Explorer MicroSim Fullscreen</a></p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
-<p>Fan catalogs are printed at standard air: 70°F at sea level, 0.075 lb/ft³. Real jobs are hotter, colder or higher. The <strong>density ratio</strong> (DR) is the actual density divided by standard density:</p>
+<p>Fan catalogs are printed at <abbr tabindex="0" title="The reference air condition used to rate fans: air with a density of 0.075 lb/ft³, very nearly that of dry air at 70°F and 29.92 in. Hg barometric pressure.">standard air</abbr>: 70°F at sea level, 0.075 lb/ft³. Real jobs are hotter, colder or higher. The <strong>density ratio</strong> (DR) is the actual density divided by standard density:</p>
 <div class="arithmatex">\[
 DR = \frac{530}{T + 460} \times \frac{P_b}{29.92}, \qquad \frac{P_b}{29.92} = (1 - 6.8754 \times 10^{-6} \times h)^{5.2559}
 \]</div>
-<p>where <span class="arithmatex">\( T \)</span> is the air temperature in °F and <span class="arithmatex">\( h \)</span> is the site altitude in feet. At a fixed speed a fan moves the same CFM in thin air or thick air, while its static pressure and brake horsepower scale with DR. That gives two rules: to predict what a fan really develops at the job, <strong>multiply</strong> the catalog value by DR; to select from a standard-air catalog, <strong>divide</strong> the required actual pressure by DR.</p>
+<p>where <span class="arithmatex">\( T \)</span> is the air temperature in °F and <span class="arithmatex">\( h \)</span> is the site altitude in feet. At a fixed speed a fan moves the same <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr> in thin air or thick air, while its <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> and <abbr tabindex="0" title="The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">brake horsepower</abbr> scale with DR. That gives two rules: to predict what a fan really develops at the job, <strong>multiply</strong> the catalog value by DR; to select from a standard-air catalog, <strong>divide</strong> the required actual pressure by DR.</p>
 <p>The chart plots DR against air temperature from −20°F to 600°F for four site altitudes (0, 2,000, 5,000 and 8,000 ft). The temperature and altitude sliders move a marker (✕) to any setting. A reference panel lists the altitude pressure ratios from 0 to 10,000 ft.</p>
 <p>Four challenges, in this order, ask for six entries:</p>
 <table>
@@ -4951,7 +5015,7 @@ DR = \frac{530}{T + 460} \times \frac{P_b}{29.92}, \qquad \frac{P_b}{29.92} = (1
 <p>10-15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Air density and standard air (70°F, sea level, 0.075 lb/ft³)</li>
+<li><abbr tabindex="0" title="The mass of air in one cubic foot, stated in pounds per cubic foot (lb/ft³); 0.075 lb/ft³ at standard conditions.">Air density</abbr> and standard air (70°F, sea level, 0.075 lb/ft³)</li>
 <li>Density ratio, air temperature, altitude and absolute pressure</li>
 <li>Static pressure</li>
 <li>The two correction rules: multiply to predict, divide to select</li>
@@ -4966,7 +5030,7 @@ DR = \frac{530}{T + 460} \times \frac{P_b}{29.92}, \qquad \frac{P_b}{29.92} = (1
 <h3 id="common-misconceptions-addressed">Common Misconceptions Addressed<a class="headerlink" href="#common-misconceptions-addressed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Hot air or high altitude reduces the CFM a fan moves at a given speed: the Explore readout states that CFM and RPM stay the same while pressure and BHP scale with DR.</li>
-<li>The temperature correction can be done in °F directly (70 ÷ 250): challenge 1 recognizes 0.28 and points to absolute temperature; challenge 4 recognizes a missing 460.</li>
+<li>The <abbr tabindex="0" title="The density correction factor for an air temperature other than 70°F, computed from absolute temperatures in degrees Rankine.">temperature correction</abbr> can be done in °F directly (70 ÷ 250): challenge 1 recognizes 0.28 and points to absolute temperature; challenge 4 recognizes a missing 460.</li>
 <li>To select a fan for thin air you multiply the required pressure by DR: challenge 2 recognizes the multiplied answer and explains that it would undersize the fan.</li>
 </ul>
 <h3 id="assessment">Assessment<a class="headerlink" href="#assessment" title="Permanent link">&para;</a></h3>
@@ -5079,7 +5143,7 @@ DR = \frac{530}{T + 460} \times \frac{P_b}{29.92}, \qquad \frac{P_b}{29.92} = (1
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

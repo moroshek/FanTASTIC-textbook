@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4887,9 +4951,9 @@ editor's <code>index.html</code> before pasting <code>ch27-capstone-specificatio
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>The builder walks you through the chapter's dryer exhaust fan decision by decision: 20,000 ACFM at
 12.0 in. wg, 500°F gas at sea level, moderately sticky, abrasive, combustible wood dust, reduced flow during
-warm-up, spring isolators on a mezzanine, an outlet duct that leaves the top of the fan
+warm-up, <abbr tabindex="0" title="A steel coil spring with load plates placed between a fan or its base and the structure, giving high deflection and high isolation.">spring isolators</abbr> on a mezzanine, an outlet duct that leaves the top of the fan
 horizontally to the right (viewed from the drive side), a 70°F cold start, a selected speed of
-1,450 RPM, 96.0 BHP cold and 53.0 BHP hot (illustrative values from the chapter's worked example).</p>
+1,450 RPM, 96.0 <abbr tabindex="0" title="Brake Horsepower: The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">BHP</abbr> cold and 53.0 BHP hot (illustrative values from the chapter's worked example).</p>
 <p>You choose an option for each of ten attributes and write a one-sentence justification beside it:</p>
 <table>
 <thead>
@@ -4956,20 +5020,20 @@ horizontally to the right (viewed from the drive side), a 70°F cold start, a se
 lists every triggered message beside its attribute. A violation (✗, red dashed border) blocks
 completion; an advisory (ℹ) does not. Rules that join two attributes are listed beside one of
 them: the 9F rule (no valid 9F design exists on isolators) beside the arrangement, the arrangement-and-drive rules beside the
-drive, and the turndown rule beside flow control. Nothing is revealed before you choose.</p>
+drive, and the <abbr tabindex="0" title="The range over which a flow-control method can reduce airflow and still control it well, stated as a ratio of maximum to minimum controllable airflow.">turndown</abbr> rule beside <abbr tabindex="0" title="Any means of changing the airflow a fan delivers while the system runs, such as dampers, variable inlet vanes, or speed control.">flow control</abbr>. Nothing is revealed before you choose.</p>
 <p>The specification is complete when all ten attributes are chosen, all ten justifications contain
 text and the check reports zero violations. The sim then says "Specification complete: ten
-attributes, zero conflicts, <em>n</em> checks." and composes the complete fan description in the format
+attributes, zero conflicts, <em>n</em> checks." and composes the <abbr tabindex="0" title="The compact, ordered statement of every attribute the factory needs to build one fan, together with the duty point and air conditions.">complete fan description</abbr> in the format
 of the chapter's worked example, followed by your justifications, in a box you can select or
 copy with <strong>Copy description</strong>. Checks are unlimited; the number of checks needed and your
 justifications are recorded, not scored.</p>
-<p>Some fixes cascade: changing the arrangement to 8 forces a direct drive, and a direct drive
-needs the VFD to meet the 1,450 RPM speed. Arrangement 9 with a belt drive is the chapter's
-worked selection; Arrangement 1 with a belt drive and Arrangement 8 with the VFD also pass, with
+<p>Some fixes cascade: changing the arrangement to 8 forces a <abbr tabindex="0" title="A drive method in which the impeller is mounted on, or coupled to, the motor shaft so the fan runs at motor speed.">direct drive</abbr>, and a direct drive
+needs the <abbr tabindex="0" title="Variable Frequency Drive: An electronic controller, abbreviated VFD, that converts fixed-frequency AC power to adjustable-frequency power, changing induction motor speed in proportion.">VFD</abbr> to meet the 1,450 RPM speed. <abbr tabindex="0" title="A belt driven, overhung fan with the motor on a slide base on the side of the fan's bearing pedestal, shipped as one assembly.">Arrangement 9</abbr> with a <abbr tabindex="0" title="A drive method in which sheaves on the motor and fan shafts, connected by V-belts, let the fan run at a speed different from the motor's.">belt drive</abbr> is the chapter's
+worked selection; <abbr tabindex="0" title="An overhung impeller fan with both bearings on a pedestal and the motor mounted separately on the floor or a fan base, usually belt driven.">Arrangement 1</abbr> with a belt drive and <abbr tabindex="0" title="A direct drive, overhung fan in which the Arrangement 1 bearing pedestal is extended to carry the motor, joined to the fan shaft by a flexible coupling.">Arrangement 8</abbr> with the VFD also pass, with
 an advisory to check the length against the 10 ft by 8 ft pad.</p>
 <p>Sources: FanPedia pp. 110, 162, 165, 166, 171 and 187 (arrangement and isolation rules); Twin City
 Fan's Model RTF guide specification, Section 23 34 16 (temperature tier, spark-resistance limits,
-liners, inlet vanes); Chapter 12's discharge table (CW THD); Chapter 9 (impeller and dust).</p>
+liners, inlet vanes); Chapter 12's discharge table (<abbr tabindex="0" title="Clockwise Rotation: Impeller rotation, abbreviated CW, that an observer on the drive side sees turning the same way as clock hands.">CW</abbr> THD); Chapter 9 (impeller and dust).</p>
 <h2 id="how-to-use">How to Use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Read the application card.</li>
@@ -5006,8 +5070,8 @@ facilities staff.</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Impeller, arrangement, drive and construction selection (Chapter 27)</li>
-<li>Cold start motor sizing and accessory selection (Chapter 27)</li>
-<li>Complete fan description and specification review (Chapter 27)</li>
+<li><abbr tabindex="0" title="Selecting a motor large enough for the brake horsepower a hot-gas fan draws when it starts in colder, denser air.">Cold start motor sizing</abbr> and <abbr tabindex="0" title="The step of fan selection that adds the optional parts an application needs, each tied to a stated requirement and confirmed against the catalog option list.">accessory selection</abbr> (Chapter 27)</li>
+<li>Complete fan description and <abbr tabindex="0" title="The check of a specification, or a submittal against one, for completeness and internal consistency before it is issued or approved.">specification review</abbr> (Chapter 27)</li>
 </ul>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5041,11 +5105,11 @@ facilities staff.</p>
 <li><a href="https://en.wikipedia.org/wiki/MasterFormat">MasterFormat</a> - Wikipedia article on the CSI
    numbering system used for construction specifications.</li>
 <li><a href="https://en.wikipedia.org/wiki/Centrifugal_fan">Centrifugal fan</a> - Wikipedia overview of
-   centrifugal fan impeller types, from airfoil to radial blades.</li>
+   <abbr tabindex="0" title="A fan in which air enters the impeller along the shaft and leaves it radially, at a right angle to the shaft.">centrifugal fan</abbr> impeller types, from airfoil to radial blades.</li>
 <li><a href="https://www.tcf.com/">Twin City Fan product specifications</a> - CSI-format guide specifications,
    including the Model RTF section 23 34 16 behind the construction rules.</li>
 <li><a href="https://tcf.com/fanpedia/">FanPedia: The Fan &amp; Blower Encyclopedia</a> - Twin City Fan's reference
-   for arrangements, high temperature construction, isolation and flex connectors.</li>
+   for arrangements, <abbr tabindex="0" title="Special construction for fans whose airstream is hot enough to weaken materials, expand parts, and overheat bearings.">high temperature construction</abbr>, isolation and flex connectors.</li>
 </ol>
 
 
@@ -5144,7 +5208,7 @@ facilities staff.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>

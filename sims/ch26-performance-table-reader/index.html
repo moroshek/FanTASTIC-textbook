@@ -59,6 +59,8 @@
     
       <link rel="stylesheet" href="../../css/mascot.css">
     
+      <link rel="stylesheet" href="../../css/glossary-tooltips.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
@@ -265,6 +267,68 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../learning-paths/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Paths
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -730,7 +794,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -752,14 +816,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4885,13 +4949,13 @@
 editor's <code>index.html</code> before pasting <code>ch26-performance-table-reader.js</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>The grid is the RBA 913 excerpt from Twin City Fan Catalog 902 (November 2017), page 24, exactly
-as printed in the chapter: five airflow rows (3,348 to 4,836 CFM, with outlet velocity 3,600 to
-5,200 FPM) and eight static pressure columns (4 to 32 in. wg), each cell an RPM and a BHP at
-standard air. The header and footer are shown as on the page: impeller diameter 22.625 in., tip
+as printed in the chapter: five airflow rows (3,348 to 4,836 <abbr tabindex="0" title="Cubic Feet Per Minute: The U.S. unit of airflow volume, abbreviated CFM, equal to one cubic foot of air passing a point each minute.">CFM</abbr>, with <abbr tabindex="0" title="The average speed of air leaving a fan, in feet per minute, equal to airflow volume divided by outlet area.">outlet velocity</abbr> 3,600 to
+5,200 FPM) and eight <abbr tabindex="0" title="The pressure that air exerts equally in all directions on the walls of a duct or housing, independent of air motion, measured perpendicular to the flow.">static pressure</abbr> columns (4 to 32 in. wg), each cell an RPM and a <abbr tabindex="0" title="Brake Horsepower: The power actually delivered to the fan shaft to produce a given airflow and pressure, always larger than the power that ends up in the air; abbreviated BHP.">BHP</abbr> at
+<abbr tabindex="0" title="The reference air condition used to rate fans: air with a density of 0.075 lb/ft³, very nearly that of dry air at 70°F and 29.92 in. Hg barometric pressure.">standard air</abbr>. The header and footer are shown as on the page: impeller diameter 22.625 in., tip
 speed 5.92 × RPM, outlet area 0.93 ft², FEG80; maximum RPM Class 22 = 2,812, Class 32 = 3,337,
-Class 45 = 4,000; installation type B and D; BHP without transmission losses; no appurtenance
-effects. The two underlined cells (4,836 CFM at 28 and 32 in.) mark maximum static efficiency.</p>
-<p>For each of six duty points the learner types an RPM and a BHP and picks Class 22, 32 or 45,
+Class 45 = 4,000; installation type B and D; BHP without <abbr tabindex="0" title="The power lost between the motor shaft and the fan shaft in the drive, such as belt flexing and slip and drive bearing friction.">transmission losses</abbr>; no appurtenance
+effects. The two underlined cells (4,836 CFM at 28 and 32 in.) mark maximum <abbr tabindex="0" title="Fan efficiency computed from air power based on fan static pressure, divided by brake horsepower.">static efficiency</abbr>.</p>
+<p>For each of six <abbr tabindex="0" title="The airflow and pressure, at a stated air density, that a specification requires a fan to deliver.">duty points</abbr> the learner types an RPM and a BHP and picks Class 22, 32 or 45,
 then presses <strong>Check</strong>:</p>
 <table>
 <thead>
@@ -4997,8 +5061,8 @@ quoting", shown at the bottom left of the drawing.</p>
 </span></code></pre></div>
 <h2 id="lesson-plan">Lesson Plan<a class="headerlink" href="#lesson-plan" title="Permanent link">&para;</a></h2>
 <h3 id="learning-objective">Learning Objective<a class="headerlink" href="#learning-objective" title="Permanent link">&para;</a></h3>
-<p>The learner will use an excerpt of the RBA 913 performance table to find the RPM and BHP for a
-duty point, by direct reading or linear interpolation within ±1%, and to name the fan class the
+<p>The learner will use an excerpt of the RBA 913 <abbr tabindex="0" title="A grid in a product catalog giving, for one model and size at standard air, the RPM and BHP needed for each combination of airflow and static pressure.">performance table</abbr> to find the RPM and BHP for a
+duty point, by direct reading or linear interpolation within ±1%, and to name the <abbr tabindex="0" title="A grouping of centrifugal fans by the pressure they are built to handle, which sets each size's maximum safe speed. AMCA Standard 99-2408 defines Classes I to IV (outlet velocity and static pressure limits).">fan class</abbr> the
 point requires (Bloom: Apply, verb: use).</p>
 <h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
 <p>Adult professional development: new application engineers, sales staff, representatives and
@@ -5006,7 +5070,7 @@ facilities staff.</p>
 <h3 id="duration">Duration<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h3>
 <p>15 minutes</p>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
-<p>Performance table, performance table header, outlet velocity, class shading and interpolation,
+<p>Performance table, <abbr tabindex="0" title="The block above and around a performance table grid—size block, model line, column heads, and footer—that states what the grid's numbers mean.">performance table header</abbr>, outlet velocity, class shading and interpolation,
 all defined in the section "Performance Tables" of
 <a href="../../chapters/26-reading-catalogs-and-performance-tables/">Chapter 26</a>.</p>
 <h3 id="activities">Activities<a class="headerlink" href="#activities" title="Permanent link">&para;</a></h3>
@@ -5142,7 +5206,7 @@ all defined in the section "Performance Tables" of
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
