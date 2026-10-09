@@ -67,7 +67,7 @@
     { id: 'hot-bearings', text: 'The bearings must stay out of the 500°F gas.', answer: 5,
       why: 'The arrangement decides whether bearings sit in or out of the airstream.',
       section: 'Arrangement Selection', anchor: 'arrangement-selection' },
-    { id: 'sticky-dust', text: 'The dust is sticky and abrasive.', answer: 3,
+    { id: 'sticky-dust', text: 'The dust is moderately sticky and abrasive.', answer: 3,
       why: 'Dust that builds up or erodes rules out airfoil and backward curved wheels.',
       section: 'Impeller Selection', anchor: 'impeller-selection' },
     { id: 'isolators', text: 'The fan sits on spring isolators on a mezzanine.', answer: 9,

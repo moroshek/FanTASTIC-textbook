@@ -29,7 +29,11 @@ const defaultTextSize = 16;
 // The operating point for "R in. wg at 10,000 CFM", with the spec's rounding for readouts.
 function solve(R) {
   const op = C.operatingPoint(FAN, C.kFromR(R), { step: 1, qMin: 0, qMax: Q_MAX });
-  return { R, q: Math.round(op.q / 10) * 10, p: Math.round(op.p * 100) / 100, bhp: op.bhp,
+  // Round airflow to 10 CFM, but never across the 4,000 CFM stall boundary: 3,995 must not read as
+  // "4,000" beside an "In the stall region" flag (or 4,005 as 4,000 beside "Stable").
+  let q = Math.round(op.q / 10) * 10;
+  if ((q < FAN.stallBelow) !== (op.q < FAN.stallBelow)) q = Math.round(op.q);
+  return { R, q, p: Math.round(op.p * 100) / 100, bhp: op.bhp,
     stall: op.stall, rawQ: op.q, rawP: op.p };
 }
 
@@ -38,8 +42,8 @@ const CHALLENGE_DATA = [
   { id: 'as-designed', R: 4.0, system: 'As designed: 4.0 in. wg at 10,000 CFM.',
     wrong: 'The fan curve passes through 4.0 in. wg at 10,000 CFM, exactly where the system needs ' +
            '4.0 in. wg, so the curves cross at the design point.',
-    hint: 'Read the design airflow on both curves: if the fan offers the same pressure the system needs there, ' +
-          'that is where they cross.' },
+    hint: 'The operating point is where the fan curve and the dashed system curve meet. Follow the dashed ' +
+          'curve out from the origin until it reaches the fan curve, then read the airflow and pressure at that crossing.' },
   { id: 'filters-loaded', R: 6.25, system: 'Filters loaded: 4.0 in. wg at 8,000 CFM.',
     wrong: 'A steeper system curve crosses the fan curve further left. At 8,000 CFM the fan offers ' +
            '4.5 in. wg and the system needs 4.0, so the fan pushes on until about 8,390 CFM.',

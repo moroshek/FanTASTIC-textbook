@@ -208,7 +208,7 @@
 
   // -------------------------------------------------------- bearing life (ch03, ch17)
   // Years = rated hours / (hours/day * days/week * weeks/year); L-50 = 5 * L-10.
-  // ch03 (FanPedia p. 90) counts 52 weeks; ch17 (FanPedia p. 89) counts 365/7.
+  // ch03 (FanPedia p. 90) counts 52 weeks; ch17 (FanPedia p. 90) counts 365/7.
 
   var WEEKS_52 = 52;
   var WEEKS_CALENDAR = 365 / 7;

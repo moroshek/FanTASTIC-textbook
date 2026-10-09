@@ -52,7 +52,7 @@
         id: 'base', label: 'Isolation base',
         x1: 15.4, y1: 50.8, x2: 44.3, y2: 98.7,
         summary: 'The fan, possibly the motor and other components, on a structural base with isolators under the base\'s mounting brackets.',
-        facts: ['Springs, RIS pads or neoprene pads.'],
+        facts: ['Springs, RIS or pads (p. 133).', 'The base-type page (p. 131) says an isolation base requires spring or RIS isolators, so use pads only where the factory confirms them.'],
         hint: 'Bottom left: the fan and the motor share one purple frame.',
         prompt: 'Which drawing carries the fan and its motor on one frame set on isolators?'
       },

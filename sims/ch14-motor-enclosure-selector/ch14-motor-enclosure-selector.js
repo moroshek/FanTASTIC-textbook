@@ -63,7 +63,29 @@ const JOBS = [
     accepted: ['ODP'], why: 'IP22 is the metric equivalent of ODP in FanPedia\'s table.' }
 ].map((j, i) => Object.assign(j, { id: 'job-' + (i + 1), answer: j.accepted[0], answerText: j.accepted.join(' or ') }));
 
-const WRONG_TEXT = FP.msg.BAD + ' Not this one. Reread the job and the card for the enclosure you chose, then try again.';
+
+// Wrong-choice hints name the mix-up (what the chosen enclosure is for), never the answer.
+// Jobs 2, 5, 6 and 7 name wet, dirty, lint or hazardous air; jobs 3 and 4 name an air stream.
+const AIR_JOBS = ['job-2', 'job-5', 'job-6', 'job-7'];
+const HAZARD_JOBS = ['job-6', 'job-7'];
+const STREAM_JOBS = ['job-3', 'job-4'];
+function wrongText(job, choice) {
+  let hint = null;
+  if (choice === 'ODP' && AIR_JOBS.indexOf(job.id) >= 0) {
+    hint = 'ODP lets the surrounding air pass through the motor. Check what the air around this motor carries.';
+  } else if (choice === 'EXPL' && HAZARD_JOBS.indexOf(job.id) < 0) {
+    hint = 'Explosion proof is for classified hazardous locations. Check whether the job names one.';
+  } else if (choice === 'TEAO' && STREAM_JOBS.indexOf(job.id) < 0) {
+    hint = 'TEAO has no fan of its own and depends on the fan\'s air stream. Check whether the job puts the motor in that air stream.';
+  } else if (choice === 'TENV' && job.id !== 'job-5') {
+    hint = 'TENV has no cooling fan and runs hotter. Check whether the job gives a reason to avoid an external fan.';
+  } else if (choice === 'TEFC' && HAZARD_JOBS.indexOf(job.id) >= 0) {
+    hint = 'Sealed windings alone do not make a motor safe in a classified location. Check what the area is classified for.';
+  } else if (choice === 'TEFC' && STREAM_JOBS.indexOf(job.id) >= 0) {
+    hint = 'TEFC carries its own external fan. Check where the job puts the motor relative to the air stream.';
+  }
+  return FP.msg.BAD + ' Not this one. ' + (hint || 'Reread the job and the card for the enclosure you chose.') + ' Try again.';
+}
 const ALSO_ODP = 'ODP would also have been acceptable here.';
 
 function correctText(job, choice) {
@@ -81,7 +103,7 @@ const deck = new FP.CardDeck({
   reviewPointer: 'Reread "Motor Enclosures" and the cards for the jobs you missed, then press Start over.',
   messages: {
     correct: res => correctText(res.card, res.chosen),
-    missed: () => WRONG_TEXT
+    missed: res => wrongText(res.card, res.chosen)
   }
 });
 
@@ -395,7 +417,7 @@ function choose(code) {
     feedback = { kind: 'ok', text };
   } else {
     tried.push(code);
-    feedback = { kind: 'bad', text: WRONG_TEXT + (first ? ' Your first try counts as missed.' : '') };
+    feedback = { kind: 'bad', text: wrongText(st.card, code) + (first ? ' Your first try counts as missed.' : '') };
   }
   FP.announce('You chose ' + code + '. ' + feedback.text + (solved ? ' Accepted: ' + st.card.accepted.join(', ') + '.' : ''));
   updateControls();

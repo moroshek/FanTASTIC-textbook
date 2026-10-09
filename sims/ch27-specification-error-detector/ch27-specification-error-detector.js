@@ -21,7 +21,7 @@ const canvasHeight = drawHeight + controlHeight;
 
 // ---------- Content (spec "Content" table) ----------
 const APPLICATION = 'Application: dryer exhaust fan, 20,000 ACFM at 12.0 in. wg, 500°F gas at sea level, ' +
-  'sticky abrasive combustible wood dust, fan on spring isolators on a mezzanine, cold start at 70°F.';
+  'moderately sticky, abrasive, combustible wood dust, fan on spring isolators on a mezzanine, cold start at 70°F.';
 const PROMPT = 'Which clauses would you send back to the writer, and why?';
 const DATA_NOTE = FP.msg.note('Illustrative worked example',
   'Sources: FanPedia pp. 110, 166, 171, 187; TCF Model RTF guide spec 23 34 16');

@@ -3438,7 +3438,7 @@ Every chapter so far handed you one part of a fan: a family, an impeller, an arr
 </tr>
 <tr>
 <td>5</td>
-<td>The dust is sticky and abrasive.</td>
+<td>The dust is moderately sticky and abrasive.</td>
 <td>3 Fan family and impeller</td>
 <td>Dust that builds up or erodes rules out airfoil and backward curved wheels.</td>
 </tr>
@@ -3485,7 +3485,7 @@ Every chapter so far handed you one part of a fan: a family, an impeller, an arr
 <p><strong>Noise limits</strong> are the maximum sound a fan installation may produce, written by an acoustical consultant, an owner's standard or a workplace regulation. A limit can be stated as sound power at the fan inlet or outlet, as sound pressure at a stated distance or location, as an A-weighted single number, or as a value in each octave band. The form matters: sound power describes the fan as a source and is what a catalog publishes, while sound pressure depends on the room, the duct and the distance (<a href="../25-fan-laws-system-effect-and-sound/">Chapter 25</a>). If a limit is written in sound pressure, someone has to convert the fan's sound power to the listener's location before the two can be compared.</p>
 <h3 id="efficiency-requirements">Efficiency Requirements<a class="headerlink" href="#efficiency-requirements" title="Permanent link">&para;</a></h3>
 <p><strong>Efficiency requirements</strong> are the project's rules about how much energy the fan may use: a minimum fan efficiency rating, a rule that the operating point sit near the fan's peak efficiency, a motor efficiency standard, or a cap on brake horsepower. They come from energy codes, utility incentive programs, owner standards and the specifying engineer. Twin City Fan's Model RTF guide specification, for example, requires motors that comply with the Energy Independence and Security Act of 2007 and premium efficiency, inverter-duty motors when a variable frequency drive will control them.</p>
-<p>One widely used fan rating is the <strong>fan efficiency grade</strong> (FEG), defined by AMCA Standard 205. An FEG is a label that classifies a fan's <em>peak</em> total efficiency, adjusted for impeller diameter, into bands such as FEG 67, 71, 75, 80 and 85, with higher numbers meaning a more efficient aerodynamic design. It rates the fan alone, not the motor or drive, and it says nothing about where on the curve the fan will actually run. For that reason codes that used FEG paired it with a selection rule: ASHRAE Standard 90.1 editions from 2010 through 2016 required FEG 67 or higher and an operating point within 15 percentage points of the fan's peak total efficiency. Newer codes have moved to the fan energy index (FEI, AMCA Standard 208), which rates efficiency at the actual duty point, so check which metric the project's code edition names.</p>
+<p>One widely used fan rating is the <strong>fan efficiency grade</strong> (FEG), defined by AMCA Standard 205. An FEG is a label that classifies a fan's <em>peak</em> total efficiency, adjusted for impeller diameter, into bands such as FEG 67, 71, 75, 80 and 85, with higher numbers meaning a more efficient aerodynamic design. It rates the fan alone, not the motor or drive, and it says nothing about where on the curve the fan will actually run. For that reason codes that used FEG paired it with a selection rule: the 2013 and 2016 editions of ASHRAE Standard 90.1 required FEG 67 or higher and an operating point within 15 percentage points of the fan's peak total efficiency. Newer codes, starting with ASHRAE Standard 90.1-2019, have moved to the fan energy index (FEI, AMCA Standard 208), which rates efficiency at the actual duty point, so check which metric the project's code edition names.</p>
 <div class="admonition mascot-warning">
 <p class="admonition-title">A High Grade Does Not Mean an Efficient Selection</p>
 <p><img alt="Breeze warning" class="mascot-admonition-img" src="../../img/mascot/warning.png" />
@@ -3557,7 +3557,7 @@ A common trap is to accept any size of an FEG 85 fan because the grade is high. 
 <li><span class="arithmatex">\( T \)</span> is the airstream temperature, °F</li>
 </ul>
 <p>The airflow is looked up unchanged, in actual cubic feet per minute. The table then gives the RPM, which is correct as read, and the brake horsepower at standard air, which is multiplied by <span class="arithmatex">\( d \)</span> to get the power at the hot operating condition.</p>
-<p><strong>Worked example.</strong> A dryer exhaust fan must move 20,000 ACFM against 12.0 in. wg static pressure. The gas is 500°F, the plant is at sea level, and the gas carries a moderate load of sticky, abrasive, combustible wood dust. (The duty and the catalog readings below are illustrative values for teaching; a real selection reads the current catalog or Twin City Fan's selection software.)</p>
+<p><strong>Worked example.</strong> A dryer exhaust fan must move 20,000 ACFM against 12.0 in. wg static pressure. The gas is 500°F, the plant is at sea level, and the gas carries a moderate load of combustible wood dust that is moderately sticky and abrasive. (The duty and the catalog readings below are illustrative values for teaching; a real selection reads the current catalog or Twin City Fan's selection software.)</p>
 <ol>
 <li>Density ratio: <span class="arithmatex">\( d = 1.00 \times 530 / (500 + 460) = 0.552 \)</span>.</li>
 <li>Standard-air static pressure: <span class="arithmatex">\( SP_{std} = 12.0 / 0.552 = 21.7 \)</span> in. wg.</li>
@@ -3572,7 +3572,7 @@ A common trap is to accept any size of an FEG 85 fan because the grade is high. 
 Notice that this fan has two personalities: hot, it works against 12.0 inches of water and draws 53 BHP, while a cold start at the same 1,450 RPM raises that to 21.7 inches and 96 BHP. Every later decision, from construction class to motor size, has to respect whichever personality is harder on that part.</p>
 </div>
 <h3 id="impeller-selection">Impeller Selection<a class="headerlink" href="#impeller-selection" title="Permanent link">&para;</a></h3>
-<p><strong>Impeller selection</strong> is choosing the impeller type, and with it the fan family, that the airstream and the duty allow. The trade runs along one line (<a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>): airfoil and backward curved impellers give the best efficiency but need clean air or light dust, radial tip impellers handle large volumes of clean or dirty gas with a self-cleaning tip, and radial bladed impellers survive sticky, abrasive or stringy material at the cost of more power. For the dryer exhaust, sticky and abrasive dust rules out the airfoil and backward curved wheels, and the large volume at moderate to high pressure points to a radial tip fan. Twin City Fan's guide specification describes its Model RTF radial tip fan for exactly this kind of service: exhaust from collectors, scrubbers and cyclones, and induced draft on boilers, incinerators and kilns.</p>
+<p><strong>Impeller selection</strong> is choosing the impeller type, and with it the fan family, that the airstream and the duty allow. The trade runs along one line (<a href="../09-impeller-construction-and-material-handling/">Chapter 9</a>): airfoil and backward curved impellers give the best efficiency but need clean air or light dust, radial tip impellers handle large volumes of clean or dirty gas with a self-cleaning tip, and radial bladed impellers survive sticky, abrasive or stringy material at the cost of more power. For the dryer exhaust, moderately sticky, abrasive dust rules out the airfoil and backward curved wheels, and the large volume at moderate to high pressure points to a radial tip fan. This is a judgment call, because Chapters 6 and 9 say a radial bladed wheel such as the RBO paddle wins when material is sticky or abrasive enough that efficiency must give way to durability. Here the dust load is only moderate, so the radial tip's self-cleaning edge is expected to keep the wheel clear, the heavy liners ordered later answer the abrasion, and the power saved on a continuously running 100 HP class fan is worth having. The RBO stays on the list as the fallback if the dust proves stickier than expected. Twin City Fan's guide specification describes its Model RTF radial tip fan for exactly this kind of service: exhaust from collectors, scrubbers and cyclones, and induced draft on boilers, incinerators and kilns.</p>
 <h3 id="arrangement-selection">Arrangement Selection<a class="headerlink" href="#arrangement-selection" title="Permanent link">&para;</a></h3>
 <p><strong>Arrangement selection</strong> is choosing the standard arrangement that places the impeller, bearings and motor where the application needs them (<a href="../11-drives-and-standard-fan-arrangements/">Chapter 11</a>). The deciding questions are, in order: Can the bearings and motor be in the airstream? Is the drive belt or direct? Does the assembly fit the space? Does it need to sit on isolators?</p>
 <p>FanPedia supplies the facts that answer those questions for a single width, single inlet centrifugal fan:</p>
@@ -3851,7 +3851,7 @@ Watch out for a specification that puts the fan on springs but leaves the duct c
 <li>The learner presses Check; the sim shows the weighted bands, the model total and the verdict next to the learner's answer.</li>
 <li>After all three challenges, free mode unlocks: moving any band slider updates the weighted values, both totals and the largest contributor at once. The learner should notice that raising the 63 Hz band by 10 dB barely changes the A-weighted total, while raising the 1,000 Hz band by 10 dB changes it a lot.</li>
 </ol>
-<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: LwA = <model> dB, which <meets/exceeds> the <limit> dB limit." Hint after a first wrong attempt: "Not quite." plus the slip the typed level points to (the unweighted total; an arithmetic average; the loudest band alone; a level within 0.5 dB with the wrong meets/exceeds choice: "meets means at or below the limit"), or else the step for that challenge (1: weight each band, add as 10·log10 of the sum of 10^(L/10), look at which weighted bands are largest; 2: weight, then add logarithmically, several bands of similar level add to more than any one; 3: weight every band before adding and check how much the 63 Hz correction takes off). The hint states no weighted band, overall level or verdict, and the weighted band table stays hidden. After the final attempt: the model value, the verdict, the "Feedback when wrong" text and the weighted band table, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
+<p><strong>Feedback:</strong> Three challenges, fixed order, two attempts each. Correct: "Correct: LwA = <model> dB, which <meets/exceeds> the <limit> dB limit." Hint after a first wrong attempt: "Not quite." plus the slip the typed level points to (the unweighted total; an arithmetic average; the loudest band alone; a level within 0.5 dB with the wrong meets/exceeds choice: "Your level is right. Now compare it with the <limit> dB limit: meets means at or below the limit, exceeds means above it." With only two choices any hint in this case gives the verdict away, so it openly teaches the comparison; the calculation is the skill being scored), or else the step for that challenge (1: weight each band, add as 10·log10 of the sum of 10^(L/10), look at which weighted bands are largest; 2: weight, then add logarithmically, several bands of similar level add to more than any one; 3: weight every band before adding and check how much the 63 Hz correction takes off). Apart from that level-right case, the hint states no weighted band, overall level or verdict, and the weighted band table stays hidden. After the final attempt: the model value, the verdict, the "Feedback when wrong" text and the weighted band table, and the challenge counts as missed. A running count "Challenges correct: n of 3" is shown.</p>
 <p><strong>Starting State:</strong> Challenge 1 with an empty answer box and the eight band levels listed, asking "What is the A-weighted overall level, and does it meet 95 dB?"</p>
 <p><strong>Chapter Anchors:</strong> Eight bands centered 63 to 8,000 Hz; corrections as listed; challenge 1 equals the chapter's worked example: 92.5 dB A-weighted, 101.6 dB unweighted, 95 dB limit, 500 and 1,000 Hz bands dominate.</p>
 </details>
@@ -4004,7 +4004,7 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 <p><strong>Misconceptions:</strong> (1) A clause that sounds technical is complete. (2) Spark-resistant Types A and B work at any temperature. (3) The motor is sized for the hot operating point. (4) An overall dBA value is the sound data a specification asks for.</p>
 <p><strong>Instructional Rationale:</strong> Evaluate-level judgment needs criteria applied to a realistic artifact, so the learner critiques a full draft rather than isolated facts, and must name the reason, which shows the criterion they used.</p>
 <p><strong>Content:</strong></p>
-<p>Application card shown above the draft: dryer exhaust fan, 20,000 ACFM at 12.0 in. wg, 500°F gas at sea level, sticky abrasive combustible wood dust, fan on spring isolators on a mezzanine, cold start at 70°F.</p>
+<p>Application card shown above the draft: dryer exhaust fan, 20,000 ACFM at 12.0 in. wg, 500°F gas at sea level, moderately sticky, abrasive, combustible wood dust, fan on spring isolators on a mezzanine, cold start at 70°F.</p>
 <p>Reason list: (a) duty has no air condition; (b) arrangement unsuited to the temperature; (c) spark-resistance type not allowed at this temperature; (d) motor not sized for cold start; (e) sound data in the wrong form; (f) isolated fan without flex connectors; (g) arrangement cannot sit directly on isolators.</p>
 <table>
 <thead>
@@ -4132,7 +4132,7 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 <p><strong>Misconceptions:</strong> (1) The most efficient impeller is always the right one. (2) Any arrangement works if the motor is large enough. (3) Spark resistance of any type works at any temperature. (4) A damper or VFD is optional when the process needs turndown. (5) Isolators can be added without flex connectors.</p>
 <p><strong>Instructional Rationale:</strong> Create-level work means assembling parts into a coherent whole; the builder lets the learner make every decision, then exposes conflicts between decisions so the learner revises the design rather than receiving it.</p>
 <p><strong>Content:</strong></p>
-<p>Application card: dryer exhaust; 20,000 ACFM at 12.0 in. wg; 500°F gas; sea level; sticky, abrasive, combustible wood dust; process needs reduced flow during warm-up; fan on spring isolators on a mezzanine; outlet duct leaves the top of the fan horizontally to the right when viewed from the drive side; cold start at 70°F; selected fan speed 1,450 RPM; cold-start load 96.0 BHP; hot load 53.0 BHP.</p>
+<p>Application card: dryer exhaust; 20,000 ACFM at 12.0 in. wg; 500°F gas; sea level; moderately sticky, abrasive, combustible wood dust; process needs reduced flow during warm-up; fan on spring isolators on a mezzanine; outlet duct leaves the top of the fan horizontally to the right when viewed from the drive side; cold start at 70°F; selected fan speed 1,450 RPM; cold-start load 96.0 BHP; hot load 53.0 BHP.</p>
 <p>Attributes and options (options shown in this order):</p>
 <table>
 <thead>
@@ -4195,7 +4195,7 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 </tr>
 </tbody>
 </table>
-<p>Violations (each blocks completion; message shown when triggered):</p>
+<p>Violations (each blocks completion; the full message is shown on every Check that triggers it, because the builder is for revising a design and every conflict should be explained, not hinted at):</p>
 <table>
 <thead>
 <tr>
@@ -4208,7 +4208,7 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 <tr>
 <td>V1</td>
 <td>Impeller is HIB or HAF</td>
-<td>Backward curved and airfoil wheels need clean air or light dust; sticky abrasive dust builds up and erodes them.</td>
+<td>Backward curved and airfoil wheels need clean air or light dust; moderately sticky, abrasive dust like the dryer dust builds up and erodes them.</td>
 </tr>
 <tr>
 <td>V2</td>
@@ -4217,8 +4217,8 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 </tr>
 <tr>
 <td>V3</td>
-<td>Arrangement 9F with option 2 or 3 in attribute 10</td>
-<td>FanPedia: 9F is not suitable for isolators directly; use Arrangement 1 on an isolation base.</td>
+<td>Arrangement is 9F</td>
+<td>Arrangement 9F cannot be used on this job: the fan must sit on isolators, and FanPedia says 9F is not suitable for spring isolators. Choose Arrangement 1, 8 or 9.</td>
 </tr>
 <tr>
 <td>V4</td>
@@ -4294,7 +4294,7 @@ Most specification errors are not wrong lines; they are two right-looking lines 
 <li>The learner revises and checks again until no violations remain; the composed fan description then appears.</li>
 <li>The learner should notice that some fixes cascade: changing the arrangement to 8 forces a direct drive, which needs the VFD to meet the speed.</li>
 </ol>
-<p><strong>Feedback:</strong> Unlimited checks. Each check lists all triggered violation and advisory messages from Content. Hint after a first wrong attempt: the first time V3, V4, V7, V9 or V11 is triggered, its message is a hint that does not name the option to pick (V3: "FanPedia: 9F is not suitable for isolators directly. Which arrangement can sit on an isolation base instead?"; V4: "Arrangements 1, 9 and 9F are belt-driven here; change the drive, or choose an arrangement built for a coupled direct drive."; V7: "Stand on the drive side: which way must the wheel turn to throw air out of a top outlet blowing right, and which code names that discharge?"; V9: "Compare the package's temperature rating with the gas temperature on the application card."; V11: "Types A and B are limited to 250°F; compare that with the gas temperature."). After the final attempt: when a later check triggers the same violation again, its full Content message is shown. The other violations and the advisories show their Content message every time. On completion: "Specification complete: ten attributes, zero conflicts, <n> checks." No answers are revealed before the learner chooses; the messages explain each conflict.</p>
+<p><strong>Feedback:</strong> Unlimited checks. Each check lists every triggered violation and advisory message from Content, in full, every time. A builder is not a quiz: the learner is revising a design, not guessing an answer, so each message explains the conflict and names the option that resolves it (for example V3 and V4 name the arrangements that work). No answers are revealed before the learner chooses. On completion: "Specification complete: ten attributes, zero conflicts, <n> checks."</p>
 <p><strong>Starting State:</strong> The application card, ten unchosen attributes with empty justification boxes, and the prompt "Build a specification that a factory could build and a reviewer could approve."</p>
 <p><strong>Chapter Anchors:</strong> 20,000 ACFM; 12.0 in. wg; 500°F; 70°F cold start; 1,450 RPM; 96.0 BHP cold; 53.0 BHP hot; 100 HP motor; CW THD; Types A and B limited to 250°F; Arrangement 9 with belt drive as the worked selection; 10 ft by 8 ft pad.</p>
 </details>
@@ -4396,7 +4396,7 @@ You started this book learning what a fan is and what CFM means, and you have ju
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="/FanTASTIC-textbook/license/">Copyright</a>.
     </div>
   
   

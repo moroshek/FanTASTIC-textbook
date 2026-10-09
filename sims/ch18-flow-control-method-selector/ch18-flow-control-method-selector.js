@@ -55,7 +55,7 @@ const CARD_DATA = [
     jobHint: 'The blades rely on the airflow to open, and at low flow there is not enough. What would open them regardless of airflow?',
     why: 'Motorized dampers power the blades open instead of relying on airflow, avoiding partial opening, flutter and noise at low flow.' },
   { short: 'Hot, dirty process fan, monthly trim', device: 'E', ctrl: true,
-    job: 'A hot, particulate-laden process fan on a constant-speed motor needs modest trimming, between full open and about 80% open, a few times a month.',
+    job: 'A hot, particulate-laden process fan on a constant-speed motor needs modest trimming, between full open and about 75% open, a few times a month.',
     cond: 'Infrequent, modest reduction within full open to about 75% open, dirty hot air',
     wrong: ['Modulation across the full range', 'Reduced operation most hours'],
     jobHint: 'How often and how far must the airflow change, and what is the air like? Pick the least expensive device that covers that range.',

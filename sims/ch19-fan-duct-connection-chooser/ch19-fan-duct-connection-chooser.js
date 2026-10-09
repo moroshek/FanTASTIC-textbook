@@ -70,7 +70,7 @@ const JOBS = [
     why: 'Horns are used when inlet and discharge airflows would intersect, so the duct connects without interference.' },
   { n: 8, text: "A free-standing inlet box and its fan share one rigid base on the same plane. The box outlet must join the fan's inlet flange.",
     accepted: [O['Bolted flange connection']],
-    why: "The free-standing box's round outlet flange is available only with the bolted connection." }
+    why: "The free-standing box's round outlet flange goes with the bolted connection; the outlet collar goes with the slip connection." }
 ].map(j => {
   // Pipe-line jobs are judged by the sleeve rating; the alternative is the matching 125# ASA bolted flange.
   if (j.psi != null) j.accepted = [sleeveOK(j) ? O['Tube adapter and rubber sleeve'] : O['Bolted flange connection']];

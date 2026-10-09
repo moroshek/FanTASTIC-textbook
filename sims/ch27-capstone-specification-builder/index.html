@@ -4882,7 +4882,7 @@ editor's <code>index.html</code> before pasting <code>ch27-capstone-specificatio
 <code>.csb-desc</code> style for the description box is in this sim's <code>main.html</code>.</p>
 <h2 id="about-this-microsim">About This MicroSim<a class="headerlink" href="#about-this-microsim" title="Permanent link">&para;</a></h2>
 <p>The builder walks you through the chapter's dryer exhaust fan decision by decision: 20,000 ACFM at
-12.0 in. wg, 500°F gas at sea level, sticky, abrasive, combustible wood dust, reduced flow during
+12.0 in. wg, 500°F gas at sea level, moderately sticky, abrasive, combustible wood dust, reduced flow during
 warm-up, spring isolators on a mezzanine, an outlet duct that leaves the top of the fan
 horizontally to the right (viewed from the drive side), a 70°F cold start, a selected speed of
 1,450 RPM, 96.0 BHP cold and 53.0 BHP hot (illustrative values from the chapter's worked example).</p>
@@ -4951,7 +4951,7 @@ horizontally to the right (viewed from the drive side), a 70°F cold start, a se
 <p><strong>Check specification</strong> evaluates all fifteen violation rules and four advisories together and
 lists every triggered message beside its attribute. A violation (✗, red dashed border) blocks
 completion; an advisory (ℹ) does not. Rules that join two attributes are listed beside one of
-them: the 9F-on-isolators rule beside the arrangement, the arrangement-and-drive rules beside the
+them: the 9F rule (no valid 9F design exists on isolators) beside the arrangement, the arrangement-and-drive rules beside the
 drive, and the turndown rule beside flow control. Nothing is revealed before you choose.</p>
 <p>The specification is complete when all ten attributes are chosen, all ten justifications contain
 text and the check reports zero violations. The sim then says "Specification complete: ten
@@ -5017,7 +5017,7 @@ facilities staff.</p>
 <h3 id="common-misconceptions-addressed">Common Misconceptions Addressed<a class="headerlink" href="#common-misconceptions-addressed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The most efficient impeller is always the right one: HIB and HAF trigger the dust rule.</li>
-<li>Any arrangement works if the motor is large enough: Arrangement 4 and 9F on isolators fail
+<li>Any arrangement works if the motor is large enough: Arrangements 4 and 9F fail
   whatever the motor.</li>
 <li>Spark resistance of any type works at any temperature: Types A and B fail at 500°F.</li>
 <li>A damper or VFD is optional when the process needs turndown: no flow control without the VFD
@@ -5121,7 +5121,7 @@ facilities staff.</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="/FanTASTIC-textbook/license/">Copyright</a>.
     </div>
   
   

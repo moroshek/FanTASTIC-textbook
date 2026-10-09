@@ -23,7 +23,7 @@
     { id: 'funnel', label: 'Inlet Funnel', text: 'The shaped piece that guides air smoothly into the impeller eye.' },
     { id: 'inletFlange', label: 'Inlet Flange', text: 'The bolting rim at the inlet that connects the fan to inlet ductwork.' },
     { id: 'outletFlange', label: 'Outlet (Discharge) Flange', text: 'The bolting rim at the outlet that connects the fan to discharge ductwork.' },
-    { id: 'framing', label: 'Framing', text: 'Angles or channels fastened to the housing that stiffen it and support it on its base.' },
+    { id: 'framing', label: 'Framing', text: 'The angles or channels fastened to the housing that stiffen it and support it on its base.' },
     { id: 'pedestal', label: 'Pedestal', text: 'The stand that carries the bearings and, on some arrangements, the motor.' }
   ];
   var TAB_ORDER = PARTS.map(function (p) { return p.id; });

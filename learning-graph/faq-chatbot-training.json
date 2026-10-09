@@ -312,7 +312,7 @@
       "id": "faq-011",
       "category": "Getting Started",
       "question": "Who is Breeze, and why does a hummingbird appear in the chapters?",
-      "answer": "Breeze is the book's learning mascot, a hummingbird who introduces themselves at the start of Chapter 1. Breeze is a signal, not decoration: each pose has one job. Breeze welcomes you at the start of a chapter, stops you at an idea worth rethinking, hands you a shortcut, warns you about a common mistake and how to avoid it, encourages you when a topic is genuinely hard, celebrates the specific skill you gained at the end of a chapter, and occasionally adds a brief aside. As Breeze puts it, \"If I'm not doing one of those seven things, I'm not in the chapter.\"\n\nThe practical use: when you review a chapter, the warning boxes are a ready-made list of the mistakes most often made on real orders, such as confusing psi with inches of water gauge.",
+      "answer": "Breeze is the book's learning mascot, a hummingbird who introduces themselves at the start of Chapter 1. Breeze is a signal, not decoration: each pose has one job. Breeze welcomes you at the start of a chapter, stops you at an idea worth rethinking, hands you a shortcut, warns you about a common mistake and how to avoid it, encourages you when a topic is genuinely hard, and celebrates the specific skill you gained at the end of a chapter. As Breeze puts it, \"If I'm not doing one of those six things, I'm not in the chapter.\"\n\nThe practical use: when you review a chapter, the warning boxes are a ready-made list of the mistakes most often made on real orders, such as confusing psi with inches of water gauge.",
       "bloom_level": "Remember",
       "difficulty": "easy",
       "concepts": [
@@ -325,7 +325,7 @@
         "docs/chapters/01-air-pressure-and-the-fan/index.md"
       ],
       "has_example": false,
-      "word_count": 136
+      "word_count": 131
     },
     {
       "id": "faq-012",
@@ -1090,7 +1090,7 @@
       "id": "faq-033",
       "category": "Core Concepts",
       "question": "What is the difference between construction class and fan class?",
-      "answer": "They answer different questions, and both go on the order.\n\nFan class (Class I, II, III and IV, defined by AMCA Standard 99-2408) is a pressure and speed rating. Each heavier class is built with the impeller, shaft, bearings and housing to reach higher pressure and outlet velocity, so in practice the class sets the maximum safe speed for a fan size. Catalogs show class boundaries in their performance tables by shading.\n\nConstruction class is the build designation that matches the housing and impeller to the airstream: standard construction, or special constructions such as spark resistant, high temperature, insulated, nominally leak-tight, RTO and high moisture, all resting on a construction material.\n\nThe two are independent. For example, a Class II fan can be built in standard steel or in spark-resistant construction. Construction class also covers the material, such as aluminum construction, and finishes such as coatings; an insulated fan adds aluminum clad, double wall construction or jacket construction. If a document ties \"class\" to a maximum speed, it means fan class; if it ties it to materials or spark resistance, it means construction class.",
+      "answer": "They answer different questions, and both go on the order.\n\nFan class is a pressure and speed rating. AMCA Standard 99-2408 defines Classes I, II, III and IV, and Twin City Fan's industrial radial catalogs use their own Classes 22, 32 and 45 (about 22, 32 and 45 in. wg), because AMCA has no class system for industrial fans. The two systems are not interchangeable: Class 22 is not Class II. Each heavier class is built with the impeller, shaft, bearings and housing to reach higher pressure and outlet velocity, so in practice the class sets the maximum safe speed for a fan size. Catalogs show class boundaries in their performance tables by shading.\n\nConstruction class is the build designation that matches the housing and impeller to the airstream: standard construction, or special constructions such as spark resistant, high temperature, insulated, nominally leak-tight, RTO and high moisture, all resting on a construction material.\n\nThe two are independent. For example, a Class II fan can be built in standard steel or in spark-resistant construction. Construction class also covers the material, such as aluminum construction, and finishes such as coatings; an insulated fan adds aluminum clad, double wall construction or jacket construction. If a document ties \"class\" to a maximum speed, it means fan class; if it ties it to materials or spark resistance, it means construction class.",
       "bloom_level": "Analyze",
       "difficulty": "medium",
       "concepts": [
@@ -1130,7 +1130,7 @@
         "docs/chapters/10-fan-performance-curves-and-ratings/index.md"
       ],
       "has_example": true,
-      "word_count": 184
+      "word_count": 226
     },
     {
       "id": "faq-034",
@@ -1336,7 +1336,7 @@
       "id": "faq-040",
       "category": "Core Concepts",
       "question": "What is the difference between a plenum fan and a plug fan?",
-      "answer": "Both are unhoused centrifugal fans: an impeller and inlet funnel with no scroll, discharging all the way around into the space they pressurize, a plenum.\n\n- A plenum fan is designed for air handling applications where the whole fan operates inside the plenum, such as an air handling unit cabinet. Its motor, shaft and bearings live in the air the impeller moves.\n- A plug fan is \"plugged\" into the plenum wall: a mounting panel fastens to the outside of the wall, the impeller sits inside, and the motor and drive stay outside, separated from the process air. FanPedia lists high-temperature ovens and OEM paint booths as typical uses.\n\nThe difference is where the drive lives relative to the wall. For example, an oven builder who needs to recirculate hot air while keeping the motor and bearings out of the hot zone needs a plug fan; the same builder making an air handler cabinet would use a plenum fan. Among the plug fan arrangements, Arrangement 9 is the most common, and P versions stand on a pedestal at grade. See the Plug Fan Arrangement Picker MicroSim.",
+      "answer": "Both are unhoused centrifugal fans: an impeller and inlet funnel with no scroll, discharging all the way around into the space they pressurize, a plenum.\n\n- A plenum fan is designed for air handling applications where the whole fan operates inside the plenum, such as an air handling unit cabinet. Its motor, shaft and bearings live in the air the impeller moves.\n- A plug fan is \"plugged\" into the plenum wall: a mounting panel fastens to the outside of the wall, the impeller sits inside, and the motor and drive stay outside, separated from the process air. FanPedia lists high-temperature ovens and OEM paint booths as typical uses.\n\nThe difference is where the drive lives relative to the wall. For example, an oven builder who needs to recirculate hot air while keeping the motor and bearings out of the hot zone needs a plug fan; the same builder making an air handler cabinet would use a plenum fan. Among the seven plug fan arrangements (1P, 4, 4P, 8, 8P, 9, 9P), Arrangement 9 is the most common, the P versions stand at grade, and 1P is the belt-driven grade version with the motor on its own base. See the Plug Fan Arrangement Picker MicroSim.",
       "bloom_level": "Analyze",
       "difficulty": "medium",
       "concepts": [
@@ -1373,7 +1373,7 @@
         "docs/chapters/06-industrial-fans-and-application-product-lines/index.md"
       ],
       "has_example": true,
-      "word_count": 186
+      "word_count": 205
     },
     {
       "id": "faq-041",
@@ -2159,7 +2159,7 @@
       "id": "faq-065",
       "category": "Technical Details",
       "question": "When should a roof exhauster be upblast rather than downblast?",
-      "answer": "Upblast discharge sends exhaust straight up, away from the roof surface, so the plume carries contaminants, heat and grease clear of the roof and of nearby air intakes. Upblast units carry butterfly-type gravity dampers that keep outside air from back-drafting in and give weather protection when the fan is off. Twin City Fan's VCU, VCUB and BCRU upblast roof exhausters, and the kitchen and smoke versions, use this discharge.\n\nDownblast discharge turns the air back down toward the roof, out around the unit, under a mushroom-shaped motor cover. The low silhouette and built-in weather protection suit clean air only: restroom, general office and storage exhaust. Current downblast models include the VC, DCRD and BCRD.\n\nThe deciding question is what is in the air. Both are power roof ventilators, and every rooftop unit sits on a roof curb. For example, a kitchen hood exhaust is upblast, because a downblast unit would lay grease on the roof and send fumes toward the nearest outdoor-air intake, while restroom exhaust for an office can be downblast. Practice with the Roof and Wall Exhaust Path Explorer MicroSim.",
+      "answer": "Upblast discharge sends exhaust straight up, away from the roof surface, so the plume carries contaminants, heat and grease clear of the roof and of nearby air intakes. Upblast units carry butterfly-type gravity dampers that keep outside air from back-drafting in and give weather protection when the fan is off. Twin City Fan's VCU, VCUB and BCRU upblast roof exhausters, and the kitchen and smoke versions, use this discharge.\n\nDownblast discharge turns the air back down toward the roof, out around the unit, under a mushroom-shaped motor cover. The low silhouette and built-in weather protection suit clean air only: restroom, general office and storage exhaust. Current downblast models include the VC, DCRD and BCRD.\n\nThe deciding question is what is in the air. Both are power roof ventilators, and roof-mounted units normally sit on a roof curb. For example, a kitchen hood exhaust is upblast, because a downblast unit would lay grease on the roof and send fumes toward the nearest outdoor-air intake, while restroom exhaust for an office can be downblast. Practice with the Roof and Wall Exhaust Path Explorer MicroSim.",
       "bloom_level": "Analyze",
       "difficulty": "medium",
       "concepts": [
@@ -3141,7 +3141,7 @@
       "id": "faq-093",
       "category": "Advanced Topics",
       "question": "How do high-temperature fans cope with heat?",
-      "answer": "Hot fans need parts that allow growth, shed heat, or block it.\n\n- Allow growth. A shaft grows by ΔL = α × L × ΔT. A steel shaft with 60 in. between bearings, warming 300°F, grows about 0.12 in., roughly an eighth of an inch. Fixed and floating bearings let it: the fixed bearing locates the shaft and the floating bearing slides.\n- Shed heat. A shaft cooler, a cast aluminum wheel on the shaft between the housing and the inboard bearing (recommended over 300°F), dissipates heat from the shaft before it reaches the bearings, with a cooler box and cooler guard around it; high temperature grease is part of every hot package.\n- Block heat. High temperature pedestal forms such as a separated pedestal (up to a 3 in. gap, for Arrangements 1, 8 and 9F at 601°F and above), heat shields and insulated panels keep heat away from the bearings.\n\nHigh temperature construction is sold in packages by temperature band, and the bands depend on the fan family. Centrifugal Arrangements 1, 8, 9, 9F and 10 share five bands from 301 to 500°F up to 1,001°F and over; Arrangement 4 is reviewed above 300°F; the listed axial bands stop at 300°F. For example, a 450°F centrifugal Arrangement 9 fan falls in the 301 to 500°F band. Use the High Temperature Package Finder MicroSim.",
+      "answer": "Hot fans need parts that allow growth, shed heat, or block it.\n\n- Allow growth. A shaft grows by ΔL = α × L × ΔT. A steel shaft with 60 in. between bearings, warming 300°F, grows about 0.12 in., roughly an eighth of an inch. Fixed and floating bearings let it: the fixed bearing locates the shaft and the floating bearing slides.\n- Shed heat. A shaft cooler, a cast aluminum wheel on the shaft between the housing and the inboard bearing (recommended over 300°F), dissipates heat from the shaft before it reaches the bearings, with a cooler box and cooler guard around it; high temperature grease is required wherever the fan or kit has its own bearings (centrifugal packages for fans with bearings, air kits, and axial fans over 275°F), not in every package.\n- Block heat. High temperature pedestal forms such as a separated pedestal (up to a 3 in. gap, for Arrangements 1, 8 and 9F at 601°F and above), heat shields and insulated panels keep heat away from the bearings.\n\nHigh temperature construction is sold in packages by temperature band, and the bands depend on the fan family. Centrifugal Arrangements 1, 8, 9, 9F and 10 share five bands from 301 to 500°F up to 1,001°F and over; Arrangement 4 is reviewed above 300°F; the listed axial bands stop at 300°F. For example, a 450°F centrifugal Arrangement 9 fan falls in the 301 to 500°F band. Use the High Temperature Package Finder MicroSim.",
       "bloom_level": "Apply",
       "difficulty": "hard",
       "concepts": [
@@ -3181,7 +3181,7 @@
         "docs/chapters/21-high-temperature-leak-tight-and-rto-construction/index.md"
       ],
       "has_example": true,
-      "word_count": 226
+      "word_count": 248
     },
     {
       "id": "faq-094",

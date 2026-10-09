@@ -532,7 +532,7 @@ function drawItemPicture(box, st) {
       caption(box, f.capY, 'Drive-side dial: position ' + it.answer + ', ' + desc(it.answer) + '.');
     } else {
       caption(box, f.capY, it.view === 'inlet' ? 'Careful: this picture is drawn from the inlet side.'
-        : 'Numbers run clockwise from 360 at the top, seen from the drive side.');
+        : 'Positions run clockwise in 45° steps, seen from the drive side.');
     }
     return;
   }

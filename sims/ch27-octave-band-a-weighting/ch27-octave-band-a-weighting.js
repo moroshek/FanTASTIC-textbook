@@ -60,14 +60,18 @@ const ITEMS = CHALLENGE_DATA.map((c, i) => {
 });
 
 // Hint after a first wrong attempt (misconceptions 1 and 3): the slip the typed level points to,
-// else the challenge's step. It never states the weighted bands, the overall level or the
-// verdict; the spec's "Feedback when wrong" text (item.wrong) comes with the answer when missed.
+// else the challenge's step. It never states the weighted bands or the overall level (and gives
+// the verdict only in the level-right case below); the spec's "Feedback when wrong" text (item.wrong) comes with the answer when missed.
 function diagnose(v, item) {
   const r = item.result;
   const mean = a => a.reduce((x, y) => x + y, 0) / a.length;
   const near = x => Math.abs(v.lwa - x) <= TOL_DB;
   const levelOk = Math.abs(v.lwa - item.lwa) <= TOL_DB + 1e-9;
-  if (levelOk) return 'Check the meets/exceeds choice against your level: meets means at or below the limit.';
+  // Level right, verdict wrong: with only two choices any hint would give the verdict away, so the
+  // hint openly teaches the comparison instead (the calculation is the skill being scored).
+  if (levelOk) {
+    return 'Your level is right. Now compare it with the ' + item.limit + ' dB limit: meets means at or below the limit, exceeds means above it.';
+  }
   if (near(r.unweighted)) return 'That is the unweighted total: apply each band\'s A-weighting correction before adding.';
   if (near(mean(item.bands)) || near(mean(r.weighted))) {
     return 'That is an arithmetic average: decibels add as 10·log10 of the sum of 10^(L/10).';

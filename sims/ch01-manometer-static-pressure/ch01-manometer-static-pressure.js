@@ -248,9 +248,7 @@ function slipNote(item, v) {
     return '';
   }
   if (Math.abs(item.model) > 1e-9 && FP.check.numeric(-v, item.model, TOL)) {
-    return item.model < 0
-      ? 'Check the sign: on the inlet side the fan pulls the duct below room pressure, so the reading is negative (suction).'
-      : 'Check the sign: on the discharge side the fan pushes the duct above room pressure, so the reading is positive.';
+    return 'The size is right, but the sign is not. Ask whether the fan is pulling or pushing the air at this point, and whether that puts the duct below or above room pressure.';
   }
   return '';
 }

@@ -3232,8 +3232,8 @@ It is tempting to write "230/460 V" on an order and let the field decide, but a 
 <li>Convert the shaft power to kilowatts: <span class="arithmatex">\( 20 \times 0.7457 = 14.91 \)</span> kW.</li>
 <li>Electrical input, standard motor: <span class="arithmatex">\( 14.91 / 0.924 = 16.14 \)</span> kW.</li>
 <li>Electrical input, premium motor: <span class="arithmatex">\( 14.91 / 0.936 = 15.93 \)</span> kW.</li>
-<li>Difference: <span class="arithmatex">\( 16.14 - 15.93 = 0.21 \)</span> kW.</li>
-<li>Annual energy saved: <span class="arithmatex">\( 0.21 \times 6000 \approx 1{,}240 \)</span> kWh per year.</li>
+<li>Difference: <span class="arithmatex">\( 16.141 - 15.934 \approx 0.207 \)</span> kW (steps 1 to 3 are rounded for display; carry three decimals here, from 14.914 kW).</li>
+<li>Annual energy saved: <span class="arithmatex">\( 0.207 \times 6000 \approx 1{,}240 \)</span> kWh per year.</li>
 </ol>
 <p>At an illustrative $0.10 per kWh, that is about $124 a year for one fan. The number is small per fan but recurs every year of the motor's life, and it scales with horsepower and run hours. That is why premium efficiency is the usual request on continuously running fans and why many specifications require it outright.</p>
 <h2 id="heat-temperature-rise-thermal-protection-and-winding-rtds">Heat: Temperature Rise, Thermal Protection and Winding RTDs<a class="headerlink" href="#heat-temperature-rise-thermal-protection-and-winding-rtds" title="Permanent link">&para;</a></h2>
@@ -3293,7 +3293,7 @@ Before choosing between thermostats, thermistors and winding RTDs, ask one quest
 </ol>
 <p>The next two sections look more closely at the two duties in this list that carry the most weight on industrial orders.</p>
 <h2 id="severe-duty-motor">Severe Duty Motor<a class="headerlink" href="#severe-duty-motor" title="Permanent link">&para;</a></h2>
-<p>A <strong>severe duty motor</strong> is built to keep running where a general duty motor would corrode, wear or overheat early: around moisture, chemical fumes, dust, washdown or outdoor exposure. FanPedia uses "SD" for the general severe duty motor and lists Mil/Chem duty, chemical duty and IEEE 45 as names you will see for it (FanPedia p. 73). IEEE 841 is a stricter, published standard for severe duty motors in process industries; FanPedia names automotive, mining, paper and wood mills, and refining as typical users.</p>
+<p>A <strong>severe duty motor</strong> is built to keep running where a general duty motor would corrode, wear or overheat early: around moisture, chemical fumes, dust, washdown or outdoor exposure. FanPedia uses "SD" for the general severe duty motor and lists Mil/Chem duty and chemical duty as names you will see for it (FanPedia p. 73). IEEE 45 is not another name for SD: the same page files it under the special-basis duties for marine applications, and pairs it with SD only in the TEFC IP56 row of its enclosure table. IEEE 841 is a stricter, published standard for severe duty motors in process industries; FanPedia names automotive, mining, paper and wood mills, and refining as typical users.</p>
 <p>The rule for choosing between them comes straight from FanPedia's definition: SD is used where a severe duty motor is required but IEEE 841 is not specified. That makes the decision a reading exercise, not an engineering judgment.</p>
 <p><strong>Worked example: SD or IEEE 841?</strong> An automotive paint shop needs an exhaust fan. The motor will sit near the fan in air that carries paint mist and dirt, so general duty is out. Read the customer's specification:</p>
 <ol>
@@ -3916,7 +3916,7 @@ You can now take a duty point, a plant's power and its environment, and turn the
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="license/">Copyright</a>.
+      Copyright &copy; 2026 Twin City Fan. All rights reserved. See <a href="/FanTASTIC-textbook/license/">Copyright</a>.
     </div>
   
   

@@ -258,7 +258,7 @@ function draw() {
   y = K.statusLine(st.scoreLabel, right, null, { y: y - 4 });
   K.note(canvasWidth >= 560
     ? ['Illustrative scenarios', 'Source: FanPedia pp. 91, 97–99', 'Keys: 1–4 or A–D choose, Enter commits or goes on']
-    : ['Illustrative scenarios', 'Source: FanPedia pp. 96–98']);
+    : ['Illustrative scenarios', 'Source: FanPedia pp. 91, 97–99']);
 
   const top = y + 2;
   const bottom = drawHeight - 24;

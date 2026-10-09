@@ -139,6 +139,14 @@ function setup() {
     b.addClass('avd-code');
     b.attribute('aria-pressed', 'false');
     b.attribute('aria-label', 'Arrangement ' + c);
+    // A focused button handles Enter natively (a click, which would only re-select). Route
+    // Enter to the Check/Next flow once this code is already the selected one.
+    b.elt.addEventListener('keydown', ev => {
+      if (ev.key !== 'Enter') return;
+      const ph = deck.state().phase;
+      if (ph === 'choose' && pending === c) { ev.preventDefault(); checkAnswer(); }
+      else if (ph === 'feedback') { ev.preventDefault(); nextItem(); }
+    });
     return b;
   });
   checkButton = K.button(FP.msg.CHECK, checkAnswer);

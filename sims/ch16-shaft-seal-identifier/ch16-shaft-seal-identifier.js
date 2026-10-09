@@ -73,13 +73,31 @@ const CARDS = [
 
 // Spec feedback: Correct "Correct: <bin>. <Why>." First wrong "Not this one. Look again at the parts
 // named on the card." Second wrong "This is a <correct bin>. <Why>." (the card counts as missed).
+// First-wrong-attempt hints name the mix-up between look-alike bins, never the correct bin.
+const CONTACT = ['friction', 'vring', 'lip'], CARBON = ['single', 'double'], BOX = ['box', 'purge'];
+function seal(a, b, id1, id2) { return (a === id1 && b === id2) || (a === id2 && b === id1); }
+function retryHint(card, chosen) {
+  const ans = card.answer;
+  if (seal(ans, chosen, 'single', 'double')) return 'Both use split carbon rings. Count the rings and look for a lantern ring at a purge hole.';
+  if (seal(ans, chosen, 'box', 'purge')) return 'Both use packing in a box. Look for a lantern ring, a purge hole or a purge plug on the card.';
+  if (seal(ans, chosen, 'friction', 'lip')) return 'Both touch the shaft. Ask what does the sealing: soft material under a cover plate, or an elastomer lip with its own greased housing.';
+  if ((CARBON.indexOf(chosen) >= 0 && BOX.indexOf(ans) >= 0) || (BOX.indexOf(chosen) >= 0 && CARBON.indexOf(ans) >= 0)) {
+    return 'Carbon ring seals hold split rings in a housing; stuffing boxes compress packing in a box. Check which one the card names.';
+  }
+  if (CONTACT.indexOf(chosen) >= 0 !== CONTACT.indexOf(ans) >= 0) {
+    return 'Contact seals rub on the shaft with a soft or elastomer part; the other families use carbon rings or packing. Check which part the card names.';
+  }
+  if (chosen === 'vring' || ans === 'vring') return 'Look for the plate material, the joint sealant or the alternate name that points to one contact seal.';
+  return 'Look again at the parts named on the card.';
+}
+
 const deck = new FP.CardDeck({
   cards: CARDS, shuffle: true, attempts: 2, retryMissed: false,
   noun: 'Cards', mastery: MASTERY, id: SIM_ID,
   label: a => BIN[a].name,
   reviewPointer: 'Reread "Shaft Seals" and press Start over for a new shuffle',
   messages: {
-    retry: FP.msg.BAD + ' Not this one. Look again at the parts named on the card.',
+    retry: res => FP.msg.BAD + ' Not this one. ' + retryHint(res.card, res.chosen),
     missed: res => FP.msg.BAD + ' This is a ' + BIN[res.card.answer].name + '. ' + res.card.why
   }
 });

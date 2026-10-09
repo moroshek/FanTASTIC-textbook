@@ -16,7 +16,8 @@ const controlHeight = K.controlHeightFor(4);   // 150: choices (1-2 rows), navig
 const canvasHeight = drawHeight + controlHeight;
 const MASTERY = 6;
 
-// Reference cards (FanPedia pp. 171-172, Technical Descriptions, plug arrangements)
+// Reference cards (FanPedia pp. 171-172, Technical Descriptions, plug arrangements). FanPedia also lists
+// Arrangement 1P (belt driven, grade mounted, motor on its own base, p. 170); the picker leaves it out.
 const ARRS = [
   { code: '4', drive: 'Direct, impeller on motor shaft', carried: "Customer's wall",
     text: 'Compact; no fan shaft, bearings or belts. High airstream temperatures may limit use.' },
@@ -48,7 +49,7 @@ const SCENARIOS = [
   { id: 1, answer: '4',
     text: 'Recirculating fan for a warm (not hot) process enclosure. Customer wants no belts or fan bearings to maintain. Wall is stiff enough to carry the fan.',
     r: ['Direct: no belts or fan bearings wanted', 'Warm, not hot: the impeller can sit on the motor shaft (4)', 'Wall can carry the fan: wall-mounted'],
-    decides: [1],
+    decides: [1, 2],
     why: 'Direct drive with the impeller on the motor shaft removes belts and fan bearings, and the wall can carry it.' },
   { id: 2, answer: '4P',
     text: 'Same job as #1, but the customer\'s engineer says the enclosure wall cannot carry the fan by itself.',
@@ -61,7 +62,7 @@ const SCENARIOS = [
     decides: [1],
     why: 'Belt drive on a wall that can carry it is the most common plug arrangement.' },
   { id: 4, answer: '9P',
-    text: 'Large belt-driven fan with a large-HP motor; the wall cannot carry it.',
+    text: 'Large belt-driven fan with a large-HP motor on the fan\'s own pedestal; the wall cannot carry it.',
     r: ['Belt drive', 'Belt drive: the temperature rule does not apply', 'Wall cannot carry it: P version'],
     decides: [3],
     why: 'Belt drive plus a wall that is not sufficient points to the grade-mounted 9P.' },
@@ -76,7 +77,7 @@ const SCENARIOS = [
     decides: [3],
     why: 'Coupled direct drive on a weak wall calls for the grade-mounted 8P.' },
   { id: 7, answer: '9P',
-    text: 'Belt-driven fan; the wall could carry it, but the project has a strict low-vibration requirement.',
+    text: 'Belt-driven fan with its motor on the fan\'s own pedestal; the wall could carry it, but the project has a strict low-vibration requirement.',
     r: ['Belt drive', 'Belt drive: the temperature rule does not apply', 'Low-vibration requirement: P version'],
     decides: [3],
     why: 'FanPedia notes that mounting to the foundation helps meet lower vibration requirements.' },
